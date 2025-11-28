@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinking Funds Setup | ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f5f5f5; color: #333; line-height: 1.6; }
+        .playbook { max-width: 700px; margin: 0 auto; background: white; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
+        .header { background: linear-gradient(135deg, #009688 0%, #00796b 100%); color: white; padding: 30px; text-align: center; }
+        .header h1 { font-size: 28px; margin-bottom: 10px; }
+        .header p { opacity: 0.9; font-size: 14px; }
+        .meta { display: flex; justify-content: center; gap: 20px; margin-top: 15px; font-size: 12px; }
+        .meta span { background: rgba(255,255,255,0.2); padding: 5px 12px; border-radius: 15px; }
+        .content { padding: 30px; }
+        .section { margin-bottom: 30px; }
+        .section h2 { color: #00796b; font-size: 18px; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 2px solid #009688; }
+        .section p { margin-bottom: 12px; color: #555; }
+        .highlight-box { background: #e0f2f1; border-left: 4px solid #009688; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+        .fund-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 20px 0; }
+        .fund-card { background: #f8f9fa; padding: 15px; border-radius: 8px; border: 2px solid #e0e0e0; text-align: center; }
+        .fund-card h4 { color: #00796b; margin-bottom: 5px; }
+        .fund-card .amount { font-size: 20px; font-weight: 700; color: #009688; }
+        .fund-card .monthly { font-size: 12px; color: #666; }
+        .checklist { list-style: none; padding: 0; }
+        .checklist li { padding: 12px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 12px; }
+        .checklist li:last-child { border-bottom: none; }
+        .checklist input[type="checkbox"] { width: 20px; height: 20px; margin-top: 2px; cursor: pointer; flex-shrink: 0; }
+        .checklist label { cursor: pointer; flex: 1; }
+        .checklist .done { text-decoration: line-through; color: #888; }
+        .example-box { background: #fff8e1; border: 2px solid #ffc107; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        .example-box h3 { color: #f57f17; margin-bottom: 10px; }
+        .progress-section { background: #f8f9fa; padding: 20px; border-radius: 8px; margin-top: 30px; }
+        .progress-bar { height: 20px; background: #e0e0e0; border-radius: 10px; overflow: hidden; margin: 10px 0; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #009688, #00796b); transition: width 0.3s; border-radius: 10px; }
+        .progress-text { text-align: center; font-weight: 600; color: #00796b; }
+        .cta-button { display: block; width: 100%; padding: 15px; background: #009688; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; text-align: center; text-decoration: none; margin-top: 20px; }
+        .cta-button:hover { background: #00796b; }
+        .back-link { display: inline-block; margin: 20px 30px; color: #666; text-decoration: none; font-size: 14px; }
+        .back-link:hover { color: #009688; }
+        @media (max-width: 600px) { .fund-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <a href="javascript:history.back()" class="back-link">← Back to Blueprint</a>
+    
+    <div class="playbook">
+        <div class="header">
+            <h1>🪣 Sinking Funds Setup</h1>
+            <p>Save for planned expenses so nothing is an "emergency"</p>
+            <div class="meta">
+                <span>⏱️ 20 Minutes</span>
+                <span>🎯 No More Surprises</span>
+                <span>💰 Stress-Free</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>What Are Sinking Funds?</h2>
+                <p>Sinking funds are savings accounts for <strong>planned expenses</strong>. Christmas comes every year - it's not an emergency. Car repairs happen - not an emergency. Save a little each month so these expenses are covered.</p>
+                <div class="highlight-box">
+                    <strong>The Magic:</strong> When you KNOW you have $800 saved for Christmas, December isn't stressful. When you KNOW you have $1,500 for car repairs, a flat tire is just an inconvenience, not a crisis.
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Common Sinking Funds</h2>
+                <div class="fund-grid">
+                    <div class="fund-card">
+                        <h4>🚗 Car Repairs</h4>
+                        <div class="amount">$1,500</div>
+                        <div class="monthly">≈ $125/month</div>
+                    </div>
+                    <div class="fund-card">
+                        <h4>🎄 Holidays/Gifts</h4>
+                        <div class="amount">$800</div>
+                        <div class="monthly">≈ $70/month</div>
+                    </div>
+                    <div class="fund-card">
+                        <h4>✈️ Vacation</h4>
+                        <div class="amount">$2,000</div>
+                        <div class="monthly">≈ $170/month</div>
+                    </div>
+                    <div class="fund-card">
+                        <h4>🏠 Home Repairs</h4>
+                        <div class="amount">$1,000</div>
+                        <div class="monthly">≈ $85/month</div>
+                    </div>
+                    <div class="fund-card">
+                        <h4>🐕 Pet Expenses</h4>
+                        <div class="amount">$500</div>
+                        <div class="monthly">≈ $45/month</div>
+                    </div>
+                    <div class="fund-card">
+                        <h4>📱 Tech Replacement</h4>
+                        <div class="amount">$600</div>
+                        <div class="monthly">≈ $50/month</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="example-box">
+                <h3>📊 How to Calculate</h3>
+                <p><strong>Formula:</strong> Target Amount ÷ Months Until Needed = Monthly Savings</p>
+                <p><strong>Example:</strong> $1,200 for Christmas ÷ 12 months = $100/month</p>
+                <p>Start in January, have $1,200 ready by December!</p>
+            </div>
+            
+            <div class="section">
+                <h2>Step 1: Choose Your Funds</h2>
+                <ul class="checklist">
+                    <li><input type="checkbox" id="c1" onchange="updateProgress()"><label for="c1">List all big expenses you know are coming this year</label></li>
+                    <li><input type="checkbox" id="c2" onchange="updateProgress()"><label for="c2">Estimate cost for each expense</label></li>
+                    <li><input type="checkbox" id="c3" onchange="updateProgress()"><label for="c3">Pick 2-3 funds to start (don't overdo it!)</label></li>
+                    <li><input type="checkbox" id="c4" onchange="updateProgress()"><label for="c4">Calculate monthly amount for each</label></li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>Step 2: Set Up Accounts</h2>
+                <ul class="checklist">
+                    <li><input type="checkbox" id="s1" onchange="updateProgress()"><label for="s1">Open a HYSA if you don't have one (see HYSA playbook)</label></li>
+                    <li><input type="checkbox" id="s2" onchange="updateProgress()"><label for="s2">Create sub-accounts or "buckets" for each fund</label></li>
+                    <li><input type="checkbox" id="s3" onchange="updateProgress()"><label for="s3">Name each account clearly (e.g., "CAR REPAIRS")</label></li>
+                </ul>
+                <p style="margin-top: 15px; font-size: 13px; color: #666;"><strong>Best banks for buckets:</strong> Ally Bank, Capital One 360, SoFi all let you create multiple savings "buckets" in one account.</p>
+            </div>
+            
+            <div class="section">
+                <h2>Step 3: Automate Transfers</h2>
+                <ul class="checklist">
+                    <li><input type="checkbox" id="a1" onchange="updateProgress()"><label for="a1">Set up automatic transfer for each fund</label></li>
+                    <li><input type="checkbox" id="a2" onchange="updateProgress()"><label for="a2">Schedule transfers 1-2 days after payday</label></li>
+                    <li><input type="checkbox" id="a3" onchange="updateProgress()"><label for="a3">Start small - you can increase later</label></li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>Step 4: Use Your Funds</h2>
+                <ul class="checklist">
+                    <li><input type="checkbox" id="u1" onchange="updateProgress()"><label for="u1">When expense comes, transfer from that fund only</label></li>
+                    <li><input type="checkbox" id="u2" onchange="updateProgress()"><label for="u2">Don't borrow from other funds!</label></li>
+                    <li><input type="checkbox" id="u3" onchange="updateProgress()"><label for="u3">After using, continue auto-transfers to rebuild</label></li>
+                </ul>
+            </div>
+            
+            <div class="progress-section">
+                <h3>Your Progress</h3>
+                <div class="progress-bar"><div class="progress-fill" id="progress-bar" style="width: 0%"></div></div>
+                <div class="progress-text" id="progress-text">0 of 13 tasks complete</div>
+            </div>
+            
+            <a href="javascript:history.back()" class="cta-button">✓ Return to Blueprint</a>
+        </div>
+    </div>
+    
+    <script>
+        const STORAGE_KEY = 'playbook_sinking';
+        function loadProgress() { const saved = localStorage.getItem(STORAGE_KEY); if (saved) { JSON.parse(saved).forEach(id => { const cb = document.getElementById(id); if (cb) { cb.checked = true; cb.nextElementSibling.classList.add('done'); } }); } updateProgress(); }
+        function updateProgress() { const checkboxes = document.querySelectorAll('input[type="checkbox"]'); const checked = []; let count = 0; checkboxes.forEach(cb => { if (cb.checked) { count++; checked.push(cb.id); cb.nextElementSibling.classList.add('done'); } else { cb.nextElementSibling.classList.remove('done'); } }); localStorage.setItem(STORAGE_KEY, JSON.stringify(checked)); document.getElementById('progress-bar').style.width = Math.round((count / checkboxes.length) * 100) + '%'; document.getElementById('progress-text').textContent = count + ' of ' + checkboxes.length + ' tasks complete'; }
+        document.addEventListener('DOMContentLoaded', loadProgress);
+    </script>
+</body>
+</html>

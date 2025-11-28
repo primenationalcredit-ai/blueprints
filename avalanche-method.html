@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avalanche Method | ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f5f5f5; color: #333; line-height: 1.6; }
+        .playbook { max-width: 700px; margin: 0 auto; background: white; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
+        .header { background: linear-gradient(135deg, #673ab7 0%, #512da8 100%); color: white; padding: 30px; text-align: center; }
+        .header h1 { font-size: 28px; margin-bottom: 10px; }
+        .header p { opacity: 0.9; font-size: 14px; }
+        .meta { display: flex; justify-content: center; gap: 20px; margin-top: 15px; font-size: 12px; }
+        .meta span { background: rgba(255,255,255,0.2); padding: 5px 12px; border-radius: 15px; }
+        .content { padding: 30px; }
+        .section { margin-bottom: 30px; }
+        .section h2 { color: #512da8; font-size: 18px; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 2px solid #673ab7; }
+        .section p { margin-bottom: 12px; color: #555; }
+        .highlight-box { background: #ede7f6; border-left: 4px solid #673ab7; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .comparison-table th, .comparison-table td { padding: 12px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .comparison-table th { background: #673ab7; color: white; }
+        .comparison-table tr:nth-child(even) { background: #f5f5f5; }
+        .step-box { background: #f8f9fa; border-left: 4px solid #673ab7; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+        .step-box h4 { color: #512da8; margin-bottom: 8px; }
+        .checklist { list-style: none; padding: 0; }
+        .checklist li { padding: 12px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 12px; }
+        .checklist li:last-child { border-bottom: none; }
+        .checklist input[type="checkbox"] { width: 20px; height: 20px; margin-top: 2px; cursor: pointer; flex-shrink: 0; }
+        .checklist label { cursor: pointer; flex: 1; }
+        .checklist .done { text-decoration: line-through; color: #888; }
+        .example-box { background: #fff3e0; border: 2px solid #ff9800; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        .example-box h3 { color: #e65100; margin-bottom: 15px; }
+        .progress-section { background: #f8f9fa; padding: 20px; border-radius: 8px; margin-top: 30px; }
+        .progress-bar { height: 20px; background: #e0e0e0; border-radius: 10px; overflow: hidden; margin: 10px 0; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #673ab7, #512da8); transition: width 0.3s; border-radius: 10px; }
+        .progress-text { text-align: center; font-weight: 600; color: #512da8; }
+        .cta-button { display: block; width: 100%; padding: 15px; background: #673ab7; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; text-align: center; text-decoration: none; margin-top: 20px; }
+        .cta-button:hover { background: #512da8; }
+        .back-link { display: inline-block; margin: 20px 30px; color: #666; text-decoration: none; font-size: 14px; }
+        .back-link:hover { color: #673ab7; }
+    </style>
+</head>
+<body>
+    <a href="javascript:history.back()" class="back-link">← Back to Blueprint</a>
+    
+    <div class="playbook">
+        <div class="header">
+            <h1>🏔️ Debt Avalanche Method</h1>
+            <p>Pay off debt faster and save the most money</p>
+            <div class="meta">
+                <span>💰 Saves Most $$$</span>
+                <span>📊 Math-Based</span>
+                <span>🎯 Highest APR First</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>What is the Avalanche Method?</h2>
+                <p>Pay minimum on all debts, then throw ALL extra money at the debt with the <strong>highest interest rate (APR)</strong>. Once that's paid off, move to the next highest. Repeat until debt-free.</p>
+                <div class="highlight-box">
+                    <strong>Why It Works:</strong> High-interest debt grows fastest. By killing it first, you pay less total interest and get out of debt sooner.
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Avalanche vs Snowball</h2>
+                <table class="comparison-table">
+                    <tr><th>Avalanche</th><th>Snowball</th></tr>
+                    <tr><td>Pay highest APR first</td><td>Pay smallest balance first</td></tr>
+                    <tr><td>Saves the most money</td><td>Quick wins for motivation</td></tr>
+                    <tr><td>Mathematically optimal</td><td>Psychologically easier</td></tr>
+                    <tr><td><strong>Recommended for most people</strong></td><td>Good if you need quick wins</td></tr>
+                </table>
+            </div>
+            
+            <div class="example-box">
+                <h3>📊 Example</h3>
+                <p><strong>Your debts:</strong></p>
+                <p>• Credit Card A: $5,000 at <strong>24% APR</strong> ← Attack this FIRST</p>
+                <p>• Credit Card B: $2,000 at 18% APR</p>
+                <p>• Car Loan: $8,000 at 6% APR</p>
+                <p style="margin-top: 15px;"><strong>Strategy:</strong> Pay minimums on Card B and Car Loan. Put ALL extra money toward Card A until it's $0. Then attack Card B.</p>
+            </div>
+            
+            <div class="section">
+                <h2>Step-by-Step Setup</h2>
+                <ul class="checklist">
+                    <li><input type="checkbox" id="s1" onchange="updateProgress()"><label for="s1">List ALL your debts (credit cards, loans, etc.)</label></li>
+                    <li><input type="checkbox" id="s2" onchange="updateProgress()"><label for="s2">Find the APR (interest rate) for each debt</label></li>
+                    <li><input type="checkbox" id="s3" onchange="updateProgress()"><label for="s3">Sort debts from HIGHEST to LOWEST APR</label></li>
+                    <li><input type="checkbox" id="s4" onchange="updateProgress()"><label for="s4">Set up autopay for MINIMUM payment on all debts</label></li>
+                    <li><input type="checkbox" id="s5" onchange="updateProgress()"><label for="s5">Calculate your monthly surplus (income - expenses)</label></li>
+                    <li><input type="checkbox" id="s6" onchange="updateProgress()"><label for="s6">Set up extra payment to #1 highest APR debt</label></li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>Where to Find Your APR</h2>
+                <div class="step-box">
+                    <h4>Credit Cards</h4>
+                    <p>Log in → Statements or Account Details → Look for "Purchase APR" or "Interest Rate"</p>
+                </div>
+                <div class="step-box">
+                    <h4>Loans</h4>
+                    <p>Check your original loan documents or log in to lender's website → Loan Details</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Monthly Routine</h2>
+                <ul class="checklist">
+                    <li><input type="checkbox" id="m1" onchange="updateProgress()"><label for="m1">Check that all minimum payments went through</label></li>
+                    <li><input type="checkbox" id="m2" onchange="updateProgress()"><label for="m2">Make extra payment to highest APR debt</label></li>
+                    <li><input type="checkbox" id="m3" onchange="updateProgress()"><label for="m3">Update your debt tracker (balance remaining)</label></li>
+                    <li><input type="checkbox" id="m4" onchange="updateProgress()"><label for="m4">Celebrate progress (even small wins!)</label></li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>When a Debt is Paid Off</h2>
+                <ul class="checklist">
+                    <li><input type="checkbox" id="p1" onchange="updateProgress()"><label for="p1">🎉 Celebrate! You crushed one!</label></li>
+                    <li><input type="checkbox" id="p2" onchange="updateProgress()"><label for="p2">DO NOT close the credit card (hurts credit score)</label></li>
+                    <li><input type="checkbox" id="p3" onchange="updateProgress()"><label for="p3">Move ALL payment amount to next highest APR debt</label></li>
+                    <li><input type="checkbox" id="p4" onchange="updateProgress()"><label for="p4">Update your debt list and keep going!</label></li>
+                </ul>
+            </div>
+            
+            <div class="progress-section">
+                <h3>Your Progress</h3>
+                <div class="progress-bar"><div class="progress-fill" id="progress-bar" style="width: 0%"></div></div>
+                <div class="progress-text" id="progress-text">0 of 14 tasks complete</div>
+            </div>
+            
+            <a href="javascript:history.back()" class="cta-button">✓ Return to Blueprint</a>
+        </div>
+    </div>
+    
+    <script>
+        const STORAGE_KEY = 'playbook_avalanche';
+        function loadProgress() { const saved = localStorage.getItem(STORAGE_KEY); if (saved) { JSON.parse(saved).forEach(id => { const cb = document.getElementById(id); if (cb) { cb.checked = true; cb.nextElementSibling.classList.add('done'); } }); } updateProgress(); }
+        function updateProgress() { const checkboxes = document.querySelectorAll('input[type="checkbox"]'); const checked = []; let count = 0; checkboxes.forEach(cb => { if (cb.checked) { count++; checked.push(cb.id); cb.nextElementSibling.classList.add('done'); } else { cb.nextElementSibling.classList.remove('done'); } }); localStorage.setItem(STORAGE_KEY, JSON.stringify(checked)); document.getElementById('progress-bar').style.width = Math.round((count / checkboxes.length) * 100) + '%'; document.getElementById('progress-text').textContent = count + ' of ' + checkboxes.length + ' tasks complete'; }
+        document.addEventListener('DOMContentLoaded', loadProgress);
+    </script>
+</body>
+</html>

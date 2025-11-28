@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Cancel Scripts | ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f5f5f5; color: #333; line-height: 1.6; }
+        .playbook { max-width: 700px; margin: 0 auto; background: white; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
+        .header { background: linear-gradient(135deg, #607d8b 0%, #455a64 100%); color: white; padding: 30px; text-align: center; }
+        .header h1 { font-size: 28px; margin-bottom: 10px; }
+        .header p { opacity: 0.9; font-size: 14px; }
+        .meta { display: flex; justify-content: center; gap: 20px; margin-top: 15px; font-size: 12px; }
+        .meta span { background: rgba(255,255,255,0.2); padding: 5px 12px; border-radius: 15px; }
+        .content { padding: 30px; }
+        .section { margin-bottom: 30px; }
+        .section h2 { color: #455a64; font-size: 18px; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 2px solid #607d8b; }
+        .section p { margin-bottom: 12px; color: #555; }
+        .highlight-box { background: #eceff1; border-left: 4px solid #607d8b; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+        .script-box { background: #f5f5f5; border: 2px solid #e0e0e0; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        .script-box h3 { color: #333; font-size: 16px; margin-bottom: 10px; }
+        .script-box p { font-style: italic; line-height: 1.8; margin-bottom: 10px; }
+        .script-box .label { font-weight: 600; color: #455a64; font-style: normal; }
+        .sub-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 20px 0; }
+        .sub-card { background: #f8f9fa; padding: 15px; border-radius: 8px; border: 2px solid #e0e0e0; }
+        .sub-card h4 { color: #455a64; margin-bottom: 5px; font-size: 14px; }
+        .sub-card p { font-size: 12px; color: #666; }
+        .sub-card .price { color: #e53935; font-weight: 600; }
+        .checklist { list-style: none; padding: 0; }
+        .checklist li { padding: 12px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 12px; }
+        .checklist li:last-child { border-bottom: none; }
+        .checklist input[type="checkbox"] { width: 20px; height: 20px; margin-top: 2px; cursor: pointer; flex-shrink: 0; }
+        .checklist label { cursor: pointer; flex: 1; }
+        .checklist .done { text-decoration: line-through; color: #888; }
+        .tip-box { background: #e8f5e9; border: 2px solid #4caf50; padding: 15px 20px; border-radius: 8px; margin: 20px 0; }
+        .tip-box h3 { color: #2e7d32; font-size: 14px; margin-bottom: 8px; }
+        .progress-section { background: #f8f9fa; padding: 20px; border-radius: 8px; margin-top: 30px; }
+        .progress-bar { height: 20px; background: #e0e0e0; border-radius: 10px; overflow: hidden; margin: 10px 0; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #607d8b, #455a64); transition: width 0.3s; border-radius: 10px; }
+        .progress-text { text-align: center; font-weight: 600; color: #455a64; }
+        .cta-button { display: block; width: 100%; padding: 15px; background: #607d8b; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; text-align: center; text-decoration: none; margin-top: 20px; }
+        .cta-button:hover { background: #455a64; }
+        .back-link { display: inline-block; margin: 20px 30px; color: #666; text-decoration: none; font-size: 14px; }
+        .back-link:hover { color: #607d8b; }
+        @media (max-width: 600px) { .sub-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <a href="javascript:history.back()" class="back-link">← Back to Blueprint</a>
+    
+    <div class="playbook">
+        <div class="header">
+            <h1>✂️ Subscription Cancel Scripts</h1>
+            <p>Cut the fat - keep only what you actually use</p>
+            <div class="meta">
+                <span>💰 Save $50-200/mo</span>
+                <span>⏱️ 5 min each</span>
+                <span>📞 Scripts included</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>The Subscription Trap</h2>
+                <p>The average American spends <strong>$219/month</strong> on subscriptions - and underestimates it by 2-3x. Time to audit and cut.</p>
+                <div class="highlight-box">
+                    <strong>The Rule:</strong> If you haven't used it in the last 7 days, cancel it. You can always resubscribe later.
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Common Subscriptions to Audit</h2>
+                <div class="sub-grid">
+                    <div class="sub-card"><h4>🎬 Streaming</h4><p>Netflix, Hulu, Disney+, HBO Max, Prime Video, Peacock, Paramount+, Apple TV+</p><p class="price">$8-20/mo each</p></div>
+                    <div class="sub-card"><h4>🎵 Music</h4><p>Spotify, Apple Music, YouTube Music, Pandora, Tidal, Amazon Music</p><p class="price">$10-15/mo</p></div>
+                    <div class="sub-card"><h4>🏋️ Fitness</h4><p>Gym memberships, Peloton, ClassPass, fitness apps</p><p class="price">$10-50/mo</p></div>
+                    <div class="sub-card"><h4>📦 Shopping</h4><p>Amazon Prime, Walmart+, Costco, subscription boxes</p><p class="price">$10-15/mo</p></div>
+                    <div class="sub-card"><h4>☁️ Cloud/Apps</h4><p>iCloud, Google One, Dropbox, password managers, VPNs</p><p class="price">$3-15/mo</p></div>
+                    <div class="sub-card"><h4>📰 News/Learning</h4><p>NYT, WSJ, Masterclass, Audible, magazines</p><p class="price">$10-20/mo</p></div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Step 1: Find ALL Subscriptions</h2>
+                <ul class="checklist">
+                    <li><input type="checkbox" id="f1" onchange="updateProgress()"><label for="f1">Check bank statements for recurring charges</label></li>
+                    <li><input type="checkbox" id="f2" onchange="updateProgress()"><label for="f2">Check credit card statements</label></li>
+                    <li><input type="checkbox" id="f3" onchange="updateProgress()"><label for="f3">Check Apple/Google Play subscriptions on phone</label></li>
+                    <li><input type="checkbox" id="f4" onchange="updateProgress()"><label for="f4">Check PayPal recurring payments</label></li>
+                    <li><input type="checkbox" id="f5" onchange="updateProgress()"><label for="f5">Make a list with name + monthly cost</label></li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>Step 2: The 7-Day Test</h2>
+                <ul class="checklist">
+                    <li><input type="checkbox" id="t1" onchange="updateProgress()"><label for="t1">For each subscription, ask: "Did I use this in the last 7 days?"</label></li>
+                    <li><input type="checkbox" id="t2" onchange="updateProgress()"><label for="t2">If NO → Mark for cancellation</label></li>
+                    <li><input type="checkbox" id="t3" onchange="updateProgress()"><label for="t3">If YES but rarely → Mark for downgrade</label></li>
+                </ul>
+            </div>
+            
+            <div class="script-box">
+                <h3>📞 Phone Cancellation Script</h3>
+                <p><span class="label">You:</span> "Hi, I'd like to cancel my subscription, please."</p>
+                <p><span class="label">Them:</span> "Can I ask why you're canceling?"</p>
+                <p><span class="label">You:</span> "I'm cutting expenses and I'm not using it enough to justify the cost."</p>
+                <p><span class="label">Them:</span> "What if we offer you 50% off for 3 months?"</p>
+                <p><span class="label">You:</span> "I appreciate that, but I'd still like to cancel. I can always resubscribe later if I need it."</p>
+            </div>
+            
+            <div class="tip-box">
+                <h3>💡 Retention Offer Tips</h3>
+                <p>• Companies often offer 50-75% off to keep you</p>
+                <p>• Only accept if you ACTUALLY use the service</p>
+                <p>• Set a reminder to cancel before the discount ends</p>
+                <p>• "Let me think about it" = they'll often sweeten the offer</p>
+            </div>
+            
+            <div class="section">
+                <h2>Step 3: Cancel!</h2>
+                <ul class="checklist">
+                    <li><input type="checkbox" id="c1" onchange="updateProgress()"><label for="c1">Cancel subscription #1: ________________</label></li>
+                    <li><input type="checkbox" id="c2" onchange="updateProgress()"><label for="c2">Cancel subscription #2: ________________</label></li>
+                    <li><input type="checkbox" id="c3" onchange="updateProgress()"><label for="c3">Cancel subscription #3: ________________</label></li>
+                    <li><input type="checkbox" id="c4" onchange="updateProgress()"><label for="c4">Cancel subscription #4: ________________</label></li>
+                    <li><input type="checkbox" id="c5" onchange="updateProgress()"><label for="c5">Cancel subscription #5: ________________</label></li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>Step 4: Move the Savings</h2>
+                <ul class="checklist">
+                    <li><input type="checkbox" id="s1" onchange="updateProgress()"><label for="s1">Add up total monthly savings: $________</label></li>
+                    <li><input type="checkbox" id="s2" onchange="updateProgress()"><label for="s2">Set up auto-transfer for that amount to Emergency Fund</label></li>
+                </ul>
+            </div>
+            
+            <div class="progress-section">
+                <h3>Your Progress</h3>
+                <div class="progress-bar"><div class="progress-fill" id="progress-bar" style="width: 0%"></div></div>
+                <div class="progress-text" id="progress-text">0 of 15 tasks complete</div>
+            </div>
+            
+            <a href="javascript:history.back()" class="cta-button">✓ Return to Blueprint</a>
+        </div>
+    </div>
+    
+    <script>
+        const STORAGE_KEY = 'playbook_subscriptions';
+        function loadProgress() { const saved = localStorage.getItem(STORAGE_KEY); if (saved) { JSON.parse(saved).forEach(id => { const cb = document.getElementById(id); if (cb) { cb.checked = true; cb.nextElementSibling.classList.add('done'); } }); } updateProgress(); }
+        function updateProgress() { const checkboxes = document.querySelectorAll('input[type="checkbox"]'); const checked = []; let count = 0; checkboxes.forEach(cb => { if (cb.checked) { count++; checked.push(cb.id); cb.nextElementSibling.classList.add('done'); } else { cb.nextElementSibling.classList.remove('done'); } }); localStorage.setItem(STORAGE_KEY, JSON.stringify(checked)); document.getElementById('progress-bar').style.width = Math.round((count / checkboxes.length) * 100) + '%'; document.getElementById('progress-text').textContent = count + ' of ' + checkboxes.length + ' tasks complete'; }
+        document.addEventListener('DOMContentLoaded', loadProgress);
+    </script>
+</body>
+</html>

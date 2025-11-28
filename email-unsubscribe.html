@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Unsubscribe Guide | ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f5f5f5; color: #333; line-height: 1.6; }
+        .playbook { max-width: 700px; margin: 0 auto; background: white; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
+        .header { background: linear-gradient(135deg, #5c6bc0 0%, #3949ab 100%); color: white; padding: 30px; text-align: center; }
+        .header h1 { font-size: 28px; margin-bottom: 10px; }
+        .header p { opacity: 0.9; font-size: 14px; }
+        .meta { display: flex; justify-content: center; gap: 20px; margin-top: 15px; font-size: 12px; }
+        .meta span { background: rgba(255,255,255,0.2); padding: 5px 12px; border-radius: 15px; }
+        .content { padding: 30px; }
+        .section { margin-bottom: 30px; }
+        .section h2 { color: #3949ab; font-size: 18px; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 2px solid #5c6bc0; }
+        .section p { margin-bottom: 12px; color: #555; }
+        .highlight-box { background: #e8eaf6; border-left: 4px solid #5c6bc0; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+        .checklist { list-style: none; padding: 0; }
+        .checklist li { padding: 12px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 12px; }
+        .checklist li:last-child { border-bottom: none; }
+        .checklist input[type="checkbox"] { width: 20px; height: 20px; margin-top: 2px; cursor: pointer; flex-shrink: 0; }
+        .checklist label { cursor: pointer; flex: 1; }
+        .checklist .done { text-decoration: line-through; color: #888; }
+        .method-box { background: #f8f9fa; border: 2px solid #e0e0e0; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        .method-box h3 { color: #3949ab; margin-bottom: 10px; }
+        .method-box ol { margin-left: 20px; }
+        .method-box li { margin: 8px 0; }
+        .counter-box { background: linear-gradient(135deg, #4caf50, #2e7d32); color: white; padding: 25px; border-radius: 8px; margin: 20px 0; text-align: center; }
+        .counter-box h3 { font-size: 16px; margin-bottom: 10px; }
+        .counter-box .count { font-size: 48px; font-weight: 700; }
+        .counter-box .label { font-size: 14px; opacity: 0.9; }
+        .progress-section { background: #f8f9fa; padding: 20px; border-radius: 8px; margin-top: 30px; }
+        .progress-bar { height: 20px; background: #e0e0e0; border-radius: 10px; overflow: hidden; margin: 10px 0; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #5c6bc0, #3949ab); transition: width 0.3s; border-radius: 10px; }
+        .progress-text { text-align: center; font-weight: 600; color: #3949ab; }
+        .cta-button { display: block; width: 100%; padding: 15px; background: #5c6bc0; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; text-align: center; text-decoration: none; margin-top: 20px; }
+        .cta-button:hover { background: #3949ab; }
+        .back-link { display: inline-block; margin: 20px 30px; color: #666; text-decoration: none; font-size: 14px; }
+        .back-link:hover { color: #5c6bc0; }
+    </style>
+</head>
+<body>
+    <a href="javascript:history.back()" class="back-link">← Back to Blueprint</a>
+    
+    <div class="playbook">
+        <div class="header">
+            <h1>📧 Email Unsubscribe Guide</h1>
+            <p>Stop the daily temptation in your inbox</p>
+            <div class="meta">
+                <span>⏱️ 20-30 Minutes</span>
+                <span>📩 Clean Inbox</span>
+                <span>🛡️ Remove Triggers</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>Why Marketing Emails Hurt</h2>
+                <p>Every "SALE ENDS TODAY!" email is designed to create urgency and FOMO. They're not informing you - they're manipulating you into spending money you didn't plan to spend.</p>
+                <div class="highlight-box">
+                    <strong>Goal:</strong> Unsubscribe from 10+ marketing emails today. Remove the daily temptation from your inbox.
+                </div>
+            </div>
+            
+            <div class="method-box">
+                <h3>Method 1: Manual Unsubscribe (15 min)</h3>
+                <ol>
+                    <li>Open your email inbox</li>
+                    <li>Search for "unsubscribe" - this finds marketing emails</li>
+                    <li>Open each email and scroll to the bottom</li>
+                    <li>Click the tiny "Unsubscribe" link</li>
+                    <li>Confirm on the website</li>
+                    <li>Repeat 10+ times</li>
+                </ol>
+            </div>
+            
+            <div class="method-box">
+                <h3>Method 2: Use Unroll.me (5 min)</h3>
+                <ol>
+                    <li>Go to Unroll.me</li>
+                    <li>Connect your email account</li>
+                    <li>See ALL your subscriptions in one list</li>
+                    <li>One-click unsubscribe from each</li>
+                    <li>Free and fast!</li>
+                </ol>
+            </div>
+            
+            <div class="section">
+                <h2>Priority Unsubscribes</h2>
+                <ul class="checklist">
+                    <li><input type="checkbox" id="u1" onchange="updateProgress(); updateCounter()"><label for="u1">Amazon - daily deals, recommendations</label></li>
+                    <li><input type="checkbox" id="u2" onchange="updateProgress(); updateCounter()"><label for="u2">Target - weekly ads, Circle offers</label></li>
+                    <li><input type="checkbox" id="u3" onchange="updateProgress(); updateCounter()"><label for="u3">Walmart - rollbacks, savings catcher</label></li>
+                    <li><input type="checkbox" id="u4" onchange="updateProgress(); updateCounter()"><label for="u4">Clothing stores (Gap, Old Navy, H&M, etc.)</label></li>
+                    <li><input type="checkbox" id="u5" onchange="updateProgress(); updateCounter()"><label for="u5">Department stores (Macy's, Nordstrom, etc.)</label></li>
+                    <li><input type="checkbox" id="u6" onchange="updateProgress(); updateCounter()"><label for="u6">Food delivery (DoorDash, Uber Eats)</label></li>
+                    <li><input type="checkbox" id="u7" onchange="updateProgress(); updateCounter()"><label for="u7">Restaurant chains (Starbucks, Chipotle, etc.)</label></li>
+                    <li><input type="checkbox" id="u8" onchange="updateProgress(); updateCounter()"><label for="u8">Beauty/cosmetics stores</label></li>
+                    <li><input type="checkbox" id="u9" onchange="updateProgress(); updateCounter()"><label for="u9">Electronics (Best Buy, Apple, etc.)</label></li>
+                    <li><input type="checkbox" id="u10" onchange="updateProgress(); updateCounter()"><label for="u10">Home goods (Wayfair, Bed Bath, etc.)</label></li>
+                </ul>
+            </div>
+            
+            <div class="counter-box">
+                <h3>🎉 Your Unsubscribe Count</h3>
+                <div class="count" id="unsubscribe-count">0</div>
+                <div class="label">emails eliminated</div>
+            </div>
+            
+            <div class="section">
+                <h2>Bonus: Set Up Filters</h2>
+                <ul class="checklist">
+                    <li><input type="checkbox" id="f1" onchange="updateProgress()"><label for="f1">Create a filter to auto-delete emails with "% off"</label></li>
+                    <li><input type="checkbox" id="f2" onchange="updateProgress()"><label for="f2">Create a filter for "sale ends" → trash</label></li>
+                    <li><input type="checkbox" id="f3" onchange="updateProgress()"><label for="f3">Create a filter for "limited time" → trash</label></li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>Going Forward</h2>
+                <ul class="checklist">
+                    <li><input type="checkbox" id="g1" onchange="updateProgress()"><label for="g1">Never give stores your real email at checkout</label></li>
+                    <li><input type="checkbox" id="g2" onchange="updateProgress()"><label for="g2">Use a separate email for shopping (check monthly only)</label></li>
+                    <li><input type="checkbox" id="g3" onchange="updateProgress()"><label for="g3">Uncheck "send me offers" boxes when buying online</label></li>
+                </ul>
+            </div>
+            
+            <div class="progress-section">
+                <h3>Your Progress</h3>
+                <div class="progress-bar"><div class="progress-fill" id="progress-bar" style="width: 0%"></div></div>
+                <div class="progress-text" id="progress-text">0 of 16 tasks complete</div>
+            </div>
+            
+            <a href="javascript:history.back()" class="cta-button">✓ Return to Blueprint</a>
+        </div>
+    </div>
+    
+    <script>
+        const STORAGE_KEY = 'playbook_email';
+        function loadProgress() { const saved = localStorage.getItem(STORAGE_KEY); if (saved) { JSON.parse(saved).forEach(id => { const cb = document.getElementById(id); if (cb) { cb.checked = true; cb.nextElementSibling.classList.add('done'); } }); } updateProgress(); updateCounter(); }
+        function updateProgress() { const checkboxes = document.querySelectorAll('input[type="checkbox"]'); const checked = []; let count = 0; checkboxes.forEach(cb => { if (cb.checked) { count++; checked.push(cb.id); cb.nextElementSibling.classList.add('done'); } else { cb.nextElementSibling.classList.remove('done'); } }); localStorage.setItem(STORAGE_KEY, JSON.stringify(checked)); document.getElementById('progress-bar').style.width = Math.round((count / checkboxes.length) * 100) + '%'; document.getElementById('progress-text').textContent = count + ' of ' + checkboxes.length + ' tasks complete'; }
+        function updateCounter() { let count = 0; for (let i = 1; i <= 10; i++) { if (document.getElementById('u' + i).checked) count++; } document.getElementById('unsubscribe-count').textContent = count; }
+        document.addEventListener('DOMContentLoaded', loadProgress);
+    </script>
+</body>
+</html>

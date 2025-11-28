@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gig Economy Starter | ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f5f5f5; color: #333; line-height: 1.6; }
+        .playbook { max-width: 700px; margin: 0 auto; background: white; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
+        .header { background: linear-gradient(135deg, #ffc107 0%, #ffa000 100%); color: #333; padding: 30px; text-align: center; }
+        .header h1 { font-size: 28px; margin-bottom: 10px; }
+        .header p { opacity: 0.8; font-size: 14px; }
+        .meta { display: flex; justify-content: center; gap: 20px; margin-top: 15px; font-size: 12px; }
+        .meta span { background: rgba(255,255,255,0.5); padding: 5px 12px; border-radius: 15px; }
+        .content { padding: 30px; }
+        .section { margin-bottom: 30px; }
+        .section h2 { color: #f57f17; font-size: 18px; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 2px solid #ffc107; }
+        .highlight-box { background: #fff8e1; border-left: 4px solid #ffc107; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+        .gig-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 20px 0; }
+        .gig-card { background: #f8f9fa; padding: 15px; border-radius: 8px; border: 2px solid #e0e0e0; }
+        .gig-card h4 { color: #f57f17; margin-bottom: 5px; }
+        .gig-card .earnings { color: #2e7d32; font-weight: 600; font-size: 14px; }
+        .gig-card p { font-size: 12px; color: #666; margin-top: 5px; }
+        .checklist { list-style: none; padding: 0; }
+        .checklist li { padding: 12px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 12px; }
+        .checklist li:last-child { border-bottom: none; }
+        .checklist input[type="checkbox"] { width: 20px; height: 20px; margin-top: 2px; cursor: pointer; flex-shrink: 0; }
+        .checklist label { cursor: pointer; flex: 1; }
+        .checklist .done { text-decoration: line-through; color: #888; }
+        .progress-section { background: #f8f9fa; padding: 20px; border-radius: 8px; margin-top: 30px; }
+        .progress-bar { height: 20px; background: #e0e0e0; border-radius: 10px; overflow: hidden; margin: 10px 0; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #ffc107, #ffa000); transition: width 0.3s; border-radius: 10px; }
+        .progress-text { text-align: center; font-weight: 600; color: #f57f17; }
+        .cta-button { display: block; width: 100%; padding: 15px; background: #ffc107; color: #333; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; text-align: center; text-decoration: none; margin-top: 20px; }
+        .back-link { display: inline-block; margin: 20px 30px; color: #666; text-decoration: none; font-size: 14px; }
+        @media (max-width: 600px) { .gig-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <a href="javascript:history.back()" class="back-link">← Back to Blueprint</a>
+    <div class="playbook">
+        <div class="header">
+            <h1>💼 Gig Economy Starter</h1>
+            <p>Start earning extra income this week</p>
+            <div class="meta">
+                <span>💰 $200-1000+/mo</span>
+                <span>⏱️ Flexible hours</span>
+                <span>📱 Phone + car</span>
+            </div>
+        </div>
+        <div class="content">
+            <div class="section">
+                <h2>Top Gig Apps</h2>
+                <div class="gig-grid">
+                    <div class="gig-card"><h4>🚗 Uber/Lyft</h4><div class="earnings">$15-25/hr</div><p>Drive passengers. Flexible hours.</p></div>
+                    <div class="gig-card"><h4>🍔 DoorDash</h4><div class="earnings">$15-22/hr</div><p>Deliver food. No passengers.</p></div>
+                    <div class="gig-card"><h4>🛒 Instacart</h4><div class="earnings">$15-25/hr</div><p>Shop & deliver groceries.</p></div>
+                    <div class="gig-card"><h4>📦 Amazon Flex</h4><div class="earnings">$18-25/hr</div><p>Deliver packages. Scheduled blocks.</p></div>
+                    <div class="gig-card"><h4>🐕 Rover</h4><div class="earnings">$20-40/walk</div><p>Dog walking & pet sitting.</p></div>
+                    <div class="gig-card"><h4>🔧 TaskRabbit</h4><div class="earnings">$20-50/hr</div><p>Handyman, moving, assembly.</p></div>
+                </div>
+            </div>
+            
+            <div class="highlight-box"><strong>Goal:</strong> Sign up for 1-2 apps TODAY. Complete your first gig within 7 days.</div>
+            
+            <div class="section">
+                <h2>Getting Started</h2>
+                <ul class="checklist">
+                    <li><input type="checkbox" id="s1" onchange="updateProgress()"><label for="s1">Choose 1-2 gig apps that fit your situation</label></li>
+                    <li><input type="checkbox" id="s2" onchange="updateProgress()"><label for="s2">Download the app and create account</label></li>
+                    <li><input type="checkbox" id="s3" onchange="updateProgress()"><label for="s3">Complete background check (1-7 days)</label></li>
+                    <li><input type="checkbox" id="s4" onchange="updateProgress()"><label for="s4">Set up direct deposit for payments</label></li>
+                    <li><input type="checkbox" id="s5" onchange="updateProgress()"><label for="s5">Watch training videos in the app</label></li>
+                    <li><input type="checkbox" id="s6" onchange="updateProgress()"><label for="s6">Schedule your first shift/availability</label></li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>First Week Goals</h2>
+                <ul class="checklist">
+                    <li><input type="checkbox" id="g1" onchange="updateProgress()"><label for="g1">Complete first gig/delivery</label></li>
+                    <li><input type="checkbox" id="g2" onchange="updateProgress()"><label for="g2">Work at least 5 hours total</label></li>
+                    <li><input type="checkbox" id="g3" onchange="updateProgress()"><label for="g3">Track mileage for tax deduction</label></li>
+                    <li><input type="checkbox" id="g4" onchange="updateProgress()"><label for="g4">Transfer ALL gig earnings to Emergency Fund</label></li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>Pro Tips</h2>
+                <ul class="checklist">
+                    <li><input type="checkbox" id="t1" onchange="updateProgress()"><label for="t1">Work peak hours: Lunch (11-1), Dinner (5-9), Weekends</label></li>
+                    <li><input type="checkbox" id="t2" onchange="updateProgress()"><label for="t2">Use multiple apps - switch to whoever pays more</label></li>
+                    <li><input type="checkbox" id="t3" onchange="updateProgress()"><label for="t3">Track EVERY mile - it's a tax deduction (~$0.67/mile)</label></li>
+                    <li><input type="checkbox" id="t4" onchange="updateProgress()"><label for="t4">Set aside 25-30% for taxes</label></li>
+                </ul>
+            </div>
+            
+            <div class="progress-section">
+                <h3>Your Progress</h3>
+                <div class="progress-bar"><div class="progress-fill" id="progress-bar" style="width: 0%"></div></div>
+                <div class="progress-text" id="progress-text">0 of 14 tasks complete</div>
+            </div>
+            <a href="javascript:history.back()" class="cta-button">✓ Return to Blueprint</a>
+        </div>
+    </div>
+    <script>
+        const STORAGE_KEY = 'playbook_gig';
+        function loadProgress() { const saved = localStorage.getItem(STORAGE_KEY); if (saved) { JSON.parse(saved).forEach(id => { const cb = document.getElementById(id); if (cb) { cb.checked = true; cb.nextElementSibling.classList.add('done'); } }); } updateProgress(); }
+        function updateProgress() { const checkboxes = document.querySelectorAll('input[type="checkbox"]'); const checked = []; let count = 0; checkboxes.forEach(cb => { if (cb.checked) { count++; checked.push(cb.id); cb.nextElementSibling.classList.add('done'); } else { cb.nextElementSibling.classList.remove('done'); } }); localStorage.setItem(STORAGE_KEY, JSON.stringify(checked)); document.getElementById('progress-bar').style.width = Math.round((count / checkboxes.length) * 100) + '%'; document.getElementById('progress-text').textContent = count + ' of ' + checkboxes.length + ' tasks complete'; }
+        document.addEventListener('DOMContentLoaded', loadProgress);
+    </script>
+</body>
+</html>

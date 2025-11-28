@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Negotiation Scripts | ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f5f5f5; color: #333; line-height: 1.6; }
+        .playbook { max-width: 700px; margin: 0 auto; background: white; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
+        .header { background: linear-gradient(135deg, #795548 0%, #5d4037 100%); color: white; padding: 30px; text-align: center; }
+        .header h1 { font-size: 28px; margin-bottom: 10px; }
+        .header p { opacity: 0.9; font-size: 14px; }
+        .meta { display: flex; justify-content: center; gap: 20px; margin-top: 15px; font-size: 12px; }
+        .meta span { background: rgba(255,255,255,0.2); padding: 5px 12px; border-radius: 15px; }
+        .content { padding: 30px; }
+        .section { margin-bottom: 30px; }
+        .section h2 { color: #5d4037; font-size: 18px; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 2px solid #795548; }
+        .section p { margin-bottom: 12px; color: #555; }
+        .highlight-box { background: #efebe9; border-left: 4px solid #795548; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+        .script-box { background: #f5f5f5; border: 2px solid #e0e0e0; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        .script-box h3 { color: #5d4037; font-size: 16px; margin-bottom: 15px; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+        .script-line { margin-bottom: 12px; }
+        .script-line .you { background: #e3f2fd; padding: 10px 15px; border-radius: 8px; margin: 5px 0; }
+        .script-line .them { background: #f5f5f5; padding: 10px 15px; border-radius: 8px; margin: 5px 0; font-style: italic; color: #666; }
+        .script-line .label { font-weight: 600; font-size: 12px; color: #888; margin-bottom: 3px; display: block; }
+        .savings-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 20px 0; }
+        .savings-card { background: #e8f5e9; padding: 15px; border-radius: 8px; text-align: center; border: 2px solid #4caf50; }
+        .savings-card h4 { color: #2e7d32; margin-bottom: 5px; }
+        .savings-card .amount { font-size: 24px; font-weight: 700; color: #1b5e20; }
+        .checklist { list-style: none; padding: 0; }
+        .checklist li { padding: 12px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 12px; }
+        .checklist li:last-child { border-bottom: none; }
+        .checklist input[type="checkbox"] { width: 20px; height: 20px; margin-top: 2px; cursor: pointer; flex-shrink: 0; }
+        .checklist label { cursor: pointer; flex: 1; }
+        .checklist .done { text-decoration: line-through; color: #888; }
+        .progress-section { background: #f8f9fa; padding: 20px; border-radius: 8px; margin-top: 30px; }
+        .progress-bar { height: 20px; background: #e0e0e0; border-radius: 10px; overflow: hidden; margin: 10px 0; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #795548, #5d4037); transition: width 0.3s; border-radius: 10px; }
+        .progress-text { text-align: center; font-weight: 600; color: #5d4037; }
+        .cta-button { display: block; width: 100%; padding: 15px; background: #795548; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; text-align: center; text-decoration: none; margin-top: 20px; }
+        .cta-button:hover { background: #5d4037; }
+        .back-link { display: inline-block; margin: 20px 30px; color: #666; text-decoration: none; font-size: 14px; }
+        .back-link:hover { color: #795548; }
+        @media (max-width: 600px) { .savings-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <a href="javascript:history.back()" class="back-link">← Back to Blueprint</a>
+    
+    <div class="playbook">
+        <div class="header">
+            <h1>📞 Bill Negotiation Scripts</h1>
+            <p>Lower your monthly bills with proven scripts</p>
+            <div class="meta">
+                <span>💰 Save $50-200/mo</span>
+                <span>⏱️ 15-30 min</span>
+                <span>📞 Word-for-word scripts</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>Average Savings</h2>
+                <div class="savings-grid">
+                    <div class="savings-card"><h4>📱 Phone Bill</h4><div class="amount">$20-40/mo</div></div>
+                    <div class="savings-card"><h4>🌐 Internet</h4><div class="amount">$15-30/mo</div></div>
+                    <div class="savings-card"><h4>🚗 Car Insurance</h4><div class="amount">$30-100/mo</div></div>
+                    <div class="savings-card"><h4>📺 Cable/TV</h4><div class="amount">$30-50/mo</div></div>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <strong>Success Rate:</strong> 70%+ of people who call and ask politely get SOME discount. Companies would rather keep you at a lower rate than lose you entirely.
+            </div>
+            
+            <div class="script-box">
+                <h3>📱 Phone Bill Script</h3>
+                <div class="script-line">
+                    <span class="label">YOU:</span>
+                    <div class="you">"Hi, I've been a customer for [X years] and I'm reviewing my expenses. I've noticed competitors are offering lower rates. I'd like to see if there's anything you can do to help lower my bill."</div>
+                </div>
+                <div class="script-line">
+                    <span class="label">IF THEY SAY NO:</span>
+                    <div class="you">"I understand. Can I speak with someone in your retention or loyalty department? I'd hate to have to switch providers after being a customer for so long."</div>
+                </div>
+                <div class="script-line">
+                    <span class="label">MAGIC PHRASE:</span>
+                    <div class="you">"I've been looking at [Competitor Name]'s $[XX] plan. What can you do to keep my business?"</div>
+                </div>
+            </div>
+            
+            <div class="script-box">
+                <h3>🌐 Internet Bill Script</h3>
+                <div class="script-line">
+                    <span class="label">YOU:</span>
+                    <div class="you">"Hi, I'm calling because my bill seems higher than what I see advertised for new customers. I've been a loyal customer for [X years] and I'd like to get a better rate."</div>
+                </div>
+                <div class="script-line">
+                    <span class="label">IF THEY OFFER A SMALL DISCOUNT:</span>
+                    <div class="you">"I appreciate that, but I was hoping for something closer to the $[XX] promotional rate I'm seeing online. Is there any way to get closer to that?"</div>
+                </div>
+                <div class="script-line">
+                    <span class="label">NUCLEAR OPTION:</span>
+                    <div class="you">"I'd like to cancel my service, please." (Often triggers their best retention offers)</div>
+                </div>
+            </div>
+            
+            <div class="script-box">
+                <h3>🚗 Car Insurance Script</h3>
+                <div class="script-line">
+                    <span class="label">YOU:</span>
+                    <div class="you">"Hi, I'm reviewing my auto insurance and I'd like to make sure I'm getting the best rate. I've been a customer for [X years] with a clean driving record. Are there any discounts I might be missing?"</div>
+                </div>
+                <div class="script-line">
+                    <span class="label">COMMON DISCOUNTS TO ASK ABOUT:</span>
+                    <div class="you">
+                        • Safe driver discount<br>
+                        • Multi-policy (bundle home/renters)<br>
+                        • Paid-in-full discount<br>
+                        • Low mileage discount<br>
+                        • Good student discount<br>
+                        • Defensive driving course
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Negotiation Checklist</h2>
+                <ul class="checklist">
+                    <li><input type="checkbox" id="n1" onchange="updateProgress()"><label for="n1">Call phone company - ask for loyalty rate</label></li>
+                    <li><input type="checkbox" id="n2" onchange="updateProgress()"><label for="n2">Call internet provider - mention competitor rates</label></li>
+                    <li><input type="checkbox" id="n3" onchange="updateProgress()"><label for="n3">Call car insurance - ask about ALL discounts</label></li>
+                    <li><input type="checkbox" id="n4" onchange="updateProgress()"><label for="n4">Call home/renters insurance - bundle discount?</label></li>
+                    <li><input type="checkbox" id="n5" onchange="updateProgress()"><label for="n5">Review cable/streaming - downgrade or cancel?</label></li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>Pro Tips</h2>
+                <ul class="checklist">
+                    <li><input type="checkbox" id="t1" onchange="updateProgress()"><label for="t1">Call when you have 30+ minutes - don't rush</label></li>
+                    <li><input type="checkbox" id="t2" onchange="updateProgress()"><label for="t2">Be polite but firm - they deal with angry people all day</label></li>
+                    <li><input type="checkbox" id="t3" onchange="updateProgress()"><label for="t3">Write down: Rep name, date, what they promised</label></li>
+                    <li><input type="checkbox" id="t4" onchange="updateProgress()"><label for="t4">Set calendar reminder to call again in 6-12 months</label></li>
+                    <li><input type="checkbox" id="t5" onchange="updateProgress()"><label for="t5">Transfer ALL savings to Emergency Fund</label></li>
+                </ul>
+            </div>
+            
+            <div class="progress-section">
+                <h3>Your Progress</h3>
+                <div class="progress-bar"><div class="progress-fill" id="progress-bar" style="width: 0%"></div></div>
+                <div class="progress-text" id="progress-text">0 of 10 tasks complete</div>
+            </div>
+            
+            <a href="javascript:history.back()" class="cta-button">✓ Return to Blueprint</a>
+        </div>
+    </div>
+    
+    <script>
+        const STORAGE_KEY = 'playbook_negotiate';
+        function loadProgress() { const saved = localStorage.getItem(STORAGE_KEY); if (saved) { JSON.parse(saved).forEach(id => { const cb = document.getElementById(id); if (cb) { cb.checked = true; cb.nextElementSibling.classList.add('done'); } }); } updateProgress(); }
+        function updateProgress() { const checkboxes = document.querySelectorAll('input[type="checkbox"]'); const checked = []; let count = 0; checkboxes.forEach(cb => { if (cb.checked) { count++; checked.push(cb.id); cb.nextElementSibling.classList.add('done'); } else { cb.nextElementSibling.classList.remove('done'); } }); localStorage.setItem(STORAGE_KEY, JSON.stringify(checked)); document.getElementById('progress-bar').style.width = Math.round((count / checkboxes.length) * 100) + '%'; document.getElementById('progress-text').textContent = count + ' of ' + checkboxes.length + ' tasks complete'; }
+        document.addEventListener('DOMContentLoaded', loadProgress);
+    </script>
+</body>
+</html>
