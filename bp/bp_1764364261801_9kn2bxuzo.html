@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Blueprint - Joe Mahlowe</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: 'Segoe UI', Arial, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 100vh; padding: 20px; color: #fff; }
+      .blueprint { max-width: 900px; margin: 0 auto; background: #fff; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); overflow: hidden; color: #333; }
+      .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; text-align: center; color: white; }
+      .header h1 { font-size: 28px; margin-bottom: 8px; }
+      .header p { opacity: 0.9; font-size: 14px; }
+      .header-meta { display: flex; justify-content: center; gap: 30px; margin-top: 15px; font-size: 13px; }
+      .overall-progress { background: #f8f9fa; padding: 20px 30px; border-bottom: 1px solid #eee; }
+      .progress-bar-large { height: 24px; background: #e0e0e0; border-radius: 12px; overflow: hidden; }
+      .progress-fill-large { height: 100%; background: linear-gradient(90deg, #667eea, #764ba2); border-radius: 12px; transition: width 0.5s ease; }
+      .progress-text { text-align: center; margin-top: 8px; font-size: 14px; font-weight: 600; color: #667eea; }
+      .content { padding: 30px; }
+      .budget-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 30px; }
+      .budget-card { background: #f8f9fa; padding: 20px; border-radius: 12px; text-align: center; border: 2px solid #e0e0e0; }
+      .budget-card.on-track { border-color: #4ade80; background: linear-gradient(135deg, #f0fdf4, #dcfce7); }
+      .budget-card.over-budget { border-color: #f87171; background: linear-gradient(135deg, #fef2f2, #fee2e2); }
+      .budget-card.under-target { border-color: #fbbf24; background: linear-gradient(135deg, #fffbeb, #fef3c7); }
+      .budget-label { font-size: 12px; color: #666; text-transform: uppercase; }
+      .budget-value { font-size: 28px; font-weight: 700; margin: 8px 0; }
+      .budget-card.on-track .budget-value { color: #16a34a; }
+      .budget-card.over-budget .budget-value { color: #dc2626; }
+      .budget-card.under-target .budget-value { color: #d97706; }
+      .step-block { background: #fff; border: 2px solid #e0e0e0; border-radius: 12px; margin-bottom: 15px; overflow: hidden; }
+      .step-header { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; background: linear-gradient(135deg, #1e3a5f, #2d5a87); color: white; cursor: pointer; }
+      .step-header:hover { background: linear-gradient(135deg, #2d5a87, #3d7ab7); }
+      .step-body { padding: 20px; border-top: 1px solid #eee; }
+      .step-desc { color: #666; margin-bottom: 15px; font-size: 14px; }
+      .task-list { list-style: none; padding: 0; }
+      .task { display: flex; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid #f0f0f0; gap: 12px; }
+      .task:last-child { border-bottom: none; }
+      .task input[type="checkbox"] { width: 20px; height: 20px; margin-top: 2px; cursor: pointer; }
+      .task-content { flex: 1; }
+      .task-text { font-size: 14px; }
+      .task-num { font-weight: 700; color: #667eea; margin-right: 5px; }
+      .task-date { font-size: 11px; color: #16a34a; margin-top: 3px; }
+      .task.completed .task-text { text-decoration: line-through; color: #888; }
+      .task-playbook { margin-top: 6px; }
+      .task-playbook a { font-size: 12px; color: #667eea; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; padding: 5px 12px; background: #f0f4ff; border-radius: 20px; transition: all 0.2s; font-weight: 500; }
+      .task-playbook a:hover { background: #667eea; color: white; }
+      .goal-box { background: linear-gradient(135deg, #eff6ff, #dbeafe); padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #93c5fd; }
+      .goal-title { font-weight: 700; color: #1d4ed8; margin-bottom: 8px; }
+      .checkpoint { background: linear-gradient(135deg, #fef3c7, #fde68a); padding: 15px; border-radius: 8px; margin: 15px 0; border: 2px solid #f59e0b; }
+      .checkpoint-title { font-weight: 700; color: #92400e; }
+      .footer { background: #1a1a2e; color: white; padding: 25px; text-align: center; }
+      .footer p { font-size: 12px; opacity: 0.7; }
+      .step-block.collapsed .step-body { display: none; }
+      @media (max-width: 768px) { .budget-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="blueprint" data-blueprint-id="bp_1764364261801_9kn2bxuzo">
+        <div class="header">
+            <h1>Your Financial Blueprint</h1>
+            <p>Personalized 9-Step Action Plan</p>
+            <div class="header-meta">
+                <span>📅 Nov 28, 2025</span>
+                <span>👤 Joe Mahlowe</span>
+            </div>
+        </div>
+        
+        <div class="overall-progress">
+            <h3 style="font-size:14px;margin-bottom:10px;color:#555;">📊 OVERALL PROGRESS</h3>
+            <div class="progress-bar-large">
+                <div class="progress-fill-large" id="overall-progress-bar" style="width: 0%"></div>
+            </div>
+            <div class="progress-text" id="overall-progress-text">0% Complete</div>
+        </div>
+        
+        <div class="content">
+            <div class="budget-grid">
+                <div class="budget-card on-track">
+                    <div class="budget-label">Needs</div>
+                    <div class="budget-value">1%</div>
+                    <div style="font-size:11px;color:#888;">Target: ≤50%</div>
+                </div>
+                <div class="budget-card on-track">
+                    <div class="budget-label">Wants</div>
+                    <div class="budget-value">1%</div>
+                    <div style="font-size:11px;color:#888;">Target: ≤30%</div>
+                </div>
+                <div class="budget-card on-track">
+                    <div class="budget-label">Savings</div>
+                    <div class="budget-value">98%</div>
+                    <div style="font-size:11px;color:#888;">Target: ≥20%</div>
+                </div>
+            </div>
+
+            <!-- STEP 1 -->
+            <div class="step-block" data-step="1">
+                <div class="step-header" onclick="toggleStep(this)">
+                    <span>STEP 1: Build Your Foundation</span>
+                    <span>▼</span>
+                </div>
+                <div class="step-body">
+                    <div class="step-desc">Set up automatic systems to protect your finances.</div>
+                    <ul class="task-list" data-step="1">
+                        <li class="task">
+                            <input type="checkbox" data-task="1-1" onchange="handleTaskCheck(this)">
+                            <div class="task-content">
+                                <div class="task-text"><span class="task-num">1.</span> Set up bank alerts (low balance, large transactions)</div>
+                                <div class="task-date" id="date-1-1"></div>
+                                <div class="task-playbook"><a href="https://primenationalcredit-ai.github.io/blueprints/playbooks/bank-alerts.html" target="_blank">📘 Open Playbook: Bank Alerts Setup</a></div>
+                            </div>
+                        </li>
+                        <li class="task">
+                            <input type="checkbox" data-task="1-2" onchange="handleTaskCheck(this)">
+                            <div class="task-content">
+                                <div class="task-text"><span class="task-num">2.</span> Enable autopay for all fixed bills</div>
+                                <div class="task-date" id="date-1-2"></div>
+                                <div class="task-playbook"><a href="https://primenationalcredit-ai.github.io/blueprints/playbooks/autopay-setup.html" target="_blank">📘 Open Playbook: Autopay Setup Guide</a></div>
+                            </div>
+                        </li>
+                        <li class="task">
+                            <input type="checkbox" data-task="1-3" onchange="handleTaskCheck(this)">
+                            <div class="task-content">
+                                <div class="task-text"><span class="task-num">3.</span> Review your bank statement from last month</div>
+                                <div class="task-date" id="date-1-3"></div>
+                                <div class="task-playbook"><a href="https://primenationalcredit-ai.github.io/blueprints/playbooks/bank-statement-audit.html" target="_blank">📘 Open Playbook: Bank Statement Audit</a></div>
+                            </div>
+                        </li>
+                        <li class="task">
+                            <input type="checkbox" data-task="1-4" onchange="handleTaskCheck(this)">
+                            <div class="task-content">
+                                <div class="task-text"><span class="task-num">4.</span> Find an accountability partner</div>
+                                <div class="task-date" id="date-1-4"></div>
+                                <div class="task-playbook"><a href="https://primenationalcredit-ai.github.io/blueprints/playbooks/accountability-partner.html" target="_blank">📘 Open Playbook: Accountability Partner Guide</a></div>
+                            </div>
+                        </li>
+                        <li class="task">
+                            <input type="checkbox" data-task="1-5" onchange="handleTaskCheck(this)">
+                            <div class="task-content">
+                                <div class="task-text"><span class="task-num">5.</span> Schedule weekly Money Pulse check-in (Sundays)</div>
+                                <div class="task-date" id="date-1-5"></div>
+                                <div class="task-playbook"><a href="https://primenationalcredit-ai.github.io/blueprints/playbooks/money-pulse.html" target="_blank">📘 Open Playbook: Money Pulse Checklist</a></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- STEP 2 -->
+            <div class="step-block collapsed" data-step="2">
+                <div class="step-header" onclick="toggleStep(this)">
+                    <span>STEP 2: Cut Expenses</span>
+                    <span>▼</span>
+                </div>
+                <div class="step-body">
+                    <div class="step-desc">Reduce spending to free up money for savings and debt payoff.</div>
+                    <ul class="task-list" data-step="2">
+                        <li class="task">
+                            <input type="checkbox" data-task="2-1" onchange="handleTaskCheck(this)">
+                            <div class="task-content">
+                                <div class="task-text"><span class="task-num">1.</span> Complete a 48-hour Zero-Spend Challenge</div>
+                                <div class="task-date" id="date-2-1"></div>
+                                <div class="task-playbook"><a href="https://primenationalcredit-ai.github.io/blueprints/playbooks/zero-spend-challenge.html" target="_blank">📘 Open Playbook: Zero-Spend Challenge</a></div>
+                            </div>
+                        </li>
+                        <li class="task">
+                            <input type="checkbox" data-task="2-2" onchange="handleTaskCheck(this)">
+                            <div class="task-content">
+                                <div class="task-text"><span class="task-num">2.</span> Request new card numbers to break saved payments</div>
+                                <div class="task-date" id="date-2-2"></div>
+                                <div class="task-playbook"><a href="https://primenationalcredit-ai.github.io/blueprints/playbooks/card-number-reset.html" target="_blank">📘 Open Playbook: Card Number Reset</a></div>
+                            </div>
+                        </li>
+                        <li class="task">
+                            <input type="checkbox" data-task="2-3" onchange="handleTaskCheck(this)">
+                            <div class="task-content">
+                                <div class="task-text"><span class="task-num">3.</span> Cancel or downgrade 3 subscriptions</div>
+                                <div class="task-date" id="date-2-3"></div>
+                                <div class="task-playbook"><a href="https://primenationalcredit-ai.github.io/blueprints/playbooks/subscription-cancel.html" target="_blank">📘 Open Playbook: Subscription Cancel Guide</a></div>
+                            </div>
+                        </li>
+                        <li class="task">
+                            <input type="checkbox" data-task="2-4" onchange="handleTaskCheck(this)">
+                            <div class="task-content">
+                                <div class="task-text"><span class="task-num">4.</span> Negotiate one bill (phone, internet, insurance)</div>
+                                <div class="task-date" id="date-2-4"></div>
+                                <div class="task-playbook"><a href="https://primenationalcredit-ai.github.io/blueprints/playbooks/bill-negotiation.html" target="_blank">📘 Open Playbook: Bill Negotiation Scripts</a></div>
+                            </div>
+                        </li>
+                        <li class="task">
+                            <input type="checkbox" data-task="2-5" onchange="handleTaskCheck(this)">
+                            <div class="task-content">
+                                <div class="task-text"><span class="task-num">5.</span> Delete shopping apps from phone</div>
+                                <div class="task-date" id="date-2-5"></div>
+                                <div class="task-playbook"><a href="https://primenationalcredit-ai.github.io/blueprints/playbooks/shopping-app-detox.html" target="_blank">📘 Open Playbook: Shopping App Detox</a></div>
+                            </div>
+                        </li>
+                        <li class="task">
+                            <input type="checkbox" data-task="2-6" onchange="handleTaskCheck(this)">
+                            <div class="task-content">
+                                <div class="task-text"><span class="task-num">6.</span> Unsubscribe from 10+ marketing emails</div>
+                                <div class="task-date" id="date-2-6"></div>
+                                <div class="task-playbook"><a href="https://primenationalcredit-ai.github.io/blueprints/playbooks/email-unsubscribe.html" target="_blank">📘 Open Playbook: Email Unsubscribe Guide</a></div>
+                            </div>
+                        </li>
+                        <li class="task">
+                            <input type="checkbox" data-task="2-7" onchange="handleTaskCheck(this)">
+                            <div class="task-content">
+                                <div class="task-text"><span class="task-num">7.</span> Start meal prepping to reduce food costs</div>
+                                <div class="task-date" id="date-2-7"></div>
+                                <div class="task-playbook"><a href="https://primenationalcredit-ai.github.io/blueprints/playbooks/meal-prep.html" target="_blank">📘 Open Playbook: Meal Prep Savings</a></div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="checkpoint">
+                        <div class="checkpoint-title">✅ CHECKPOINT:</div>
+                        <div style="font-size:13px;color:#78350f;">Wants spending MUST be under $3,000/month before Step 3</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 3 -->
+            <div class="step-block collapsed" data-step="3">
+                <div class="step-header" onclick="toggleStep(this)">
+                    <span>STEP 3: Increase Income</span>
+                    <span>▼</span>
+                </div>
+                <div class="step-body">
+                    <div class="step-desc">Add extra income to accelerate your financial goals.</div>
+                    <ul class="task-list" data-step="3">
+                        <li class="task">
+                            <input type="checkbox" data-task="3-1" onchange="handleTaskCheck(this)">
+                            <div class="task-content">
+                                <div class="task-text"><span class="task-num">1.</span> List 3 items to sell (FB Marketplace, OfferUp)</div>
+                                <div class="task-date" id="date-3-1"></div>
+                                <div class="task-playbook"><a href="https://primenationalcredit-ai.github.io/blueprints/playbooks/selling-guide.html" target="_blank">📘 Open Playbook: Quick Sell Guide</a></div>
+                            </div>
+                        </li>
+                        <li class="task">
+                            <input type="checkbox" data-task="3-2" onchange="handleTaskCheck(this)">
+                            <div class="task-content">
+                                <div class="task-text"><span class="task-num">2.</span> Sell at least 1 item within 48 hours</div>
+                                <div class="task-date" id="date-3-2"></div>
+                            </div>
+                        </li>
+                        <li class="task">
+                            <input type="checkbox" data-task="3-3" onchange="handleTaskCheck(this)">
+                            <div class="task-content">
+                                <div class="task-text"><span class="task-num">3.</span> Sign up for 1 gig app (DoorDash, Uber, Instacart)</div>
+                                <div class="task-date" id="date-3-3"></div>
+                                <div class="task-playbook"><a href="https://primenationalcredit-ai.github.io/blueprints/playbooks/gig-economy.html" target="_blank">📘 Open Playbook: Gig Economy Starter</a></div>
+                            </div>
+                        </li>
+                        <li class="task">
+                            <input type="checkbox" data-task="3-4" onchange="handleTaskCheck(this)">
+                            <div class="task-content">
+                                <div class="task-text"><span class="task-num">4.</span> Ask about overtime opportunities at work</div>
+                                <div class="task-date" id="date-3-4"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- STEP 4 -->
+            <div class="step-block collapsed" data-step="4">
+                <div class="step-header" onclick="toggleStep(this)">
+                    <span>STEP 4: Build Emergency Fund</span>
+                    <span>▼</span>
+                </div>
+                <div class="step-body">
+                    <div class="step-desc">Save 3 months of essential expenses before attacking debt.</div>
+                    <div class="goal-box">
+                        <div class="goal-title">🎯 YOUR EF TARGET: $207</div>
+                        <div style="font-size:14px;">Current: $1,000 | Gap: $0</div>
+                    </div>
+                    <ul class="task-list" data-step="4">
+                        <li class="task">
+                            <input type="checkbox" data-task="4-1" onchange="handleTaskCheck(this)">
+                            <div class="task-content">
+                                <div class="task-text"><span class="task-num">1.</span> Open a High-Yield Savings Account</div>
+                                <div class="task-date" id="date-4-1"></div>
+                                <div class="task-playbook"><a href="https://primenationalcredit-ai.github.io/blueprints/playbooks/hysa-guide.html" target="_blank">📘 Open Playbook: HYSA Comparison Guide</a></div>
+                            </div>
+                        </li>
+                        <li class="task">
+                            <input type="checkbox" data-task="4-2" onchange="handleTaskCheck(this)">
+                            <div class="task-content">
+                                <div class="task-text"><span class="task-num">2.</span> Set up automatic transfer each paycheck</div>
+                                <div class="task-date" id="date-4-2"></div>
+                            </div>
+                        </li>
+                        <li class="task">
+                            <input type="checkbox" data-task="4-3" onchange="handleTaskCheck(this)">
+                            <div class="task-content">
+                                <div class="task-text"><span class="task-num">3.</span> Route 100% of side income to EF</div>
+                                <div class="task-date" id="date-4-3"></div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="checkpoint">
+                        <div class="checkpoint-title">✅ CHECKPOINT:</div>
+                        <div style="font-size:13px;color:#78350f;">EF MUST equal $207 before moving to Step 5</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 5 -->
+            <div class="step-block collapsed" data-step="5">
+                <div class="step-header" onclick="toggleStep(this)">
+                    <span>STEP 5: Pay Off Debt</span>
+                    <span>▼</span>
+                </div>
+                <div class="step-body">
+                    <div class="step-desc">🎉 Great news! You have no debt. Skip to Step 6!</div>
+                </div>
+            </div>
+
+            <!-- STEP 6 -->
+            <div class="step-block collapsed" data-step="6">
+                <div class="step-header" onclick="toggleStep(this)">
+                    <span>STEP 6: Maintain & Monitor</span>
+                    <span>▼</span>
+                </div>
+                <div class="step-body">
+                    <div class="step-desc">Build lasting habits with regular check-ins.</div>
+                    <ul class="task-list" data-step="6">
+                        <li class="task">
+                            <input type="checkbox" data-task="6-1" onchange="handleTaskCheck(this)">
+                            <div class="task-content">
+                                <div class="task-text"><span class="task-num">1.</span> Complete weekly Money Pulse check-in</div>
+                                <div class="task-date" id="date-6-1"></div>
+                                <div class="task-playbook"><a href="https://primenationalcredit-ai.github.io/blueprints/playbooks/money-pulse.html" target="_blank">📘 Open Playbook: Money Pulse Checklist</a></div>
+                            </div>
+                        </li>
+                        <li class="task">
+                            <input type="checkbox" data-task="6-2" onchange="handleTaskCheck(this)">
+                            <div class="task-content">
+                                <div class="task-text"><span class="task-num">2.</span> Text accountability partner your progress</div>
+                                <div class="task-date" id="date-6-2"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- STEP 7 -->
+            <div class="step-block collapsed" data-step="7">
+                <div class="step-header" onclick="toggleStep(this)">
+                    <span>STEP 7: Set Up Sinking Funds</span>
+                    <span>▼</span>
+                </div>
+                <div class="step-body">
+                    <div class="step-desc">Save for planned expenses so nothing is an "emergency."</div>
+                    <ul class="task-list" data-step="7">
+                        <li class="task">
+                            <input type="checkbox" data-task="7-1" onchange="handleTaskCheck(this)">
+                            <div class="task-content">
+                                <div class="task-text"><span class="task-num">1.</span> Identify 3 upcoming big expenses</div>
+                                <div class="task-date" id="date-7-1"></div>
+                                <div class="task-playbook"><a href="https://primenationalcredit-ai.github.io/blueprints/playbooks/sinking-funds.html" target="_blank">📘 Open Playbook: Sinking Funds Setup</a></div>
+                            </div>
+                        </li>
+                        <li class="task">
+                            <input type="checkbox" data-task="7-2" onchange="handleTaskCheck(this)">
+                            <div class="task-content">
+                                <div class="task-text"><span class="task-num">2.</span> Create savings "buckets" for each</div>
+                                <div class="task-date" id="date-7-2"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- STEP 8 -->
+            <div class="step-block collapsed" data-step="8">
+                <div class="step-header" onclick="toggleStep(this)">
+                    <span>STEP 8: Invest for Your Future</span>
+                    <span>▼</span>
+                </div>
+                <div class="step-body">
+                    <div class="step-desc">Start building long-term wealth.</div>
+                    <ul class="task-list" data-step="8">
+                        <li class="task">
+                            <input type="checkbox" data-task="8-1" onchange="handleTaskCheck(this)">
+                            <div class="task-content">
+                                <div class="task-text"><span class="task-num">1.</span> Max out employer 401(k) match</div>
+                                <div class="task-date" id="date-8-1"></div>
+                                <div class="task-playbook"><a href="https://primenationalcredit-ai.github.io/blueprints/playbooks/401k-guide.html" target="_blank">📘 Open Playbook: 401(k) Match Guide</a></div>
+                            </div>
+                        </li>
+                        <li class="task">
+                            <input type="checkbox" data-task="8-2" onchange="handleTaskCheck(this)">
+                            <div class="task-content">
+                                <div class="task-text"><span class="task-num">2.</span> Open a Roth IRA</div>
+                                <div class="task-date" id="date-8-2"></div>
+                                <div class="task-playbook"><a href="https://primenationalcredit-ai.github.io/blueprints/playbooks/ira-comparison.html" target="_blank">📘 Open Playbook: Roth vs Traditional IRA</a></div>
+                            </div>
+                        </li>
+                        <li class="task">
+                            <input type="checkbox" data-task="8-3" onchange="handleTaskCheck(this)">
+                            <div class="task-content">
+                                <div class="task-text"><span class="task-num">3.</span> Consider HSA if eligible</div>
+                                <div class="task-date" id="date-8-3"></div>
+                                <div class="task-playbook"><a href="https://primenationalcredit-ai.github.io/blueprints/playbooks/hsa-guide.html" target="_blank">📘 Open Playbook: HSA Strategy Guide</a></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- STEP 9 -->
+            <div class="step-block collapsed" data-step="9">
+                <div class="step-header" onclick="toggleStep(this)">
+                    <span>STEP 9: Dream Bigger</span>
+                    <span>▼</span>
+                </div>
+                <div class="step-body">
+                    <div class="step-desc">Set bigger financial goals!</div>
+                    <ul class="task-list" data-step="9">
+                        <li class="task">
+                            <input type="checkbox" data-task="9-1" onchange="handleTaskCheck(this)">
+                            <div class="task-content">
+                                <div class="task-text"><span class="task-num">1.</span> Write your #1 financial goal for next year</div>
+                                <div class="task-date" id="date-9-1"></div>
+                                <div class="task-playbook"><a href="https://primenationalcredit-ai.github.io/blueprints/playbooks/goal-setting.html" target="_blank">📘 Open Playbook: Goal Setting Template</a></div>
+                            </div>
+                        </li>
+                        <li class="task">
+                            <input type="checkbox" data-task="9-2" onchange="handleTaskCheck(this)">
+                            <div class="task-content">
+                                <div class="task-text"><span class="task-num">2.</span> Break it into monthly milestones</div>
+                                <div class="task-date" id="date-9-2"></div>
+                            </div>
+                        </li>
+                        <li class="task">
+                            <input type="checkbox" data-task="9-3" onchange="handleTaskCheck(this)">
+                            <div class="task-content">
+                                <div class="task-text"><span class="task-num">3.</span> Celebrate how far you've come! 🎉</div>
+                                <div class="task-date" id="date-9-3"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Blueprint ID: bp_1764364261801_9kn2bxuzo</p>
+            <p>Progress saved automatically in your browser.</p>
+        </div>
+    </div>
+
+    <script>
+        const BLUEPRINT_ID = "bp_1764364261801_9kn2bxuzo";
+        const STORAGE_PREFIX = "bp_" + BLUEPRINT_ID + "_";
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            loadAllData();
+            updateAllProgress();
+        });
+        
+        function loadAllData() {
+            document.querySelectorAll('input[data-task]').forEach(function(cb) {
+                const taskId = cb.getAttribute('data-task');
+                const saved = localStorage.getItem(STORAGE_PREFIX + 'task_' + taskId);
+                if (saved === 'true') {
+                    cb.checked = true;
+                    cb.closest('.task').classList.add('completed');
+                    const dateEl = document.getElementById('date-' + taskId);
+                    if (dateEl) {
+                        const dateVal = localStorage.getItem(STORAGE_PREFIX + 'task_date_' + taskId);
+                        if (dateVal) dateEl.textContent = '✓ Completed ' + dateVal;
+                    }
+                }
+            });
+        }
+        
+        function handleTaskCheck(cb) {
+            const taskId = cb.getAttribute('data-task');
+            localStorage.setItem(STORAGE_PREFIX + 'task_' + taskId, cb.checked);
+            
+            if (cb.checked) {
+                cb.closest('.task').classList.add('completed');
+                const now = new Date().toLocaleDateString('en-US', {month: 'short', day: 'numeric'});
+                localStorage.setItem(STORAGE_PREFIX + 'task_date_' + taskId, now);
+                document.getElementById('date-' + taskId).textContent = '✓ Completed ' + now;
+            } else {
+                cb.closest('.task').classList.remove('completed');
+                document.getElementById('date-' + taskId).textContent = '';
+            }
+            updateAllProgress();
+        }
+        
+        function updateAllProgress() {
+            const allTasks = document.querySelectorAll('input[data-task]');
+            let checked = 0;
+            allTasks.forEach(cb => { if (cb.checked) checked++; });
+            const pct = Math.round((checked / allTasks.length) * 100);
+            document.getElementById('overall-progress-bar').style.width = pct + '%';
+            document.getElementById('overall-progress-text').textContent = pct + '% Complete (' + checked + '/' + allTasks.length + ' tasks)';
+        }
+        
+        function toggleStep(header) {
+            header.closest('.step-block').classList.toggle('collapsed');
+        }
+    </script>
+</body>
+</html>
