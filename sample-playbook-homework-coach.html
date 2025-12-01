@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>After-School Homework Coach | ASAP Credit Repair Playbook</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #063d86;
+      --primary-light: #0a4fa8;
+      --primary-dark: #042a5c;
+      --accent: #00c9a7;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #1e293b;
+      --text-light: #64748b;
+      --border: #e2e8f0;
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 17px;
+    }
+    
+    .header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      padding: 40px 20px 50px;
+      text-align: center;
+    }
+    
+    .header-content { max-width: 800px; margin: 0 auto; }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: white;
+      text-decoration: none;
+      opacity: 0.8;
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+    }
+    
+    .back-link:hover { opacity: 1; }
+    
+    .category-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-bottom: 16px;
+    }
+    
+    .header h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    
+    .header-subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .main-content {
+      max-width: 800px;
+      margin: -30px auto 40px;
+      padding: 0 20px;
+    }
+    
+    /* Progress Bar */
+    .progress-section {
+      position: sticky;
+      top: 0;
+      background: white;
+      padding: 16px 20px;
+      margin: 0 -20px 20px;
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    
+    .progress-bar {
+      flex: 1;
+      height: 10px;
+      background: var(--border);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--success), var(--accent));
+      border-radius: 5px;
+      transition: width 0.3s;
+      width: 0%;
+    }
+    
+    .progress-text {
+      font-weight: 600;
+      color: var(--text);
+      min-width: 50px;
+    }
+    
+    /* Goal Card */
+    .goal-card {
+      background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+      border: 2px solid var(--success);
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin-bottom: 30px;
+    }
+    
+    .goal-card h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.3rem;
+      color: #065f46;
+      margin-bottom: 12px;
+    }
+    
+    .goal-card p { color: #047857; font-size: 1.05rem; }
+    
+    .goal-card .earnings {
+      background: white;
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 10px;
+      margin-top: 14px;
+      font-weight: 600;
+      color: #065f46;
+      font-size: 1.1rem;
+    }
+    
+    /* Section Cards */
+    .section-card {
+      background: white;
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border: 1px solid var(--border);
+    }
+    
+    .section-card h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.4rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .section-card h2 .icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 20px;
+    }
+    
+    .section-intro {
+      color: var(--text-light);
+      margin-bottom: 20px;
+      font-size: 1rem;
+    }
+    
+    /* Task List */
+    .task-list { list-style: none; }
+    
+    .task-item {
+      display: flex;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .task-item:last-child { border-bottom: none; }
+    
+    .task-checkbox {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      margin-top: 2px;
+      font-weight: bold;
+    }
+    
+    .task-checkbox:hover { border-color: var(--primary); }
+    
+    .task-checkbox.checked {
+      background: var(--success);
+      border-color: var(--success);
+      color: white;
+    }
+    
+    .task-content { flex: 1; }
+    
+    .task-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    
+    .task-desc {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    
+    .task-meta {
+      display: flex;
+      gap: 12px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    
+    .task-badge {
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--bg);
+      color: var(--text-light);
+    }
+    
+    .task-badge.easy { background: #dcfce7; color: #166534; }
+    .task-badge.medium { background: #fef3c7; color: #92400e; }
+    
+    /* Details Box */
+    .details-box {
+      background: #f8fafc;
+      border-radius: 10px;
+      padding: 16px;
+      margin-top: 12px;
+      border-left: 4px solid var(--primary);
+    }
+    
+    .details-box h4 {
+      font-size: 0.9rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    
+    .details-box ul {
+      margin-left: 18px;
+      color: var(--text);
+      font-size: 0.9rem;
+    }
+    
+    .details-box li { margin-bottom: 8px; line-height: 1.5; }
+    
+    /* Marketing Section */
+    .marketing-section {
+      background: linear-gradient(135deg, #fef3c7, #fde68a);
+      border: 2px solid #fbbf24;
+    }
+    
+    .marketing-section h2 { color: #92400e; }
+    
+    .marketing-tip {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+    
+    .marketing-tip:last-child { margin-bottom: 0; }
+    
+    .marketing-tip h3 {
+      font-size: 1.1rem;
+      color: #92400e;
+      margin-bottom: 12px;
+    }
+    
+    .marketing-tip p {
+      color: #78350f;
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+    
+    .script-box {
+      background: #fffbeb;
+      border-left: 4px solid #f59e0b;
+      padding: 14px 18px;
+      border-radius: 0 10px 10px 0;
+      font-size: 0.9rem;
+      color: #78350f;
+      margin-top: 12px;
+    }
+    
+    .script-box strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #92400e;
+      font-size: 0.85rem;
+    }
+    
+    .places-list {
+      background: white;
+      border-radius: 10px;
+      padding: 16px;
+      margin-top: 12px;
+    }
+    
+    .places-list h4 {
+      font-size: 0.9rem;
+      color: #92400e;
+      margin-bottom: 10px;
+    }
+    
+    .places-list ul {
+      margin-left: 18px;
+      color: #78350f;
+      font-size: 0.9rem;
+    }
+    
+    .places-list li { margin-bottom: 6px; }
+    
+    /* Resources Section */
+    .resources-section {
+      background: linear-gradient(135deg, #ede9fe, #ddd6fe);
+      border: 2px solid #a78bfa;
+    }
+    
+    .resources-section h2 { color: #5b21b6; }
+    
+    .resource-item {
+      background: white;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 12px;
+      display: block;
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.2s;
+    }
+    
+    .resource-item:hover {
+      transform: translateX(4px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    .resource-item h4 {
+      font-size: 1rem;
+      margin-bottom: 4px;
+      color: #5b21b6;
+    }
+    
+    .resource-item p {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-bottom: 6px;
+    }
+    
+    .resource-item .link {
+      font-size: 0.8rem;
+      color: #7c3aed;
+    }
+    
+    .section-card textarea {
+      width: 100%;
+      min-height: 150px;
+      padding: 16px 18px;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 1rem;
+      resize: vertical;
+      box-sizing: border-box;
+      display: block;
+      line-height: 1.6;
+    }
+    .section-card textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+    
+    /* Help Section */
+    .help-section {
+      background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+      border: 2px solid #7dd3fc;
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .help-icon {
+      width: 56px;
+      height: 56px;
+      background: white;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+    }
+    
+    .help-content { flex: 1; min-width: 200px; }
+    
+    .help-content h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.2rem;
+      margin-bottom: 4px;
+    }
+    
+    .help-content p { color: var(--text-light); font-size: 0.95rem; }
+    
+    .chat-btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.2s;
+    }
+    
+    .chat-btn:hover {
+      background: var(--primary-light);
+      transform: translateY(-2px);
+    }
+    
+    @media (max-width: 600px) {
+      .header { padding: 30px 20px 40px; }
+      .section-card { padding: 20px; }
+      .help-section { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-content">
+      <a href="index.html" class="back-link">← Back to All Playbooks</a>
+      <span class="category-badge">📚 Education & Tutoring</span>
+      <h1>After-School Homework Coach</h1>
+      <p class="header-subtitle">Help kids with homework in small groups. Perfect for stay-at-home parents or anyone who's good with kids!</p>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <!-- Progress Bar -->
+    <div class="progress-section">
+      <span style="font-size: 0.9rem; color: var(--text-light);">Your Progress:</span>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <span class="progress-text" id="progressText">0%</span>
+    </div>
+
+    <!-- Goal Card -->
+    <div class="goal-card">
+      <h2>🎯 What You'll Achieve</h2>
+      <p>You'll run after-school homework help sessions for 2-4 kids at a time. Parents drop off their kids after school, you help them finish homework, and parents pick them up stress-free. It's like a mini study hall in your home or at a library!</p>
+      <div class="earnings">💰 Earn $60-$120 per session (2-4 kids × $15-30 each)</div>
+    </div>
+
+    <!-- What You Need -->
+    <div class="section-card">
+      <h2><span class="icon">🎒</span> What You Need to Start</h2>
+      <p class="section-intro">Good news: You probably already have most of this!</p>
+      
+      <ul class="task-list">
+        <li class="task-item">
+          <div class="task-checkbox" data-task="0"></div>
+          <div class="task-content">
+            <div class="task-title">A quiet space with a table</div>
+            <div class="task-desc">This can be your dining room, a spare room, or even a library meeting room. Kids need a place to spread out their books and work.</div>
+            <div class="details-box">
+              <h4>Good spaces to use:</h4>
+              <ul>
+                <li><strong>Your dining room table</strong> - Most common choice</li>
+                <li><strong>Library meeting room</strong> - Free to reserve in most towns</li>
+                <li><strong>Church fellowship hall</strong> - Often available for free</li>
+                <li><strong>Community center</strong> - May have small rental fee</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        
+        <li class="task-item">
+          <div class="task-checkbox" data-task="1"></div>
+          <div class="task-content">
+            <div class="task-title">Basic school supplies</div>
+            <div class="task-desc">Pencils, erasers, paper, a calculator, and some colored pencils. That's it! Kids usually bring their own stuff too.</div>
+            <div class="task-meta">
+              <span class="task-badge">💵 About $20</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        
+        <li class="task-item">
+          <div class="task-checkbox" data-task="2"></div>
+          <div class="task-content">
+            <div class="task-title">Healthy snacks (optional but recommended)</div>
+            <div class="task-desc">Kids learn better when they're not hungry! Simple stuff like apple slices, crackers, or pretzels works great. You can include this in your price or ask parents to send snacks.</div>
+          </div>
+        </li>
+        
+        <li class="task-item">
+          <div class="task-checkbox" data-task="3"></div>
+          <div class="task-content">
+            <div class="task-title">A simple sign-in/sign-out sheet</div>
+            <div class="task-desc">This keeps track of when each kid arrives and leaves. Parents love seeing this - it shows you're organized and responsible.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Step by Step -->
+    <div class="section-card">
+      <h2><span class="icon">📋</span> Step-by-Step: Getting Started</h2>
+      <p class="section-intro">Follow these steps in order. Don't skip ahead - each step builds on the last!</p>
+      
+      <ul class="task-list">
+        <li class="task-item">
+          <div class="task-checkbox" data-task="4"></div>
+          <div class="task-content">
+            <div class="task-title">Step 1: Decide on your schedule</div>
+            <div class="task-desc">Most homework coaches work 3-5pm on school days. Pick the days that work for you. Starting with just 2-3 days per week is smart!</div>
+            <div class="details-box">
+              <h4>Questions to ask yourself:</h4>
+              <ul>
+                <li>What time do local schools let out? (Usually 2:30-3:30pm)</li>
+                <li>Which days work best for YOUR schedule?</li>
+                <li>Do you want to do this every week or just some weeks?</li>
+              </ul>
+            </div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 15 minutes</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        
+        <li class="task-item">
+          <div class="task-checkbox" data-task="5"></div>
+          <div class="task-content">
+            <div class="task-title">Step 2: Set your price</div>
+            <div class="task-desc">$15-20 per child per session is typical for beginners. As you get more experience and reviews, you can charge $25-30. Remember: parents are paying for peace of mind!</div>
+            <div class="details-box">
+              <h4>Pricing examples:</h4>
+              <ul>
+                <li><strong>$15/session</strong> - Good starting price, easy to fill spots</li>
+                <li><strong>$20/session</strong> - Sweet spot for most areas</li>
+                <li><strong>$25-30/session</strong> - After you have good reviews</li>
+                <li><strong>Weekly discount:</strong> "Pay for 4 sessions, get 5th free!"</li>
+              </ul>
+            </div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 10 minutes</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        
+        <li class="task-item">
+          <div class="task-checkbox" data-task="6"></div>
+          <div class="task-content">
+            <div class="task-title">Step 3: Create a simple flyer</div>
+            <div class="task-desc">You don't need anything fancy! Use Canva (free) or even just type it up in Word. Include: what you offer, days/times, price, and your phone number.</div>
+            <div class="details-box">
+              <h4>What to put on your flyer:</h4>
+              <ul>
+                <li>✅ A catchy headline: "Homework Help for Busy Parents!"</li>
+                <li>✅ What you offer: "After-school homework support in a small group"</li>
+                <li>✅ Days and times: "Mon/Wed/Fri, 3-5pm"</li>
+                <li>✅ Price: "$20 per session"</li>
+                <li>✅ Your name and phone number</li>
+                <li>✅ A friendly photo of you (optional but helps!)</li>
+              </ul>
+            </div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 30 minutes</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        
+        <li class="task-item">
+          <div class="task-checkbox" data-task="7"></div>
+          <div class="task-content">
+            <div class="task-title">Step 4: Start with people you know</div>
+            <div class="task-desc">Your first clients should be friends, neighbors, or family members with kids. This gives you practice and gets you your first reviews!</div>
+            <div class="details-box">
+              <h4>People to ask first:</h4>
+              <ul>
+                <li>Neighbors with school-age kids</li>
+                <li>Friends from church or community groups</li>
+                <li>Parents you know from your own kids' school</li>
+                <li>Family members (cousins, siblings with kids)</li>
+              </ul>
+            </div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 1 hour</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        
+        <li class="task-item">
+          <div class="task-checkbox" data-task="8"></div>
+          <div class="task-content">
+            <div class="task-title">Step 5: Run your first session</div>
+            <div class="task-desc">Keep it simple! Have kids take out their homework, help them one at a time, and give them a small snack break. 2 hours goes by fast!</div>
+            <div class="details-box">
+              <h4>Sample 2-hour schedule:</h4>
+              <ul>
+                <li><strong>3:00-3:15</strong> - Kids arrive, settle in, get out homework</li>
+                <li><strong>3:15-4:00</strong> - Homework time (you rotate helping each kid)</li>
+                <li><strong>4:00-4:15</strong> - Snack break!</li>
+                <li><strong>4:15-4:50</strong> - Finish homework or quiet reading</li>
+                <li><strong>4:50-5:00</strong> - Pack up, parents arrive</li>
+              </ul>
+            </div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 2 hours</span>
+              <span class="task-badge medium">Medium</span>
+            </div>
+          </div>
+        </li>
+        
+        <li class="task-item">
+          <div class="task-checkbox" data-task="9"></div>
+          <div class="task-content">
+            <div class="task-title">Step 6: Ask for reviews and referrals</div>
+            <div class="task-desc">After a few sessions, ask happy parents to tell their friends or write you a review. Word of mouth is the #1 way homework coaches grow!</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 5 minutes</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Marketing Section -->
+    <div class="section-card marketing-section">
+      <h2><span class="icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);">📣</span> How to Find Clients</h2>
+      <p class="section-intro" style="color: #92400e;">This is where most people get stuck. But it's actually easy when you know where to look!</p>
+      
+      <div class="marketing-tip">
+        <h3>📱 Post in Local Facebook Groups</h3>
+        <p>Search Facebook for groups like "[Your Town] Moms," "[Your Town] Parents," or "[Your School District] Parents." These groups are FULL of busy parents looking for help!</p>
+        
+        <div class="places-list">
+          <h4>Groups to search for:</h4>
+          <ul>
+            <li>[Your Town] Moms Group</li>
+            <li>[Your Town] Parents Community</li>
+            <li>[Your School District] Parent Network</li>
+            <li>[Your Town] Buy Nothing (people share services here too)</li>
+            <li>[Your Town] Neighbors Helping Neighbors</li>
+          </ul>
+        </div>
+        
+        <div class="script-box">
+          <strong>📝 Copy this post:</strong>
+          "Hi everyone! I'm starting after-school homework help sessions for elementary and middle school kids. Small groups (2-4 kids), Monday-Wednesday, 3-5pm at [location]. I help kids finish their homework so you can pick them up stress-free! $20/session. DM me if interested or if you have questions! 📚✏️"
+        </div>
+      </div>
+      
+      <div class="marketing-tip">
+        <h3>📲 Post on Nextdoor</h3>
+        <p>Nextdoor is great because everyone on there lives near you! Post in the "For Sale & Free" section or the main feed.</p>
+        
+        <div class="script-box">
+          <strong>📝 Copy this post:</strong>
+          "Offering after-school homework help! 📚 I run small group sessions (2-4 kids) where I help them complete their homework. Great for busy parents! Mon/Wed/Fri, 3-5pm. $20 per session. I'm a [parent/teacher/tutor] with experience helping kids succeed. Message me to learn more!"
+        </div>
+      </div>
+      
+      <div class="marketing-tip">
+        <h3>📄 Hang Flyers at These Places</h3>
+        <p>Physical flyers still work great for local services! Most of these places have bulletin boards.</p>
+        
+        <div class="places-list">
+          <h4>Best places to hang flyers:</h4>
+          <ul>
+            <li><strong>Library</strong> - Parents are there with kids all the time</li>
+            <li><strong>Grocery store bulletin board</strong> - High traffic</li>
+            <li><strong>YMCA or community center</strong> - Family-focused</li>
+            <li><strong>Pediatrician's office</strong> - Ask if you can leave flyers</li>
+            <li><strong>Dance studios/karate schools</strong> - Parents wait there</li>
+            <li><strong>Churches</strong> - Often have community boards</li>
+            <li><strong>Laundromats</strong> - People have time to read</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="marketing-tip">
+        <h3>🎥 Make a Simple Video</h3>
+        <p>A 30-second video of you explaining what you offer can really help parents trust you. Post it on Facebook, Nextdoor, and even TikTok!</p>
+        
+        <div class="script-box">
+          <strong>📝 Video script (30 seconds):</strong>
+          "Hi, I'm [Name]! I run after-school homework sessions for kids in [Your Town]. Parents drop off their kids after school, I help them finish their homework, and you pick them up stress-free. Small groups, snacks included, and your kid goes home with homework DONE. Send me a message to learn more!"
+        </div>
+      </div>
+      
+      <div class="marketing-tip">
+        <h3>💬 Talk to People in Person</h3>
+        <p>Don't underestimate the power of just TELLING people what you do!</p>
+        
+        <div class="places-list">
+          <h4>When you're at these places, mention it:</h4>
+          <ul>
+            <li>School pickup line (talk to other parents)</li>
+            <li>Kids' sports games or practices</li>
+            <li>Church or community events</li>
+            <li>Neighborhood block parties</li>
+            <li>PTA meetings</li>
+          </ul>
+        </div>
+        
+        <div class="script-box">
+          <strong>📝 What to say:</strong>
+          "I just started doing after-school homework help for kids. If you ever need someone to help your kids finish their homework while you're at work, let me know! I do small groups so it's really affordable."
+        </div>
+      </div>
+    </div>
+
+    <!-- Resources & Inspiration -->
+    <div class="section-card resources-section">
+      <h2><span class="icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">💡</span> Learn From Others Who Do This</h2>
+      <p class="section-intro" style="color: #5b21b6;">Watch these videos and read these blogs to get more ideas and confidence!</p>
+      
+      <a href="https://www.youtube.com/watch?v=T3v12A24zVg" target="_blank" class="resource-item">
+        <h4>📺 How I Started a Tutoring Business from Home</h4>
+        <p>A mom shares how she turned homework help into a real business. Great tips!</p>
+        <span class="link">YouTube →</span>
+      </a>
+      
+      <a href="https://www.youtube.com/watch?v=5QSqKwuX8ro" target="_blank" class="resource-item">
+        <h4>📺 5 Tips for Tutoring Multiple Kids at Once</h4>
+        <p>How to manage a group of kids without going crazy. Really helpful!</p>
+        <span class="link">YouTube →</span>
+      </a>
+      
+      <a href="https://www.care.com/c/how-to-become-a-tutor/" target="_blank" class="resource-item">
+        <h4>📖 Care.com: How to Become a Tutor</h4>
+        <p>A complete guide to getting started, setting rates, and finding clients.</p>
+        <span class="link">Care.com →</span>
+      </a>
+      
+      <a href="https://www.wyzant.com/blog/how-to-become-a-tutor/" target="_blank" class="resource-item">
+        <h4>📖 Wyzant: The Complete Guide to Tutoring</h4>
+        <p>Professional tutors share their secrets for success.</p>
+        <span class="link">Wyzant Blog →</span>
+      </a>
+      
+      <a href="https://www.tiktok.com/@thetutorlady" target="_blank" class="resource-item">
+        <h4>📱 @thetutorlady on TikTok</h4>
+        <p>Quick tips and day-in-the-life videos from a professional tutor.</p>
+        <span class="link">TikTok →</span>
+      </a>
+    </div>
+
+    <!-- Notes Section -->
+    <div class="section-card">
+      <h2><span class="icon">📝</span> Your Notes</h2>
+      <p class="section-intro">Write down your ideas, questions, or progress here. It saves automatically!</p>
+      <textarea id="userNotes" placeholder="Example: I'm going to start on Mondays and Wednesdays. Need to ask Jenny if her kids want to be my first clients..."></textarea>
+    </div>
+
+    <!-- Help Section -->
+    <div class="help-section">
+      <div class="help-icon">💬</div>
+      <div class="help-content">
+        <h3>Need Help?</h3>
+        <p>Have questions about getting started? Chat with an ASAP Financial coach!</p>
+      </div>
+      <button class="chat-btn" onclick="openChat()">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+        </svg>
+        Start Chat
+      </button>
+    </div>
+  </main>
+
+  <script>
+    const STORAGE_KEY = 'playbook_after-school-homework-coach';
+    
+    function loadState() {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        const state = JSON.parse(saved);
+        document.querySelectorAll('.task-checkbox').forEach((box, i) => {
+          if (state.tasks && state.tasks[i]) {
+            box.classList.add('checked');
+            box.innerHTML = '✓';
+          }
+        });
+        if (state.notes) {
+          document.getElementById('userNotes').value = state.notes;
+        }
+        updateProgress();
+      }
+    }
+    
+    function saveState() {
+      const tasks = [];
+      document.querySelectorAll('.task-checkbox').forEach(box => {
+        tasks.push(box.classList.contains('checked'));
+      });
+      const state = {
+        tasks: tasks,
+        notes: document.getElementById('userNotes').value
+      };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    }
+    
+    function updateProgress() {
+      const boxes = document.querySelectorAll('.task-checkbox');
+      const checked = document.querySelectorAll('.task-checkbox.checked').length;
+      const percent = Math.round((checked / boxes.length) * 100);
+      document.getElementById('progressFill').style.width = percent + '%';
+      document.getElementById('progressText').textContent = percent + '%';
+    }
+    
+    document.querySelectorAll('.task-checkbox').forEach(box => {
+      box.addEventListener('click', function() {
+        this.classList.toggle('checked');
+        this.innerHTML = this.classList.contains('checked') ? '✓' : '';
+        updateProgress();
+        saveState();
+      });
+    });
+    
+    document.getElementById('userNotes').addEventListener('input', saveState);
+    
+    function openChat() {
+      window.location.href = 'https://asapcreditrepairusa.com/chat';
+    }
+    
+    loadState();
+  </script>
+</body>
+</html>

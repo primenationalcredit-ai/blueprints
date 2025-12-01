@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pressure Washing Service | ASAP Credit Repair Playbook</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #063d86;
+      --primary-light: #0a4fa8;
+      --primary-dark: #042a5c;
+      --accent: #00c9a7;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --bg: #f8fafc;
+      --text: #1e293b;
+      --text-light: #64748b;
+      --border: #e2e8f0;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 17px;
+    }
+    .header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      padding: 40px 20px 50px;
+      text-align: center;
+    }
+    .header-content { max-width: 800px; margin: 0 auto; }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: white;
+      text-decoration: none;
+      opacity: 0.8;
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+    }
+    .back-link:hover { opacity: 1; }
+    .category-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .header-subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .main-content {
+      max-width: 800px;
+      margin: -30px auto 40px;
+      padding: 0 20px;
+    }
+    .progress-section {
+      position: sticky;
+      top: 0;
+      background: white;
+      padding: 16px 20px;
+      margin: 0 -20px 20px;
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .progress-bar {
+      flex: 1;
+      height: 10px;
+      background: var(--border);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--success), var(--accent));
+      border-radius: 5px;
+      transition: width 0.3s;
+      width: 0%;
+    }
+    .progress-text { font-weight: 600; color: var(--text); min-width: 50px; }
+    .goal-card {
+      background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+      border: 2px solid var(--success);
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin-bottom: 30px;
+    }
+    .goal-card h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.3rem;
+      color: #065f46;
+      margin-bottom: 12px;
+    }
+    .goal-card p { color: #047857; font-size: 1.05rem; }
+    .goal-card .earnings {
+      background: white;
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 10px;
+      margin-top: 14px;
+      font-weight: 600;
+      color: #065f46;
+      font-size: 1.1rem;
+    }
+    .section-card {
+      background: white;
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border: 1px solid var(--border);
+    }
+    .section-card h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.4rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-card h2 .icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 20px;
+    }
+    .section-intro { color: var(--text-light); margin-bottom: 20px; font-size: 1rem; }
+    .task-list { list-style: none; }
+    .task-item {
+      display: flex;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .task-item:last-child { border-bottom: none; }
+    .task-checkbox {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      margin-top: 2px;
+      font-weight: bold;
+    }
+    .task-checkbox:hover { border-color: var(--primary); }
+    .task-checkbox.checked {
+      background: var(--success);
+      border-color: var(--success);
+      color: white;
+    }
+    .task-content { flex: 1; }
+    .task-title { font-weight: 600; font-size: 1.1rem; margin-bottom: 8px; color: var(--text); }
+    .task-desc { color: var(--text-light); font-size: 0.95rem; line-height: 1.6; }
+    .task-meta { display: flex; gap: 12px; margin-top: 10px; flex-wrap: wrap; }
+    .task-badge {
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--bg);
+      color: var(--text-light);
+    }
+    .task-badge.easy { background: #dcfce7; color: #166534; }
+    .task-badge.medium { background: #fef3c7; color: #92400e; }
+    .details-box {
+      background: #f8fafc;
+      border-radius: 10px;
+      padding: 16px;
+      margin-top: 12px;
+      border-left: 4px solid var(--primary);
+    }
+    .details-box h4 { font-size: 0.9rem; color: var(--primary); margin-bottom: 10px; }
+    .details-box ul { margin-left: 18px; color: var(--text); font-size: 0.9rem; }
+    .details-box li { margin-bottom: 8px; line-height: 1.5; }
+    .marketing-section {
+      background: linear-gradient(135deg, #fef3c7, #fde68a);
+      border: 2px solid #fbbf24;
+    }
+    .marketing-section h2 { color: #92400e; }
+    .marketing-tip {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+    .marketing-tip:last-child { margin-bottom: 0; }
+    .marketing-tip h3 { font-size: 1.1rem; color: #92400e; margin-bottom: 12px; }
+    .marketing-tip p { color: #78350f; font-size: 0.95rem; margin-bottom: 12px; line-height: 1.6; }
+    .script-box {
+      background: #fffbeb;
+      border-left: 4px solid #f59e0b;
+      padding: 14px 18px;
+      border-radius: 0 10px 10px 0;
+      font-size: 0.9rem;
+      color: #78350f;
+      margin-top: 12px;
+    }
+    .script-box strong { display: block; margin-bottom: 8px; color: #92400e; font-size: 0.85rem; }
+    .places-list {
+      background: white;
+      border-radius: 10px;
+      padding: 16px;
+      margin-top: 12px;
+    }
+    .places-list h4 { font-size: 0.9rem; color: #92400e; margin-bottom: 10px; }
+    .places-list ul { margin-left: 18px; color: #78350f; font-size: 0.9rem; }
+    .places-list li { margin-bottom: 6px; }
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .pricing-table th, .pricing-table td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .pricing-table th { background: var(--bg); font-weight: 600; color: var(--primary); }
+    .pricing-table tr:last-child td { border-bottom: none; }
+    .resources-section {
+      background: linear-gradient(135deg, #ede9fe, #ddd6fe);
+      border: 2px solid #a78bfa;
+    }
+    .resources-section h2 { color: #5b21b6; }
+    .resource-item {
+      background: white;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 12px;
+      display: block;
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.2s;
+    }
+    .resource-item:hover {
+      transform: translateX(4px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .resource-item h4 { font-size: 1rem; margin-bottom: 4px; color: #5b21b6; }
+    .resource-item p { font-size: 0.85rem; color: var(--text-light); margin-bottom: 6px; }
+    .resource-item .link { font-size: 0.8rem; color: #7c3aed; }
+    .section-card textarea {
+      width: 100%;
+      min-height: 150px;
+      padding: 16px 18px;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 1rem;
+      resize: vertical;
+      box-sizing: border-box;
+      display: block;
+      line-height: 1.6;
+    }
+    .section-card textarea:focus { outline: none; border-color: var(--primary); }
+    .help-section {
+      background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+      border: 2px solid #7dd3fc;
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .help-icon {
+      width: 56px;
+      height: 56px;
+      background: white;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+    }
+    .help-content { flex: 1; min-width: 200px; }
+    .help-content h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; margin-bottom: 4px; }
+    .help-content p { color: var(--text-light); font-size: 0.95rem; }
+    .chat-btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.2s;
+    }
+    .chat-btn:hover { background: var(--primary-light); transform: translateY(-2px); }
+    @media (max-width: 600px) {
+      .header { padding: 30px 20px 40px; }
+      .section-card { padding: 20px; }
+      .help-section { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-content">
+      <a href="index.html" class="back-link">← Back to All Playbooks</a>
+      <span class="category-badge">🏠 Home Services</span>
+      <h1>Pressure Washing Service</h1>
+      <p class="header-subtitle">One of the most profitable side hustles! Clean driveways, decks, and houses for $100-500 per job. Satisfying work with amazing before/after results.</p>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="progress-section">
+      <span style="font-size: 0.9rem; color: var(--text-light);">Your Progress:</span>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <span class="progress-text" id="progressText">0%</span>
+    </div>
+
+    <!-- Goal Card -->
+    <div class="goal-card">
+      <h2>🎯 What You'll Achieve</h2>
+      <p>You'll offer pressure washing services to homeowners in your area. Most jobs take 1-3 hours and pay $100-300+. The before/after transformations are SO satisfying, and customers love the instant results. This is one of the highest-paying side hustles you can start!</p>
+      <div class="earnings">💰 Earn $50-150/hour | $500-2,000+/month part-time</div>
+    </div>
+
+    <!-- Why This Works -->
+    <div class="section-card">
+      <h2><span class="icon">💡</span> Why Pressure Washing is Amazing</h2>
+      <p class="section-intro">This is one of the best side hustles for good reason!</p>
+      
+      <div class="details-box">
+        <h4>What makes this business great:</h4>
+        <ul>
+          <li><strong>High profit margins</strong> - Your main cost is just water and gas</li>
+          <li><strong>Instant results</strong> - Customers see the transformation immediately</li>
+          <li><strong>Easy to learn</strong> - You can learn the basics in a weekend</li>
+          <li><strong>Great for marketing</strong> - Before/after photos sell themselves</li>
+          <li><strong>Repeat customers</strong> - People need this done every 1-2 years</li>
+          <li><strong>Upsell opportunities</strong> - Driveway leads to deck leads to house</li>
+          <li><strong>Flexible schedule</strong> - Work when you want</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- What You Need -->
+    <div class="section-card">
+      <h2><span class="icon">🎒</span> What You Need to Start</h2>
+      <p class="section-intro">You can start with a basic setup and upgrade as you grow!</p>
+      
+      <ul class="task-list">
+        <li class="task-item">
+          <div class="task-checkbox" data-task="0"></div>
+          <div class="task-content">
+            <div class="task-title">Pressure washer (2,000-3,000 PSI)</div>
+            <div class="task-desc">You can start with an electric one ($150-300) or go gas-powered ($300-500) for more power. Gas is better for driveways and concrete.</div>
+            <div class="details-box">
+              <h4>Recommended starter models:</h4>
+              <ul>
+                <li><strong>Budget:</strong> Sun Joe SPX3000 (electric, ~$180) - Good for decks, siding</li>
+                <li><strong>Mid-range:</strong> Simpson MSH3125 (gas, ~$350) - Good all-around</li>
+                <li><strong>Pro tip:</strong> Check Facebook Marketplace for used ones!</li>
+              </ul>
+            </div>
+            <div class="task-meta">
+              <span class="task-badge">💵 $150-500</span>
+              <span class="task-badge medium">Key Investment</span>
+            </div>
+          </div>
+        </li>
+        
+        <li class="task-item">
+          <div class="task-checkbox" data-task="1"></div>
+          <div class="task-content">
+            <div class="task-title">Surface cleaner attachment</div>
+            <div class="task-desc">This is a GAME CHANGER for driveways and flat surfaces. It cleans 4x faster and leaves no streaks. Worth every penny!</div>
+            <div class="task-meta">
+              <span class="task-badge">💵 $50-150</span>
+              <span class="task-badge easy">Highly Recommended</span>
+            </div>
+          </div>
+        </li>
+        
+        <li class="task-item">
+          <div class="task-checkbox" data-task="2"></div>
+          <div class="task-content">
+            <div class="task-title">25-50 foot hose extension</div>
+            <div class="task-desc">The hose that comes with the pressure washer is usually too short. You'll need extra length to reach around houses.</div>
+            <div class="task-meta">
+              <span class="task-badge">💵 $30-60</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        
+        <li class="task-item">
+          <div class="task-checkbox" data-task="3"></div>
+          <div class="task-content">
+            <div class="task-title">Degreaser and house wash soap</div>
+            <div class="task-desc">Simple Green or Zep degreaser for driveways. House wash soap for siding. Available at Home Depot or Lowes.</div>
+            <div class="task-meta">
+              <span class="task-badge">💵 $20-40</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        
+        <li class="task-item">
+          <div class="task-checkbox" data-task="4"></div>
+          <div class="task-content">
+            <div class="task-title">Safety gear</div>
+            <div class="task-desc">Safety glasses, closed-toe shoes, and ear protection (gas washers are loud). Never wear sandals!</div>
+            <div class="task-meta">
+              <span class="task-badge">💵 $20-30</span>
+              <span class="task-badge easy">Essential</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Pricing Guide -->
+    <div class="section-card">
+      <h2><span class="icon">💵</span> What to Charge</h2>
+      <p class="section-intro">These are typical rates for residential work. Adjust based on your area!</p>
+      
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Price Range</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Driveway (2-car)</td>
+            <td>$100-150</td>
+            <td>1-1.5 hours</td>
+          </tr>
+          <tr>
+            <td>Driveway (3-car)</td>
+            <td>$150-200</td>
+            <td>1.5-2 hours</td>
+          </tr>
+          <tr>
+            <td>Sidewalk/Walkway</td>
+            <td>$50-75</td>
+            <td>30-45 min</td>
+          </tr>
+          <tr>
+            <td>Deck or Patio</td>
+            <td>$100-200</td>
+            <td>1-2 hours</td>
+          </tr>
+          <tr>
+            <td>Fence (per linear ft)</td>
+            <td>$1-2/ft</td>
+            <td>Varies</td>
+          </tr>
+          <tr>
+            <td>House Wash (1-story)</td>
+            <td>$200-300</td>
+            <td>2-3 hours</td>
+          </tr>
+          <tr>
+            <td>House Wash (2-story)</td>
+            <td>$300-500</td>
+            <td>3-4 hours</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <div class="details-box" style="margin-top: 20px;">
+        <h4>💡 Pro tip: Bundle for bigger jobs!</h4>
+        <ul>
+          <li>"Driveway + sidewalk" package: $150 (instead of $175 separate)</li>
+          <li>"Whole property" package: Driveway + deck + house = 15% discount</li>
+          <li>Customers love deals, and you make more per visit!</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Step by Step -->
+    <div class="section-card">
+      <h2><span class="icon">📋</span> Step-by-Step: Getting Started</h2>
+      <p class="section-intro">Follow these steps to land your first paying customer!</p>
+      
+      <ul class="task-list">
+        <li class="task-item">
+          <div class="task-checkbox" data-task="5"></div>
+          <div class="task-content">
+            <div class="task-title">Step 1: Practice on your own property (or a friend's)</div>
+            <div class="task-desc">Before you charge anyone, practice! Do your own driveway, a family member's deck, or a friend's sidewalk. Take before/after photos!</div>
+            <div class="details-box">
+              <h4>What to practice:</h4>
+              <ul>
+                <li>Using different nozzles (start with 25° white, never use red on concrete)</li>
+                <li>Keeping consistent distance from surface</li>
+                <li>Overlapping your strokes so you don't leave lines</li>
+                <li>Using the surface cleaner attachment</li>
+              </ul>
+            </div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 2-3 hours</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        
+        <li class="task-item">
+          <div class="task-checkbox" data-task="6"></div>
+          <div class="task-content">
+            <div class="task-title">Step 2: Take amazing before/after photos</div>
+            <div class="task-desc">These photos will sell your service better than anything else. Take them from the same angle, in good lighting!</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 5 minutes</span>
+              <span class="task-badge easy">Critical!</span>
+            </div>
+          </div>
+        </li>
+        
+        <li class="task-item">
+          <div class="task-checkbox" data-task="7"></div>
+          <div class="task-content">
+            <div class="task-title">Step 3: Do 2-3 jobs FREE or cheap to build portfolio</div>
+            <div class="task-desc">Offer to do a neighbor's driveway for free (or just $50) in exchange for photos and a review. This builds your credibility fast!</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 1-2 days</span>
+              <span class="task-badge medium">Important</span>
+            </div>
+          </div>
+        </li>
+        
+        <li class="task-item">
+          <div class="task-checkbox" data-task="8"></div>
+          <div class="task-content">
+            <div class="task-title">Step 4: Post your before/after photos everywhere</div>
+            <div class="task-desc">These transformations are addicting to look at. Post them and watch the inquiries roll in!</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 30 minutes</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        
+        <li class="task-item">
+          <div class="task-checkbox" data-task="9"></div>
+          <div class="task-content">
+            <div class="task-title">Step 5: Give quotes in person when possible</div>
+            <div class="task-desc">When someone asks for a quote, offer to stop by. You'll close way more deals in person than over text!</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 15 min/quote</span>
+              <span class="task-badge medium">High conversion</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Marketing Section -->
+    <div class="section-card marketing-section">
+      <h2><span class="icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);">📣</span> How to Find Clients</h2>
+      <p class="section-intro" style="color: #92400e;">Before/after photos do the heavy lifting here. Post them EVERYWHERE!</p>
+      
+      <div class="marketing-tip">
+        <h3>📱 Post Before/After Photos on Nextdoor</h3>
+        <p>This is the #1 place to get pressure washing clients! Your neighbors will see the transformation and want the same for their home.</p>
+        
+        <div class="script-box">
+          <strong>📝 Copy this post:</strong>
+          "Just finished this driveway in [Neighborhood Name]! 🧼✨ 
+
+Check out this before and after - it's like a brand new driveway! [ATTACH PHOTOS]
+
+I'm offering pressure washing for driveways, sidewalks, decks, and houses. Spring is the perfect time to clean up your outdoor spaces!
+
+📍 Serving [Your Town] area
+💵 Driveways starting at $100
+📱 Message me for a free quote!
+
+P.S. If you book this week, I'll throw in your sidewalk for free!"
+        </div>
+      </div>
+      
+      <div class="marketing-tip">
+        <h3>📲 Join Local Facebook Groups</h3>
+        <p>Search for groups like "[Your Town] Community" or "[Your Town] Recommendations." Post your photos with a simple offer.</p>
+        
+        <div class="places-list">
+          <h4>Best Facebook groups for this:</h4>
+          <ul>
+            <li>[Your Town] Community / Neighbors</li>
+            <li>[Your Town] Recommendations</li>
+            <li>[Your Town] Buy/Sell/Trade (services usually allowed)</li>
+            <li>[Your Neighborhood] HOA or Residents group</li>
+            <li>[Your County] Home Services</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="marketing-tip">
+        <h3>🚪 Door Knock After Every Job</h3>
+        <p>This is GOLD. After you finish a driveway, knock on 5-10 doors on that street. People will see your trailer and the fresh driveway!</p>
+        
+        <div class="script-box">
+          <strong>📝 What to say:</strong>
+          "Hi! I just finished pressure washing your neighbor's driveway at [point to house]. I'm in the neighborhood today and wanted to see if you'd like yours done too? Since I'm already here, I can give you a discount - $100 instead of my usual $125. Would you like a quick estimate?"
+        </div>
+      </div>
+      
+      <div class="marketing-tip">
+        <h3>🎥 Make Short Videos for TikTok/Reels</h3>
+        <p>Pressure washing videos are INCREDIBLY satisfying to watch. People can't look away! Post them on TikTok, Instagram Reels, and YouTube Shorts.</p>
+        
+        <div class="script-box">
+          <strong>📝 Video ideas:</strong>
+          • Time-lapse of entire driveway cleaning
+          • Slow-mo of the dirt washing away
+          • Before/after reveal with dramatic music
+          • "Most satisfying pressure wash ever"
+          • Show the DIRTY water running off
+
+Add text: "Pressure washing in [Your Town] | DM for quote"
+        </div>
+      </div>
+      
+      <div class="marketing-tip">
+        <h3>📄 Leave Door Hangers</h3>
+        <p>When you're in a neighborhood, leave door hangers on houses with dirty driveways. Target homes that clearly need the service!</p>
+        
+        <div class="places-list">
+          <h4>What to put on your door hanger:</h4>
+          <ul>
+            <li>Before/after photo</li>
+            <li>"Your neighbor just got their driveway cleaned!"</li>
+            <li>Your phone number (big and bold)</li>
+            <li>Starting prices</li>
+            <li>A special offer: "10% off this week only"</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resources & Inspiration -->
+    <div class="section-card resources-section">
+      <h2><span class="icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">💡</span> Learn From the Pros</h2>
+      <p class="section-intro" style="color: #5b21b6;">These channels will teach you everything about pressure washing!</p>
+      
+      <a href="https://www.youtube.com/@HousewashExpert" target="_blank" class="resource-item">
+        <h4>📺 Housewash Expert (YouTube)</h4>
+        <p>One of the best channels for learning proper technique. Great beginner tutorials!</p>
+        <span class="link">YouTube →</span>
+      </a>
+      
+      <a href="https://www.youtube.com/@SESW" target="_blank" class="resource-item">
+        <h4>📺 Southeast Softwash (YouTube)</h4>
+        <p>Amazing before/after transformations and business tips. Very professional.</p>
+        <span class="link">YouTube →</span>
+      </a>
+      
+      <a href="https://www.youtube.com/@PressureWashingResource" target="_blank" class="resource-item">
+        <h4>📺 Pressure Washing Resource (YouTube)</h4>
+        <p>Equipment reviews, technique tips, and how to price jobs.</p>
+        <span class="link">YouTube →</span>
+      </a>
+      
+      <a href="https://www.tiktok.com/@washh" target="_blank" class="resource-item">
+        <h4>📱 @washh on TikTok</h4>
+        <p>Satisfying pressure washing videos with millions of views. Great for marketing ideas!</p>
+        <span class="link">TikTok →</span>
+      </a>
+      
+      <a href="https://www.reddit.com/r/pressurewashing/" target="_blank" class="resource-item">
+        <h4>💬 r/pressurewashing (Reddit)</h4>
+        <p>Community of pressure washers sharing tips, equipment advice, and business strategies.</p>
+        <span class="link">Reddit →</span>
+      </a>
+    </div>
+
+    <!-- Notes Section -->
+    <div class="section-card">
+      <h2><span class="icon">📝</span> Your Notes</h2>
+      <p class="section-intro">Write down your ideas, equipment research, and progress here!</p>
+      <textarea id="userNotes" placeholder="Example: Looking at Sun Joe SPX3000 on Amazon for $179. Going to practice on my driveway first. Neighbors at 123 Oak St have a SUPER dirty driveway - will offer them a deal..."></textarea>
+    </div>
+
+    <!-- Help Section -->
+    <div class="help-section">
+      <div class="help-icon">💬</div>
+      <div class="help-content">
+        <h3>Need Help?</h3>
+        <p>Have questions about getting started? Chat with an ASAP Financial coach!</p>
+      </div>
+      <button class="chat-btn" onclick="openChat()">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+        </svg>
+        Start Chat
+      </button>
+    </div>
+  </main>
+
+  <script>
+    const STORAGE_KEY = 'playbook_pressure-washing';
+    
+    function loadState() {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        const state = JSON.parse(saved);
+        document.querySelectorAll('.task-checkbox').forEach((box, i) => {
+          if (state.tasks && state.tasks[i]) {
+            box.classList.add('checked');
+            box.innerHTML = '✓';
+          }
+        });
+        if (state.notes) document.getElementById('userNotes').value = state.notes;
+        updateProgress();
+      }
+    }
+    
+    function saveState() {
+      const tasks = [];
+      document.querySelectorAll('.task-checkbox').forEach(box => {
+        tasks.push(box.classList.contains('checked'));
+      });
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        tasks: tasks,
+        notes: document.getElementById('userNotes').value
+      }));
+    }
+    
+    function updateProgress() {
+      const boxes = document.querySelectorAll('.task-checkbox');
+      const checked = document.querySelectorAll('.task-checkbox.checked').length;
+      const percent = Math.round((checked / boxes.length) * 100);
+      document.getElementById('progressFill').style.width = percent + '%';
+      document.getElementById('progressText').textContent = percent + '%';
+    }
+    
+    document.querySelectorAll('.task-checkbox').forEach(box => {
+      box.addEventListener('click', function() {
+        this.classList.toggle('checked');
+        this.innerHTML = this.classList.contains('checked') ? '✓' : '';
+        updateProgress();
+        saveState();
+      });
+    });
+    
+    document.getElementById('userNotes').addEventListener('input', saveState);
+    function openChat() { window.location.href = 'https://asapcreditrepairusa.com/chat'; }
+    loadState();
+  </script>
+</body>
+</html>

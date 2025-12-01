@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reselling & Flipping Items | ASAP Credit Repair Playbook</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --primary: #063d86; --primary-light: #0a4fa8; --primary-dark: #042a5c; --accent: #00c9a7; --success: #10b981; --warning: #f59e0b; --bg: #f8fafc; --text: #1e293b; --text-light: #64748b; --border: #e2e8f0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 17px; }
+    .header { background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: white; padding: 40px 20px 50px; text-align: center; }
+    .header-content { max-width: 800px; margin: 0 auto; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; color: white; text-decoration: none; opacity: 0.8; font-size: 0.9rem; margin-bottom: 16px; }
+    .category-badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; margin-bottom: 16px; }
+    .header h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 12px; }
+    .header-subtitle { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+    .main-content { max-width: 800px; margin: -30px auto 40px; padding: 0 20px; }
+    .progress-section { position: sticky; top: 0; background: white; padding: 16px 20px; margin: 0 -20px 20px; border-bottom: 1px solid var(--border); z-index: 100; display: flex; align-items: center; gap: 16px; }
+    .progress-bar { flex: 1; height: 10px; background: var(--border); border-radius: 5px; overflow: hidden; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, #16a34a, #22c55e); border-radius: 5px; transition: width 0.3s; width: 0%; }
+    .progress-text { font-weight: 600; color: var(--text); min-width: 50px; }
+    .goal-card { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border: 2px solid var(--success); border-radius: 16px; padding: 24px 28px; margin-bottom: 30px; }
+    .goal-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; color: #065f46; margin-bottom: 12px; }
+    .goal-card p { color: #047857; font-size: 1.05rem; }
+    .goal-card .earnings { background: white; display: inline-block; padding: 10px 18px; border-radius: 10px; margin-top: 14px; font-weight: 600; color: #065f46; font-size: 1.1rem; }
+    .section-card { background: white; border-radius: 16px; padding: 28px; margin-bottom: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid var(--border); }
+    .section-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; color: var(--primary); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+    .section-card h2 .icon { width: 40px; height: 40px; background: linear-gradient(135deg, #16a34a, #22c55e); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; }
+    .task-list { list-style: none; }
+    .task-item { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border); }
+    .task-item:last-child { border-bottom: none; }
+    .task-checkbox { flex-shrink: 0; width: 28px; height: 28px; border: 2px solid var(--border); border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; margin-top: 2px; font-weight: bold; }
+    .task-checkbox:hover { border-color: var(--primary); }
+    .task-checkbox.checked { background: var(--success); border-color: var(--success); color: white; }
+    .task-content { flex: 1; }
+    .task-title { font-weight: 600; font-size: 1.1rem; margin-bottom: 8px; color: var(--text); }
+    .task-desc { color: var(--text-light); font-size: 0.95rem; line-height: 1.6; }
+    .task-meta { display: flex; gap: 12px; margin-top: 10px; flex-wrap: wrap; }
+    .task-badge { font-size: 0.8rem; padding: 4px 10px; border-radius: 6px; background: var(--bg); color: var(--text-light); }
+    .task-badge.easy { background: #dcfce7; color: #166534; }
+    .details-box { background: #f8fafc; border-radius: 10px; padding: 16px; margin-top: 12px; border-left: 4px solid #16a34a; }
+    .details-box h4 { font-size: 0.9rem; color: #15803d; margin-bottom: 10px; }
+    .details-box ul { margin-left: 18px; color: var(--text); font-size: 0.9rem; }
+    .details-box li { margin-bottom: 8px; line-height: 1.5; }
+    .item-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; margin-top: 16px; }
+    .item-card { background: var(--bg); border-radius: 10px; padding: 14px; }
+    .item-card h4 { font-size: 0.95rem; color: #15803d; margin-bottom: 4px; }
+    .item-card .profit { font-size: 0.8rem; color: var(--success); font-weight: 600; margin-bottom: 4px; }
+    .item-card p { font-size: 0.8rem; color: var(--text-light); }
+    .example-box { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border: 2px solid #86efac; border-radius: 12px; padding: 20px; margin-top: 20px; }
+    .example-box h4 { color: #166534; margin-bottom: 12px; }
+    .example-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #bbf7d0; }
+    .example-row:last-child { border-bottom: none; font-weight: 600; }
+    .resources-section { background: linear-gradient(135deg, #ede9fe, #ddd6fe); border: 2px solid #a78bfa; }
+    .resources-section h2 { color: #5b21b6; }
+    .resource-item { background: white; border-radius: 12px; padding: 16px 20px; margin-bottom: 12px; display: block; text-decoration: none; color: var(--text); transition: all 0.2s; }
+    .resource-item:hover { transform: translateX(4px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .resource-item h4 { font-size: 1rem; margin-bottom: 4px; color: #5b21b6; }
+    .resource-item p { font-size: 0.85rem; color: var(--text-light); }
+    .resource-item .link { font-size: 0.8rem; color: #7c3aed; }
+    .section-card textarea { width: 100%; min-height: 150px; padding: 16px 18px; border: 2px solid var(--border); border-radius: 12px; font-family: inherit; font-size: 1rem; resize: vertical; box-sizing: border-box; display: block; line-height: 1.6; }
+    .section-card textarea:focus { outline: none; border-color: var(--primary); }
+    .help-section { background: linear-gradient(135deg, #f0f9ff, #e0f2fe); border: 2px solid #7dd3fc; border-radius: 16px; padding: 24px 28px; margin-top: 30px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .help-icon { width: 56px; height: 56px; background: white; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .help-content { flex: 1; min-width: 200px; }
+    .help-content h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; margin-bottom: 4px; }
+    .help-content p { color: var(--text-light); font-size: 0.95rem; }
+    .chat-btn { background: var(--primary); color: white; border: none; padding: 14px 28px; border-radius: 12px; font-family: inherit; font-size: 1rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: all 0.2s; }
+    .chat-btn:hover { background: var(--primary-light); transform: translateY(-2px); }
+    @media (max-width: 600px) { .header { padding: 30px 20px 40px; } .section-card { padding: 20px; } .help-section { flex-direction: column; text-align: center; } }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <a href="index.html" class="back-link">← Back to All Playbooks</a>
+      <span class="category-badge">💰 Selling & Reselling</span>
+      <h1>Reselling & Flipping Items</h1>
+      <p class="header-subtitle">Buy low, sell high! Find underpriced items at thrift stores, garage sales, and clearance racks, then flip them for profit online.</p>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="progress-section">
+      <span style="font-size: 0.9rem; color: var(--text-light);">Your Progress:</span>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      <span class="progress-text" id="progressText">0%</span>
+    </div>
+
+    <div class="goal-card">
+      <h2>🎯 What You'll Achieve</h2>
+      <p>You'll learn to spot valuable items others overlook, buy them cheap, and sell them for profit on eBay, Poshmark, Facebook Marketplace, or Amazon!</p>
+      <div class="earnings">💰 Side income: $500-2,000+/month | Full-time flippers: $5,000-10,000+/month</div>
+    </div>
+
+    <div class="section-card">
+      <h2><span class="icon">🏷️</span> Best Items to Flip</h2>
+      <div class="item-grid">
+        <div class="item-card">
+          <h4>👗 Clothing & Shoes</h4>
+          <div class="profit">50-500% profit</div>
+          <p>Brand names, vintage, designer</p>
+        </div>
+        <div class="item-card">
+          <h4>🎮 Video Games</h4>
+          <div class="profit">50-300% profit</div>
+          <p>Retro games, limited editions</p>
+        </div>
+        <div class="item-card">
+          <h4>📚 Books</h4>
+          <div class="profit">100-1000% profit</div>
+          <p>Textbooks, rare finds</p>
+        </div>
+        <div class="item-card">
+          <h4>🧸 Toys & LEGO</h4>
+          <div class="profit">50-500% profit</div>
+          <p>Vintage toys, sealed LEGO sets</p>
+        </div>
+        <div class="item-card">
+          <h4>📱 Electronics</h4>
+          <div class="profit">30-100% profit</div>
+          <p>Phones, tablets, headphones</p>
+        </div>
+        <div class="item-card">
+          <h4">🏠 Home Goods</h4>
+          <div class="profit">100-500% profit</div>
+          <p>Kitchen items, decor, furniture</p>
+        </div>
+        <div class="item-card">
+          <h4">⚽ Sports Equipment</h4>
+          <div class="profit">50-200% profit</div>
+          <p>Golf clubs, weights, bikes</p>
+        </div>
+        <div class="item-card">
+          <h4">🛠️ Tools</h4>
+          <div class="profit">50-200% profit</div>
+          <p>Power tools, hand tools</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h2><span class="icon">🔍</span> Where to Find Items</h2>
+      <div class="details-box">
+        <h4>Best sourcing spots:</h4>
+        <ul>
+          <li><strong>Thrift stores</strong> - Goodwill, Salvation Army, local thrifts (go often!)</li>
+          <li><strong>Garage/estate sales</strong> - Early bird gets the deals, Saturdays are best</li>
+          <li><strong>Facebook Marketplace</strong> - Free section, underpriced listings</li>
+          <li><strong>Retail clearance</strong> - Target, Walmart, store closeouts</li>
+          <li><strong>Retail arbitrage</strong> - Buy clearance at stores, sell on Amazon</li>
+          <li><strong>Auctions</strong> - Storage unit auctions, estate auctions</li>
+          <li><strong>Craigslist free section</strong> - People give away valuable stuff!</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h2><span class="icon">📋</span> Step-by-Step: Start Flipping</h2>
+      <ul class="task-list">
+        <li class="task-item">
+          <div class="task-checkbox" data-task="0"></div>
+          <div class="task-content">
+            <div class="task-title">Step 1: Choose your niche (recommended)</div>
+            <div class="task-desc">Start with one category you know - clothes, books, video games. Learn it deeply before expanding!</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 30 minutes</span>
+              <span class="task-badge easy">Focus helps!</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="1"></div>
+          <div class="task-content">
+            <div class="task-title">Step 2: Download the eBay app</div>
+            <div class="task-desc">Use it to scan barcodes and check "sold" prices. This tells you what items ACTUALLY sell for!</div>
+            <div class="details-box">
+              <h4>How to check prices:</h4>
+              <ul>
+                <li>Open eBay app → Search for item</li>
+                <li>Tap "Filter" → Select "Sold Items"</li>
+                <li>This shows what people PAID, not asking prices</li>
+                <li>If it sells for 3x+ what you'd pay, BUY IT!</li>
+              </ul>
+            </div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 10 minutes</span>
+              <span class="task-badge easy">Your #1 tool!</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="2"></div>
+          <div class="task-content">
+            <div class="task-title">Step 3: Go sourcing!</div>
+            <div class="task-desc">Hit thrift stores, garage sales, clearance sections. Scan items and look for profit opportunities.</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 2-4 hours</span>
+              <span class="task-badge easy">The fun part!</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="3"></div>
+          <div class="task-content">
+            <div class="task-title">Step 4: List your items</div>
+            <div class="task-desc">Take good photos, write clear descriptions, price competitively based on sold comps.</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 15-30 min per item</span>
+              <span class="task-badge easy">Gets faster with practice</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="4"></div>
+          <div class="task-content">
+            <div class="task-title">Step 5: Ship sold items promptly</div>
+            <div class="task-desc">Fast shipping = good reviews = more sales. eBay and Poshmark provide shipping labels.</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 10-15 min per item</span>
+              <span class="task-badge easy">Quick turnaround</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="5"></div>
+          <div class="task-content">
+            <div class="task-title">Step 6: Reinvest and scale!</div>
+            <div class="task-desc">Use profits to buy more inventory. Track what sells best and double down on winners!</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ Ongoing</span>
+              <span class="task-badge easy">Grow your business</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="example-box">
+        <h4>💰 Example Flip</h4>
+        <div class="example-row">
+          <span>Found at Goodwill: Nike shoes</span>
+          <span>Paid: $8</span>
+        </div>
+        <div class="example-row">
+          <span>Checked eBay sold prices</span>
+          <span>Sell for: $45</span>
+        </div>
+        <div class="example-row">
+          <span>eBay/PayPal fees (~13%)</span>
+          <span>-$6</span>
+        </div>
+        <div class="example-row">
+          <span>Shipping cost</span>
+          <span>-$8</span>
+        </div>
+        <div class="example-row">
+          <span><strong>PROFIT</strong></span>
+          <span><strong style="color: #16a34a;">$23</strong></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card resources-section">
+      <h2><span class="icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">💡</span> Where to Sell</h2>
+      
+      <a href="https://www.ebay.com" target="_blank" class="resource-item">
+        <h4">🛒 eBay</h4>
+        <p>Best for most items. Huge audience, auction or buy-it-now.</p>
+        <span class="link">ebay.com →</span>
+      </a>
+      <a href="https://poshmark.com" target="_blank" class="resource-item">
+        <h4">👗 Poshmark</h4>
+        <p">Best for clothes, shoes, accessories. Easy shipping.</p>
+        <span class="link">poshmark.com →</span>
+      </a>
+      <a href="https://www.mercari.com" target="_blank" class="resource-item">
+        <h4">📦 Mercari</h4>
+        <p">Easy to use, good for general items. Lower fees than eBay.</p>
+        <span class="link">mercari.com →</span>
+      </a>
+      <a href="https://www.facebook.com/marketplace" target="_blank" class="resource-item">
+        <h4">📱 Facebook Marketplace</h4>
+        <p">No fees for local sales! Great for furniture, large items.</p>
+        <span class="link">facebook.com/marketplace →</span>
+      </a>
+    </div>
+
+    <div class="section-card">
+      <h2><span class="icon">📝</span> Your Notes</h2>
+      <textarea id="userNotes" placeholder="Example: Went to Goodwill Saturday - found 3 pairs of name brand jeans ($4 each, sell for $25-40), vintage Pyrex bowl ($3, sells for $30!), and a North Face jacket ($12, sells for $60). Total invested: $27, potential profit: $100+"></textarea>
+    </div>
+
+    <div class="help-section">
+      <div class="help-icon">💬</div>
+      <div class="help-content">
+        <h3">Need Help?</h3>
+        <p">Have questions about reselling? Chat with an ASAP Financial coach!</p>
+      </div>
+      <button class="chat-btn" onclick="openChat()">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+        Start Chat
+      </button>
+    </div>
+  </main>
+
+  <script>
+    const STORAGE_KEY = 'playbook_reselling-flipping';
+    function loadState() { const saved = localStorage.getItem(STORAGE_KEY); if (saved) { const state = JSON.parse(saved); document.querySelectorAll('.task-checkbox').forEach((box, i) => { if (state.tasks && state.tasks[i]) { box.classList.add('checked'); box.innerHTML = '✓'; } }); if (state.notes) document.getElementById('userNotes').value = state.notes; updateProgress(); } }
+    function saveState() { const tasks = []; document.querySelectorAll('.task-checkbox').forEach(box => { tasks.push(box.classList.contains('checked')); }); localStorage.setItem(STORAGE_KEY, JSON.stringify({ tasks, notes: document.getElementById('userNotes').value })); }
+    function updateProgress() { const boxes = document.querySelectorAll('.task-checkbox'); const checked = document.querySelectorAll('.task-checkbox.checked').length; const percent = Math.round((checked / boxes.length) * 100); document.getElementById('progressFill').style.width = percent + '%'; document.getElementById('progressText').textContent = percent + '%'; }
+    document.querySelectorAll('.task-checkbox').forEach(box => { box.addEventListener('click', function() { this.classList.toggle('checked'); this.innerHTML = this.classList.contains('checked') ? '✓' : ''; updateProgress(); saveState(); }); });
+    document.getElementById('userNotes').addEventListener('input', saveState);
+    function openChat() { window.location.href = 'https://asapcreditrepairusa.com/chat'; }
+    loadState();
+  </script>
+</body>
+</html>
