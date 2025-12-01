@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Reduction Playbooks | ASAP Credit Repair</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #063d86;
+            --primary-dark: #042a5c;
+            --primary-light: #0a4fa8;
+            --accent: #00c9a7;
+            --accent-light: #00e6be;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --border: #e2e8f0;
+            --success: #10b981;
+            --warning: #f59e0b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 60px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 40px;
+        }
+        
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Search Section */
+        .search-section {
+            max-width: 600px;
+            margin: -30px auto 40px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .search-box {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(6, 61, 134, 0.15);
+            padding: 8px;
+            display: flex;
+            gap: 8px;
+        }
+        
+        .search-box input {
+            flex: 1;
+            border: none;
+            padding: 16px 20px;
+            font-size: 1rem;
+            font-family: inherit;
+            outline: none;
+            border-radius: 12px;
+            background: var(--bg);
+        }
+        
+        .search-box button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-family: inherit;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .search-box button:hover {
+            background: var(--primary-light);
+        }
+        
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 50px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        
+        .how-it-works h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+            color: var(--primary);
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .step {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 16px;
+        }
+        
+        .step h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+        
+        .step p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        /* Categories */
+        .categories-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        
+        .categories-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            color: var(--text);
+        }
+        
+        .filter-pills {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-pill {
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 2px solid var(--border);
+            background: white;
+            font-family: inherit;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .filter-pill:hover, .filter-pill.active {
+            border-color: var(--primary);
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Category Grid */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        
+        .category-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            border: 1px solid var(--border);
+        }
+        
+        .category-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(6, 61, 134, 0.12);
+        }
+        
+        .category-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .category-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        
+        .category-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .category-count {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+        
+        .category-playbooks {
+            padding: 16px;
+        }
+        
+        .playbook-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.2s;
+            gap: 12px;
+        }
+        
+        .playbook-item:hover {
+            background: var(--bg);
+        }
+        
+        .playbook-check {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border);
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: white;
+            transition: all 0.2s;
+        }
+        
+        .playbook-item:hover .playbook-check {
+            border-color: var(--primary);
+            background: var(--primary);
+        }
+        
+        .playbook-item:hover .playbook-check::before {
+            content: '→';
+        }
+        
+        .playbook-name {
+            flex: 1;
+            font-size: 0.95rem;
+        }
+        
+        .playbook-time {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            background: var(--bg);
+            padding: 4px 10px;
+            border-radius: 12px;
+        }
+        
+        .see-all {
+            display: block;
+            text-align: center;
+            padding: 14px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            border-top: 1px solid var(--border);
+            transition: background 0.2s;
+        }
+        
+        .see-all:hover {
+            background: var(--bg);
+        }
+        
+        /* Quick Wins Section */
+        .quick-wins {
+            background: linear-gradient(135deg, var(--accent), #00a389);
+            border-radius: 20px;
+            padding: 40px;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        .quick-wins h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+        
+        .quick-wins > p {
+            opacity: 0.9;
+            margin-bottom: 24px;
+        }
+        
+        .quick-wins-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 16px;
+        }
+        
+        .quick-win-item {
+            background: rgba(255,255,255,0.15);
+            border-radius: 12px;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.2s;
+        }
+        
+        .quick-win-item:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateX(4px);
+        }
+        
+        .quick-win-icon {
+            font-size: 24px;
+        }
+        
+        .quick-win-text h4 {
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+        
+        .quick-win-text span {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+        
+        /* Help Section */
+        .help-section {
+            margin-bottom: 40px;
+        }
+        
+        .help-card {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border: 2px solid #bae6fd;
+            border-radius: 20px;
+            padding: 32px 40px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .help-icon {
+            width: 64px;
+            height: 64px;
+            background: white;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            flex-shrink: 0;
+        }
+        
+        .help-content {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .help-content h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+        
+        .help-content p {
+            color: var(--text-light);
+            margin-bottom: 16px;
+            font-size: 1rem;
+        }
+        
+        .btn-chat {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.2s;
+        }
+        
+        .btn-chat:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(6, 61, 134, 0.25);
+        }
+        
+        .btn-chat svg {
+            flex-shrink: 0;
+        }
+        
+        @media (max-width: 600px) {
+            .help-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 24px;
+            }
+        }
+        
+        /* Footer CTA */
+        .footer-cta {
+            text-align: center;
+            padding: 60px 20px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        
+        .footer-cta h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+        
+        .footer-cta p {
+            color: var(--text-light);
+            margin-bottom: 24px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: var(--bg);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 40px 20px 60px;
+            }
+            
+            .hero-stats {
+                gap: 24px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .how-it-works {
+                padding: 30px 20px;
+            }
+            
+            .quick-wins {
+                padding: 30px 20px;
+            }
+        }
+        
+        /* No Results */
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-light);
+        }
+        
+        .no-results h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-icon">💰</div>
+            <h1>Expense Reduction Playbooks</h1>
+            <p>Step-by-step guides to cut your bills, eliminate waste, and keep more money in your pocket. Track your progress as you go!</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">140+</div>
+                    <div class="stat-label">Playbooks</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">17</div>
+                    <div class="stat-label">Categories</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">$500+</div>
+                    <div class="stat-label">Avg Monthly Savings</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search playbooks (e.g., rent, insurance, groceries...)">
+            <button onclick="searchPlaybooks()">Search</button>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- How It Works -->
+        <section class="how-it-works">
+            <h2>How These Playbooks Work</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Pick a Playbook</h3>
+                    <p>Choose one that matches your situation and goals</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Follow the Steps</h3>
+                    <p>Each task is broken down with time estimates</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Check Off Progress</h3>
+                    <p>Your progress saves automatically</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Track Your Savings</h3>
+                    <p>Enter numbers to see your total savings</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Quick Wins -->
+        <section class="quick-wins">
+            <h2>⚡ Start with Quick Wins</h2>
+            <p>These take 15 minutes or less and save money immediately</p>
+            <div class="quick-wins-grid">
+                <a href="playbooks/cancel-1-item-you-pay-for-but-dont-use.html" class="quick-win-item">
+                    <span class="quick-win-icon">🗑️</span>
+                    <div class="quick-win-text">
+                        <h4>Cancel 1 Unused Item</h4>
+                        <span>5 min • Instant savings</span>
+                    </div>
+                </a>
+                <a href="playbooks/unsubscribe-from-10-marketing-emails.html" class="quick-win-item">
+                    <span class="quick-win-icon">📧</span>
+                    <div class="quick-win-text">
+                        <h4>Unsubscribe from 10 Emails</h4>
+                        <span>10 min • Fewer temptations</span>
+                    </div>
+                </a>
+                <a href="playbooks/water-heater-to-120f.html" class="quick-win-item">
+                    <span class="quick-win-icon">🌡️</span>
+                    <div class="quick-win-text">
+                        <h4>Water Heater to 120°F</h4>
+                        <span>5 min • Lower bills</span>
+                    </div>
+                </a>
+                <a href="playbooks/disable-1-click-on-amazon.html" class="quick-win-item">
+                    <span class="quick-win-icon">🛒</span>
+                    <div class="quick-win-text">
+                        <h4>Disable 1-Click Amazon</h4>
+                        <span>2 min • Stop impulse buys</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+        
+        <!-- Categories Header -->
+        <div class="categories-header">
+            <h2>Browse by Category</h2>
+            <div class="filter-pills">
+                <button class="filter-pill active" onclick="filterCategory('all')">All</button>
+                <button class="filter-pill" onclick="filterCategory('housing')">Housing</button>
+                <button class="filter-pill" onclick="filterCategory('food')">Food</button>
+                <button class="filter-pill" onclick="filterCategory('health')">Health</button>
+                <button class="filter-pill" onclick="filterCategory('subscriptions')">Subscriptions</button>
+            </div>
+        </div>
+        
+        <!-- Category Grid -->
+        <div class="category-grid" id="categoryGrid">
+            <!-- Housing & Utilities -->
+            <div class="category-card" data-category="housing">
+                <div class="category-header">
+                    <div class="category-icon">🏠</div>
+                    <div>
+                        <div class="category-title">Housing & Utilities</div>
+                        <div class="category-count">15 playbooks</div>
+                    </div>
+                </div>
+                <div class="category-playbooks">
+                    <a href="playbooks/negotiate-your-rent-at-renewal.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Negotiate Your Rent at Renewal</span>
+                        <span class="playbook-time">30 min</span>
+                    </a>
+                    <a href="playbooks/appeal-your-property-tax.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Appeal Your Property Tax</span>
+                        <span class="playbook-time">2 hrs</span>
+                    </a>
+                    <a href="playbooks/buy-your-own-modem-router.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Buy Your Own Modem/Router</span>
+                        <span class="playbook-time">1 hr</span>
+                    </a>
+                    <a href="playbooks/smart-thermostat-schedule.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Smart Thermostat Schedule</span>
+                        <span class="playbook-time">45 min</span>
+                    </a>
+                </div>
+                <a href="playbooks/index.html?category=Housing" class="see-all">See all 15 playbooks →</a>
+            </div>
+            
+            <!-- Groceries & Food -->
+            <div class="category-card" data-category="food">
+                <div class="category-header">
+                    <div class="category-icon">🛒</div>
+                    <div>
+                        <div class="category-title">Groceries & Food</div>
+                        <div class="category-count">12 playbooks</div>
+                    </div>
+                </div>
+                <div class="category-playbooks">
+                    <a href="playbooks/pantry-eat-what-you-have-challenge.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Pantry Eat-What-You-Have Challenge</span>
+                        <span class="playbook-time">1 week</span>
+                    </a>
+                    <a href="playbooks/create-a-price-book.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Create a Price Book</span>
+                        <span class="playbook-time">2 hrs</span>
+                    </a>
+                    <a href="playbooks/coffee-at-home-rule.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Coffee at Home Rule</span>
+                        <span class="playbook-time">15 min</span>
+                    </a>
+                    <a href="playbooks/quit-food-delivery-apps.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Quit Food Delivery Apps</span>
+                        <span class="playbook-time">10 min</span>
+                    </a>
+                </div>
+                <a href="playbooks/index.html?category=Groceries" class="see-all">See all 12 playbooks →</a>
+            </div>
+            
+            <!-- Transportation -->
+            <div class="category-card" data-category="transport">
+                <div class="category-header">
+                    <div class="category-icon">🚗</div>
+                    <div>
+                        <div class="category-title">Transportation & Auto</div>
+                        <div class="category-count">10 playbooks</div>
+                    </div>
+                </div>
+                <div class="category-playbooks">
+                    <a href="playbooks/shop-auto-insurance-every-12-months.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Shop Auto Insurance Every 12 Months</span>
+                        <span class="playbook-time">1 hr</span>
+                    </a>
+                    <a href="playbooks/refinance-auto-loan.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Refinance Auto Loan</span>
+                        <span class="playbook-time">2 hrs</span>
+                    </a>
+                    <a href="playbooks/one-car-household-test.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">One-Car Household Test</span>
+                        <span class="playbook-time">60 days</span>
+                    </a>
+                    <a href="playbooks/inflate-tires-and-remove-trunk-clutter.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Inflate Tires & Remove Clutter</span>
+                        <span class="playbook-time">20 min</span>
+                    </a>
+                </div>
+                <a href="playbooks/index.html?category=Transportation" class="see-all">See all 10 playbooks →</a>
+            </div>
+            
+            <!-- Health -->
+            <div class="category-card" data-category="health">
+                <div class="category-header">
+                    <div class="category-icon">💊</div>
+                    <div>
+                        <div class="category-title">Health, Meds & Benefits</div>
+                        <div class="category-count">14 playbooks</div>
+                    </div>
+                </div>
+                <div class="category-playbooks">
+                    <a href="playbooks/use-hsa-fsa-strategically.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Use HSA/FSA Strategically</span>
+                        <span class="playbook-time">1 hr</span>
+                    </a>
+                    <a href="playbooks/generic-meds-request.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Generic Meds Request</span>
+                        <span class="playbook-time">15 min</span>
+                    </a>
+                    <a href="playbooks/compare-pharmacy-prices.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Compare Pharmacy Prices</span>
+                        <span class="playbook-time">20 min</span>
+                    </a>
+                    <a href="playbooks/telehealth-first-rule.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Telehealth First Rule</span>
+                        <span class="playbook-time">30 min</span>
+                    </a>
+                </div>
+                <a href="playbooks/index.html?category=Health" class="see-all">See all 14 playbooks →</a>
+            </div>
+            
+            <!-- Subscriptions -->
+            <div class="category-card" data-category="subscriptions">
+                <div class="category-header">
+                    <div class="category-icon">📱</div>
+                    <div>
+                        <div class="category-title">Subscriptions & Tech</div>
+                        <div class="category-count">12 playbooks</div>
+                    </div>
+                </div>
+                <div class="category-playbooks">
+                    <a href="playbooks/rotate-streaming-services-monthly.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Rotate Streaming Services Monthly</span>
+                        <span class="playbook-time">30 min</span>
+                    </a>
+                    <a href="playbooks/audit-app-store-subscriptions.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Audit App Store Subscriptions</span>
+                        <span class="playbook-time">20 min</span>
+                    </a>
+                    <a href="playbooks/cell-switch-to-mvno.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Switch to MVNO Phone Plan</span>
+                        <span class="playbook-time">1 hr</span>
+                    </a>
+                    <a href="playbooks/cable-cut-to-skinny-bundle.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Cut Cable to Skinny Bundle</span>
+                        <span class="playbook-time">1 hr</span>
+                    </a>
+                </div>
+                <a href="playbooks/index.html?category=Subscriptions" class="see-all">See all 12 playbooks →</a>
+            </div>
+            
+            <!-- Banking -->
+            <div class="category-card" data-category="banking">
+                <div class="category-header">
+                    <div class="category-icon">🏦</div>
+                    <div>
+                        <div class="category-title">Banking, Debt & Fees</div>
+                        <div class="category-count">10 playbooks</div>
+                    </div>
+                </div>
+                <div class="category-playbooks">
+                    <a href="playbooks/ask-for-bank-fee-refunds.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Ask for Bank Fee Refunds</span>
+                        <span class="playbook-time">15 min</span>
+                    </a>
+                    <a href="playbooks/balance-transfer-0-with-plan.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Balance Transfer 0% With Plan</span>
+                        <span class="playbook-time">1 hr</span>
+                    </a>
+                    <a href="playbooks/switch-to-fee-free-bank-credit-union.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Switch to Fee-Free Bank</span>
+                        <span class="playbook-time">2 hrs</span>
+                    </a>
+                    <a href="playbooks/opt-out-of-debit-overdraft.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Opt Out of Overdraft</span>
+                        <span class="playbook-time">15 min</span>
+                    </a>
+                </div>
+                <a href="playbooks/index.html?category=Banking" class="see-all">See all 10 playbooks →</a>
+            </div>
+            
+            <!-- Shopping -->
+            <div class="category-card" data-category="shopping">
+                <div class="category-header">
+                    <div class="category-icon">🛍️</div>
+                    <div>
+                        <div class="category-title">Shopping & Household</div>
+                        <div class="category-count">14 playbooks</div>
+                    </div>
+                </div>
+                <div class="category-playbooks">
+                    <a href="playbooks/thrift-first-rule.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Thrift-First Rule</span>
+                        <span class="playbook-time">Ongoing</span>
+                    </a>
+                    <a href="playbooks/72-hour-rule-for-non-essentials.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">72-Hour Rule for Non-Essentials</span>
+                        <span class="playbook-time">Ongoing</span>
+                    </a>
+                    <a href="playbooks/repair-before-replace.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Repair Before Replace</span>
+                        <span class="playbook-time">Varies</span>
+                    </a>
+                    <a href="playbooks/diy-cleaners.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">DIY Cleaners</span>
+                        <span class="playbook-time">30 min</span>
+                    </a>
+                </div>
+                <a href="playbooks/index.html?category=Shopping" class="see-all">See all 14 playbooks →</a>
+            </div>
+            
+            <!-- Insurance -->
+            <div class="category-card" data-category="insurance">
+                <div class="category-header">
+                    <div class="category-icon">🛡️</div>
+                    <div>
+                        <div class="category-title">Insurance</div>
+                        <div class="category-count">8 playbooks</div>
+                    </div>
+                </div>
+                <div class="category-playbooks">
+                    <a href="playbooks/multi-policy-insurance-bundling.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Multi-Policy Bundling</span>
+                        <span class="playbook-time">1 hr</span>
+                    </a>
+                    <a href="playbooks/insurance-raise-deductibles.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Raise Deductibles Strategically</span>
+                        <span class="playbook-time">1 hr</span>
+                    </a>
+                    <a href="playbooks/term-life-insurance-only.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Term Life Insurance Only</span>
+                        <span class="playbook-time">2 hrs</span>
+                    </a>
+                    <a href="playbooks/annual-coverage-fit-review.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Annual Coverage Review</span>
+                        <span class="playbook-time">1 hr</span>
+                    </a>
+                </div>
+                <a href="playbooks/index.html?category=Insurance" class="see-all">See all 8 playbooks →</a>
+            </div>
+            
+            <!-- Kids & Family -->
+            <div class="category-card" data-category="family">
+                <div class="category-header">
+                    <div class="category-icon">👨‍👩‍👧</div>
+                    <div>
+                        <div class="category-title">Kids & Family</div>
+                        <div class="category-count">10 playbooks</div>
+                    </div>
+                </div>
+                <div class="category-playbooks">
+                    <a href="playbooks/dependent-care-fsa.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Dependent Care FSA</span>
+                        <span class="playbook-time">30 min</span>
+                    </a>
+                    <a href="playbooks/used-first-for-kids-gear.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Used-First for Kids Gear</span>
+                        <span class="playbook-time">Ongoing</span>
+                    </a>
+                    <a href="playbooks/school-lunch-strategy.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">School Lunch Strategy</span>
+                        <span class="playbook-time">1 hr</span>
+                    </a>
+                    <a href="playbooks/extracurricular-scholarships.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Extracurricular Scholarships</span>
+                        <span class="playbook-time">2 hrs</span>
+                    </a>
+                </div>
+                <a href="playbooks/index.html?category=Kids" class="see-all">See all 10 playbooks →</a>
+            </div>
+        </div>
+        
+        <!-- Need Help Section -->
+        <section class="help-section">
+            <div class="help-card">
+                <div class="help-icon">💬</div>
+                <div class="help-content">
+                    <h3>Need More Help?</h3>
+                    <p>Have questions about a playbook or need personalized guidance? Chat with an ASAP Financial coach.</p>
+                    <button class="btn btn-chat" onclick="openChat()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                        Start Chat
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer CTA -->
+        <section class="footer-cta">
+            <h2>Ready to Increase Your Income Too?</h2>
+            <p>Check out our Income Gig Playbooks to learn side hustles and ways to bring in extra money.</p>
+            <div class="cta-buttons">
+                <a href="income-playbooks.html" class="btn btn-primary">
+                    💵 View Income Playbooks
+                </a>
+                <a href="playbooks/index.html" class="btn btn-secondary">
+                    📚 Browse All 254 Playbooks
+                </a>
+            </div>
+        </section>
+    </main>
+    
+    <script>
+        function searchPlaybooks() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            window.location.href = `playbooks/index.html?search=${encodeURIComponent(query)}&type=expense`;
+        }
+        
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') searchPlaybooks();
+        });
+        
+        function filterCategory(cat) {
+            document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            document.querySelectorAll('.category-card').forEach(card => {
+                if (cat === 'all' || card.dataset.category === cat) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+        
+        function openChat() {
+            // Replace this with your actual chat widget code
+            // Examples: Intercom, Drift, Crisp, Tidio, or custom chat
+            // window.Intercom('show');
+            // $crisp.push(['do', 'chat:open']);
+            // Tawk_API.toggle();
+            
+            // Fallback: Open a contact page or show a message
+            alert('Chat feature coming soon! For now, email us at support@asapcreditrepairusa.com');
+            
+            // Or redirect to a contact page:
+            // window.location.href = '/contact';
+        }
+    </script>
+</body>
+</html>

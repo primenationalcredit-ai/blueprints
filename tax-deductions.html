@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maximize Tax Deductions | ASAP Credit Repair Playbook</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --primary: #063d86; --primary-light: #0a4fa8; --primary-dark: #042a5c; --accent: #00c9a7; --success: #10b981; --warning: #f59e0b; --bg: #f8fafc; --text: #1e293b; --text-light: #64748b; --border: #e2e8f0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 17px; }
+    .header { background: linear-gradient(135deg, #059669 0%, #047857 100%); color: white; padding: 40px 20px 50px; text-align: center; }
+    .header-content { max-width: 800px; margin: 0 auto; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; color: white; text-decoration: none; opacity: 0.8; font-size: 0.9rem; margin-bottom: 16px; }
+    .category-badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; margin-bottom: 16px; }
+    .header h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 12px; }
+    .header-subtitle { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+    .main-content { max-width: 800px; margin: -30px auto 40px; padding: 0 20px; }
+    .progress-section { position: sticky; top: 0; background: white; padding: 16px 20px; margin: 0 -20px 20px; border-bottom: 1px solid var(--border); z-index: 100; display: flex; align-items: center; gap: 16px; }
+    .progress-bar { flex: 1; height: 10px; background: var(--border); border-radius: 5px; overflow: hidden; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, #059669, #34d399); border-radius: 5px; transition: width 0.3s; width: 0%; }
+    .progress-text { font-weight: 600; color: var(--text); min-width: 50px; }
+    .goal-card { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border: 2px solid var(--success); border-radius: 16px; padding: 24px 28px; margin-bottom: 30px; }
+    .goal-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; color: #065f46; margin-bottom: 12px; }
+    .goal-card p { color: #047857; font-size: 1.05rem; }
+    .goal-card .earnings { background: white; display: inline-block; padding: 10px 18px; border-radius: 10px; margin-top: 14px; font-weight: 600; color: #065f46; font-size: 1.1rem; }
+    .section-card { background: white; border-radius: 16px; padding: 28px; margin-bottom: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid var(--border); }
+    .section-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; color: var(--primary); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+    .section-card h2 .icon { width: 40px; height: 40px; background: linear-gradient(135deg, #059669, #34d399); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; }
+    .task-list { list-style: none; }
+    .task-item { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border); }
+    .task-item:last-child { border-bottom: none; }
+    .task-checkbox { flex-shrink: 0; width: 28px; height: 28px; border: 2px solid var(--border); border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; margin-top: 2px; font-weight: bold; }
+    .task-checkbox:hover { border-color: var(--primary); }
+    .task-checkbox.checked { background: var(--success); border-color: var(--success); color: white; }
+    .task-content { flex: 1; }
+    .task-title { font-weight: 600; font-size: 1.1rem; margin-bottom: 8px; color: var(--text); }
+    .task-desc { color: var(--text-light); font-size: 0.95rem; line-height: 1.6; }
+    .task-meta { display: flex; gap: 12px; margin-top: 10px; flex-wrap: wrap; }
+    .task-badge { font-size: 0.8rem; padding: 4px 10px; border-radius: 6px; background: var(--bg); color: var(--text-light); }
+    .task-badge.easy { background: #dcfce7; color: #166534; }
+    .details-box { background: #f8fafc; border-radius: 10px; padding: 16px; margin-top: 12px; border-left: 4px solid #059669; }
+    .details-box h4 { font-size: 0.9rem; color: #047857; margin-bottom: 10px; }
+    .details-box ul { margin-left: 18px; color: var(--text); font-size: 0.9rem; }
+    .details-box li { margin-bottom: 8px; line-height: 1.5; }
+    .deduction-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; margin-top: 16px; }
+    .deduction-card { background: var(--bg); border-radius: 10px; padding: 14px; }
+    .deduction-card h4 { font-size: 0.9rem; color: #047857; margin-bottom: 4px; }
+    .deduction-card p { font-size: 0.8rem; color: var(--text-light); }
+    .section-card textarea { width: 100%; min-height: 150px; padding: 16px 18px; border: 2px solid var(--border); border-radius: 12px; font-family: inherit; font-size: 1rem; resize: vertical; box-sizing: border-box; display: block; line-height: 1.6; }
+    .section-card textarea:focus { outline: none; border-color: var(--primary); }
+    .warning-box { background: #fef3c7; border: 2px solid #fbbf24; border-radius: 12px; padding: 16px; margin-top: 16px; }
+    .warning-box h4 { color: #92400e; margin-bottom: 8px; }
+    .warning-box p { color: #78350f; font-size: 0.9rem; }
+    .help-section { background: linear-gradient(135deg, #f0f9ff, #e0f2fe); border: 2px solid #7dd3fc; border-radius: 16px; padding: 24px 28px; margin-top: 30px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .help-icon { width: 56px; height: 56px; background: white; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .help-content { flex: 1; min-width: 200px; }
+    .help-content h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; margin-bottom: 4px; }
+    .help-content p { color: var(--text-light); font-size: 0.95rem; }
+    .chat-btn { background: var(--primary); color: white; border: none; padding: 14px 28px; border-radius: 12px; font-family: inherit; font-size: 1rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: all 0.2s; }
+    .chat-btn:hover { background: var(--primary-light); transform: translateY(-2px); }
+    @media (max-width: 600px) { .header { padding: 30px 20px 40px; } .section-card { padding: 20px; } .help-section { flex-direction: column; text-align: center; } }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <a href="index.html" class="back-link">← Back to All Playbooks</a>
+      <span class="category-badge">💰 Tax Savings</span>
+      <h1>Maximize Tax Deductions</h1>
+      <p class="header-subtitle">Don't overpay the IRS! Many deductions are commonly missed. This checklist helps you find money you're leaving on the table.</p>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="progress-section">
+      <span style="font-size: 0.9rem; color: var(--text-light);">Your Progress:</span>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      <span class="progress-text" id="progressText">0%</span>
+    </div>
+
+    <div class="goal-card">
+      <h2>🎯 What You'll Achieve</h2>
+      <p>You'll identify deductions you may be missing and potentially save hundreds or thousands on your tax bill!</p>
+      <div class="earnings">💰 Average missed deductions: $500-2,000+ per year</div>
+    </div>
+
+    <div class="section-card">
+      <h2><span class="icon">📋</span> Commonly Missed Deductions</h2>
+      <div class="deduction-grid">
+        <div class="deduction-card">
+          <h4>🏠 Home Office</h4>
+          <p>If you work from home (even part-time)</p>
+        </div>
+        <div class="deduction-card">
+          <h4>🚗 Mileage</h4>
+          <p>Business, medical, charity driving</p>
+        </div>
+        <div class="deduction-card">
+          <h4>🎓 Education</h4>
+          <p>Tuition, student loan interest</p>
+        </div>
+        <div class="deduction-card">
+          <h4>💊 Medical</h4>
+          <p>Over 7.5% of income threshold</p>
+        </div>
+        <div class="deduction-card">
+          <h4">💝 Charitable</h4>
+          <p>Cash + non-cash donations</p>
+        </div>
+        <div class="deduction-card">
+          <h4">💼 Job Search</h4>
+          <p>Resume, travel, agency fees</p>
+        </div>
+      </div>
+      <div class="warning-box">
+        <h4>⚠️ Important Disclaimer</h4>
+        <p>This is general information only. Consult a tax professional for advice specific to your situation. Tax laws change frequently.</p>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h2><span class="icon">✅</span> Tax Deduction Checklist</h2>
+      <ul class="task-list">
+        <li class="task-item">
+          <div class="task-checkbox" data-task="0"></div>
+          <div class="task-content">
+            <div class="task-title">Review: Should you itemize or take standard deduction?</div>
+            <div class="task-desc">Standard deduction 2024: $14,600 single, $29,200 married filing jointly. If your itemized deductions exceed this, itemize!</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 30 minutes</span>
+              <span class="task-badge easy">Important decision</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="1"></div>
+          <div class="task-content">
+            <div class="task-title">Gather home office deduction info (if applicable)</div>
+            <div class="task-desc">Simplified method: $5/sq ft, up to 300 sq ft ($1,500 max). Regular method requires more calculation but may be higher.</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 15 minutes</span>
+              <span class="task-badge easy">Work from home?</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="2"></div>
+          <div class="task-content">
+            <div class="task-title">Track business mileage deduction</div>
+            <div class="task-desc">2024 rate: 67 cents/mile for business. Use apps like MileIQ to track automatically!</div>
+            <div class="details-box">
+              <h4>Deductible mileage types:</h4>
+              <ul>
+                <li>Business travel (not commuting)</li>
+                <li>Medical appointments (22 cents/mile)</li>
+                <li>Charitable activities (14 cents/mile)</li>
+                <li>Moving for work (military only)</li>
+              </ul>
+            </div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ Ongoing</span>
+              <span class="task-badge easy">Track it!</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="3"></div>
+          <div class="task-content">
+            <div class="task-title">Check retirement contribution deductions</div>
+            <div class="task-desc">Traditional IRA, 401(k), HSA contributions reduce taxable income. Max out if you can!</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 15 minutes</span>
+              <span class="task-badge easy">Double benefit!</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="4"></div>
+          <div class="task-content">
+            <div class="task-title">Document charitable donations</div>
+            <div class="task-desc">Cash donations need receipts. Non-cash (clothes, furniture) need fair market value documentation.</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 30 minutes</span>
+              <span class="task-badge easy">Keep receipts!</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="5"></div>
+          <div class="task-content">
+            <div class="task-title">Review education credits and deductions</div>
+            <div class="task-desc">American Opportunity Credit (up to $2,500), Lifetime Learning Credit, student loan interest deduction (up to $2,500).</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 20 minutes</span>
+              <span class="task-badge easy">Big savings!</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="section-card">
+      <h2><span class="icon">📝</span> Your Notes</h2>
+      <textarea id="userNotes" placeholder="Example: Home office: spare bedroom 150 sq ft = $750 deduction. Mileage: 3,200 business miles x $0.67 = $2,144. Charitable: $500 cash + $400 donated goods. Student loan interest: $1,200. Total additional deductions found: $4,494! At 22% bracket = $988 tax savings."></textarea>
+    </div>
+
+    <div class="help-section">
+      <div class="help-icon">💬</div>
+      <div class="help-content">
+        <h3>Need Help?</h3>
+        <p>Have questions about tax deductions? Chat with an ASAP Financial coach!</p>
+      </div>
+      <button class="chat-btn" onclick="openChat()">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+        Start Chat
+      </button>
+    </div>
+  </main>
+
+  <script>
+    const STORAGE_KEY = 'playbook_tax-deductions';
+    function loadState() { const saved = localStorage.getItem(STORAGE_KEY); if (saved) { const state = JSON.parse(saved); document.querySelectorAll('.task-checkbox').forEach((box, i) => { if (state.tasks && state.tasks[i]) { box.classList.add('checked'); box.innerHTML = '✓'; } }); if (state.notes) document.getElementById('userNotes').value = state.notes; updateProgress(); } }
+    function saveState() { const tasks = []; document.querySelectorAll('.task-checkbox').forEach(box => { tasks.push(box.classList.contains('checked')); }); localStorage.setItem(STORAGE_KEY, JSON.stringify({ tasks, notes: document.getElementById('userNotes').value })); }
+    function updateProgress() { const boxes = document.querySelectorAll('.task-checkbox'); const checked = document.querySelectorAll('.task-checkbox.checked').length; const percent = Math.round((checked / boxes.length) * 100); document.getElementById('progressFill').style.width = percent + '%'; document.getElementById('progressText').textContent = percent + '%'; }
+    document.querySelectorAll('.task-checkbox').forEach(box => { box.addEventListener('click', function() { this.classList.toggle('checked'); this.innerHTML = this.classList.contains('checked') ? '✓' : ''; updateProgress(); saveState(); }); });
+    document.getElementById('userNotes').addEventListener('input', saveState);
+    function openChat() { window.location.href = 'https://asapcreditrepairusa.com/chat'; }
+    loadState();
+  </script>
+</body>
+</html>

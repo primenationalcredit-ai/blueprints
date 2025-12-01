@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Your Auto Insurance | ASAP Credit Repair Playbook</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --primary: #063d86; --primary-light: #0a4fa8; --primary-dark: #042a5c; --accent: #00c9a7; --success: #10b981; --warning: #f59e0b; --bg: #f8fafc; --text: #1e293b; --text-light: #64748b; --border: #e2e8f0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 17px; }
+    .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 40px 20px 50px; text-align: center; }
+    .header-content { max-width: 800px; margin: 0 auto; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; color: white; text-decoration: none; opacity: 0.8; font-size: 0.9rem; margin-bottom: 16px; }
+    .back-link:hover { opacity: 1; }
+    .category-badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; margin-bottom: 16px; }
+    .header h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 12px; }
+    .header-subtitle { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+    .main-content { max-width: 800px; margin: -30px auto 40px; padding: 0 20px; }
+    .progress-section { position: sticky; top: 0; background: white; padding: 16px 20px; margin: 0 -20px 20px; border-bottom: 1px solid var(--border); z-index: 100; display: flex; align-items: center; gap: 16px; }
+    .progress-bar { flex: 1; height: 10px; background: var(--border); border-radius: 5px; overflow: hidden; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, var(--success), var(--accent)); border-radius: 5px; transition: width 0.3s; width: 0%; }
+    .progress-text { font-weight: 600; color: var(--text); min-width: 50px; }
+    .goal-card { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border: 2px solid var(--success); border-radius: 16px; padding: 24px 28px; margin-bottom: 30px; }
+    .goal-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; color: #065f46; margin-bottom: 12px; }
+    .goal-card p { color: #047857; font-size: 1.05rem; }
+    .goal-card .earnings { background: white; display: inline-block; padding: 10px 18px; border-radius: 10px; margin-top: 14px; font-weight: 600; color: #065f46; font-size: 1.1rem; }
+    .quick-win { background: linear-gradient(135deg, #fef3c7, #fde68a); border: 2px solid #fbbf24; border-radius: 12px; padding: 16px 20px; margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+    .quick-win .icon { font-size: 28px; }
+    .quick-win .text { color: #92400e; font-weight: 500; }
+    .section-card { background: white; border-radius: 16px; padding: 28px; margin-bottom: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid var(--border); }
+    .section-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; color: var(--primary); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+    .section-card h2 .icon { width: 40px; height: 40px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; }
+    .section-intro { color: var(--text-light); margin-bottom: 20px; font-size: 1rem; }
+    .task-list { list-style: none; }
+    .task-item { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border); }
+    .task-item:last-child { border-bottom: none; }
+    .task-checkbox { flex-shrink: 0; width: 28px; height: 28px; border: 2px solid var(--border); border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; margin-top: 2px; font-weight: bold; }
+    .task-checkbox:hover { border-color: var(--primary); }
+    .task-checkbox.checked { background: var(--success); border-color: var(--success); color: white; }
+    .task-content { flex: 1; }
+    .task-title { font-weight: 600; font-size: 1.1rem; margin-bottom: 8px; color: var(--text); }
+    .task-desc { color: var(--text-light); font-size: 0.95rem; line-height: 1.6; }
+    .task-meta { display: flex; gap: 12px; margin-top: 10px; flex-wrap: wrap; }
+    .task-badge { font-size: 0.8rem; padding: 4px 10px; border-radius: 6px; background: var(--bg); color: var(--text-light); }
+    .task-badge.easy { background: #dcfce7; color: #166534; }
+    .task-badge.medium { background: #fef3c7; color: #92400e; }
+    .details-box { background: #f8fafc; border-radius: 10px; padding: 16px; margin-top: 12px; border-left: 4px solid var(--primary); }
+    .details-box h4 { font-size: 0.9rem; color: var(--primary); margin-bottom: 10px; }
+    .details-box ul { margin-left: 18px; color: var(--text); font-size: 0.9rem; }
+    .details-box li { margin-bottom: 8px; line-height: 1.5; }
+    .comparison-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; margin-top: 16px; }
+    .company-card { background: var(--bg); border-radius: 10px; padding: 16px; text-align: center; }
+    .company-card h4 { font-size: 1rem; color: var(--primary); margin-bottom: 4px; }
+    .company-card p { font-size: 0.85rem; color: var(--text-light); }
+    .discount-section { background: linear-gradient(135deg, #dbeafe, #bfdbfe); border: 2px solid #3b82f6; }
+    .discount-section h2 { color: #1e40af; }
+    .discount-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-top: 16px; }
+    .discount-card { background: white; border-radius: 10px; padding: 14px; }
+    .discount-card h4 { font-size: 0.95rem; color: #1e40af; margin-bottom: 4px; }
+    .discount-card p { font-size: 0.85rem; color: var(--text-light); }
+    .discount-card .amount { font-weight: 600; color: var(--success); font-size: 0.9rem; margin-top: 6px; }
+    .calculator-section { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border: 2px solid var(--success); }
+    .calculator-section h2 { color: #065f46; }
+    .calc-row { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+    .calc-row label { min-width: 200px; color: #047857; font-weight: 500; }
+    .calc-row input { padding: 12px 16px; border: 2px solid #6ee7b7; border-radius: 10px; font-size: 1rem; font-family: inherit; width: 150px; }
+    .calc-row input:focus { outline: none; border-color: var(--success); }
+    .calc-result { background: white; border-radius: 12px; padding: 20px; text-align: center; margin-top: 20px; }
+    .calc-result h3 { color: #065f46; font-size: 1.1rem; margin-bottom: 8px; }
+    .calc-result .amount { font-family: 'Space Grotesk', sans-serif; font-size: 2.5rem; font-weight: 700; color: var(--success); }
+    .resources-section { background: linear-gradient(135deg, #ede9fe, #ddd6fe); border: 2px solid #a78bfa; }
+    .resources-section h2 { color: #5b21b6; }
+    .resource-item { background: white; border-radius: 12px; padding: 16px 20px; margin-bottom: 12px; display: block; text-decoration: none; color: var(--text); transition: all 0.2s; }
+    .resource-item:hover { transform: translateX(4px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .resource-item h4 { font-size: 1rem; margin-bottom: 4px; color: #5b21b6; }
+    .resource-item p { font-size: 0.85rem; color: var(--text-light); }
+    .resource-item .link { font-size: 0.8rem; color: #7c3aed; }
+    .section-card textarea { width: 100%; min-height: 150px; padding: 16px 18px; border: 2px solid var(--border); border-radius: 12px; font-family: inherit; font-size: 1rem; resize: vertical; box-sizing: border-box; display: block; line-height: 1.6; }
+    .section-card textarea:focus { outline: none; border-color: var(--primary); }
+    .help-section { background: linear-gradient(135deg, #f0f9ff, #e0f2fe); border: 2px solid #7dd3fc; border-radius: 16px; padding: 24px 28px; margin-top: 30px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .help-icon { width: 56px; height: 56px; background: white; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .help-content { flex: 1; min-width: 200px; }
+    .help-content h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; margin-bottom: 4px; }
+    .help-content p { color: var(--text-light); font-size: 0.95rem; }
+    .chat-btn { background: var(--primary); color: white; border: none; padding: 14px 28px; border-radius: 12px; font-family: inherit; font-size: 1rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: all 0.2s; }
+    .chat-btn:hover { background: var(--primary-light); transform: translateY(-2px); }
+    @media (max-width: 600px) { .header { padding: 30px 20px 40px; } .section-card { padding: 20px; } .help-section { flex-direction: column; text-align: center; } .calc-row { flex-direction: column; align-items: stretch; } .calc-row input { width: 100%; } }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <a href="index.html" class="back-link">← Back to All Playbooks</a>
+      <span class="category-badge">🚗 Transportation</span>
+      <h1>Shop Your Auto Insurance</h1>
+      <p class="header-subtitle">Most people overpay by $300-700/year because they never shop around. 30 minutes of comparing quotes could save you hundreds!</p>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="progress-section">
+      <span style="font-size: 0.9rem; color: var(--text-light);">Your Progress:</span>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      <span class="progress-text" id="progressText">0%</span>
+    </div>
+
+    <div class="quick-win">
+      <span class="icon">⚡</span>
+      <span class="text"><strong>Quick Win!</strong> Shop every 6-12 months. Insurance companies raise rates gradually - new customers get the best deals!</span>
+    </div>
+
+    <div class="goal-card">
+      <h2>🎯 What You'll Achieve</h2>
+      <p>You'll get quotes from multiple insurance companies and either switch to a cheaper provider OR use the lower quotes to negotiate with your current company. Either way, you'll save money!</p>
+      <div class="earnings">💰 Average savings: $300-700/year (20-30 minutes of work!)</div>
+    </div>
+
+    <div class="section-card">
+      <h2><span class="icon">🤔</span> Why Insurance Shopping Works</h2>
+      <p class="section-intro">Here's what insurance companies don't want you to know:</p>
+      <div class="details-box">
+        <h4>The truth about auto insurance:</h4>
+        <ul>
+          <li><strong>Rates vary WILDLY</strong> - Same person, same car, prices differ by 50%+ between companies</li>
+          <li><strong>Loyalty isn't rewarded</strong> - Long-time customers often pay MORE than new ones</li>
+          <li><strong>"Rate creep"</strong> - Companies slowly raise your rate hoping you won't notice</li>
+          <li><strong>Discounts change</strong> - You might qualify for new discounts you didn't before</li>
+          <li><strong>Easy to switch</strong> - You can switch any time, even mid-policy (you get a refund)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h2><span class="icon">📋</span> Step-by-Step: Save on Insurance</h2>
+      <p class="section-intro">Follow these steps to potentially save hundreds!</p>
+      <ul class="task-list">
+        <li class="task-item">
+          <div class="task-checkbox" data-task="0"></div>
+          <div class="task-content">
+            <div class="task-title">Step 1: Get your current policy details</div>
+            <div class="task-desc">Find your declarations page (the summary of your coverage). You need this to compare apples to apples.</div>
+            <div class="details-box">
+              <h4>Info you'll need:</h4>
+              <ul>
+                <li>Current coverage levels (liability, collision, comprehensive)</li>
+                <li>Current deductibles</li>
+                <li>Current premium (what you pay)</li>
+                <li>Driver info (ages, driving records)</li>
+                <li>Vehicle info (year, make, model, VIN)</li>
+              </ul>
+            </div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 5 minutes</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="1"></div>
+          <div class="task-content">
+            <div class="task-title">Step 2: Get quotes from comparison sites</div>
+            <div class="task-desc">Use sites that give you multiple quotes at once. This saves a TON of time!</div>
+            <div class="details-box">
+              <h4>Best comparison sites:</h4>
+              <ul>
+                <li><strong>The Zebra</strong> - Compares 100+ companies, very easy</li>
+                <li><strong>Policygenius</strong> - Good for bundling home + auto</li>
+                <li><strong>Gabi</strong> - Connects to your current policy automatically</li>
+                <li><strong>NerdWallet</strong> - Unbiased comparisons and reviews</li>
+              </ul>
+            </div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 10-15 minutes</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="2"></div>
+          <div class="task-content">
+            <div class="task-title">Step 3: Get direct quotes from 2-3 companies</div>
+            <div class="task-desc">Some companies don't work with comparison sites. Get quotes directly from big names.</div>
+            <div class="details-box">
+              <h4>Companies to check directly:</h4>
+              <ul>
+                <li><strong>GEICO</strong> - Often cheapest for good drivers</li>
+                <li><strong>Progressive</strong> - Good rates, easy online tools</li>
+                <li><strong>State Farm</strong> - Great service, competitive rates</li>
+                <li><strong>USAA</strong> - Best rates IF you qualify (military connection)</li>
+                <li><strong>Costco/Ameriprise</strong> - If you're a Costco member</li>
+              </ul>
+            </div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 15-20 minutes</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="3"></div>
+          <div class="task-content">
+            <div class="task-title">Step 4: Compare quotes (same coverage!)</div>
+            <div class="task-desc">Make sure you're comparing the same coverage levels. Write down the best 2-3 quotes.</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 10 minutes</span>
+              <span class="task-badge easy">Important!</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="4"></div>
+          <div class="task-content">
+            <div class="task-title">Step 5: Call your current company with lower quotes</div>
+            <div class="task-desc">Before switching, call your current insurer. They might match or beat the price to keep you!</div>
+            <div class="details-box">
+              <h4>What to say:</h4>
+              <ul>
+                <li>"I've been a customer for [X years] and I've been shopping around."</li>
+                <li>"I got a quote from [Company] for [price] with the same coverage."</li>
+                <li>"Is there anything you can do to match that price? I'd prefer to stay with you."</li>
+              </ul>
+            </div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 10-15 minutes</span>
+              <span class="task-badge medium">Often works!</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="5"></div>
+          <div class="task-content">
+            <div class="task-title">Step 6: Switch or stay - your choice!</div>
+            <div class="task-desc">If you find a better deal (or your company won't match), switch! It's easy and you'll get a refund for unused premium.</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 15 minutes</span>
+              <span class="task-badge easy">Congrats on your savings!</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="section-card discount-section">
+      <h2><span class="icon" style="background: linear-gradient(135deg, #3b82f6, #2563eb);">💰</span> Discounts to Ask About</h2>
+      <p class="section-intro" style="color: #1e40af;">Make sure you're getting ALL the discounts you qualify for!</p>
+      
+      <div class="discount-grid">
+        <div class="discount-card">
+          <h4>📦 Bundling</h4>
+          <p>Combine auto + home/renters insurance</p>
+          <div class="amount">Save 10-25%</div>
+        </div>
+        <div class="discount-card">
+          <h4>🚗 Multi-car</h4>
+          <p>Insure 2+ vehicles on same policy</p>
+          <div class="amount">Save 10-25%</div>
+        </div>
+        <div class="discount-card">
+          <h4>✅ Good driver</h4>
+          <p>No accidents/tickets for 3-5 years</p>
+          <div class="amount">Save 10-30%</div>
+        </div>
+        <div class="discount-card">
+          <h4>🎓 Good student</h4>
+          <p>Students with B average or higher</p>
+          <div class="amount">Save 5-15%</div>
+        </div>
+        <div class="discount-card">
+          <h4>💳 Pay in full</h4>
+          <p>Pay 6-month premium upfront</p>
+          <div class="amount">Save 5-10%</div>
+        </div>
+        <div class="discount-card">
+          <h4>📱 Paperless</h4>
+          <p>Go paperless + autopay</p>
+          <div class="amount">Save 3-10%</div>
+        </div>
+        <div class="discount-card">
+          <h4">🏠 Homeowner</h4>
+          <p>Own your home (even without bundling)</p>
+          <div class="amount">Save 3-10%</div>
+        </div>
+        <div class="discount-card">
+          <h4">🎖️ Military/Veteran</h4>
+          <p>Active, reserve, or veteran</p>
+          <div class="amount">Save 5-15%</div>
+        </div>
+        <div class="discount-card">
+          <h4">👴 Senior/Retired</h4>
+          <p">55+ or retired</p>
+          <div class="amount">Save 5-10%</div>
+        </div>
+        <div class="discount-card">
+          <h4">🚙 Low mileage</h4>
+          <p>Drive less than 7,500 miles/year</p>
+          <div class="amount">Save 5-15%</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card calculator-section">
+      <h2><span class="icon" style="background: linear-gradient(135deg, var(--success), #059669);">🧮</span> Calculate Your Potential Savings</h2>
+      <p class="section-intro" style="color: #047857;">See what shopping around could save you!</p>
+      
+      <div class="calc-row">
+        <label for="currentPremium">Current 6-month premium:</label>
+        <input type="number" id="currentPremium" placeholder="$800">
+      </div>
+      <div class="calc-row">
+        <label for="bestQuote">Best quote you found:</label>
+        <input type="number" id="bestQuote" placeholder="$600">
+      </div>
+      
+      <div class="calc-result">
+        <h3>Your Annual Savings</h3>
+        <div class="amount" id="annualSavings">$0</div>
+        <div style="color: var(--text-light); font-size: 0.9rem; margin-top: 4px;">That's <span id="monthlySavings">$0</span>/month back in your pocket!</div>
+      </div>
+    </div>
+
+    <div class="section-card resources-section">
+      <h2><span class="icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">💡</span> Where to Get Quotes</h2>
+      <p class="section-intro" style="color: #5b21b6;">Start with comparison sites, then check individual companies!</p>
+      
+      <a href="https://www.thezebra.com" target="_blank" class="resource-item">
+        <h4>🦓 The Zebra</h4>
+        <p>Compare 100+ insurance companies in minutes. No spam calls!</p>
+        <span class="link">thezebra.com →</span>
+      </a>
+      <a href="https://www.gabi.com" target="_blank" class="resource-item">
+        <h4">📊 Gabi</h4>
+        <p>Connects to your current policy and finds better rates automatically.</p>
+        <span class="link">gabi.com →</span>
+      </a>
+      <a href="https://www.geico.com" target="_blank" class="resource-item">
+        <h4">🦎 GEICO</h4>
+        <p>Often has the lowest rates for good drivers. Quick online quotes.</p>
+        <span class="link">geico.com →</span>
+      </a>
+      <a href="https://www.progressive.com" target="_blank" class="resource-item">
+        <h4">🚗 Progressive</h4>
+        <p>Shows you competitor rates too! Great comparison tool.</p>
+        <span class="link">progressive.com →</span>
+      </a>
+    </div>
+
+    <div class="section-card">
+      <h2><span class="icon">📝</span> Your Notes</h2>
+      <textarea id="userNotes" placeholder="Example: Current policy: $840/6 months with State Farm. Got quote from GEICO: $620. Going to call State Farm tomorrow to see if they'll match..."></textarea>
+    </div>
+
+    <div class="help-section">
+      <div class="help-icon">💬</div>
+      <div class="help-content">
+        <h3>Need Help?</h3>
+        <p>Have questions about comparing insurance? Chat with an ASAP Financial coach!</p>
+      </div>
+      <button class="chat-btn" onclick="openChat()">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+        Start Chat
+      </button>
+    </div>
+  </main>
+
+  <script>
+    const STORAGE_KEY = 'playbook_shop-auto-insurance';
+    function loadState() {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        const state = JSON.parse(saved);
+        document.querySelectorAll('.task-checkbox').forEach((box, i) => {
+          if (state.tasks && state.tasks[i]) { box.classList.add('checked'); box.innerHTML = '✓'; }
+        });
+        if (state.notes) document.getElementById('userNotes').value = state.notes;
+        if (state.currentPremium) document.getElementById('currentPremium').value = state.currentPremium;
+        if (state.bestQuote) document.getElementById('bestQuote').value = state.bestQuote;
+        updateProgress();
+        calculateSavings();
+      }
+    }
+    function saveState() {
+      const tasks = []; document.querySelectorAll('.task-checkbox').forEach(box => { tasks.push(box.classList.contains('checked')); });
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        tasks,
+        notes: document.getElementById('userNotes').value,
+        currentPremium: document.getElementById('currentPremium').value,
+        bestQuote: document.getElementById('bestQuote').value
+      }));
+    }
+    function updateProgress() {
+      const boxes = document.querySelectorAll('.task-checkbox');
+      const checked = document.querySelectorAll('.task-checkbox.checked').length;
+      const percent = Math.round((checked / boxes.length) * 100);
+      document.getElementById('progressFill').style.width = percent + '%';
+      document.getElementById('progressText').textContent = percent + '%';
+    }
+    function calculateSavings() {
+      const current = parseFloat(document.getElementById('currentPremium').value) || 0;
+      const best = parseFloat(document.getElementById('bestQuote').value) || 0;
+      const sixMonthSavings = Math.max(0, current - best);
+      const annual = sixMonthSavings * 2;
+      document.getElementById('annualSavings').textContent = '$' + annual.toFixed(0);
+      document.getElementById('monthlySavings').textContent = '$' + (annual / 12).toFixed(0);
+    }
+    document.querySelectorAll('.task-checkbox').forEach(box => {
+      box.addEventListener('click', function() { this.classList.toggle('checked'); this.innerHTML = this.classList.contains('checked') ? '✓' : ''; updateProgress(); saveState(); });
+    });
+    document.getElementById('userNotes').addEventListener('input', saveState);
+    document.getElementById('currentPremium').addEventListener('input', () => { calculateSavings(); saveState(); });
+    document.getElementById('bestQuote').addEventListener('input', () => { calculateSavings(); saveState(); });
+    function openChat() { window.location.href = 'https://asapcreditrepairusa.com/chat'; }
+    loadState();
+  </script>
+</body>
+</html>

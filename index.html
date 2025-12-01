@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASAP Credit Repair - Side Hustle & Money Playbooks</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--primary:#063d86;--success:#10b981;--bg:#f8fafc;--text:#1e293b;--text-light:#64748b;--border:#e2e8f0}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+    .header{background:linear-gradient(135deg,#063d86,#0ea5e9);color:#fff;padding:60px 20px;text-align:center}
+    .header h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,5vw,3rem);margin-bottom:16px}
+    .header p{font-size:1.2rem;opacity:.9;max-width:600px;margin:0 auto}
+    .main{max-width:1200px;margin:0 auto;padding:40px 20px}
+    .search-box{background:#fff;padding:20px;border-radius:16px;margin-bottom:30px;box-shadow:0 4px 12px rgba(0,0,0,.1)}
+    .search-box input{width:100%;padding:16px 20px;font-size:1.1rem;border:2px solid var(--border);border-radius:12px;font-family:inherit}
+    .search-box input:focus{outline:none;border-color:var(--primary)}
+    .stats{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+    .stat{background:#fff;padding:20px 30px;border-radius:12px;text-align:center}
+    .stat-number{font-size:2.5rem;font-weight:700;color:var(--primary)}
+    .stat-label{color:var(--text-light)}
+    .category{margin-bottom:40px}
+    .category h2{font-size:1.5rem;margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid var(--border)}
+    .playbook-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+    .playbook-card{background:#fff;border-radius:12px;padding:20px;border:1px solid var(--border);text-decoration:none;color:inherit;transition:all .2s}
+    .playbook-card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.1);border-color:var(--primary)}
+    .playbook-card h3{font-size:1.1rem;margin-bottom:8px;color:var(--primary)}
+    .playbook-card p{font-size:.9rem;color:var(--text-light)}
+    .footer{text-align:center;padding:40px 20px;color:var(--text-light)}
+    .hidden{display:none}
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>💰 ASAP Credit Repair Playbooks</h1>
+    <p>233 Step-by-Step Guides to Save Money & Build Income</p>
+  </header>
+  <main class="main">
+    <div class="search-box">
+      <input type="text" id="search" placeholder="🔍 Search playbooks... (e.g., tutoring, cleaning, passive income)">
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-number">233</div><div class="stat-label">Total Playbooks</div></div>
+      <div class="stat"><div class="stat-number">100+</div><div class="stat-label">Side Hustles</div></div>
+      <div class="stat"><div class="stat-number">50+</div><div class="stat-label">Money-Saving Tips</div></div>
+    </div>
+    <div id="playbooks"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2024 ASAP Credit Repair USA | <a href="https://asapcreditrepairusa.com">asapcreditrepairusa.com</a></p>
+  </footer>
+  <script>
+    const playbooks = [
+      {file:'affiliate-marketing.html',title:'Affiliate Marketing'},
+      {file:'airbnb-cohost.html',title:'Airbnb Cohost'},
+      {file:'airbnb-hosting.html',title:'Airbnb Hosting'},
+      {file:'amazon-fba.html',title:'Amazon Fba'},
+      {file:'amazon-kdp.html',title:'Amazon Kdp'},
+      {file:'appliance-repair.html',title:'Appliance Repair'},
+      {file:'atm-business.html',title:'Atm Business'},
+      {file:'babysitting-childcare.html',title:'Babysitting Childcare'},
+      {file:'baked-goods-business.html',title:'Baked Goods Business'},
+      {file:'baking-business.html',title:'Baking Business'},
+      {file:'balloon-decor.html',title:'Balloon Decor'},
+      {file:'balloon-decorating.html',title:'Balloon Decorating'},
+      {file:'bank-account-bonuses.html',title:'Bank Account Bonuses'},
+      {file:'become-life-coach.html',title:'Become Life Coach'},
+      {file:'become-referee-umpire.html',title:'Become Referee Umpire'},
+      {file:'beekeeping-honey.html',title:'Beekeeping Honey'},
+      {file:'bookkeeping-business.html',title:'Bookkeeping Business'},
+      {file:'bookkeeping.html',title:'Bookkeeping'},
+      {file:'cake-decorating.html',title:'Cake Decorating'},
+      {file:'calligraphy-business.html',title:'Calligraphy Business'},
+      {file:'cancel-gym.html',title:'Cancel Gym'},
+      {file:'cancel-subscriptions.html',title:'Cancel Subscriptions'},
+      {file:'cancel-unused-subscriptions.html',title:'Cancel Unused Subscriptions'},
+      {file:'candle-making.html',title:'Candle Making'},
+      {file:'car-detailing.html',title:'Car Detailing'},
+      {file:'car-wash-detailing.html',title:'Car Wash Detailing'},
+      {file:'car-washing.html',title:'Car Washing'},
+      {file:'carpet-cleaning.html',title:'Carpet Cleaning'},
+      {file:'carpooling-rideshare.html',title:'Carpooling Rideshare'},
+      {file:'catering-meal-prep.html',title:'Catering Meal Prep'},
+      {file:'catering.html',title:'Catering'},
+      {file:'closet-organizing.html',title:'Closet Organizing'},
+      {file:'computer-repair.html',title:'Computer Repair'},
+      {file:'copywriting.html',title:'Copywriting'},
+      {file:'credit-card-rewards.html',title:'Credit Card Rewards'},
+      {file:'cut-cable-streaming.html',title:'Cut Cable Streaming'},
+      {file:'data-entry.html',title:'Data Entry'},
+      {file:'delivery-driver-gig.html',title:'Delivery Driver Gig'},
+      {file:'digital-products.html',title:'Digital Products'},
+      {file:'diy-home-repairs.html',title:'Diy Home Repairs'},
+      {file:'dog-walking-pet-sitting.html',title:'Dog Walking Pet Sitting'},
+      {file:'dog-walking.html',title:'Dog Walking'},
+      {file:'dog-waste-removal-service.html',title:'Dog Waste Removal Service'},
+      {file:'donate-plasma-for-cash.html',title:'Donate Plasma For Cash'},
+      {file:'donate-plasma.html',title:'Donate Plasma'},
+      {file:'drone-photography.html',title:'Drone Photography'},
+      {file:'drone-services.html',title:'Drone Services'},
+      {file:'dropshipping.html',title:'Dropshipping'},
+      {file:'ebay-reselling.html',title:'Ebay Reselling'},
+      {file:'ebook-publishing.html',title:'Ebook Publishing'},
+      {file:'elder-care-companion.html',title:'Elder Care Companion'},
+      {file:'elderly-care.html',title:'Elderly Care'},
+      {file:'energy-audit.html',title:'Energy Audit'},
+      {file:'errand-running-seniors.html',title:'Errand Running Seniors'},
+      {file:'errand-service.html',title:'Errand Service'},
+      {file:'errand-services.html',title:'Errand Services'},
+      {file:'estate-sales.html',title:'Estate Sales'},
+      {file:'etsy-digital.html',title:'Etsy Digital'},
+      {file:'etsy-printables.html',title:'Etsy Printables'},
+      {file:'etsy-seller.html',title:'Etsy Seller'},
+      {file:'event-photography.html',title:'Event Photography'},
+      {file:'event-planning.html',title:'Event Planning'},
+      {file:'expense-playbooks.html',title:'Expense Playbooks'},
+      {file:'face-painting.html',title:'Face Painting'},
+      {file:'fence-repair.html',title:'Fence Repair'},
+      {file:'firewood-business.html',title:'Firewood Business'},
+      {file:'flea-market-flipping.html',title:'Flea Market Flipping'},
+      {file:'flip-domain-names.html',title:'Flip Domain Names'},
+      {file:'flip-electronics.html',title:'Flip Electronics'},
+      {file:'flip-furniture.html',title:'Flip Furniture'},
+      {file:'florist.html',title:'Florist'},
+      {file:'focus-groups.html',title:'Focus Groups'},
+      {file:'food-delivery-driver.html',title:'Food Delivery Driver'},
+      {file:'food-truck.html',title:'Food Truck'},
+      {file:'freelance-writing-copywriting.html',title:'Freelance Writing Copywriting'},
+      {file:'freelance-writing.html',title:'Freelance Writing'},
+      {file:'furniture-assembly.html',title:'Furniture Assembly'},
+      {file:'furniture-flipping.html',title:'Furniture Flipping'},
+      {file:'generic-medications.html',title:'Generic Medications'},
+      {file:'gift-basket-business.html',title:'Gift Basket Business'},
+      {file:'gift-basket.html',title:'Gift Basket'},
+      {file:'government-assistance.html',title:'Government Assistance'},
+      {file:'graphic-design-freelance.html',title:'Graphic Design Freelance'},
+      {file:'graphic-design-freelancing.html',title:'Graphic Design Freelancing'},
+      {file:'graphic-design.html',title:'Graphic Design'},
+      {file:'grocery-delivery.html',title:'Grocery Delivery'},
+      {file:'grocery-shopping-gigs.html',title:'Grocery Shopping Gigs'},
+      {file:'gutter-cleaning-service.html',title:'Gutter Cleaning Service'},
+      {file:'gutter-cleaning.html',title:'Gutter Cleaning'},
+      {file:'handyman-services.html',title:'Handyman Services'},
+      {file:'handyman.html',title:'Handyman'},
+      {file:'hauling-delivery.html',title:'Hauling Delivery'},
+      {file:'high-yield-savings.html',title:'High Yield Savings'},
+      {file:'holiday-light-installation.html',title:'Holiday Light Installation'},
+      {file:'home-staging.html',title:'Home Staging'},
+      {file:'house-cleaning-maid-service.html',title:'House Cleaning Maid Service'},
+      {file:'house-sitting.html',title:'House Sitting'},
+      {file:'income-playbooks.html',title:'Income Playbooks'},
+      {file:'interior-design.html',title:'Interior Design'},
+      {file:'interior-painting.html',title:'Interior Painting'},
+      {file:'jewelry-making.html',title:'Jewelry Making'},
+      {file:'junk-removal-hauling.html',title:'Junk Removal Hauling'},
+      {file:'junk-removal.html',title:'Junk Removal'},
+      {file:'landscaping.html',title:'Landscaping'},
+      {file:'language-tutoring.html',title:'Language Tutoring'},
+      {file:'laundry-service.html',title:'Laundry Service'},
+      {file:'lawn-care-business.html',title:'Lawn Care Business'},
+      {file:'lawn-care-mowing.html',title:'Lawn Care Mowing'},
+      {file:'library-savings.html',title:'Library Savings'},
+      {file:'life-coaching.html',title:'Life Coaching'},
+      {file:'lower-cell-phone-bill.html',title:'Lower Cell Phone Bill'},
+      {file:'lower-insurance.html',title:'Lower Insurance'},
+      {file:'lower-phone-bill.html',title:'Lower Phone Bill'},
+      {file:'lower-utility-bills.html',title:'Lower Utility Bills'},
+      {file:'makeup-artist.html',title:'Makeup Artist'},
+      {file:'meal-planning-save-money.html',title:'Meal Planning Save Money'},
+      {file:'meal-prep-delivery.html',title:'Meal Prep Delivery'},
+      {file:'meal-prep-service.html',title:'Meal Prep Service'},
+      {file:'meal-prep.html',title:'Meal Prep'},
+      {file:'medical-billing.html',title:'Medical Billing'},
+      {file:'mobile-bartending.html',title:'Mobile Bartending'},
+      {file:'mobile-car-detailing.html',title:'Mobile Car Detailing'},
+      {file:'mobile-car-wash.html',title:'Mobile Car Wash'},
+      {file:'mobile-dj.html',title:'Mobile Dj'},
+      {file:'mobile-mechanic.html',title:'Mobile Mechanic'},
+      {file:'mobile-notary.html',title:'Mobile Notary'},
+      {file:'moving-help.html',title:'Moving Help'},
+      {file:'moving-helper-service.html',title:'Moving Helper Service'},
+      {file:'moving-helper.html',title:'Moving Helper'},
+      {file:'moving-services.html',title:'Moving Services'},
+      {file:'music-lessons.html',title:'Music Lessons'},
+      {file:'mystery-shopper.html',title:'Mystery Shopper'},
+      {file:'nail-technician.html',title:'Nail Technician'},
+      {file:'negotiate-bills.html',title:'Negotiate Bills'},
+      {file:'negotiate-credit-card-fees.html',title:'Negotiate Credit Card Fees'},
+      {file:'negotiate-medical-bills.html',title:'Negotiate Medical Bills'},
+      {file:'negotiate-salary.html',title:'Negotiate Salary'},
+      {file:'negotiate-your-rent-at-renewal.html',title:'Negotiate Your Rent At Renewal'},
+      {file:'notary-business.html',title:'Notary Business'},
+      {file:'notary-public-side-hustle.html',title:'Notary Public Side Hustle'},
+      {file:'notary-public.html',title:'Notary Public'},
+      {file:'notary-signing-agent.html',title:'Notary Signing Agent'},
+      {file:'notary.html',title:'Notary'},
+      {file:'online-coaching.html',title:'Online Coaching'},
+      {file:'online-course-creation.html',title:'Online Course Creation'},
+      {file:'online-course-creator.html',title:'Online Course Creator'},
+      {file:'online-courses.html',title:'Online Courses'},
+      {file:'online-surveys.html',title:'Online Surveys'},
+      {file:'online-tutoring.html',title:'Online Tutoring'},
+      {file:'parking-rental.html',title:'Parking Rental'},
+      {file:'personal-chef.html',title:'Personal Chef'},
+      {file:'personal-trainer.html',title:'Personal Trainer'},
+      {file:'personal-training.html',title:'Personal Training'},
+      {file:'pet-sitting-dog-walking.html',title:'Pet Sitting Dog Walking'},
+      {file:'photography-business.html',title:'Photography Business'},
+      {file:'photography-side-hustle.html',title:'Photography Side Hustle'},
+      {file:'plasma-donation.html',title:'Plasma Donation'},
+      {file:'playbook_template.html',title:'Playbook_template'},
+      {file:'podcast-editing.html',title:'Podcast Editing'},
+      {file:'podcast-production.html',title:'Podcast Production'},
+      {file:'podcast.html',title:'Podcast'},
+      {file:'pool-cleaning-service.html',title:'Pool Cleaning Service'},
+      {file:'pool-cleaning.html',title:'Pool Cleaning'},
+      {file:'power-washing.html',title:'Power Washing'},
+      {file:'pressure-washing-service.html',title:'Pressure Washing Service'},
+      {file:'pressure-washing.html',title:'Pressure Washing'},
+      {file:'print-on-demand.html',title:'Print On Demand'},
+      {file:'proofreading-editing.html',title:'Proofreading Editing'},
+      {file:'real-estate-photography.html',title:'Real Estate Photography'},
+      {file:'refinance-debt.html',title:'Refinance Debt'},
+      {file:'refinance-high-interest-debt.html',title:'Refinance High Interest Debt'},
+      {file:'refinance-student-loans.html',title:'Refinance Student Loans'},
+      {file:'rent-out-car.html',title:'Rent Out Car'},
+      {file:'rent-out-your-car.html',title:'Rent Out Your Car'},
+      {file:'rent-storage-space.html',title:'Rent Storage Space'},
+      {file:'rent-your-car.html',title:'Rent Your Car'},
+      {file:'reselling-flipping-items.html',title:'Reselling Flipping Items'},
+      {file:'resume-writing.html',title:'Resume Writing'},
+      {file:'rideshare-driver.html',title:'Rideshare Driver'},
+      {file:'rv-rental.html',title:'Rv Rental'},
+      {file:'sample-playbook-homework-coach.html',title:'Sample Playbook Homework Coach'},
+      {file:'scrap-metal-collecting.html',title:'Scrap Metal Collecting'},
+      {file:'scrap-metal-recycling.html',title:'Scrap Metal Recycling'},
+      {file:'screen-printing.html',title:'Screen Printing'},
+      {file:'sell-crafts-etsy.html',title:'Sell Crafts Etsy'},
+      {file:'sell-facebook-marketplace.html',title:'Sell Facebook Marketplace'},
+      {file:'sell-printables-etsy.html',title:'Sell Printables Etsy'},
+      {file:'sell-stock-photos.html',title:'Sell Stock Photos'},
+      {file:'sell-used-books.html',title:'Sell Used Books'},
+      {file:'senior-tech-help.html',title:'Senior Tech Help'},
+      {file:'seo-services.html',title:'Seo Services'},
+      {file:'sewing-alterations.html',title:'Sewing Alterations'},
+      {file:'shop-auto-insurance.html',title:'Shop Auto Insurance'},
+      {file:'slash-grocery-bill.html',title:'Slash Grocery Bill'},
+      {file:'snow-removal-service.html',title:'Snow Removal Service'},
+      {file:'soap-making.html',title:'Soap Making'},
+      {file:'social-media-influencer.html',title:'Social Media Influencer'},
+      {file:'social-media-management.html',title:'Social Media Management'},
+      {file:'social-media-manager.html',title:'Social Media Manager'},
+      {file:'sports-betting-arbitrage.html',title:'Sports Betting Arbitrage'},
+      {file:'sports-coaching.html',title:'Sports Coaching'},
+      {file:'stock-photography.html',title:'Stock Photography'},
+      {file:'storage-rental.html',title:'Storage Rental'},
+      {file:'survey-sites-microtasks.html',title:'Survey Sites Microtasks'},
+      {file:'tax-deductions.html',title:'Tax Deductions'},
+      {file:'tax-preparation.html',title:'Tax Preparation'},
+      {file:'teach-english-online.html',title:'Teach English Online'},
+      {file:'transcription-services.html',title:'Transcription Services'},
+      {file:'transcription-work.html',title:'Transcription Work'},
+      {file:'translation-services.html',title:'Translation Services'},
+      {file:'travel-planning.html',title:'Travel Planning'},
+      {file:'tree-service.html',title:'Tree Service'},
+      {file:'tshirt-business.html',title:'Tshirt Business'},
+      {file:'use-cash-back-apps.html',title:'Use Cash Back Apps'},
+      {file:'utility-assistance.html',title:'Utility Assistance'},
+      {file:'vending-machine-business.html',title:'Vending Machine Business'},
+      {file:'vending-machine.html',title:'Vending Machine'},
+      {file:'vending-machines.html',title:'Vending Machines'},
+      {file:'video-editing.html',title:'Video Editing'},
+      {file:'vintage-reselling.html',title:'Vintage Reselling'},
+      {file:'virtual-assistant.html',title:'Virtual Assistant'},
+      {file:'voice-acting.html',title:'Voice Acting'},
+      {file:'voiceover-artist.html',title:'Voiceover Artist'},
+      {file:'voiceover-work.html',title:'Voiceover Work'},
+      {file:'web-development.html',title:'Web Development'},
+      {file:'website-flipping.html',title:'Website Flipping'},
+      {file:'wedding-officiant.html',title:'Wedding Officiant'},
+      {file:'wholesale-real-estate.html',title:'Wholesale Real Estate'},
+      {file:'window-cleaning.html',title:'Window Cleaning'},
+      {file:'window-tinting.html',title:'Window Tinting'},
+      {file:'window-washing-service.html',title:'Window Washing Service'},
+      {file:'woodworking.html',title:'Woodworking'},
+      {file:'youtube-channel.html',title:'Youtube Channel'},
+    ];
+    const container = document.getElementById('playbooks');
+    function render(filter = '') {
+      const filtered = playbooks.filter(p => p.title.toLowerCase().includes(filter.toLowerCase()));
+      container.innerHTML = '<div class="playbook-grid">' + 
+        filtered.map(p => `<a href="${p.file}" class="playbook-card"><h3>${p.title}</h3><p>Step-by-step guide →</p></a>`).join('') +
+        '</div>';
+      if (filtered.length === 0) {
+        container.innerHTML = '<p style="text-align:center;padding:40px;color:#64748b">No playbooks found. Try a different search term.</p>';
+      }
+    }
+    document.getElementById('search').addEventListener('input', e => render(e.target.value));
+    render();
+  </script>
+</body>
+</html>

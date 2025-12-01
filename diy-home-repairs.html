@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DIY Home Repairs | ASAP Credit Repair Playbook</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --primary: #063d86; --primary-light: #0a4fa8; --primary-dark: #042a5c; --accent: #00c9a7; --success: #10b981; --warning: #f59e0b; --bg: #f8fafc; --text: #1e293b; --text-light: #64748b; --border: #e2e8f0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 17px; }
+    .header { background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%); color: white; padding: 40px 20px 50px; text-align: center; }
+    .header-content { max-width: 800px; margin: 0 auto; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; color: white; text-decoration: none; opacity: 0.8; font-size: 0.9rem; margin-bottom: 16px; }
+    .category-badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; margin-bottom: 16px; }
+    .header h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 12px; }
+    .header-subtitle { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+    .main-content { max-width: 800px; margin: -30px auto 40px; padding: 0 20px; }
+    .progress-section { position: sticky; top: 0; background: white; padding: 16px 20px; margin: 0 -20px 20px; border-bottom: 1px solid var(--border); z-index: 100; display: flex; align-items: center; gap: 16px; }
+    .progress-bar { flex: 1; height: 10px; background: var(--border); border-radius: 5px; overflow: hidden; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, #ea580c, #fb923c); border-radius: 5px; transition: width 0.3s; width: 0%; }
+    .progress-text { font-weight: 600; color: var(--text); min-width: 50px; }
+    .goal-card { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border: 2px solid var(--success); border-radius: 16px; padding: 24px 28px; margin-bottom: 30px; }
+    .goal-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; color: #065f46; margin-bottom: 12px; }
+    .goal-card p { color: #047857; font-size: 1.05rem; }
+    .goal-card .earnings { background: white; display: inline-block; padding: 10px 18px; border-radius: 10px; margin-top: 14px; font-weight: 600; color: #065f46; font-size: 1.1rem; }
+    .section-card { background: white; border-radius: 16px; padding: 28px; margin-bottom: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid var(--border); }
+    .section-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; color: var(--primary); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+    .section-card h2 .icon { width: 40px; height: 40px; background: linear-gradient(135deg, #ea580c, #fb923c); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; }
+    .task-list { list-style: none; }
+    .task-item { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border); }
+    .task-item:last-child { border-bottom: none; }
+    .task-checkbox { flex-shrink: 0; width: 28px; height: 28px; border: 2px solid var(--border); border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; margin-top: 2px; font-weight: bold; }
+    .task-checkbox:hover { border-color: var(--primary); }
+    .task-checkbox.checked { background: var(--success); border-color: var(--success); color: white; }
+    .task-content { flex: 1; }
+    .task-title { font-weight: 600; font-size: 1.1rem; margin-bottom: 8px; color: var(--text); }
+    .task-desc { color: var(--text-light); font-size: 0.95rem; line-height: 1.6; }
+    .task-meta { display: flex; gap: 12px; margin-top: 10px; flex-wrap: wrap; }
+    .task-badge { font-size: 0.8rem; padding: 4px 10px; border-radius: 6px; background: var(--bg); color: var(--text-light); }
+    .task-badge.easy { background: #dcfce7; color: #166534; }
+    .details-box { background: #f8fafc; border-radius: 10px; padding: 16px; margin-top: 12px; border-left: 4px solid #ea580c; }
+    .details-box h4 { font-size: 0.9rem; color: #c2410c; margin-bottom: 10px; }
+    .details-box ul { margin-left: 18px; color: var(--text); font-size: 0.9rem; }
+    .details-box li { margin-bottom: 8px; line-height: 1.5; }
+    .repair-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; margin-top: 16px; }
+    .repair-card { background: var(--bg); border-radius: 12px; padding: 18px; }
+    .repair-card h4 { font-size: 1rem; color: #c2410c; margin-bottom: 6px; }
+    .repair-card .savings { font-size: 0.85rem; color: var(--success); font-weight: 600; margin-bottom: 8px; }
+    .repair-card p { font-size: 0.85rem; color: var(--text-light); line-height: 1.5; }
+    .warning-box { background: #fef2f2; border: 2px solid #fca5a5; border-radius: 12px; padding: 16px; margin-top: 16px; }
+    .warning-box h4 { color: #991b1b; margin-bottom: 8px; }
+    .warning-box p { color: #7f1d1d; font-size: 0.9rem; margin: 0; }
+    .resources-section { background: linear-gradient(135deg, #ede9fe, #ddd6fe); border: 2px solid #a78bfa; }
+    .resources-section h2 { color: #5b21b6; }
+    .resource-item { background: white; border-radius: 12px; padding: 16px 20px; margin-bottom: 12px; display: block; text-decoration: none; color: var(--text); transition: all 0.2s; }
+    .resource-item:hover { transform: translateX(4px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .resource-item h4 { font-size: 1rem; margin-bottom: 4px; color: #5b21b6; }
+    .resource-item p { font-size: 0.85rem; color: var(--text-light); }
+    .resource-item .link { font-size: 0.8rem; color: #7c3aed; }
+    .section-card textarea { width: 100%; min-height: 150px; padding: 16px 18px; border: 2px solid var(--border); border-radius: 12px; font-family: inherit; font-size: 1rem; resize: vertical; box-sizing: border-box; display: block; line-height: 1.6; }
+    .section-card textarea:focus { outline: none; border-color: var(--primary); }
+    .help-section { background: linear-gradient(135deg, #f0f9ff, #e0f2fe); border: 2px solid #7dd3fc; border-radius: 16px; padding: 24px 28px; margin-top: 30px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .help-icon { width: 56px; height: 56px; background: white; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .help-content { flex: 1; min-width: 200px; }
+    .help-content h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; margin-bottom: 4px; }
+    .help-content p { color: var(--text-light); font-size: 0.95rem; }
+    .chat-btn { background: var(--primary); color: white; border: none; padding: 14px 28px; border-radius: 12px; font-family: inherit; font-size: 1rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: all 0.2s; }
+    .chat-btn:hover { background: var(--primary-light); transform: translateY(-2px); }
+    @media (max-width: 600px) { .header { padding: 30px 20px 40px; } .section-card { padding: 20px; } .help-section { flex-direction: column; text-align: center; } }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <a href="index.html" class="back-link">← Back to All Playbooks</a>
+      <span class="category-badge">🔧 Housing & Utilities</span>
+      <h1>DIY Home Repairs</h1>
+      <p class="header-subtitle">Stop paying handyman prices for simple fixes! Learn basic repairs and save hundreds to thousands per year. YouTube is your free teacher.</p>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="progress-section">
+      <span style="font-size: 0.9rem; color: var(--text-light);">Your Progress:</span>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      <span class="progress-text" id="progressText">0%</span>
+    </div>
+
+    <div class="goal-card">
+      <h2>🎯 What You'll Achieve</h2>
+      <p>You'll learn to handle common home repairs yourself instead of paying professionals. Most repairs are easier than you think - and YouTube has tutorials for everything!</p>
+      <div class="earnings">💰 Save $500-2,000+ per year on repair costs</div>
+    </div>
+
+    <div class="section-card">
+      <h2><span class="icon">🔧</span> Easy Repairs Anyone Can Do</h2>
+      <div class="repair-grid">
+        <div class="repair-card">
+          <h4">🚽 Running Toilet</h4>
+          <div class="savings">Save $100-200</div>
+          <p>Usually just a flapper valve replacement. $5 part, 10 minutes, tons of YouTube tutorials!</p>
+        </div>
+        <div class="repair-card">
+          <h4">🚿 Dripping Faucet</h4>
+          <div class="savings">Save $75-150</div>
+          <p>Often just a washer or cartridge. $5-20 in parts, watch one video and you've got it.</p>
+        </div>
+        <div class="repair-card">
+          <h4">🚪 Squeaky Door</h4>
+          <div class="savings">Save $50-100</div>
+          <p>WD-40 or hinge pin replacement. Takes 2 minutes!</p>
+        </div>
+        <div class="repair-card">
+          <h4">🔌 Replace Outlet/Switch</h4>
+          <div class="savings">Save $75-150</div>
+          <p">Turn off breaker, swap the wires. $3 part, 15 minutes.</p>
+        </div>
+        <div class="repair-card">
+          <h4">🕳️ Patch Drywall Holes</h4>
+          <div class="savings">Save $100-200</div>
+          <p">Spackle, sand, paint. Kits cost $10-20, looks professional!</p>
+        </div>
+        <div class="repair-card">
+          <h4">🚰 Unclog Drain</h4>
+          <div class="savings">Save $100-250</div>
+          <p">Plunger, drain snake, or baking soda + vinegar. Try before calling plumber!</p>
+        </div>
+        <div class="repair-card">
+          <h4">🌡️ Replace Thermostat</h4>
+          <div class="savings">Save $100-200</div>
+          <p">Match wires to new thermostat. Smart thermostats have great guides!</p>
+        </div>
+        <div class="repair-card">
+          <h4">💨 Replace Air Filter</h4>
+          <div class="savings">Save $30-50/visit</div>
+          <p">Slide out old, slide in new. Do it every 1-3 months. So easy!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h2><span class="icon">🧰</span> Basic Tool Kit to Own</h2>
+      <div class="details-box">
+        <h4">Essential tools (one-time $50-100 investment):</h4>
+        <ul>
+          <li><strong>Screwdriver set</strong> - Phillips and flathead, various sizes</li>
+          <li><strong>Adjustable wrench</strong> - Fits many bolt sizes</li>
+          <li><strong>Pliers</strong> - Needle-nose and standard</li>
+          <li><strong>Hammer</strong> - For nails and gentle persuasion</li>
+          <li><strong>Tape measure</strong> - Measure twice, cut once!</li>
+          <li><strong>Level</strong> - For hanging things straight</li>
+          <li><strong>Flashlight</strong> - For dark spaces</li>
+          <li><strong>Utility knife</strong> - Cuts everything</li>
+          <li><strong>Plunger</strong> - Every home needs one</li>
+          <li><strong>Drill</strong> - Worth the $30-50 investment</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h2><span class="icon">📋</span> Step-by-Step: Start DIYing</h2>
+      <ul class="task-list">
+        <li class="task-item">
+          <div class="task-checkbox" data-task="0"></div>
+          <div class="task-content">
+            <div class="task-title">Step 1: Get a basic tool kit</div>
+            <div class="task-desc">Buy a starter kit at Home Depot/Lowes or piece together essentials. This is a one-time investment!</div>
+            <div class="task-meta">
+              <span class="task-badge">💵 $50-100</span>
+              <span class="task-badge easy">One-time cost</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="1"></div>
+          <div class="task-content">
+            <div class="task-title">Step 2: When something breaks - YouTube it first!</div>
+            <div class="task-desc">Search "[problem] how to fix" on YouTube. There's a tutorial for EVERYTHING. Watch 2-3 videos.</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 10-30 minutes</span>
+              <span class="task-badge easy">Free education!</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="2"></div>
+          <div class="task-content">
+            <div class="task-title">Step 3: Buy the right parts</div>
+            <div class="task-desc">Take photos or bring the old part to the hardware store. Employees are usually super helpful!</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 20-30 minutes</span>
+              <span class="task-badge easy">Ask for help</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="3"></div>
+          <div class="task-content">
+            <div class="task-title">Step 4: Do the repair (with video playing!)</div>
+            <div class="task-desc">Follow along step by step. Pause and rewind as needed. Take your time!</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ Varies</span>
+              <span class="task-badge easy">You've got this!</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="4"></div>
+          <div class="task-content">
+            <div class="task-title">Step 5: Celebrate your savings!</div>
+            <div class="task-desc">Calculate what a pro would have charged vs. what you spent. Feel proud - you just saved money!</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 1 minute</span>
+              <span class="task-badge easy">Track your wins</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="warning-box">
+        <h4">⚠️ Know When to Call a Pro</h4>
+        <p">Some things ARE worth hiring out: major electrical work, gas line issues, structural problems, roof repairs, and anything you're not comfortable with. Safety first!</p>
+      </div>
+    </div>
+
+    <div class="section-card resources-section">
+      <h2><span class="icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">💡</span> Learn DIY Repairs</h2>
+      
+      <a href="https://www.youtube.com/results?search_query=home+repair+for+beginners" target="_blank" class="resource-item">
+        <h4">📺 YouTube - Home Repair</h4>
+        <p">Thousands of free tutorials. Search any repair + "how to fix"!</p>
+        <span class="link">YouTube →</span>
+      </a>
+      <a href="https://www.homedepot.com/c/how-to" target="_blank" class="resource-item">
+        <h4">🏠 Home Depot How-To</h4>
+        <p">Written guides and videos for common repairs.</p>
+        <span class="link">homedepot.com →</span>
+      </a>
+      <a href="https://www.familyhandyman.com" target="_blank" class="resource-item">
+        <h4">🔧 Family Handyman</h4>
+        <p">Great articles and step-by-step repair guides.</p>
+        <span class="link">familyhandyman.com →</span>
+      </a>
+    </div>
+
+    <div class="section-card">
+      <h2><span class="icon">📝</span> Your DIY Wins</h2>
+      <textarea id="userNotes" placeholder="Track your savings! Example:
+
+- Fixed running toilet: $5 part, saved $150 (plumber quote)
+- Replaced bathroom faucet: $45 faucet, saved $120 (plumber wanted $165)
+- Patched 3 drywall holes: $15 kit, saved $100+
+
+Total saved this year: $370+ "></textarea>
+    </div>
+
+    <div class="help-section">
+      <div class="help-icon">💬</div>
+      <div class="help-content">
+        <h3">Need Help?</h3>
+        <p">Have questions about DIY repairs? Chat with an ASAP Financial coach!</p>
+      </div>
+      <button class="chat-btn" onclick="openChat()">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+        Start Chat
+      </button>
+    </div>
+  </main>
+
+  <script>
+    const STORAGE_KEY = 'playbook_diy-home-repairs';
+    function loadState() { const saved = localStorage.getItem(STORAGE_KEY); if (saved) { const state = JSON.parse(saved); document.querySelectorAll('.task-checkbox').forEach((box, i) => { if (state.tasks && state.tasks[i]) { box.classList.add('checked'); box.innerHTML = '✓'; } }); if (state.notes) document.getElementById('userNotes').value = state.notes; updateProgress(); } }
+    function saveState() { const tasks = []; document.querySelectorAll('.task-checkbox').forEach(box => { tasks.push(box.classList.contains('checked')); }); localStorage.setItem(STORAGE_KEY, JSON.stringify({ tasks, notes: document.getElementById('userNotes').value })); }
+    function updateProgress() { const boxes = document.querySelectorAll('.task-checkbox'); const checked = document.querySelectorAll('.task-checkbox.checked').length; const percent = Math.round((checked / boxes.length) * 100); document.getElementById('progressFill').style.width = percent + '%'; document.getElementById('progressText').textContent = percent + '%'; }
+    document.querySelectorAll('.task-checkbox').forEach(box => { box.addEventListener('click', function() { this.classList.toggle('checked'); this.innerHTML = this.classList.contains('checked') ? '✓' : ''; updateProgress(); saveState(); }); });
+    document.getElementById('userNotes').addEventListener('input', saveState);
+    function openChat() { window.location.href = 'https://asapcreditrepairusa.com/chat'; }
+    loadState();
+  </script>
+</body>
+</html>

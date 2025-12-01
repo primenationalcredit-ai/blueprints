@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Senior Tech Help | ASAP Credit Repair Playbook</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --primary: #063d86; --primary-light: #0a4fa8; --primary-dark: #042a5c; --accent: #00c9a7; --success: #10b981; --warning: #f59e0b; --bg: #f8fafc; --text: #1e293b; --text-light: #64748b; --border: #e2e8f0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 17px; }
+    .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 40px 20px 50px; text-align: center; }
+    .header-content { max-width: 800px; margin: 0 auto; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; color: white; text-decoration: none; opacity: 0.8; font-size: 0.9rem; margin-bottom: 16px; }
+    .back-link:hover { opacity: 1; }
+    .category-badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; margin-bottom: 16px; }
+    .header h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 12px; }
+    .header-subtitle { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+    .main-content { max-width: 800px; margin: -30px auto 40px; padding: 0 20px; }
+    .progress-section { position: sticky; top: 0; background: white; padding: 16px 20px; margin: 0 -20px 20px; border-bottom: 1px solid var(--border); z-index: 100; display: flex; align-items: center; gap: 16px; }
+    .progress-bar { flex: 1; height: 10px; background: var(--border); border-radius: 5px; overflow: hidden; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, var(--success), var(--accent)); border-radius: 5px; transition: width 0.3s; width: 0%; }
+    .progress-text { font-weight: 600; color: var(--text); min-width: 50px; }
+    .goal-card { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border: 2px solid var(--success); border-radius: 16px; padding: 24px 28px; margin-bottom: 30px; }
+    .goal-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; color: #065f46; margin-bottom: 12px; }
+    .goal-card p { color: #047857; font-size: 1.05rem; }
+    .goal-card .earnings { background: white; display: inline-block; padding: 10px 18px; border-radius: 10px; margin-top: 14px; font-weight: 600; color: #065f46; font-size: 1.1rem; }
+    .section-card { background: white; border-radius: 16px; padding: 28px; margin-bottom: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid var(--border); }
+    .section-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; color: var(--primary); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+    .section-card h2 .icon { width: 40px; height: 40px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; }
+    .section-intro { color: var(--text-light); margin-bottom: 20px; font-size: 1rem; }
+    .task-list { list-style: none; }
+    .task-item { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border); }
+    .task-item:last-child { border-bottom: none; }
+    .task-checkbox { flex-shrink: 0; width: 28px; height: 28px; border: 2px solid var(--border); border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; margin-top: 2px; font-weight: bold; }
+    .task-checkbox:hover { border-color: var(--primary); }
+    .task-checkbox.checked { background: var(--success); border-color: var(--success); color: white; }
+    .task-content { flex: 1; }
+    .task-title { font-weight: 600; font-size: 1.1rem; margin-bottom: 8px; color: var(--text); }
+    .task-desc { color: var(--text-light); font-size: 0.95rem; line-height: 1.6; }
+    .task-meta { display: flex; gap: 12px; margin-top: 10px; flex-wrap: wrap; }
+    .task-badge { font-size: 0.8rem; padding: 4px 10px; border-radius: 6px; background: var(--bg); color: var(--text-light); }
+    .task-badge.easy { background: #dcfce7; color: #166534; }
+    .task-badge.medium { background: #fef3c7; color: #92400e; }
+    .details-box { background: #f8fafc; border-radius: 10px; padding: 16px; margin-top: 12px; border-left: 4px solid var(--primary); }
+    .details-box h4 { font-size: 0.9rem; color: var(--primary); margin-bottom: 10px; }
+    .details-box ul { margin-left: 18px; color: var(--text); font-size: 0.9rem; }
+    .details-box li { margin-bottom: 8px; line-height: 1.5; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-top: 16px; }
+    .service-card { background: var(--bg); border-radius: 10px; padding: 16px; }
+    .service-card h4 { font-size: 0.95rem; color: var(--primary); margin-bottom: 6px; }
+    .service-card p { font-size: 0.85rem; color: var(--text-light); margin-bottom: 8px; }
+    .service-card .price { font-weight: 600; color: var(--success); }
+    .marketing-section { background: linear-gradient(135deg, #fef3c7, #fde68a); border: 2px solid #fbbf24; }
+    .marketing-section h2 { color: #92400e; }
+    .marketing-tip { background: white; border-radius: 12px; padding: 20px; margin-bottom: 16px; }
+    .marketing-tip:last-child { margin-bottom: 0; }
+    .marketing-tip h3 { font-size: 1.1rem; color: #92400e; margin-bottom: 12px; }
+    .marketing-tip p { color: #78350f; font-size: 0.95rem; margin-bottom: 12px; line-height: 1.6; }
+    .script-box { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 0 10px 10px 0; font-size: 0.9rem; color: #78350f; margin-top: 12px; }
+    .script-box strong { display: block; margin-bottom: 8px; color: #92400e; font-size: 0.85rem; }
+    .places-list { background: white; border-radius: 10px; padding: 16px; margin-top: 12px; }
+    .places-list h4 { font-size: 0.9rem; color: #92400e; margin-bottom: 10px; }
+    .places-list ul { margin-left: 18px; color: #78350f; font-size: 0.9rem; }
+    .places-list li { margin-bottom: 6px; }
+    .resources-section { background: linear-gradient(135deg, #ede9fe, #ddd6fe); border: 2px solid #a78bfa; }
+    .resources-section h2 { color: #5b21b6; }
+    .resource-item { background: white; border-radius: 12px; padding: 16px 20px; margin-bottom: 12px; display: block; text-decoration: none; color: var(--text); transition: all 0.2s; }
+    .resource-item:hover { transform: translateX(4px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .resource-item h4 { font-size: 1rem; margin-bottom: 4px; color: #5b21b6; }
+    .resource-item p { font-size: 0.85rem; color: var(--text-light); margin-bottom: 6px; }
+    .resource-item .link { font-size: 0.8rem; color: #7c3aed; }
+    .section-card textarea { width: 100%; min-height: 150px; padding: 16px 18px; border: 2px solid var(--border); border-radius: 12px; font-family: inherit; font-size: 1rem; resize: vertical; box-sizing: border-box; display: block; line-height: 1.6; }
+    .section-card textarea:focus { outline: none; border-color: var(--primary); }
+    .help-section { background: linear-gradient(135deg, #f0f9ff, #e0f2fe); border: 2px solid #7dd3fc; border-radius: 16px; padding: 24px 28px; margin-top: 30px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .help-icon { width: 56px; height: 56px; background: white; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .help-content { flex: 1; min-width: 200px; }
+    .help-content h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; margin-bottom: 4px; }
+    .help-content p { color: var(--text-light); font-size: 0.95rem; }
+    .chat-btn { background: var(--primary); color: white; border: none; padding: 14px 28px; border-radius: 12px; font-family: inherit; font-size: 1rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: all 0.2s; }
+    .chat-btn:hover { background: var(--primary-light); transform: translateY(-2px); }
+    @media (max-width: 600px) { .header { padding: 30px 20px 40px; } .section-card { padding: 20px; } .help-section { flex-direction: column; text-align: center; } }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <a href="index.html" class="back-link">← Back to All Playbooks</a>
+      <span class="category-badge">👴 Senior Support</span>
+      <h1>Senior Tech Help</h1>
+      <p class="header-subtitle">Help seniors with phones, tablets, computers, and smart TVs. They'll pay you AND be incredibly grateful. Very rewarding work!</p>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="progress-section">
+      <span style="font-size: 0.9rem; color: var(--text-light);">Your Progress:</span>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      <span class="progress-text" id="progressText">0%</span>
+    </div>
+
+    <div class="goal-card">
+      <h2>🎯 What You'll Achieve</h2>
+      <p>You'll help seniors with their technology - setting up phones, teaching them to video call grandkids, fixing printer problems, setting up streaming TV. They're grateful, they pay well, and they tell all their friends!</p>
+      <div class="earnings">💰 Earn $30-60/hour | Most sessions are 1-2 hours</div>
+    </div>
+
+    <div class="section-card">
+      <h2><span class="icon">💡</span> Why This is Perfect</h2>
+      <p class="section-intro">This is one of the most rewarding side hustles you can do!</p>
+      <div class="details-box">
+        <h4>What makes this great:</h4>
+        <ul>
+          <li><strong>HUGE demand</strong> - 50+ million seniors in the US need tech help</li>
+          <li><strong>They pay well</strong> - Seniors value good service and pay fairly</li>
+          <li><strong>Incredibly rewarding</strong> - You're helping people connect with family</li>
+          <li><strong>Word of mouth spreads FAST</strong> - Seniors talk to each other!</li>
+          <li><strong>No special training needed</strong> - If you use a smartphone, you can do this</li>
+          <li><strong>Repeat customers</strong> - They'll call you every time something goes wrong</li>
+          <li><strong>Referrals galore</strong> - One happy client = 5 new clients</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h2><span class="icon">📱</span> Services You Can Offer</h2>
+      <p class="section-intro">You probably already know how to do all of this!</p>
+      
+      <div class="services-grid">
+        <div class="service-card">
+          <h4>📱 Smartphone Setup</h4>
+          <p>Set up new phone, transfer data, teach basics</p>
+          <span class="price">$40-75</span>
+        </div>
+        <div class="service-card">
+          <h4>📞 Video Calling</h4>
+          <p>Set up FaceTime, Zoom, teach them to call family</p>
+          <span class="price">$30-50</span>
+        </div>
+        <div class="service-card">
+          <h4>📺 Smart TV Setup</h4>
+          <p>Connect to WiFi, set up Netflix, Hulu, etc.</p>
+          <span class="price">$40-75</span>
+        </div>
+        <div class="service-card">
+          <h4>🖨️ Printer Help</h4>
+          <p>Setup, connect to WiFi, troubleshoot jams</p>
+          <span class="price">$30-50</span>
+        </div>
+        <div class="service-card">
+          <h4>💻 Computer Cleanup</h4>
+          <p>Speed up slow computer, remove junk</p>
+          <span class="price">$50-100</span>
+        </div>
+        <div class="service-card">
+          <h4>📧 Email Help</h4>
+          <p>Set up email, organize inbox, avoid scams</p>
+          <span class="price">$30-50</span>
+        </div>
+        <div class="service-card">
+          <h4>📷 Photo Help</h4>
+          <p>Organize photos, set up cloud backup</p>
+          <span class="price">$40-60</span>
+        </div>
+        <div class="service-card">
+          <h4>🏠 Smart Home</h4>
+          <p>Set up Alexa, smart doorbell, etc.</p>
+          <span class="price">$50-100</span>
+        </div>
+      </div>
+      
+      <div class="details-box" style="margin-top: 20px;">
+        <h4>💡 Package idea:</h4>
+        <ul>
+          <li><strong>"Tech Tune-Up" package:</strong> 2-hour session covering anything they need - $75-100</li>
+          <li><strong>Monthly retainer:</strong> $50/month for unlimited phone support + 1 home visit</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h2><span class="icon">📋</span> Step-by-Step: Getting Started</h2>
+      <p class="section-intro">This is one of the easiest businesses to start!</p>
+      <ul class="task-list">
+        <li class="task-item">
+          <div class="task-checkbox" data-task="0"></div>
+          <div class="task-content">
+            <div class="task-title">Step 1: Help a family member or neighbor for free</div>
+            <div class="task-desc">Practice on someone you know! Help your grandma or an elderly neighbor. This builds confidence and gets you a testimonial.</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 1-2 hours</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="1"></div>
+          <div class="task-content">
+            <div class="task-title">Step 2: Make a simple list of services & prices</div>
+            <div class="task-desc">Write down what you can help with and what you'll charge. Keep it simple - seniors appreciate straightforward pricing.</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 20 minutes</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="2"></div>
+          <div class="task-content">
+            <div class="task-title">Step 3: Get a Google Voice number</div>
+            <div class="task-desc">Free separate phone number for your business. Seniors prefer calling over texting!</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 10 minutes</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="3"></div>
+          <div class="task-content">
+            <div class="task-title">Step 4: Create a simple flyer</div>
+            <div class="task-desc">Large font (seniors need to read it!), clear services, phone number. Post at places seniors go.</div>
+            <div class="details-box">
+              <h4>What to put on your flyer:</h4>
+              <ul>
+                <li>Big headline: "Need Help With Your Phone, Tablet, or Computer?"</li>
+                <li>Your services in bullet points</li>
+                <li>Your phone number (LARGE)</li>
+                <li>"Patient, friendly help at affordable rates"</li>
+                <li>"I come to your home!"</li>
+              </ul>
+            </div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 30 minutes</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="4"></div>
+          <div class="task-content">
+            <div class="task-title">Step 5: Post flyers where seniors go</div>
+            <div class="task-desc">Senior centers, libraries, churches, doctor's offices, grocery stores. Ask permission first!</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 1-2 hours</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="5"></div>
+          <div class="task-content">
+            <div class="task-title">Step 6: Tell everyone you know!</div>
+            <div class="task-desc">Your parents, their friends, your neighbors - everyone knows seniors who need tech help!</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ Ongoing</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="section-card">
+      <h2><span class="icon">❤️</span> Tips for Working with Seniors</h2>
+      <p class="section-intro">A little patience goes a LONG way!</p>
+      <div class="details-box">
+        <h4>Do's:</h4>
+        <ul>
+          <li><strong>Be patient</strong> - Explain things slowly and repeat if needed</li>
+          <li><strong>Write things down</strong> - Give them notes they can reference later</li>
+          <li><strong>Use big font</strong> - Increase text size on their devices</li>
+          <li><strong>Show, then let them try</strong> - Hands-on practice helps them remember</li>
+          <li><strong>Make it about connection</strong> - "Now you can video call your grandkids!"</li>
+          <li><strong>Be genuinely kind</strong> - They can tell if you're rushing</li>
+        </ul>
+      </div>
+      <div class="details-box" style="margin-top: 16px; border-left-color: #dc2626;">
+        <h4>Don'ts:</h4>
+        <ul>
+          <li>Don't use jargon - "tap here" not "access the settings menu"</li>
+          <li>Don't make them feel dumb - They're not, tech is just new to them</li>
+          <li>Don't rush - Build in extra time for your appointments</li>
+          <li>Don't just fix it silently - Explain what you're doing so they learn</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-card marketing-section">
+      <h2><span class="icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);">📣</span> How to Find Clients</h2>
+      <p class="section-intro" style="color: #92400e;">Go where seniors are! Word of mouth is your best friend here.</p>
+      
+      <div class="marketing-tip">
+        <h3>🏛️ Senior Centers</h3>
+        <p>Ask if you can put up a flyer or even offer a FREE group session. Once they see you're helpful, they'll book private appointments!</p>
+        <div class="script-box">
+          <strong>📝 What to say to the director:</strong>
+"Hi, I offer tech help for seniors - things like setting up phones, teaching video calls, that kind of thing. Would it be okay if I put up a flyer? I'd also be happy to do a free 30-minute session for your members on [topic] if that would be helpful."
+        </div>
+      </div>
+      
+      <div class="marketing-tip">
+        <h3>⛪ Churches</h3>
+        <p>Many churches have older congregations. Ask if you can put a flyer in the bulletin or on the community board.</p>
+      </div>
+      
+      <div class="marketing-tip">
+        <h3>📱 Nextdoor (Target 55+)</h3>
+        <p>Post offering your services. Mention you're patient, come to their home, and explain things in plain English.</p>
+        <div class="script-box">
+          <strong>📝 Copy this post:</strong>
+"📱 Patient Tech Help for Seniors! 
+
+Do you (or your parents/grandparents) need help with:
+• Setting up a new phone or tablet
+• Video calling family (FaceTime, Zoom)
+• Smart TV and streaming setup
+• Computer problems
+• Avoiding scams and staying safe online
+
+I come to your home and take the time to explain things in plain English - no rushing, no jargon!
+
+$40/hour | Serving [Your Area]
+📞 Call or text [number]
+
+I'm happy to help! 😊"
+        </div>
+      </div>
+      
+      <div class="marketing-tip">
+        <h3>👨‍👩‍👧 Tell Adult Children</h3>
+        <p>Many of your clients will come from their adult children hiring you to help Mom or Dad. Post on regular community groups too!</p>
+        <div class="script-box">
+          <strong>📝 Post for adult children:</strong>
+"Tired of being your parents' IT department? 😅
+
+I help seniors with their technology - phones, tablets, computers, smart TVs. I'm patient, I come to their home, and I actually teach them so they can do it themselves!
+
+If your mom can't figure out her iPhone or your dad keeps clicking on scam emails, I can help. Give me a call!"
+        </div>
+      </div>
+      
+      <div class="marketing-tip">
+        <h3>📋 Flyers at These Locations</h3>
+        <div class="places-list">
+          <h4>Best places:</h4>
+          <ul>
+            <li>Senior centers</li>
+            <li>Libraries</li>
+            <li>Churches</li>
+            <li>Doctor's offices / Medical buildings</li>
+            <li>Pharmacies</li>
+            <li>Grocery store bulletin boards</li>
+            <li>Coffee shops</li>
+            <li>55+ communities / Retirement homes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card resources-section">
+      <h2><span class="icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">💡</span> Helpful Resources</h2>
+      <p class="section-intro" style="color: #5b21b6;">Learn tips for teaching seniors and common issues!</p>
+      
+      <a href="https://www.youtube.com/@KevinCooks" target="_blank" class="resource-item">
+        <h4>📺 Kevin Stratvert (YouTube)</h4>
+        <p>Clear, simple tech tutorials. Great for learning how to explain things simply!</p>
+        <span class="link">YouTube →</span>
+      </a>
+      <a href="https://www.aarp.org/home-family/personal-technology/" target="_blank" class="resource-item">
+        <h4>📖 AARP Tech Resources</h4>
+        <p>See what tech topics seniors are asking about most.</p>
+        <span class="link">AARP →</span>
+      </a>
+      <a href="https://seniorplanet.org/" target="_blank" class="resource-item">
+        <h4>🌐 Senior Planet</h4>
+        <p>Free tech resources for seniors. Good to recommend to your clients!</p>
+        <span class="link">seniorplanet.org →</span>
+      </a>
+    </div>
+
+    <div class="section-card">
+      <h2><span class="icon">📝</span> Your Notes</h2>
+      <p class="section-intro">Track your progress, client info, and ideas!</p>
+      <textarea id="userNotes" placeholder="Example: Post flyer at Elm Street Senior Center. Mrs. Johnson needs help with iPhone - call her Tuesday. Remember to bring phone charger cable just in case..."></textarea>
+    </div>
+
+    <div class="help-section">
+      <div class="help-icon">💬</div>
+      <div class="help-content">
+        <h3>Need Help?</h3>
+        <p>Have questions about getting started? Chat with an ASAP Financial coach!</p>
+      </div>
+      <button class="chat-btn" onclick="openChat()">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+        Start Chat
+      </button>
+    </div>
+  </main>
+
+  <script>
+    const STORAGE_KEY = 'playbook_senior-tech-help';
+    function loadState() { const saved = localStorage.getItem(STORAGE_KEY); if (saved) { const state = JSON.parse(saved); document.querySelectorAll('.task-checkbox').forEach((box, i) => { if (state.tasks && state.tasks[i]) { box.classList.add('checked'); box.innerHTML = '✓'; } }); if (state.notes) document.getElementById('userNotes').value = state.notes; updateProgress(); } }
+    function saveState() { const tasks = []; document.querySelectorAll('.task-checkbox').forEach(box => { tasks.push(box.classList.contains('checked')); }); localStorage.setItem(STORAGE_KEY, JSON.stringify({ tasks, notes: document.getElementById('userNotes').value })); }
+    function updateProgress() { const boxes = document.querySelectorAll('.task-checkbox'); const checked = document.querySelectorAll('.task-checkbox.checked').length; const percent = Math.round((checked / boxes.length) * 100); document.getElementById('progressFill').style.width = percent + '%'; document.getElementById('progressText').textContent = percent + '%'; }
+    document.querySelectorAll('.task-checkbox').forEach(box => { box.addEventListener('click', function() { this.classList.toggle('checked'); this.innerHTML = this.classList.contains('checked') ? '✓' : ''; updateProgress(); saveState(); }); });
+    document.getElementById('userNotes').addEventListener('input', saveState);
+    function openChat() { window.location.href = 'https://asapcreditrepairusa.com/chat'; }
+    loadState();
+  </script>
+</body>
+</html>
