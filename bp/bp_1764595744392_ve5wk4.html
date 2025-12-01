@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financial Blueprint - Joe Mahlowe</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 100vh; padding: 20px; color: #333; }
+    .blueprint { max-width: 900px; margin: 0 auto; background: #fff; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); overflow: hidden; }
+    .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; color: #fff; text-align: center; }
+    .header h1 { font-size: 28px; margin-bottom: 10px; }
+    .header p { opacity: 0.9; }
+    .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; padding: 20px; background: #f8f9ff; }
+    .summary-card { background: #fff; padding: 15px; border-radius: 10px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    .summary-card .value { font-size: 24px; font-weight: bold; color: #667eea; }
+    .summary-card .label { font-size: 12px; color: #666; margin-top: 5px; }
+    .progress-section { padding: 20px; }
+    .progress-bar { height: 20px; background: #e9ecef; border-radius: 10px; overflow: hidden; margin: 10px 0; }
+    .progress-fill { height: 100%; border-radius: 10px; transition: width 0.3s; }
+    .progress-fill.good { background: linear-gradient(90deg, #10b981, #34d399); }
+    .progress-fill.warning { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+    .progress-fill.danger { background: linear-gradient(90deg, #ef4444, #f87171); }
+    .step-section { padding: 20px; border-top: 1px solid #eee; }
+    .step-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+    .step-number { width: 40px; height: 40px; background: linear-gradient(135deg, #667eea, #764ba2); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+    .step-title { font-size: 18px; font-weight: 600; }
+    .task { padding: 12px 15px; margin: 8px 0; background: #f8f9ff; border-radius: 8px; display: flex; flex-wrap: wrap; align-items: flex-start; gap: 10px; }
+    .task-check { width: 20px; height: 20px; cursor: pointer; margin-top: 2px; }
+    .task-text { flex: 1; line-height: 1.5; }
+    .task a { display: inline-block; margin-top: 5px; }
+    .money-rules { background: #fff7ed; padding: 20px; margin: 20px; border-radius: 10px; border-left: 4px solid #f59e0b; }
+    .money-rules h3 { color: #b45309; margin-bottom: 10px; }
+    .money-rules ul { margin-left: 20px; }
+    .money-rules li { margin: 8px 0; }
+    .footer { background: #f8f9ff; padding: 20px; text-align: center; font-size: 12px; color: #666; }
+  </style>
+</head>
+<body>
+  <div class="blueprint">
+    <div class="header">
+      <h1>💰 Your Financial Blueprint</h1>
+      <p>Joe Mahlowe | Created 12/1/2025</p>
+    </div>
+    
+    <div class="summary-grid">
+      <div class="summary-card">
+        <div class="value">$10,000</div>
+        <div class="label">Monthly Income</div>
+      </div>
+      <div class="summary-card">
+        <div class="value">$187</div>
+        <div class="label">Total Expenses</div>
+      </div>
+      <div class="summary-card">
+        <div class="value" style="color:#10b981">$9,813</div>
+        <div class="label">Monthly Surplus</div>
+      </div>
+      <div class="summary-card">
+        <div class="value">$100</div>
+        <div class="label">Daily Spending Cap</div>
+      </div>
+    </div>
+    
+    <div class="progress-section">
+      <div style="display:flex;justify-content:space-between;font-size:14px;">
+        <span><strong>Needs:</strong> 1% (target 50%)</span>
+        <span>$66 / $5,000</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill good" style="width:1%"></div>
+      </div>
+      
+      <div style="display:flex;justify-content:space-between;font-size:14px;margin-top:15px;">
+        <span><strong>Wants:</strong> 1% (target 30%)</span>
+        <span>$121 / $3,000</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill good" style="width:1.67%"></div>
+      </div>
+      
+      <div style="display:flex;justify-content:space-between;font-size:14px;margin-top:15px;">
+        <span><strong>Savings:</strong> 98% (target 20%)</span>
+        <span>$9,813 / $2,000</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill good" style="width:100%"></div>
+      </div>
+    </div>
+    
+    <div class="money-rules">
+      <h3>📜 Your 4 Money Rules</h3>
+      <ul>
+        <li><strong>Rule 1:</strong> Do NOT use credit cards for new purchases - cash/debit only</li>
+        <li><strong>Rule 2:</strong> Daily spending cap: $100/day maximum</li>
+        <li><strong>Rule 3:</strong> Pay yourself first - $4,907/month to savings before spending</li>
+        <li><strong>Rule 4:</strong> Review this blueprint every Sunday</li>
+      </ul>
+    </div>
+    
+    <div class="step-section">
+      <div class="step-header">
+        <div class="step-number">1</div>
+        <div class="step-title">Foundation Setup (Do This Week)</div>
+      </div>
+      <div class="task"><input type="checkbox" class="task-check"><span class="task-text">Set up bank account alerts for low balance and large transactions</span><br><a href="https://primenationalcredit-ai.github.io/blueprints/high-yield-savings.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 High-Yield Savings Account</a></div><div class="task"><input type="checkbox" class="task-check"><span class="task-text">Calculate your daily spending rate: $6/day</span></div><div class="task"><input type="checkbox" class="task-check"><span class="task-text">Set daily spending cap: $100/day max</span></div><div class="task"><input type="checkbox" class="task-check"><span class="task-text">STOP using credit cards for new purchases</span><br><a href="https://primenationalcredit-ai.github.io/blueprints/credit-score-boost.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 Boost Your Credit Score</a></div><div class="task"><input type="checkbox" class="task-check"><span class="task-text">Switch to cash or debit only for 30 days</span></div>
+    </div>
+    
+    <div class="step-section">
+      <div class="step-header">
+        <div class="step-number">2</div>
+        <div class="step-title">Reduce Expenses</div>
+      </div>
+      <div class="task"><input type="checkbox" class="task-check"><span class="task-text">Audit and cancel unused subscriptions (currently $62/mo)</span><br><a href="https://primenationalcredit-ai.github.io/blueprints/cancel-subscriptions.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 Cancel Unused Subscriptions</a></div><div class="task"><input type="checkbox" class="task-check"><span class="task-text">Explore all expense reduction strategies</span></div><div style="margin:15px 0;padding:15px;background:#f0f4ff;border-radius:8px;"><strong>💰 More Ways to Save:</strong><br><a href="https://primenationalcredit-ai.github.io/blueprints/coupon-stacking.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 Coupon Stacking</a> | <a href="https://primenationalcredit-ai.github.io/blueprints/price-matching.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 Price Matching</a> | <a href="https://primenationalcredit-ai.github.io/blueprints/thrift-store-shopping.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 Thrift Shopping</a> | <a href="https://primenationalcredit-ai.github.io/blueprints/diy-home-repairs.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 DIY Home Repairs</a> | <a href="https://primenationalcredit-ai.github.io/blueprints/library-savings.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 Library Savings</a></div>
+    </div>
+    
+    <div class="step-section">
+      <div class="step-header">
+        <div class="step-number">3</div>
+        <div class="step-title">Fix Credit & Eliminate Debt</div>
+      </div>
+      <div class="task"><input type="checkbox" class="task-check"><span class="task-text">Check credit reports for errors (free at AnnualCreditReport.com)</span><br><a href="https://primenationalcredit-ai.github.io/blueprints/credit-score-boost.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 Boost Your Credit Score</a></div><div class="task"><input type="checkbox" class="task-check"><span class="task-text">Set up Experian Boost for free score improvement</span><br><a href="https://primenationalcredit-ai.github.io/blueprints/credit-score-boost.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 Boost Your Credit Score</a></div>
+    </div>
+    
+    <div class="step-section">
+      <div class="step-header">
+        <div class="step-number">4</div>
+        <div class="step-title">Build Emergency Fund</div>
+      </div>
+      <div class="task"><input type="checkbox" class="task-check"><span class="task-text">Emergency fund target: $198 (3 months of expenses)</span></div><div class="task"><input type="checkbox" class="task-check"><span class="task-text">Current emergency fund: $1,000 | Gap: $0</span></div><div class="task"><input type="checkbox" class="task-check"><span class="task-text">Review bank account bonuses for extra savings boost</span><br><a href="https://primenationalcredit-ai.github.io/blueprints/bank-account-bonuses.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 Bank Account Bonuses</a></div>
+    </div>
+    
+    <div class="step-section">
+      <div class="step-header">
+        <div class="step-number">5</div>
+        <div class="step-title">Increase Income - Pick Your Path</div>
+      </div>
+      <div style="margin:10px 0;padding:15px;background:#f0fff4;border-radius:8px;"><strong>🚗 Quick Start Gigs (Earn This Week):</strong><br><a href="https://primenationalcredit-ai.github.io/blueprints/rideshare-driver.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 Rideshare Driver</a> | <a href="https://primenationalcredit-ai.github.io/blueprints/food-delivery-driver.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 Food Delivery</a> | <a href="https://primenationalcredit-ai.github.io/blueprints/grocery-delivery.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 Grocery Delivery</a> | <a href="https://primenationalcredit-ai.github.io/blueprints/dog-walking.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 Dog Walking</a></div><div style="margin:10px 0;padding:15px;background:#fff7ed;border-radius:8px;"><strong>🏠 Home Service Gigs:</strong><br><a href="https://primenationalcredit-ai.github.io/blueprints/lawn-care-business.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 Lawn Care</a> | <a href="https://primenationalcredit-ai.github.io/blueprints/pressure-washing.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 Pressure Washing</a> | <a href="https://primenationalcredit-ai.github.io/blueprints/house-cleaning-maid-service.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 House Cleaning</a> | <a href="https://primenationalcredit-ai.github.io/blueprints/handyman.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 Handyman</a> | <a href="https://primenationalcredit-ai.github.io/blueprints/junk-removal.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 Junk Removal</a></div><div style="margin:10px 0;padding:15px;background:#fdf4ff;border-radius:8px;"><strong>💻 Online & Freelance:</strong><br><a href="https://primenationalcredit-ai.github.io/blueprints/virtual-assistant.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 Virtual Assistant</a> | <a href="https://primenationalcredit-ai.github.io/blueprints/freelance-writing.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 Freelance Writing</a> | <a href="https://primenationalcredit-ai.github.io/blueprints/graphic-design.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 Graphic Design</a> | <a href="https://primenationalcredit-ai.github.io/blueprints/social-media-management.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 Social Media Mgmt</a> | <a href="https://primenationalcredit-ai.github.io/blueprints/online-tutoring.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 Online Tutoring</a></div><div style="margin:10px 0;padding:15px;background:#fefce8;border-radius:8px;"><strong>🛍️ Selling & Reselling:</strong><br><a href="https://primenationalcredit-ai.github.io/blueprints/ebay-reselling.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 eBay Reselling</a> | <a href="https://primenationalcredit-ai.github.io/blueprints/furniture-flipping.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 Furniture Flipping</a> | <a href="https://primenationalcredit-ai.github.io/blueprints/etsy-seller.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 Etsy Seller</a> | <a href="https://primenationalcredit-ai.github.io/blueprints/amazon-fba.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 Amazon FBA</a> | <a href="https://primenationalcredit-ai.github.io/blueprints/print-on-demand.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 Print on Demand</a></div><div style="margin:10px 0;padding:15px;background:#f0fdfa;border-radius:8px;"><strong>💵 Passive & Rental Income:</strong><br><a href="https://primenationalcredit-ai.github.io/blueprints/airbnb-hosting.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 Airbnb Hosting</a> | <a href="https://primenationalcredit-ai.github.io/blueprints/rent-spare-room.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 Rent Spare Room</a> | <a href="https://primenationalcredit-ai.github.io/blueprints/rent-your-car.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 Rent Your Car</a> | <a href="https://primenationalcredit-ai.github.io/blueprints/vending-machine.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 Vending Machines</a> | <a href="https://primenationalcredit-ai.github.io/blueprints/dividend-investing.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 Dividend Investing</a></div><div style="margin:10px 0;padding:15px;background:#fef2f2;border-radius:8px;"><strong>💉 Quick Cash Options:</strong><br><a href="https://primenationalcredit-ai.github.io/blueprints/donate-plasma.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 Donate Plasma ($50-75/visit)</a> | <a href="https://primenationalcredit-ai.github.io/blueprints/online-surveys.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 Online Surveys</a> | <a href="https://primenationalcredit-ai.github.io/blueprints/focus-groups.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 Focus Groups ($75-200)</a> | <a href="https://primenationalcredit-ai.github.io/blueprints/mystery-shopper.html" target="_blank" style="color:#667eea;text-decoration:none;font-weight:500;">📘 Mystery Shopping</a></div>
+    </div>
+    
+    <div class="step-section">
+      <div class="step-header">
+        <div class="step-number">6</div>
+        <div class="step-title">Weekly Routine</div>
+      </div>
+      <div class="task"><input type="checkbox" class="task-check"><span class="task-text">Sunday: Review spending for the week</span></div><div class="task"><input type="checkbox" class="task-check"><span class="task-text">Update budget tracker every Monday</span></div><div class="task"><input type="checkbox" class="task-check"><span class="task-text">Check all account balances weekly</span></div><div class="task"><input type="checkbox" class="task-check"><span class="task-text">Pay bills on same day each month</span></div><div class="task"><input type="checkbox" class="task-check"><span class="task-text">Review this blueprint weekly and check off completed tasks</span></div>
+    </div>
+    
+    <div class="footer">
+      <p>Blueprint ID: bp_1764595744392_ve5wk4 | Generated by ASAP Credit Repair USA</p>
+      <p style="margin-top:10px;">Questions? Contact us at support@asapcreditrepairusa.com</p>
+    </div>
+  </div>
+  
+  <script>
+    // Save checkbox states to localStorage
+    document.querySelectorAll('.task-check').forEach((cb, i) => {
+      const key = 'blueprint_bp_1764595744392_ve5wk4_' + i;
+      cb.checked = localStorage.getItem(key) === 'true';
+      cb.addEventListener('change', () => localStorage.setItem(key, cb.checked));
+    });
+  </script>
+</body>
+</html>
