@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Negotiate Your Rent at Renewal | ASAP Credit Repair Playbook</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #063d86;
+      --primary-light: #0a4fa8;
+      --primary-dark: #042a5c;
+      --accent: #00c9a7;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --bg: #f8fafc;
+      --text: #1e293b;
+      --text-light: #64748b;
+      --border: #e2e8f0;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 17px;
+    }
+    .header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      padding: 40px 20px 50px;
+      text-align: center;
+    }
+    .header-content { max-width: 800px; margin: 0 auto; }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: white;
+      text-decoration: none;
+      opacity: 0.8;
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+    }
+    .back-link:hover { opacity: 1; }
+    .category-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .header-subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .main-content {
+      max-width: 800px;
+      margin: -30px auto 40px;
+      padding: 0 20px;
+    }
+    .progress-section {
+      position: sticky;
+      top: 0;
+      background: white;
+      padding: 16px 20px;
+      margin: 0 -20px 20px;
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .progress-bar {
+      flex: 1;
+      height: 10px;
+      background: var(--border);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--success), var(--accent));
+      border-radius: 5px;
+      transition: width 0.3s;
+      width: 0%;
+    }
+    .progress-text {
+      font-weight: 600;
+      color: var(--text);
+      min-width: 50px;
+    }
+    .goal-card {
+      background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+      border: 2px solid var(--success);
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin-bottom: 30px;
+    }
+    .goal-card h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.3rem;
+      color: #065f46;
+      margin-bottom: 12px;
+    }
+    .goal-card p { color: #047857; font-size: 1.05rem; }
+    .goal-card .earnings {
+      background: white;
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 10px;
+      margin-top: 14px;
+      font-weight: 600;
+      color: #065f46;
+      font-size: 1.1rem;
+    }
+    .section-card {
+      background: white;
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border: 1px solid var(--border);
+    }
+    .section-card h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.4rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-card h2 .icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 20px;
+    }
+    .section-intro {
+      color: var(--text-light);
+      margin-bottom: 20px;
+      font-size: 1rem;
+    }
+    .task-list { list-style: none; }
+    .task-item {
+      display: flex;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .task-item:last-child { border-bottom: none; }
+    .task-checkbox {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      margin-top: 2px;
+      font-weight: bold;
+    }
+    .task-checkbox:hover { border-color: var(--primary); }
+    .task-checkbox.checked {
+      background: var(--success);
+      border-color: var(--success);
+      color: white;
+    }
+    .task-content { flex: 1; }
+    .task-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    .task-desc {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .task-meta {
+      display: flex;
+      gap: 12px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    .task-badge {
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--bg);
+      color: var(--text-light);
+    }
+    .task-badge.easy { background: #dcfce7; color: #166534; }
+    .task-badge.medium { background: #fef3c7; color: #92400e; }
+    .details-box {
+      background: #f8fafc;
+      border-radius: 10px;
+      padding: 16px;
+      margin-top: 12px;
+      border-left: 4px solid var(--primary);
+    }
+    .details-box h4 {
+      font-size: 0.9rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    .details-box ul {
+      margin-left: 18px;
+      color: var(--text);
+      font-size: 0.9rem;
+    }
+    .details-box li { margin-bottom: 8px; line-height: 1.5; }
+    .script-section {
+      background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+      border: 2px solid #3b82f6;
+    }
+    .script-section h2 { color: #1e40af; }
+    .script-box {
+      background: white;
+      border-left: 4px solid #3b82f6;
+      padding: 16px 20px;
+      border-radius: 0 12px 12px 0;
+      font-size: 0.95rem;
+      color: #1e3a8a;
+      margin-bottom: 16px;
+    }
+    .script-box:last-child { margin-bottom: 0; }
+    .script-box strong {
+      display: block;
+      margin-bottom: 10px;
+      color: #1e40af;
+      font-size: 0.9rem;
+    }
+    .warning-box {
+      background: #fef3c7;
+      border: 2px solid #f59e0b;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-top: 20px;
+    }
+    .warning-box h4 {
+      color: #92400e;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .warning-box p {
+      color: #78350f;
+      font-size: 0.9rem;
+    }
+    .resources-section {
+      background: linear-gradient(135deg, #ede9fe, #ddd6fe);
+      border: 2px solid #a78bfa;
+    }
+    .resources-section h2 { color: #5b21b6; }
+    .resource-item {
+      background: white;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 12px;
+      display: block;
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.2s;
+    }
+    .resource-item:hover {
+      transform: translateX(4px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .resource-item h4 {
+      font-size: 1rem;
+      margin-bottom: 4px;
+      color: #5b21b6;
+    }
+    .resource-item p {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-bottom: 6px;
+    }
+    .resource-item .link {
+      font-size: 0.8rem;
+      color: #7c3aed;
+    }
+    .calculator-section {
+      background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+      border: 2px solid var(--success);
+    }
+    .calculator-section h2 { color: #065f46; }
+    .calc-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .calc-row label {
+      min-width: 200px;
+      color: #047857;
+      font-weight: 500;
+    }
+    .calc-row input {
+      padding: 12px 16px;
+      border: 2px solid #6ee7b7;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-family: inherit;
+      width: 150px;
+    }
+    .calc-row input:focus {
+      outline: none;
+      border-color: var(--success);
+    }
+    .calc-result {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      margin-top: 20px;
+    }
+    .calc-result h3 {
+      color: #065f46;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+    .calc-result .amount {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--success);
+    }
+    .section-card textarea {
+      width: 100%;
+      min-height: 150px;
+      padding: 16px 18px;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 1rem;
+      resize: vertical;
+      box-sizing: border-box;
+      display: block;
+      line-height: 1.6;
+    }
+    .section-card textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+    .help-section {
+      background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+      border: 2px solid #7dd3fc;
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .help-icon {
+      width: 56px;
+      height: 56px;
+      background: white;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+    }
+    .help-content { flex: 1; min-width: 200px; }
+    .help-content h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.2rem;
+      margin-bottom: 4px;
+    }
+    .help-content p { color: var(--text-light); font-size: 0.95rem; }
+    .chat-btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.2s;
+    }
+    .chat-btn:hover {
+      background: var(--primary-light);
+      transform: translateY(-2px);
+    }
+    @media (max-width: 600px) {
+      .header { padding: 30px 20px 40px; }
+      .section-card { padding: 20px; }
+      .help-section { flex-direction: column; text-align: center; }
+      .calc-row { flex-direction: column; align-items: flex-start; }
+      .calc-row input { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-content">
+      <a href="index.html" class="back-link">← Back to All Playbooks</a>
+      <span class="category-badge">🏠 Housing & Utilities</span>
+      <h1>Negotiate Your Rent at Renewal</h1>
+      <p class="header-subtitle">Most people just accept rent increases. Don't be most people! This playbook shows you exactly how to ask for a lower rent.</p>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="progress-section">
+      <span style="font-size: 0.9rem; color: var(--text-light);">Your Progress:</span>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <span class="progress-text" id="progressText">0%</span>
+    </div>
+
+    <!-- Goal Card -->
+    <div class="goal-card">
+      <h2>🎯 What You'll Achieve</h2>
+      <p>You'll learn how to negotiate with your landlord to either keep your rent the same, reduce a proposed increase, or even get a rent reduction. Even saving $50/month = $600/year in your pocket!</p>
+      <div class="earnings">💰 Potential savings: $600-2,400+ per year</div>
+    </div>
+
+    <!-- When to Use This -->
+    <div class="section-card">
+      <h2><span class="icon">📅</span> When to Use This Playbook</h2>
+      <p class="section-intro">Timing is everything! Here's when to start this process:</p>
+      
+      <div class="details-box">
+        <h4>Best times to negotiate:</h4>
+        <ul>
+          <li><strong>60-90 days before your lease ends</strong> - This is the sweet spot</li>
+          <li><strong>When you get a renewal notice</strong> - Don't just accept it!</li>
+          <li><strong>If rent prices in your area have dropped</strong> - You have leverage</li>
+          <li><strong>If you've been a great tenant</strong> - No late payments, no complaints</li>
+          <li><strong>During slow rental seasons</strong> - Winter months in most areas</li>
+        </ul>
+      </div>
+      
+      <div class="warning-box">
+        <h4>⚠️ Important</h4>
+        <p>Start this process 60-90 days before your lease ends. If you wait until the last minute, you have no leverage because you'll need to sign or move quickly.</p>
+      </div>
+    </div>
+
+    <!-- Step by Step -->
+    <div class="section-card">
+      <h2><span class="icon">📋</span> Step-by-Step Guide</h2>
+      <p class="section-intro">Follow these steps in order. Each one builds your case for a better deal!</p>
+      
+      <ul class="task-list">
+        <li class="task-item">
+          <div class="task-checkbox" data-task="0"></div>
+          <div class="task-content">
+            <div class="task-title">Step 1: Research current rental prices in your area</div>
+            <div class="task-desc">Look up what similar apartments are renting for RIGHT NOW. This is your most powerful weapon in negotiation!</div>
+            <div class="details-box">
+              <h4>Where to check prices:</h4>
+              <ul>
+                <li><strong>Zillow.com</strong> - Filter by your neighborhood, bedrooms, bathrooms</li>
+                <li><strong>Apartments.com</strong> - Check your exact building too</li>
+                <li><strong>Facebook Marketplace</strong> - Look for rentals in your area</li>
+                <li><strong>Craigslist</strong> - Housing section</li>
+                <li><strong>Your own building's website</strong> - What are they advertising new units for?</li>
+              </ul>
+            </div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 30 minutes</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        
+        <li class="task-item">
+          <div class="task-checkbox" data-task="1"></div>
+          <div class="task-content">
+            <div class="task-title">Step 2: Write down why you're a great tenant</div>
+            <div class="task-desc">Landlords LOVE good tenants. It costs them $1,000-5,000 to find a new one. Make a list of why they should keep you!</div>
+            <div class="details-box">
+              <h4>Things that make you valuable:</h4>
+              <ul>
+                <li>✅ You always pay rent on time</li>
+                <li>✅ You've never had noise complaints</li>
+                <li>✅ You take care of the apartment</li>
+                <li>✅ You don't bother them with small issues</li>
+                <li>✅ You've been there for X years (longer = more valuable)</li>
+                <li>✅ You're quiet and respectful of neighbors</li>
+              </ul>
+            </div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 15 minutes</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        
+        <li class="task-item">
+          <div class="task-checkbox" data-task="2"></div>
+          <div class="task-content">
+            <div class="task-title">Step 3: Document any issues with the apartment</div>
+            <div class="task-desc">Any problems with the unit give you leverage. Make a list of things that aren't perfect.</div>
+            <div class="details-box">
+              <h4>Common issues to mention:</h4>
+              <ul>
+                <li>Appliances that are old or not working well</li>
+                <li>Carpet that's worn or stained</li>
+                <li>Paint that's chipped or faded</li>
+                <li>Windows that don't seal properly</li>
+                <li>Noisy neighbors that haven't been addressed</li>
+                <li>Parking lot or common area issues</li>
+              </ul>
+            </div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 15 minutes</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        
+        <li class="task-item">
+          <div class="task-checkbox" data-task="3"></div>
+          <div class="task-content">
+            <div class="task-title">Step 4: Decide what you want to ask for</div>
+            <div class="task-desc">Be specific! Know your target number before you talk to your landlord.</div>
+            <div class="details-box">
+              <h4>Options to consider:</h4>
+              <ul>
+                <li><strong>Keep rent the same</strong> - "I'd like to renew at my current rate"</li>
+                <li><strong>Reduce the increase</strong> - "Can we meet in the middle at $X?"</li>
+                <li><strong>Actual rent reduction</strong> - If market rates are lower</li>
+                <li><strong>Trade-offs</strong> - "I'll sign a 2-year lease for lower rent"</li>
+                <li><strong>Perks instead of lower rent</strong> - Free parking, waived fees, etc.</li>
+              </ul>
+            </div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 10 minutes</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        
+        <li class="task-item">
+          <div class="task-checkbox" data-task="4"></div>
+          <div class="task-content">
+            <div class="task-title">Step 5: Contact your landlord (use the scripts below!)</div>
+            <div class="task-desc">Email is best because you have everything in writing. Be professional, friendly, and confident.</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 20 minutes</span>
+              <span class="task-badge medium">Medium</span>
+            </div>
+          </div>
+        </li>
+        
+        <li class="task-item">
+          <div class="task-checkbox" data-task="5"></div>
+          <div class="task-content">
+            <div class="task-title">Step 6: Follow up if you don't hear back</div>
+            <div class="task-desc">If you don't get a response in 3-5 business days, follow up politely. Landlords are busy!</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 5 minutes</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        
+        <li class="task-item">
+          <div class="task-checkbox" data-task="6"></div>
+          <div class="task-content">
+            <div class="task-title">Step 7: Negotiate and get it in writing</div>
+            <div class="task-desc">If they agree to anything, make sure it's in your new lease! A verbal agreement means nothing.</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ Varies</span>
+              <span class="task-badge medium">Medium</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Scripts to Use -->
+    <div class="section-card script-section">
+      <h2><span class="icon" style="background: linear-gradient(135deg, #3b82f6, #2563eb);">💬</span> Exact Scripts to Use</h2>
+      <p class="section-intro" style="color: #1e40af;">Copy and paste these! Just fill in your specific details.</p>
+      
+      <div class="script-box">
+        <strong>📧 Email Script #1: When you get a rent increase notice</strong>
+        Subject: Lease Renewal Discussion - Unit [Your Unit #]
+
+Hi [Landlord/Property Manager name],
+
+Thank you for sending the renewal information. I've really enjoyed living here and would love to stay.
+
+I was hoping we could discuss the proposed rent increase. I've been a reliable tenant - always paying on time and taking good care of the apartment. I'd like to renew, but the increase to $[new amount] is a bit more than I was expecting.
+
+I've done some research and noticed similar apartments in the area are renting for $[lower amount you found]. Would you be open to renewing my lease at $[your target amount] instead?
+
+I'm happy to sign a longer lease if that helps. Please let me know if you'd like to discuss this further.
+
+Thank you,
+[Your name]
+[Your phone number]
+      </div>
+      
+      <div class="script-box">
+        <strong>📧 Email Script #2: When you want to proactively negotiate (before getting a notice)</strong>
+        Subject: Early Lease Renewal Request - Unit [Your Unit #]
+
+Hi [Landlord/Property Manager name],
+
+My lease is coming up for renewal in [X months], and I wanted to reach out early because I'd really like to stay.
+
+I've been here for [X years] and have always paid rent on time and been a respectful tenant. I hope you've found me easy to work with!
+
+I know rental prices can fluctuate, and I wanted to discuss renewal before my lease ends. I'm hoping we can keep my rent at the current rate of $[current rent], or close to it. I'm also open to signing a longer lease if that's helpful for you.
+
+Would you be open to discussing this? I'd appreciate the chance to work something out.
+
+Thank you,
+[Your name]
+      </div>
+      
+      <div class="script-box">
+        <strong>📞 Phone Script: If you prefer to call</strong>
+        "Hi, this is [Your name] from Unit [#]. I got the renewal notice and I'd love to stay, but I was hoping we could talk about the rent increase.
+
+I've been here [X years], always paid on time, and I take good care of the place. I looked around and similar apartments are going for about $[amount], so I was hoping we could meet somewhere in the middle. 
+
+Would you be able to do $[your target] instead? I'm happy to sign a longer lease if that helps."
+      </div>
+    </div>
+
+    <!-- Savings Calculator -->
+    <div class="section-card calculator-section">
+      <h2><span class="icon" style="background: linear-gradient(135deg, var(--success), #059669);">🧮</span> Calculate Your Savings</h2>
+      <p class="section-intro" style="color: #047857;">See how much you could save with a successful negotiation!</p>
+      
+      <div class="calc-row">
+        <label for="proposedRent">Proposed new rent:</label>
+        <input type="number" id="proposedRent" placeholder="$1,500">
+      </div>
+      
+      <div class="calc-row">
+        <label for="targetRent">Your target rent:</label>
+        <input type="number" id="targetRent" placeholder="$1,400">
+      </div>
+      
+      <div class="calc-result">
+        <h3>Your Annual Savings</h3>
+        <div class="amount" id="savingsResult">$0</div>
+        <p style="color: #047857; margin-top: 8px; font-size: 0.9rem;">That's money back in YOUR pocket!</p>
+      </div>
+    </div>
+
+    <!-- Resources & Inspiration -->
+    <div class="section-card resources-section">
+      <h2><span class="icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">💡</span> Learn More</h2>
+      <p class="section-intro" style="color: #5b21b6;">These resources have more tips and success stories!</p>
+      
+      <a href="https://www.youtube.com/watch?v=7C0zVVpF1HM" target="_blank" class="resource-item">
+        <h4>📺 How I Negotiated My Rent Down $200/Month</h4>
+        <p>A renter shares exactly what she said and how her landlord responded.</p>
+        <span class="link">YouTube →</span>
+      </a>
+      
+      <a href="https://www.nerdwallet.com/article/finance/how-to-negotiate-rent" target="_blank" class="resource-item">
+        <h4>📖 NerdWallet: How to Negotiate Rent</h4>
+        <p>Comprehensive guide with more scripts and strategies.</p>
+        <span class="link">NerdWallet →</span>
+      </a>
+      
+      <a href="https://www.apartmenttherapy.com/how-to-negotiate-rent-36822444" target="_blank" class="resource-item">
+        <h4>📖 Apartment Therapy: Rent Negotiation Guide</h4>
+        <p>Tips from landlords on what actually works.</p>
+        <span class="link">Apartment Therapy →</span>
+      </a>
+      
+      <a href="https://www.reddit.com/r/personalfinance/search?q=negotiate%20rent" target="_blank" class="resource-item">
+        <h4>💬 Reddit: Personal Finance - Rent Negotiation</h4>
+        <p>Real stories from people who successfully negotiated their rent.</p>
+        <span class="link">Reddit →</span>
+      </a>
+    </div>
+
+    <!-- Notes Section -->
+    <div class="section-card">
+      <h2><span class="icon">📝</span> Your Notes</h2>
+      <p class="section-intro">Write down your research, talking points, and results here!</p>
+      <textarea id="userNotes" placeholder="Example: Current rent: $1,400. They want to increase to $1,550. Found similar unit at $1,425 on Zillow. Will ask for $1,450..."></textarea>
+    </div>
+
+    <!-- Help Section -->
+    <div class="help-section">
+      <div class="help-icon">💬</div>
+      <div class="help-content">
+        <h3>Need Help?</h3>
+        <p>Have questions about negotiating? Chat with an ASAP Financial coach!</p>
+      </div>
+      <button class="chat-btn" onclick="openChat()">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+        </svg>
+        Start Chat
+      </button>
+    </div>
+  </main>
+
+  <script>
+    const STORAGE_KEY = 'playbook_negotiate-rent';
+    
+    function loadState() {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        const state = JSON.parse(saved);
+        document.querySelectorAll('.task-checkbox').forEach((box, i) => {
+          if (state.tasks && state.tasks[i]) {
+            box.classList.add('checked');
+            box.innerHTML = '✓';
+          }
+        });
+        if (state.notes) {
+          document.getElementById('userNotes').value = state.notes;
+        }
+        if (state.proposedRent) {
+          document.getElementById('proposedRent').value = state.proposedRent;
+        }
+        if (state.targetRent) {
+          document.getElementById('targetRent').value = state.targetRent;
+        }
+        updateProgress();
+        calculateSavings();
+      }
+    }
+    
+    function saveState() {
+      const tasks = [];
+      document.querySelectorAll('.task-checkbox').forEach(box => {
+        tasks.push(box.classList.contains('checked'));
+      });
+      const state = {
+        tasks: tasks,
+        notes: document.getElementById('userNotes').value,
+        proposedRent: document.getElementById('proposedRent').value,
+        targetRent: document.getElementById('targetRent').value
+      };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    }
+    
+    function updateProgress() {
+      const boxes = document.querySelectorAll('.task-checkbox');
+      const checked = document.querySelectorAll('.task-checkbox.checked').length;
+      const percent = Math.round((checked / boxes.length) * 100);
+      document.getElementById('progressFill').style.width = percent + '%';
+      document.getElementById('progressText').textContent = percent + '%';
+    }
+    
+    function calculateSavings() {
+      const proposed = parseFloat(document.getElementById('proposedRent').value) || 0;
+      const target = parseFloat(document.getElementById('targetRent').value) || 0;
+      const monthly = proposed - target;
+      const annual = monthly * 12;
+      document.getElementById('savingsResult').textContent = '$' + Math.max(0, annual).toLocaleString();
+    }
+    
+    document.querySelectorAll('.task-checkbox').forEach(box => {
+      box.addEventListener('click', function() {
+        this.classList.toggle('checked');
+        this.innerHTML = this.classList.contains('checked') ? '✓' : '';
+        updateProgress();
+        saveState();
+      });
+    });
+    
+    document.getElementById('userNotes').addEventListener('input', saveState);
+    document.getElementById('proposedRent').addEventListener('input', () => { calculateSavings(); saveState(); });
+    document.getElementById('targetRent').addEventListener('input', () => { calculateSavings(); saveState(); });
+    
+    function openChat() {
+      window.location.href = 'https://asapcreditrepairusa.com/chat';
+    }
+    
+    loadState();
+  </script>
+</body>
+</html>

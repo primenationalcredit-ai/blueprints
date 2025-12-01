@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lower Your Cell Phone Bill | ASAP Credit Repair Playbook</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --primary: #063d86; --primary-light: #0a4fa8; --primary-dark: #042a5c; --accent: #00c9a7; --success: #10b981; --warning: #f59e0b; --bg: #f8fafc; --text: #1e293b; --text-light: #64748b; --border: #e2e8f0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 17px; }
+    .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 40px 20px 50px; text-align: center; }
+    .header-content { max-width: 800px; margin: 0 auto; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; color: white; text-decoration: none; opacity: 0.8; font-size: 0.9rem; margin-bottom: 16px; }
+    .back-link:hover { opacity: 1; }
+    .category-badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; margin-bottom: 16px; }
+    .header h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 12px; }
+    .header-subtitle { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+    .main-content { max-width: 800px; margin: -30px auto 40px; padding: 0 20px; }
+    .progress-section { position: sticky; top: 0; background: white; padding: 16px 20px; margin: 0 -20px 20px; border-bottom: 1px solid var(--border); z-index: 100; display: flex; align-items: center; gap: 16px; }
+    .progress-bar { flex: 1; height: 10px; background: var(--border); border-radius: 5px; overflow: hidden; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, var(--success), var(--accent)); border-radius: 5px; transition: width 0.3s; width: 0%; }
+    .progress-text { font-weight: 600; color: var(--text); min-width: 50px; }
+    .goal-card { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border: 2px solid var(--success); border-radius: 16px; padding: 24px 28px; margin-bottom: 30px; }
+    .goal-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; color: #065f46; margin-bottom: 12px; }
+    .goal-card p { color: #047857; font-size: 1.05rem; }
+    .goal-card .earnings { background: white; display: inline-block; padding: 10px 18px; border-radius: 10px; margin-top: 14px; font-weight: 600; color: #065f46; font-size: 1.1rem; }
+    .quick-win { background: linear-gradient(135deg, #fef3c7, #fde68a); border: 2px solid #fbbf24; border-radius: 12px; padding: 16px 20px; margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+    .quick-win .icon { font-size: 28px; }
+    .quick-win .text { color: #92400e; font-weight: 500; }
+    .section-card { background: white; border-radius: 16px; padding: 28px; margin-bottom: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid var(--border); }
+    .section-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; color: var(--primary); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+    .section-card h2 .icon { width: 40px; height: 40px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; }
+    .section-intro { color: var(--text-light); margin-bottom: 20px; font-size: 1rem; }
+    .task-list { list-style: none; }
+    .task-item { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border); }
+    .task-item:last-child { border-bottom: none; }
+    .task-checkbox { flex-shrink: 0; width: 28px; height: 28px; border: 2px solid var(--border); border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; margin-top: 2px; font-weight: bold; }
+    .task-checkbox:hover { border-color: var(--primary); }
+    .task-checkbox.checked { background: var(--success); border-color: var(--success); color: white; }
+    .task-content { flex: 1; }
+    .task-title { font-weight: 600; font-size: 1.1rem; margin-bottom: 8px; color: var(--text); }
+    .task-desc { color: var(--text-light); font-size: 0.95rem; line-height: 1.6; }
+    .task-meta { display: flex; gap: 12px; margin-top: 10px; flex-wrap: wrap; }
+    .task-badge { font-size: 0.8rem; padding: 4px 10px; border-radius: 6px; background: var(--bg); color: var(--text-light); }
+    .task-badge.easy { background: #dcfce7; color: #166534; }
+    .task-badge.medium { background: #fef3c7; color: #92400e; }
+    .details-box { background: #f8fafc; border-radius: 10px; padding: 16px; margin-top: 12px; border-left: 4px solid var(--primary); }
+    .details-box h4 { font-size: 0.9rem; color: var(--primary); margin-bottom: 10px; }
+    .details-box ul { margin-left: 18px; color: var(--text); font-size: 0.9rem; }
+    .details-box li { margin-bottom: 8px; line-height: 1.5; }
+    .carrier-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; margin-top: 16px; }
+    .carrier-card { background: var(--bg); border-radius: 12px; padding: 20px; border: 2px solid var(--border); }
+    .carrier-card.recommended { border-color: var(--success); background: linear-gradient(135deg, #ecfdf5, #d1fae5); }
+    .carrier-card h4 { font-size: 1.1rem; color: var(--primary); margin-bottom: 8px; }
+    .carrier-card .network { font-size: 0.8rem; color: var(--text-light); margin-bottom: 8px; }
+    .carrier-card .price { font-size: 1.4rem; font-weight: 700; color: var(--success); margin-bottom: 8px; }
+    .carrier-card .price span { font-size: 0.9rem; font-weight: 400; color: var(--text-light); }
+    .carrier-card ul { margin-left: 16px; font-size: 0.85rem; color: var(--text-light); }
+    .carrier-card ul li { margin-bottom: 4px; }
+    .comparison-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 0.9rem; }
+    .comparison-table th, .comparison-table td { padding: 12px; text-align: left; border-bottom: 1px solid var(--border); }
+    .comparison-table th { background: var(--bg); font-weight: 600; }
+    .comparison-table .old { color: #dc2626; text-decoration: line-through; }
+    .comparison-table .new { color: var(--success); font-weight: 600; }
+    .calculator-section { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border: 2px solid var(--success); }
+    .calculator-section h2 { color: #065f46; }
+    .calc-row { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+    .calc-row label { min-width: 200px; color: #047857; font-weight: 500; }
+    .calc-row input, .calc-row select { padding: 12px 16px; border: 2px solid #6ee7b7; border-radius: 10px; font-size: 1rem; font-family: inherit; width: 180px; }
+    .calc-row input:focus, .calc-row select:focus { outline: none; border-color: var(--success); }
+    .calc-result { background: white; border-radius: 12px; padding: 20px; text-align: center; margin-top: 20px; }
+    .calc-result h3 { color: #065f46; font-size: 1.1rem; margin-bottom: 8px; }
+    .calc-result .amount { font-family: 'Space Grotesk', sans-serif; font-size: 2.5rem; font-weight: 700; color: var(--success); }
+    .calc-result .annual { color: var(--text-light); font-size: 0.9rem; margin-top: 4px; }
+    .script-box { background: #dbeafe; border-left: 4px solid #3b82f6; padding: 14px 18px; border-radius: 0 10px 10px 0; font-size: 0.9rem; color: #1e40af; margin-top: 12px; }
+    .script-box strong { display: block; margin-bottom: 8px; color: #1e3a8a; font-size: 0.85rem; }
+    .resources-section { background: linear-gradient(135deg, #ede9fe, #ddd6fe); border: 2px solid #a78bfa; }
+    .resources-section h2 { color: #5b21b6; }
+    .resource-item { background: white; border-radius: 12px; padding: 16px 20px; margin-bottom: 12px; display: block; text-decoration: none; color: var(--text); transition: all 0.2s; }
+    .resource-item:hover { transform: translateX(4px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .resource-item h4 { font-size: 1rem; margin-bottom: 4px; color: #5b21b6; }
+    .resource-item p { font-size: 0.85rem; color: var(--text-light); margin-bottom: 6px; }
+    .resource-item .link { font-size: 0.8rem; color: #7c3aed; }
+    .section-card textarea { width: 100%; min-height: 150px; padding: 16px 18px; border: 2px solid var(--border); border-radius: 12px; font-family: inherit; font-size: 1rem; resize: vertical; box-sizing: border-box; display: block; line-height: 1.6; }
+    .section-card textarea:focus { outline: none; border-color: var(--primary); }
+    .help-section { background: linear-gradient(135deg, #f0f9ff, #e0f2fe); border: 2px solid #7dd3fc; border-radius: 16px; padding: 24px 28px; margin-top: 30px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .help-icon { width: 56px; height: 56px; background: white; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .help-content { flex: 1; min-width: 200px; }
+    .help-content h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; margin-bottom: 4px; }
+    .help-content p { color: var(--text-light); font-size: 0.95rem; }
+    .chat-btn { background: var(--primary); color: white; border: none; padding: 14px 28px; border-radius: 12px; font-family: inherit; font-size: 1rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: all 0.2s; }
+    .chat-btn:hover { background: var(--primary-light); transform: translateY(-2px); }
+    @media (max-width: 600px) { .header { padding: 30px 20px 40px; } .section-card { padding: 20px; } .help-section { flex-direction: column; text-align: center; } .calc-row { flex-direction: column; align-items: stretch; } .calc-row input, .calc-row select { width: 100%; } }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <a href="index.html" class="back-link">← Back to All Playbooks</a>
+      <span class="category-badge">📱 Subscriptions & Tech</span>
+      <h1>Lower Your Cell Phone Bill</h1>
+      <p class="header-subtitle">The average American pays $80-100/month for cell service. You could be paying $15-40 for the SAME coverage! Here's how.</p>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="progress-section">
+      <span style="font-size: 0.9rem; color: var(--text-light);">Your Progress:</span>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      <span class="progress-text" id="progressText">0%</span>
+    </div>
+
+    <div class="quick-win">
+      <span class="icon">⚡</span>
+      <span class="text"><strong>Quick Win!</strong> Most people save $30-60/month by switching to a budget carrier. That's $360-720/year!</span>
+    </div>
+
+    <div class="goal-card">
+      <h2>🎯 What You'll Achieve</h2>
+      <p>You'll either negotiate a lower rate with your current carrier OR switch to a budget carrier that uses the exact same towers for way less money. Either way, you'll save hundreds per year!</p>
+      <div class="earnings">💰 Average savings: $40-60/month ($480-720/year!)</div>
+    </div>
+
+    <div class="section-card">
+      <h2><span class="icon">🤔</span> The Secret About Cell Phone Carriers</h2>
+      <p class="section-intro">Here's what the big carriers don't want you to know:</p>
+      <div class="details-box">
+        <h4>The truth:</h4>
+        <ul>
+          <li><strong>Budget carriers use the SAME towers</strong> - Mint Mobile uses T-Mobile's towers. Visible uses Verizon's towers. Same coverage, half the price!</li>
+          <li><strong>You're paying for the brand name</strong> - Verizon, AT&T, and T-Mobile spend billions on marketing. You're paying for that.</li>
+          <li><strong>There's almost no difference in coverage</strong> - Budget carriers (MVNOs) have the same signal strength in most areas.</li>
+          <li><strong>The only downside?</strong> - During extreme network congestion (rare), budget carriers might be slightly slower. Most people never notice.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h2><span class="icon">📱</span> Best Budget Carriers (MVNOs)</h2>
+      <p class="section-intro">These use the big carrier networks but cost way less!</p>
+      
+      <div class="carrier-grid">
+        <div class="carrier-card recommended">
+          <h4>🏆 Mint Mobile</h4>
+          <div class="network">Uses T-Mobile network</div>
+          <div class="price">$15-30<span>/month</span></div>
+          <ul>
+            <li>Unlimited talk & text</li>
+            <li>4GB-Unlimited data</li>
+            <li>Pay 3-12 months upfront</li>
+            <li>Best overall value</li>
+          </ul>
+        </div>
+        <div class="carrier-card recommended">
+          <h4>🏆 Visible</h4>
+          <div class="network">Uses Verizon network</div>
+          <div class="price">$25-30<span>/month</span></div>
+          <ul>
+            <li>Truly unlimited everything</li>
+            <li>No contracts</li>
+            <li>Party Pay for discounts</li>
+            <li>Great for Verizon coverage</li>
+          </ul>
+        </div>
+        <div class="carrier-card">
+          <h4>US Mobile</h4>
+          <div class="network">Verizon OR T-Mobile</div>
+          <div class="price">$10-45<span>/month</span></div>
+          <ul>
+            <li>Choose your network</li>
+            <li>Very customizable plans</li>
+            <li>Family plans available</li>
+          </ul>
+        </div>
+        <div class="carrier-card">
+          <h4>Cricket Wireless</h4>
+          <div class="network">Uses AT&T network</div>
+          <div class="price">$30-60<span>/month</span></div>
+          <ul>
+            <li>Good if you need AT&T</li>
+            <li>Family discounts</li>
+            <li>Retail stores for help</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="details-box" style="margin-top: 20px;">
+        <h4>💡 Which one should you pick?</h4>
+        <ul>
+          <li><strong>Best T-Mobile coverage in your area?</strong> → Mint Mobile</li>
+          <li><strong>Best Verizon coverage?</strong> → Visible</li>
+          <li><strong>Need AT&T?</strong> → Cricket Wireless</li>
+          <li><strong>Want flexibility?</strong> → US Mobile</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h2><span class="icon">📋</span> Step-by-Step: Lower Your Bill</h2>
+      <p class="section-intro">You have two options: negotiate with your current carrier OR switch. Try both!</p>
+      
+      <ul class="task-list">
+        <li class="task-item">
+          <div class="task-checkbox" data-task="0"></div>
+          <div class="task-content">
+            <div class="task-title">Step 1: Find out exactly what you're paying</div>
+            <div class="task-desc">Look at your bill. How much per month? Are you still paying off a phone? When does your contract end?</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 5 minutes</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="1"></div>
+          <div class="task-content">
+            <div class="task-title">Step 2: Check how much data you actually use</div>
+            <div class="task-desc">Most people use less than they think! Check Settings → Cellular on iPhone or Settings → Network on Android. If you use WiFi a lot, you might need very little data.</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 2 minutes</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="2"></div>
+          <div class="task-content">
+            <div class="task-title">Step 3: OPTION A - Call your carrier and negotiate</div>
+            <div class="task-desc">Call and say you're thinking of switching. Ask for their retention department. They often have unadvertised discounts!</div>
+            <div class="script-box">
+              <strong>📝 Script to use:</strong>
+"Hi, I've been a customer for [X years] and I'm looking at my bill. I've seen that other carriers like Mint Mobile offer unlimited plans for $30/month, and I'm thinking about switching. Is there anything you can do to lower my bill or match that price? I'd prefer to stay, but the savings are significant."
+            </div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 15-30 minutes</span>
+              <span class="task-badge medium">Medium</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="3"></div>
+          <div class="task-content">
+            <div class="task-title">Step 4: OPTION B - Switch to a budget carrier</div>
+            <div class="task-desc">If negotiating doesn't work (or the savings aren't enough), switch! The process is easy and you keep your phone number.</div>
+            <div class="details-box">
+              <h4>How to switch:</h4>
+              <ul>
+                <li>1. Make sure your phone is unlocked (call current carrier if unsure)</li>
+                <li>2. Go to new carrier's website and pick a plan</li>
+                <li>3. Choose "Keep my number" (they'll port it over)</li>
+                <li>4. They'll mail you a SIM card OR use eSIM</li>
+                <li>5. Pop in the new SIM, activate, done!</li>
+              </ul>
+            </div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 20 minutes + shipping</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="4"></div>
+          <div class="task-content">
+            <div class="task-title">Step 5: Set up autopay for extra discount</div>
+            <div class="task-desc">Most budget carriers give you $5-10 off per month for autopay. Free savings!</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 5 minutes</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="section-card calculator-section">
+      <h2><span class="icon" style="background: linear-gradient(135deg, var(--success), #059669);">🧮</span> Calculate Your Savings</h2>
+      <p class="section-intro" style="color: #047857;">See how much you could save by switching!</p>
+      
+      <div class="calc-row">
+        <label for="currentBill">Your current monthly bill:</label>
+        <input type="number" id="currentBill" placeholder="$85">
+      </div>
+      <div class="calc-row">
+        <label for="newBill">New carrier monthly cost:</label>
+        <select id="newBill">
+          <option value="15">Mint Mobile 4GB - $15</option>
+          <option value="20">Mint Mobile 15GB - $20</option>
+          <option value="25">Visible Basic - $25</option>
+          <option value="30" selected>Mint/Visible Unlimited - $30</option>
+          <option value="35">US Mobile Premium - $35</option>
+          <option value="40">Cricket Core - $40</option>
+        </select>
+      </div>
+      
+      <div class="calc-result">
+        <h3>Your Monthly Savings</h3>
+        <div class="amount" id="monthlySavings">$0</div>
+        <div class="annual">That's <span id="annualSavings">$0</span> per year back in your pocket!</div>
+      </div>
+    </div>
+
+    <div class="section-card resources-section">
+      <h2><span class="icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">💡</span> Helpful Resources</h2>
+      <p class="section-intro" style="color: #5b21b6;">Compare carriers and check coverage in your area!</p>
+      
+      <a href="https://www.mintmobile.com" target="_blank" class="resource-item">
+        <h4>📱 Mint Mobile</h4>
+        <p>Plans starting at $15/month. Check coverage in your area.</p>
+        <span class="link">mintmobile.com →</span>
+      </a>
+      <a href="https://www.visible.com" target="_blank" class="resource-item">
+        <h4>📱 Visible</h4>
+        <p>Unlimited everything on Verizon's network for $25-30/month.</p>
+        <span class="link">visible.com →</span>
+      </a>
+      <a href="https://www.usmobile.com" target="_blank" class="resource-item">
+        <h4>📱 US Mobile</h4>
+        <p>Choose Verizon or T-Mobile network. Very flexible plans.</p>
+        <span class="link">usmobile.com →</span>
+      </a>
+      <a href="https://www.whistleout.com" target="_blank" class="resource-item">
+        <h4>🔍 WhistleOut</h4>
+        <p>Compare ALL cell phone plans side by side. Great tool!</p>
+        <span class="link">whistleout.com →</span>
+      </a>
+      <a href="https://coveragecritic.com" target="_blank" class="resource-item">
+        <h4>📡 Coverage Critic</h4>
+        <p>Real user reviews of budget carriers. See what works in your area.</p>
+        <span class="link">coveragecritic.com →</span>
+      </a>
+    </div>
+
+    <div class="section-card">
+      <h2><span class="icon">📝</span> Your Notes</h2>
+      <p class="section-intro">Track your current plan details and research here!</p>
+      <textarea id="userNotes" placeholder="Example: Currently paying $95/month to Verizon. Using about 8GB data. Phone is paid off. Will try Visible since it uses Verizon towers..."></textarea>
+    </div>
+
+    <div class="help-section">
+      <div class="help-icon">💬</div>
+      <div class="help-content">
+        <h3>Need Help?</h3>
+        <p>Have questions about switching carriers? Chat with an ASAP Financial coach!</p>
+      </div>
+      <button class="chat-btn" onclick="openChat()">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+        Start Chat
+      </button>
+    </div>
+  </main>
+
+  <script>
+    const STORAGE_KEY = 'playbook_lower-cell-bill';
+    function loadState() {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        const state = JSON.parse(saved);
+        document.querySelectorAll('.task-checkbox').forEach((box, i) => {
+          if (state.tasks && state.tasks[i]) { box.classList.add('checked'); box.innerHTML = '✓'; }
+        });
+        if (state.notes) document.getElementById('userNotes').value = state.notes;
+        if (state.currentBill) document.getElementById('currentBill').value = state.currentBill;
+        if (state.newBill) document.getElementById('newBill').value = state.newBill;
+        updateProgress();
+        calculateSavings();
+      }
+    }
+    function saveState() {
+      const tasks = []; document.querySelectorAll('.task-checkbox').forEach(box => { tasks.push(box.classList.contains('checked')); });
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        tasks,
+        notes: document.getElementById('userNotes').value,
+        currentBill: document.getElementById('currentBill').value,
+        newBill: document.getElementById('newBill').value
+      }));
+    }
+    function updateProgress() {
+      const boxes = document.querySelectorAll('.task-checkbox');
+      const checked = document.querySelectorAll('.task-checkbox.checked').length;
+      const percent = Math.round((checked / boxes.length) * 100);
+      document.getElementById('progressFill').style.width = percent + '%';
+      document.getElementById('progressText').textContent = percent + '%';
+    }
+    function calculateSavings() {
+      const current = parseFloat(document.getElementById('currentBill').value) || 0;
+      const newCost = parseFloat(document.getElementById('newBill').value) || 30;
+      const monthly = Math.max(0, current - newCost);
+      document.getElementById('monthlySavings').textContent = '$' + monthly.toFixed(0);
+      document.getElementById('annualSavings').textContent = '$' + (monthly * 12).toFixed(0);
+    }
+    document.querySelectorAll('.task-checkbox').forEach(box => {
+      box.addEventListener('click', function() { this.classList.toggle('checked'); this.innerHTML = this.classList.contains('checked') ? '✓' : ''; updateProgress(); saveState(); });
+    });
+    document.getElementById('userNotes').addEventListener('input', saveState);
+    document.getElementById('currentBill').addEventListener('input', () => { calculateSavings(); saveState(); });
+    document.getElementById('newBill').addEventListener('change', () => { calculateSavings(); saveState(); });
+    function openChat() { window.location.href = 'https://asapcreditrepairusa.com/chat'; }
+    loadState();
+  </script>
+</body>
+</html>

@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITLE}} | ASAP Financial Playbook</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #063d86;
+      --primary-dark: #042a5c;
+      --primary-light: #0a4fa8;
+      --accent: #00c9a7;
+      --accent-glow: rgba(0, 201, 167, 0.3);
+      --bg: #f8fafd;
+      --card: #ffffff;
+      --text: #1a2a3a;
+      --text-muted: #5a6a7a;
+      --border: #e2e8f0;
+      --success: #10b981;
+      --warning: #f59e0b;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 60%;
+      height: 200%;
+      background: radial-gradient(ellipse, rgba(255,255,255,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .header-content {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--primary-dark);
+    }
+
+    .category-badge {
+      display: inline-block;
+      background: rgba(0, 201, 167, 0.2);
+      color: var(--accent);
+      padding: 0.35rem 0.85rem;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.75rem, 5vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      max-width: 600px;
+    }
+
+    /* Progress Bar */
+    .progress-section {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .progress-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .progress-label {
+      font-weight: 600;
+      color: var(--text);
+      font-size: 0.9rem;
+    }
+
+    .progress-percent {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .progress-bar {
+      height: 12px;
+      background: var(--border);
+      border-radius: 50px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+      border-radius: 50px;
+      transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+
+    .progress-fill::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      animation: shimmer 2s infinite;
+    }
+
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    /* Main Content */
+    .main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* Info Card */
+    .info-card {
+      background: linear-gradient(135deg, #e8f4fd 0%, #f0f7ff 100%);
+      border: 1px solid #c3ddf7;
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .info-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--primary);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .info-icon svg {
+      width: 24px;
+      height: 24px;
+      color: white;
+    }
+
+    .info-content h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem;
+      margin-bottom: 0.35rem;
+      color: var(--primary-dark);
+    }
+
+    .info-content p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    /* Task List */
+    .tasks-section {
+      margin-bottom: 2rem;
+    }
+
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-title span {
+      background: var(--primary);
+      color: white;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+    }
+
+    .task-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .task-item {
+      background: var(--card);
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .task-item:hover {
+      border-color: var(--primary-light);
+      box-shadow: 0 4px 20px rgba(6, 61, 134, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .task-item.completed {
+      border-color: var(--success);
+      background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+    }
+
+    .task-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .task-checkbox {
+      width: 28px;
+      height: 28px;
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .task-item:hover .task-checkbox {
+      border-color: var(--primary);
+    }
+
+    .task-item.completed .task-checkbox {
+      background: var(--success);
+      border-color: var(--success);
+    }
+
+    .task-checkbox svg {
+      width: 16px;
+      height: 16px;
+      color: white;
+      opacity: 0;
+      transform: scale(0.5);
+      transition: all 0.25s ease;
+    }
+
+    .task-item.completed .task-checkbox svg {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .task-content {
+      flex: 1;
+    }
+
+    .task-title {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--text);
+      margin-bottom: 0.35rem;
+    }
+
+    .task-item.completed .task-title {
+      text-decoration: line-through;
+      color: var(--text-muted);
+    }
+
+    .task-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .task-meta {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.75rem;
+      font-size: 0.8rem;
+    }
+
+    .task-tag {
+      background: var(--bg);
+      color: var(--text-muted);
+      padding: 0.25rem 0.65rem;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .task-tag svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    /* Input Fields */
+    .input-section {
+      background: var(--card);
+      border: 2px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .input-section h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    .input-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .input-group label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .input-group input, .input-group select, .input-group textarea {
+      padding: 0.85rem 1rem;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: all 0.25s ease;
+    }
+
+    .input-group input:focus, .input-group select:focus, .input-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(6, 61, 134, 0.1);
+    }
+
+    /* Notes Section */
+    .notes-section {
+      background: var(--card);
+      border: 2px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .notes-section h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .notes-section textarea {
+      width: 100%;
+      min-height: 120px;
+      padding: 1rem;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      resize: vertical;
+      transition: all 0.25s ease;
+    }
+
+    .notes-section textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(6, 61, 134, 0.1);
+    }
+
+    /* Resources */
+    .resources-section {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      border-radius: 16px;
+      padding: 1.5rem;
+      color: white;
+      margin-bottom: 2rem;
+    }
+
+    .resources-section h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .resource-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .resource-link {
+      background: rgba(255,255,255,0.15);
+      color: white;
+      padding: 0.65rem 1rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.25s ease;
+    }
+
+    .resource-link:hover {
+      background: rgba(255,255,255,0.25);
+      transform: translateY(-2px);
+    }
+
+    .resource-link svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Footer CTA */
+    .footer-cta {
+      text-align: center;
+      padding: 2rem;
+      background: var(--card);
+      border: 2px solid var(--border);
+      border-radius: 16px;
+    }
+
+    .footer-cta h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-cta p {
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--primary);
+      color: white;
+      padding: 0.85rem 1.75rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.25s ease;
+    }
+
+    .cta-button:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(6, 61, 134, 0.3);
+    }
+
+    /* Saved indicator */
+    .save-indicator {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--success);
+      color: white;
+      padding: 0.75rem 1.25rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .save-indicator.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .header { padding: 1.5rem; }
+      .main { padding: 1.25rem; }
+      .progress-section { padding: 1rem 1.25rem; }
+      .input-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-content">
+      <div class="logo">
+        <div class="logo-icon">A</div>
+        <span>ASAP Financial Services</span>
+      </div>
+      <div class="category-badge">{{CATEGORY}}</div>
+      <h1>{{TITLE}}</h1>
+      <p class="subtitle">{{SUBTITLE}}</p>
+    </div>
+  </header>
+
+  <div class="progress-section">
+    <div class="progress-inner">
+      <div class="progress-header">
+        <span class="progress-label">Your Progress</span>
+        <span class="progress-percent" id="progressPercent">0%</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+      </div>
+    </div>
+  </div>
+
+  <main class="main">
+
+    <div class="info-card">
+      <div class="info-icon">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+      </div>
+      <div class="info-content">
+        <h3>How This Playbook Works</h3>
+        <p>Check off each task as you complete it. Your progress is saved automatically—come back anytime to pick up where you left off!</p>
+      </div>
+    </div>
+
+    <section class="tasks-section">
+      <h2 class="section-title"><span>✓</span> Action Steps</h2>
+      <div class="task-list" id="taskList">
+        <!-- Tasks will be inserted here by JavaScript -->
+      </div>
+    </section>
+
+    <section class="input-section">
+      <h3>📝 Track Your Numbers</h3>
+      <div class="input-grid" id="inputGrid">
+        <!-- Input fields will be inserted here by JavaScript -->
+      </div>
+    </section>
+
+    <section class="notes-section">
+      <h3>📋 My Notes</h3>
+      <textarea id="userNotes" placeholder="Write any notes, reminders, or ideas here..."></textarea>
+    </section>
+
+    <section class="resources-section">
+      <h3>🔗 Helpful Resources</h3>
+      <div class="resource-links" id="resourceLinks">
+        <!-- Resource links will be inserted here by JavaScript -->
+      </div>
+    </section>
+
+    <div class="footer-cta">
+      <h3>Need More Help?</h3>
+      <p>Have questions? Chat with an ASAP Financial coach</p>
+      <button onclick="openChat()" class="cta-button">
+        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+        </svg>
+        Start Chat
+      </button>
+    </div>
+
+  </main>
+
+  <div class="save-indicator" id="saveIndicator">
+    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+    </svg>
+    Progress Saved!
+  </div>
+
+  <script>
+    // ============ PLAYBOOK DATA (CUSTOMIZE THIS) ============
+    const PLAYBOOK_DATA = {
+      id: '{{ID}}',
+      title: '{{TITLE}}',
+      category: '{{CATEGORY}}',
+      tasks: [
+        {{TASKS}}
+      ],
+      inputs: [
+        {{INPUTS}}
+      ],
+      resources: [
+        {{RESOURCES}}
+      ]
+    };
+
+    // ============ APP STATE ============
+    const STORAGE_KEY = `asap_playbook_${PLAYBOOK_DATA.id}`;
+    
+    let state = {
+      completedTasks: [],
+      inputValues: {},
+      notes: ''
+    };
+
+    // ============ LOAD/SAVE ============
+    function loadState() {
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) {
+          state = { ...state, ...JSON.parse(saved) };
+        }
+      } catch (e) {
+        console.error('Error loading state:', e);
+      }
+    }
+
+    function saveState() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        showSaveIndicator();
+      } catch (e) {
+        console.error('Error saving state:', e);
+      }
+    }
+
+    function showSaveIndicator() {
+      const indicator = document.getElementById('saveIndicator');
+      indicator.classList.add('show');
+      setTimeout(() => indicator.classList.remove('show'), 2000);
+    }
+
+    // ============ RENDER ============
+    function renderTasks() {
+      const container = document.getElementById('taskList');
+      container.innerHTML = PLAYBOOK_DATA.tasks.map((task, index) => {
+        const isCompleted = state.completedTasks.includes(index);
+        return `
+          <div class="task-item ${isCompleted ? 'completed' : ''}" data-index="${index}" onclick="toggleTask(${index})">
+            <div class="task-header">
+              <div class="task-checkbox">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <div class="task-content">
+                <div class="task-title">${task.title}</div>
+                <div class="task-desc">${task.desc || ''}</div>
+                ${task.time || task.difficulty ? `
+                  <div class="task-meta">
+                    ${task.time ? `<span class="task-tag"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>${task.time}</span>` : ''}
+                    ${task.difficulty ? `<span class="task-tag">${task.difficulty}</span>` : ''}
+                  </div>
+                ` : ''}
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderInputs() {
+      const container = document.getElementById('inputGrid');
+      if (PLAYBOOK_DATA.inputs.length === 0) {
+        container.parentElement.style.display = 'none';
+        return;
+      }
+      container.innerHTML = PLAYBOOK_DATA.inputs.map(input => {
+        const value = state.inputValues[input.id] || '';
+        if (input.type === 'select') {
+          return `
+            <div class="input-group">
+              <label>${input.label}</label>
+              <select id="${input.id}" onchange="updateInput('${input.id}', this.value)">
+                <option value="">Select...</option>
+                ${input.options.map(opt => `<option value="${opt}" ${value === opt ? 'selected' : ''}>${opt}</option>`).join('')}
+              </select>
+            </div>
+          `;
+        }
+        return `
+          <div class="input-group">
+            <label>${input.label}</label>
+            <input type="${input.type || 'text'}" id="${input.id}" value="${value}" 
+              placeholder="${input.placeholder || ''}" onchange="updateInput('${input.id}', this.value)">
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderResources() {
+      const container = document.getElementById('resourceLinks');
+      if (PLAYBOOK_DATA.resources.length === 0) {
+        container.parentElement.style.display = 'none';
+        return;
+      }
+      container.innerHTML = PLAYBOOK_DATA.resources.map(resource => `
+        <a href="${resource.url}" target="_blank" class="resource-link">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+          </svg>
+          ${resource.name}
+        </a>
+      `).join('');
+    }
+
+    function renderNotes() {
+      document.getElementById('userNotes').value = state.notes || '';
+    }
+
+    function updateProgress() {
+      const total = PLAYBOOK_DATA.tasks.length;
+      const completed = state.completedTasks.length;
+      const percent = total > 0 ? Math.round((completed / total) * 100) : 0;
+      
+      document.getElementById('progressPercent').textContent = `${percent}%`;
+      document.getElementById('progressFill').style.width = `${percent}%`;
+    }
+
+    // ============ ACTIONS ============
+    function toggleTask(index) {
+      const idx = state.completedTasks.indexOf(index);
+      if (idx > -1) {
+        state.completedTasks.splice(idx, 1);
+      } else {
+        state.completedTasks.push(index);
+      }
+      saveState();
+      renderTasks();
+      updateProgress();
+    }
+
+    function updateInput(id, value) {
+      state.inputValues[id] = value;
+      saveState();
+    }
+
+    function updateNotes() {
+      state.notes = document.getElementById('userNotes').value;
+      saveState();
+    }
+
+    // ============ INIT ============
+    document.addEventListener('DOMContentLoaded', () => {
+      loadState();
+      renderTasks();
+      renderInputs();
+      renderResources();
+      renderNotes();
+      updateProgress();
+
+      // Auto-save notes on change
+      document.getElementById('userNotes').addEventListener('input', 
+        debounce(updateNotes, 500)
+      );
+    });
+
+    function debounce(func, wait) {
+      let timeout;
+      return function(...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+      };
+    }
+  </script>
+  <script>
+    function openChat() {
+      // Replace with your chat widget code (Tawk.to, Crisp, Intercom, etc.)
+      // Example: Tawk_API.toggle(); or $crisp.push(['do', 'chat:open']);
+      window.location.href = 'https://asapcreditrepairusa.com/chat';
+    }
+  </script>
+</body>
+</html>

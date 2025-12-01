@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Holiday Light Installation | ASAP Credit Repair Playbook</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --primary: #063d86; --primary-light: #0a4fa8; --primary-dark: #042a5c; --accent: #00c9a7; --success: #10b981; --warning: #f59e0b; --bg: #f8fafc; --text: #1e293b; --text-light: #64748b; --border: #e2e8f0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 17px; }
+    .header { background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%); color: white; padding: 40px 20px 50px; text-align: center; }
+    .header-content { max-width: 800px; margin: 0 auto; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; color: white; text-decoration: none; opacity: 0.8; font-size: 0.9rem; margin-bottom: 16px; }
+    .back-link:hover { opacity: 1; }
+    .category-badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; margin-bottom: 16px; }
+    .header h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 12px; }
+    .header-subtitle { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+    .main-content { max-width: 800px; margin: -30px auto 40px; padding: 0 20px; }
+    .progress-section { position: sticky; top: 0; background: white; padding: 16px 20px; margin: 0 -20px 20px; border-bottom: 1px solid var(--border); z-index: 100; display: flex; align-items: center; gap: 16px; }
+    .progress-bar { flex: 1; height: 10px; background: var(--border); border-radius: 5px; overflow: hidden; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, #dc2626, #16a34a); border-radius: 5px; transition: width 0.3s; width: 0%; }
+    .progress-text { font-weight: 600; color: var(--text); min-width: 50px; }
+    .goal-card { background: linear-gradient(135deg, #fef2f2, #fee2e2); border: 2px solid #fca5a5; border-radius: 16px; padding: 24px 28px; margin-bottom: 30px; }
+    .goal-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; color: #991b1b; margin-bottom: 12px; }
+    .goal-card p { color: #b91c1c; font-size: 1.05rem; }
+    .goal-card .earnings { background: white; display: inline-block; padding: 10px 18px; border-radius: 10px; margin-top: 14px; font-weight: 600; color: #166534; font-size: 1.1rem; }
+    .seasonal-alert { background: linear-gradient(135deg, #fef3c7, #fde68a); border: 2px solid #fbbf24; border-radius: 12px; padding: 16px 20px; margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+    .seasonal-alert .icon { font-size: 28px; }
+    .seasonal-alert .text { color: #92400e; font-weight: 500; }
+    .section-card { background: white; border-radius: 16px; padding: 28px; margin-bottom: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid var(--border); }
+    .section-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; color: var(--primary); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+    .section-card h2 .icon { width: 40px; height: 40px; background: linear-gradient(135deg, #dc2626, #16a34a); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; }
+    .section-intro { color: var(--text-light); margin-bottom: 20px; font-size: 1rem; }
+    .task-list { list-style: none; }
+    .task-item { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border); }
+    .task-item:last-child { border-bottom: none; }
+    .task-checkbox { flex-shrink: 0; width: 28px; height: 28px; border: 2px solid var(--border); border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; margin-top: 2px; font-weight: bold; }
+    .task-checkbox:hover { border-color: var(--primary); }
+    .task-checkbox.checked { background: var(--success); border-color: var(--success); color: white; }
+    .task-content { flex: 1; }
+    .task-title { font-weight: 600; font-size: 1.1rem; margin-bottom: 8px; color: var(--text); }
+    .task-desc { color: var(--text-light); font-size: 0.95rem; line-height: 1.6; }
+    .task-meta { display: flex; gap: 12px; margin-top: 10px; flex-wrap: wrap; }
+    .task-badge { font-size: 0.8rem; padding: 4px 10px; border-radius: 6px; background: var(--bg); color: var(--text-light); }
+    .task-badge.easy { background: #dcfce7; color: #166534; }
+    .task-badge.medium { background: #fef3c7; color: #92400e; }
+    .details-box { background: #f8fafc; border-radius: 10px; padding: 16px; margin-top: 12px; border-left: 4px solid var(--primary); }
+    .details-box h4 { font-size: 0.9rem; color: var(--primary); margin-bottom: 10px; }
+    .details-box ul { margin-left: 18px; color: var(--text); font-size: 0.9rem; }
+    .details-box li { margin-bottom: 8px; line-height: 1.5; }
+    .pricing-table { width: 100%; border-collapse: collapse; margin-top: 12px; background: white; border-radius: 10px; overflow: hidden; }
+    .pricing-table th, .pricing-table td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border); }
+    .pricing-table th { background: var(--bg); font-weight: 600; color: #991b1b; }
+    .pricing-table tr:last-child td { border-bottom: none; }
+    .marketing-section { background: linear-gradient(135deg, #fef3c7, #fde68a); border: 2px solid #fbbf24; }
+    .marketing-section h2 { color: #92400e; }
+    .marketing-tip { background: white; border-radius: 12px; padding: 20px; margin-bottom: 16px; }
+    .marketing-tip:last-child { margin-bottom: 0; }
+    .marketing-tip h3 { font-size: 1.1rem; color: #92400e; margin-bottom: 12px; }
+    .marketing-tip p { color: #78350f; font-size: 0.95rem; margin-bottom: 12px; line-height: 1.6; }
+    .script-box { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 0 10px 10px 0; font-size: 0.9rem; color: #78350f; margin-top: 12px; }
+    .script-box strong { display: block; margin-bottom: 8px; color: #92400e; font-size: 0.85rem; }
+    .places-list { background: white; border-radius: 10px; padding: 16px; margin-top: 12px; }
+    .places-list h4 { font-size: 0.9rem; color: #92400e; margin-bottom: 10px; }
+    .places-list ul { margin-left: 18px; color: #78350f; font-size: 0.9rem; }
+    .places-list li { margin-bottom: 6px; }
+    .resources-section { background: linear-gradient(135deg, #ede9fe, #ddd6fe); border: 2px solid #a78bfa; }
+    .resources-section h2 { color: #5b21b6; }
+    .resource-item { background: white; border-radius: 12px; padding: 16px 20px; margin-bottom: 12px; display: block; text-decoration: none; color: var(--text); transition: all 0.2s; }
+    .resource-item:hover { transform: translateX(4px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .resource-item h4 { font-size: 1rem; margin-bottom: 4px; color: #5b21b6; }
+    .resource-item p { font-size: 0.85rem; color: var(--text-light); margin-bottom: 6px; }
+    .resource-item .link { font-size: 0.8rem; color: #7c3aed; }
+    .section-card textarea { width: 100%; min-height: 150px; padding: 16px 18px; border: 2px solid var(--border); border-radius: 12px; font-family: inherit; font-size: 1rem; resize: vertical; box-sizing: border-box; display: block; line-height: 1.6; }
+    .section-card textarea:focus { outline: none; border-color: var(--primary); }
+    .help-section { background: linear-gradient(135deg, #f0f9ff, #e0f2fe); border: 2px solid #7dd3fc; border-radius: 16px; padding: 24px 28px; margin-top: 30px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .help-icon { width: 56px; height: 56px; background: white; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .help-content { flex: 1; min-width: 200px; }
+    .help-content h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; margin-bottom: 4px; }
+    .help-content p { color: var(--text-light); font-size: 0.95rem; }
+    .chat-btn { background: var(--primary); color: white; border: none; padding: 14px 28px; border-radius: 12px; font-family: inherit; font-size: 1rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: all 0.2s; }
+    .chat-btn:hover { background: var(--primary-light); transform: translateY(-2px); }
+    @media (max-width: 600px) { .header { padding: 30px 20px 40px; } .section-card { padding: 20px; } .help-section { flex-direction: column; text-align: center; } }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <a href="index.html" class="back-link">← Back to All Playbooks</a>
+      <span class="category-badge">🎄 Seasonal</span>
+      <h1>Holiday Light Installation</h1>
+      <p class="header-subtitle">Make $2,000-10,000+ in just 6-8 weeks! People pay BIG money to have their Christmas lights installed professionally. Low competition, high demand!</p>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="progress-section">
+      <span style="font-size: 0.9rem; color: var(--text-light);">Your Progress:</span>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      <span class="progress-text" id="progressText">0%</span>
+    </div>
+
+    <div class="seasonal-alert">
+      <span class="icon">⏰</span>
+      <span class="text"><strong>SEASONAL OPPORTUNITY!</strong> Best time to market: October-November. Installation season: November-mid December. Removal: January.</span>
+    </div>
+
+    <div class="goal-card">
+      <h2>🎯 What You'll Achieve</h2>
+      <p>You'll offer professional Christmas light installation for homeowners. Most homes pay $200-600 for installation, and you can do 1-3 homes per day. This is a SHORT season (6-8 weeks) but the money is incredible!</p>
+      <div class="earnings">💰 Earn $2,000-10,000+ in just 6-8 weeks!</div>
+    </div>
+
+    <div class="section-card">
+      <h2><span class="icon">💡</span> Why This is an Amazing Side Hustle</h2>
+      <p class="section-intro">This might be the best seasonal money you can make!</p>
+      <div class="details-box">
+        <h4>What makes this so great:</h4>
+        <ul>
+          <li><strong>HIGH demand</strong> - People want their homes to look beautiful for the holidays</li>
+          <li><strong>People don't want to do it</strong> - Climbing ladders in the cold? No thanks!</li>
+          <li><strong>Premium pricing</strong> - Customers expect to pay well for this service</li>
+          <li><strong>Short season = focused income</strong> - Make a lot in a short time</li>
+          <li><strong>Repeat customers</strong> - Same people hire you EVERY year</li>
+          <li><strong>Double income</strong> - Charge for installation AND removal in January</li>
+          <li><strong>Low competition</strong> - Most people don't think to offer this</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h2><span class="icon">🎒</span> What You Need to Start</h2>
+      <p class="section-intro">Basic equipment to get started safely!</p>
+      <ul class="task-list">
+        <li class="task-item">
+          <div class="task-checkbox" data-task="0"></div>
+          <div class="task-content">
+            <div class="task-title">Extension ladder (20-28 ft)</div>
+            <div class="task-desc">You need to reach rooflines safely. A 24ft ladder works for most homes. Check Facebook Marketplace or rent from Home Depot.</div>
+            <div class="task-meta">
+              <span class="task-badge">💵 $150-300 (buy) or $40/day (rent)</span>
+              <span class="task-badge medium">Essential</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="1"></div>
+          <div class="task-content">
+            <div class="task-title">Light clips (buy in bulk)</div>
+            <div class="task-desc">Plastic clips that attach lights to gutters, shingles, and trim. Buy 200-500 to start. Available at Home Depot, Lowes, or Amazon.</div>
+            <div class="task-meta">
+              <span class="task-badge">💵 $20-50</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="2"></div>
+          <div class="task-content">
+            <div class="task-title">Extension cords (outdoor rated)</div>
+            <div class="task-desc">Heavy-duty outdoor extension cords. Get a few different lengths (25ft, 50ft, 100ft).</div>
+            <div class="task-meta">
+              <span class="task-badge">💵 $30-60</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="3"></div>
+          <div class="task-content">
+            <div class="task-title">Timer (outdoor)</div>
+            <div class="task-desc">So lights turn on/off automatically. Nice touch that customers appreciate!</div>
+            <div class="task-meta">
+              <span class="task-badge">💵 $15-25</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="4"></div>
+          <div class="task-content">
+            <div class="task-title">Tool belt or bucket</div>
+            <div class="task-desc">To carry clips while on the ladder. A tool belt or 5-gallon bucket with tool holder works great.</div>
+            <div class="task-meta">
+              <span class="task-badge">💵 $10-20</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="details-box" style="margin-top: 20px; border-left-color: #dc2626;">
+        <h4>⚠️ Safety First!</h4>
+        <ul>
+          <li>Never work on a ladder in wind or rain</li>
+          <li>Always have someone spot you on the ladder</li>
+          <li>Use proper ladder angle (1:4 ratio)</li>
+          <li>Don't overreach - move the ladder instead</li>
+          <li>Wear non-slip shoes</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h2><span class="icon">💵</span> What to Charge</h2>
+      <p class="section-intro">Holiday lights command premium prices! Here's a guide:</p>
+      <table class="pricing-table">
+        <thead>
+          <tr><th>Service</th><th>Price Range</th><th>Time</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Small home (roofline only)</td><td>$150-250</td><td>1.5-2 hrs</td></tr>
+          <tr><td>Medium home (roofline + bushes)</td><td>$250-400</td><td>2-3 hrs</td></tr>
+          <tr><td>Large home (full display)</td><td>$400-700+</td><td>3-5 hrs</td></tr>
+          <tr><td>Bushes/trees only</td><td>$50-150</td><td>30-60 min</td></tr>
+          <tr><td>Removal (January)</td><td>50-75% of install price</td><td>Half the time</td></tr>
+        </tbody>
+      </table>
+      <div class="details-box" style="margin-top: 20px;">
+        <h4>💡 Pricing tips:</h4>
+        <ul>
+          <li><strong>Customer provides lights:</strong> Charge labor only (prices above)</li>
+          <li><strong>You provide lights:</strong> Add cost of lights + 20% markup</li>
+          <li><strong>Bundle install + removal:</strong> Offer 10% discount for booking both</li>
+          <li><strong>Early bird discount:</strong> 10% off if they book in October</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h2><span class="icon">📋</span> Step-by-Step: Getting Started</h2>
+      <p class="section-intro">Start marketing in October for best results!</p>
+      <ul class="task-list">
+        <li class="task-item">
+          <div class="task-checkbox" data-task="5"></div>
+          <div class="task-content">
+            <div class="task-title">Step 1: Practice on your own home (or family's)</div>
+            <div class="task-desc">Install lights on your house or a family member's. Learn how long it takes and get comfortable on the ladder. Take photos!</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 2-4 hours</span>
+              <span class="task-badge easy">Important</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="6"></div>
+          <div class="task-content">
+            <div class="task-title">Step 2: Take AMAZING photos at night</div>
+            <div class="task-desc">Photos of lit-up homes at night are your #1 marketing tool. These sell the service!</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 30 minutes</span>
+              <span class="task-badge easy">Critical!</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="7"></div>
+          <div class="task-content">
+            <div class="task-title">Step 3: Start marketing in OCTOBER</div>
+            <div class="task-desc">People book early! Start posting and telling people in October. By November you should be taking appointments.</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ Ongoing</span>
+              <span class="task-badge medium">Don't wait!</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="8"></div>
+          <div class="task-content">
+            <div class="task-title">Step 4: Give free estimates in person</div>
+            <div class="task-desc">Walk around the home, measure the roofline, discuss what they want. Give them a written quote on the spot.</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 20-30 min each</span>
+              <span class="task-badge medium">High close rate</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="9"></div>
+          <div class="task-content">
+            <div class="task-title">Step 5: Book removal at time of install</div>
+            <div class="task-desc">When you finish installing, ask: "Would you like to book removal for January?" Most people say yes!</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 2 minutes</span>
+              <span class="task-badge easy">Easy money!</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="section-card marketing-section">
+      <h2><span class="icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);">📣</span> How to Find Clients</h2>
+      <p class="section-intro" style="color: #92400e;">Start marketing in October! Beautiful night photos are your secret weapon.</p>
+      
+      <div class="marketing-tip">
+        <h3>📱 Nextdoor (Start Here!)</h3>
+        <p>Post beautiful photos of lit-up homes. Your neighbors will want their house to look that good too!</p>
+        <div class="script-box">
+          <strong>📝 Copy this post:</strong>
+"🎄 Holiday Light Installation Now Booking! 🎄
+
+Want your home to be the best-looking on the block this Christmas? I'm offering professional holiday light installation!
+
+✨ Roofline, bushes, trees, and more
+✨ You provide lights OR I can supply them
+✨ Safe, secure installation
+✨ Removal included in January (optional)
+
+📍 Serving [Your Area]
+💵 Starting at $150 (free estimates!)
+📱 Call/text [number]
+
+Book now - November spots are filling up fast! 🎅
+
+[ATTACH BEAUTIFUL NIGHT PHOTO]"
+        </div>
+      </div>
+      
+      <div class="marketing-tip">
+        <h3>🚪 Door Knock in Nice Neighborhoods</h3>
+        <p>Walk through upscale neighborhoods and knock on doors. These homeowners pay top dollar for this service!</p>
+        <div class="script-box">
+          <strong>📝 What to say:</strong>
+"Hi! I'm [Name], and I'm offering holiday light installation in the neighborhood this season. I noticed your home would look amazing with some roofline lights! Would you be interested in a free estimate? I can walk around right now and tell you exactly what it would cost."
+        </div>
+      </div>
+      
+      <div class="marketing-tip">
+        <h3>📄 Flyers in Wealthy Neighborhoods</h3>
+        <p>Target neighborhoods with large homes. These people have money and don't want to climb ladders!</p>
+        <div class="places-list">
+          <h4>What to put on flyers:</h4>
+          <ul>
+            <li>Beautiful photo of a lit-up home</li>
+            <li>"Professional Holiday Light Installation"</li>
+            <li>Your phone number (BIG)</li>
+            <li>"Free Estimates"</li>
+            <li>"Book now - spots filling fast!"</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="marketing-tip">
+        <h3>🎥 Post Night Photos/Videos Everywhere</h3>
+        <p>Beautiful lit-up homes at night = ATTENTION. Post on Facebook, Instagram, TikTok, everywhere!</p>
+        <div class="script-box">
+          <strong>📝 Video idea:</strong>
+Film a time-lapse of you installing lights during the day, then reveal the finished look at night. Add Christmas music. People LOVE these videos!
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card resources-section">
+      <h2><span class="icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">💡</span> Learn From the Pros</h2>
+      <p class="section-intro" style="color: #5b21b6;">Watch these to learn installation techniques and business tips!</p>
+      
+      <a href="https://www.youtube.com/watch?v=5qap5aO4i9A" target="_blank" class="resource-item">
+        <h4>📺 How to Start a Christmas Light Business</h4>
+        <p>Complete guide to starting this seasonal business. Great overview!</p>
+        <span class="link">YouTube →</span>
+      </a>
+      <a href="https://www.youtube.com/watch?v=L2PRQKP4bHE" target="_blank" class="resource-item">
+        <h4>📺 Christmas Light Installation Tips & Tricks</h4>
+        <p>Professional installer shares techniques for faster, cleaner installs.</p>
+        <span class="link">YouTube →</span>
+      </a>
+      <a href="https://www.youtube.com/@ChristmasLightSource" target="_blank" class="resource-item">
+        <h4>📺 Christmas Light Source (YouTube Channel)</h4>
+        <p>Tons of tutorials on installation, products, and running the business.</p>
+        <span class="link">YouTube →</span>
+      </a>
+      <a href="https://www.reddit.com/r/sweatystartup/comments/christmas_lights/" target="_blank" class="resource-item">
+        <h4>💬 Reddit: Sweaty Startup - Christmas Light Threads</h4>
+        <p>Real people sharing their income numbers and tips from the business.</p>
+        <span class="link">Reddit →</span>
+      </a>
+    </div>
+
+    <div class="section-card">
+      <h2><span class="icon">📝</span> Your Notes</h2>
+      <p class="section-intro">Plan your season, track clients, and notes!</p>
+      <textarea id="userNotes" placeholder="Example: Need to buy ladder from FB Marketplace. Target neighborhoods: Oak Hills, Sunset Ridge. Start posting on Nextdoor Oct 15..."></textarea>
+    </div>
+
+    <div class="help-section">
+      <div class="help-icon">💬</div>
+      <div class="help-content">
+        <h3>Need Help?</h3>
+        <p>Have questions about getting started? Chat with an ASAP Financial coach!</p>
+      </div>
+      <button class="chat-btn" onclick="openChat()">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+        Start Chat
+      </button>
+    </div>
+  </main>
+
+  <script>
+    const STORAGE_KEY = 'playbook_holiday-lights';
+    function loadState() { const saved = localStorage.getItem(STORAGE_KEY); if (saved) { const state = JSON.parse(saved); document.querySelectorAll('.task-checkbox').forEach((box, i) => { if (state.tasks && state.tasks[i]) { box.classList.add('checked'); box.innerHTML = '✓'; } }); if (state.notes) document.getElementById('userNotes').value = state.notes; updateProgress(); } }
+    function saveState() { const tasks = []; document.querySelectorAll('.task-checkbox').forEach(box => { tasks.push(box.classList.contains('checked')); }); localStorage.setItem(STORAGE_KEY, JSON.stringify({ tasks, notes: document.getElementById('userNotes').value })); }
+    function updateProgress() { const boxes = document.querySelectorAll('.task-checkbox'); const checked = document.querySelectorAll('.task-checkbox.checked').length; const percent = Math.round((checked / boxes.length) * 100); document.getElementById('progressFill').style.width = percent + '%'; document.getElementById('progressText').textContent = percent + '%'; }
+    document.querySelectorAll('.task-checkbox').forEach(box => { box.addEventListener('click', function() { this.classList.toggle('checked'); this.innerHTML = this.classList.contains('checked') ? '✓' : ''; updateProgress(); saveState(); }); });
+    document.getElementById('userNotes').addEventListener('input', saveState);
+    function openChat() { window.location.href = 'https://asapcreditrepairusa.com/chat'; }
+    loadState();
+  </script>
+</body>
+</html>

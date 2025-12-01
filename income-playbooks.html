@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income Gig Playbooks | ASAP Credit Repair</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #063d86;
+            --primary-dark: #042a5c;
+            --primary-light: #0a4fa8;
+            --accent: #00c9a7;
+            --accent-dark: #00a389;
+            --income-green: #10b981;
+            --income-green-dark: #059669;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --border: #e2e8f0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        /* Hero Section - Green theme for income */
+        .hero {
+            background: linear-gradient(135deg, var(--income-green) 0%, var(--income-green-dark) 100%);
+            color: white;
+            padding: 60px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 40px;
+        }
+        
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fef08a;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Search Section */
+        .search-section {
+            max-width: 600px;
+            margin: -30px auto 40px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .search-box {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(16, 185, 129, 0.2);
+            padding: 8px;
+            display: flex;
+            gap: 8px;
+        }
+        
+        .search-box input {
+            flex: 1;
+            border: none;
+            padding: 16px 20px;
+            font-size: 1rem;
+            font-family: inherit;
+            outline: none;
+            border-radius: 12px;
+            background: var(--bg);
+        }
+        
+        .search-box button {
+            background: var(--income-green);
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-family: inherit;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .search-box button:hover {
+            background: var(--income-green-dark);
+        }
+        
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+        
+        /* Earnings Potential Banner */
+        .earnings-banner {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-radius: 16px;
+            padding: 24px 32px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .earnings-text h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            color: #92400e;
+            margin-bottom: 4px;
+        }
+        
+        .earnings-text p {
+            color: #a16207;
+        }
+        
+        .earnings-examples {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        
+        .earning-chip {
+            background: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            color: var(--income-green-dark);
+            font-size: 0.9rem;
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 50px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        
+        .how-it-works h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+            color: var(--income-green);
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .step {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--income-green), var(--income-green-dark));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 16px;
+        }
+        
+        .step h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+        
+        .step p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        /* Skill Levels */
+        .skill-section {
+            margin-bottom: 40px;
+        }
+        
+        .skill-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .skill-badge {
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .skill-badge.easy {
+            background: #dcfce7;
+            color: #166534;
+        }
+        
+        .skill-badge.medium {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        
+        .skill-badge.skilled {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+        
+        .skill-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+        }
+        
+        /* Category Grid */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        
+        .category-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            border: 1px solid var(--border);
+        }
+        
+        .category-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(16, 185, 129, 0.15);
+        }
+        
+        .category-header {
+            background: linear-gradient(135deg, var(--income-green), var(--income-green-dark));
+            color: white;
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .category-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        
+        .category-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .category-count {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+        
+        .category-playbooks {
+            padding: 16px;
+        }
+        
+        .playbook-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.2s;
+            gap: 12px;
+        }
+        
+        .playbook-item:hover {
+            background: #ecfdf5;
+        }
+        
+        .playbook-check {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border);
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: white;
+            transition: all 0.2s;
+        }
+        
+        .playbook-item:hover .playbook-check {
+            border-color: var(--income-green);
+            background: var(--income-green);
+        }
+        
+        .playbook-item:hover .playbook-check::before {
+            content: '→';
+        }
+        
+        .playbook-name {
+            flex: 1;
+            font-size: 0.95rem;
+        }
+        
+        .playbook-earning {
+            font-size: 0.8rem;
+            color: var(--income-green-dark);
+            background: #ecfdf5;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+        
+        .see-all {
+            display: block;
+            text-align: center;
+            padding: 14px;
+            color: var(--income-green);
+            text-decoration: none;
+            font-weight: 600;
+            border-top: 1px solid var(--border);
+            transition: background 0.2s;
+        }
+        
+        .see-all:hover {
+            background: #ecfdf5;
+        }
+        
+        /* Popular Gigs Section */
+        .popular-gigs {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 20px;
+            padding: 40px;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        .popular-gigs h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+        
+        .popular-gigs > p {
+            opacity: 0.9;
+            margin-bottom: 24px;
+        }
+        
+        .popular-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+        
+        .popular-item {
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 20px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.2s;
+            display: flex;
+            gap: 16px;
+        }
+        
+        .popular-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateX(4px);
+        }
+        
+        .popular-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+        
+        .popular-text h4 {
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+        
+        .popular-text p {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            margin-bottom: 8px;
+        }
+        
+        .popular-earning {
+            display: inline-block;
+            background: var(--accent);
+            color: #065f46;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        /* Help Section */
+        .help-section {
+            margin-bottom: 40px;
+        }
+        
+        .help-card {
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+            border: 2px solid #6ee7b7;
+            border-radius: 20px;
+            padding: 32px 40px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .help-icon {
+            width: 64px;
+            height: 64px;
+            background: white;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            flex-shrink: 0;
+        }
+        
+        .help-content {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .help-content h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+        
+        .help-content p {
+            color: var(--text-light);
+            margin-bottom: 16px;
+            font-size: 1rem;
+        }
+        
+        .btn-chat {
+            background: var(--income-green);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.2s;
+        }
+        
+        .btn-chat:hover {
+            background: var(--income-green-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);
+        }
+        
+        .btn-chat svg {
+            flex-shrink: 0;
+        }
+        
+        @media (max-width: 600px) {
+            .help-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 24px;
+            }
+        }
+        
+        /* Footer CTA */
+        .footer-cta {
+            text-align: center;
+            padding: 60px 20px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        
+        .footer-cta h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+        
+        .footer-cta p {
+            color: var(--text-light);
+            margin-bottom: 24px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+        }
+        
+        .btn-green {
+            background: var(--income-green);
+            color: white;
+        }
+        
+        .btn-green:hover {
+            background: var(--income-green-dark);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: var(--bg);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 40px 20px 60px;
+            }
+            
+            .hero-stats {
+                gap: 24px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .how-it-works {
+                padding: 30px 20px;
+            }
+            
+            .popular-gigs {
+                padding: 30px 20px;
+            }
+            
+            .earnings-banner {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-icon">💵</div>
+            <h1>Income Gig Playbooks</h1>
+            <p>Step-by-step guides to start side hustles and bring in extra money. No experience needed for most gigs!</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">114+</div>
+                    <div class="stat-label">Income Gigs</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Categories</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">$500-5K</div>
+                    <div class="stat-label">Monthly Potential</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search gigs (e.g., cleaning, pets, tech...)">
+            <button onclick="searchPlaybooks()">Search</button>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Earnings Banner -->
+        <div class="earnings-banner">
+            <div class="earnings-text">
+                <h3>💰 Real Earning Potential</h3>
+                <p>These are actual income ranges people report for these gigs</p>
+            </div>
+            <div class="earnings-examples">
+                <span class="earning-chip">🧹 Cleaning: $25-50/hr</span>
+                <span class="earning-chip">🐕 Pet Care: $20-40/visit</span>
+                <span class="earning-chip">🔧 Handyman: $40-75/hr</span>
+            </div>
+        </div>
+        
+        <!-- How It Works -->
+        <section class="how-it-works">
+            <h2>How These Playbooks Work</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Choose a Gig</h3>
+                    <p>Pick something that matches your skills and interests</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Follow the Steps</h3>
+                    <p>Each task shows you exactly what to do</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Get Your First Client</h3>
+                    <p>Marketing tips included in every playbook</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Track Your Income</h3>
+                    <p>Log earnings as you grow your gig</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Popular Gigs -->
+        <section class="popular-gigs">
+            <h2>🔥 Most Popular Gigs</h2>
+            <p>These gigs are easy to start and in high demand</p>
+            <div class="popular-grid">
+                <a href="playbooks/dog-waste-removal-service.html" class="popular-item">
+                    <div class="popular-icon">🐕</div>
+                    <div class="popular-text">
+                        <h4>Dog Waste Removal</h4>
+                        <p>Weekly yard cleanup routes</p>
+                        <span class="popular-earning">$300-800/mo</span>
+                    </div>
+                </a>
+                <a href="playbooks/pressure-washing.html" class="popular-item">
+                    <div class="popular-icon">💦</div>
+                    <div class="popular-text">
+                        <h4>Pressure Washing</h4>
+                        <p>Driveways, decks, siding</p>
+                        <span class="popular-earning">$100-300/job</span>
+                    </div>
+                </a>
+                <a href="playbooks/flat-pack-furniture-assembly.html" class="popular-item">
+                    <div class="popular-icon">🔧</div>
+                    <div class="popular-text">
+                        <h4>Furniture Assembly</h4>
+                        <p>IKEA & flat-pack builds</p>
+                        <span class="popular-earning">$30-75/hr</span>
+                    </div>
+                </a>
+                <a href="playbooks/holiday-light-installation.html" class="popular-item">
+                    <div class="popular-icon">🎄</div>
+                    <div class="popular-text">
+                        <h4>Holiday Light Installation</h4>
+                        <p>Seasonal, high demand</p>
+                        <span class="popular-earning">$200-500/home</span>
+                    </div>
+                </a>
+                <a href="playbooks/senior-tech-help.html" class="popular-item">
+                    <div class="popular-icon">📱</div>
+                    <div class="popular-text">
+                        <h4>Senior Tech Help</h4>
+                        <p>Phones, computers, smart home</p>
+                        <span class="popular-earning">$30-50/hr</span>
+                    </div>
+                </a>
+                <a href="playbooks/maid-cleaning-services.html" class="popular-item">
+                    <div class="popular-icon">🧹</div>
+                    <div class="popular-text">
+                        <h4>Cleaning Services</h4>
+                        <p>Homes and apartments</p>
+                        <span class="popular-earning">$25-50/hr</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+        
+        <!-- Category Grid -->
+        <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; margin-bottom: 24px;">Browse by Category</h2>
+        
+        <div class="category-grid">
+            <!-- Pets -->
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-icon">🐾</div>
+                    <div>
+                        <div class="category-title">Pets</div>
+                        <div class="category-count">8 playbooks</div>
+                    </div>
+                </div>
+                <div class="category-playbooks">
+                    <a href="playbooks/dog-waste-removal-service.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Dog Waste Removal Service</span>
+                        <span class="playbook-earning">$15/yard</span>
+                    </a>
+                    <a href="playbooks/pet-sitting-and-dog-walking.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Pet Sitting & Dog Walking</span>
+                        <span class="playbook-earning">$20-50</span>
+                    </a>
+                    <a href="playbooks/pet-hair-de-shedding.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Pet Hair De-Shedding</span>
+                        <span class="playbook-earning">$40/pet</span>
+                    </a>
+                    <a href="playbooks/cat-only-drop-ins.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Cat-Only Drop-Ins</span>
+                        <span class="playbook-earning">$20/visit</span>
+                    </a>
+                </div>
+                <a href="playbooks/index.html?category=Pets" class="see-all">See all 8 playbooks →</a>
+            </div>
+            
+            <!-- Cleaning -->
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-icon">🧹</div>
+                    <div>
+                        <div class="category-title">Cleaning & Maid</div>
+                        <div class="category-count">6 playbooks</div>
+                    </div>
+                </div>
+                <div class="category-playbooks">
+                    <a href="playbooks/maid-cleaning-services.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Maid/Cleaning Services</span>
+                        <span class="playbook-earning">$25-50/hr</span>
+                    </a>
+                    <a href="playbooks/window-washing.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Window Washing</span>
+                        <span class="playbook-earning">$150/home</span>
+                    </a>
+                    <a href="playbooks/wheelie-bin-cleaning.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Trash Can Cleaning</span>
+                        <span class="playbook-earning">$30/can</span>
+                    </a>
+                    <a href="playbooks/eco-cleaning-day.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Eco Cleaning Service</span>
+                        <span class="playbook-earning">$150+</span>
+                    </a>
+                </div>
+                <a href="playbooks/index.html?category=Cleaning" class="see-all">See all 6 playbooks →</a>
+            </div>
+            
+            <!-- Home Repairs -->
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-icon">🔧</div>
+                    <div>
+                        <div class="category-title">Home Repairs & Installs</div>
+                        <div class="category-count">14 playbooks</div>
+                    </div>
+                </div>
+                <div class="category-playbooks">
+                    <a href="playbooks/flat-pack-furniture-assembly.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Furniture Assembly</span>
+                        <span class="playbook-earning">$45/hr</span>
+                    </a>
+                    <a href="playbooks/tv-mount-and-wire-conceal.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">TV Mounting & Wire Hide</span>
+                        <span class="playbook-earning">$75-125</span>
+                    </a>
+                    <a href="playbooks/picture-hanging-and-gallery-walls.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Picture Hanging</span>
+                        <span class="playbook-earning">$10/piece</span>
+                    </a>
+                    <a href="playbooks/dryer-vent-deep-clean.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Dryer Vent Cleaning</span>
+                        <span class="playbook-earning">$100</span>
+                    </a>
+                </div>
+                <a href="playbooks/index.html?category=Home%20Repairs" class="see-all">See all 14 playbooks →</a>
+            </div>
+            
+            <!-- Yard & Exterior -->
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-icon">🌳</div>
+                    <div>
+                        <div class="category-title">Yard & Exterior</div>
+                        <div class="category-count">8 playbooks</div>
+                    </div>
+                </div>
+                <div class="category-playbooks">
+                    <a href="playbooks/pressure-washing.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Pressure Washing</span>
+                        <span class="playbook-earning">$150/job</span>
+                    </a>
+                    <a href="playbooks/gutter-cleaning.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Gutter Cleaning</span>
+                        <span class="playbook-earning">$125/home</span>
+                    </a>
+                    <a href="playbooks/mulch-delivery-and-spread.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Mulch Delivery & Spread</span>
+                        <span class="playbook-earning">$250/job</span>
+                    </a>
+                    <a href="playbooks/lawn-aeration-and-overseed.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Lawn Aeration</span>
+                        <span class="playbook-earning">$50/1000sqft</span>
+                    </a>
+                </div>
+                <a href="playbooks/index.html?category=Yard" class="see-all">See all 8 playbooks →</a>
+            </div>
+            
+            <!-- Seasonal -->
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-icon">❄️</div>
+                    <div>
+                        <div class="category-title">Seasonal & Weather</div>
+                        <div class="category-count">7 playbooks</div>
+                    </div>
+                </div>
+                <div class="category-playbooks">
+                    <a href="playbooks/holiday-light-installation.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Holiday Light Installation</span>
+                        <span class="playbook-earning">$200-500</span>
+                    </a>
+                    <a href="playbooks/snow-shovel-and-ice-melt-route.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Snow Shoveling Route</span>
+                        <span class="playbook-earning">$35/house</span>
+                    </a>
+                    <a href="playbooks/leaf-rake-and-bag-route.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Leaf Raking Route</span>
+                        <span class="playbook-earning">$75/yard</span>
+                    </a>
+                    <a href="playbooks/storm-prep-service.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Storm Prep Service</span>
+                        <span class="playbook-earning">$200/home</span>
+                    </a>
+                </div>
+                <a href="playbooks/index.html?category=Seasonal" class="see-all">See all 7 playbooks →</a>
+            </div>
+            
+            <!-- Tech -->
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-icon">💻</div>
+                    <div>
+                        <div class="category-title">Tech & Setup</div>
+                        <div class="category-count">8 playbooks</div>
+                    </div>
+                </div>
+                <div class="category-playbooks">
+                    <a href="playbooks/senior-tech-help.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Senior Tech Help</span>
+                        <span class="playbook-earning">$40/hr</span>
+                    </a>
+                    <a href="playbooks/smart-doorbell-camera-install.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Smart Camera Install</span>
+                        <span class="playbook-earning">$60/device</span>
+                    </a>
+                    <a href="playbooks/wifi-audit-and-mesh-setup.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">WiFi Mesh Setup</span>
+                        <span class="playbook-earning">$125</span>
+                    </a>
+                    <a href="playbooks/data-transfer-and-new-device-setup.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Data Transfer Service</span>
+                        <span class="playbook-earning">$50</span>
+                    </a>
+                </div>
+                <a href="playbooks/index.html?category=Tech" class="see-all">See all 8 playbooks →</a>
+            </div>
+            
+            <!-- Senior Support -->
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-icon">👴</div>
+                    <div>
+                        <div class="category-title">Senior Support</div>
+                        <div class="category-count">6 playbooks</div>
+                    </div>
+                </div>
+                <div class="category-playbooks">
+                    <a href="playbooks/errand-runner-for-seniors.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Errand Runner for Seniors</span>
+                        <span class="playbook-earning">$25/trip</span>
+                    </a>
+                    <a href="playbooks/senior-home-safety-mini-upgrades.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Home Safety Upgrades</span>
+                        <span class="playbook-earning">$200</span>
+                    </a>
+                    <a href="playbooks/scam-shield-for-seniors.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Scam Shield Training</span>
+                        <span class="playbook-earning">$50/session</span>
+                    </a>
+                    <a href="playbooks/caregiver-relief-errands.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Caregiver Relief</span>
+                        <span class="playbook-earning">$25/errand</span>
+                    </a>
+                </div>
+                <a href="playbooks/index.html?category=Senior" class="see-all">See all 6 playbooks →</a>
+            </div>
+            
+            <!-- Business Boosters -->
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-icon">📈</div>
+                    <div>
+                        <div class="category-title">Business Boosters</div>
+                        <div class="category-count">8 playbooks</div>
+                    </div>
+                </div>
+                <div class="category-playbooks">
+                    <a href="playbooks/google-business-profile-setup.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Google Business Setup</span>
+                        <span class="playbook-earning">$250</span>
+                    </a>
+                    <a href="playbooks/local-seo-citations.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Local SEO Citations</span>
+                        <span class="playbook-earning">$200</span>
+                    </a>
+                    <a href="playbooks/qr-menu-setup-for-restaurants.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">QR Menu Setup</span>
+                        <span class="playbook-earning">$250</span>
+                    </a>
+                    <a href="playbooks/flyer-door-drop-with-gps-proof.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Flyer Distribution</span>
+                        <span class="playbook-earning">$0.15/flyer</span>
+                    </a>
+                </div>
+                <a href="playbooks/index.html?category=Business" class="see-all">See all 8 playbooks →</a>
+            </div>
+            
+            <!-- Education -->
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-icon">📚</div>
+                    <div>
+                        <div class="category-title">Education & Tutoring</div>
+                        <div class="category-count">8 playbooks</div>
+                    </div>
+                </div>
+                <div class="category-playbooks">
+                    <a href="playbooks/reading-tutor.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Reading Tutor</span>
+                        <span class="playbook-earning">$50/hr</span>
+                    </a>
+                    <a href="playbooks/after-school-homework-coach.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Homework Coach Pods</span>
+                        <span class="playbook-earning">$20/kid</span>
+                    </a>
+                    <a href="playbooks/music-minis-lessons.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Music Mini Lessons</span>
+                        <span class="playbook-earning">$30/lesson</span>
+                    </a>
+                    <a href="playbooks/local-workshop-host.html" class="playbook-item">
+                        <span class="playbook-check"></span>
+                        <span class="playbook-name">Local Workshop Host</span>
+                        <span class="playbook-earning">$35/person</span>
+                    </a>
+                </div>
+                <a href="playbooks/index.html?category=Education" class="see-all">See all 8 playbooks →</a>
+            </div>
+        </div>
+        
+        <!-- Need Help Section -->
+        <section class="help-section">
+            <div class="help-card">
+                <div class="help-icon">💬</div>
+                <div class="help-content">
+                    <h3>Need More Help?</h3>
+                    <p>Have questions about starting a gig or need personalized guidance? Chat with an ASAP Financial coach.</p>
+                    <button class="btn btn-chat" onclick="openChat()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                        Start Chat
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer CTA -->
+        <section class="footer-cta">
+            <h2>Want to Cut Expenses Too?</h2>
+            <p>Check out our Expense Reduction Playbooks to save money on bills, subscriptions, and everyday spending.</p>
+            <div class="cta-buttons">
+                <a href="expense-playbooks.html" class="btn btn-primary">
+                    💰 View Expense Playbooks
+                </a>
+                <a href="playbooks/index.html" class="btn btn-secondary">
+                    📚 Browse All 254 Playbooks
+                </a>
+            </div>
+        </section>
+    </main>
+    
+    <script>
+        function searchPlaybooks() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            window.location.href = `playbooks/index.html?search=${encodeURIComponent(query)}&type=income`;
+        }
+        
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') searchPlaybooks();
+        });
+        
+        function openChat() {
+            // Replace this with your actual chat widget code
+            // Examples: Intercom, Drift, Crisp, Tidio, or custom chat
+            // window.Intercom('show');
+            // $crisp.push(['do', 'chat:open']);
+            // Tawk_API.toggle();
+            
+            // Fallback: Open a contact page or show a message
+            alert('Chat feature coming soon! For now, email us at support@asapcreditrepairusa.com');
+            
+            // Or redirect to a contact page:
+            // window.location.href = '/contact';
+        }
+    </script>
+</body>
+</html>

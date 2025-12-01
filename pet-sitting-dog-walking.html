@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Sitting & Dog Walking | ASAP Credit Repair Playbook</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --primary: #063d86; --primary-light: #0a4fa8; --primary-dark: #042a5c; --accent: #00c9a7; --success: #10b981; --warning: #f59e0b; --bg: #f8fafc; --text: #1e293b; --text-light: #64748b; --border: #e2e8f0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 17px; }
+    .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 40px 20px 50px; text-align: center; }
+    .header-content { max-width: 800px; margin: 0 auto; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; color: white; text-decoration: none; opacity: 0.8; font-size: 0.9rem; margin-bottom: 16px; }
+    .back-link:hover { opacity: 1; }
+    .category-badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; margin-bottom: 16px; }
+    .header h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 12px; }
+    .header-subtitle { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+    .main-content { max-width: 800px; margin: -30px auto 40px; padding: 0 20px; }
+    .progress-section { position: sticky; top: 0; background: white; padding: 16px 20px; margin: 0 -20px 20px; border-bottom: 1px solid var(--border); z-index: 100; display: flex; align-items: center; gap: 16px; }
+    .progress-bar { flex: 1; height: 10px; background: var(--border); border-radius: 5px; overflow: hidden; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, var(--success), var(--accent)); border-radius: 5px; transition: width 0.3s; width: 0%; }
+    .progress-text { font-weight: 600; color: var(--text); min-width: 50px; }
+    .goal-card { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border: 2px solid var(--success); border-radius: 16px; padding: 24px 28px; margin-bottom: 30px; }
+    .goal-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; color: #065f46; margin-bottom: 12px; }
+    .goal-card p { color: #047857; font-size: 1.05rem; }
+    .goal-card .earnings { background: white; display: inline-block; padding: 10px 18px; border-radius: 10px; margin-top: 14px; font-weight: 600; color: #065f46; font-size: 1.1rem; }
+    .section-card { background: white; border-radius: 16px; padding: 28px; margin-bottom: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid var(--border); }
+    .section-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; color: var(--primary); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+    .section-card h2 .icon { width: 40px; height: 40px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; }
+    .section-intro { color: var(--text-light); margin-bottom: 20px; font-size: 1rem; }
+    .task-list { list-style: none; }
+    .task-item { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border); }
+    .task-item:last-child { border-bottom: none; }
+    .task-checkbox { flex-shrink: 0; width: 28px; height: 28px; border: 2px solid var(--border); border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; margin-top: 2px; font-weight: bold; }
+    .task-checkbox:hover { border-color: var(--primary); }
+    .task-checkbox.checked { background: var(--success); border-color: var(--success); color: white; }
+    .task-content { flex: 1; }
+    .task-title { font-weight: 600; font-size: 1.1rem; margin-bottom: 8px; color: var(--text); }
+    .task-desc { color: var(--text-light); font-size: 0.95rem; line-height: 1.6; }
+    .task-meta { display: flex; gap: 12px; margin-top: 10px; flex-wrap: wrap; }
+    .task-badge { font-size: 0.8rem; padding: 4px 10px; border-radius: 6px; background: var(--bg); color: var(--text-light); }
+    .task-badge.easy { background: #dcfce7; color: #166534; }
+    .task-badge.medium { background: #fef3c7; color: #92400e; }
+    .details-box { background: #f8fafc; border-radius: 10px; padding: 16px; margin-top: 12px; border-left: 4px solid var(--primary); }
+    .details-box h4 { font-size: 0.9rem; color: var(--primary); margin-bottom: 10px; }
+    .details-box ul { margin-left: 18px; color: var(--text); font-size: 0.9rem; }
+    .details-box li { margin-bottom: 8px; line-height: 1.5; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; margin-top: 16px; }
+    .service-card { background: var(--bg); border-radius: 10px; padding: 16px; text-align: center; }
+    .service-card .emoji { font-size: 2rem; margin-bottom: 8px; }
+    .service-card h4 { font-size: 0.95rem; color: var(--primary); margin-bottom: 4px; }
+    .service-card .price { font-weight: 600; color: var(--success); }
+    .marketing-section { background: linear-gradient(135deg, #fef3c7, #fde68a); border: 2px solid #fbbf24; }
+    .marketing-section h2 { color: #92400e; }
+    .marketing-tip { background: white; border-radius: 12px; padding: 20px; margin-bottom: 16px; }
+    .marketing-tip:last-child { margin-bottom: 0; }
+    .marketing-tip h3 { font-size: 1.1rem; color: #92400e; margin-bottom: 12px; }
+    .marketing-tip p { color: #78350f; font-size: 0.95rem; margin-bottom: 12px; line-height: 1.6; }
+    .script-box { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 0 10px 10px 0; font-size: 0.9rem; color: #78350f; margin-top: 12px; }
+    .script-box strong { display: block; margin-bottom: 8px; color: #92400e; font-size: 0.85rem; }
+    .places-list { background: white; border-radius: 10px; padding: 16px; margin-top: 12px; }
+    .places-list h4 { font-size: 0.9rem; color: #92400e; margin-bottom: 10px; }
+    .places-list ul { margin-left: 18px; color: #78350f; font-size: 0.9rem; }
+    .places-list li { margin-bottom: 6px; }
+    .resources-section { background: linear-gradient(135deg, #ede9fe, #ddd6fe); border: 2px solid #a78bfa; }
+    .resources-section h2 { color: #5b21b6; }
+    .resource-item { background: white; border-radius: 12px; padding: 16px 20px; margin-bottom: 12px; display: block; text-decoration: none; color: var(--text); transition: all 0.2s; }
+    .resource-item:hover { transform: translateX(4px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .resource-item h4 { font-size: 1rem; margin-bottom: 4px; color: #5b21b6; }
+    .resource-item p { font-size: 0.85rem; color: var(--text-light); margin-bottom: 6px; }
+    .resource-item .link { font-size: 0.8rem; color: #7c3aed; }
+    .section-card textarea { width: 100%; min-height: 150px; padding: 16px 18px; border: 2px solid var(--border); border-radius: 12px; font-family: inherit; font-size: 1rem; resize: vertical; box-sizing: border-box; display: block; line-height: 1.6; }
+    .section-card textarea:focus { outline: none; border-color: var(--primary); }
+    .help-section { background: linear-gradient(135deg, #f0f9ff, #e0f2fe); border: 2px solid #7dd3fc; border-radius: 16px; padding: 24px 28px; margin-top: 30px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .help-icon { width: 56px; height: 56px; background: white; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .help-content { flex: 1; min-width: 200px; }
+    .help-content h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; margin-bottom: 4px; }
+    .help-content p { color: var(--text-light); font-size: 0.95rem; }
+    .chat-btn { background: var(--primary); color: white; border: none; padding: 14px 28px; border-radius: 12px; font-family: inherit; font-size: 1rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: all 0.2s; }
+    .chat-btn:hover { background: var(--primary-light); transform: translateY(-2px); }
+    @media (max-width: 600px) { .header { padding: 30px 20px 40px; } .section-card { padding: 20px; } .help-section { flex-direction: column; text-align: center; } }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <a href="index.html" class="back-link">← Back to All Playbooks</a>
+      <span class="category-badge">🐕 Pets</span>
+      <h1>Pet Sitting & Dog Walking</h1>
+      <p class="header-subtitle">Get paid to hang out with dogs and cats! Perfect for animal lovers. Flexible hours, happy clients, and wagging tails!</p>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="progress-section">
+      <span style="font-size: 0.9rem; color: var(--text-light);">Your Progress:</span>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      <span class="progress-text" id="progressText">0%</span>
+    </div>
+
+    <div class="goal-card">
+      <h2>🎯 What You'll Achieve</h2>
+      <p>You'll offer dog walking, pet sitting, and drop-in visits for pet owners in your area. Many pet sitters build a full client base and earn $500-2,000+ per month part-time. And you get to play with dogs all day!</p>
+      <div class="earnings">💰 Earn $15-40 per visit | $50-100 per day for overnight stays</div>
+    </div>
+
+    <div class="section-card">
+      <h2><span class="icon">💡</span> Why Pet Sitting is Great</h2>
+      <p class="section-intro">Here's why this is such a popular side hustle!</p>
+      <div class="details-box">
+        <h4>The benefits:</h4>
+        <ul>
+          <li><strong>People LOVE their pets</strong> - They'll pay well for quality care</li>
+          <li><strong>Flexible schedule</strong> - Work before/after your job or on weekends</li>
+          <li><strong>Repeat clients</strong> - Same pets every week = steady income</li>
+          <li><strong>Low startup cost</strong> - Just you, some treats, and poop bags!</li>
+          <li><strong>Exercise</strong> - Dog walking keeps YOU fit too</li>
+          <li><strong>Stress relief</strong> - Spending time with animals is therapeutic</li>
+          <li><strong>Great for all ages</strong> - Teens to retirees can do this</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h2><span class="icon">📋</span> Services You Can Offer</h2>
+      <p class="section-intro">Pick one or offer them all!</p>
+      
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="emoji">🚶</div>
+          <h4>Dog Walking</h4>
+          <div class="price">$15-30/walk</div>
+        </div>
+        <div class="service-card">
+          <div class="emoji">🏠</div>
+          <h4>Drop-In Visit</h4>
+          <div class="price">$15-25/visit</div>
+        </div>
+        <div class="service-card">
+          <div class="emoji">🌙</div>
+          <h4>Overnight Stay</h4>
+          <div class="price">$50-100/night</div>
+        </div>
+        <div class="service-card">
+          <div class="emoji">🏡</div>
+          <h4>In-Home Boarding</h4>
+          <div class="price">$40-75/night</div>
+        </div>
+        <div class="service-card">
+          <div class="emoji">🐱</div>
+          <h4>Cat Sitting</h4>
+          <div class="price">$15-25/visit</div>
+        </div>
+        <div class="service-card">
+          <div class="emoji">✈️</div>
+          <h4>Vacation Care</h4>
+          <div class="price">$50-100/day</div>
+        </div>
+      </div>
+      
+      <div class="details-box" style="margin-top: 20px;">
+        <h4>💡 Which should you start with?</h4>
+        <ul>
+          <li><strong>Dog walking</strong> - Best for busy weekdays (lunch walks)</li>
+          <li><strong>Drop-in visits</strong> - Great for cats and dogs while owners work</li>
+          <li><strong>Overnight/vacation care</strong> - Best money per hour</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h2><span class="icon">🎒</span> What You Need</h2>
+      <p class="section-intro">Very little! Most of this you probably have already.</p>
+      <ul class="task-list">
+        <li class="task-item">
+          <div class="task-checkbox" data-task="0"></div>
+          <div class="task-content">
+            <div class="task-title">Leashes (backup leash)</div>
+            <div class="task-desc">Bring a backup leash in case the client's breaks. A simple 6-foot leash is best.</div>
+            <div class="task-meta">
+              <span class="task-badge">💵 $10-15</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="1"></div>
+          <div class="task-content">
+            <div class="task-title">Poop bags</div>
+            <div class="task-desc">Buy a big roll. Always have more than you think you need!</div>
+            <div class="task-meta">
+              <span class="task-badge">💵 $10 (lasts months)</span>
+              <span class="task-badge easy">Essential</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="2"></div>
+          <div class="task-content">
+            <div class="task-title">Treats</div>
+            <div class="task-desc">Small training treats to reward good behavior. Ask owners about allergies first!</div>
+            <div class="task-meta">
+              <span class="task-badge">💵 $10-15</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="3"></div>
+          <div class="task-content">
+            <div class="task-title">Comfortable walking shoes</div>
+            <div class="task-desc">You'll be walking a lot! Good sneakers or walking shoes are a must.</div>
+            <div class="task-meta">
+              <span class="task-badge">💵 You probably have these</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="4"></div>
+          <div class="task-content">
+            <div class="task-title">Pet first aid knowledge (optional but good)</div>
+            <div class="task-desc">Know basic pet first aid. Red Cross has a free pet first aid app!</div>
+            <div class="task-meta">
+              <span class="task-badge">💵 Free</span>
+              <span class="task-badge easy">Recommended</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="section-card">
+      <h2><span class="icon">📋</span> Step-by-Step: Getting Started</h2>
+      <p class="section-intro">Follow these steps to get your first pet clients!</p>
+      <ul class="task-list">
+        <li class="task-item">
+          <div class="task-checkbox" data-task="5"></div>
+          <div class="task-content">
+            <div class="task-title">Step 1: Walk dogs for friends/neighbors for free</div>
+            <div class="task-desc">Get some experience and references. Ask them for a review when done!</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 1-2 weeks</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="6"></div>
+          <div class="task-content">
+            <div class="task-title">Step 2: Create profiles on pet sitting apps</div>
+            <div class="task-desc">Rover and Wag! are the biggest. They bring clients to you and handle payments.</div>
+            <div class="details-box">
+              <h4>Top pet sitting apps:</h4>
+              <ul>
+                <li><strong>Rover</strong> - Biggest platform, most clients. They take 20% fee.</li>
+                <li><strong>Wag!</strong> - Good for dog walking specifically. They take 40% fee.</li>
+                <li><strong>Care.com</strong> - Also lists pet care. Less competition.</li>
+                <li><strong>Go direct eventually</strong> - After you build clients, work directly with them!</li>
+              </ul>
+            </div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 30-60 minutes</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="7"></div>
+          <div class="task-content">
+            <div class="task-title">Step 3: Write a great profile with photos</div>
+            <div class="task-desc">Include photos of you with dogs! Mention any experience, and be warm and friendly.</div>
+            <div class="details-box">
+              <h4>Profile must-haves:</h4>
+              <ul>
+                <li>Smiling photo of you with a dog</li>
+                <li>Mention if you have pets of your own</li>
+                <li>Why you love animals</li>
+                <li>Your availability</li>
+                <li>Any experience (even if just with family pets!)</li>
+              </ul>
+            </div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 30 minutes</span>
+              <span class="task-badge easy">Important!</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="8"></div>
+          <div class="task-content">
+            <div class="task-title">Step 4: Set competitive prices</div>
+            <div class="task-desc">Start slightly below average to get your first reviews. Raise prices once you have 5+ great reviews.</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 15 minutes</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="9"></div>
+          <div class="task-content">
+            <div class="task-title">Step 5: Do a meet & greet with every new pet</div>
+            <div class="task-desc">Before the first service, meet the pet and owner. This builds trust and helps you understand the pet's needs.</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 15-30 min each</span>
+              <span class="task-badge easy">Critical!</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="10"></div>
+          <div class="task-content">
+            <div class="task-title">Step 6: Send photo updates during service</div>
+            <div class="task-desc">Pet owners LOVE getting photos of their babies! Send a cute photo after every walk or visit.</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 1 minute</span>
+              <span class="task-badge easy">Gets you 5-star reviews!</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="section-card marketing-section">
+      <h2><span class="icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);">📣</span> How to Find Clients</h2>
+      <p class="section-intro" style="color: #92400e;">Apps + local marketing = full schedule!</p>
+      
+      <div class="marketing-tip">
+        <h3>📱 Rover App (Best for beginners!)</h3>
+        <p>Create a Rover profile and clients in your area will find you. Great way to get started and get reviews.</p>
+        <div class="script-box">
+          <strong>📝 Profile example:</strong>
+"Hi! I'm [Name], a lifelong dog lover with [X years] of experience caring for pets. I currently have a [dog breed] of my own and understand how important your fur baby is to you!
+
+I offer reliable, loving care with lots of walks, playtime, and cuddles. I send photo updates so you never have to wonder how your pet is doing. 
+
+I'm available [your schedule] and would love to meet your pet!"
+        </div>
+      </div>
+      
+      <div class="marketing-tip">
+        <h3>📱 Nextdoor</h3>
+        <p>Perfect for finding local clients! Pet owners love hiring neighbors they can trust.</p>
+        <div class="script-box">
+          <strong>📝 Copy this post:</strong>
+"🐕 Pet Sitting & Dog Walking Available! 🐱
+
+Hi neighbors! I'm offering pet care services in [Your Area]:
+
+🚶 Dog Walking - $20/walk
+🏠 Drop-in Visits - $18/visit  
+🌙 Overnight Pet Sitting - $60/night
+✈️ Vacation Pet Care
+
+I'm reliable, experienced, and I LOVE animals. I send photo updates so you can see your fur baby having fun!
+
+📱 Text or call: [number]
+⭐ References available!
+
+P.S. Free meet & greet to make sure your pet and I are a good match! 🐾"
+        </div>
+      </div>
+      
+      <div class="marketing-tip">
+        <h3">🏪 Partner with Local Pet Businesses</h3>
+        <p>Ask if you can leave business cards or flyers at pet stores, groomers, and vet offices.</p>
+        <div class="places-list">
+          <h4>Great places:</h4>
+          <ul>
+            <li>Local pet supply stores</li>
+            <li>Dog groomers</li>
+            <li>Vet offices (ask permission)</li>
+            <li>Dog parks (bring business cards!)</li>
+            <li>Pet-friendly apartment complexes</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="marketing-tip">
+        <h3>🐕 Visit Dog Parks</h3>
+        <p>Go to local dog parks (with your dog or just yourself) and chat with owners. Many need pet sitters!</p>
+        <div class="script-box">
+          <strong>📝 What to say:</strong>
+"What a cute dog! What's their name? [chat]... By the way, I do pet sitting and dog walking in the area. If you ever need someone, I'd love to help out! Here's my card."
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card resources-section">
+      <h2><span class="icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">💡</span> Helpful Resources</h2>
+      <p class="section-intro" style="color: #5b21b6;">Sign up and learn more!</p>
+      
+      <a href="https://www.rover.com/become-a-sitter/" target="_blank" class="resource-item">
+        <h4>🐕 Become a Rover Sitter</h4>
+        <p>Sign up on the biggest pet sitting platform. Free to join!</p>
+        <span class="link">rover.com →</span>
+      </a>
+      <a href="https://wagwalking.com/dog-walker" target="_blank" class="resource-item">
+        <h4>🚶 Become a Wag! Walker</h4>
+        <p>Sign up for dog walking gigs. They send you clients!</p>
+        <span class="link">wagwalking.com →</span>
+      </a>
+      <a href="https://www.redcross.org/take-a-class/first-aid/cat-dog-first-aid" target="_blank" class="resource-item">
+        <h4>🏥 Pet First Aid (Red Cross)</h4>
+        <p>Learn basic pet first aid. Great credential to mention!</p>
+        <span class="link">redcross.org →</span>
+      </a>
+      <a href="https://www.youtube.com/watch?v=1Evwgu369Jw" target="_blank" class="resource-item">
+        <h4>📺 How I Make $1,000/Week Dog Walking</h4>
+        <p>A dog walker shares tips for building a client base.</p>
+        <span class="link">YouTube →</span>
+      </a>
+    </div>
+
+    <div class="section-card">
+      <h2><span class="icon">📝</span> Your Notes</h2>
+      <p class="section-intro">Track your progress, client info, and ideas!</p>
+      <textarea id="userNotes" placeholder="Example: Signed up for Rover - profile pending. Walk neighbor's dog Max on Wednesday. Need to get business cards printed..."></textarea>
+    </div>
+
+    <div class="help-section">
+      <div class="help-icon">💬</div>
+      <div class="help-content">
+        <h3>Need Help?</h3>
+        <p>Have questions about getting started? Chat with an ASAP Financial coach!</p>
+      </div>
+      <button class="chat-btn" onclick="openChat()">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+        Start Chat
+      </button>
+    </div>
+  </main>
+
+  <script>
+    const STORAGE_KEY = 'playbook_pet-sitting';
+    function loadState() { const saved = localStorage.getItem(STORAGE_KEY); if (saved) { const state = JSON.parse(saved); document.querySelectorAll('.task-checkbox').forEach((box, i) => { if (state.tasks && state.tasks[i]) { box.classList.add('checked'); box.innerHTML = '✓'; } }); if (state.notes) document.getElementById('userNotes').value = state.notes; updateProgress(); } }
+    function saveState() { const tasks = []; document.querySelectorAll('.task-checkbox').forEach(box => { tasks.push(box.classList.contains('checked')); }); localStorage.setItem(STORAGE_KEY, JSON.stringify({ tasks, notes: document.getElementById('userNotes').value })); }
+    function updateProgress() { const boxes = document.querySelectorAll('.task-checkbox'); const checked = document.querySelectorAll('.task-checkbox.checked').length; const percent = Math.round((checked / boxes.length) * 100); document.getElementById('progressFill').style.width = percent + '%'; document.getElementById('progressText').textContent = percent + '%'; }
+    document.querySelectorAll('.task-checkbox').forEach(box => { box.addEventListener('click', function() { this.classList.toggle('checked'); this.innerHTML = this.classList.contains('checked') ? '✓' : ''; updateProgress(); saveState(); }); });
+    document.getElementById('userNotes').addEventListener('input', saveState);
+    function openChat() { window.location.href = 'https://asapcreditrepairusa.com/chat'; }
+    loadState();
+  </script>
+</body>
+</html>

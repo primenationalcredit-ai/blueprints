@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Negotiate Medical Bills | ASAP Credit Repair Playbook</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --primary: #063d86; --primary-light: #0a4fa8; --primary-dark: #042a5c; --accent: #00c9a7; --success: #10b981; --warning: #f59e0b; --bg: #f8fafc; --text: #1e293b; --text-light: #64748b; --border: #e2e8f0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 17px; }
+    .header { background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); color: white; padding: 40px 20px 50px; text-align: center; }
+    .header-content { max-width: 800px; margin: 0 auto; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; color: white; text-decoration: none; opacity: 0.8; font-size: 0.9rem; margin-bottom: 16px; }
+    .back-link:hover { opacity: 1; }
+    .category-badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; margin-bottom: 16px; }
+    .header h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 12px; }
+    .header-subtitle { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+    .main-content { max-width: 800px; margin: -30px auto 40px; padding: 0 20px; }
+    .progress-section { position: sticky; top: 0; background: white; padding: 16px 20px; margin: 0 -20px 20px; border-bottom: 1px solid var(--border); z-index: 100; display: flex; align-items: center; gap: 16px; }
+    .progress-bar { flex: 1; height: 10px; background: var(--border); border-radius: 5px; overflow: hidden; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, var(--success), var(--accent)); border-radius: 5px; transition: width 0.3s; width: 0%; }
+    .progress-text { font-weight: 600; color: var(--text); min-width: 50px; }
+    .goal-card { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border: 2px solid var(--success); border-radius: 16px; padding: 24px 28px; margin-bottom: 30px; }
+    .goal-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; color: #065f46; margin-bottom: 12px; }
+    .goal-card p { color: #047857; font-size: 1.05rem; }
+    .goal-card .earnings { background: white; display: inline-block; padding: 10px 18px; border-radius: 10px; margin-top: 14px; font-weight: 600; color: #065f46; font-size: 1.1rem; }
+    .warning-box { background: linear-gradient(135deg, #fef3c7, #fde68a); border: 2px solid #fbbf24; border-radius: 12px; padding: 16px 20px; margin-bottom: 24px; }
+    .warning-box h3 { color: #92400e; font-size: 1rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+    .warning-box p { color: #78350f; font-size: 0.95rem; }
+    .section-card { background: white; border-radius: 16px; padding: 28px; margin-bottom: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid var(--border); }
+    .section-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; color: var(--primary); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+    .section-card h2 .icon { width: 40px; height: 40px; background: linear-gradient(135deg, #dc2626, #ef4444); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; }
+    .section-intro { color: var(--text-light); margin-bottom: 20px; font-size: 1rem; }
+    .task-list { list-style: none; }
+    .task-item { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border); }
+    .task-item:last-child { border-bottom: none; }
+    .task-checkbox { flex-shrink: 0; width: 28px; height: 28px; border: 2px solid var(--border); border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; margin-top: 2px; font-weight: bold; }
+    .task-checkbox:hover { border-color: var(--primary); }
+    .task-checkbox.checked { background: var(--success); border-color: var(--success); color: white; }
+    .task-content { flex: 1; }
+    .task-title { font-weight: 600; font-size: 1.1rem; margin-bottom: 8px; color: var(--text); }
+    .task-desc { color: var(--text-light); font-size: 0.95rem; line-height: 1.6; }
+    .task-meta { display: flex; gap: 12px; margin-top: 10px; flex-wrap: wrap; }
+    .task-badge { font-size: 0.8rem; padding: 4px 10px; border-radius: 6px; background: var(--bg); color: var(--text-light); }
+    .task-badge.easy { background: #dcfce7; color: #166534; }
+    .task-badge.medium { background: #fef3c7; color: #92400e; }
+    .details-box { background: #f8fafc; border-radius: 10px; padding: 16px; margin-top: 12px; border-left: 4px solid #dc2626; }
+    .details-box h4 { font-size: 0.9rem; color: #991b1b; margin-bottom: 10px; }
+    .details-box ul { margin-left: 18px; color: var(--text); font-size: 0.9rem; }
+    .details-box li { margin-bottom: 8px; line-height: 1.5; }
+    .script-section { background: linear-gradient(135deg, #dbeafe, #bfdbfe); border: 2px solid #3b82f6; }
+    .script-section h2 { color: #1e40af; }
+    .script-box { background: white; border-left: 4px solid #3b82f6; padding: 16px 20px; border-radius: 0 12px 12px 0; margin-bottom: 16px; }
+    .script-box:last-child { margin-bottom: 0; }
+    .script-box h4 { color: #1e40af; margin-bottom: 10px; font-size: 1rem; }
+    .script-box p { color: #1e3a8a; font-size: 0.9rem; line-height: 1.7; }
+    .resources-section { background: linear-gradient(135deg, #ede9fe, #ddd6fe); border: 2px solid #a78bfa; }
+    .resources-section h2 { color: #5b21b6; }
+    .resource-item { background: white; border-radius: 12px; padding: 16px 20px; margin-bottom: 12px; display: block; text-decoration: none; color: var(--text); transition: all 0.2s; }
+    .resource-item:hover { transform: translateX(4px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .resource-item h4 { font-size: 1rem; margin-bottom: 4px; color: #5b21b6; }
+    .resource-item p { font-size: 0.85rem; color: var(--text-light); }
+    .resource-item .link { font-size: 0.8rem; color: #7c3aed; }
+    .section-card textarea { width: 100%; min-height: 150px; padding: 16px 18px; border: 2px solid var(--border); border-radius: 12px; font-family: inherit; font-size: 1rem; resize: vertical; box-sizing: border-box; display: block; line-height: 1.6; }
+    .section-card textarea:focus { outline: none; border-color: var(--primary); }
+    .help-section { background: linear-gradient(135deg, #f0f9ff, #e0f2fe); border: 2px solid #7dd3fc; border-radius: 16px; padding: 24px 28px; margin-top: 30px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .help-icon { width: 56px; height: 56px; background: white; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .help-content { flex: 1; min-width: 200px; }
+    .help-content h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; margin-bottom: 4px; }
+    .help-content p { color: var(--text-light); font-size: 0.95rem; }
+    .chat-btn { background: var(--primary); color: white; border: none; padding: 14px 28px; border-radius: 12px; font-family: inherit; font-size: 1rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: all 0.2s; }
+    .chat-btn:hover { background: var(--primary-light); transform: translateY(-2px); }
+    @media (max-width: 600px) { .header { padding: 30px 20px 40px; } .section-card { padding: 20px; } .help-section { flex-direction: column; text-align: center; } }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <a href="index.html" class="back-link">← Back to All Playbooks</a>
+      <span class="category-badge">🏥 Healthcare</span>
+      <h1>Negotiate Medical Bills</h1>
+      <p class="header-subtitle">Medical bills are NEGOTIABLE! Most people don't know this. A few phone calls could reduce your bill by 25-50% or set up a payment plan with no interest.</p>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="progress-section">
+      <span style="font-size: 0.9rem; color: var(--text-light);">Your Progress:</span>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      <span class="progress-text" id="progressText">0%</span>
+    </div>
+
+    <div class="goal-card">
+      <h2>🎯 What You'll Achieve</h2>
+      <p>You'll learn how to review, dispute, and negotiate medical bills. Most hospitals expect negotiation and have programs to help. You could save hundreds or thousands!</p>
+      <div class="earnings">💰 Average savings: 25-50% reduction or interest-free payment plan</div>
+    </div>
+
+    <div class="warning-box">
+      <h3>⚠️ Important: Don't Ignore Medical Bills!</h3>
+      <p>Unpaid medical bills can go to collections and hurt your credit. It's better to negotiate or set up a payment plan than to ignore them. Take action!</p>
+    </div>
+
+    <div class="section-card">
+      <h2><span class="icon">🤔</span> Why Medical Bills Are Negotiable</h2>
+      <div class="details-box">
+        <h4>What hospitals don't advertise:</h4>
+        <ul>
+          <li><strong>Prices are inflated</strong> - Hospital "list prices" are often 2-10x higher than what insurers actually pay</li>
+          <li><strong>They expect negotiation</strong> - Hospitals have entire departments dedicated to working out payment</li>
+          <li><strong>They'd rather get SOMETHING</strong> - A reduced payment now beats collections later</li>
+          <li><strong>Financial assistance exists</strong> - Most hospitals have charity care programs they don't advertise</li>
+          <li><strong>Bills often have errors</strong> - Studies show 80% of medical bills contain mistakes!</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h2><span class="icon">📋</span> Step-by-Step: Reduce Your Bill</h2>
+      <ul class="task-list">
+        <li class="task-item">
+          <div class="task-checkbox" data-task="0"></div>
+          <div class="task-content">
+            <div class="task-title">Step 1: Request an itemized bill</div>
+            <div class="task-desc">Call the billing department and ask for a detailed, itemized bill. The summary bill isn't enough - you need line items!</div>
+            <div class="details-box">
+              <h4>What to ask for:</h4>
+              <ul>
+                <li>Itemized statement with procedure codes (CPT codes)</li>
+                <li>Diagnosis codes (ICD codes)</li>
+                <li>Individual charges for each item/service</li>
+              </ul>
+            </div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 10-15 minutes</span>
+              <span class="task-badge easy">Critical first step!</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="1"></div>
+          <div class="task-content">
+            <div class="task-title">Step 2: Check for billing errors</div>
+            <div class="task-desc">Review each line item. Look for duplicate charges, services you didn't receive, or incorrect codes.</div>
+            <div class="details-box">
+              <h4>Common errors to look for:</h4>
+              <ul>
+                <li>Duplicate charges (same item billed twice)</li>
+                <li>Charges for services you didn't receive</li>
+                <li>Incorrect room charges (charged for private, got shared)</li>
+                <li>Medication errors (wrong dosage amounts)</li>
+                <li>"Unbundling" - charging separately for things that should be grouped</li>
+              </ul>
+            </div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 30 minutes</span>
+              <span class="task-badge medium">Often finds savings!</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="2"></div>
+          <div class="task-content">
+            <div class="task-title">Step 3: Research fair prices</div>
+            <div class="task-desc">Look up what Medicare pays for the same procedures. Your goal is to pay closer to that, not the inflated "list price."</div>
+            <div class="details-box">
+              <h4>Where to check fair prices:</h4>
+              <ul>
+                <li><strong>Healthcare Bluebook</strong> (healthcarebluebook.com) - Fair prices for procedures</li>
+                <li><strong>Medicare.gov</strong> - What government pays for same services</li>
+                <li><strong>FAIR Health</strong> (fairhealthconsumer.org) - Cost estimator</li>
+              </ul>
+            </div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 15-20 minutes</span>
+              <span class="task-badge easy">Gives you leverage!</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="3"></div>
+          <div class="task-content">
+            <div class="task-title">Step 4: Ask about financial assistance</div>
+            <div class="task-desc">Most hospitals have charity care or financial hardship programs. Ask! You might qualify for a significant reduction.</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 15 minutes</span>
+              <span class="task-badge easy">Often overlooked!</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="4"></div>
+          <div class="task-content">
+            <div class="task-title">Step 5: Call and negotiate</div>
+            <div class="task-desc">Call the billing department, be polite but firm. Ask for a reduction, payment plan, or both. See scripts below!</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 20-30 minutes</span>
+              <span class="task-badge medium">This is where savings happen!</span>
+            </div>
+          </div>
+        </li>
+        <li class="task-item">
+          <div class="task-checkbox" data-task="5"></div>
+          <div class="task-content">
+            <div class="task-title">Step 6: Get everything in writing</div>
+            <div class="task-desc">Before paying, get the agreement in writing! Email confirmation works. Keep records of everything.</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 5 minutes</span>
+              <span class="task-badge easy">Protect yourself!</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="section-card script-section">
+      <h2><span class="icon" style="background: linear-gradient(135deg, #3b82f6, #2563eb);">💬</span> Scripts for Negotiating</h2>
+      <p class="section-intro" style="color: #1e40af;">Use these when you call the billing department. Be polite but firm!</p>
+      
+      <div class="script-box">
+        <h4>📝 Script 1: Ask for a discount (cash pay)</h4>
+        <p>"Hi, I received a bill for $[amount] for services on [date]. I'm calling to discuss payment options. I'd like to pay this bill, but the amount is more than I can afford. If I pay in full today, is there a cash-pay discount or prompt-pay discount available? I've seen that Medicare pays around $[lower amount] for this procedure, so I was hoping we could come to something closer to that."</p>
+      </div>
+      
+      <div class="script-box">
+        <h4">📝 Script 2: Request financial hardship assistance</h4>
+        <p>"I'm calling about bill #[number] for $[amount]. Honestly, this bill is causing financial hardship for my family. I want to pay what I owe, but I need help. Do you have any financial assistance programs or charity care I might qualify for? I'd be happy to provide income documentation if needed. I want to work something out rather than not pay at all."</p>
+      </div>
+      
+      <div class="script-box">
+        <h4">📝 Script 3: Request a payment plan</h4>
+        <p>"I'd like to set up a payment plan for this bill. What's the longest payment plan you offer? Is there any interest charged? I can afford $[amount] per month. Can we make that work? I want to pay this off - I just need some time."</p>
+      </div>
+      
+      <div class="script-box">
+        <h4">📝 Script 4: Dispute an error</h4>
+        <p>"I reviewed my itemized bill and I believe there's an error. I see a charge for [item] but I didn't receive that service / that appears to be a duplicate charge / that's not the correct code. Can you review this and correct the bill? I'll hold while you check, or you can call me back at [number]."</p>
+      </div>
+    </div>
+
+    <div class="section-card resources-section">
+      <h2><span class="icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">💡</span> Helpful Resources</h2>
+      
+      <a href="https://healthcarebluebook.com" target="_blank" class="resource-item">
+        <h4">💰 Healthcare Bluebook</h4>
+        <p>Look up fair prices for medical procedures in your area.</p>
+        <span class="link">healthcarebluebook.com →</span>
+      </a>
+      <a href="https://www.fairhealthconsumer.org" target="_blank" class="resource-item">
+        <h4">📊 FAIR Health Consumer</h4>
+        <p>Free tool to estimate healthcare costs and compare prices.</p>
+        <span class="link">fairhealthconsumer.org →</span>
+      </a>
+      <a href="https://www.dollarfor.org" target="_blank" class="resource-item">
+        <h4">🏥 Dollar For</h4>
+        <p>Free nonprofit that helps people get medical debt forgiven!</p>
+        <span class="link">dollarfor.org →</span>
+      </a>
+      <a href="https://www.nerdwallet.com/article/health/negotiate-medical-bill" target="_blank" class="resource-item">
+        <h4">📖 NerdWallet Medical Bill Guide</h4>
+        <p>Comprehensive guide to negotiating and reducing medical debt.</p>
+        <span class="link">nerdwallet.com →</span>
+      </a>
+    </div>
+
+    <div class="section-card">
+      <h2><span class="icon">📝</span> Your Notes</h2>
+      <textarea id="userNotes" placeholder="Example: Bill from General Hospital: $3,400. Called for itemized bill - waiting. Found Healthcare Bluebook says fair price is $1,800. Will call back Monday to negotiate..."></textarea>
+    </div>
+
+    <div class="help-section">
+      <div class="help-icon">💬</div>
+      <div class="help-content">
+        <h3>Need Help?</h3>
+        <p>Have questions about medical bills? Chat with an ASAP Financial coach!</p>
+      </div>
+      <button class="chat-btn" onclick="openChat()">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+        Start Chat
+      </button>
+    </div>
+  </main>
+
+  <script>
+    const STORAGE_KEY = 'playbook_negotiate-medical-bills';
+    function loadState() { const saved = localStorage.getItem(STORAGE_KEY); if (saved) { const state = JSON.parse(saved); document.querySelectorAll('.task-checkbox').forEach((box, i) => { if (state.tasks && state.tasks[i]) { box.classList.add('checked'); box.innerHTML = '✓'; } }); if (state.notes) document.getElementById('userNotes').value = state.notes; updateProgress(); } }
+    function saveState() { const tasks = []; document.querySelectorAll('.task-checkbox').forEach(box => { tasks.push(box.classList.contains('checked')); }); localStorage.setItem(STORAGE_KEY, JSON.stringify({ tasks, notes: document.getElementById('userNotes').value })); }
+    function updateProgress() { const boxes = document.querySelectorAll('.task-checkbox'); const checked = document.querySelectorAll('.task-checkbox.checked').length; const percent = Math.round((checked / boxes.length) * 100); document.getElementById('progressFill').style.width = percent + '%'; document.getElementById('progressText').textContent = percent + '%'; }
+    document.querySelectorAll('.task-checkbox').forEach(box => { box.addEventListener('click', function() { this.classList.toggle('checked'); this.innerHTML = this.classList.contains('checked') ? '✓' : ''; updateProgress(); saveState(); }); });
+    document.getElementById('userNotes').addEventListener('input', saveState);
+    function openChat() { window.location.href = 'https://asapcreditrepairusa.com/chat'; }
+    loadState();
+  </script>
+</body>
+</html>
