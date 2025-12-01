@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delete All Saved Cards | ASAP Playbook</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial,sans-serif;background:#f5f7fa;color:#333;line-height:1.6}.container{max-width:800px;margin:0 auto;padding:20px}.header{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:30px;border-radius:10px 10px 0 0;text-align:center}.header h1{font-size:28px;margin-bottom:10px}.header p{opacity:.9;font-size:16px}.content{background:#fff;padding:30px;border-radius:0 0 10px 10px;box-shadow:0 2px 10px rgba(0,0,0,.1)}.section{margin-bottom:30px}.section h2{color:#667eea;font-size:20px;margin-bottom:15px;padding-bottom:10px;border-bottom:2px solid #eee}.step{background:#f8f9fa;padding:15px;border-radius:8px;margin-bottom:15px;border-left:4px solid #667eea}.step h3{color:#333;margin-bottom:8px}.step p{color:#666;font-size:14px}.checklist{list-style:none;padding:0}.checklist li{padding:12px 15px;background:#fff;margin-bottom:8px;border-radius:6px;border:1px solid #e0e0e0;display:flex;align-items:center;gap:10px}.checklist input[type="checkbox"]{width:20px;height:20px;cursor:pointer}.tip-box{background:#fff3cd;border:1px solid #ffc107;padding:15px;border-radius:8px;margin:15px 0}.tip-box strong{color:#856404}.warning-box{background:#f8d7da;border:1px solid #f5c6cb;padding:15px;border-radius:8px;margin:15px 0}.warning-box strong{color:#721c24}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>🗑️ Delete All Saved Cards</h1>
+<p>Remove saved payment methods to stop impulse buying</p>
+</div>
+<div class="content">
+<div class="section">
+<h2>Why This Works</h2>
+<p>When you have to manually enter your card number for every purchase, it creates friction that prevents impulse buying. Most people abandon their cart when they have to get up and find their wallet.</p>
+</div>
+
+<div class="section">
+<h2>Where to Delete Saved Cards</h2>
+<ul class="checklist">
+<li><input type="checkbox"> <span><strong>Amazon</strong> - Account > Payment Methods > Delete all cards</span></li>
+<li><input type="checkbox"> <span><strong>Target</strong> - Account > Wallet > Remove cards</span></li>
+<li><input type="checkbox"> <span><strong>Walmart</strong> - Account > Wallet > Delete</span></li>
+<li><input type="checkbox"> <span><strong>DoorDash</strong> - Account > Payment > Remove</span></li>
+<li><input type="checkbox"> <span><strong>Uber Eats</strong> - Wallet > Delete payment method</span></li>
+<li><input type="checkbox"> <span><strong>Instacart</strong> - Account > Payment methods > Remove</span></li>
+<li><input type="checkbox"> <span><strong>Google Pay</strong> - pay.google.com > Payment methods</span></li>
+<li><input type="checkbox"> <span><strong>Apple Pay</strong> - Settings > Wallet & Apple Pay > Remove cards</span></li>
+<li><input type="checkbox"> <span><strong>PayPal</strong> - Wallet > Remove cards (keep bank for emergencies)</span></li>
+<li><input type="checkbox"> <span><strong>Browser autofill</strong> - Chrome/Safari settings > Payment methods > Delete all</span></li>
+</ul>
+</div>
+
+<div class="tip-box">
+<strong>💡 Pro Tip:</strong> After deleting, DO NOT re-save cards when prompted. Click "No thanks" every time!
+</div>
+
+<div class="section">
+<h2>Browser Autofill Instructions</h2>
+<div class="step">
+<h3>Chrome</h3>
+<p>Settings > Autofill and passwords > Payment methods > Delete all saved cards</p>
+</div>
+<div class="step">
+<h3>Safari</h3>
+<p>Preferences > AutoFill > Credit Cards > Edit > Remove all</p>
+</div>
+<div class="step">
+<h3>Firefox</h3>
+<p>Settings > Privacy & Security > Saved Credit Cards > Remove All</p>
+</div>
+</div>
+
+<div class="warning-box">
+<strong>⚠️ Keep ONE card saved:</strong> Your primary checking debit card for TRUE emergencies only. Remove all credit cards.
+</div>
+</div>
+</div>
+<script>
+document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+  const key = 'playbook_delete_cards_' + cb.closest('li').innerText.substring(0,20);
+  cb.checked = localStorage.getItem(key) === 'true';
+  cb.addEventListener('change', () => localStorage.setItem(key, cb.checked));
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quick Sell Guide | ASAP Playbook</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial,sans-serif;background:#f5f7fa;color:#333;line-height:1.6}.container{max-width:800px;margin:0 auto;padding:20px}.header{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:30px;border-radius:10px 10px 0 0;text-align:center}.header h1{font-size:28px;margin-bottom:10px}.header p{opacity:.9;font-size:16px}.content{background:#fff;padding:30px;border-radius:0 0 10px 10px;box-shadow:0 2px 10px rgba(0,0,0,.1)}.section{margin-bottom:30px}.section h2{color:#667eea;font-size:20px;margin-bottom:15px;padding-bottom:10px;border-bottom:2px solid #eee}.step{background:#f8f9fa;padding:15px;border-radius:8px;margin-bottom:15px;border-left:4px solid #667eea}.step h3{color:#333;margin-bottom:8px}.step p{color:#666;font-size:14px}.checklist{list-style:none;padding:0}.checklist li{padding:12px 15px;background:#fff;margin-bottom:8px;border-radius:6px;border:1px solid #e0e0e0;display:flex;align-items:center;gap:10px}.checklist input[type="checkbox"]{width:20px;height:20px;cursor:pointer}.tip-box{background:#fff3cd;border:1px solid #ffc107;padding:15px;border-radius:8px;margin:15px 0}.tip-box strong{color:#856404}.money-box{background:#d4edda;border:1px solid #c3e6cb;padding:15px;border-radius:8px;margin:15px 0}.money-box strong{color:#155724}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>💵 Quick Sell Guide</h1>
+<p>Turn your stuff into cash within 48 hours</p>
+</div>
+<div class="content">
+<div class="section">
+<h2>The 48-Hour Selling Challenge</h2>
+<p>Your goal: List 3 items today, sell at least 1 within 48 hours. Price to SELL, not to get rich.</p>
+</div>
+
+<div class="section">
+<h2>What Sells FAST</h2>
+<ul class="checklist">
+<li><input type="checkbox"> <span><strong>Electronics</strong> - Old phones, tablets, laptops, gaming systems</span></li>
+<li><input type="checkbox"> <span><strong>Furniture</strong> - Anything in good condition</span></li>
+<li><input type="checkbox"> <span><strong>Baby/Kid items</strong> - Strollers, cribs, toys, clothes</span></li>
+<li><input type="checkbox"> <span><strong>Exercise equipment</strong> - Weights, bikes, treadmills</span></li>
+<li><input type="checkbox"> <span><strong>Tools</strong> - Power tools sell same day</span></li>
+<li><input type="checkbox"> <span><strong>Designer items</strong> - Bags, shoes, clothes</span></li>
+<li><input type="checkbox"> <span><strong>Appliances</strong> - Working small appliances</span></li>
+<li><input type="checkbox"> <span><strong>Sports equipment</strong> - Golf clubs, bikes, etc.</span></li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Pricing for SPEED</h2>
+<div class="step">
+<h3>The 60-70% Rule</h3>
+<p>Price at 60-70% of what similar items are selling for. You want FAST cash, not maximum profit.</p>
+</div>
+<div class="step">
+<h3>Check Sold Prices</h3>
+<p>On Facebook Marketplace: Search your item → Filter by "Sold" to see what people actually paid</p>
+</div>
+</div>
+
+<div class="section">
+<h2>Photo Tips (Sells 3X Faster)</h2>
+<ul class="checklist">
+<li><input type="checkbox"> <span>Clean the item first</span></li>
+<li><input type="checkbox"> <span>Use natural daylight</span></li>
+<li><input type="checkbox"> <span>Take 4-6 photos from different angles</span></li>
+<li><input type="checkbox"> <span>Show any flaws honestly</span></li>
+<li><input type="checkbox"> <span>Include size reference (put a shoe or hand next to it)</span></li>
+</ul>
+</div>
+
+<div class="money-box">
+<strong>💰 Quick Cash Targets:</strong><br>
+Old phone: $50-300<br>
+Furniture piece: $50-200<br>
+Exercise equipment: $50-500<br>
+Kids stuff bundle: $25-100
+</div>
+
+<div class="tip-box">
+<strong>💡 Pro Tip:</strong> List on BOTH Facebook Marketplace AND OfferUp at the same time. First response gets it!
+</div>
+</div>
+</div>
+<script>
+document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+  const key = 'playbook_quicksell_' + cb.closest('li').innerText.substring(0,20);
+  cb.checked = localStorage.getItem(key) === 'true';
+  cb.addEventListener('change', () => localStorage.setItem(key, cb.checked));
+});
+</script>
+</body>
+</html>

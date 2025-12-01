@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delete Shopping Apps | ASAP Playbook</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial,sans-serif;background:#f5f7fa;color:#333;line-height:1.6}.container{max-width:800px;margin:0 auto;padding:20px}.header{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:30px;border-radius:10px 10px 0 0;text-align:center}.header h1{font-size:28px;margin-bottom:10px}.header p{opacity:.9;font-size:16px}.content{background:#fff;padding:30px;border-radius:0 0 10px 10px;box-shadow:0 2px 10px rgba(0,0,0,.1)}.section{margin-bottom:30px}.section h2{color:#667eea;font-size:20px;margin-bottom:15px;padding-bottom:10px;border-bottom:2px solid #eee}.checklist{list-style:none;padding:0}.checklist li{padding:12px 15px;background:#fff;margin-bottom:8px;border-radius:6px;border:1px solid #e0e0e0;display:flex;align-items:center;gap:10px}.checklist input[type="checkbox"]{width:20px;height:20px;cursor:pointer}.tip-box{background:#fff3cd;border:1px solid #ffc107;padding:15px;border-radius:8px;margin:15px 0}.tip-box strong{color:#856404}.success-box{background:#d4edda;border:1px solid #c3e6cb;padding:15px;border-radius:8px;margin:15px 0}.success-box strong{color:#155724}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>📱 Delete Shopping Apps</h1>
+<p>Remove temptation from your phone completely</p>
+</div>
+<div class="content">
+<div class="section">
+<h2>Why This Works</h2>
+<p>Shopping apps are designed to make spending EASY. Push notifications, one-click buying, and personalized deals trigger impulse purchases. Deleting them adds friction and removes constant temptation.</p>
+</div>
+
+<div class="section">
+<h2>Apps to Delete NOW</h2>
+<ul class="checklist">
+<li><input type="checkbox"> <span><strong>Amazon</strong> - The biggest impulse spending trigger</span></li>
+<li><input type="checkbox"> <span><strong>Target</strong> - "Just running in for one thing..."</span></li>
+<li><input type="checkbox"> <span><strong>Walmart</strong> - Easy overspending trap</span></li>
+<li><input type="checkbox"> <span><strong>Shein</strong> - Fast fashion money drain</span></li>
+<li><input type="checkbox"> <span><strong>Temu</strong> - Cheap stuff adds up fast</span></li>
+<li><input type="checkbox"> <span><strong>Wish</strong> - Impulse buy central</span></li>
+<li><input type="checkbox"> <span><strong>eBay</strong> - "Good deals" that aren't</span></li>
+<li><input type="checkbox"> <span><strong>Etsy</strong> - Cute but costly</span></li>
+<li><input type="checkbox"> <span><strong>Nike/Footlocker</strong> - Sneaker temptation</span></li>
+<li><input type="checkbox"> <span><strong>Sephora/Ulta</strong> - Beauty budget killers</span></li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Food Delivery Apps to Delete</h2>
+<ul class="checklist">
+<li><input type="checkbox"> <span><strong>DoorDash</strong> - $15 lunch becomes $30 with fees</span></li>
+<li><input type="checkbox"> <span><strong>Uber Eats</strong> - Convenience tax is real</span></li>
+<li><input type="checkbox"> <span><strong>Grubhub</strong> - Delete it</span></li>
+<li><input type="checkbox"> <span><strong>Postmates</strong> - Gone</span></li>
+<li><input type="checkbox"> <span><strong>Instacart</strong> - Shop in person, save money</span></li>
+</ul>
+</div>
+
+<div class="tip-box">
+<strong>💡 Pro Tip:</strong> If you NEED something from Amazon, use a computer browser. The extra steps will make you think twice.
+</div>
+
+<div class="success-box">
+<strong>✅ Average savings:</strong> People who delete shopping apps save $200-500/month on impulse purchases!
+</div>
+</div>
+</div>
+<script>
+document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+  const key = 'playbook_delete_apps_' + cb.closest('li').innerText.substring(0,20);
+  cb.checked = localStorage.getItem(key) === 'true';
+  cb.addEventListener('change', () => localStorage.setItem(key, cb.checked));
+});
+</script>
+</body>
+</html>

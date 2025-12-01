@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unsubscribe from Marketing Emails | ASAP Playbook</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial,sans-serif;background:#f5f7fa;color:#333;line-height:1.6}.container{max-width:800px;margin:0 auto;padding:20px}.header{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:30px;border-radius:10px 10px 0 0;text-align:center}.header h1{font-size:28px;margin-bottom:10px}.header p{opacity:.9;font-size:16px}.content{background:#fff;padding:30px;border-radius:0 0 10px 10px;box-shadow:0 2px 10px rgba(0,0,0,.1)}.section{margin-bottom:30px}.section h2{color:#667eea;font-size:20px;margin-bottom:15px;padding-bottom:10px;border-bottom:2px solid #eee}.step{background:#f8f9fa;padding:15px;border-radius:8px;margin-bottom:15px;border-left:4px solid #667eea}.step h3{color:#333;margin-bottom:8px}.step p{color:#666;font-size:14px}.checklist{list-style:none;padding:0}.checklist li{padding:12px 15px;background:#fff;margin-bottom:8px;border-radius:6px;border:1px solid #e0e0e0;display:flex;align-items:center;gap:10px}.checklist input[type="checkbox"]{width:20px;height:20px;cursor:pointer}.tip-box{background:#fff3cd;border:1px solid #ffc107;padding:15px;border-radius:8px;margin:15px 0}.tip-box strong{color:#856404}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>📧 Unsubscribe from Marketing Emails</h1>
+<p>Stop the daily temptation hitting your inbox</p>
+</div>
+<div class="content">
+<div class="section">
+<h2>Why This Matters</h2>
+<p>Every "SALE 50% OFF!" email is designed to make you spend money you weren't planning to spend. Unsubscribing removes the trigger completely.</p>
+</div>
+
+<div class="section">
+<h2>Quick Method: Use Unroll.me</h2>
+<div class="step">
+<h3>Step 1: Go to unroll.me</h3>
+<p>This free service scans your inbox and shows all subscriptions</p>
+</div>
+<div class="step">
+<h3>Step 2: Connect your email</h3>
+<p>Works with Gmail, Yahoo, Outlook, and most providers</p>
+</div>
+<div class="step">
+<h3>Step 3: Mass unsubscribe</h3>
+<p>Unsubscribe from ALL retail and promotional emails with one click</p>
+</div>
+</div>
+
+<div class="section">
+<h2>Manual Method: Priority Unsubscribes</h2>
+<ul class="checklist">
+<li><input type="checkbox"> <span><strong>Amazon</strong> - Daily deals emails</span></li>
+<li><input type="checkbox"> <span><strong>Target</strong> - Circle offers</span></li>
+<li><input type="checkbox"> <span><strong>Walmart</strong> - Rollback alerts</span></li>
+<li><input type="checkbox"> <span><strong>Kohl's</strong> - Kohl's Cash reminders</span></li>
+<li><input type="checkbox"> <span><strong>Old Navy/Gap</strong> - Sale notifications</span></li>
+<li><input type="checkbox"> <span><strong>Groupon</strong> - Daily deals</span></li>
+<li><input type="checkbox"> <span><strong>LivingSocial</strong> - Local deals</span></li>
+<li><input type="checkbox"> <span><strong>Retail Me Not</strong> - Coupon alerts</span></li>
+<li><input type="checkbox"> <span><strong>Credit card rewards</strong> - "Earn 5X points" emails</span></li>
+<li><input type="checkbox"> <span><strong>Any store you've shopped at</strong> - All of them!</span></li>
+</ul>
+</div>
+
+<div class="tip-box">
+<strong>💡 Pro Tip:</strong> Set aside 15 minutes. Open your email, search "unsubscribe", and click unsubscribe on every promotional email you find. Do at least 10 today!
+</div>
+
+<div class="section">
+<h2>Gmail Hack</h2>
+<div class="step">
+<h3>Create a filter</h3>
+<p>Search: "unsubscribe" → Create filter → Skip inbox, Delete automatically. This catches any you missed!</p>
+</div>
+</div>
+</div>
+</div>
+<script>
+document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+  const key = 'playbook_unsub_' + cb.closest('li').innerText.substring(0,20);
+  cb.checked = localStorage.getItem(key) === 'true';
+  cb.addEventListener('change', () => localStorage.setItem(key, cb.checked));
+});
+</script>
+</body>
+</html>
