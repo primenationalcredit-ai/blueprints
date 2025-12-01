@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cancel Unused Subscriptions | ASAP Credit Repair Playbook</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #063d86;
+      --primary-light: #0a4fa8;
+      --primary-dark: #042a5c;
+      --accent: #00c9a7;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --bg: #f8fafc;
+      --text: #1e293b;
+      --text-light: #64748b;
+      --border: #e2e8f0;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 17px;
+    }
+    .header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      padding: 40px 20px 50px;
+      text-align: center;
+    }
+    .header-content { max-width: 800px; margin: 0 auto; }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: white;
+      text-decoration: none;
+      opacity: 0.8;
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+    }
+    .back-link:hover { opacity: 1; }
+    .category-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .header-subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .main-content {
+      max-width: 800px;
+      margin: -30px auto 40px;
+      padding: 0 20px;
+    }
+    .progress-section {
+      position: sticky;
+      top: 0;
+      background: white;
+      padding: 16px 20px;
+      margin: 0 -20px 20px;
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .progress-bar {
+      flex: 1;
+      height: 10px;
+      background: var(--border);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--success), var(--accent));
+      border-radius: 5px;
+      transition: width 0.3s;
+      width: 0%;
+    }
+    .progress-text { font-weight: 600; color: var(--text); min-width: 50px; }
+    .goal-card {
+      background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+      border: 2px solid var(--success);
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin-bottom: 30px;
+    }
+    .goal-card h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.3rem;
+      color: #065f46;
+      margin-bottom: 12px;
+    }
+    .goal-card p { color: #047857; font-size: 1.05rem; }
+    .goal-card .earnings {
+      background: white;
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 10px;
+      margin-top: 14px;
+      font-weight: 600;
+      color: #065f46;
+      font-size: 1.1rem;
+    }
+    .quick-win-banner {
+      background: linear-gradient(135deg, #fef3c7, #fde68a);
+      border: 2px solid #fbbf24;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .quick-win-banner .icon { font-size: 28px; }
+    .quick-win-banner .text { color: #92400e; font-weight: 500; }
+    .section-card {
+      background: white;
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border: 1px solid var(--border);
+    }
+    .section-card h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.4rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-card h2 .icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 20px;
+    }
+    .section-intro { color: var(--text-light); margin-bottom: 20px; font-size: 1rem; }
+    .task-list { list-style: none; }
+    .task-item {
+      display: flex;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .task-item:last-child { border-bottom: none; }
+    .task-checkbox {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      margin-top: 2px;
+      font-weight: bold;
+    }
+    .task-checkbox:hover { border-color: var(--primary); }
+    .task-checkbox.checked {
+      background: var(--success);
+      border-color: var(--success);
+      color: white;
+    }
+    .task-content { flex: 1; }
+    .task-title { font-weight: 600; font-size: 1.1rem; margin-bottom: 8px; color: var(--text); }
+    .task-desc { color: var(--text-light); font-size: 0.95rem; line-height: 1.6; }
+    .task-meta { display: flex; gap: 12px; margin-top: 10px; flex-wrap: wrap; }
+    .task-badge {
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--bg);
+      color: var(--text-light);
+    }
+    .task-badge.easy { background: #dcfce7; color: #166534; }
+    .details-box {
+      background: #f8fafc;
+      border-radius: 10px;
+      padding: 16px;
+      margin-top: 12px;
+      border-left: 4px solid var(--primary);
+    }
+    .details-box h4 { font-size: 0.9rem; color: var(--primary); margin-bottom: 10px; }
+    .details-box ul { margin-left: 18px; color: var(--text); font-size: 0.9rem; }
+    .details-box li { margin-bottom: 8px; line-height: 1.5; }
+    /* Subscription Audit Table */
+    .audit-section {
+      background: linear-gradient(135deg, #fef2f2, #fee2e2);
+      border: 2px solid #fca5a5;
+    }
+    .audit-section h2 { color: #991b1b; }
+    .audit-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+    }
+    .audit-table th {
+      text-align: left;
+      padding: 12px;
+      background: white;
+      color: #991b1b;
+      font-weight: 600;
+      border-bottom: 2px solid #fca5a5;
+    }
+    .audit-table td {
+      padding: 12px;
+      border-bottom: 1px solid #fecaca;
+    }
+    .audit-table input[type="text"] {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid #fecaca;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.9rem;
+    }
+    .audit-table input[type="text"]:focus {
+      outline: none;
+      border-color: #f87171;
+    }
+    .audit-table .keep-btn, .audit-table .cancel-btn {
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: none;
+      font-family: inherit;
+      font-size: 0.8rem;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .audit-table .keep-btn {
+      background: #dcfce7;
+      color: #166534;
+    }
+    .audit-table .cancel-btn {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+    .audit-table .keep-btn.active { background: #22c55e; color: white; }
+    .audit-table .cancel-btn.active { background: #ef4444; color: white; }
+    .add-row-btn {
+      margin-top: 12px;
+      padding: 10px 20px;
+      background: white;
+      border: 2px dashed #fca5a5;
+      border-radius: 8px;
+      color: #991b1b;
+      font-family: inherit;
+      font-size: 0.9rem;
+      cursor: pointer;
+      width: 100%;
+    }
+    .add-row-btn:hover { background: #fef2f2; }
+    .savings-total {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 20px;
+      text-align: center;
+    }
+    .savings-total h3 { color: #991b1b; margin-bottom: 8px; }
+    .savings-total .amount {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--success);
+    }
+    .savings-total .annual {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      margin-top: 4px;
+    }
+    /* Common Subscriptions */
+    .common-subs {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .sub-card {
+      background: var(--bg);
+      border-radius: 10px;
+      padding: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .sub-card .price {
+      margin-left: auto;
+      font-weight: 600;
+      color: var(--danger);
+    }
+    .resources-section {
+      background: linear-gradient(135deg, #ede9fe, #ddd6fe);
+      border: 2px solid #a78bfa;
+    }
+    .resources-section h2 { color: #5b21b6; }
+    .resource-item {
+      background: white;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 12px;
+      display: block;
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.2s;
+    }
+    .resource-item:hover {
+      transform: translateX(4px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .resource-item h4 { font-size: 1rem; margin-bottom: 4px; color: #5b21b6; }
+    .resource-item p { font-size: 0.85rem; color: var(--text-light); margin-bottom: 6px; }
+    .resource-item .link { font-size: 0.8rem; color: #7c3aed; }
+    .section-card textarea {
+      width: 100%;
+      min-height: 150px;
+      padding: 16px 18px;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 1rem;
+      resize: vertical;
+      box-sizing: border-box;
+      display: block;
+      line-height: 1.6;
+    }
+    .section-card textarea:focus { outline: none; border-color: var(--primary); }
+    .help-section {
+      background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+      border: 2px solid #7dd3fc;
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .help-icon {
+      width: 56px;
+      height: 56px;
+      background: white;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+    }
+    .help-content { flex: 1; min-width: 200px; }
+    .help-content h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; margin-bottom: 4px; }
+    .help-content p { color: var(--text-light); font-size: 0.95rem; }
+    .chat-btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.2s;
+    }
+    .chat-btn:hover { background: var(--primary-light); transform: translateY(-2px); }
+    @media (max-width: 600px) {
+      .header { padding: 30px 20px 40px; }
+      .section-card { padding: 20px; }
+      .help-section { flex-direction: column; text-align: center; }
+      .audit-table { font-size: 0.85rem; }
+      .audit-table th, .audit-table td { padding: 8px 6px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-content">
+      <a href="index.html" class="back-link">← Back to All Playbooks</a>
+      <span class="category-badge">📱 Subscriptions & Tech</span>
+      <h1>Cancel Unused Subscriptions</h1>
+      <p class="header-subtitle">The average American wastes $219/month on subscriptions they don't use. Let's find and cancel yours!</p>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="progress-section">
+      <span style="font-size: 0.9rem; color: var(--text-light);">Your Progress:</span>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <span class="progress-text" id="progressText">0%</span>
+    </div>
+
+    <!-- Quick Win Banner -->
+    <div class="quick-win-banner">
+      <span class="icon">⚡</span>
+      <span class="text">Quick Win! Most people finish this in 30-45 minutes and save $50-200/month!</span>
+    </div>
+
+    <!-- Goal Card -->
+    <div class="goal-card">
+      <h2>🎯 What You'll Achieve</h2>
+      <p>You'll find EVERY subscription you're paying for, decide which ones you actually use, and cancel the rest. Most people find at least 2-3 subscriptions they forgot about!</p>
+      <div class="earnings">💰 Average savings: $50-200/month ($600-2,400/year!)</div>
+    </div>
+
+    <!-- Step by Step -->
+    <div class="section-card">
+      <h2><span class="icon">📋</span> Step-by-Step Guide</h2>
+      <p class="section-intro">Follow these steps to find and cancel every subscription you don't need!</p>
+      
+      <ul class="task-list">
+        <li class="task-item">
+          <div class="task-checkbox" data-task="0"></div>
+          <div class="task-content">
+            <div class="task-title">Step 1: Check your bank and credit card statements</div>
+            <div class="task-desc">Log into your bank account and look at the last 3 months of transactions. Search for recurring charges - these are your subscriptions!</div>
+            <div class="details-box">
+              <h4>What to look for:</h4>
+              <ul>
+                <li>Any charge that repeats monthly (same amount, same company)</li>
+                <li>Charges you don't recognize (Google the company name)</li>
+                <li>Annual charges (check last 12 months too!)</li>
+                <li>Small amounts you might ignore ($2.99, $4.99, etc.)</li>
+              </ul>
+            </div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 15 minutes</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        
+        <li class="task-item">
+          <div class="task-checkbox" data-task="1"></div>
+          <div class="task-content">
+            <div class="task-title">Step 2: Check your email for "receipt" and "subscription"</div>
+            <div class="task-desc">Search your email for words like "receipt," "subscription," "renewal," and "charged." You'll find services you forgot about!</div>
+            <div class="details-box">
+              <h4>Email search terms to try:</h4>
+              <ul>
+                <li>"Your receipt" or "payment received"</li>
+                <li>"subscription" or "membership"</li>
+                <li>"will be charged" or "auto-renewal"</li>
+                <li>"monthly" or "annual plan"</li>
+              </ul>
+            </div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 10 minutes</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        
+        <li class="task-item">
+          <div class="task-checkbox" data-task="2"></div>
+          <div class="task-content">
+            <div class="task-title">Step 3: Check your phone's app subscriptions</div>
+            <div class="task-desc">Your phone may be charging you for apps you don't use. Check both the App Store AND Google Play!</div>
+            <div class="details-box">
+              <h4>How to check:</h4>
+              <ul>
+                <li><strong>iPhone:</strong> Settings → Your Name → Subscriptions</li>
+                <li><strong>Android:</strong> Play Store → Menu → Subscriptions</li>
+                <li>Look for apps you haven't opened in months</li>
+                <li>Free trials that converted to paid!</li>
+              </ul>
+            </div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 5 minutes</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        
+        <li class="task-item">
+          <div class="task-checkbox" data-task="3"></div>
+          <div class="task-content">
+            <div class="task-title">Step 4: List all subscriptions in the tracker below</div>
+            <div class="task-desc">Write down every subscription you found. Seeing them all in one place is eye-opening!</div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 10 minutes</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        
+        <li class="task-item">
+          <div class="task-checkbox" data-task="4"></div>
+          <div class="task-content">
+            <div class="task-title">Step 5: Decide: Keep or Cancel?</div>
+            <div class="task-desc">For each subscription, ask yourself: "Have I used this in the last 30 days?" If not, it's probably time to cancel.</div>
+            <div class="details-box">
+              <h4>Questions to ask yourself:</h4>
+              <ul>
+                <li>When did I last use this?</li>
+                <li>Would I buy this again today if I didn't have it?</li>
+                <li>Is there a free alternative?</li>
+                <li>Can I share this with family (family plans)?</li>
+                <li>Can I pause instead of cancel?</li>
+              </ul>
+            </div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 10 minutes</span>
+              <span class="task-badge easy">Easy</span>
+            </div>
+          </div>
+        </li>
+        
+        <li class="task-item">
+          <div class="task-checkbox" data-task="5"></div>
+          <div class="task-content">
+            <div class="task-title">Step 6: Cancel the subscriptions you don't need</div>
+            <div class="task-desc">Go cancel them NOW. Don't wait! Most can be canceled online. Some make you call - do it anyway!</div>
+            <div class="details-box">
+              <h4>Cancellation tips:</h4>
+              <ul>
+                <li>Screenshot confirmation of cancellation</li>
+                <li>If they offer a discount to stay, still cancel (you can always re-subscribe)</li>
+                <li>Set a calendar reminder to check next month that you weren't charged</li>
+                <li>For hard-to-cancel services, try <a href="https://justdelete.me" target="_blank">justdelete.me</a></li>
+              </ul>
+            </div>
+            <div class="task-meta">
+              <span class="task-badge">⏱️ 15-30 minutes</span>
+              <span class="task-badge easy">Do it now!</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Subscription Audit Tracker -->
+    <div class="section-card audit-section">
+      <h2><span class="icon" style="background: linear-gradient(135deg, #ef4444, #dc2626);">📊</span> Your Subscription Audit</h2>
+      <p class="section-intro" style="color: #991b1b;">List all your subscriptions here. Mark each one Keep or Cancel!</p>
+      
+      <table class="audit-table">
+        <thead>
+          <tr>
+            <th>Subscription</th>
+            <th>Monthly Cost</th>
+            <th>Decision</th>
+          </tr>
+        </thead>
+        <tbody id="auditTableBody">
+          <tr>
+            <td><input type="text" class="sub-name" placeholder="Netflix, Spotify, etc."></td>
+            <td><input type="text" class="sub-cost" placeholder="$15.99"></td>
+            <td>
+              <button class="keep-btn" onclick="toggleDecision(this, 'keep')">Keep</button>
+              <button class="cancel-btn" onclick="toggleDecision(this, 'cancel')">Cancel</button>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="text" class="sub-name" placeholder=""></td>
+            <td><input type="text" class="sub-cost" placeholder=""></td>
+            <td>
+              <button class="keep-btn" onclick="toggleDecision(this, 'keep')">Keep</button>
+              <button class="cancel-btn" onclick="toggleDecision(this, 'cancel')">Cancel</button>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="text" class="sub-name" placeholder=""></td>
+            <td><input type="text" class="sub-cost" placeholder=""></td>
+            <td>
+              <button class="keep-btn" onclick="toggleDecision(this, 'keep')">Keep</button>
+              <button class="cancel-btn" onclick="toggleDecision(this, 'cancel')">Cancel</button>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="text" class="sub-name" placeholder=""></td>
+            <td><input type="text" class="sub-cost" placeholder=""></td>
+            <td>
+              <button class="keep-btn" onclick="toggleDecision(this, 'keep')">Keep</button>
+              <button class="cancel-btn" onclick="toggleDecision(this, 'cancel')">Cancel</button>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="text" class="sub-name" placeholder=""></td>
+            <td><input type="text" class="sub-cost" placeholder=""></td>
+            <td>
+              <button class="keep-btn" onclick="toggleDecision(this, 'keep')">Keep</button>
+              <button class="cancel-btn" onclick="toggleDecision(this, 'cancel')">Cancel</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <button class="add-row-btn" onclick="addRow()">+ Add Another Subscription</button>
+      
+      <div class="savings-total">
+        <h3>Your Monthly Savings (from cancellations)</h3>
+        <div class="amount" id="savingsAmount">$0</div>
+        <div class="annual">That's <span id="annualSavings">$0</span>/year back in your pocket!</div>
+      </div>
+    </div>
+
+    <!-- Common Subscriptions to Check -->
+    <div class="section-card">
+      <h2><span class="icon">🔍</span> Common Subscriptions to Check</h2>
+      <p class="section-intro">Don't forget to look for these! They're easy to overlook.</p>
+      
+      <div class="common-subs">
+        <div class="sub-card">📺 Netflix <span class="price">$15-23</span></div>
+        <div class="sub-card">🎵 Spotify <span class="price">$11-17</span></div>
+        <div class="sub-card">📦 Amazon Prime <span class="price">$15</span></div>
+        <div class="sub-card">📺 Hulu <span class="price">$8-18</span></div>
+        <div class="sub-card">📺 Disney+ <span class="price">$8-14</span></div>
+        <div class="sub-card">📺 HBO Max <span class="price">$10-16</span></div>
+        <div class="sub-card">☁️ iCloud <span class="price">$1-10</span></div>
+        <div class="sub-card">☁️ Google One <span class="price">$2-10</span></div>
+        <div class="sub-card">🏋️ Gym <span class="price">$20-60</span></div>
+        <div class="sub-card">📰 News apps <span class="price">$5-15</span></div>
+        <div class="sub-card">🎮 Xbox/PS Plus <span class="price">$10-15</span></div>
+        <div class="sub-card">💄 Beauty boxes <span class="price">$15-50</span></div>
+        <div class="sub-card">📱 Phone insurance <span class="price">$10-15</span></div>
+        <div class="sub-card">🔐 VPN service <span class="price">$5-15</span></div>
+        <div class="sub-card">🎓 Learning apps <span class="price">$10-30</span></div>
+        <div class="sub-card">📧 Email tools <span class="price">$5-20</span></div>
+      </div>
+    </div>
+
+    <!-- Resources -->
+    <div class="section-card resources-section">
+      <h2><span class="icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">💡</span> Helpful Tools & Resources</h2>
+      <p class="section-intro" style="color: #5b21b6;">These apps and sites can help you find and cancel subscriptions!</p>
+      
+      <a href="https://www.rocketmoney.com" target="_blank" class="resource-item">
+        <h4>🚀 Rocket Money (formerly Truebill)</h4>
+        <p>Automatically finds your subscriptions and helps you cancel them. Can even negotiate bills!</p>
+        <span class="link">rocketmoney.com →</span>
+      </a>
+      
+      <a href="https://www.trim.com" target="_blank" class="resource-item">
+        <h4>✂️ Trim</h4>
+        <p>AI-powered app that finds subscriptions and cancels them for you.</p>
+        <span class="link">trim.com →</span>
+      </a>
+      
+      <a href="https://justdelete.me" target="_blank" class="resource-item">
+        <h4>🗑️ JustDelete.me</h4>
+        <p>Directory of direct links to delete your account from web services.</p>
+        <span class="link">justdelete.me →</span>
+      </a>
+      
+      <a href="https://www.youtube.com/watch?v=tKpXb5HvJlE" target="_blank" class="resource-item">
+        <h4>📺 How I Saved $300/Month Canceling Subscriptions</h4>
+        <p>Great walkthrough video showing the exact process.</p>
+        <span class="link">YouTube →</span>
+      </a>
+    </div>
+
+    <!-- Notes Section -->
+    <div class="section-card">
+      <h2><span class="icon">📝</span> Your Notes</h2>
+      <p class="section-intro">Track your progress, make notes about what to cancel, etc.</p>
+      <textarea id="userNotes" placeholder="Example: Need to call gym tomorrow - they don't have online cancellation. Also found a $4.99 app charge I don't recognize - need to Google it..."></textarea>
+    </div>
+
+    <!-- Help Section -->
+    <div class="help-section">
+      <div class="help-icon">💬</div>
+      <div class="help-content">
+        <h3>Need Help?</h3>
+        <p>Have questions or need help finding subscriptions? Chat with us!</p>
+      </div>
+      <button class="chat-btn" onclick="openChat()">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+        </svg>
+        Start Chat
+      </button>
+    </div>
+  </main>
+
+  <script>
+    const STORAGE_KEY = 'playbook_cancel-subscriptions';
+    
+    function loadState() {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        const state = JSON.parse(saved);
+        document.querySelectorAll('.task-checkbox').forEach((box, i) => {
+          if (state.tasks && state.tasks[i]) {
+            box.classList.add('checked');
+            box.innerHTML = '✓';
+          }
+        });
+        if (state.notes) document.getElementById('userNotes').value = state.notes;
+        if (state.subscriptions) {
+          const tbody = document.getElementById('auditTableBody');
+          // Clear existing rows and rebuild
+          while (tbody.children.length < state.subscriptions.length) {
+            addRow();
+          }
+          const rows = tbody.querySelectorAll('tr');
+          state.subscriptions.forEach((sub, i) => {
+            if (rows[i]) {
+              rows[i].querySelector('.sub-name').value = sub.name || '';
+              rows[i].querySelector('.sub-cost').value = sub.cost || '';
+              if (sub.decision === 'keep') {
+                rows[i].querySelector('.keep-btn').classList.add('active');
+              } else if (sub.decision === 'cancel') {
+                rows[i].querySelector('.cancel-btn').classList.add('active');
+              }
+            }
+          });
+        }
+        updateProgress();
+        calculateSavings();
+      }
+    }
+    
+    function saveState() {
+      const tasks = [];
+      document.querySelectorAll('.task-checkbox').forEach(box => {
+        tasks.push(box.classList.contains('checked'));
+      });
+      
+      const subscriptions = [];
+      document.querySelectorAll('#auditTableBody tr').forEach(row => {
+        const name = row.querySelector('.sub-name').value;
+        const cost = row.querySelector('.sub-cost').value;
+        const keepBtn = row.querySelector('.keep-btn');
+        const cancelBtn = row.querySelector('.cancel-btn');
+        let decision = '';
+        if (keepBtn.classList.contains('active')) decision = 'keep';
+        if (cancelBtn.classList.contains('active')) decision = 'cancel';
+        subscriptions.push({ name, cost, decision });
+      });
+      
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        tasks: tasks,
+        notes: document.getElementById('userNotes').value,
+        subscriptions: subscriptions
+      }));
+    }
+    
+    function updateProgress() {
+      const boxes = document.querySelectorAll('.task-checkbox');
+      const checked = document.querySelectorAll('.task-checkbox.checked').length;
+      const percent = Math.round((checked / boxes.length) * 100);
+      document.getElementById('progressFill').style.width = percent + '%';
+      document.getElementById('progressText').textContent = percent + '%';
+    }
+    
+    function toggleDecision(btn, type) {
+      const row = btn.closest('tr');
+      const keepBtn = row.querySelector('.keep-btn');
+      const cancelBtn = row.querySelector('.cancel-btn');
+      
+      keepBtn.classList.remove('active');
+      cancelBtn.classList.remove('active');
+      btn.classList.add('active');
+      
+      calculateSavings();
+      saveState();
+    }
+    
+    function calculateSavings() {
+      let total = 0;
+      document.querySelectorAll('#auditTableBody tr').forEach(row => {
+        const cancelBtn = row.querySelector('.cancel-btn');
+        if (cancelBtn.classList.contains('active')) {
+          const costInput = row.querySelector('.sub-cost').value;
+          const cost = parseFloat(costInput.replace(/[^0-9.]/g, '')) || 0;
+          total += cost;
+        }
+      });
+      document.getElementById('savingsAmount').textContent = '$' + total.toFixed(2);
+      document.getElementById('annualSavings').textContent = '$' + (total * 12).toFixed(0);
+    }
+    
+    function addRow() {
+      const tbody = document.getElementById('auditTableBody');
+      const newRow = document.createElement('tr');
+      newRow.innerHTML = `
+        <td><input type="text" class="sub-name" placeholder=""></td>
+        <td><input type="text" class="sub-cost" placeholder=""></td>
+        <td>
+          <button class="keep-btn" onclick="toggleDecision(this, 'keep')">Keep</button>
+          <button class="cancel-btn" onclick="toggleDecision(this, 'cancel')">Cancel</button>
+        </td>
+      `;
+      tbody.appendChild(newRow);
+      
+      // Add event listeners to new inputs
+      newRow.querySelectorAll('input').forEach(input => {
+        input.addEventListener('input', () => { calculateSavings(); saveState(); });
+      });
+    }
+    
+    document.querySelectorAll('.task-checkbox').forEach(box => {
+      box.addEventListener('click', function() {
+        this.classList.toggle('checked');
+        this.innerHTML = this.classList.contains('checked') ? '✓' : '';
+        updateProgress();
+        saveState();
+      });
+    });
+    
+    document.getElementById('userNotes').addEventListener('input', saveState);
+    document.querySelectorAll('.sub-name, .sub-cost').forEach(input => {
+      input.addEventListener('input', () => { calculateSavings(); saveState(); });
+    });
+    
+    function openChat() { window.location.href = 'https://asapcreditrepairusa.com/chat'; }
+    loadState();
+  </script>
+</body>
+</html>
