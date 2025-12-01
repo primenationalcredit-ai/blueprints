@@ -1,52 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meal Prep Business | ASAP Credit Repair Playbook</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>:root{--primary:#063d86;--success:#10b981;--bg:#f8fafc;--text:#1e293b;--text-light:#64748b;--border:#e2e8f0}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}.header{background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff;padding:40px 20px 50px;text-align:center}.header h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:12px}.main-content{max-width:800px;margin:-30px auto 40px;padding:0 20px}.back-link{color:#fff;text-decoration:none;opacity:.8;display:block;margin-bottom:16px}.category-badge{display:inline-block;background:rgba(255,255,255,.2);padding:6px 16px;border-radius:20px;font-size:.85rem;margin-bottom:16px}.goal-card{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid var(--success);border-radius:16px;padding:24px;margin-bottom:24px}.goal-card h2{color:#065f46;margin-bottom:12px}.goal-card .earnings{background:#fff;padding:10px 18px;border-radius:10px;margin-top:14px;font-weight:600;color:#065f46;display:inline-block}.section-card{background:#fff;border-radius:16px;padding:28px;margin-bottom:24px;border:1px solid var(--border)}.section-card h2{color:var(--primary);margin-bottom:20px}.task-list{list-style:none}.task-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)}.task-checkbox{width:28px;height:28px;border:2px solid var(--border);border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}.task-checkbox.checked{background:var(--success);border-color:var(--success);color:#fff}.task-title{font-weight:600;margin-bottom:6px}.task-desc{color:var(--text-light);font-size:.95rem}.task-badge{font-size:.8rem;padding:4px 10px;border-radius:6px;background:var(--bg);margin-top:10px;display:inline-block;margin-right:8px}.details-box{background:#f8fafc;padding:14px;border-radius:8px;margin-top:12px;border-left:4px solid #22c55e}.details-box h4{color:#16a34a;margin-bottom:8px;font-size:.9rem}.details-box ul{margin-left:18px;font-size:.9rem}.details-box li{margin-bottom:6px}.pricing-table{width:100%;border-collapse:collapse;margin-top:12px}.pricing-table th,.pricing-table td{padding:10px;text-align:left;border-bottom:1px solid var(--border)}.pricing-table th{background:var(--bg);font-weight:600}textarea{width:100%;min-height:120px;padding:14px;border:2px solid var(--border);border-radius:10px;font-family:inherit;margin-top:10px}.help-section{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border:2px solid #7dd3fc;border-radius:16px;padding:20px;margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}.chat-btn{background:var(--primary);color:#fff;border:none;padding:12px 24px;border-radius:10px;font-weight:600;cursor:pointer}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Prep Savings | ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f5f5f5; color: #333; line-height: 1.6; }
+        .playbook { max-width: 700px; margin: 0 auto; background: white; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
+        .header { background: linear-gradient(135deg, #8bc34a 0%, #689f38 100%); color: white; padding: 30px; text-align: center; }
+        .header h1 { font-size: 28px; margin-bottom: 10px; }
+        .header p { opacity: 0.9; font-size: 14px; }
+        .meta { display: flex; justify-content: center; gap: 20px; margin-top: 15px; font-size: 12px; }
+        .meta span { background: rgba(255,255,255,0.2); padding: 5px 12px; border-radius: 15px; }
+        .content { padding: 30px; }
+        .section { margin-bottom: 30px; }
+        .section h2 { color: #689f38; font-size: 18px; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 2px solid #8bc34a; }
+        .highlight-box { background: #f1f8e9; border-left: 4px solid #8bc34a; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+        .savings-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; }
+        .savings-card { padding: 20px; border-radius: 8px; text-align: center; }
+        .savings-card.bad { background: #ffebee; border: 2px solid #ef5350; }
+        .savings-card.good { background: #e8f5e9; border: 2px solid #4caf50; }
+        .savings-card h4 { margin-bottom: 10px; }
+        .savings-card .amount { font-size: 28px; font-weight: 700; }
+        .savings-card.bad .amount { color: #c62828; }
+        .savings-card.good .amount { color: #2e7d32; }
+        .checklist { list-style: none; padding: 0; }
+        .checklist li { padding: 12px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 12px; }
+        .checklist li:last-child { border-bottom: none; }
+        .checklist input[type="checkbox"] { width: 20px; height: 20px; margin-top: 2px; cursor: pointer; flex-shrink: 0; }
+        .checklist label { cursor: pointer; flex: 1; }
+        .checklist .done { text-decoration: line-through; color: #888; }
+        .meal-ideas { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 15px 0; }
+        .meal-item { background: #f8f9fa; padding: 12px; border-radius: 6px; font-size: 13px; }
+        .progress-section { background: #f8f9fa; padding: 20px; border-radius: 8px; margin-top: 30px; }
+        .progress-bar { height: 20px; background: #e0e0e0; border-radius: 10px; overflow: hidden; margin: 10px 0; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #8bc34a, #689f38); transition: width 0.3s; border-radius: 10px; }
+        .progress-text { text-align: center; font-weight: 600; color: #689f38; }
+        .cta-button { display: block; width: 100%; padding: 15px; background: #8bc34a; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; text-align: center; text-decoration: none; margin-top: 20px; }
+        .back-link { display: inline-block; margin: 20px 30px; color: #666; text-decoration: none; font-size: 14px; }
+    </style>
 </head>
 <body>
-  <header class="header"><a href="index.html" class="back-link">← Back to All Playbooks</a><span class="category-badge">🥗 Food Business</span><h1>Meal Prep Business</h1><p style="opacity:.9;max-width:600px;margin:0 auto">Prepare healthy meals for busy people! Weekly meal prep delivery with recurring customers.</p></header>
-  <main class="main-content">
-    <div class="goal-card"><h2>🎯 What You'll Achieve</h2><p>Start a meal prep business creating healthy, portioned meals for busy clients. Recurring weekly orders!</p><div class="earnings">💰 Per meal: $10-15 | Weekly client (10 meals): $100-150 | Monthly (20 clients): $8,000-12,000+</div></div>
-    <div class="section-card"><h2>💵 Meal Pricing</h2>
-      <table class="pricing-table"><tr><th>Package</th><th>Price</th><th>Notes</th></tr><tr><td>5 meals/week</td><td>$55-75</td><td>$11-15/meal</td></tr><tr><td>10 meals/week</td><td>$100-130</td><td>$10-13/meal</td></tr><tr><td>15 meals/week</td><td>$135-180</td><td>$9-12/meal</td></tr><tr><td>Family plan (20)</td><td>$180-240</td><td>$9-12/meal</td></tr><tr><td>Specialty (keto, etc.)</td><td>+$1-2/meal</td><td>Premium diets</td></tr></table>
-      <p style="font-size:.85rem;color:var(--text-light);margin-top:10px">Food cost target: 30-35% of price</p></div>
-    <div class="section-card"><h2>📋 Step-by-Step Action Plan</h2>
-      <ul class="task-list">
-        <li class="task-item"><div class="task-checkbox" data-task="0"></div><div><div class="task-title">Step 1: Check food business regulations</div><div class="task-desc">Commercial kitchen often required. Check cottage food laws and health department rules.</div><div class="details-box"><h4>📋 Legal Requirements:</h4><ul><li>Check state cottage food laws</li><li>Commercial kitchen may be required</li><li>Food handler's permit</li><li>Business license</li><li>Liability insurance</li><li>Health department inspection</li></ul></div><span class="task-badge">⚖️ Check local laws</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="1"></div><div><div class="task-title">Step 2: Develop your menu and recipes</div><div class="task-desc">Create balanced, delicious meals that reheat well. Test recipes thoroughly!</div><div class="details-box"><h4>🍽️ Menu Planning:</h4><ul><li>Protein + veggie + carb formula</li><li>Meals that reheat well</li><li>Variety without complexity</li><li>Accommodate common diets</li><li>Cost out each recipe</li><li>Rotating weekly menus</li></ul></div><span class="task-badge">🍽️ Test recipes first</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="2"></div><div><div class="task-title">Step 3: Set up kitchen and supplies</div><div class="task-desc">Commercial kitchen, quality containers, efficient workflow.</div><span class="task-badge">🏪 Commercial kitchen</span><span class="task-badge">📦 Quality containers</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="3"></div><div><div class="task-title">Step 4: Find your first clients</div><div class="task-desc">Busy professionals, fitness enthusiasts, new parents. Health-focused marketing!</div><div class="details-box"><h4>📣 Finding Clients:</h4><ul><li>Instagram (food photos!)</li><li>Local Facebook groups</li><li>Gyms and fitness studios</li><li>Corporate wellness programs</li><li>Nextdoor</li><li>Word of mouth referrals</li></ul></div><span class="task-badge">💪 Gym partnerships</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="4"></div><div><div class="task-title">Step 5: Perfect your prep and delivery</div><div class="task-desc">Batch cooking efficiency, reliable delivery schedule, great presentation.</div><span class="task-badge">📅 Consistent schedule</span><span class="task-badge">📦 Great presentation</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="5"></div><div><div class="task-title">Step 6: Scale with subscriptions</div><div class="task-desc">Weekly subscriptions create predictable revenue. Add specialty menus for higher margins.</div><div class="details-box"><h4>🚀 Growth Strategies:</h4><ul><li>Weekly subscription model</li><li>Specialty diets (keto, paleo)</li><li>Corporate lunch delivery</li><li>Hire prep help</li><li>Expand delivery area</li></ul></div><span class="task-badge">🔄 Subscriptions = stability</span></div></li>
-      </ul></div>
-    <div class="section-card"><h2>📝 Your Meal Prep Tracker</h2><textarea id="userNotes" placeholder="Track your meal prep business:
-
-Kitchen: Shared commercial kitchen
-Specialty: Healthy, macro-friendly
-Delivery: Sunday and Wednesday
-
-Weekly clients: 18
-- 10-meal plans (12): $1,440
-- 5-meal plans (6): $390
-
-Weekly revenue: $1,830
-Food costs (32%): $585
-Kitchen rental: $200
-Containers: $75
-Net weekly: $970
-
-Monthly net: ~$3,880
-
-Client retention: 85%
-Waitlist: 5 people
-
-Goal: 35 clients = $8,000+/month"></textarea></div>
-    <div class="help-section"><span style="font-size:24px">💬</span><div style="flex:1"><strong>Need Help?</strong> Chat with a coach!</div><button class="chat-btn" onclick="location.href='https://asapcreditrepairusa.com/chat'">Start Chat</button></div>
-  </main>
-  <script>const K='pb_meal_prep';function load(){const s=localStorage.getItem(K);if(s){const d=JSON.parse(s);document.querySelectorAll('.task-checkbox').forEach((b,i)=>{if(d.tasks&&d.tasks[i]){b.classList.add('checked');b.innerHTML='✓'}});if(d.notes)document.getElementById('userNotes').value=d.notes}}function save(){const t=[];document.querySelectorAll('.task-checkbox').forEach(b=>t.push(b.classList.contains('checked')));localStorage.setItem(K,JSON.stringify({tasks:t,notes:document.getElementById('userNotes').value}))}document.querySelectorAll('.task-checkbox').forEach(b=>b.onclick=function(){this.classList.toggle('checked');this.innerHTML=this.classList.contains('checked')?'✓':'';save()});document.getElementById('userNotes').oninput=save;load();</script>
+    <a href="javascript:history.back()" class="back-link">← Back to Blueprint</a>
+    <div class="playbook">
+        <div class="header">
+            <h1>🍳 Meal Prep Savings Guide</h1>
+            <p>Stop eating out, start saving $300+/month</p>
+            <div class="meta">
+                <span>💰 Save $300+/mo</span>
+                <span>⏱️ 2 hours/week</span>
+                <span>🥗 Healthier too!</span>
+            </div>
+        </div>
+        <div class="content">
+            <div class="section">
+                <h2>The Math</h2>
+                <div class="savings-compare">
+                    <div class="savings-card bad">
+                        <h4>❌ Eating Out</h4>
+                        <div class="amount">$15/meal</div>
+                        <p>× 30 meals = $450/mo</p>
+                    </div>
+                    <div class="savings-card good">
+                        <h4>✅ Meal Prep</h4>
+                        <div class="amount">$4/meal</div>
+                        <p>× 30 meals = $120/mo</p>
+                    </div>
+                </div>
+                <div class="highlight-box"><strong>Savings: $330/month = $3,960/year!</strong></div>
+            </div>
+            
+            <div class="section">
+                <h2>Sunday Prep Routine</h2>
+                <ul class="checklist">
+                    <li><input type="checkbox" id="p1" onchange="updateProgress()"><label for="p1">Plan 5 dinners for the week</label></li>
+                    <li><input type="checkbox" id="p2" onchange="updateProgress()"><label for="p2">Make grocery list from recipes</label></li>
+                    <li><input type="checkbox" id="p3" onchange="updateProgress()"><label for="p3">Shop with list ONLY - no impulse buys</label></li>
+                    <li><input type="checkbox" id="p4" onchange="updateProgress()"><label for="p4">Prep ingredients (chop veggies, cook grains)</label></li>
+                    <li><input type="checkbox" id="p5" onchange="updateProgress()"><label for="p5">Make 2-3 meals in bulk, portion into containers</label></li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>Easy Meal Ideas</h2>
+                <div class="meal-ideas">
+                    <div class="meal-item">🍗 Sheet pan chicken + veggies</div>
+                    <div class="meal-item">🍚 Rice bowls with protein</div>
+                    <div class="meal-item">🥗 Mason jar salads</div>
+                    <div class="meal-item">🌯 Burrito bowls</div>
+                    <div class="meal-item">🍝 Pasta + sauce + veggies</div>
+                    <div class="meal-item">🥣 Overnight oats (breakfast)</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Weekly Goals</h2>
+                <ul class="checklist">
+                    <li><input type="checkbox" id="g1" onchange="updateProgress()"><label for="g1">Prep 3 dinners this Sunday</label></li>
+                    <li><input type="checkbox" id="g2" onchange="updateProgress()"><label for="g2">Pack lunch 5 days this week</label></li>
+                    <li><input type="checkbox" id="g3" onchange="updateProgress()"><label for="g3">No food delivery apps this week</label></li>
+                    <li><input type="checkbox" id="g4" onchange="updateProgress()"><label for="g4">Restaurant meals limited to 1 this week</label></li>
+                </ul>
+            </div>
+            
+            <div class="progress-section">
+                <h3>Your Progress</h3>
+                <div class="progress-bar"><div class="progress-fill" id="progress-bar" style="width: 0%"></div></div>
+                <div class="progress-text" id="progress-text">0 of 9 tasks complete</div>
+            </div>
+            <a href="javascript:history.back()" class="cta-button">✓ Return to Blueprint</a>
+        </div>
+    </div>
+    <script>
+        const STORAGE_KEY = 'playbook_mealprep';
+        function loadProgress() { const saved = localStorage.getItem(STORAGE_KEY); if (saved) { JSON.parse(saved).forEach(id => { const cb = document.getElementById(id); if (cb) { cb.checked = true; cb.nextElementSibling.classList.add('done'); } }); } updateProgress(); }
+        function updateProgress() { const checkboxes = document.querySelectorAll('input[type="checkbox"]'); const checked = []; let count = 0; checkboxes.forEach(cb => { if (cb.checked) { count++; checked.push(cb.id); cb.nextElementSibling.classList.add('done'); } else { cb.nextElementSibling.classList.remove('done'); } }); localStorage.setItem(STORAGE_KEY, JSON.stringify(checked)); document.getElementById('progress-bar').style.width = Math.round((count / checkboxes.length) * 100) + '%'; document.getElementById('progress-text').textContent = count + ' of ' + checkboxes.length + ' tasks complete'; }
+        document.addEventListener('DOMContentLoaded', loadProgress);
+    </script>
 </body>
 </html>

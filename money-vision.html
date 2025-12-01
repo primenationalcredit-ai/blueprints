@@ -1,76 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Choose Your Money Vision | ASAP Playbook</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial,sans-serif;background:#f5f7fa;color:#333;line-height:1.6}.container{max-width:800px;margin:0 auto;padding:20px}.header{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:30px;border-radius:10px 10px 0 0;text-align:center}.header h1{font-size:28px;margin-bottom:10px}.header p{opacity:.9;font-size:16px}.content{background:#fff;padding:30px;border-radius:0 0 10px 10px;box-shadow:0 2px 10px rgba(0,0,0,.1)}.section{margin-bottom:30px}.section h2{color:#667eea;font-size:20px;margin-bottom:15px;padding-bottom:10px;border-bottom:2px solid #eee}.vision-card{background:#f8f9fa;padding:20px;border-radius:8px;margin-bottom:15px;border-left:4px solid #667eea}.vision-card h3{color:#333;margin-bottom:8px}.vision-card p{color:#666;font-size:14px;margin-bottom:10px}.vision-card .timeline{background:#667eea;color:#fff;display:inline-block;padding:4px 12px;border-radius:20px;font-size:12px}.tip-box{background:#fff3cd;border:1px solid #ffc107;padding:15px;border-radius:8px;margin:15px 0}.tip-box strong{color:#856404}.action-box{background:#d4edda;border:1px solid #c3e6cb;padding:20px;border-radius:8px;margin:20px 0}.action-box h3{color:#155724;margin-bottom:10px}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Money Vision | Financial Blueprint Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .playbook { max-width: 800px; margin: 0 auto; background: white; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%); color: white; padding: 30px; text-align: center; }
+        .header h1 { font-size: 28px; margin-bottom: 10px; }
+        .header p { font-size: 16px; opacity: 0.95; }
+        .meta { display: flex; justify-content: center; gap: 20px; margin-top: 15px; flex-wrap: wrap; }
+        .meta-item { background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px; font-size: 13px; }
+        .content { padding: 30px; }
+        .intro { background: linear-gradient(135deg, #f3e5f5, #e1bee7); border-left: 5px solid #9c27b0; padding: 20px; margin-bottom: 25px; border-radius: 0 10px 10px 0; }
+        .intro h2 { color: #7b1fa2; margin-bottom: 10px; font-size: 18px; }
+        .intro p { color: #4a148c; font-size: 15px; line-height: 1.6; }
+        .vision-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 30px; }
+        .vision-card { background: white; border: 3px solid #e0e0e0; border-radius: 16px; padding: 25px; text-align: center; cursor: pointer; transition: all 0.3s; }
+        .vision-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .vision-card.selected { border-color: #9c27b0; background: linear-gradient(135deg, #f3e5f5, white); }
+        .vision-card .emoji { font-size: 50px; margin-bottom: 15px; }
+        .vision-card h3 { color: #333; margin-bottom: 10px; font-size: 20px; }
+        .vision-card p { color: #666; font-size: 14px; margin-bottom: 15px; }
+        .vision-card .timeline { background: #f5f5f5; padding: 8px 15px; border-radius: 20px; font-size: 12px; color: #666; display: inline-block; }
+        .vision-card.selected .timeline { background: #9c27b0; color: white; }
+        .detail-box { background: #f8f9fa; border-radius: 12px; padding: 25px; margin-bottom: 25px; display: none; }
+        .detail-box.active { display: block; }
+        .detail-box h3 { color: #9c27b0; margin-bottom: 15px; }
+        .milestone { display: flex; align-items: center; gap: 15px; padding: 12px 0; border-bottom: 1px solid #e0e0e0; }
+        .milestone:last-child { border-bottom: none; }
+        .milestone .month { background: #9c27b0; color: white; padding: 8px 15px; border-radius: 20px; font-size: 12px; font-weight: 600; min-width: 80px; text-align: center; }
+        .milestone .goal { color: #333; font-size: 14px; }
+        .why-box { background: #fff8e1; border: 2px solid #ffc107; border-radius: 12px; padding: 20px; margin-bottom: 25px; }
+        .why-box h4 { color: #f57f17; margin-bottom: 10px; }
+        .why-box p { color: #5d4037; font-size: 14px; line-height: 1.6; }
+        .write-section { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 12px; padding: 25px; margin-bottom: 25px; }
+        .write-section h4 { color: #2e7d32; margin-bottom: 15px; }
+        .write-section textarea { width: 100%; padding: 15px; border: 2px solid #a5d6a7; border-radius: 8px; font-size: 16px; min-height: 100px; resize: vertical; }
+        .write-section textarea:focus { outline: none; border-color: #4caf50; }
+        .checklist { background: #f5f5f5; border-radius: 12px; padding: 20px; }
+        .checklist h4 { color: #333; margin-bottom: 15px; }
+        .check-item { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-bottom: 1px solid #e0e0e0; }
+        .check-item:last-child { border-bottom: none; }
+        .check-item input[type="checkbox"] { width: 22px; height: 22px; margin-top: 2px; cursor: pointer; }
+        .check-item label { font-size: 15px; color: #333; cursor: pointer; flex: 1; }
+        .check-item.done label { text-decoration: line-through; color: #888; }
+        .progress-bar { background: #e0e0e0; height: 12px; border-radius: 6px; margin-top: 20px; overflow: hidden; }
+        .progress-fill { background: linear-gradient(90deg, #9c27b0, #7b1fa2); height: 100%; border-radius: 6px; transition: width 0.5s; }
+        .progress-text { text-align: center; margin-top: 10px; font-weight: 600; color: #9c27b0; }
+        .footer { background: #f5f5f5; padding: 20px; text-align: center; }
+        .btn-back { display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #9c27b0, #7b1fa2); color: white; text-decoration: none; border-radius: 25px; font-weight: 600; }
+        @media (max-width: 600px) { .vision-grid { grid-template-columns: 1fr; } }
+    </style>
 </head>
 <body>
-<div class="container">
-<div class="header">
-<h1>🎯 Choose Your Money Vision</h1>
-<p>Pick ONE goal to focus on for the next 90 days</p>
-</div>
-<div class="content">
-<div class="section">
-<h2>Why You Need a Vision</h2>
-<p>Without a clear goal, money just... disappears. When you have a specific vision, every spending decision becomes easier: "Does this help me reach my goal, or hurt it?"</p>
-</div>
+    <div class="playbook">
+        <div class="header">
+            <h1>🎯 Choose Your Money Vision</h1>
+            <p>Pick ONE big goal to focus on for the next 90 days</p>
+            <div class="meta">
+                <span class="meta-item">⏱️ 10 minutes</span>
+                <span class="meta-item">📊 Easy</span>
+                <span class="meta-item">🎯 Life-Changing</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="intro">
+                <h2>💡 Why You Need ONE Vision</h2>
+                <p>People who try to do everything at once usually do nothing. By picking ONE clear goal and focusing on it, you're 10x more likely to actually achieve it. This is your North Star - everything you do will move you toward this goal!</p>
+            </div>
+            
+            <div class="why-box">
+                <h4>🧠 The Psychology of Focus</h4>
+                <p>Your brain can only handle one big goal at a time. When you have a clear vision, every spending decision becomes easy: "Does this help me reach my goal?" If no, don't buy it!</p>
+            </div>
+            
+            <h3 style="margin-bottom: 20px; color: #333;">👇 Click to Select Your Vision:</h3>
+            
+            <div class="vision-grid">
+                <div class="vision-card" onclick="selectVision(this, 'debt-free')">
+                    <div class="emoji">💳</div>
+                    <h3>Become Debt-Free</h3>
+                    <p>Pay off all credit cards and loans. Feel the freedom of owing nothing!</p>
+                    <span class="timeline">Typical: 12-36 months</span>
+                </div>
+                <div class="vision-card" onclick="selectVision(this, 'emergency')">
+                    <div class="emoji">🛡️</div>
+                    <h3>$10K Emergency Fund</h3>
+                    <p>Build a safety net so unexpected expenses never stress you out again.</p>
+                    <span class="timeline">Typical: 6-18 months</span>
+                </div>
+                <div class="vision-card" onclick="selectVision(this, 'home')">
+                    <div class="emoji">🏠</div>
+                    <h3>Buy a Home</h3>
+                    <p>Save for a down payment and stop paying someone else's mortgage!</p>
+                    <span class="timeline">Typical: 2-5 years</span>
+                </div>
+                <div class="vision-card" onclick="selectVision(this, 'vacation')">
+                    <div class="emoji">✈️</div>
+                    <h3>Dream Vacation</h3>
+                    <p>Take that trip you've always wanted - paid in cash, no credit card debt!</p>
+                    <span class="timeline">Typical: 6-12 months</span>
+                </div>
+            </div>
+            
+            <div class="detail-box" id="detail-debt-free">
+                <h3>💳 Your Debt-Free Roadmap</h3>
+                <div class="milestone"><span class="month">Month 1</span><span class="goal">List all debts, stop using credit cards completely</span></div>
+                <div class="milestone"><span class="month">Month 2-3</span><span class="goal">Build mini emergency fund ($1,000) to avoid new debt</span></div>
+                <div class="milestone"><span class="month">Month 4+</span><span class="goal">Attack debt using Avalanche method (highest APR first)</span></div>
+                <div class="milestone"><span class="month">Final</span><span class="goal">Make final payment, cut up cards, CELEBRATE! 🎉</span></div>
+            </div>
+            
+            <div class="detail-box" id="detail-emergency">
+                <h3>🛡️ Your $10K Emergency Fund Roadmap</h3>
+                <div class="milestone"><span class="month">Month 1</span><span class="goal">Open high-yield savings account, set up auto-transfer</span></div>
+                <div class="milestone"><span class="month">Month 2-3</span><span class="goal">Reach $1,000 (mini emergency fund)</span></div>
+                <div class="milestone"><span class="month">Month 4-6</span><span class="goal">Reach $3,000 (1 month expenses)</span></div>
+                <div class="milestone"><span class="month">Month 7-12</span><span class="goal">Reach $10,000 (3 months expenses) 🎉</span></div>
+            </div>
+            
+            <div class="detail-box" id="detail-home">
+                <h3>🏠 Your Home Buying Roadmap</h3>
+                <div class="milestone"><span class="month">Month 1-6</span><span class="goal">Fix credit score, save initial $5,000</span></div>
+                <div class="milestone"><span class="month">Month 7-12</span><span class="goal">Research areas, get pre-approved, save $15,000</span></div>
+                <div class="milestone"><span class="month">Year 2</span><span class="goal">Continue saving, reach 5-10% down payment</span></div>
+                <div class="milestone"><span class="month">Year 3+</span><span class="goal">Start house hunting, close on your home! 🏡</span></div>
+            </div>
+            
+            <div class="detail-box" id="detail-vacation">
+                <h3>✈️ Your Dream Vacation Roadmap</h3>
+                <div class="milestone"><span class="month">Month 1</span><span class="goal">Choose destination, calculate total cost needed</span></div>
+                <div class="milestone"><span class="month">Month 2-3</span><span class="goal">Open vacation savings account, automate transfers</span></div>
+                <div class="milestone"><span class="month">Month 4-6</span><span class="goal">Hit 50% of goal, start booking (flights are cheaper early)</span></div>
+                <div class="milestone"><span class="month">Month 7+</span><span class="goal">Pay remaining balance, GO ON YOUR TRIP! 🎉</span></div>
+            </div>
+            
+            <div class="write-section">
+                <h4>✍️ Write Your Vision Statement</h4>
+                <p style="margin-bottom: 15px; color: #555;">Complete this sentence and read it every morning:</p>
+                <textarea id="vision-statement" placeholder="By [DATE], I will [YOUR GOAL] because [WHY IT MATTERS TO YOU]...
 
-<div class="section">
-<h2>Choose Your 90-Day Vision</h2>
-
-<div class="vision-card">
-<h3>🏆 Vision 1: Become Debt-Free</h3>
-<p>Pay off all credit cards and consumer debt. Feel the freedom of owing nothing to anyone.</p>
-<span class="timeline">Timeline: 6-24 months depending on debt</span>
-</div>
-
-<div class="vision-card">
-<h3>💰 Vision 2: Build $10K Emergency Fund</h3>
-<p>Never worry about unexpected expenses again. Sleep better knowing you're protected.</p>
-<span class="timeline">Timeline: 6-12 months</span>
-</div>
-
-<div class="vision-card">
-<h3>🏠 Vision 3: Save for a Home Down Payment</h3>
-<p>Stop paying someone else's mortgage. Build equity and wealth through homeownership.</p>
-<span class="timeline">Timeline: 12-36 months</span>
-</div>
-
-<div class="vision-card">
-<h3>✈️ Vision 4: Fund Your Dream Vacation</h3>
-<p>Take that trip you've always wanted - paid in CASH, no credit card debt after.</p>
-<span class="timeline">Timeline: 6-12 months</span>
-</div>
-
-<div class="vision-card">
-<h3>🚗 Vision 5: Buy a Car in Cash</h3>
-<p>No car payment = more money every month. Buy a reliable used car outright.</p>
-<span class="timeline">Timeline: 6-18 months</span>
-</div>
-</div>
-
-<div class="action-box">
-<h3>✍️ Your Action Step</h3>
-<p>1. Choose ONE vision above<br>
-2. Write it down and put it where you'll see it daily<br>
-3. Tell your accountability partner<br>
-4. Calculate exactly how much you need to save</p>
-</div>
-
-<div class="tip-box">
-<strong>💡 Pro Tip:</strong> Make it visual! Print a picture of your goal (the house, the vacation spot, the $0 balance) and tape it to your bathroom mirror.
-</div>
-
-<div class="section">
-<h2>The Power of ONE Goal</h2>
-<p>Don't try to do everything at once. Laser focus on ONE vision creates momentum. Once you achieve it, pick the next one. This is how wealth is built - one goal at a time.</p>
-</div>
-</div>
-</div>
+Example: By December 2025, I will have $10,000 in my emergency fund because I never want to feel stressed about money again and I want to show my kids that financial security is possible."></textarea>
+                <button onclick="saveVision()" style="margin-top: 10px; padding: 10px 20px; background: #4caf50; color: white; border: none; border-radius: 20px; cursor: pointer; font-weight: 600;">💾 Save My Vision</button>
+                <span id="save-status" style="margin-left: 10px; color: #4caf50; font-size: 14px;"></span>
+            </div>
+            
+            <div class="checklist">
+                <h4>✅ Complete These Steps:</h4>
+                <div class="check-item">
+                    <input type="checkbox" id="task1" onchange="updateProgress()">
+                    <label for="task1">Choose ONE vision from the options above</label>
+                </div>
+                <div class="check-item">
+                    <input type="checkbox" id="task2" onchange="updateProgress()">
+                    <label for="task2">Review the roadmap for your chosen vision</label>
+                </div>
+                <div class="check-item">
+                    <input type="checkbox" id="task3" onchange="updateProgress()">
+                    <label for="task3">Write your personal vision statement above</label>
+                </div>
+                <div class="check-item">
+                    <input type="checkbox" id="task4" onchange="updateProgress()">
+                    <label for="task4">Tell your accountability partner your vision</label>
+                </div>
+                <div class="check-item">
+                    <input type="checkbox" id="task5" onchange="updateProgress()">
+                    <label for="task5">Set phone wallpaper to remind you of your goal</label>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress" style="width: 0%"></div>
+                </div>
+                <div class="progress-text" id="progress-text">0% Complete</div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <a href="javascript:history.back()" class="btn-back">← Back to Blueprint</a>
+        </div>
+    </div>
+    
+    <script>
+        function selectVision(card, type) {
+            document.querySelectorAll('.vision-card').forEach(c => c.classList.remove('selected'));
+            document.querySelectorAll('.detail-box').forEach(d => d.classList.remove('active'));
+            card.classList.add('selected');
+            document.getElementById('detail-' + type).classList.add('active');
+            localStorage.setItem('selected_vision', type);
+        }
+        
+        function saveVision() {
+            const text = document.getElementById('vision-statement').value;
+            localStorage.setItem('vision_statement', text);
+            document.getElementById('save-status').textContent = '✓ Saved!';
+            setTimeout(() => document.getElementById('save-status').textContent = '', 2000);
+        }
+        
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('.checklist input[type="checkbox"]');
+            const checked = document.querySelectorAll('.checklist input[type="checkbox"]:checked').length;
+            const percent = Math.round((checked / checkboxes.length) * 100);
+            document.getElementById('progress').style.width = percent + '%';
+            document.getElementById('progress-text').textContent = percent + '% Complete';
+            checkboxes.forEach(cb => cb.closest('.check-item').classList.toggle('done', cb.checked));
+            localStorage.setItem('playbook_vision', JSON.stringify(Array.from(checkboxes).map(cb => cb.checked)));
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedVision = localStorage.getItem('selected_vision');
+            if (savedVision) {
+                const card = document.querySelector(`[onclick*="${savedVision}"]`);
+                if (card) selectVision(card, savedVision);
+            }
+            const savedStatement = localStorage.getItem('vision_statement');
+            if (savedStatement) document.getElementById('vision-statement').value = savedStatement;
+            const saved = localStorage.getItem('playbook_vision');
+            if (saved) {
+                JSON.parse(saved).forEach((state, i) => {
+                    const cb = document.querySelectorAll('.checklist input[type="checkbox"]')[i];
+                    if (cb && state) cb.checked = true;
+                });
+                updateProgress();
+            }
+        });
+    </script>
 </body>
 </html>

@@ -1,81 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quick Sell Guide | ASAP Playbook</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial,sans-serif;background:#f5f7fa;color:#333;line-height:1.6}.container{max-width:800px;margin:0 auto;padding:20px}.header{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:30px;border-radius:10px 10px 0 0;text-align:center}.header h1{font-size:28px;margin-bottom:10px}.header p{opacity:.9;font-size:16px}.content{background:#fff;padding:30px;border-radius:0 0 10px 10px;box-shadow:0 2px 10px rgba(0,0,0,.1)}.section{margin-bottom:30px}.section h2{color:#667eea;font-size:20px;margin-bottom:15px;padding-bottom:10px;border-bottom:2px solid #eee}.step{background:#f8f9fa;padding:15px;border-radius:8px;margin-bottom:15px;border-left:4px solid #667eea}.step h3{color:#333;margin-bottom:8px}.step p{color:#666;font-size:14px}.checklist{list-style:none;padding:0}.checklist li{padding:12px 15px;background:#fff;margin-bottom:8px;border-radius:6px;border:1px solid #e0e0e0;display:flex;align-items:center;gap:10px}.checklist input[type="checkbox"]{width:20px;height:20px;cursor:pointer}.tip-box{background:#fff3cd;border:1px solid #ffc107;padding:15px;border-radius:8px;margin:15px 0}.tip-box strong{color:#856404}.money-box{background:#d4edda;border:1px solid #c3e6cb;padding:15px;border-radius:8px;margin:15px 0}.money-box strong{color:#155724}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Sell Guide | Financial Blueprint Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .playbook { max-width: 800px; margin: 0 auto; background: white; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%); color: white; padding: 30px; text-align: center; }
+        .header h1 { font-size: 28px; margin-bottom: 10px; }
+        .header p { font-size: 16px; opacity: 0.95; }
+        .meta { display: flex; justify-content: center; gap: 20px; margin-top: 15px; flex-wrap: wrap; }
+        .meta-item { background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px; font-size: 13px; }
+        .content { padding: 30px; }
+        .intro { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-left: 5px solid #4caf50; padding: 20px; margin-bottom: 25px; border-radius: 0 10px 10px 0; }
+        .intro h2 { color: #2e7d32; margin-bottom: 10px; font-size: 18px; }
+        .intro p { color: #1b5e20; font-size: 15px; line-height: 1.6; }
+        .money-box { background: linear-gradient(135deg, #fff8e1, #ffecb3); border: 3px solid #ffc107; border-radius: 12px; padding: 25px; margin-bottom: 25px; text-align: center; }
+        .money-box h3 { color: #f57f17; margin-bottom: 15px; font-size: 20px; }
+        .money-examples { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+        .money-item { background: white; border-radius: 8px; padding: 15px; }
+        .money-item .item { font-size: 13px; color: #666; margin-bottom: 5px; }
+        .money-item .price { font-size: 24px; font-weight: 800; color: #2e7d32; }
+        .section { margin-bottom: 30px; }
+        .section-title { font-size: 20px; font-weight: 700; color: #333; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .section-title .num { background: #4caf50; color: white; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+        .platform-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 20px; }
+        .platform-card { background: #f8f9fa; border-radius: 12px; padding: 20px; border-left: 4px solid #4caf50; }
+        .platform-card h4 { color: #2e7d32; margin-bottom: 10px; font-size: 16px; }
+        .platform-card .best-for { font-size: 12px; color: #666; margin-bottom: 10px; }
+        .platform-card .tip { font-size: 13px; color: #555; line-height: 1.6; }
+        .photo-tips { background: #e3f2fd; border-radius: 12px; padding: 20px; margin-bottom: 20px; }
+        .photo-tips h4 { color: #1565c0; margin-bottom: 15px; }
+        .photo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+        .photo-do, .photo-dont { padding: 15px; border-radius: 8px; }
+        .photo-do { background: #e8f5e9; }
+        .photo-dont { background: #ffebee; }
+        .photo-do h5 { color: #2e7d32; margin-bottom: 10px; }
+        .photo-dont h5 { color: #c62828; margin-bottom: 10px; }
+        .photo-do li, .photo-dont li { font-size: 13px; padding: 5px 0; }
+        .pricing-box { background: #fff3e0; border: 2px solid #ff9800; border-radius: 12px; padding: 20px; margin-bottom: 20px; }
+        .pricing-box h4 { color: #e65100; margin-bottom: 15px; }
+        .pricing-formula { background: white; border-radius: 8px; padding: 20px; text-align: center; margin-bottom: 15px; }
+        .pricing-formula .formula { font-size: 24px; font-weight: 700; color: #e65100; margin-bottom: 10px; }
+        .pricing-formula p { color: #666; font-size: 14px; }
+        .script-box { background: #f3e5f5; border-radius: 12px; padding: 20px; margin-bottom: 20px; }
+        .script-box h4 { color: #7b1fa2; margin-bottom: 15px; }
+        .script { background: white; border-radius: 8px; padding: 15px; font-size: 14px; line-height: 1.8; border-left: 4px solid #9c27b0; margin-bottom: 15px; }
+        .script-label { font-weight: 600; color: #7b1fa2; margin-bottom: 5px; }
+        .safety-box { background: #ffebee; border: 2px solid #f44336; border-radius: 12px; padding: 20px; margin-bottom: 25px; }
+        .safety-box h4 { color: #c62828; margin-bottom: 15px; }
+        .safety-box ul { list-style: none; }
+        .safety-box li { padding: 8px 0; font-size: 14px; color: #333; }
+        .safety-box li::before { content: "⚠️ "; }
+        .checklist { background: #f5f5f5; border-radius: 12px; padding: 20px; }
+        .checklist h4 { color: #333; margin-bottom: 15px; }
+        .check-item { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-bottom: 1px solid #e0e0e0; }
+        .check-item:last-child { border-bottom: none; }
+        .check-item input[type="checkbox"] { width: 22px; height: 22px; margin-top: 2px; cursor: pointer; }
+        .check-item label { font-size: 15px; color: #333; cursor: pointer; flex: 1; }
+        .check-item.done label { text-decoration: line-through; color: #888; }
+        .progress-bar { background: #e0e0e0; height: 12px; border-radius: 6px; margin-top: 20px; overflow: hidden; }
+        .progress-fill { background: linear-gradient(90deg, #4caf50, #2e7d32); height: 100%; border-radius: 6px; transition: width 0.5s; }
+        .progress-text { text-align: center; margin-top: 10px; font-weight: 600; color: #4caf50; }
+        .footer { background: #f5f5f5; padding: 20px; text-align: center; }
+        .btn-back { display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #4caf50, #2e7d32); color: white; text-decoration: none; border-radius: 25px; font-weight: 600; }
+        @media (max-width: 600px) { .platform-grid, .photo-grid, .money-examples { grid-template-columns: 1fr; } }
+    </style>
 </head>
 <body>
-<div class="container">
-<div class="header">
-<h1>💵 Quick Sell Guide</h1>
-<p>Turn your stuff into cash within 48 hours</p>
-</div>
-<div class="content">
-<div class="section">
-<h2>The 48-Hour Selling Challenge</h2>
-<p>Your goal: List 3 items today, sell at least 1 within 48 hours. Price to SELL, not to get rich.</p>
-</div>
-
-<div class="section">
-<h2>What Sells FAST</h2>
-<ul class="checklist">
-<li><input type="checkbox"> <span><strong>Electronics</strong> - Old phones, tablets, laptops, gaming systems</span></li>
-<li><input type="checkbox"> <span><strong>Furniture</strong> - Anything in good condition</span></li>
-<li><input type="checkbox"> <span><strong>Baby/Kid items</strong> - Strollers, cribs, toys, clothes</span></li>
-<li><input type="checkbox"> <span><strong>Exercise equipment</strong> - Weights, bikes, treadmills</span></li>
-<li><input type="checkbox"> <span><strong>Tools</strong> - Power tools sell same day</span></li>
-<li><input type="checkbox"> <span><strong>Designer items</strong> - Bags, shoes, clothes</span></li>
-<li><input type="checkbox"> <span><strong>Appliances</strong> - Working small appliances</span></li>
-<li><input type="checkbox"> <span><strong>Sports equipment</strong> - Golf clubs, bikes, etc.</span></li>
-</ul>
-</div>
-
-<div class="section">
-<h2>Pricing for SPEED</h2>
-<div class="step">
-<h3>The 60-70% Rule</h3>
-<p>Price at 60-70% of what similar items are selling for. You want FAST cash, not maximum profit.</p>
-</div>
-<div class="step">
-<h3>Check Sold Prices</h3>
-<p>On Facebook Marketplace: Search your item → Filter by "Sold" to see what people actually paid</p>
-</div>
-</div>
-
-<div class="section">
-<h2>Photo Tips (Sells 3X Faster)</h2>
-<ul class="checklist">
-<li><input type="checkbox"> <span>Clean the item first</span></li>
-<li><input type="checkbox"> <span>Use natural daylight</span></li>
-<li><input type="checkbox"> <span>Take 4-6 photos from different angles</span></li>
-<li><input type="checkbox"> <span>Show any flaws honestly</span></li>
-<li><input type="checkbox"> <span>Include size reference (put a shoe or hand next to it)</span></li>
-</ul>
-</div>
-
-<div class="money-box">
-<strong>💰 Quick Cash Targets:</strong><br>
-Old phone: $50-300<br>
-Furniture piece: $50-200<br>
-Exercise equipment: $50-500<br>
-Kids stuff bundle: $25-100
-</div>
-
-<div class="tip-box">
-<strong>💡 Pro Tip:</strong> List on BOTH Facebook Marketplace AND OfferUp at the same time. First response gets it!
-</div>
-</div>
-</div>
-<script>
-document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
-  const key = 'playbook_quicksell_' + cb.closest('li').innerText.substring(0,20);
-  cb.checked = localStorage.getItem(key) === 'true';
-  cb.addEventListener('change', () => localStorage.setItem(key, cb.checked));
-});
-</script>
+    <div class="playbook">
+        <div class="header">
+            <h1>💰 Quick Sell Guide</h1>
+            <p>Turn your stuff into cash in 48 hours or less</p>
+            <div class="meta">
+                <span class="meta-item">⏱️ 30 min to list</span>
+                <span class="meta-item">📊 Easy</span>
+                <span class="meta-item">💵 Make $100-$500+</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="intro">
+                <h2>💡 The Fast Money Secret</h2>
+                <p>You're sitting on hundreds (maybe thousands) of dollars right now. That old phone in a drawer? $150. Those jeans you never wear? $25. The treadmill collecting dust? $200. Let's turn your clutter into cash TODAY!</p>
+            </div>
+            
+            <div class="money-box">
+                <h3>💵 What Your Stuff Is Worth:</h3>
+                <div class="money-examples">
+                    <div class="money-item">
+                        <div class="item">Old iPhone/Android</div>
+                        <div class="price">$75-$400</div>
+                    </div>
+                    <div class="money-item">
+                        <div class="item">Gaming Console</div>
+                        <div class="price">$100-$300</div>
+                    </div>
+                    <div class="money-item">
+                        <div class="item">Designer Bag</div>
+                        <div class="price">$50-$500</div>
+                    </div>
+                    <div class="money-item">
+                        <div class="item">Exercise Equipment</div>
+                        <div class="price">$50-$400</div>
+                    </div>
+                    <div class="money-item">
+                        <div class="item">Kids Clothes (lot)</div>
+                        <div class="price">$30-$100</div>
+                    </div>
+                    <div class="money-item">
+                        <div class="item">Furniture</div>
+                        <div class="price">$50-$500</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title"><span class="num">1</span> Where to Sell (Pick One!)</div>
+                <div class="platform-grid">
+                    <div class="platform-card">
+                        <h4>📘 Facebook Marketplace</h4>
+                        <div class="best-for">Best for: Furniture, electronics, local items</div>
+                        <div class="tip">✓ Free to list<br>✓ Meet locally = instant cash<br>✓ Most buyers are here</div>
+                    </div>
+                    <div class="platform-card">
+                        <h4>📱 OfferUp</h4>
+                        <div class="best-for">Best for: Everything local</div>
+                        <div class="tip">✓ Free to list<br>✓ Built-in messaging<br>✓ User ratings for safety</div>
+                    </div>
+                    <div class="platform-card">
+                        <h4>🏷️ Poshmark</h4>
+                        <div class="best-for">Best for: Clothes, shoes, accessories</div>
+                        <div class="tip">✓ Ships for you (prepaid label)<br>✓ 20% fee but easy<br>✓ Great for brands</div>
+                    </div>
+                    <div class="platform-card">
+                        <h4>🌐 Craigslist</h4>
+                        <div class="best-for">Best for: Large items, cars, free stuff</div>
+                        <div class="tip">✓ Totally free<br>✓ Cash deals<br>✓ Be extra careful meeting</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title"><span class="num">2</span> Take Great Photos (5 min)</div>
+                <div class="photo-tips">
+                    <h4>📸 Photos That SELL:</h4>
+                    <div class="photo-grid">
+                        <div class="photo-do">
+                            <h5>✅ DO:</h5>
+                            <ul>
+                                <li>✅ Use natural light (by a window)</li>
+                                <li>✅ Clean the item first!</li>
+                                <li>✅ Take 4-6 photos from angles</li>
+                                <li>✅ Show any flaws honestly</li>
+                                <li>✅ Plain background (white wall)</li>
+                            </ul>
+                        </div>
+                        <div class="photo-dont">
+                            <h5>❌ DON'T:</h5>
+                            <ul>
+                                <li>❌ Dark/blurry photos</li>
+                                <li>❌ Messy background</li>
+                                <li>❌ Only 1 photo</li>
+                                <li>❌ Hide damage</li>
+                                <li>❌ Use flash (harsh shadows)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title"><span class="num">3</span> Price It to Sell FAST</div>
+                <div class="pricing-box">
+                    <h4>💲 The 60-70% Rule:</h4>
+                    <div class="pricing-formula">
+                        <div class="formula">Your Price = 60-70% of Retail</div>
+                        <p>$100 retail item → Price at $60-$70<br>$50 retail item → Price at $30-$35</p>
+                    </div>
+                    <p style="font-size: 14px; color: #5d4037;"><strong>Want to sell in 24 hours?</strong> Price at 50% of retail. You'll get flooded with messages!</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title"><span class="num">4</span> Write a Quick Description</div>
+                <div class="script-box">
+                    <h4>📝 Copy This Template:</h4>
+                    <div class="script">
+                        <div class="script-label">Title:</div>
+                        [Brand] [Item] - [Size/Specs] - Great Condition!<br><br>
+                        <div class="script-label">Description:</div>
+                        Selling my [item]. [1 sentence about why - moving, upgrade, etc.]<br><br>
+                        • Condition: [Excellent/Good/Fair]<br>
+                        • Retail price: $[X]<br>
+                        • Asking: $[Your price] (firm/OBO)<br><br>
+                        Pickup in [Your area]. Cash only. Serious buyers message me!
+                    </div>
+                </div>
+            </div>
+            
+            <div class="safety-box">
+                <h4>🛡️ Stay Safe When Meeting Buyers:</h4>
+                <ul>
+                    <li>Meet at a police station parking lot (many have "safe exchange zones")</li>
+                    <li>Meet during daylight hours only</li>
+                    <li>Bring a friend or tell someone where you're going</li>
+                    <li>Cash only - never accept checks or payment apps from strangers</li>
+                    <li>Trust your gut - if something feels off, cancel</li>
+                </ul>
+            </div>
+            
+            <div class="checklist">
+                <h4>✅ Your 48-Hour Sell Challenge:</h4>
+                <div class="check-item">
+                    <input type="checkbox" id="task1" onchange="updateProgress()">
+                    <label for="task1">Walk through your home and find 3 items to sell</label>
+                </div>
+                <div class="check-item">
+                    <input type="checkbox" id="task2" onchange="updateProgress()">
+                    <label for="task2">Clean the items and take 4-6 photos of each</label>
+                </div>
+                <div class="check-item">
+                    <input type="checkbox" id="task3" onchange="updateProgress()">
+                    <label for="task3">Research prices (search the item on the platform)</label>
+                </div>
+                <div class="check-item">
+                    <input type="checkbox" id="task4" onchange="updateProgress()">
+                    <label for="task4">Write descriptions using the template above</label>
+                </div>
+                <div class="check-item">
+                    <input type="checkbox" id="task5" onchange="updateProgress()">
+                    <label for="task5">Post all 3 items on Facebook Marketplace</label>
+                </div>
+                <div class="check-item">
+                    <input type="checkbox" id="task6" onchange="updateProgress()">
+                    <label for="task6">Respond to messages within 1 hour</label>
+                </div>
+                <div class="check-item">
+                    <input type="checkbox" id="task7" onchange="updateProgress()">
+                    <label for="task7">Complete your first sale!</label>
+                </div>
+                <div class="check-item">
+                    <input type="checkbox" id="task8" onchange="updateProgress()">
+                    <label for="task8">Put the cash directly into savings!</label>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress" style="width: 0%"></div>
+                </div>
+                <div class="progress-text" id="progress-text">0% Complete</div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <a href="javascript:history.back()" class="btn-back">← Back to Blueprint</a>
+        </div>
+    </div>
+    
+    <script>
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('.checklist input[type="checkbox"]');
+            const checked = document.querySelectorAll('.checklist input[type="checkbox"]:checked').length;
+            const percent = Math.round((checked / checkboxes.length) * 100);
+            document.getElementById('progress').style.width = percent + '%';
+            document.getElementById('progress-text').textContent = percent + '% Complete';
+            checkboxes.forEach(cb => cb.closest('.check-item').classList.toggle('done', cb.checked));
+            localStorage.setItem('playbook_quick_sell', JSON.stringify(Array.from(checkboxes).map(cb => cb.checked)));
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook_quick_sell');
+            if (saved) {
+                JSON.parse(saved).forEach((state, i) => {
+                    const cb = document.querySelectorAll('.checklist input[type="checkbox"]')[i];
+                    if (cb && state) cb.checked = true;
+                });
+                updateProgress();
+            }
+        });
+    </script>
 </body>
 </html>
