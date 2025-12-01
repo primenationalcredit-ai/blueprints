@@ -1,215 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unsubscribe from Marketing Emails | Financial Blueprint Playbook</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Arial, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
-        .playbook { max-width: 800px; margin: 0 auto; background: white; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); overflow: hidden; }
-        .header { background: linear-gradient(135deg, #3f51b5 0%, #303f9f 100%); color: white; padding: 30px; text-align: center; }
-        .header h1 { font-size: 28px; margin-bottom: 10px; }
-        .header p { font-size: 16px; opacity: 0.95; }
-        .meta { display: flex; justify-content: center; gap: 20px; margin-top: 15px; flex-wrap: wrap; }
-        .meta-item { background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px; font-size: 13px; }
-        .content { padding: 30px; }
-        .intro { background: linear-gradient(135deg, #e8eaf6, #c5cae9); border-left: 5px solid #3f51b5; padding: 20px; margin-bottom: 25px; border-radius: 0 10px 10px 0; }
-        .intro h2 { color: #303f9f; margin-bottom: 10px; font-size: 18px; }
-        .intro p { color: #1a237e; font-size: 15px; line-height: 1.6; }
-        .stat-box { background: #fff3e0; border: 2px solid #ff9800; border-radius: 12px; padding: 20px; margin-bottom: 25px; text-align: center; }
-        .stat-box .number { font-size: 48px; font-weight: 800; color: #e65100; }
-        .stat-box p { color: #5d4037; font-size: 16px; margin-top: 10px; }
-        .section { margin-bottom: 30px; }
-        .section-title { font-size: 20px; font-weight: 700; color: #333; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
-        .section-title .num { background: #3f51b5; color: white; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; }
-        .method-card { background: #f8f9fa; border-radius: 12px; padding: 20px; margin-bottom: 15px; border-left: 4px solid #3f51b5; }
-        .method-card h4 { color: #303f9f; margin-bottom: 10px; font-size: 16px; }
-        .method-card p { color: #555; font-size: 14px; line-height: 1.6; }
-        .method-card .steps { margin-top: 10px; }
-        .method-card .step { padding: 8px 0; font-size: 13px; }
-        .hit-list { background: #ffebee; border-radius: 12px; padding: 20px; margin-bottom: 25px; }
-        .hit-list h4 { color: #c62828; margin-bottom: 15px; }
-        .hit-list-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-        .hit-item { background: white; border-radius: 8px; padding: 12px; text-align: center; font-size: 13px; color: #333; }
-        .quick-tip { background: #e8f5e9; border: 2px solid #4caf50; border-radius: 12px; padding: 20px; margin-bottom: 25px; }
-        .quick-tip h4 { color: #2e7d32; margin-bottom: 10px; }
-        .quick-tip p { color: #1b5e20; font-size: 14px; line-height: 1.6; }
-        .checklist { background: #f5f5f5; border-radius: 12px; padding: 20px; }
-        .checklist h4 { color: #333; margin-bottom: 15px; }
-        .check-item { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-bottom: 1px solid #e0e0e0; }
-        .check-item:last-child { border-bottom: none; }
-        .check-item input[type="checkbox"] { width: 22px; height: 22px; margin-top: 2px; cursor: pointer; }
-        .check-item label { font-size: 15px; color: #333; cursor: pointer; flex: 1; }
-        .check-item.done label { text-decoration: line-through; color: #888; }
-        .progress-bar { background: #e0e0e0; height: 12px; border-radius: 6px; margin-top: 20px; overflow: hidden; }
-        .progress-fill { background: linear-gradient(90deg, #3f51b5, #303f9f); height: 100%; border-radius: 6px; transition: width 0.5s; }
-        .progress-text { text-align: center; margin-top: 10px; font-weight: 600; color: #3f51b5; }
-        .footer { background: #f5f5f5; padding: 20px; text-align: center; }
-        .btn-back { display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #3f51b5, #303f9f); color: white; text-decoration: none; border-radius: 25px; font-weight: 600; }
-        @media (max-width: 600px) { .hit-list-grid { grid-template-columns: repeat(2, 1fr); } }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unsubscribe from Marketing Emails | ASAP Playbook</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial,sans-serif;background:#f5f7fa;color:#333;line-height:1.6}.container{max-width:800px;margin:0 auto;padding:20px}.header{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:30px;border-radius:10px 10px 0 0;text-align:center}.header h1{font-size:28px;margin-bottom:10px}.header p{opacity:.9;font-size:16px}.content{background:#fff;padding:30px;border-radius:0 0 10px 10px;box-shadow:0 2px 10px rgba(0,0,0,.1)}.section{margin-bottom:30px}.section h2{color:#667eea;font-size:20px;margin-bottom:15px;padding-bottom:10px;border-bottom:2px solid #eee}.step{background:#f8f9fa;padding:15px;border-radius:8px;margin-bottom:15px;border-left:4px solid #667eea}.step h3{color:#333;margin-bottom:8px}.step p{color:#666;font-size:14px}.checklist{list-style:none;padding:0}.checklist li{padding:12px 15px;background:#fff;margin-bottom:8px;border-radius:6px;border:1px solid #e0e0e0;display:flex;align-items:center;gap:10px}.checklist input[type="checkbox"]{width:20px;height:20px;cursor:pointer;flex-shrink:0}.tip-box{background:#fff3cd;border:1px solid #ffc107;padding:15px;border-radius:8px;margin:15px 0}.tip-box strong{color:#856404}.success-box{background:#d4edda;border:1px solid #c3e6cb;padding:15px;border-radius:8px;margin:15px 0}.success-box strong{color:#155724}
+</style>
 </head>
 <body>
-    <div class="playbook">
-        <div class="header">
-            <h1>📧 Unsubscribe from Marketing Emails</h1>
-            <p>Stop the temptation from reaching your inbox</p>
-            <div class="meta">
-                <span class="meta-item">⏱️ 15 minutes</span>
-                <span class="meta-item">📊 Easy</span>
-                <span class="meta-item">🛡️ Prevents Impulse Buys</span>
-            </div>
-        </div>
-        
-        <div class="content">
-            <div class="intro">
-                <h2>🎯 Why This Matters</h2>
-                <p>Those "50% OFF TODAY ONLY!" emails are designed to make you spend money you didn't plan to spend. Every email is a temptation. By unsubscribing, you remove the temptation completely. Out of sight, out of mind, money in your pocket!</p>
-            </div>
-            
-            <div class="stat-box">
-                <div class="number">44%</div>
-                <p>of people have made a purchase because of a promotional email in the last year</p>
-            </div>
-            
-            <div class="section">
-                <div class="section-title"><span class="num">1</span> The Hit List (Unsubscribe from ALL of these)</div>
-                <div class="hit-list">
-                    <h4>🎯 Priority Unsubscribes:</h4>
-                    <div class="hit-list-grid">
-                        <div class="hit-item">Amazon</div>
-                        <div class="hit-item">Target</div>
-                        <div class="hit-item">Walmart</div>
-                        <div class="hit-item">Kohl's</div>
-                        <div class="hit-item">Old Navy/Gap</div>
-                        <div class="hit-item">Nike</div>
-                        <div class="hit-item">Sephora</div>
-                        <div class="hit-item">Ulta</div>
-                        <div class="hit-item">Groupon</div>
-                        <div class="hit-item">Wayfair</div>
-                        <div class="hit-item">DoorDash</div>
-                        <div class="hit-item">Uber Eats</div>
-                        <div class="hit-item">Shein</div>
-                        <div class="hit-item">ASOS</div>
-                        <div class="hit-item">ANY retailer!</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="section">
-                <div class="section-title"><span class="num">2</span> How to Unsubscribe (3 Methods)</div>
-                
-                <div class="method-card">
-                    <h4>🚀 Method 1: One-Click Easy Way</h4>
-                    <p>Open any promotional email → Scroll to the VERY bottom → Click "Unsubscribe" → Confirm</p>
-                    <div class="steps">
-                        <div class="step">⚠️ Warning: Some will try to trick you with "Update Preferences" - look for actual "Unsubscribe"</div>
-                    </div>
-                </div>
-                
-                <div class="method-card">
-                    <h4>⚡ Method 2: Mass Unsubscribe with Unroll.me (FREE)</h4>
-                    <p>This free service scans your email and lets you unsubscribe from EVERYTHING at once!</p>
-                    <div class="steps">
-                        <div class="step">1. Go to unroll.me</div>
-                        <div class="step">2. Connect your email</div>
-                        <div class="step">3. See ALL your subscriptions in one place</div>
-                        <div class="step">4. Click "Unsubscribe" on each one you don't want</div>
-                    </div>
-                </div>
-                
-                <div class="method-card">
-                    <h4>📱 Method 3: Gmail One-Click (Gmail users only)</h4>
-                    <p>Gmail shows an "Unsubscribe" link right next to the sender's name at the top of promotional emails. Just click it!</p>
-                </div>
-            </div>
-            
-            <div class="quick-tip">
-                <h4>💡 Pro Tip: Search & Destroy</h4>
-                <p>In your email, search for these terms and unsubscribe from everything that comes up:</p>
-                <p style="margin-top: 10px;"><strong>Search:</strong> "unsubscribe" OR "sale" OR "% off" OR "limited time" OR "deal"</p>
-            </div>
-            
-            <div class="section">
-                <div class="section-title"><span class="num">3</span> Block Future Sign-Ups</div>
-                <div class="method-card">
-                    <h4>🛡️ Stop Signing Up in the First Place</h4>
-                    <p>Retailers trick you into giving your email at checkout with "10% off your first order!" - DON'T DO IT!</p>
-                    <div class="steps">
-                        <div class="step">• At checkout, SKIP the email field if possible</div>
-                        <div class="step">• Uncheck "Send me promotions" boxes</div>
-                        <div class="step">• The 10% "savings" leads to 1000% more spending from tempting emails</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="checklist">
-                <h4>✅ Your 15-Minute Unsubscribe Sprint:</h4>
-                <div class="check-item">
-                    <input type="checkbox" id="task1" onchange="updateProgress()">
-                    <label for="task1">Open your email inbox</label>
-                </div>
-                <div class="check-item">
-                    <input type="checkbox" id="task2" onchange="updateProgress()">
-                    <label for="task2">Search "unsubscribe" to find all promotional emails</label>
-                </div>
-                <div class="check-item">
-                    <input type="checkbox" id="task3" onchange="updateProgress()">
-                    <label for="task3">Unsubscribe from 5 retailers (Amazon, Target, etc.)</label>
-                </div>
-                <div class="check-item">
-                    <input type="checkbox" id="task4" onchange="updateProgress()">
-                    <label for="task4">Unsubscribe from 5 more retailers</label>
-                </div>
-                <div class="check-item">
-                    <input type="checkbox" id="task5" onchange="updateProgress()">
-                    <label for="task5">Unsubscribe from all food delivery apps</label>
-                </div>
-                <div class="check-item">
-                    <input type="checkbox" id="task6" onchange="updateProgress()">
-                    <label for="task6">Unsubscribe from any "deal" sites (Groupon, Slickdeals, etc.)</label>
-                </div>
-                <div class="check-item">
-                    <input type="checkbox" id="task7" onchange="updateProgress()">
-                    <label for="task7">Total: Unsubscribed from 10+ promotional emails</label>
-                </div>
-                <div class="check-item">
-                    <input type="checkbox" id="task8" onchange="updateProgress()">
-                    <label for="task8">Set reminder: If I get new promo emails, unsubscribe immediately</label>
-                </div>
-                <div class="progress-bar">
-                    <div class="progress-fill" id="progress" style="width: 0%"></div>
-                </div>
-                <div class="progress-text" id="progress-text">0% Complete</div>
-            </div>
-        </div>
-        
-        <div class="footer">
-            <a href="javascript:history.back()" class="btn-back">← Back to Blueprint</a>
-        </div>
-    </div>
-    
-    <script>
-        function updateProgress() {
-            const checkboxes = document.querySelectorAll('.checklist input[type="checkbox"]');
-            const checked = document.querySelectorAll('.checklist input[type="checkbox"]:checked').length;
-            const percent = Math.round((checked / checkboxes.length) * 100);
-            document.getElementById('progress').style.width = percent + '%';
-            document.getElementById('progress-text').textContent = percent + '% Complete';
-            checkboxes.forEach(cb => cb.closest('.check-item').classList.toggle('done', cb.checked));
-            localStorage.setItem('playbook_unsubscribe', JSON.stringify(Array.from(checkboxes).map(cb => cb.checked)));
-        }
-        document.addEventListener('DOMContentLoaded', function() {
-            const saved = localStorage.getItem('playbook_unsubscribe');
-            if (saved) {
-                JSON.parse(saved).forEach((state, i) => {
-                    const cb = document.querySelectorAll('.checklist input[type="checkbox"]')[i];
-                    if (cb && state) cb.checked = true;
-                });
-                updateProgress();
-            }
-        });
-    </script>
+<div class="container">
+<div class="header">
+<h1>📧 Unsubscribe from Marketing Emails</h1>
+<p>Stop the daily temptation hitting your inbox</p>
+</div>
+<div class="content">
+<div class="section">
+<h2>Why This Works</h2>
+<p>Every "SALE 50% OFF!" email is designed by marketing experts to make you spend money you weren't planning to spend. These emails create artificial urgency and FOMO. Unsubscribing removes the trigger completely - you can't be tempted by deals you never see.</p>
+</div>
+
+<div class="success-box">
+<strong>💰 Impact:</strong> The average promotional email has a 2-5% purchase rate. If you get 10 emails/day, that's constant temptation. Remove it!
+</div>
+
+<div class="section">
+<h2>Quick Method: Use Unroll.me</h2>
+<div class="step">
+<h3>Step 1: Go to unroll.me</h3>
+<p>This free service scans your inbox and shows ALL your subscriptions in one place.</p>
+</div>
+<div class="step">
+<h3>Step 2: Connect your email</h3>
+<p>Works with Gmail, Yahoo, Outlook, and most email providers. Takes 2 minutes.</p>
+</div>
+<div class="step">
+<h3>Step 3: Mass unsubscribe</h3>
+<p>Unsubscribe from ALL retail and promotional emails with one click. Done!</p>
+</div>
+</div>
+
+<div class="section">
+<h2>Manual Method: Priority Unsubscribes</h2>
+<ul class="checklist">
+<li><input type="checkbox"> <span><strong>Amazon</strong> - Daily deals and recommendations</span></li>
+<li><input type="checkbox"> <span><strong>Target</strong> - Circle offers and weekly ads</span></li>
+<li><input type="checkbox"> <span><strong>Walmart</strong> - Rollback alerts</span></li>
+<li><input type="checkbox"> <span><strong>Kohl's</strong> - Kohl's Cash reminders</span></li>
+<li><input type="checkbox"> <span><strong>Old Navy/Gap/Banana Republic</strong> - Sale notifications</span></li>
+<li><input type="checkbox"> <span><strong>Macy's/Nordstrom</strong> - Department store deals</span></li>
+<li><input type="checkbox"> <span><strong>Groupon</strong> - Daily deals</span></li>
+<li><input type="checkbox"> <span><strong>LivingSocial</strong> - Local deals</span></li>
+<li><input type="checkbox"> <span><strong>RetailMeNot</strong> - Coupon alerts</span></li>
+<li><input type="checkbox"> <span><strong>Slickdeals</strong> - "Hot deals"</span></li>
+<li><input type="checkbox"> <span><strong>Credit card rewards emails</strong> - "Earn 5X points at..."</span></li>
+<li><input type="checkbox"> <span><strong>Any store you've ever shopped at</strong></span></li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Gmail Inbox Hack</h2>
+<div class="step">
+<h3>Search and Destroy Method</h3>
+<p>In Gmail, search "unsubscribe" - this shows all promotional emails. Go through and unsubscribe from each one. Takes 15-20 minutes but saves you hundreds.</p>
+</div>
+<div class="step">
+<h3>Create a Filter (Nuclear Option)</h3>
+<p>Search: "unsubscribe" → Create filter → Skip inbox, Delete automatically. This catches any future promotional emails you missed!</p>
+</div>
+</div>
+
+<div class="tip-box">
+<strong>💡 Pro Tip:</strong> Set aside 15 minutes right now. Open your email, search "unsubscribe", and click unsubscribe on every promotional email you find. Aim for at least 10 today!
+</div>
+
+<div class="section">
+<h2>After Unsubscribing</h2>
+<ul class="checklist">
+<li><input type="checkbox"> <span>Check your Promotions/Spam folders for stragglers</span></li>
+<li><input type="checkbox"> <span>Mark any remaining promotional emails as spam</span></li>
+<li><input type="checkbox"> <span>When new ones appear, unsubscribe immediately</span></li>
+<li><input type="checkbox"> <span>Never click "unsubscribe" on suspicious emails (just block)</span></li>
+<li><input type="checkbox"> <span>Enjoy your clean, temptation-free inbox!</span></li>
+</ul>
+</div>
+
+<div class="success-box">
+<strong>✅ The Result:</strong> A clean inbox means fewer daily temptations. No more "limited time" anxiety. No more impulse clicks. Just peace and extra money in your account.
+</div>
+</div>
+</div>
+<script>
+document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+  const key = 'playbook_unsubscribe_' + cb.closest('li').innerText.substring(0,25);
+  cb.checked = localStorage.getItem(key) === 'true';
+  cb.addEventListener('change', () => localStorage.setItem(key, cb.checked));
+});
+</script>
 </body>
 </html>
