@@ -1,1115 +1,812 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expense Reduction Playbooks | ASAP Credit Repair</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #063d86;
-            --primary-dark: #042a5c;
-            --primary-light: #0a4fa8;
-            --accent: #00c9a7;
-            --accent-light: #00e6be;
-            --bg: #f8fafc;
-            --card-bg: #ffffff;
-            --text: #1e293b;
-            --text-light: #64748b;
-            --border: #e2e8f0;
-            --success: #10b981;
-            --warning: #f59e0b;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
-            padding: 60px 20px 80px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.5;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .hero-icon {
-            width: 80px;
-            height: 80px;
-            background: rgba(255,255,255,0.15);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 24px;
-            font-size: 40px;
-        }
-        
-        .hero h1 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 700;
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto 32px;
-        }
-        
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-        
-        .stat {
-            text-align: center;
-        }
-        
-        .stat-number {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--accent);
-        }
-        
-        .stat-label {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-        
-        /* Search Section */
-        .search-section {
-            max-width: 600px;
-            margin: -30px auto 40px;
-            padding: 0 20px;
-            position: relative;
-            z-index: 10;
-        }
-        
-        .search-box {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 10px 40px rgba(6, 61, 134, 0.15);
-            padding: 8px;
-            display: flex;
-            gap: 8px;
-        }
-        
-        .search-box input {
-            flex: 1;
-            border: none;
-            padding: 16px 20px;
-            font-size: 1rem;
-            font-family: inherit;
-            outline: none;
-            border-radius: 12px;
-            background: var(--bg);
-        }
-        
-        .search-box button {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 16px 32px;
-            border-radius: 12px;
-            font-family: inherit;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        
-        .search-box button:hover {
-            background: var(--primary-light);
-        }
-        
-        /* Main Content */
-        .main-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px 60px;
-        }
-        
-        /* How It Works */
-        .how-it-works {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 50px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-        }
-        
-        .how-it-works h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            text-align: center;
-            color: var(--primary);
-        }
-        
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-        }
-        
-        .step {
-            text-align: center;
-            padding: 20px;
-        }
-        
-        .step-number {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 0 auto 16px;
-        }
-        
-        .step h3 {
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-            color: var(--text);
-        }
-        
-        .step p {
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-        
-        /* Categories */
-        .categories-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 24px;
-            flex-wrap: wrap;
-            gap: 16px;
-        }
-        
-        .categories-header h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.8rem;
-            color: var(--text);
-        }
-        
-        .filter-pills {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-        
-        .filter-pill {
-            padding: 8px 16px;
-            border-radius: 20px;
-            border: 2px solid var(--border);
-            background: white;
-            font-family: inherit;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        
-        .filter-pill:hover, .filter-pill.active {
-            border-color: var(--primary);
-            background: var(--primary);
-            color: white;
-        }
-        
-        /* Category Grid */
-        .category-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 24px;
-            margin-bottom: 40px;
-        }
-        
-        .category-card {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: all 0.3s;
-            border: 1px solid var(--border);
-        }
-        
-        .category-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(6, 61, 134, 0.12);
-        }
-        
-        .category-header {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            padding: 20px 24px;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-        
-        .category-icon {
-            width: 48px;
-            height: 48px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-        }
-        
-        .category-title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-        
-        .category-count {
-            font-size: 0.85rem;
-            opacity: 0.8;
-        }
-        
-        .category-playbooks {
-            padding: 16px;
-        }
-        
-        .playbook-item {
-            display: flex;
-            align-items: center;
-            padding: 12px 16px;
-            border-radius: 10px;
-            text-decoration: none;
-            color: var(--text);
-            transition: all 0.2s;
-            gap: 12px;
-        }
-        
-        .playbook-item:hover {
-            background: var(--bg);
-        }
-        
-        .playbook-check {
-            width: 20px;
-            height: 20px;
-            border: 2px solid var(--border);
-            border-radius: 50%;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            color: white;
-            transition: all 0.2s;
-        }
-        
-        .playbook-item:hover .playbook-check {
-            border-color: var(--primary);
-            background: var(--primary);
-        }
-        
-        .playbook-item:hover .playbook-check::before {
-            content: '→';
-        }
-        
-        .playbook-name {
-            flex: 1;
-            font-size: 0.95rem;
-        }
-        
-        .playbook-time {
-            font-size: 0.8rem;
-            color: var(--text-light);
-            background: var(--bg);
-            padding: 4px 10px;
-            border-radius: 12px;
-        }
-        
-        .see-all {
-            display: block;
-            text-align: center;
-            padding: 14px;
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            border-top: 1px solid var(--border);
-            transition: background 0.2s;
-        }
-        
-        .see-all:hover {
-            background: var(--bg);
-        }
-        
-        /* Quick Wins Section */
-        .quick-wins {
-            background: linear-gradient(135deg, var(--accent), #00a389);
-            border-radius: 20px;
-            padding: 40px;
-            color: white;
-            margin-bottom: 40px;
-        }
-        
-        .quick-wins h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.8rem;
-            margin-bottom: 8px;
-        }
-        
-        .quick-wins > p {
-            opacity: 0.9;
-            margin-bottom: 24px;
-        }
-        
-        .quick-wins-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 16px;
-        }
-        
-        .quick-win-item {
-            background: rgba(255,255,255,0.15);
-            border-radius: 12px;
-            padding: 16px 20px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            color: white;
-            transition: all 0.2s;
-        }
-        
-        .quick-win-item:hover {
-            background: rgba(255,255,255,0.25);
-            transform: translateX(4px);
-        }
-        
-        .quick-win-icon {
-            font-size: 24px;
-        }
-        
-        .quick-win-text h4 {
-            font-size: 1rem;
-            margin-bottom: 2px;
-        }
-        
-        .quick-win-text span {
-            font-size: 0.85rem;
-            opacity: 0.8;
-        }
-        
-        /* Help Section */
-        .help-section {
-            margin-bottom: 40px;
-        }
-        
-        .help-card {
-            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
-            border: 2px solid #bae6fd;
-            border-radius: 20px;
-            padding: 32px 40px;
-            display: flex;
-            align-items: center;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
-        
-        .help-icon {
-            width: 64px;
-            height: 64px;
-            background: white;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            flex-shrink: 0;
-        }
-        
-        .help-content {
-            flex: 1;
-            min-width: 250px;
-        }
-        
-        .help-content h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.4rem;
-            color: var(--text);
-            margin-bottom: 8px;
-        }
-        
-        .help-content p {
-            color: var(--text-light);
-            margin-bottom: 16px;
-            font-size: 1rem;
-        }
-        
-        .btn-chat {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 14px 28px;
-            border-radius: 12px;
-            font-family: inherit;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: all 0.2s;
-        }
-        
-        .btn-chat:hover {
-            background: var(--primary-light);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(6, 61, 134, 0.25);
-        }
-        
-        .btn-chat svg {
-            flex-shrink: 0;
-        }
-        
-        @media (max-width: 600px) {
-            .help-card {
-                flex-direction: column;
-                text-align: center;
-                padding: 24px;
-            }
-        }
-        
-        /* Footer CTA */
-        .footer-cta {
-            text-align: center;
-            padding: 60px 20px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-        }
-        
-        .footer-cta h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 2rem;
-            margin-bottom: 16px;
-            color: var(--text);
-        }
-        
-        .footer-cta p {
-            color: var(--text-light);
-            margin-bottom: 24px;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            padding: 16px 32px;
-            border-radius: 12px;
-            font-family: inherit;
-            font-size: 1rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            background: var(--primary-light);
-            transform: translateY(-2px);
-        }
-        
-        .btn-secondary {
-            background: var(--bg);
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-        
-        .btn-secondary:hover {
-            background: var(--primary);
-            color: white;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero {
-                padding: 40px 20px 60px;
-            }
-            
-            .hero-stats {
-                gap: 24px;
-            }
-            
-            .stat-number {
-                font-size: 2rem;
-            }
-            
-            .category-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .how-it-works {
-                padding: 30px 20px;
-            }
-            
-            .quick-wins {
-                padding: 30px 20px;
-            }
-        }
-        
-        /* No Results */
-        .no-results {
-            text-align: center;
-            padding: 60px 20px;
-            color: var(--text-light);
-        }
-        
-        .no-results h3 {
-            font-size: 1.3rem;
-            margin-bottom: 8px;
-            color: var(--text);
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expense Reduction Playbooks | ASAP Financial Playbooks</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f7fa;color:#333;line-height:1.6}
+.header{background:linear-gradient(135deg,#1e3a5f 0%,#2563eb 100%);color:#fff;padding:30px 20px;text-align:center;position:relative}
+.header h1{font-size:32px;margin-bottom:10px}
+.header p{opacity:0.9;font-size:16px;max-width:600px;margin:0 auto}
+.back-link{position:absolute;top:20px;left:20px;color:#fff;text-decoration:none;font-size:14px;opacity:0.8}
+.back-link:hover{opacity:1}
+.container{max-width:900px;margin:0 auto;padding:30px 20px}
+
+/* Quick Wins */
+.quick-wins{background:linear-gradient(135deg,#dbeafe 0%,#bfdbfe 100%);border:2px solid #2563eb;border-radius:12px;padding:25px;margin-bottom:30px}
+.quick-wins h3{color:#1e3a5f;font-size:18px;margin-bottom:8px}
+.quick-wins p{color:#1e40af;font-size:14px;margin-bottom:15px}
+.quick-wins-list{display:flex;flex-wrap:wrap;gap:10px}
+.quick-win-link{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;background:#fff;border:2px solid #2563eb;color:#1e3a5f;border-radius:8px;text-decoration:none;font-weight:600;font-size:13px;transition:all 0.2s}
+.quick-win-link:hover{background:#2563eb;color:#fff}
+
+/* Search */
+.search-container{margin-bottom:30px}
+.search-box{width:100%;padding:15px 20px;border:2px solid #e0e0e0;border-radius:10px;font-size:16px;background:#fff}
+.search-box:focus{outline:none;border-color:#2563eb}
+
+/* Category Accordion */
+.category{background:#fff;border-radius:12px;margin-bottom:15px;box-shadow:0 2px 10px rgba(0,0,0,0.08);overflow:hidden}
+.category-header{padding:20px 25px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;transition:background 0.2s}
+.category-header:hover{background:#f8fafc}
+.category-left{display:flex;align-items:center;gap:15px}
+.category-icon{font-size:32px}
+.category-title{font-size:18px;font-weight:700;color:#1e3a5f}
+.category-count{font-size:13px;color:#64748b;margin-top:2px}
+.category-arrow{font-size:20px;color:#94a3b8;transition:transform 0.3s}
+.category.open .category-arrow{transform:rotate(180deg)}
+
+/* Playbook List */
+.playbook-list{display:none;border-top:1px solid #e2e8f0}
+.category.open .playbook-list{display:block}
+.playbook-item{display:flex;align-items:center;justify-content:space-between;padding:15px 25px;border-bottom:1px solid #f1f5f9;text-decoration:none;color:#333;transition:background 0.2s}
+.playbook-item:last-child{border-bottom:none}
+.playbook-item:hover{background:#f0f9ff}
+.playbook-info{flex:1}
+.playbook-title{font-size:15px;font-weight:600;color:#1e3a5f;margin-bottom:3px}
+.playbook-desc{font-size:13px;color:#64748b}
+.playbook-meta{display:flex;align-items:center;gap:15px}
+.playbook-savings{font-size:13px;color:#059669;font-weight:600}
+.playbook-time{font-size:11px;padding:4px 10px;border-radius:15px;background:#f1f5f9;color:#475569}
+.playbook-arrow{color:#cbd5e1;font-size:18px}
+
+@media(max-width:600px){
+.playbook-item{flex-direction:column;align-items:flex-start;gap:10px}
+.playbook-meta{width:100%;justify-content:space-between}
+}
+</style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-icon">💰</div>
-            <h1>Expense Reduction Playbooks</h1>
-            <p>Step-by-step guides to cut your bills, eliminate waste, and keep more money in your pocket. Track your progress as you go!</p>
-            <div class="hero-stats">
-                <div class="stat">
-                    <div class="stat-number">140+</div>
-                    <div class="stat-label">Playbooks</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">17</div>
-                    <div class="stat-label">Categories</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">$500+</div>
-                    <div class="stat-label">Avg Monthly Savings</div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Search Section -->
-    <section class="search-section">
-        <div class="search-box">
-            <input type="text" id="searchInput" placeholder="Search playbooks (e.g., rent, insurance, groceries...)">
-            <button onclick="searchPlaybooks()">Search</button>
-        </div>
-    </section>
-    
-    <!-- Main Content -->
-    <main class="main-content">
-        <!-- How It Works -->
-        <section class="how-it-works">
-            <h2>How These Playbooks Work</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Pick a Playbook</h3>
-                    <p>Choose one that matches your situation and goals</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Follow the Steps</h3>
-                    <p>Each task is broken down with time estimates</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Check Off Progress</h3>
-                    <p>Your progress saves automatically</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Track Your Savings</h3>
-                    <p>Enter numbers to see your total savings</p>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Quick Wins -->
-        <section class="quick-wins">
-            <h2>⚡ Start with Quick Wins</h2>
-            <p>These take 15 minutes or less and save money immediately</p>
-            <div class="quick-wins-grid">
-                <a href="playbooks/cancel-1-item-you-pay-for-but-dont-use.html" class="quick-win-item">
-                    <span class="quick-win-icon">🗑️</span>
-                    <div class="quick-win-text">
-                        <h4>Cancel 1 Unused Item</h4>
-                        <span>5 min • Instant savings</span>
-                    </div>
-                </a>
-                <a href="playbooks/unsubscribe-from-10-marketing-emails.html" class="quick-win-item">
-                    <span class="quick-win-icon">📧</span>
-                    <div class="quick-win-text">
-                        <h4>Unsubscribe from 10 Emails</h4>
-                        <span>10 min • Fewer temptations</span>
-                    </div>
-                </a>
-                <a href="playbooks/water-heater-to-120f.html" class="quick-win-item">
-                    <span class="quick-win-icon">🌡️</span>
-                    <div class="quick-win-text">
-                        <h4>Water Heater to 120°F</h4>
-                        <span>5 min • Lower bills</span>
-                    </div>
-                </a>
-                <a href="playbooks/disable-1-click-on-amazon.html" class="quick-win-item">
-                    <span class="quick-win-icon">🛒</span>
-                    <div class="quick-win-text">
-                        <h4>Disable 1-Click Amazon</h4>
-                        <span>2 min • Stop impulse buys</span>
-                    </div>
-                </a>
-            </div>
-        </section>
-        
-        <!-- Categories Header -->
-        <div class="categories-header">
-            <h2>Browse by Category</h2>
-            <div class="filter-pills">
-                <button class="filter-pill active" onclick="filterCategory('all')">All</button>
-                <button class="filter-pill" onclick="filterCategory('housing')">Housing</button>
-                <button class="filter-pill" onclick="filterCategory('food')">Food</button>
-                <button class="filter-pill" onclick="filterCategory('health')">Health</button>
-                <button class="filter-pill" onclick="filterCategory('subscriptions')">Subscriptions</button>
-            </div>
-        </div>
-        
-        <!-- Category Grid -->
-        <div class="category-grid" id="categoryGrid">
-            <!-- Housing & Utilities -->
-            <div class="category-card" data-category="housing">
-                <div class="category-header">
-                    <div class="category-icon">🏠</div>
-                    <div>
-                        <div class="category-title">Housing & Utilities</div>
-                        <div class="category-count">15 playbooks</div>
-                    </div>
-                </div>
-                <div class="category-playbooks">
-                    <a href="playbooks/negotiate-your-rent-at-renewal.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Negotiate Your Rent at Renewal</span>
-                        <span class="playbook-time">30 min</span>
-                    </a>
-                    <a href="playbooks/appeal-your-property-tax.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Appeal Your Property Tax</span>
-                        <span class="playbook-time">2 hrs</span>
-                    </a>
-                    <a href="playbooks/buy-your-own-modem-router.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Buy Your Own Modem/Router</span>
-                        <span class="playbook-time">1 hr</span>
-                    </a>
-                    <a href="playbooks/smart-thermostat-schedule.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Smart Thermostat Schedule</span>
-                        <span class="playbook-time">45 min</span>
-                    </a>
-                </div>
-                <a href="playbooks/index.html?category=Housing" class="see-all">See all 15 playbooks →</a>
-            </div>
-            
-            <!-- Groceries & Food -->
-            <div class="category-card" data-category="food">
-                <div class="category-header">
-                    <div class="category-icon">🛒</div>
-                    <div>
-                        <div class="category-title">Groceries & Food</div>
-                        <div class="category-count">12 playbooks</div>
-                    </div>
-                </div>
-                <div class="category-playbooks">
-                    <a href="playbooks/pantry-eat-what-you-have-challenge.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Pantry Eat-What-You-Have Challenge</span>
-                        <span class="playbook-time">1 week</span>
-                    </a>
-                    <a href="playbooks/create-a-price-book.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Create a Price Book</span>
-                        <span class="playbook-time">2 hrs</span>
-                    </a>
-                    <a href="playbooks/coffee-at-home-rule.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Coffee at Home Rule</span>
-                        <span class="playbook-time">15 min</span>
-                    </a>
-                    <a href="playbooks/quit-food-delivery-apps.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Quit Food Delivery Apps</span>
-                        <span class="playbook-time">10 min</span>
-                    </a>
-                </div>
-                <a href="playbooks/index.html?category=Groceries" class="see-all">See all 12 playbooks →</a>
-            </div>
-            
-            <!-- Transportation -->
-            <div class="category-card" data-category="transport">
-                <div class="category-header">
-                    <div class="category-icon">🚗</div>
-                    <div>
-                        <div class="category-title">Transportation & Auto</div>
-                        <div class="category-count">10 playbooks</div>
-                    </div>
-                </div>
-                <div class="category-playbooks">
-                    <a href="playbooks/shop-auto-insurance-every-12-months.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Shop Auto Insurance Every 12 Months</span>
-                        <span class="playbook-time">1 hr</span>
-                    </a>
-                    <a href="playbooks/refinance-auto-loan.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Refinance Auto Loan</span>
-                        <span class="playbook-time">2 hrs</span>
-                    </a>
-                    <a href="playbooks/one-car-household-test.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">One-Car Household Test</span>
-                        <span class="playbook-time">60 days</span>
-                    </a>
-                    <a href="playbooks/inflate-tires-and-remove-trunk-clutter.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Inflate Tires & Remove Clutter</span>
-                        <span class="playbook-time">20 min</span>
-                    </a>
-                </div>
-                <a href="playbooks/index.html?category=Transportation" class="see-all">See all 10 playbooks →</a>
-            </div>
-            
-            <!-- Health -->
-            <div class="category-card" data-category="health">
-                <div class="category-header">
-                    <div class="category-icon">💊</div>
-                    <div>
-                        <div class="category-title">Health, Meds & Benefits</div>
-                        <div class="category-count">14 playbooks</div>
-                    </div>
-                </div>
-                <div class="category-playbooks">
-                    <a href="playbooks/use-hsa-fsa-strategically.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Use HSA/FSA Strategically</span>
-                        <span class="playbook-time">1 hr</span>
-                    </a>
-                    <a href="playbooks/generic-meds-request.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Generic Meds Request</span>
-                        <span class="playbook-time">15 min</span>
-                    </a>
-                    <a href="playbooks/compare-pharmacy-prices.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Compare Pharmacy Prices</span>
-                        <span class="playbook-time">20 min</span>
-                    </a>
-                    <a href="playbooks/telehealth-first-rule.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Telehealth First Rule</span>
-                        <span class="playbook-time">30 min</span>
-                    </a>
-                </div>
-                <a href="playbooks/index.html?category=Health" class="see-all">See all 14 playbooks →</a>
-            </div>
-            
-            <!-- Subscriptions -->
-            <div class="category-card" data-category="subscriptions">
-                <div class="category-header">
-                    <div class="category-icon">📱</div>
-                    <div>
-                        <div class="category-title">Subscriptions & Tech</div>
-                        <div class="category-count">12 playbooks</div>
-                    </div>
-                </div>
-                <div class="category-playbooks">
-                    <a href="playbooks/rotate-streaming-services-monthly.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Rotate Streaming Services Monthly</span>
-                        <span class="playbook-time">30 min</span>
-                    </a>
-                    <a href="playbooks/audit-app-store-subscriptions.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Audit App Store Subscriptions</span>
-                        <span class="playbook-time">20 min</span>
-                    </a>
-                    <a href="playbooks/cell-switch-to-mvno.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Switch to MVNO Phone Plan</span>
-                        <span class="playbook-time">1 hr</span>
-                    </a>
-                    <a href="playbooks/cable-cut-to-skinny-bundle.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Cut Cable to Skinny Bundle</span>
-                        <span class="playbook-time">1 hr</span>
-                    </a>
-                </div>
-                <a href="playbooks/index.html?category=Subscriptions" class="see-all">See all 12 playbooks →</a>
-            </div>
-            
-            <!-- Banking -->
-            <div class="category-card" data-category="banking">
-                <div class="category-header">
-                    <div class="category-icon">🏦</div>
-                    <div>
-                        <div class="category-title">Banking, Debt & Fees</div>
-                        <div class="category-count">10 playbooks</div>
-                    </div>
-                </div>
-                <div class="category-playbooks">
-                    <a href="playbooks/ask-for-bank-fee-refunds.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Ask for Bank Fee Refunds</span>
-                        <span class="playbook-time">15 min</span>
-                    </a>
-                    <a href="playbooks/balance-transfer-0-with-plan.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Balance Transfer 0% With Plan</span>
-                        <span class="playbook-time">1 hr</span>
-                    </a>
-                    <a href="playbooks/switch-to-fee-free-bank-credit-union.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Switch to Fee-Free Bank</span>
-                        <span class="playbook-time">2 hrs</span>
-                    </a>
-                    <a href="playbooks/opt-out-of-debit-overdraft.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Opt Out of Overdraft</span>
-                        <span class="playbook-time">15 min</span>
-                    </a>
-                </div>
-                <a href="playbooks/index.html?category=Banking" class="see-all">See all 10 playbooks →</a>
-            </div>
-            
-            <!-- Shopping -->
-            <div class="category-card" data-category="shopping">
-                <div class="category-header">
-                    <div class="category-icon">🛍️</div>
-                    <div>
-                        <div class="category-title">Shopping & Household</div>
-                        <div class="category-count">14 playbooks</div>
-                    </div>
-                </div>
-                <div class="category-playbooks">
-                    <a href="playbooks/thrift-first-rule.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Thrift-First Rule</span>
-                        <span class="playbook-time">Ongoing</span>
-                    </a>
-                    <a href="playbooks/72-hour-rule-for-non-essentials.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">72-Hour Rule for Non-Essentials</span>
-                        <span class="playbook-time">Ongoing</span>
-                    </a>
-                    <a href="playbooks/repair-before-replace.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Repair Before Replace</span>
-                        <span class="playbook-time">Varies</span>
-                    </a>
-                    <a href="playbooks/diy-cleaners.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">DIY Cleaners</span>
-                        <span class="playbook-time">30 min</span>
-                    </a>
-                </div>
-                <a href="playbooks/index.html?category=Shopping" class="see-all">See all 14 playbooks →</a>
-            </div>
-            
-            <!-- Insurance -->
-            <div class="category-card" data-category="insurance">
-                <div class="category-header">
-                    <div class="category-icon">🛡️</div>
-                    <div>
-                        <div class="category-title">Insurance</div>
-                        <div class="category-count">8 playbooks</div>
-                    </div>
-                </div>
-                <div class="category-playbooks">
-                    <a href="playbooks/multi-policy-insurance-bundling.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Multi-Policy Bundling</span>
-                        <span class="playbook-time">1 hr</span>
-                    </a>
-                    <a href="playbooks/insurance-raise-deductibles.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Raise Deductibles Strategically</span>
-                        <span class="playbook-time">1 hr</span>
-                    </a>
-                    <a href="playbooks/term-life-insurance-only.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Term Life Insurance Only</span>
-                        <span class="playbook-time">2 hrs</span>
-                    </a>
-                    <a href="playbooks/annual-coverage-fit-review.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Annual Coverage Review</span>
-                        <span class="playbook-time">1 hr</span>
-                    </a>
-                </div>
-                <a href="playbooks/index.html?category=Insurance" class="see-all">See all 8 playbooks →</a>
-            </div>
-            
-            <!-- Kids & Family -->
-            <div class="category-card" data-category="family">
-                <div class="category-header">
-                    <div class="category-icon">👨‍👩‍👧</div>
-                    <div>
-                        <div class="category-title">Kids & Family</div>
-                        <div class="category-count">10 playbooks</div>
-                    </div>
-                </div>
-                <div class="category-playbooks">
-                    <a href="playbooks/dependent-care-fsa.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Dependent Care FSA</span>
-                        <span class="playbook-time">30 min</span>
-                    </a>
-                    <a href="playbooks/used-first-for-kids-gear.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Used-First for Kids Gear</span>
-                        <span class="playbook-time">Ongoing</span>
-                    </a>
-                    <a href="playbooks/school-lunch-strategy.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">School Lunch Strategy</span>
-                        <span class="playbook-time">1 hr</span>
-                    </a>
-                    <a href="playbooks/extracurricular-scholarships.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Extracurricular Scholarships</span>
-                        <span class="playbook-time">2 hrs</span>
-                    </a>
-                </div>
-                <a href="playbooks/index.html?category=Kids" class="see-all">See all 10 playbooks →</a>
-            </div>
-        </div>
-        
-        <!-- Need Help Section -->
-        <section class="help-section">
-            <div class="help-card">
-                <div class="help-icon">💬</div>
-                <div class="help-content">
-                    <h3>Need More Help?</h3>
-                    <p>Have questions about a playbook or need personalized guidance? Chat with an ASAP Financial coach.</p>
-                    <button class="btn btn-chat" onclick="openChat()">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-                        Start Chat
-                    </button>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Footer CTA -->
-        <section class="footer-cta">
-            <h2>Ready to Increase Your Income Too?</h2>
-            <p>Check out our Income Gig Playbooks to learn side hustles and ways to bring in extra money.</p>
-            <div class="cta-buttons">
-                <a href="income-playbooks.html" class="btn btn-primary">
-                    💵 View Income Playbooks
-                </a>
-                <a href="playbooks/index.html" class="btn btn-secondary">
-                    📚 Browse All 254 Playbooks
-                </a>
-            </div>
-        </section>
-    </main>
-    
-    <script>
-        function searchPlaybooks() {
-            const query = document.getElementById('searchInput').value.toLowerCase();
-            window.location.href = `playbooks/index.html?search=${encodeURIComponent(query)}&type=expense`;
-        }
-        
-        document.getElementById('searchInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') searchPlaybooks();
-        });
-        
-        function filterCategory(cat) {
-            document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
-            event.target.classList.add('active');
-            
-            document.querySelectorAll('.category-card').forEach(card => {
-                if (cat === 'all' || card.dataset.category === cat) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-        
-        function openChat() {
-            // Replace this with your actual chat widget code
-            // Examples: Intercom, Drift, Crisp, Tidio, or custom chat
-            // window.Intercom('show');
-            // $crisp.push(['do', 'chat:open']);
-            // Tawk_API.toggle();
-            
-            // Fallback: Open a contact page or show a message
-            alert('Chat feature coming soon! For now, email us at support@asapcreditrepairusa.com');
-            
-            // Or redirect to a contact page:
-            // window.location.href = '/contact';
-        }
-    </script>
+<div class="header">
+<a href="index.html" class="back-link">← Back to Main Menu</a>
+<h1>✂️ Reduce Expenses</h1>
+<p>Step-by-step playbooks to cut costs and keep more money every month</p>
+</div>
+
+<div class="container">
+
+<!-- Quick Wins -->
+<div class="quick-wins">
+<h3>⚡ 5-Minute Quick Wins - Start Here!</h3>
+<p>These take less than 5 minutes and save money immediately:</p>
+<div class="quick-wins-list">
+<a href="subscription-cancel.html" class="quick-win-link">✂️ Cancel Subscriptions</a>
+<a href="delete-shopping-apps.html" class="quick-win-link">📱 Delete Shopping Apps</a>
+<a href="unsubscribe-emails.html" class="quick-win-link">📧 Unsubscribe Emails</a>
+<a href="autopay-setup.html" class="quick-win-link">⚡ Setup Autopay</a>
+</div>
+</div>
+
+<!-- Search -->
+<div class="search-container">
+<input type="text" class="search-box" id="search" placeholder="🔍 Search all playbooks...">
+</div>
+
+<!-- Categories -->
+<div class="category open" data-category="shopping">
+<div class="category-header" onclick="toggleCategory(this)">
+<div class="category-left">
+<span class="category-icon">🛒</span>
+<div>
+<div class="category-title">Shopping & Impulse Control</div>
+<div class="category-count">8 playbooks</div>
+</div>
+</div>
+<span class="category-arrow">▼</span>
+</div>
+<div class="playbook-list">
+<a href="delete-shopping-apps.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Delete Shopping Apps</div>
+<div class="playbook-desc">Remove Amazon, Target, etc. from your phone</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $200-500/mo</span>
+<span class="playbook-time">5 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="delete-saved-cards.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Delete Saved Cards</div>
+<div class="playbook-desc">Remove saved payment methods everywhere</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $100-300/mo</span>
+<span class="playbook-time">15 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="card-number-reset.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Card Number Reset</div>
+<div class="playbook-desc">Get new card numbers to break all saved cards</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $100-400/mo</span>
+<span class="playbook-time">15 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="zero-spend-challenge.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">48-Hour Zero-Spend Challenge</div>
+<div class="playbook-desc">Reset spending habits with a 48-hour freeze</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $50-150</span>
+<span class="playbook-time">5 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="zero-spend-week.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Zero-Spend Week Challenge</div>
+<div class="playbook-desc">Full week of no unnecessary spending</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $200-500</span>
+<span class="playbook-time">5 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="no-spend-challenge.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">No-Spend Challenge Guide</div>
+<div class="playbook-desc">Complete guide to no-spend periods</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $100-400</span>
+<span class="playbook-time">10 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="unsubscribe-emails.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Unsubscribe from Marketing Emails</div>
+<div class="playbook-desc">Stop tempting sale emails</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Prevents impulse buys</span>
+<span class="playbook-time">5 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="shopping-app-detox.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Shopping App Detox</div>
+<div class="playbook-desc">Complete guide to breaking app addiction</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $200-600/mo</span>
+<span class="playbook-time">15 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+</div>
+</div>
+
+<div class="category" data-category="subscriptions">
+<div class="category-header" onclick="toggleCategory(this)">
+<div class="category-left">
+<span class="category-icon">🔄</span>
+<div>
+<div class="category-title">Subscriptions & Recurring Charges</div>
+<div class="category-count">6 playbooks</div>
+</div>
+</div>
+<span class="category-arrow">▼</span>
+</div>
+<div class="playbook-list">
+<a href="subscription-cancel.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Subscription Audit & Cancel Scripts</div>
+<div class="playbook-desc">Find all subscriptions and cancel unused ones</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $50-200/mo</span>
+<span class="playbook-time">15 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="cancel-subscriptions.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Cancel Subscriptions Checklist</div>
+<div class="playbook-desc">Quick checklist of common subscriptions to cancel</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $50-150/mo</span>
+<span class="playbook-time">10 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="cancel-unused-subscriptions.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Find Unused Subscriptions</div>
+<div class="playbook-desc">Tools to discover forgotten recurring charges</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $30-100/mo</span>
+<span class="playbook-time">10 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="cancel-gym.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Cancel Gym Membership</div>
+<div class="playbook-desc">Scripts to cancel tricky gym contracts</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $20-100/mo</span>
+<span class="playbook-time">15 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="cut-cable-streaming.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Cut Cable & Streaming</div>
+<div class="playbook-desc">Audit and reduce streaming services</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $50-150/mo</span>
+<span class="playbook-time">10 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="email-unsubscribe.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Email Subscription Cleanup</div>
+<div class="playbook-desc">Mass unsubscribe from promotional emails</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Stops temptation</span>
+<span class="playbook-time">10 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+</div>
+</div>
+
+<div class="category" data-category="bills">
+<div class="category-header" onclick="toggleCategory(this)">
+<div class="category-left">
+<span class="category-icon">📱</span>
+<div>
+<div class="category-title">Bills & Utilities</div>
+<div class="category-count">12 playbooks</div>
+</div>
+</div>
+<span class="category-arrow">▼</span>
+</div>
+<div class="playbook-list">
+<a href="bill-negotiation.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Bill Negotiation Scripts</div>
+<div class="playbook-desc">Word-for-word scripts for phone, internet, cable</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $50-150/mo</span>
+<span class="playbook-time">15 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="negotiate-bills.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Negotiate Any Bill</div>
+<div class="playbook-desc">General negotiation strategies</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $30-100/mo</span>
+<span class="playbook-time">15 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="lower-phone-bill.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Lower Phone Bill</div>
+<div class="playbook-desc">Switch carriers or negotiate lower rate</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $20-50/mo</span>
+<span class="playbook-time">15 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="lower-cell-phone-bill.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Cell Phone Bill Reduction</div>
+<div class="playbook-desc">Compare plans and find savings</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $20-60/mo</span>
+<span class="playbook-time">20 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="lower-utility-bills.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Lower Utility Bills</div>
+<div class="playbook-desc">Cut electric and gas costs</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $30-100/mo</span>
+<span class="playbook-time">30 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="home-energy-savings.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Home Energy Savings</div>
+<div class="playbook-desc">Reduce energy consumption</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $20-80/mo</span>
+<span class="playbook-time">30 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="energy-audit.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">DIY Energy Audit</div>
+<div class="playbook-desc">Find where you're wasting energy</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $30-100/mo</span>
+<span class="playbook-time">45 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="water-bill-reduction.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Water Bill Reduction</div>
+<div class="playbook-desc">Simple ways to cut water costs</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $10-30/mo</span>
+<span class="playbook-time">15 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="negotiate-your-rent-at-renewal.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Negotiate Rent at Renewal</div>
+<div class="playbook-desc">Scripts to avoid rent increases</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $50-200/mo</span>
+<span class="playbook-time">20 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="autopay-setup.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Autopay Setup Guide</div>
+<div class="playbook-desc">Never miss a payment or pay late fees</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Avoid $25+ fees</span>
+<span class="playbook-time">15 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="bank-alerts.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Bank Alert Setup</div>
+<div class="playbook-desc">Get notified of spending and low balances</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Prevents overdrafts</span>
+<span class="playbook-time">10 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="utility-assistance.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Utility Assistance Programs</div>
+<div class="playbook-desc">Find help paying utility bills</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $50-200/mo</span>
+<span class="playbook-time">30 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+</div>
+</div>
+
+<div class="category" data-category="food">
+<div class="category-header" onclick="toggleCategory(this)">
+<div class="category-left">
+<span class="category-icon">🍽️</span>
+<div>
+<div class="category-title">Food & Groceries</div>
+<div class="category-count">10 playbooks</div>
+</div>
+</div>
+<span class="category-arrow">▼</span>
+</div>
+<div class="playbook-list">
+<a href="meal-prep.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Meal Prep Basics</div>
+<div class="playbook-desc">Prep meals on Sunday, save all week</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $200-400/mo</span>
+<span class="playbook-time">30 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="meal-planning-save-money.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Meal Planning to Save Money</div>
+<div class="playbook-desc">Plan meals around sales and what you have</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $100-300/mo</span>
+<span class="playbook-time">20 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="slash-grocery-bill.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Slash Your Grocery Bill</div>
+<div class="playbook-desc">Strategic shopping to cut costs 30-50%</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $100-300/mo</span>
+<span class="playbook-time">15 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="bulk-buying-savings.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Bulk Buying Guide</div>
+<div class="playbook-desc">What to buy in bulk (and what not to)</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $50-150/mo</span>
+<span class="playbook-time">15 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="coupon-stacking.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Coupon Stacking</div>
+<div class="playbook-desc">Combine coupons, apps, and sales</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $50-150/mo</span>
+<span class="playbook-time">15 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="use-cash-back-apps.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Cash Back Apps</div>
+<div class="playbook-desc">Get money back on purchases</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $20-50/mo</span>
+<span class="playbook-time">10 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="rebate-apps.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Rebate Apps Guide</div>
+<div class="playbook-desc">Best apps for grocery rebates</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $15-40/mo</span>
+<span class="playbook-time">10 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="price-matching.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Price Matching</div>
+<div class="playbook-desc">Get the lowest price without multiple trips</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $20-60/mo</span>
+<span class="playbook-time">10 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="grow-your-own-food.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Grow Your Own Food</div>
+<div class="playbook-desc">Start a money-saving garden</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $50-200/mo</span>
+<span class="playbook-time">Ongoing</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="generic-medications.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Generic Medications</div>
+<div class="playbook-desc">Switch to generics and save big</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $20-100/mo</span>
+<span class="playbook-time">15 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+</div>
+</div>
+
+<div class="category" data-category="insurance">
+<div class="category-header" onclick="toggleCategory(this)">
+<div class="category-left">
+<span class="category-icon">🛡️</span>
+<div>
+<div class="category-title">Insurance & Big Bills</div>
+<div class="category-count">8 playbooks</div>
+</div>
+</div>
+<span class="category-arrow">▼</span>
+</div>
+<div class="playbook-list">
+<a href="shop-auto-insurance.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Shop Auto Insurance</div>
+<div class="playbook-desc">Compare quotes and save hundreds</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $50-200/mo</span>
+<span class="playbook-time">30 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="auto-insurance-savings.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Auto Insurance Discounts</div>
+<div class="playbook-desc">Hidden discounts you might be missing</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $30-100/mo</span>
+<span class="playbook-time">20 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="lower-insurance.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Lower All Insurance Rates</div>
+<div class="playbook-desc">Strategies for any insurance type</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $30-150/mo</span>
+<span class="playbook-time">30 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="negotiate-medical-bills.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Negotiate Medical Bills</div>
+<div class="playbook-desc">Reduce hospital bills by 20-50%</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save 20-50%</span>
+<span class="playbook-time">30 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="medical-billing.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Medical Billing Errors</div>
+<div class="playbook-desc">Find and dispute billing mistakes</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Varies</span>
+<span class="playbook-time">30 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="warranty-claims.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Warranty Claims</div>
+<div class="playbook-desc">Get free replacements and repairs</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Varies</span>
+<span class="playbook-time">15 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="government-assistance.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Government Assistance Programs</div>
+<div class="playbook-desc">Benefits you might qualify for</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Varies</span>
+<span class="playbook-time">45 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="tax-deductions.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Tax Deductions Checklist</div>
+<div class="playbook-desc">Deductions you might be missing</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $100s-1000s</span>
+<span class="playbook-time">30 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+</div>
+</div>
+
+<div class="category" data-category="debt">
+<div class="category-header" onclick="toggleCategory(this)">
+<div class="category-left">
+<span class="category-icon">💳</span>
+<div>
+<div class="category-title">Debt & Banking</div>
+<div class="category-count">10 playbooks</div>
+</div>
+</div>
+<span class="category-arrow">▼</span>
+</div>
+<div class="playbook-list">
+<a href="apr-negotiation.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Negotiate Credit Card APR</div>
+<div class="playbook-desc">Lower your interest rate with a phone call</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $20-100/mo</span>
+<span class="playbook-time">15 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="negotiate-credit-card-fees.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Waive Credit Card Fees</div>
+<div class="playbook-desc">Get annual fees and late fees waived</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $50-500/yr</span>
+<span class="playbook-time">10 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="refinance-debt.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Refinance High-Interest Debt</div>
+<div class="playbook-desc">Consolidate and lower rates</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $50-300/mo</span>
+<span class="playbook-time">30 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="refinance-high-interest-debt.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Balance Transfer Strategy</div>
+<div class="playbook-desc">Move debt to 0% APR cards</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $100+/mo</span>
+<span class="playbook-time">30 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="refinance-student-loans.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Refinance Student Loans</div>
+<div class="playbook-desc">Lower your student loan payments</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Save $50-200/mo</span>
+<span class="playbook-time">30 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="avalanche-method.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Debt Avalanche Method</div>
+<div class="playbook-desc">Pay highest interest first</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Saves most interest</span>
+<span class="playbook-time">15 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="debt-snowball.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Debt Snowball Method</div>
+<div class="playbook-desc">Pay smallest balances first for wins</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Psychological wins</span>
+<span class="playbook-time">15 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="bank-account-bonuses.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Bank Account Bonuses</div>
+<div class="playbook-desc">Get $100-500 for opening accounts</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Earn $100-500</span>
+<span class="playbook-time">30 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="credit-card-rewards.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Credit Card Rewards</div>
+<div class="playbook-desc">Maximize cash back and points</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Earn $20-100/mo</span>
+<span class="playbook-time">20 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+<a href="credit-score-boost.html" class="playbook-item">
+<div class="playbook-info">
+<div class="playbook-title">Boost Your Credit Score</div>
+<div class="playbook-desc">Quick wins to improve your score</div>
+</div>
+<div class="playbook-meta">
+<span class="playbook-savings">Better rates</span>
+<span class="playbook-time">20 min</span>
+</div>
+<span class="playbook-arrow">→</span>
+</a>
+</div>
+</div>
+
+</div>
+
+<script>
+function toggleCategory(header) {
+  header.parentElement.classList.toggle('open');
+}
+
+document.getElementById('search').addEventListener('input', function() {
+  const query = this.value.toLowerCase();
+  const items = document.querySelectorAll('.playbook-item');
+  const categories = document.querySelectorAll('.category');
+  
+  if(query === '') {
+    categories.forEach((cat, i) => {
+      cat.style.display = 'block';
+      if(i === 0) cat.classList.add('open');
+      else cat.classList.remove('open');
+    });
+    items.forEach(item => item.style.display = 'flex');
+    return;
+  }
+  
+  categories.forEach(cat => {
+    cat.classList.add('open');
+    let hasVisible = false;
+    cat.querySelectorAll('.playbook-item').forEach(item => {
+      const title = item.querySelector('.playbook-title').textContent.toLowerCase();
+      const desc = item.querySelector('.playbook-desc').textContent.toLowerCase();
+      if(title.includes(query) || desc.includes(query)) {
+        item.style.display = 'flex';
+        hasVisible = true;
+      } else {
+        item.style.display = 'none';
+      }
+    });
+    cat.style.display = hasVisible ? 'block' : 'none';
+  });
+});
+</script>
 </body>
 </html>
