@@ -1,382 +1,661 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cut Cable & Streaming Costs | ASAP Credit Repair Playbook</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root { --primary: #063d86; --primary-light: #0a4fa8; --primary-dark: #042a5c; --accent: #00c9a7; --success: #10b981; --warning: #f59e0b; --bg: #f8fafc; --text: #1e293b; --text-light: #64748b; --border: #e2e8f0; }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 17px; }
-    .header { background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%); color: white; padding: 40px 20px 50px; text-align: center; }
-    .header-content { max-width: 800px; margin: 0 auto; }
-    .back-link { display: inline-flex; align-items: center; gap: 8px; color: white; text-decoration: none; opacity: 0.8; font-size: 0.9rem; margin-bottom: 16px; }
-    .back-link:hover { opacity: 1; }
-    .category-badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; margin-bottom: 16px; }
-    .header h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 12px; }
-    .header-subtitle { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
-    .main-content { max-width: 800px; margin: -30px auto 40px; padding: 0 20px; }
-    .progress-section { position: sticky; top: 0; background: white; padding: 16px 20px; margin: 0 -20px 20px; border-bottom: 1px solid var(--border); z-index: 100; display: flex; align-items: center; gap: 16px; }
-    .progress-bar { flex: 1; height: 10px; background: var(--border); border-radius: 5px; overflow: hidden; }
-    .progress-fill { height: 100%; background: linear-gradient(90deg, #7c3aed, #a78bfa); border-radius: 5px; transition: width 0.3s; width: 0%; }
-    .progress-text { font-weight: 600; color: var(--text); min-width: 50px; }
-    .goal-card { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border: 2px solid var(--success); border-radius: 16px; padding: 24px 28px; margin-bottom: 30px; }
-    .goal-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; color: #065f46; margin-bottom: 12px; }
-    .goal-card p { color: #047857; font-size: 1.05rem; }
-    .goal-card .earnings { background: white; display: inline-block; padding: 10px 18px; border-radius: 10px; margin-top: 14px; font-weight: 600; color: #065f46; font-size: 1.1rem; }
-    .section-card { background: white; border-radius: 16px; padding: 28px; margin-bottom: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid var(--border); }
-    .section-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; color: var(--primary); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
-    .section-card h2 .icon { width: 40px; height: 40px; background: linear-gradient(135deg, #7c3aed, #a78bfa); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; }
-    .section-intro { color: var(--text-light); margin-bottom: 20px; font-size: 1rem; }
-    .task-list { list-style: none; }
-    .task-item { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border); }
-    .task-item:last-child { border-bottom: none; }
-    .task-checkbox { flex-shrink: 0; width: 28px; height: 28px; border: 2px solid var(--border); border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; margin-top: 2px; font-weight: bold; }
-    .task-checkbox:hover { border-color: var(--primary); }
-    .task-checkbox.checked { background: var(--success); border-color: var(--success); color: white; }
-    .task-content { flex: 1; }
-    .task-title { font-weight: 600; font-size: 1.1rem; margin-bottom: 8px; color: var(--text); }
-    .task-desc { color: var(--text-light); font-size: 0.95rem; line-height: 1.6; }
-    .task-meta { display: flex; gap: 12px; margin-top: 10px; flex-wrap: wrap; }
-    .task-badge { font-size: 0.8rem; padding: 4px 10px; border-radius: 6px; background: var(--bg); color: var(--text-light); }
-    .task-badge.easy { background: #dcfce7; color: #166534; }
-    .details-box { background: #f8fafc; border-radius: 10px; padding: 16px; margin-top: 12px; border-left: 4px solid #7c3aed; }
-    .details-box h4 { font-size: 0.9rem; color: #5b21b6; margin-bottom: 10px; }
-    .details-box ul { margin-left: 18px; color: var(--text); font-size: 0.9rem; }
-    .details-box li { margin-bottom: 8px; line-height: 1.5; }
-    .comparison-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 0.9rem; }
-    .comparison-table th, .comparison-table td { padding: 12px; text-align: left; border-bottom: 1px solid var(--border); }
-    .comparison-table th { background: var(--bg); font-weight: 600; color: #5b21b6; }
-    .comparison-table .old { color: #dc2626; }
-    .comparison-table .new { color: var(--success); font-weight: 600; }
-    .streaming-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-top: 16px; }
-    .streaming-card { background: var(--bg); border-radius: 10px; padding: 16px; }
-    .streaming-card h4 { font-size: 1rem; color: #5b21b6; margin-bottom: 4px; }
-    .streaming-card .price { font-weight: 600; color: var(--text); margin-bottom: 8px; }
-    .streaming-card p { font-size: 0.85rem; color: var(--text-light); }
-    .streaming-card.free { background: linear-gradient(135deg, #ecfdf5, #d1fae5); }
-    .streaming-card.free h4 { color: #065f46; }
-    .free-section { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border: 2px solid var(--success); }
-    .free-section h2 { color: #065f46; }
-    .tip-box { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 0 10px 10px 0; margin-top: 16px; }
-    .tip-box strong { color: #92400e; display: block; margin-bottom: 4px; }
-    .tip-box p { color: #78350f; font-size: 0.9rem; margin: 0; }
-    .calculator-section { background: linear-gradient(135deg, #fef2f2, #fee2e2); border: 2px solid #fca5a5; }
-    .calculator-section h2 { color: #991b1b; }
-    .calc-row { display: flex; align-items: center; gap: 16px; margin-bottom: 12px; flex-wrap: wrap; }
-    .calc-row label { flex: 1; min-width: 200px; color: #991b1b; }
-    .calc-row input { padding: 10px 14px; border: 2px solid #fca5a5; border-radius: 8px; font-size: 1rem; font-family: inherit; width: 100px; }
-    .calc-row input:focus { outline: none; border-color: #f87171; }
-    .calc-result { background: white; border-radius: 12px; padding: 20px; text-align: center; margin-top: 20px; }
-    .calc-result h3 { color: #991b1b; font-size: 1.1rem; margin-bottom: 8px; }
-    .calc-result .amount { font-family: 'Space Grotesk', sans-serif; font-size: 2.5rem; font-weight: 700; color: var(--success); }
-    .section-card textarea { width: 100%; min-height: 150px; padding: 16px 18px; border: 2px solid var(--border); border-radius: 12px; font-family: inherit; font-size: 1rem; resize: vertical; box-sizing: border-box; display: block; line-height: 1.6; }
-    .section-card textarea:focus { outline: none; border-color: var(--primary); }
-    .help-section { background: linear-gradient(135deg, #f0f9ff, #e0f2fe); border: 2px solid #7dd3fc; border-radius: 16px; padding: 24px 28px; margin-top: 30px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
-    .help-icon { width: 56px; height: 56px; background: white; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; }
-    .help-content { flex: 1; min-width: 200px; }
-    .help-content h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; margin-bottom: 4px; }
-    .help-content p { color: var(--text-light); font-size: 0.95rem; }
-    .chat-btn { background: var(--primary); color: white; border: none; padding: 14px 28px; border-radius: 12px; font-family: inherit; font-size: 1rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: all 0.2s; }
-    .chat-btn:hover { background: var(--primary-light); transform: translateY(-2px); }
-    @media (max-width: 600px) { .header { padding: 30px 20px 40px; } .section-card { padding: 20px; } .help-section { flex-direction: column; text-align: center; } }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cut Cable & Streaming Costs - Complete Guide - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #2e7d32; font-size: 1.1em; line-height: 1.6; }
+        .savings-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .savings-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .savings-highlight p { font-size: 1.1em; opacity: 0.95; }
+        
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #e8f5e9; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        
+        /* Comparison Table */
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 15px; overflow: hidden; }
+        .comparison-table th, .comparison-table td { padding: 15px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .comparison-table th { background: #667eea; color: white; font-weight: 600; }
+        .comparison-table tr:hover { background: #f5f5f5; }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table .price { color: #4caf50; font-weight: 700; }
+        .comparison-table .highlight { background: #e8f5e9; }
+        
+        /* Service Cards */
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 20px 0; }
+        .service-card { background: #f8f9fa; border-radius: 15px; overflow: hidden; }
+        .service-header { padding: 20px; color: white; }
+        .service-header.budget { background: linear-gradient(135deg, #4caf50, #66bb6a); }
+        .service-header.mid { background: linear-gradient(135deg, #2196f3, #42a5f5); }
+        .service-header.premium { background: linear-gradient(135deg, #9c27b0, #ba68c8); }
+        .service-header.free { background: linear-gradient(135deg, #ff9800, #ffb74d); }
+        .service-header h4 { font-size: 1.2em; margin-bottom: 5px; }
+        .service-header .price-tag { font-size: 1.5em; font-weight: 700; }
+        .service-body { padding: 20px; }
+        .service-body ul { list-style: none; }
+        .service-body li { padding: 8px 0; color: #666; font-size: 14px; display: flex; align-items: center; gap: 10px; }
+        .service-body li.pro::before { content: "✓"; color: #4caf50; font-weight: 700; }
+        .service-body li.con::before { content: "✗"; color: #f44336; font-weight: 700; }
+        
+        /* Calculator */
+        .calculator-box { background: #e3f2fd; border-radius: 15px; padding: 25px; margin: 20px 0; }
+        .calculator-box h4 { color: #1565c0; margin-bottom: 20px; }
+        .calc-section { margin-bottom: 20px; }
+        .calc-section h5 { color: #1a1a2e; margin-bottom: 10px; }
+        .calc-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+        .calc-row label { color: #666; min-width: 150px; }
+        .calc-row input { padding: 10px; border: 2px solid #ddd; border-radius: 8px; width: 120px; }
+        .calc-result { background: white; border-radius: 10px; padding: 20px; text-align: center; margin-top: 15px; }
+        .calc-result .value { font-size: 2.5em; font-weight: 700; }
+        .calc-result .value.savings { color: #4caf50; }
+        .calc-result .value.loss { color: #f44336; }
+        .calc-btn { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; font-weight: 600; margin-top: 15px; }
+        
+        /* Free Options */
+        .free-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin: 20px 0; }
+        .free-card { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-radius: 15px; padding: 20px; text-align: center; }
+        .free-card .free-icon { font-size: 2.5em; margin-bottom: 10px; }
+        .free-card h4 { color: #f57f17; margin-bottom: 5px; font-size: 14px; }
+        .free-card p { color: #666; font-size: 12px; }
+        
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        
+        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .warning-box h4 { color: #c62828; margin-bottom: 10px; }
+        .warning-box p { color: #666; }
+        
+        /* Influencer Section */
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #667eea; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; }
+        
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        
+        .notes-section { margin-top: 20px; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #667eea; }
+        
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-section h3 { margin-bottom: 15px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; transition: transform 0.3s; }
+        .cta-button:hover { transform: scale(1.05); }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+        .back-link:hover { opacity: 1; }
+        
+        @media (max-width: 768px) {
+            .comparison-table { font-size: 14px; }
+            .comparison-table th, .comparison-table td { padding: 10px 8px; }
+        }
+    </style>
 </head>
 <body>
-  <header class="header">
-    <div class="header-content">
-      <a href="index.html" class="back-link">← Back to All Playbooks</a>
-      <span class="category-badge">📺 Subscriptions & Tech</span>
-      <h1>Cut Cable & Streaming Costs</h1>
-      <p class="header-subtitle">Cable bills average $100-200/month. Streaming "deals" add up fast too. Here's how to watch what you want for WAY less!</p>
-    </div>
-  </header>
-
-  <main class="main-content">
-    <div class="progress-section">
-      <span style="font-size: 0.9rem; color: var(--text-light);">Your Progress:</span>
-      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
-      <span class="progress-text" id="progressText">0%</span>
-    </div>
-
-    <div class="goal-card">
-      <h2>🎯 What You'll Achieve</h2>
-      <p>You'll cut your TV/streaming costs by 50-80% while still watching everything you want. The key? Only pay for what you actually watch, and know about free alternatives!</p>
-      <div class="earnings">💰 Typical savings: $50-150/month ($600-1,800/year!)</div>
-    </div>
-
-    <div class="section-card">
-      <h2><span class="icon">📊</span> The Real Cost of "Streaming"</h2>
-      <p class="section-intro">Streaming was supposed to save us money. Here's what actually happens:</p>
-      
-      <table class="comparison-table">
-        <thead>
-          <tr><th>Service</th><th>Monthly Cost</th><th>Do You Watch It?</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Netflix</td><td class="old">$15-23</td><td>Really?</td></tr>
-          <tr><td>Hulu</td><td class="old">$8-18</td><td>How often?</td></tr>
-          <tr><td>Disney+</td><td class="old">$8-14</td><td>Kids only?</td></tr>
-          <tr><td>HBO Max</td><td class="old">$10-16</td><td>Be honest</td></tr>
-          <tr><td>Amazon Prime Video</td><td class="old">$15</td><td>(Part of Prime)</td></tr>
-          <tr><td>Paramount+</td><td class="old">$6-12</td><td>For what show?</td></tr>
-          <tr><td>Peacock</td><td class="old">$6-12</td><td>Really need it?</td></tr>
-          <tr><td style="font-weight: 600;">TOTAL</td><td class="old" style="font-weight: 600;">$68-110+/month</td><td>😱</td></tr>
-        </tbody>
-      </table>
-      
-      <div class="tip-box">
-        <strong>💡 The truth:</strong>
-        <p>You probably only actively watch 1-2 services at a time. The rest are "just in case" subscriptions draining your money!</p>
-      </div>
-    </div>
-
-    <div class="section-card">
-      <h2><span class="icon">📋</span> Step-by-Step: Cut Your Costs</h2>
-      <ul class="task-list">
-        <li class="task-item">
-          <div class="task-checkbox" data-task="0"></div>
-          <div class="task-content">
-            <div class="task-title">Step 1: List ALL your TV/streaming subscriptions</div>
-            <div class="task-desc">Check your bank statement. Include cable, streaming apps, live TV services - everything!</div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 10 minutes</span>
-              <span class="task-badge easy">Eye-opening!</span>
-            </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="1"></div>
-          <div class="task-content">
-            <div class="task-title">Step 2: If you have cable - CUT IT</div>
-            <div class="task-desc">Cable at $100-200/month is almost never worth it anymore. Everything is available cheaper through streaming.</div>
-            <div class="details-box">
-              <h4>For live TV/sports:</h4>
-              <ul>
-                <li><strong>YouTube TV</strong> - $73/month (all major channels + sports)</li>
-                <li><strong>Hulu + Live TV</strong> - $77/month</li>
-                <li><strong>Sling TV</strong> - $40/month (cheaper, fewer channels)</li>
-                <li><strong>Free antenna</strong> - $0/month for local channels!</li>
-              </ul>
-            </div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 15 minutes to call</span>
-              <span class="task-badge easy">Biggest savings!</span>
-            </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="2"></div>
-          <div class="task-content">
-            <div class="task-title">Step 3: Use the "rotation" strategy</div>
-            <div class="task-desc">Don't pay for 5 services at once! Subscribe to ONE, binge what you want, cancel, move to the next.</div>
-            <div class="details-box">
-              <h4>How rotation works:</h4>
-              <ul>
-                <li>Month 1: Netflix - watch your shows, cancel</li>
-                <li>Month 2: HBO Max - watch their originals, cancel</li>
-                <li>Month 3: Disney+ - catch up on Marvel/Star Wars, cancel</li>
-                <li>Cost: $15-20/month instead of $60+!</li>
-              </ul>
-            </div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ Ongoing</span>
-              <span class="task-badge easy">Saves 60-70%!</span>
-            </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="3"></div>
-          <div class="task-content">
-            <div class="task-title">Step 4: Use FREE streaming services</div>
-            <div class="task-desc">There are TONS of free (legal!) streaming options with great content. See list below!</div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 5 minutes to set up</span>
-              <span class="task-badge easy">$0/month!</span>
-            </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="4"></div>
-          <div class="task-content">
-            <div class="task-title">Step 5: Share accounts (where allowed)</div>
-            <div class="task-desc">Many services allow multiple profiles. Split costs with family members!</div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ Varies</span>
-              <span class="task-badge easy">Saves 50%</span>
-            </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="5"></div>
-          <div class="task-content">
-            <div class="task-title">Step 6: Downgrade to ad-supported tiers</div>
-            <div class="task-desc">Netflix, Hulu, Disney+, Max all have cheaper ad-supported options. Same content, lower price!</div>
-            <div class="details-box">
-              <h4>Ad-supported savings:</h4>
-              <ul>
-                <li>Netflix: $7 vs $15 (save $8/month)</li>
-                <li>Hulu: $8 vs $18 (save $10/month)</li>
-                <li>Disney+: $8 vs $14 (save $6/month)</li>
-                <li>Max: $10 vs $16 (save $6/month)</li>
-              </ul>
-            </div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 5 minutes each</span>
-              <span class="task-badge easy">Instant savings</span>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-
-    <div class="section-card free-section">
-      <h2><span class="icon" style="background: linear-gradient(135deg, var(--success), #059669);">🆓</span> FREE Streaming Services</h2>
-      <p class="section-intro" style="color: #047857;">These are 100% free and legal! Great content with ads.</p>
-      
-      <div class="streaming-grid">
-        <div class="streaming-card free">
-          <h4>📺 Tubi</h4>
-          <div class="price">FREE</div>
-          <p>Huge library of movies and TV shows. Like a free Netflix!</p>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Playbooks</a>
+        
+        <div class="header">
+            <h1>📺 Cut Cable & Streaming Costs</h1>
+            <p class="subtitle">The complete guide to cord-cutting and reducing your entertainment bills</p>
+            <div class="time-badge">⏱️ 1-2 hours to set up • Save $50-150/month</div>
         </div>
-        <div class="streaming-card free">
-          <h4>📺 Pluto TV</h4>
-          <div class="price">FREE</div>
-          <p>Live TV channels + on-demand. Feels like cable!</p>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>The average cable bill is $100-200/month - that's $1,200-2,400 per year! By strategically choosing streaming services and taking advantage of free options, you can get the same (or better) entertainment for a fraction of the cost. This guide shows you exactly how to cut the cord without missing your favorite shows!</p>
+            </div>
+            <div class="savings-highlight">
+                <h3>Save $600-1,800/Year</h3>
+                <p>Average cord-cutter saves $50-150/month compared to cable!</p>
+            </div>
         </div>
-        <div class="streaming-card free">
-          <h4>📺 Peacock (Free tier)</h4>
-          <div class="price">FREE</div>
-          <p>NBC shows, movies, some live sports.</p>
+
+        <div class="card">
+            <h2><span class="icon">💰</span> Cable vs Streaming Cost Comparison</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Option</th>
+                        <th>Monthly Cost</th>
+                        <th>What You Get</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Typical Cable Package</strong></td>
+                        <td class="price">$100-200</td>
+                        <td>150+ channels (mostly unwatched), DVR, equipment fees</td>
+                    </tr>
+                    <tr class="highlight">
+                        <td><strong>Budget Streaming Stack</strong></td>
+                        <td class="price">$25-40</td>
+                        <td>Netflix + 1 other service + free options</td>
+                    </tr>
+                    <tr class="highlight">
+                        <td><strong>Mid-Range Stack</strong></td>
+                        <td class="price">$40-70</td>
+                        <td>2-3 paid services + live TV option</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Full Replacement Stack</strong></td>
+                        <td class="price">$80-100</td>
+                        <td>Live TV service + 2-3 streaming services</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <div class="streaming-card free">
-          <h4>📺 Amazon Freevee</h4>
-          <div class="price">FREE</div>
-          <p>Movies and original shows. Part of Prime Video app.</p>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Cord-Cutting Checklist</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: List what you actually watch</div>
+                    <div class="step-desc">For 2 weeks, write down every show you watch. You'll probably find you only watch 5-10 channels regularly!</div>
+                </div>
+            </div>
+
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Check if you need live TV</div>
+                    <div class="step-desc">Do you watch sports, news, or shows as they air? If not, you may only need on-demand streaming services.</div>
+                </div>
+            </div>
+
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Get an antenna for local channels</div>
+                    <div class="step-desc">A $20-40 antenna gives you ABC, CBS, NBC, FOX, and PBS for FREE in HD. Great for live sports and news!</div>
+                </div>
+            </div>
+
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Choose 1-2 paid streaming services</div>
+                    <div class="step-desc">Pick services with content you'll actually watch. Netflix, Hulu, Disney+, Max, or Paramount+ are popular choices.</div>
+                </div>
+            </div>
+
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Add free streaming services</div>
+                    <div class="step-desc">Tubi, Pluto TV, Peacock Free, and others have tons of free content with ads. Use these to fill gaps!</div>
+                </div>
+            </div>
+
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Consider a live TV streaming service (if needed)</div>
+                    <div class="step-desc">Philo ($28), Sling ($40), or YouTube TV ($73) replace cable with live channels at a lower cost.</div>
+                </div>
+            </div>
+
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Call and cancel cable!</div>
+                    <div class="step-desc">Return equipment to avoid fees. They may offer a retention deal - only take it if it's REALLY good.</div>
+                </div>
+            </div>
+
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Rotate services instead of keeping all</div>
+                    <div class="step-desc">Subscribe to one service, binge what you want, cancel, move to next. No contracts!</div>
+                </div>
+            </div>
         </div>
-        <div class="streaming-card free">
-          <h4">📺 The Roku Channel</h4>
-          <div class="price">FREE</div>
-          <p>Movies, TV, and live channels. Works on any device!</p>
+
+        <div class="card">
+            <h2><span class="icon">📺</span> Best Streaming Services by Budget</h2>
+            
+            <h3 style="color: #4caf50; margin: 20px 0 15px;">💵 Budget Options (Under $15/month)</h3>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-header budget">
+                        <h4>Netflix (with ads)</h4>
+                        <div class="price-tag">$7/mo</div>
+                    </div>
+                    <div class="service-body">
+                        <ul>
+                            <li class="pro">Huge library of shows & movies</li>
+                            <li class="pro">Great originals (Stranger Things, etc.)</li>
+                            <li class="pro">Works on all devices</li>
+                            <li class="con">Ads on cheapest plan</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-header budget">
+                        <h4>Hulu (with ads)</h4>
+                        <div class="price-tag">$10/mo</div>
+                    </div>
+                    <div class="service-body">
+                        <ul>
+                            <li class="pro">Next-day TV episodes</li>
+                            <li class="pro">FX & ABC content</li>
+                            <li class="pro">Often bundled with Disney+</li>
+                            <li class="con">Has commercials</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-header budget">
+                        <h4>Paramount+</h4>
+                        <div class="price-tag">$8/mo</div>
+                    </div>
+                    <div class="service-body">
+                        <ul>
+                            <li class="pro">CBS shows & live CBS</li>
+                            <li class="pro">NFL games, Champions League</li>
+                            <li class="pro">Star Trek, Yellowstone</li>
+                            <li class="con">Smaller library than Netflix</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 style="color: #2196f3; margin: 20px 0 15px;">🎬 Mid-Range Options ($15-25/month)</h3>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-header mid">
+                        <h4>Netflix (Standard)</h4>
+                        <div class="price-tag">$15.50/mo</div>
+                    </div>
+                    <div class="service-body">
+                        <ul>
+                            <li class="pro">No ads</li>
+                            <li class="pro">HD quality</li>
+                            <li class="pro">2 screens at once</li>
+                            <li class="con">No 4K on this tier</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-header mid">
+                        <h4>Max (with ads)</h4>
+                        <div class="price-tag">$10/mo</div>
+                    </div>
+                    <div class="service-body">
+                        <ul>
+                            <li class="pro">HBO content + Max originals</li>
+                            <li class="pro">Warner Bros movies</li>
+                            <li class="pro">Discovery+ content included</li>
+                            <li class="con">Pricier for ad-free</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-header mid">
+                        <h4>Disney Bundle</h4>
+                        <div class="price-tag">$10/mo</div>
+                    </div>
+                    <div class="service-body">
+                        <ul>
+                            <li class="pro">Disney+ AND Hulu with ads!</li>
+                            <li class="pro">Marvel, Star Wars, Pixar</li>
+                            <li class="pro">Great for families</li>
+                            <li class="con">Has commercials</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 style="color: #9c27b0; margin: 20px 0 15px;">📡 Live TV Replacements</h3>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-header premium">
+                        <h4>Philo</h4>
+                        <div class="price-tag">$28/mo</div>
+                    </div>
+                    <div class="service-body">
+                        <ul>
+                            <li class="pro">70+ channels, unlimited DVR</li>
+                            <li class="pro">HGTV, MTV, Discovery, Hallmark</li>
+                            <li class="pro">Cheapest live TV option!</li>
+                            <li class="con">No sports or local news</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-header premium">
+                        <h4>Sling TV</h4>
+                        <div class="price-tag">$40/mo</div>
+                    </div>
+                    <div class="service-body">
+                        <ul>
+                            <li class="pro">ESPN, CNN, HGTV, etc.</li>
+                            <li class="pro">Customizable channel packs</li>
+                            <li class="pro">Good for sports fans</li>
+                            <li class="con">No local channels in most areas</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-header premium">
+                        <h4>YouTube TV</h4>
+                        <div class="price-tag">$73/mo</div>
+                    </div>
+                    <div class="service-body">
+                        <ul>
+                            <li class="pro">100+ channels including locals</li>
+                            <li class="pro">Unlimited DVR</li>
+                            <li class="pro">Best overall experience</li>
+                            <li class="con">Most expensive option</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="streaming-card free">
-          <h4">📚 Your Library</h4>
-          <div class="price">FREE</div>
-          <p>Kanopy and Hoopla through your library card. Free movies!</p>
+
+        <div class="card">
+            <h2><span class="icon">🆓</span> FREE Streaming Services</h2>
+            <p style="color: #666; margin-bottom: 15px;">These are 100% free (with ads) - no credit card needed!</p>
+            <div class="free-grid">
+                <div class="free-card">
+                    <div class="free-icon">📺</div>
+                    <h4>Tubi</h4>
+                    <p>Huge library of movies & shows. Surprisingly good content!</p>
+                </div>
+                <div class="free-card">
+                    <div class="free-icon">🛸</div>
+                    <h4>Pluto TV</h4>
+                    <p>Live TV channels + on-demand. Like cable but free!</p>
+                </div>
+                <div class="free-card">
+                    <div class="free-icon">🦚</div>
+                    <h4>Peacock (Free)</h4>
+                    <p>NBC shows, movies, some live sports. Premium tier available.</p>
+                </div>
+                <div class="free-card">
+                    <div class="free-icon">📰</div>
+                    <h4>NewsON</h4>
+                    <p>270+ local news stations streaming live. Great for news!</p>
+                </div>
+                <div class="free-card">
+                    <div class="free-icon">🎬</div>
+                    <h4>Crackle</h4>
+                    <p>Sony-owned. Original series + classic movies.</p>
+                </div>
+                <div class="free-card">
+                    <div class="free-icon">📻</div>
+                    <h4>Roku Channel</h4>
+                    <p>Free movies, shows & live TV. Works on any device!</p>
+                </div>
+            </div>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Pro Tip: Check Your Library Card!</div>
+                <p>Many libraries offer FREE access to streaming services like Kanopy (indie films, documentaries) and Hoopla (movies, TV, music). Your library card = free entertainment!</p>
+            </div>
         </div>
-      </div>
+
+        <div class="card">
+            <h2><span class="icon">🧮</span> Calculate Your Savings</h2>
+            <div class="calculator-box">
+                <h4>How Much Will You Save?</h4>
+                <div class="calc-section">
+                    <h5>Current Costs:</h5>
+                    <div class="calc-row">
+                        <label>Cable/Satellite Bill: $</label>
+                        <input type="number" id="currentCable" placeholder="150" value="150">
+                    </div>
+                </div>
+                <div class="calc-section">
+                    <h5>New Streaming Costs:</h5>
+                    <div class="calc-row">
+                        <label>Streaming Service 1: $</label>
+                        <input type="number" id="stream1" placeholder="15" value="15">
+                    </div>
+                    <div class="calc-row">
+                        <label>Streaming Service 2: $</label>
+                        <input type="number" id="stream2" placeholder="10" value="10">
+                    </div>
+                    <div class="calc-row">
+                        <label>Live TV Service: $</label>
+                        <input type="number" id="liveTV" placeholder="0" value="0">
+                    </div>
+                </div>
+                <button class="calc-btn" onclick="calculateSavings()">Calculate My Savings</button>
+                <div class="calc-result" id="calcResult" style="display: none;">
+                    <div class="value savings" id="monthlySavings">$0</div>
+                    <p style="color: #666;">Monthly Savings</p>
+                    <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #e0e0e0;">
+                        <strong id="yearlySavings" style="font-size: 1.3em; color: #2e7d32;">$0</strong>
+                        <p style="color: #666;">Per Year!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📱</span> Cord-Cutting Experts to Follow</h2>
+            <p>These creators help people navigate the streaming world and save money:</p>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📡</div>
+                    <h4>Jared Newman</h4>
+                    <div class="platform">📧 Cord Cutter Weekly Newsletter</div>
+                    <div class="followers">30K+ Subscribers</div>
+                    <p>The go-to expert for cord-cutting news. Weekly newsletter with deals, tips, and streaming service updates.</p>
+                    <a href="https://cordcutterweekly.com" class="influencer-link" target="_blank">cordcutterweekly.com →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Cord Cutters News</h4>
+                    <div class="platform">🌐 Website & YouTube</div>
+                    <div class="followers">100K+ Followers</div>
+                    <p>Breaking news on streaming services, device reviews, and cord-cutting guides. Very comprehensive!</p>
+                    <a href="https://cordcuttersnews.com" class="influencer-link" target="_blank">cordcuttersnews.com →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🎬</div>
+                    <h4>TechHive</h4>
+                    <div class="platform">🌐 Website</div>
+                    <div class="followers">Major Tech Publication</div>
+                    <p>In-depth streaming device reviews and cord-cutting guides. Trusted tech journalism.</p>
+                    <a href="https://www.techhive.com" class="influencer-link" target="_blank">techhive.com →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📊</div>
+                    <h4>Tom's Guide - Streaming</h4>
+                    <div class="platform">🌐 Website</div>
+                    <div class="followers">Major Tech Publication</div>
+                    <p>Detailed comparisons of streaming services, live TV options, and best streaming devices.</p>
+                    <a href="https://www.tomsguide.com/us/best-streaming-video-services,review-2625.html" class="influencer-link" target="_blank">tomsguide.com →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💡</div>
+                    <h4>Clark Howard</h4>
+                    <div class="platform">📻 Radio & Podcast</div>
+                    <div class="followers">Millions of Listeners</div>
+                    <p>Consumer advocate with great cord-cutting tips. Regularly covers streaming deals and how to save.</p>
+                    <a href="https://clark.com" class="influencer-link" target="_blank">clark.com →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📱</div>
+                    <h4>r/cordcutters</h4>
+                    <div class="platform">🌐 Reddit Community</div>
+                    <div class="followers">1M+ Members</div>
+                    <p>Active community sharing deals, setups, and answering questions. Great for real user experiences!</p>
+                    <a href="https://www.reddit.com/r/cordcutters" class="influencer-link" target="_blank">r/cordcutters →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">⚠️</span> Common Cord-Cutting Mistakes</h2>
+            <div class="warning-box">
+                <h4>❌ Subscribing to too many services at once</h4>
+                <p>Start with 1-2 services. Add more only if you actually watch them. 5+ services can cost more than cable!</p>
+            </div>
+            <div class="warning-box">
+                <h4>❌ Forgetting about internet costs</h4>
+                <p>You need good internet for streaming. Make sure your internet-only plan is cheaper than your current bundle.</p>
+            </div>
+            <div class="warning-box">
+                <h4>❌ Not using free trials strategically</h4>
+                <p>Most services offer 7-30 day free trials. Use them to test before committing!</p>
+            </div>
+            <div class="warning-box">
+                <h4>❌ Keeping services you don't use</h4>
+                <p>Review your subscriptions monthly. Cancel what you're not watching and rotate services instead!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Notes</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Plan your cord-cutting journey!
+
+CURRENT CABLE BILL: $____/month
+
+SHOWS I MUST HAVE:
+1. 
+2. 
+3. 
+
+SERVICES I'M CHOOSING:
+☐ Netflix ($____)
+☐ Hulu ($____)
+☐ Disney+ ($____)
+☐ Max ($____)
+☐ Other: ____
+
+LIVE TV SERVICE (if needed):
+☐ Philo ($28)
+☐ Sling ($40)
+☐ YouTube TV ($73)
+☐ None - using antenna
+
+FREE SERVICES TO USE:
+☐ Tubi
+☐ Pluto TV
+☐ Peacock Free
+☐ Library streaming
+
+ESTIMATED NEW MONTHLY COST: $____
+MONTHLY SAVINGS: $____
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help Creating a Budget?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="#" class="cta-button">Get Support →</a>
+        </div>
     </div>
 
-    <div class="section-card calculator-section">
-      <h2><span class="icon" style="background: linear-gradient(135deg, #ef4444, #dc2626);">🧮</span> Calculate What You're Spending</h2>
-      <p class="section-intro" style="color: #991b1b;">Add up your current TV costs:</p>
-      
-      <div class="calc-row">
-        <label>Cable/Satellite:</label>
-        <input type="number" id="cable" placeholder="$0">
-      </div>
-      <div class="calc-row">
-        <label>Netflix:</label>
-        <input type="number" id="netflix" placeholder="$0">
-      </div>
-      <div class="calc-row">
-        <label>Hulu:</label>
-        <input type="number" id="hulu" placeholder="$0">
-      </div>
-      <div class="calc-row">
-        <label>Disney+:</label>
-        <input type="number" id="disney" placeholder="$0">
-      </div>
-      <div class="calc-row">
-        <label>HBO/Max:</label>
-        <input type="number" id="hbo" placeholder="$0">
-      </div>
-      <div class="calc-row">
-        <label>Other streaming:</label>
-        <input type="number" id="other" placeholder="$0">
-      </div>
-      
-      <div class="calc-result">
-        <h3>Your Monthly TV Spending</h3>
-        <div class="amount" id="totalSpending">$0</div>
-        <div style="color: var(--text-light); font-size: 0.9rem; margin-top: 8px;">
-          That's <span id="annualSpending">$0</span>/year!<br>
-          <span style="color: var(--success);">With rotation strategy: ~$20/month ($240/year)</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="section-card">
-      <h2><span class="icon">📝</span> Your Notes</h2>
-      <textarea id="userNotes" placeholder="Example: Currently paying: Netflix $15, Hulu $18, Disney+ $14, Cable $120 = $167/month! Going to: Cut cable (save $120), rotate streaming (save $30). New total: ~$20/month!"></textarea>
-    </div>
-
-    <div class="help-section">
-      <div class="help-icon">💬</div>
-      <div class="help-content">
-        <h3>Need Help?</h3>
-        <p>Have questions about cutting costs? Chat with an ASAP Financial coach!</p>
-      </div>
-      <button class="chat-btn" onclick="openChat()">
-        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
-        Start Chat
-      </button>
-    </div>
-  </main>
-
-  <script>
-    const STORAGE_KEY = 'playbook_cut-cable-streaming';
-    function loadState() {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        const state = JSON.parse(saved);
-        document.querySelectorAll('.task-checkbox').forEach((box, i) => {
-          if (state.tasks && state.tasks[i]) { box.classList.add('checked'); box.innerHTML = '✓'; }
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-cut-cable');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) {
+                        document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                    }
+                });
+                document.getElementById('notes').value = data.notes || '';
+                if (data.calculator) {
+                    document.getElementById('currentCable').value = data.calculator.cable || '';
+                    document.getElementById('stream1').value = data.calculator.stream1 || '';
+                    document.getElementById('stream2').value = data.calculator.stream2 || '';
+                    document.getElementById('liveTV').value = data.calculator.liveTV || '';
+                }
+                updateProgress();
+            }
         });
-        if (state.notes) document.getElementById('userNotes').value = state.notes;
-        ['cable','netflix','hulu','disney','hbo','other'].forEach(id => {
-          if (state[id]) document.getElementById(id).value = state[id];
-        });
-        updateProgress();
-        calculateTotal();
-      }
-    }
-    function saveState() {
-      const tasks = []; document.querySelectorAll('.task-checkbox').forEach(box => { tasks.push(box.classList.contains('checked')); });
-      const state = { tasks, notes: document.getElementById('userNotes').value };
-      ['cable','netflix','hulu','disney','hbo','other'].forEach(id => {
-        state[id] = document.getElementById(id).value;
-      });
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-    }
-    function updateProgress() {
-      const boxes = document.querySelectorAll('.task-checkbox');
-      const checked = document.querySelectorAll('.task-checkbox.checked').length;
-      const percent = Math.round((checked / boxes.length) * 100);
-      document.getElementById('progressFill').style.width = percent + '%';
-      document.getElementById('progressText').textContent = percent + '%';
-    }
-    function calculateTotal() {
-      let total = 0;
-      ['cable','netflix','hulu','disney','hbo','other'].forEach(id => {
-        total += parseFloat(document.getElementById(id).value) || 0;
-      });
-      document.getElementById('totalSpending').textContent = '$' + total.toFixed(0);
-      document.getElementById('annualSpending').textContent = '$' + (total * 12).toFixed(0);
-    }
-    document.querySelectorAll('.task-checkbox').forEach(box => {
-      box.addEventListener('click', function() { this.classList.toggle('checked'); this.innerHTML = this.classList.contains('checked') ? '✓' : ''; updateProgress(); saveState(); });
-    });
-    document.getElementById('userNotes').addEventListener('input', saveState);
-    ['cable','netflix','hulu','disney','hbo','other'].forEach(id => {
-      document.getElementById(id).addEventListener('input', () => { calculateTotal(); saveState(); });
-    });
-    function openChat() { window.location.href = 'https://asapcreditrepairusa.com/chat'; }
-    loadState();
-  </script>
+
+        function toggleStep(el) {
+            el.classList.toggle('checked');
+            updateProgress();
+            saveProgress();
+        }
+
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            const calculator = {
+                cable: document.getElementById('currentCable').value,
+                stream1: document.getElementById('stream1').value,
+                stream2: document.getElementById('stream2').value,
+                liveTV: document.getElementById('liveTV').value
+            };
+            localStorage.setItem('playbook-cut-cable', JSON.stringify({ steps, notes, calculator }));
+        }
+
+        function calculateSavings() {
+            const cable = parseFloat(document.getElementById('currentCable').value) || 0;
+            const stream1 = parseFloat(document.getElementById('stream1').value) || 0;
+            const stream2 = parseFloat(document.getElementById('stream2').value) || 0;
+            const liveTV = parseFloat(document.getElementById('liveTV').value) || 0;
+            
+            const newTotal = stream1 + stream2 + liveTV;
+            const monthly = cable - newTotal;
+            const yearly = monthly * 12;
+            
+            document.getElementById('monthlySavings').textContent = '$' + monthly.toFixed(0);
+            document.getElementById('yearlySavings').textContent = '$' + yearly.toFixed(0);
+            
+            const valueEl = document.getElementById('monthlySavings');
+            valueEl.className = 'value ' + (monthly >= 0 ? 'savings' : 'loss');
+            
+            document.getElementById('calcResult').style.display = 'block';
+            saveProgress();
+        }
+
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>
