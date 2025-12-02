@@ -3,147 +3,619 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avalanche Method | ASAP Financial Playbook</title>
+    <title>Debt Avalanche Method - Complete Guide - ASAP Financial Playbook</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; background: #f5f5f5; color: #333; line-height: 1.6; }
-        .playbook { max-width: 700px; margin: 0 auto; background: white; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
-        .header { background: linear-gradient(135deg, #673ab7 0%, #512da8 100%); color: white; padding: 30px; text-align: center; }
-        .header h1 { font-size: 28px; margin-bottom: 10px; }
-        .header p { opacity: 0.9; font-size: 14px; }
-        .meta { display: flex; justify-content: center; gap: 20px; margin-top: 15px; font-size: 12px; }
-        .meta span { background: rgba(255,255,255,0.2); padding: 5px 12px; border-radius: 15px; }
-        .content { padding: 30px; }
-        .section { margin-bottom: 30px; }
-        .section h2 { color: #512da8; font-size: 18px; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 2px solid #673ab7; }
-        .section p { margin-bottom: 12px; color: #555; }
-        .highlight-box { background: #ede7f6; border-left: 4px solid #673ab7; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
-        .comparison-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-        .comparison-table th, .comparison-table td { padding: 12px; text-align: left; border-bottom: 1px solid #e0e0e0; }
-        .comparison-table th { background: #673ab7; color: white; }
-        .comparison-table tr:nth-child(even) { background: #f5f5f5; }
-        .step-box { background: #f8f9fa; border-left: 4px solid #673ab7; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
-        .step-box h4 { color: #512da8; margin-bottom: 8px; }
-        .checklist { list-style: none; padding: 0; }
-        .checklist li { padding: 12px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 12px; }
-        .checklist li:last-child { border-bottom: none; }
-        .checklist input[type="checkbox"] { width: 20px; height: 20px; margin-top: 2px; cursor: pointer; flex-shrink: 0; }
-        .checklist label { cursor: pointer; flex: 1; }
-        .checklist .done { text-decoration: line-through; color: #888; }
-        .example-box { background: #fff3e0; border: 2px solid #ff9800; padding: 20px; border-radius: 8px; margin: 20px 0; }
-        .example-box h3 { color: #e65100; margin-bottom: 15px; }
-        .progress-section { background: #f8f9fa; padding: 20px; border-radius: 8px; margin-top: 30px; }
-        .progress-bar { height: 20px; background: #e0e0e0; border-radius: 10px; overflow: hidden; margin: 10px 0; }
-        .progress-fill { height: 100%; background: linear-gradient(90deg, #673ab7, #512da8); transition: width 0.3s; border-radius: 10px; }
-        .progress-text { text-align: center; font-weight: 600; color: #512da8; }
-        .cta-button { display: block; width: 100%; padding: 15px; background: #673ab7; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; text-align: center; text-decoration: none; margin-top: 20px; }
-        .cta-button:hover { background: #512da8; }
-        .back-link { display: inline-block; margin: 20px 30px; color: #666; text-decoration: none; font-size: 14px; }
-        .back-link:hover { color: #673ab7; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #1565c0; font-size: 1.1em; line-height: 1.6; }
+        .key-principle { background: linear-gradient(135deg, #2196f3, #1976d2); color: white; border-radius: 15px; padding: 25px; text-align: center; margin: 20px 0; }
+        .key-principle h3 { font-size: 1.8em; margin-bottom: 10px; }
+        .key-principle p { font-size: 1.2em; opacity: 0.95; }
+        .steps-visual { display: flex; flex-direction: column; gap: 15px; margin: 20px 0; }
+        .visual-step { display: flex; align-items: center; gap: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; transition: all 0.3s; }
+        .visual-step:hover { background: #e3f2fd; transform: translateX(10px); }
+        .step-number { width: 50px; height: 50px; background: linear-gradient(135deg, #2196f3, #1976d2); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5em; font-weight: 700; flex-shrink: 0; }
+        .step-content h4 { color: #1a1a2e; font-size: 1.2em; margin-bottom: 5px; }
+        .step-content p { color: #666; line-height: 1.5; }
+        
+        /* Savings Highlight */
+        .savings-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .savings-highlight h3 { font-size: 2em; margin-bottom: 10px; }
+        .savings-highlight p { font-size: 1.1em; opacity: 0.95; }
+        
+        /* Interactive Debt Tracker */
+        .debt-tracker { background: #f5f5f5; border-radius: 15px; padding: 25px; margin: 20px 0; }
+        .debt-input-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr auto; gap: 10px; margin-bottom: 10px; align-items: center; }
+        .debt-input-row input { padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 14px; }
+        .debt-input-row input:focus { outline: none; border-color: #2196f3; }
+        .add-debt-btn { background: linear-gradient(135deg, #2196f3, #1976d2); color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; font-weight: 600; }
+        .add-debt-btn:hover { transform: scale(1.05); }
+        .remove-btn { background: #f44336; color: white; border: none; width: 35px; height: 35px; border-radius: 50%; cursor: pointer; font-size: 18px; }
+        .debt-list { margin-top: 20px; }
+        .debt-item { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr auto; gap: 10px; padding: 15px; background: white; border-radius: 10px; margin-bottom: 10px; align-items: center; }
+        .debt-item.paid { background: #e3f2fd; text-decoration: line-through; opacity: 0.7; }
+        .debt-item .name { font-weight: 600; color: #1a1a2e; }
+        .debt-item .rate { color: #f44336; font-weight: 700; }
+        .debt-item .amount { color: #1a1a2e; }
+        .calculate-btn { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border: none; padding: 15px 30px; border-radius: 10px; cursor: pointer; font-weight: 600; font-size: 16px; margin-top: 15px; width: 100%; }
+        
+        /* Results */
+        .results-box { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; margin-top: 20px; display: none; }
+        .results-box.show { display: block; }
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; margin-top: 20px; }
+        .result-item { text-align: center; }
+        .result-item .value { font-size: 2em; font-weight: 700; color: #4caf50; }
+        .result-item .label { opacity: 0.8; margin-top: 5px; }
+        .payoff-order { margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2); }
+        .payoff-order h4 { margin-bottom: 15px; }
+        .payoff-step { display: flex; align-items: center; gap: 15px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .payoff-step:last-child { border-bottom: none; }
+        .payoff-num { background: #2196f3; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; }
+        .payoff-rate { color: #ff8a80; font-size: 14px; }
+        
+        /* Example Scenario */
+        .example-box { background: #e3f2fd; border-radius: 15px; padding: 25px; margin: 20px 0; }
+        .example-box h4 { color: #1565c0; margin-bottom: 15px; }
+        .example-table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        .example-table th, .example-table td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+        .example-table th { background: #f5f5f5; color: #1a1a2e; }
+        .example-table tr:hover { background: #e3f2fd; }
+        .example-table .high-rate { color: #f44336; font-weight: 700; }
+        
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        
+        .math-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-left: 4px solid #4caf50; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .math-box h4 { color: #2e7d32; margin-bottom: 10px; }
+        .math-box p { color: #666; }
+        
+        /* Comparison Section */
+        .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; }
+        .comparison-card { background: #f5f5f5; border-radius: 15px; padding: 20px; }
+        .comparison-card.avalanche { border-top: 5px solid #2196f3; }
+        .comparison-card.snowball { border-top: 5px solid #4caf50; }
+        .comparison-card h4 { margin-bottom: 15px; color: #1a1a2e; }
+        .comparison-card ul { list-style: none; }
+        .comparison-card li { padding: 8px 0; color: #666; display: flex; align-items: flex-start; gap: 10px; }
+        .comparison-card li::before { content: "✓"; color: #2196f3; font-weight: 700; }
+        .comparison-card.snowball li::before { color: #4caf50; }
+        
+        /* Interest Calculator */
+        .interest-demo { background: #fff3e0; border-radius: 15px; padding: 25px; margin: 20px 0; }
+        .interest-demo h4 { color: #e65100; margin-bottom: 15px; }
+        .interest-comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px; }
+        .interest-card { background: white; border-radius: 10px; padding: 20px; text-align: center; }
+        .interest-card h5 { color: #1a1a2e; margin-bottom: 10px; }
+        .interest-card .amount { font-size: 2em; font-weight: 700; }
+        .interest-card.avalanche .amount { color: #2196f3; }
+        .interest-card.snowball .amount { color: #4caf50; }
+        .interest-card .saved { color: #f44336; font-weight: 600; margin-top: 10px; }
+        
+        /* Influencer Section */
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #2196f3, #1976d2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #2196f3; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card .followers { color: #666; font-size: 13px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #2196f3; text-decoration: none; font-weight: 600; }
+        
+        /* Tools Section */
+        .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .tool-card { background: #e3f2fd; padding: 20px; border-radius: 15px; text-align: center; }
+        .tool-card .tool-icon { font-size: 2.5em; margin-bottom: 10px; }
+        .tool-card h4 { color: #1565c0; margin-bottom: 5px; }
+        .tool-card p { color: #666; font-size: 14px; }
+        .tool-card a { color: #2196f3; font-weight: 600; text-decoration: none; }
+        
+        /* Who Should Use */
+        .ideal-for { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 25px; margin: 20px 0; }
+        .ideal-for h4 { color: #2e7d32; margin-bottom: 15px; }
+        .ideal-list { list-style: none; }
+        .ideal-list li { padding: 10px 0; display: flex; align-items: center; gap: 15px; border-bottom: 1px solid rgba(0,0,0,0.1); }
+        .ideal-list li:last-child { border-bottom: none; }
+        .ideal-icon { font-size: 1.5em; }
+        
+        .notes-section { margin-top: 20px; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 150px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #2196f3; }
+        
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-section h3 { margin-bottom: 15px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #2196f3, #1976d2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; transition: transform 0.3s; }
+        .cta-button:hover { transform: scale(1.05); }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+        .back-link:hover { opacity: 1; }
+        
+        @media (max-width: 768px) {
+            .debt-input-row { grid-template-columns: 1fr; }
+            .debt-item { grid-template-columns: 1fr; text-align: center; }
+            .comparison-grid { grid-template-columns: 1fr; }
+            .interest-comparison { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
-    <a href="javascript:history.back()" class="back-link">← Back to Blueprint</a>
-    
-    <div class="playbook">
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Playbooks</a>
+        
         <div class="header">
             <h1>🏔️ Debt Avalanche Method</h1>
-            <p>Pay off debt faster and save the most money</p>
-            <div class="meta">
-                <span>💰 Saves Most $$$</span>
-                <span>📊 Math-Based</span>
-                <span>🎯 Highest APR First</span>
+            <p class="subtitle">The mathematically optimal way to eliminate debt and save on interest</p>
+            <div class="time-badge">⏱️ 30 min setup + ongoing</div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>The Debt Avalanche is a debt payoff strategy where you pay off debts from <strong>highest interest rate to lowest</strong>, regardless of balance size. This method saves you the most money on interest over time - potentially thousands of dollars! If you're disciplined and motivated by math, this is your method.</p>
+            </div>
+            <div class="key-principle">
+                <h3>💡 The Math Principle</h3>
+                <p>High-interest debt costs you the most money. Kill it first, and you'll pay less overall.</p>
             </div>
         </div>
-        
-        <div class="content">
-            <div class="section">
-                <h2>What is the Avalanche Method?</h2>
-                <p>Pay minimum on all debts, then throw ALL extra money at the debt with the <strong>highest interest rate (APR)</strong>. Once that's paid off, move to the next highest. Repeat until debt-free.</p>
-                <div class="highlight-box">
-                    <strong>Why It Works:</strong> High-interest debt grows fastest. By killing it first, you pay less total interest and get out of debt sooner.
+
+        <div class="card">
+            <h2><span class="icon">💰</span> The Interest Savings Are Real</h2>
+            <div class="savings-highlight">
+                <h3>Save $500 - $5,000+ in Interest</h3>
+                <p>Depending on your debt load and interest rates, the avalanche method can save you serious money compared to other payoff strategies!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📚</span> How the Debt Avalanche Works</h2>
+            <div class="steps-visual">
+                <div class="visual-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>List ALL Your Debts by Interest Rate (Highest First)</h4>
+                        <p>Write down every debt except your mortgage. Order them by interest rate from highest to lowest - the rate is what matters here!</p>
+                    </div>
+                </div>
+                <div class="visual-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Make Minimum Payments on Everything</h4>
+                        <p>Pay the minimum on all debts to stay current and avoid late fees and credit damage.</p>
+                    </div>
+                </div>
+                <div class="visual-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Attack the HIGHEST Interest Rate Debt First</h4>
+                        <p>Every extra dollar goes to the debt costing you the most in interest. This is where you stop the bleeding!</p>
+                    </div>
+                </div>
+                <div class="visual-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Roll the Payment to the Next Highest Rate</h4>
+                        <p>When the highest-rate debt is paid off, take that entire payment and add it to the next highest rate debt.</p>
+                    </div>
+                </div>
+                <div class="visual-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h4>Repeat Until Debt-Free! 🎉</h4>
+                        <p>Like an avalanche crushing everything in its path, your payment power grows while interest savings pile up!</p>
+                    </div>
                 </div>
             </div>
-            
-            <div class="section">
-                <h2>Avalanche vs Snowball</h2>
-                <table class="comparison-table">
-                    <tr><th>Avalanche</th><th>Snowball</th></tr>
-                    <tr><td>Pay highest APR first</td><td>Pay smallest balance first</td></tr>
-                    <tr><td>Saves the most money</td><td>Quick wins for motivation</td></tr>
-                    <tr><td>Mathematically optimal</td><td>Psychologically easier</td></tr>
-                    <tr><td><strong>Recommended for most people</strong></td><td>Good if you need quick wins</td></tr>
-                </table>
-            </div>
-            
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📊</span> Real Example: See the Savings</h2>
             <div class="example-box">
-                <h3>📊 Example</h3>
-                <p><strong>Your debts:</strong></p>
-                <p>• Credit Card A: $5,000 at <strong>24% APR</strong> ← Attack this FIRST</p>
-                <p>• Credit Card B: $2,000 at 18% APR</p>
-                <p>• Car Loan: $8,000 at 6% APR</p>
-                <p style="margin-top: 15px;"><strong>Strategy:</strong> Pay minimums on Card B and Car Loan. Put ALL extra money toward Card A until it's $0. Then attack Card B.</p>
+                <h4>📋 Meet Mike's Debt Situation</h4>
+                <table class="example-table">
+                    <thead>
+                        <tr>
+                            <th>Debt</th>
+                            <th>Balance</th>
+                            <th>Interest Rate</th>
+                            <th>Min. Payment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>💳 Store Credit Card</td>
+                            <td>$2,000</td>
+                            <td class="high-rate">24.99% ⚠️</td>
+                            <td>$50</td>
+                        </tr>
+                        <tr>
+                            <td>💳 Credit Card #2</td>
+                            <td>$5,000</td>
+                            <td class="high-rate">19.99%</td>
+                            <td>$100</td>
+                        </tr>
+                        <tr>
+                            <td>🏥 Medical Bill</td>
+                            <td>$800</td>
+                            <td>12%</td>
+                            <td>$35</td>
+                        </tr>
+                        <tr>
+                            <td>🚗 Car Loan</td>
+                            <td>$12,000</td>
+                            <td>6.5%</td>
+                            <td>$250</td>
+                        </tr>
+                        <tr>
+                            <td>🎓 Student Loan</td>
+                            <td>$20,000</td>
+                            <td>4.5%</td>
+                            <td>$200</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><strong>Total Debt: $39,800</strong> | <strong>Total Min. Payments: $635/mo</strong></p>
+                <p style="margin-top: 15px;"><strong>Mike's Extra Money: $400/month</strong></p>
+                <p style="margin-top: 10px; color: #1565c0;"><strong>Avalanche Order:</strong> Store Card (24.99%) → Credit Card #2 (19.99%) → Medical (12%) → Car (6.5%) → Student Loan (4.5%)</p>
             </div>
             
-            <div class="section">
-                <h2>Step-by-Step Setup</h2>
-                <ul class="checklist">
-                    <li><input type="checkbox" id="s1" onchange="updateProgress()"><label for="s1">List ALL your debts (credit cards, loans, etc.)</label></li>
-                    <li><input type="checkbox" id="s2" onchange="updateProgress()"><label for="s2">Find the APR (interest rate) for each debt</label></li>
-                    <li><input type="checkbox" id="s3" onchange="updateProgress()"><label for="s3">Sort debts from HIGHEST to LOWEST APR</label></li>
-                    <li><input type="checkbox" id="s4" onchange="updateProgress()"><label for="s4">Set up autopay for MINIMUM payment on all debts</label></li>
-                    <li><input type="checkbox" id="s5" onchange="updateProgress()"><label for="s5">Calculate your monthly surplus (income - expenses)</label></li>
-                    <li><input type="checkbox" id="s6" onchange="updateProgress()"><label for="s6">Set up extra payment to #1 highest APR debt</label></li>
-                </ul>
-            </div>
-            
-            <div class="section">
-                <h2>Where to Find Your APR</h2>
-                <div class="step-box">
-                    <h4>Credit Cards</h4>
-                    <p>Log in → Statements or Account Details → Look for "Purchase APR" or "Interest Rate"</p>
+            <div class="interest-demo">
+                <h4>💵 Interest Savings Comparison</h4>
+                <p>Using Mike's situation with $400 extra per month:</p>
+                <div class="interest-comparison">
+                    <div class="interest-card avalanche">
+                        <h5>🏔️ Avalanche Method</h5>
+                        <div class="amount">$8,245</div>
+                        <p>Total Interest Paid</p>
+                    </div>
+                    <div class="interest-card snowball">
+                        <h5>❄️ Snowball Method</h5>
+                        <div class="amount">$9,890</div>
+                        <p>Total Interest Paid</p>
+                        <div class="saved">$1,645 more in interest!</div>
+                    </div>
                 </div>
-                <div class="step-box">
-                    <h4>Loans</h4>
-                    <p>Check your original loan documents or log in to lender's website → Loan Details</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🧮</span> Your Personal Debt Avalanche Tracker</h2>
+            <p>Enter your debts below to create your personalized payoff plan (sorted by interest rate):</p>
+            
+            <div class="debt-tracker">
+                <div class="debt-input-row">
+                    <input type="text" id="debtName" placeholder="Debt Name (e.g., Visa Card)">
+                    <input type="number" id="debtBalance" placeholder="Balance ($)">
+                    <input type="number" id="debtRate" placeholder="Interest %" step="0.01">
+                    <input type="number" id="debtMinimum" placeholder="Min. Payment ($)">
+                    <button class="add-debt-btn" onclick="addDebt()">+ Add</button>
+                </div>
+                
+                <div class="debt-list" id="debtList">
+                    <!-- Debts will appear here -->
+                </div>
+                
+                <div style="margin-top: 20px;">
+                    <label style="font-weight: 600; color: #1a1a2e;">Extra Monthly Payment: $</label>
+                    <input type="number" id="extraPayment" placeholder="300" style="padding: 12px; border: 2px solid #ddd; border-radius: 8px; width: 150px; margin-left: 10px;">
+                </div>
+                
+                <button class="calculate-btn" onclick="calculateAvalanche()">🧮 Calculate My Avalanche Plan</button>
+            </div>
+            
+            <div class="results-box" id="resultsBox">
+                <h3 style="margin-bottom: 10px;">🎉 Your Debt-Free Journey</h3>
+                <div class="results-grid">
+                    <div class="result-item">
+                        <div class="value" id="totalDebt">$0</div>
+                        <div class="label">Total Debt</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="value" id="highestRate">0%</div>
+                        <div class="label">Highest Rate</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="value" id="monthlyPayment">$0</div>
+                        <div class="label">Monthly Attack</div>
+                    </div>
+                </div>
+                <div class="payoff-order">
+                    <h4>📋 Your Payoff Order (Highest Rate First):</h4>
+                    <div id="payoffOrder"></div>
                 </div>
             </div>
-            
-            <div class="section">
-                <h2>Monthly Routine</h2>
-                <ul class="checklist">
-                    <li><input type="checkbox" id="m1" onchange="updateProgress()"><label for="m1">Check that all minimum payments went through</label></li>
-                    <li><input type="checkbox" id="m2" onchange="updateProgress()"><label for="m2">Make extra payment to highest APR debt</label></li>
-                    <li><input type="checkbox" id="m3" onchange="updateProgress()"><label for="m3">Update your debt tracker (balance remaining)</label></li>
-                    <li><input type="checkbox" id="m4" onchange="updateProgress()"><label for="m4">Celebrate progress (even small wins!)</label></li>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> Is the Avalanche Method Right for You?</h2>
+            <div class="ideal-for">
+                <h4>✅ The Avalanche is IDEAL if you:</h4>
+                <ul class="ideal-list">
+                    <li><span class="ideal-icon">🧠</span> <div><strong>Are motivated by math and logic</strong> - Seeing the interest savings keeps you going</div></li>
+                    <li><span class="ideal-icon">💪</span> <div><strong>Have strong self-discipline</strong> - You can stay committed even without quick wins</div></li>
+                    <li><span class="ideal-icon">📊</span> <div><strong>Have high-interest debt</strong> - Credit cards over 15% APR? Avalanche saves the most</div></li>
+                    <li><span class="ideal-icon">⏰</span> <div><strong>Don't need immediate gratification</strong> - You're patient and think long-term</div></li>
+                    <li><span class="ideal-icon">💰</span> <div><strong>Want to save the most money possible</strong> - Every dollar counts to you</div></li>
                 </ul>
             </div>
             
-            <div class="section">
-                <h2>When a Debt is Paid Off</h2>
-                <ul class="checklist">
-                    <li><input type="checkbox" id="p1" onchange="updateProgress()"><label for="p1">🎉 Celebrate! You crushed one!</label></li>
-                    <li><input type="checkbox" id="p2" onchange="updateProgress()"><label for="p2">DO NOT close the credit card (hurts credit score)</label></li>
-                    <li><input type="checkbox" id="p3" onchange="updateProgress()"><label for="p3">Move ALL payment amount to next highest APR debt</label></li>
-                    <li><input type="checkbox" id="p4" onchange="updateProgress()"><label for="p4">Update your debt list and keep going!</label></li>
+            <div class="math-box">
+                <h4>🔢 The Math Behind It</h4>
+                <p>When you carry a $5,000 balance at 24.99% APR, you're paying roughly $104/month in interest alone! By attacking this debt first, you stop that interest from compounding and eating your money every single month.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">⚖️</span> Avalanche vs. Snowball: Quick Comparison</h2>
+            <div class="comparison-grid">
+                <div class="comparison-card avalanche">
+                    <h4>🏔️ Debt Avalanche (This Method)</h4>
+                    <ul>
+                        <li>Pay highest interest first</li>
+                        <li>Saves the most money mathematically</li>
+                        <li>Takes longer to see first debt paid off</li>
+                        <li>Requires strong discipline</li>
+                        <li>Best for: Math-driven, disciplined people</li>
+                    </ul>
+                </div>
+                <div class="comparison-card snowball">
+                    <h4>❄️ Debt Snowball</h4>
+                    <ul>
+                        <li>Pay smallest balance first</li>
+                        <li>Quick wins = high motivation</li>
+                        <li>See progress faster</li>
+                        <li>May pay more in interest</li>
+                        <li>Best for: People who need momentum</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Hybrid Approach</div>
+                <p>Some people start with the Avalanche to knock out their highest-interest debt, then switch to Snowball for the remaining debts. Use whatever keeps you going!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">⚡</span> Ways to Accelerate Your Avalanche</h2>
+            <div class="ideal-for">
+                <h4>🚀 Maximize Your Attack Money</h4>
+                <ul class="ideal-list">
+                    <li><span class="ideal-icon">📞</span> <div><strong>Negotiate lower interest rates:</strong> Call your credit card companies and ask! Average success rate is 70%</div></li>
+                    <li><span class="ideal-icon">💳</span> <div><strong>Balance transfer:</strong> Move high-interest debt to a 0% APR card (watch for fees)</div></li>
+                    <li><span class="ideal-icon">💼</span> <div><strong>Side hustles:</strong> DoorDash, freelancing, selling items - every extra dollar helps</div></li>
+                    <li><span class="ideal-icon">✂️</span> <div><strong>Cut expenses:</strong> Cancel subscriptions, meal prep, lower bills</div></li>
+                    <li><span class="ideal-icon">🎁</span> <div><strong>Windfalls:</strong> Tax refunds, bonuses → straight to highest-rate debt!</div></li>
                 </ul>
             </div>
-            
-            <div class="progress-section">
-                <h3>Your Progress</h3>
-                <div class="progress-bar"><div class="progress-fill" id="progress-bar" style="width: 0%"></div></div>
-                <div class="progress-text" id="progress-text">0 of 14 tasks complete</div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📱</span> Financial Influencers Who Talk About Debt Payoff</h2>
+            <p>Learn from these trusted voices in personal finance:</p>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💰</div>
+                    <h4>Mark Tilbury</h4>
+                    <div class="platform">📱 TikTok, YouTube</div>
+                    <div class="followers">7M+ Followers</div>
+                    <p>Self-made millionaire sharing advice on being financially successful, saving money, and smart debt strategies.</p>
+                    <a href="https://www.tiktok.com/@marktilbury" class="influencer-link" target="_blank">@marktilbury →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📊</div>
+                    <h4>Humphrey Yang</h4>
+                    <div class="platform">📱 TikTok, YouTube</div>
+                    <div class="followers">3.3M+ Followers</div>
+                    <p>Former financial advisor who breaks down investing, debt payoff, and credit strategies simply.</p>
+                    <a href="https://www.tiktok.com/@humphreytalks" class="influencer-link" target="_blank">@humphreytalks →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">⚖️</div>
+                    <h4>Erika Kullberg</h4>
+                    <div class="platform">📱 TikTok</div>
+                    <div class="followers">9M+ Followers</div>
+                    <p>Lawyer who shares money-saving secrets, fee refunds, and financial tips everyone should know.</p>
+                    <a href="https://www.tiktok.com/@erikakullberg" class="influencer-link" target="_blank">@erikakullberg →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">👩‍💼</div>
+                    <h4>Delyanne Barros</h4>
+                    <div class="platform">📱 TikTok, Instagram</div>
+                    <div class="followers">500K+ Followers</div>
+                    <p>Former attorney who paid off law school debt through investing. Teaches stock market basics.</p>
+                    <a href="https://www.tiktok.com/@deaborrosofficial" class="influencer-link" target="_blank">@delyanne →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🎯</div>
+                    <h4>John Liang</h4>
+                    <div class="platform">📱 TikTok</div>
+                    <div class="followers">2.5M+ Followers</div>
+                    <p>Real estate investor sharing credit card tips, investing advice, and financial planning.</p>
+                    <a href="https://www.tiktok.com/@johnsfinancetips" class="influencer-link" target="_blank">@johnsfinancetips →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📈</div>
+                    <h4>Nick Meyer</h4>
+                    <div class="platform">📱 TikTok</div>
+                    <div class="followers">1.1M+ Followers</div>
+                    <p>Simplifies everyday money decisions, balancing saving for the future with enjoying life now.</p>
+                    <a href="https://www.tiktok.com/@nickmeyer" class="influencer-link" target="_blank">@nickmeyer →</a>
+                </div>
             </div>
-            
-            <a href="javascript:history.back()" class="cta-button">✓ Return to Blueprint</a>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🛠️</span> Free Tools & Calculators</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-icon">🧮</div>
+                    <h4>Undebt.it</h4>
+                    <p>Free debt payoff planner with avalanche & snowball comparison</p>
+                    <a href="https://undebt.it" target="_blank">undebt.it →</a>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">📊</div>
+                    <h4>NerdWallet Calculator</h4>
+                    <p>Compare avalanche vs snowball with your actual numbers</p>
+                    <a href="https://www.nerdwallet.com/article/finance/debt-avalanche-vs-debt-snowball" target="_blank">nerdwallet.com →</a>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">📱</div>
+                    <h4>YNAB</h4>
+                    <p>Zero-based budgeting app with debt tracking</p>
+                    <a href="https://www.ynab.com" target="_blank">ynab.com →</a>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">💳</div>
+                    <h4>Credit Karma</h4>
+                    <p>Free credit monitoring + see all your debts in one place</p>
+                    <a href="https://www.creditkarma.com" target="_blank">creditkarma.com →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Debt-Free Journey Notes</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your avalanche progress here!
+
+MY DEBTS (highest interest to lowest):
+1. _____________ - ___% APR - $______
+2. _____________ - ___% APR - $______
+3. _____________ - ___% APR - $______
+4. _____________ - ___% APR - $______
+
+MY EXTRA PAYMENT AMOUNT: $___/month
+
+INTEREST RATE NEGOTIATION RESULTS:
+- Called _______ on [date]: New rate ____%
+
+STRATEGIES I'M USING:
+- 
+
+MY DEBT-FREE DATE GOAL:
+
+ESTIMATED INTEREST SAVINGS VS SNOWBALL: $______
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Ready to Crush Your High-Interest Debt?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="#" class="cta-button">Get Support →</a>
         </div>
     </div>
-    
+
     <script>
-        const STORAGE_KEY = 'playbook_avalanche';
-        function loadProgress() { const saved = localStorage.getItem(STORAGE_KEY); if (saved) { JSON.parse(saved).forEach(id => { const cb = document.getElementById(id); if (cb) { cb.checked = true; cb.nextElementSibling.classList.add('done'); } }); } updateProgress(); }
-        function updateProgress() { const checkboxes = document.querySelectorAll('input[type="checkbox"]'); const checked = []; let count = 0; checkboxes.forEach(cb => { if (cb.checked) { count++; checked.push(cb.id); cb.nextElementSibling.classList.add('done'); } else { cb.nextElementSibling.classList.remove('done'); } }); localStorage.setItem(STORAGE_KEY, JSON.stringify(checked)); document.getElementById('progress-bar').style.width = Math.round((count / checkboxes.length) * 100) + '%'; document.getElementById('progress-text').textContent = count + ' of ' + checkboxes.length + ' tasks complete'; }
-        document.addEventListener('DOMContentLoaded', loadProgress);
+        let debts = [];
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-debt-avalanche');
+            if (saved) {
+                const data = JSON.parse(saved);
+                debts = data.debts || [];
+                document.getElementById('extraPayment').value = data.extraPayment || '';
+                document.getElementById('notes').value = data.notes || '';
+                renderDebts();
+                if (debts.length > 0) {
+                    calculateAvalanche();
+                }
+            }
+        });
+        
+        function addDebt() {
+            const name = document.getElementById('debtName').value;
+            const balance = parseFloat(document.getElementById('debtBalance').value);
+            const rate = parseFloat(document.getElementById('debtRate').value);
+            const minimum = parseFloat(document.getElementById('debtMinimum').value);
+            
+            if (!name || !balance || !minimum) {
+                alert('Please fill in debt name, balance, and minimum payment');
+                return;
+            }
+            
+            debts.push({ name, balance, rate: rate || 0, minimum, paid: false });
+            debts.sort((a, b) => b.rate - a.rate); // Sort highest to lowest rate
+            
+            // Clear inputs
+            document.getElementById('debtName').value = '';
+            document.getElementById('debtBalance').value = '';
+            document.getElementById('debtRate').value = '';
+            document.getElementById('debtMinimum').value = '';
+            
+            renderDebts();
+            saveProgress();
+        }
+        
+        function renderDebts() {
+            const list = document.getElementById('debtList');
+            list.innerHTML = debts.map((debt, index) => `
+                <div class="debt-item ${debt.paid ? 'paid' : ''}">
+                    <span class="name">${index + 1}. ${debt.name}</span>
+                    <span class="amount">$${debt.balance.toLocaleString()}</span>
+                    <span class="rate">${debt.rate}% APR</span>
+                    <span>$${debt.minimum}/mo</span>
+                    <button class="remove-btn" onclick="removeDebt(${index})">×</button>
+                </div>
+            `).join('');
+        }
+        
+        function removeDebt(index) {
+            debts.splice(index, 1);
+            renderDebts();
+            saveProgress();
+        }
+        
+        function calculateAvalanche() {
+            if (debts.length === 0) return;
+            
+            const extra = parseFloat(document.getElementById('extraPayment').value) || 0;
+            const totalDebt = debts.reduce((sum, d) => sum + d.balance, 0);
+            const totalMin = debts.reduce((sum, d) => sum + d.minimum, 0);
+            const monthlyAttack = totalMin + extra;
+            const highestRate = Math.max(...debts.map(d => d.rate));
+            
+            document.getElementById('totalDebt').textContent = '$' + totalDebt.toLocaleString();
+            document.getElementById('highestRate').textContent = highestRate + '%';
+            document.getElementById('monthlyPayment').textContent = '$' + monthlyAttack.toLocaleString();
+            
+            // Payoff order
+            const orderHtml = debts.map((debt, index) => `
+                <div class="payoff-step">
+                    <div class="payoff-num">${index + 1}</div>
+                    <div>
+                        ${debt.name} - $${debt.balance.toLocaleString()}
+                        <span class="payoff-rate">(${debt.rate}% APR)</span>
+                    </div>
+                </div>
+            `).join('');
+            document.getElementById('payoffOrder').innerHTML = orderHtml;
+            
+            document.getElementById('resultsBox').classList.add('show');
+            saveProgress();
+        }
+        
+        function saveProgress() {
+            const data = {
+                debts: debts,
+                extraPayment: document.getElementById('extraPayment').value,
+                notes: document.getElementById('notes').value
+            };
+            localStorage.setItem('playbook-debt-avalanche', JSON.stringify(data));
+        }
+        
+        document.getElementById('notes').addEventListener('input', saveProgress);
+        document.getElementById('extraPayment').addEventListener('input', saveProgress);
     </script>
 </body>
 </html>
