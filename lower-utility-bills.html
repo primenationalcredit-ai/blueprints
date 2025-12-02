@@ -1,291 +1,601 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lower Your Utility Bills | ASAP Credit Repair Playbook</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root { --primary: #063d86; --primary-light: #0a4fa8; --primary-dark: #042a5c; --accent: #00c9a7; --success: #10b981; --warning: #f59e0b; --bg: #f8fafc; --text: #1e293b; --text-light: #64748b; --border: #e2e8f0; }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 17px; }
-    .header { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; padding: 40px 20px 50px; text-align: center; }
-    .header-content { max-width: 800px; margin: 0 auto; }
-    .back-link { display: inline-flex; align-items: center; gap: 8px; color: white; text-decoration: none; opacity: 0.8; font-size: 0.9rem; margin-bottom: 16px; }
-    .category-badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; margin-bottom: 16px; }
-    .header h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 12px; }
-    .header-subtitle { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
-    .main-content { max-width: 800px; margin: -30px auto 40px; padding: 0 20px; }
-    .progress-section { position: sticky; top: 0; background: white; padding: 16px 20px; margin: 0 -20px 20px; border-bottom: 1px solid var(--border); z-index: 100; display: flex; align-items: center; gap: 16px; }
-    .progress-bar { flex: 1; height: 10px; background: var(--border); border-radius: 5px; overflow: hidden; }
-    .progress-fill { height: 100%; background: linear-gradient(90deg, #f59e0b, #fbbf24); border-radius: 5px; transition: width 0.3s; width: 0%; }
-    .progress-text { font-weight: 600; color: var(--text); min-width: 50px; }
-    .goal-card { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border: 2px solid var(--success); border-radius: 16px; padding: 24px 28px; margin-bottom: 30px; }
-    .goal-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; color: #065f46; margin-bottom: 12px; }
-    .goal-card p { color: #047857; font-size: 1.05rem; }
-    .goal-card .earnings { background: white; display: inline-block; padding: 10px 18px; border-radius: 10px; margin-top: 14px; font-weight: 600; color: #065f46; font-size: 1.1rem; }
-    .section-card { background: white; border-radius: 16px; padding: 28px; margin-bottom: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid var(--border); }
-    .section-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; color: var(--primary); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
-    .section-card h2 .icon { width: 40px; height: 40px; background: linear-gradient(135deg, #f59e0b, #fbbf24); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; }
-    .section-intro { color: var(--text-light); margin-bottom: 20px; font-size: 1rem; }
-    .task-list { list-style: none; }
-    .task-item { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border); }
-    .task-item:last-child { border-bottom: none; }
-    .task-checkbox { flex-shrink: 0; width: 28px; height: 28px; border: 2px solid var(--border); border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; margin-top: 2px; font-weight: bold; }
-    .task-checkbox:hover { border-color: var(--primary); }
-    .task-checkbox.checked { background: var(--success); border-color: var(--success); color: white; }
-    .task-content { flex: 1; }
-    .task-title { font-weight: 600; font-size: 1.1rem; margin-bottom: 8px; color: var(--text); }
-    .task-desc { color: var(--text-light); font-size: 0.95rem; line-height: 1.6; }
-    .task-meta { display: flex; gap: 12px; margin-top: 10px; flex-wrap: wrap; }
-    .task-badge { font-size: 0.8rem; padding: 4px 10px; border-radius: 6px; background: var(--bg); color: var(--text-light); }
-    .task-badge.easy { background: #dcfce7; color: #166534; }
-    .details-box { background: #f8fafc; border-radius: 10px; padding: 16px; margin-top: 12px; border-left: 4px solid #f59e0b; }
-    .details-box h4 { font-size: 0.9rem; color: #92400e; margin-bottom: 10px; }
-    .details-box ul { margin-left: 18px; color: var(--text); font-size: 0.9rem; }
-    .details-box li { margin-bottom: 8px; line-height: 1.5; }
-    .tips-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; margin-top: 16px; }
-    .tip-card { background: var(--bg); border-radius: 10px; padding: 14px; }
-    .tip-card h4 { font-size: 0.95rem; color: #92400e; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
-    .tip-card p { font-size: 0.85rem; color: var(--text-light); }
-    .tip-card .savings { font-weight: 600; color: var(--success); font-size: 0.85rem; margin-top: 6px; }
-    .resources-section { background: linear-gradient(135deg, #ede9fe, #ddd6fe); border: 2px solid #a78bfa; }
-    .resources-section h2 { color: #5b21b6; }
-    .resource-item { background: white; border-radius: 12px; padding: 16px 20px; margin-bottom: 12px; display: block; text-decoration: none; color: var(--text); transition: all 0.2s; }
-    .resource-item:hover { transform: translateX(4px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-    .resource-item h4 { font-size: 1rem; margin-bottom: 4px; color: #5b21b6; }
-    .resource-item p { font-size: 0.85rem; color: var(--text-light); }
-    .resource-item .link { font-size: 0.8rem; color: #7c3aed; }
-    .section-card textarea { width: 100%; min-height: 150px; padding: 16px 18px; border: 2px solid var(--border); border-radius: 12px; font-family: inherit; font-size: 1rem; resize: vertical; box-sizing: border-box; display: block; line-height: 1.6; }
-    .section-card textarea:focus { outline: none; border-color: var(--primary); }
-    .help-section { background: linear-gradient(135deg, #f0f9ff, #e0f2fe); border: 2px solid #7dd3fc; border-radius: 16px; padding: 24px 28px; margin-top: 30px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
-    .help-icon { width: 56px; height: 56px; background: white; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; }
-    .help-content { flex: 1; min-width: 200px; }
-    .help-content h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; margin-bottom: 4px; }
-    .help-content p { color: var(--text-light); font-size: 0.95rem; }
-    .chat-btn { background: var(--primary); color: white; border: none; padding: 14px 28px; border-radius: 12px; font-family: inherit; font-size: 1rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: all 0.2s; }
-    .chat-btn:hover { background: var(--primary-light); transform: translateY(-2px); }
-    @media (max-width: 600px) { .header { padding: 30px 20px 40px; } .section-card { padding: 20px; } .help-section { flex-direction: column; text-align: center; } }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lower Your Utility Bills - Complete Guide - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #2e7d32; font-size: 1.1em; line-height: 1.6; }
+        .savings-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .savings-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .savings-highlight p { font-size: 1.1em; opacity: 0.95; }
+        
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #e8f5e9; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .step-savings { display: inline-block; background: #e8f5e9; color: #2e7d32; padding: 3px 10px; border-radius: 5px; font-size: 12px; font-weight: 600; margin-top: 8px; }
+        
+        /* Breakdown */
+        .breakdown-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .breakdown-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; }
+        .breakdown-card .percent { font-size: 2.5em; font-weight: 700; color: #667eea; }
+        .breakdown-card h4 { color: #1a1a2e; margin: 10px 0 5px; font-size: 14px; }
+        .breakdown-card p { color: #666; font-size: 12px; }
+        
+        /* Room Sections */
+        .room-section { background: #f8f9fa; border-radius: 15px; padding: 25px; margin: 20px 0; }
+        .room-header { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+        .room-icon { font-size: 2.5em; }
+        .room-header h3 { color: #1a1a2e; }
+        .room-tips { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
+        .room-tip { background: white; border-radius: 10px; padding: 15px; border-left: 4px solid #667eea; }
+        .room-tip h4 { color: #1a1a2e; font-size: 14px; margin-bottom: 5px; }
+        .room-tip p { color: #666; font-size: 13px; }
+        .room-tip .savings { color: #4caf50; font-weight: 600; font-size: 12px; margin-top: 5px; }
+        
+        /* Seasonal */
+        .seasonal-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 20px 0; }
+        .seasonal-card { background: #f8f9fa; border-radius: 15px; padding: 20px; }
+        .seasonal-card.summer { border-top: 5px solid #ff9800; }
+        .seasonal-card.winter { border-top: 5px solid #2196f3; }
+        .seasonal-card h4 { color: #1a1a2e; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .seasonal-card ul { list-style: none; }
+        .seasonal-card li { padding: 8px 0; color: #666; font-size: 14px; display: flex; align-items: flex-start; gap: 10px; }
+        .seasonal-card li::before { content: "✓"; color: #4caf50; font-weight: 700; }
+        
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        
+        .quick-wins { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin: 20px 0; }
+        .quick-wins h3 { margin-bottom: 20px; }
+        .quick-win-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+        .quick-win { background: rgba(255,255,255,0.15); border-radius: 10px; padding: 15px; text-align: center; }
+        .quick-win .icon { font-size: 2em; margin-bottom: 10px; }
+        .quick-win h4 { margin-bottom: 5px; font-size: 14px; }
+        .quick-win p { font-size: 12px; opacity: 0.9; }
+        .quick-win .amount { font-size: 1.3em; font-weight: 700; margin-top: 10px; }
+        
+        /* Influencer Section */
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #667eea; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; }
+        
+        /* Tools Grid */
+        .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin: 20px 0; }
+        .tool-card { background: #e8f5e9; padding: 20px; border-radius: 15px; text-align: center; }
+        .tool-card .tool-icon { font-size: 2.5em; margin-bottom: 10px; }
+        .tool-card h4 { color: #2e7d32; margin-bottom: 5px; font-size: 14px; }
+        .tool-card p { color: #666; font-size: 12px; }
+        
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        
+        .notes-section { margin-top: 20px; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #667eea; }
+        
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; transition: transform 0.3s; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+        
+        @media (max-width: 768px) {
+            .seasonal-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
-  <header class="header">
-    <div class="header-content">
-      <a href="index.html" class="back-link">← Back to All Playbooks</a>
-      <span class="category-badge">💡 Housing & Utilities</span>
-      <h1>Lower Your Utility Bills</h1>
-      <p class="header-subtitle">Simple changes can cut your electric, gas, and water bills by 10-30%. No major investments required - just smart habits and a few quick fixes!</p>
-    </div>
-  </header>
-
-  <main class="main-content">
-    <div class="progress-section">
-      <span style="font-size: 0.9rem; color: var(--text-light);">Your Progress:</span>
-      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
-      <span class="progress-text" id="progressText">0%</span>
-    </div>
-
-    <div class="goal-card">
-      <h2>🎯 What You'll Achieve</h2>
-      <p>You'll reduce your monthly utility bills with simple changes that take minutes to implement. Small changes add up to big savings over a year!</p>
-      <div class="earnings">💰 Average savings: $30-100/month ($360-1,200/year!)</div>
-    </div>
-
-    <div class="section-card">
-      <h2><span class="icon">⚡</span> Quick Wins - Electric Bill</h2>
-      <p class="section-intro">Do these today for instant savings!</p>
-      
-      <div class="tips-grid">
-        <div class="tip-card">
-          <h4>💡 Switch to LED bulbs</h4>
-          <p>Uses 75% less energy than incandescent</p>
-          <div class="savings">Saves $50-100/year</div>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Playbooks</a>
+        
+        <div class="header">
+            <h1>💡 Lower Your Utility Bills</h1>
+            <p class="subtitle">Simple changes to slash your electric, gas, and water costs</p>
+            <div class="time-badge">⏱️ 1-2 hours to implement • Save $50-200/month</div>
         </div>
-        <div class="tip-card">
-          <h4>🔌 Unplug vampires</h4>
-          <p>Unplug chargers & devices when not in use</p>
-          <div class="savings">Saves $100+/year</div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>The average household spends $1,700+/year on electricity alone! But with simple changes - no major purchases required - you can cut your utility bills by 20-30%. This playbook covers electricity, gas, AND water savings, room by room and season by season.</p>
+            </div>
+            <div class="savings-highlight">
+                <h3>Save $600-2,400/Year</h3>
+                <p>By making simple changes to how you heat, cool, and power your home!</p>
+            </div>
         </div>
-        <div class="tip-card">
-          <h4">🌡️ Adjust thermostat</h4>
-          <p>68° winter, 78° summer. Each degree = 3% savings</p>
-          <div class="savings">Saves $100-200/year</div>
+
+        <div class="card">
+            <h2><span class="icon">📊</span> Where Your Energy Money Goes</h2>
+            <p style="color: #666; margin-bottom: 15px;">Understanding what uses the most energy helps you focus your efforts:</p>
+            <div class="breakdown-grid">
+                <div class="breakdown-card">
+                    <div class="percent">43%</div>
+                    <h4>Heating & Cooling</h4>
+                    <p>Biggest opportunity for savings!</p>
+                </div>
+                <div class="breakdown-card">
+                    <div class="percent">18%</div>
+                    <h4>Water Heating</h4>
+                    <p>Showers, laundry, dishes</p>
+                </div>
+                <div class="breakdown-card">
+                    <div class="percent">15%</div>
+                    <h4>Lighting</h4>
+                    <p>Easy wins with LED bulbs</p>
+                </div>
+                <div class="breakdown-card">
+                    <div class="percent">13%</div>
+                    <h4>Appliances</h4>
+                    <p>Fridge, washer, dryer</p>
+                </div>
+                <div class="breakdown-card">
+                    <div class="percent">11%</div>
+                    <h4>Electronics</h4>
+                    <p>TVs, computers, devices</p>
+                </div>
+            </div>
         </div>
-        <div class="tip-card">
-          <h4">🧺 Cold water wash</h4>
-          <p>90% of washing machine energy heats water</p>
-          <div class="savings">Saves $50-100/year</div>
+
+        <div class="card">
+            <h2><span class="icon">⚡</span> Quick Wins (Do These First!)</h2>
+            <div class="quick-wins">
+                <h3>Instant Savings - No Cost Required</h3>
+                <div class="quick-win-grid">
+                    <div class="quick-win">
+                        <div class="icon">🌡️</div>
+                        <h4>Adjust Thermostat 7-10°</h4>
+                        <p>When sleeping or away from home</p>
+                        <div class="amount">Save 10%/year</div>
+                    </div>
+                    <div class="quick-win">
+                        <div class="icon">🚿</div>
+                        <h4>Lower Water Heater to 120°F</h4>
+                        <p>Most are set too high at 140°F</p>
+                        <div class="amount">Save $36-61/year</div>
+                    </div>
+                    <div class="quick-win">
+                        <div class="icon">🧊</div>
+                        <h4>Wash Clothes in Cold Water</h4>
+                        <p>90% of energy goes to heating water</p>
+                        <div class="amount">Save $60+/year</div>
+                    </div>
+                    <div class="quick-win">
+                        <div class="icon">🔌</div>
+                        <h4>Unplug Energy Vampires</h4>
+                        <p>Devices on standby still use power</p>
+                        <div class="amount">Save $100+/year</div>
+                    </div>
+                    <div class="quick-win">
+                        <div class="icon">💡</div>
+                        <h4>Switch to LED Bulbs</h4>
+                        <p>Use 90% less energy than incandescent</p>
+                        <div class="amount">Save $100+/year</div>
+                    </div>
+                    <div class="quick-win">
+                        <div class="icon">🚰</div>
+                        <h4>Fix Leaky Faucets</h4>
+                        <p>A drip wastes 3,000+ gallons/year</p>
+                        <div class="amount">Save $35+/year</div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Utility-Saving Checklist</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Get a free energy audit from your utility company</div>
+                    <div class="step-desc">Many utilities offer free home energy audits. They'll find air leaks, insulation issues, and give you a personalized savings plan.</div>
+                    <span class="step-savings">Often FREE • Identifies biggest savings opportunities</span>
+                </div>
+            </div>
+
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Install a programmable or smart thermostat</div>
+                    <div class="step-desc">Automatically adjust temperature when you're asleep or away. Set it lower in winter (68°F) and higher in summer (78°F).</div>
+                    <span class="step-savings">Saves 10-15% on heating/cooling • $50-100/year</span>
+                </div>
+            </div>
+
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Seal air leaks around windows and doors</div>
+                    <div class="step-desc">Use weatherstripping and caulk to seal gaps. This is one of the cheapest home improvements with the biggest payoff!</div>
+                    <span class="step-savings">Cost: ~$30 • Saves up to 20% on heating/cooling</span>
+                </div>
+            </div>
+
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Replace all light bulbs with LEDs</div>
+                    <div class="step-desc">LED bulbs use 90% less energy and last 25x longer. Start with the rooms you use most.</div>
+                    <span class="step-savings">Saves $100+/year on lighting</span>
+                </div>
+            </div>
+
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Lower water heater temperature to 120°F</div>
+                    <div class="step-desc">Most water heaters are set to 140°F - way hotter than needed. 120°F is plenty for showers and dishes.</div>
+                    <span class="step-savings">Saves $36-61/year • Also prevents scalding</span>
+                </div>
+            </div>
+
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Install low-flow showerheads and faucet aerators</div>
+                    <div class="step-desc">WaterSense-labeled showerheads use 2 gal/min vs standard 2.5 gal/min. Saves water AND energy to heat it!</div>
+                    <span class="step-savings">Cost: $10-30 • Saves 2,700 gallons/year</span>
+                </div>
+            </div>
+
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Use smart power strips for electronics</div>
+                    <div class="step-desc">TVs, game consoles, and chargers use power even when "off." Smart strips cut power completely when devices aren't in use.</div>
+                    <span class="step-savings">Saves $100+/year on phantom energy</span>
+                </div>
+            </div>
+
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Change HVAC filters monthly</div>
+                    <div class="step-desc">Dirty filters make your system work harder and use more energy. Set a monthly reminder!</div>
+                    <span class="step-savings">Extends HVAC life • Improves efficiency 5-15%</span>
+                </div>
+            </div>
+
+            <div class="step" data-step="9">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Run appliances only with full loads</div>
+                    <div class="step-desc">Dishwashers and washing machines use the same energy whether full or half-full. Wait until you have a full load!</div>
+                    <span class="step-savings">Saves water AND energy</span>
+                </div>
+            </div>
+
+            <div class="step" data-step="10">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Ask about time-of-use rates and discounts</div>
+                    <div class="step-desc">Your utility may offer cheaper rates at off-peak hours (nights/weekends). Also ask about low-income assistance programs!</div>
+                    <span class="step-savings">Could save 10-20% on electricity</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🏠</span> Room-by-Room Energy Savings</h2>
+            
+            <div class="room-section">
+                <div class="room-header">
+                    <span class="room-icon">🍳</span>
+                    <h3>Kitchen</h3>
+                </div>
+                <div class="room-tips">
+                    <div class="room-tip">
+                        <h4>Set fridge to 38-42°F, freezer to 0-5°F</h4>
+                        <p>Colder isn't better - it just wastes energy. Check with a thermometer.</p>
+                        <div class="savings">Saves: $20-30/year</div>
+                    </div>
+                    <div class="room-tip">
+                        <h4>Keep fridge coils clean</h4>
+                        <p>Dusty coils make the compressor work harder. Clean every 6 months.</p>
+                        <div class="savings">Saves: $15-25/year</div>
+                    </div>
+                    <div class="room-tip">
+                        <h4>Air dry dishes instead of heat dry</h4>
+                        <p>Open the dishwasher after the rinse cycle and let dishes air dry.</p>
+                        <div class="savings">Saves: $10-20/year</div>
+                    </div>
+                    <div class="room-tip">
+                        <h4>Use small appliances when possible</h4>
+                        <p>Toaster ovens, slow cookers, and microwaves use less energy than the oven.</p>
+                        <div class="savings">Saves: $20-40/year</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="room-section">
+                <div class="room-header">
+                    <span class="room-icon">🛁</span>
+                    <h3>Bathroom</h3>
+                </div>
+                <div class="room-tips">
+                    <div class="room-tip">
+                        <h4>Take shorter showers</h4>
+                        <p>Cutting just 2 minutes saves 5 gallons of hot water per shower.</p>
+                        <div class="savings">Saves: $50-100/year</div>
+                    </div>
+                    <div class="room-tip">
+                        <h4>Fix running toilets</h4>
+                        <p>A running toilet can waste 200+ gallons per day! Usually just needs a $10 flapper.</p>
+                        <div class="savings">Saves: $70-150/year</div>
+                    </div>
+                    <div class="room-tip">
+                        <h4>Turn off water while brushing teeth</h4>
+                        <p>Running water while brushing wastes 4+ gallons per session.</p>
+                        <div class="savings">Saves: $20-30/year</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="room-section">
+                <div class="room-header">
+                    <span class="room-icon">👕</span>
+                    <h3>Laundry Room</h3>
+                </div>
+                <div class="room-tips">
+                    <div class="room-tip">
+                        <h4>Wash in cold water</h4>
+                        <p>90% of washer energy goes to heating water. Modern detergents work great in cold!</p>
+                        <div class="savings">Saves: $60-100/year</div>
+                    </div>
+                    <div class="room-tip">
+                        <h4>Clean the dryer lint trap every load</h4>
+                        <p>A clogged lint trap makes the dryer work 30% harder - plus it's a fire hazard!</p>
+                        <div class="savings">Saves: $25-40/year</div>
+                    </div>
+                    <div class="room-tip">
+                        <h4>Use a clothesline when possible</h4>
+                        <p>Free energy from the sun! Your clothes will last longer too.</p>
+                        <div class="savings">Saves: $50-100/year</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="room-section">
+                <div class="room-header">
+                    <span class="room-icon">📺</span>
+                    <h3>Living Room & Bedrooms</h3>
+                </div>
+                <div class="room-tips">
+                    <div class="room-tip">
+                        <h4>Use smart power strips for entertainment centers</h4>
+                        <p>TVs, gaming consoles, and cable boxes use power even when "off."</p>
+                        <div class="savings">Saves: $50-75/year</div>
+                    </div>
+                    <div class="room-tip">
+                        <h4>Use ceiling fans strategically</h4>
+                        <p>Counterclockwise in summer (pushes air down), clockwise in winter (circulates warm air).</p>
+                        <div class="savings">Saves: $40-60/year</div>
+                    </div>
+                    <div class="room-tip">
+                        <h4>Use blackout curtains</h4>
+                        <p>Keeps heat out in summer, cold out in winter. Reduces HVAC load significantly.</p>
+                        <div class="savings">Saves: $30-50/year</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🌡️</span> Seasonal Tips</h2>
+            <div class="seasonal-grid">
+                <div class="seasonal-card summer">
+                    <h4>☀️ Summer Cooling Tips</h4>
+                    <ul>
+                        <li>Set thermostat to 78°F when home</li>
+                        <li>Use ceiling fans to feel 4°F cooler</li>
+                        <li>Close blinds on sunny windows</li>
+                        <li>Avoid using oven - use microwave or grill</li>
+                        <li>Run heat-producing appliances at night</li>
+                        <li>Keep doors and windows closed when AC is on</li>
+                        <li>Service your AC before summer starts</li>
+                    </ul>
+                </div>
+                <div class="seasonal-card winter">
+                    <h4>❄️ Winter Heating Tips</h4>
+                    <ul>
+                        <li>Set thermostat to 68°F when home</li>
+                        <li>Lower to 60-65°F when sleeping</li>
+                        <li>Open blinds on sunny days for free heat</li>
+                        <li>Close fireplace damper when not in use</li>
+                        <li>Reverse ceiling fan direction (clockwise)</li>
+                        <li>Seal drafts around doors and windows</li>
+                        <li>Use space heaters for occupied rooms only</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📱</span> Energy Saving Experts to Follow</h2>
+            <p>Learn more money-saving tips from these trusted sources:</p>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🏠</div>
+                    <h4>This Old House</h4>
+                    <div class="platform">📺 YouTube & TV Show</div>
+                    <div class="followers">3M+ YouTube Subscribers</div>
+                    <p>Expert home improvement tips including weatherization, insulation, and energy efficiency projects.</p>
+                    <a href="https://www.youtube.com/thisoldhouse" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🔧</div>
+                    <h4>Family Handyman</h4>
+                    <div class="platform">🌐 Website & Magazine</div>
+                    <div class="followers">Major DIY Publication</div>
+                    <p>50+ energy saving tips, DIY weatherization guides, and home maintenance advice.</p>
+                    <a href="https://www.familyhandyman.com" class="influencer-link" target="_blank">familyhandyman.com →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💰</div>
+                    <h4>Clark Howard</h4>
+                    <div class="platform">📻 Radio & Podcast</div>
+                    <div class="followers">Millions of Listeners</div>
+                    <p>Consumer advocate with tips on lowering all household bills including utilities.</p>
+                    <a href="https://clark.com" class="influencer-link" target="_blank">clark.com →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">⭐</div>
+                    <h4>Energy Star</h4>
+                    <div class="platform">🌐 Official Government Site</div>
+                    <div class="followers">EPA Program</div>
+                    <p>Find energy-efficient appliances, calculate savings, and get rebate information.</p>
+                    <a href="https://www.energystar.gov" class="influencer-link" target="_blank">energystar.gov →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📊</div>
+                    <h4>NerdWallet - Home</h4>
+                    <div class="platform">🌐 Website</div>
+                    <div class="followers">Major Finance Site</div>
+                    <p>Practical guides on lowering electric, gas, and water bills with dollar estimates.</p>
+                    <a href="https://www.nerdwallet.com/article/finance/how-to-save-money-on-your-electric-bill" class="influencer-link" target="_blank">nerdwallet.com →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🌿</div>
+                    <h4>NRDC (Natural Resources Defense Council)</h4>
+                    <div class="platform">🌐 Non-Profit</div>
+                    <div class="followers">Environmental Org</div>
+                    <p>Seasonal energy saving guides with focus on sustainability and cost savings.</p>
+                    <a href="https://www.nrdc.org/stories/how-save-your-energy-bills" class="influencer-link" target="_blank">nrdc.org →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🛠️</span> Free Tools & Resources</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-icon">🔍</div>
+                    <h4>Energy Saver Calculator</h4>
+                    <p>See how much you can save with specific changes</p>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">🏷️</div>
+                    <h4>ENERGY STAR Rebate Finder</h4>
+                    <p>Find local rebates for efficient appliances</p>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">🌡️</div>
+                    <h4>Free Energy Audit</h4>
+                    <p>Call your utility - many offer free audits!</p>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">💵</div>
+                    <h4>LIHEAP Assistance</h4>
+                    <p>Help paying utility bills if income-qualified</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 10 steps completed</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Notes</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your utility savings!
+
+CURRENT MONTHLY BILLS:
+Electric: $____
+Gas: $____
+Water: $____
+TOTAL: $____
+
+THERMOSTAT SETTINGS:
+Summer: ____°F
+Winter: ____°F
+Away/Sleep: ____°F
+
+CHANGES I'VE MADE:
+☐ Lowered water heater to 120°F
+☐ Installed LED bulbs
+☐ Sealed air leaks
+☐ Installed smart thermostat
+☐ 
+
+MONTHLY SAVINGS SO FAR: $____
+
+NOTES:
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help Creating a Budget?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="#" class="cta-button">Get Support →</a>
+        </div>
     </div>
 
-    <div class="section-card">
-      <h2><span class="icon">📋</span> Step-by-Step Savings</h2>
-      <ul class="task-list">
-        <li class="task-item">
-          <div class="task-checkbox" data-task="0"></div>
-          <div class="task-content">
-            <div class="task-title">Step 1: Get a home energy audit (often FREE!)</div>
-            <div class="task-desc">Many utility companies offer free energy audits. They'll tell you exactly where you're wasting energy!</div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ Call your utility</span>
-              <span class="task-badge easy">Often free</span>
-            </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="1"></div>
-          <div class="task-content">
-            <div class="task-title">Step 2: Check for air leaks around doors/windows</div>
-            <div class="task-desc">Seal gaps with weatherstripping or caulk. Cold/hot air leaking in wastes money!</div>
-            <div class="details-box">
-              <h4">How to find leaks:</h4>
-              <ul>
-                <li>Feel for drafts around windows and doors</li>
-                <li>Hold a candle near edges - flickering = leak</li>
-                <li>Check outlets on exterior walls</li>
-                <li>Look for daylight around door frames</li>
-              </ul>
-            </div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 1 hour</span>
-              <span class="task-badge easy">Saves 10-20%</span>
-            </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="2"></div>
-          <div class="task-content">
-            <div class="task-title">Step 3: Replace air filters</div>
-            <div class="task-desc">Dirty filters make your HVAC work harder. Replace every 1-3 months!</div>
-            <div class="task-meta">
-              <span class="task-badge">💵 $5-20</span>
-              <span class="task-badge easy">5 minutes</span>
-            </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="3"></div>
-          <div class="task-content">
-            <div class="task-title">Step 4: Install a smart/programmable thermostat</div>
-            <div class="task-desc">Automatically adjusts temperature when you're away or sleeping. Saves 10-15% on heating/cooling!</div>
-            <div class="task-meta">
-              <span class="task-badge">💵 $25-250</span>
-              <span class="task-badge easy">Pays for itself in months</span>
-            </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="4"></div>
-          <div class="task-content">
-            <div class="task-title">Step 5: Lower water heater to 120°F</div>
-            <div class="task-desc">Most are set to 140°F by default. 120°F is plenty hot and saves 3-5% on water heating!</div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 5 minutes</span>
-              <span class="task-badge easy">Free savings</span>
-            </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="5"></div>
-          <div class="task-content">
-            <div class="task-title">Step 6: Use power strips and turn off when not in use</div>
-            <div class="task-desc">TVs, gaming systems, and electronics use power even when "off." Flip the power strip switch!</div>
-            <div class="task-meta">
-              <span class="task-badge">💵 $10-20</span>
-              <span class="task-badge easy">Saves $50-100/year</span>
-            </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="6"></div>
-          <div class="task-content">
-            <div class="task-title">Step 7: Check for utility assistance programs</div>
-            <div class="task-desc">Many utilities offer discounts for low-income households, seniors, or medical needs. Ask!</div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 15 minutes to call</span>
-              <span class="task-badge easy">Could save 10-30%</span>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-lower-utilities');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) {
+                        document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                    }
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
 
-    <div class="section-card">
-      <h2><span class="icon">💧</span> Water Bill Savings</h2>
-      <div class="tips-grid">
-        <div class="tip-card">
-          <h4>🚿 Low-flow showerhead</h4>
-          <p">Uses 2 GPM vs 5+ GPM. Same pressure!</p>
-          <div class="savings">Saves $50-100/year</div>
-        </div>
-        <div class="tip-card">
-          <h4">🚽 Check for leaks</h4>
-          <p">A running toilet wastes 200 gallons/day!</p>
-          <div class="savings">Saves $100+/year</div>
-        </div>
-        <div class="tip-card">
-          <h4">🍽️ Run full loads only</h4>
-          <p">Dishwasher & washer - wait until full</p>
-          <div class="savings">Saves $30-50/year</div>
-        </div>
-        <div class="tip-card">
-          <h4">⏱️ Shorter showers</h4>
-          <p">Cut 2 minutes = 5 gallons saved per shower</p>
-          <div class="savings">Saves $25-50/year</div>
-        </div>
-      </div>
-    </div>
+        function toggleStep(el) {
+            el.classList.toggle('checked');
+            updateProgress();
+            saveProgress();
+        }
 
-    <div class="section-card resources-section">
-      <h2><span class="icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">💡</span> Helpful Resources</h2>
-      
-      <a href="https://www.energy.gov/energysaver/energy-saver" target="_blank" class="resource-item">
-        <h4">🏠 Energy.gov Energy Saver</h4>
-        <p">Official tips for saving energy at home. Tons of free guides!</p>
-        <span class="link">energy.gov →</span>
-      </a>
-      <a href="https://www.energystar.gov" target="_blank" class="resource-item">
-        <h4">⭐ ENERGY STAR</h4>
-        <p">Find efficient appliances and get rebate information.</p>
-        <span class="link">energystar.gov →</span>
-      </a>
-      <a href="https://www.dsireusa.org" target="_blank" class="resource-item">
-        <h4">💰 DSIRE - Incentives Database</h4>
-        <p">Find rebates and incentives for energy efficiency in your state.</p>
-        <span class="link">dsireusa.org →</span>
-      </a>
-    </div>
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
 
-    <div class="section-card">
-      <h2><span class="icon">📝</span> Your Notes</h2>
-      <textarea id="userNotes" placeholder="Example: Current electric bill: $180/month. Need to buy LED bulbs for living room. Called utility - free audit next Tuesday. Check water heater temp..."></textarea>
-    </div>
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-lower-utilities', JSON.stringify({ steps, notes }));
+        }
 
-    <div class="help-section">
-      <div class="help-icon">💬</div>
-      <div class="help-content">
-        <h3>Need Help?</h3>
-        <p">Have questions about lowering bills? Chat with an ASAP Financial coach!</p>
-      </div>
-      <button class="chat-btn" onclick="openChat()">
-        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
-        Start Chat
-      </button>
-    </div>
-  </main>
-
-  <script>
-    const STORAGE_KEY = 'playbook_lower-utility-bills';
-    function loadState() { const saved = localStorage.getItem(STORAGE_KEY); if (saved) { const state = JSON.parse(saved); document.querySelectorAll('.task-checkbox').forEach((box, i) => { if (state.tasks && state.tasks[i]) { box.classList.add('checked'); box.innerHTML = '✓'; } }); if (state.notes) document.getElementById('userNotes').value = state.notes; updateProgress(); } }
-    function saveState() { const tasks = []; document.querySelectorAll('.task-checkbox').forEach(box => { tasks.push(box.classList.contains('checked')); }); localStorage.setItem(STORAGE_KEY, JSON.stringify({ tasks, notes: document.getElementById('userNotes').value })); }
-    function updateProgress() { const boxes = document.querySelectorAll('.task-checkbox'); const checked = document.querySelectorAll('.task-checkbox.checked').length; const percent = Math.round((checked / boxes.length) * 100); document.getElementById('progressFill').style.width = percent + '%'; document.getElementById('progressText').textContent = percent + '%'; }
-    document.querySelectorAll('.task-checkbox').forEach(box => { box.addEventListener('click', function() { this.classList.toggle('checked'); this.innerHTML = this.classList.contains('checked') ? '✓' : ''; updateProgress(); saveState(); }); });
-    document.getElementById('userNotes').addEventListener('input', saveState);
-    function openChat() { window.location.href = 'https://asapcreditrepairusa.com/chat'; }
-    loadState();
-  </script>
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>

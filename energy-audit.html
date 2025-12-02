@@ -1,203 +1,523 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home Energy Audit & Savings | ASAP Credit Repair Playbook</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root { --primary: #063d86; --primary-light: #0a4fa8; --primary-dark: #042a5c; --accent: #00c9a7; --success: #10b981; --warning: #f59e0b; --bg: #f8fafc; --text: #1e293b; --text-light: #64748b; --border: #e2e8f0; }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 17px; }
-    .header { background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); color: white; padding: 40px 20px 50px; text-align: center; }
-    .header-content { max-width: 800px; margin: 0 auto; }
-    .back-link { display: inline-flex; align-items: center; gap: 8px; color: white; text-decoration: none; opacity: 0.8; font-size: 0.9rem; margin-bottom: 16px; }
-    .category-badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; margin-bottom: 16px; }
-    .header h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 12px; }
-    .header-subtitle { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
-    .main-content { max-width: 800px; margin: -30px auto 40px; padding: 0 20px; }
-    .progress-section { position: sticky; top: 0; background: white; padding: 16px 20px; margin: 0 -20px 20px; border-bottom: 1px solid var(--border); z-index: 100; display: flex; align-items: center; gap: 16px; }
-    .progress-bar { flex: 1; height: 10px; background: var(--border); border-radius: 5px; overflow: hidden; }
-    .progress-fill { height: 100%; background: linear-gradient(90deg, #22c55e, #86efac); border-radius: 5px; transition: width 0.3s; width: 0%; }
-    .progress-text { font-weight: 600; color: var(--text); min-width: 50px; }
-    .goal-card { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border: 2px solid var(--success); border-radius: 16px; padding: 24px 28px; margin-bottom: 30px; }
-    .goal-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; color: #065f46; margin-bottom: 12px; }
-    .goal-card p { color: #047857; font-size: 1.05rem; }
-    .goal-card .earnings { background: white; display: inline-block; padding: 10px 18px; border-radius: 10px; margin-top: 14px; font-weight: 600; color: #065f46; font-size: 1.1rem; }
-    .section-card { background: white; border-radius: 16px; padding: 28px; margin-bottom: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid var(--border); }
-    .section-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; color: var(--primary); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
-    .section-card h2 .icon { width: 40px; height: 40px; background: linear-gradient(135deg, #22c55e, #86efac); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; }
-    .task-list { list-style: none; }
-    .task-item { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border); }
-    .task-item:last-child { border-bottom: none; }
-    .task-checkbox { flex-shrink: 0; width: 28px; height: 28px; border: 2px solid var(--border); border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; margin-top: 2px; font-weight: bold; }
-    .task-checkbox:hover { border-color: var(--primary); }
-    .task-checkbox.checked { background: var(--success); border-color: var(--success); color: white; }
-    .task-content { flex: 1; }
-    .task-title { font-weight: 600; font-size: 1.1rem; margin-bottom: 8px; color: var(--text); }
-    .task-desc { color: var(--text-light); font-size: 0.95rem; line-height: 1.6; }
-    .task-meta { display: flex; gap: 12px; margin-top: 10px; flex-wrap: wrap; }
-    .task-badge { font-size: 0.8rem; padding: 4px 10px; border-radius: 6px; background: var(--bg); color: var(--text-light); }
-    .task-badge.easy { background: #dcfce7; color: #166534; }
-    .details-box { background: #f8fafc; border-radius: 10px; padding: 16px; margin-top: 12px; border-left: 4px solid #22c55e; }
-    .details-box h4 { font-size: 0.9rem; color: #16a34a; margin-bottom: 10px; }
-    .details-box ul { margin-left: 18px; color: var(--text); font-size: 0.9rem; }
-    .details-box li { margin-bottom: 8px; line-height: 1.5; }
-    .savings-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 0.9rem; }
-    .savings-table th, .savings-table td { padding: 12px; text-align: left; border-bottom: 1px solid var(--border); }
-    .savings-table th { background: var(--bg); font-weight: 600; color: #16a34a; }
-    .savings-table .savings { color: #16a34a; font-weight: 600; }
-    .section-card textarea { width: 100%; min-height: 150px; padding: 16px 18px; border: 2px solid var(--border); border-radius: 12px; font-family: inherit; font-size: 1rem; resize: vertical; box-sizing: border-box; display: block; line-height: 1.6; }
-    .section-card textarea:focus { outline: none; border-color: var(--primary); }
-    .help-section { background: linear-gradient(135deg, #f0f9ff, #e0f2fe); border: 2px solid #7dd3fc; border-radius: 16px; padding: 24px 28px; margin-top: 30px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
-    .help-icon { width: 56px; height: 56px; background: white; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; }
-    .help-content { flex: 1; min-width: 200px; }
-    .help-content h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; margin-bottom: 4px; }
-    .help-content p { color: var(--text-light); font-size: 0.95rem; }
-    .chat-btn { background: var(--primary); color: white; border: none; padding: 14px 28px; border-radius: 12px; font-family: inherit; font-size: 1rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: all 0.2s; }
-    .chat-btn:hover { background: var(--primary-light); transform: translateY(-2px); }
-    @media (max-width: 600px) { .header { padding: 30px 20px 40px; } .section-card { padding: 20px; } .help-section { flex-direction: column; text-align: center; } }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Energy Audit - Find Hidden Savings - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #2e7d32; font-size: 1.1em; line-height: 1.6; }
+        .savings-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .savings-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .savings-highlight p { font-size: 1.1em; opacity: 0.95; }
+        
+        .audit-section { background: #f8f9fa; border-radius: 15px; padding: 25px; margin: 20px 0; }
+        .audit-header { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+        .audit-header .room-icon { font-size: 2em; }
+        .audit-header h3 { color: #1a1a2e; flex: 1; }
+        .audit-items { display: grid; gap: 10px; }
+        .audit-item { display: flex; align-items: flex-start; gap: 15px; padding: 15px; background: white; border-radius: 10px; }
+        .audit-checkbox { width: 24px; height: 24px; border: 3px solid #667eea; border-radius: 5px; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 14px; color: transparent; }
+        .audit-checkbox.checked { background: #667eea; color: white; }
+        .audit-content { flex: 1; }
+        .audit-content h4 { color: #1a1a2e; font-size: 14px; margin-bottom: 3px; }
+        .audit-content p { color: #666; font-size: 13px; }
+        .audit-content .savings { color: #4caf50; font-weight: 600; font-size: 12px; margin-top: 5px; }
+        
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        
+        .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 15px; margin: 20px 0; }
+        .tool-item { background: #e3f2fd; border-radius: 10px; padding: 15px; text-align: center; }
+        .tool-item .tool-icon { font-size: 2em; margin-bottom: 10px; }
+        .tool-item h4 { color: #1565c0; font-size: 13px; }
+        
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #667eea; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; }
+        
+        .fix-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .fix-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; border-top: 4px solid #4caf50; }
+        .fix-card h4 { color: #1a1a2e; margin-bottom: 10px; font-size: 14px; }
+        .fix-card .cost { color: #667eea; font-weight: 600; }
+        .fix-card .saves { color: #4caf50; font-weight: 700; font-size: 1.1em; margin-top: 5px; }
+        
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; margin-top: 20px; }
+        .notes-section textarea:focus { outline: none; border-color: #667eea; }
+        
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+    </style>
 </head>
 <body>
-  <header class="header">
-    <div class="header-content">
-      <a href="index.html" class="back-link">← Back to All Playbooks</a>
-      <span class="category-badge">⚡ Utility Savings</span>
-      <h1>Home Energy Audit & Savings</h1>
-      <p class="header-subtitle">Cut your energy bills 10-30%! Simple fixes like sealing drafts, smart thermostats, and LED bulbs add up to big savings.</p>
-    </div>
-  </header>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Playbooks</a>
+        
+        <div class="header">
+            <h1>🔍 Home Energy Audit</h1>
+            <p class="subtitle">Find hidden energy wasters and fix them to save money</p>
+            <div class="time-badge">⏱️ 1-2 hours • Find $200-600/year in savings</div>
+        </div>
 
-  <main class="main-content">
-    <div class="progress-section">
-      <span style="font-size: 0.9rem; color: var(--text-light);">Your Progress:</span>
-      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
-      <span class="progress-text" id="progressText">0%</span>
-    </div>
-
-    <div class="goal-card">
-      <h2>🎯 What You'll Achieve</h2>
-      <p>You'll identify and fix energy waste in your home. Small changes = big savings on electric, gas, and heating bills!</p>
-      <div class="earnings">💰 Save $200-600+ per year on utility bills</div>
-    </div>
-
-    <div class="section-card">
-      <h2><span class="icon">💡</span> Quick Wins: Energy Savings</h2>
-      <table class="savings-table">
-        <thead><tr><th>Action</th><th>Cost</th><th>Annual Savings</th></tr></thead>
-        <tbody>
-          <tr><td>Switch to LED bulbs</td><td>$20-50</td><td class="savings">$50-100</td></tr>
-          <tr><td>Smart/programmable thermostat</td><td>$25-250</td><td class="savings">$100-180</td></tr>
-          <tr><td>Seal air leaks (weatherstripping)</td><td>$10-50</td><td class="savings">$50-150</td></tr>
-          <tr><td>Lower water heater to 120°F</td><td>Free</td><td class="savings">$30-60</td></tr>
-          <tr><td>Use power strips (kill phantom load)</td><td>$15-30</td><td class="savings">$50-100</td></tr>
-          <tr><td>Wash clothes in cold water</td><td>Free</td><td class="savings">$40-60</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="section-card">
-      <h2><span class="icon">📋</span> Step-by-Step: Reduce Energy Costs</h2>
-      <ul class="task-list">
-        <li class="task-item">
-          <div class="task-checkbox" data-task="0"></div>
-          <div class="task-content">
-            <div class="task-title">Step 1: Review your utility bills</div>
-            <div class="task-desc">Look at last 12 months. Identify your highest-cost months and usage patterns. Know your baseline!</div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 30 minutes</span>
-              <span class="task-badge easy">Know your numbers</span>
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>An energy audit helps you find exactly where your home is wasting energy and money. By systematically checking each room for air leaks, inefficient appliances, and energy vampires, you can identify quick fixes that pay for themselves many times over!</p>
             </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="1"></div>
-          <div class="task-content">
-            <div class="task-title">Step 2: Do a DIY energy audit</div>
-            <div class="task-desc">Check for drafts around windows/doors. Inspect insulation. Look for old appliances. Many utilities offer FREE professional audits!</div>
-            <div class="details-box">
-              <h4>Check these areas:</h4>
-              <ul>
-                <li>Windows and doors (feel for drafts)</li>
-                <li>Attic insulation (should be 10-14 inches)</li>
-                <li>Water heater temperature setting</li>
-                <li>Old incandescent light bulbs</li>
-                <li>Air filters (dirty = inefficient)</li>
-                <li>Appliances running when not needed</li>
-              </ul>
+            <div class="savings-highlight">
+                <h3>Find $200-600+ in Annual Savings</h3>
+                <p>Many fixes are FREE or cost under $50 but save hundreds per year!</p>
             </div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 1-2 hours</span>
-              <span class="task-badge easy">Find the leaks</span>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🧰</span> Tools You'll Need</h2>
+            <div class="tools-grid">
+                <div class="tool-item">
+                    <div class="tool-icon">✋</div>
+                    <h4>Your Hand</h4>
+                </div>
+                <div class="tool-item">
+                    <div class="tool-icon">🕯️</div>
+                    <h4>Candle/Incense</h4>
+                </div>
+                <div class="tool-item">
+                    <div class="tool-icon">🔦</div>
+                    <h4>Flashlight</h4>
+                </div>
+                <div class="tool-item">
+                    <div class="tool-icon">📝</div>
+                    <h4>Notepad</h4>
+                </div>
+                <div class="tool-item">
+                    <div class="tool-icon">🌡️</div>
+                    <h4>Thermometer</h4>
+                </div>
+                <div class="tool-item">
+                    <div class="tool-icon">📷</div>
+                    <h4>Phone Camera</h4>
+                </div>
             </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="2"></div>
-          <div class="task-content">
-            <div class="task-title">Step 3: Do the free/cheap fixes first</div>
-            <div class="task-desc">Lower water heater temp, seal obvious drafts, replace air filters, unplug unused electronics. Instant savings!</div>
-            <div class="task-meta">
-              <span class="task-badge">💵 $0-50</span>
-              <span class="task-badge easy">Quick wins</span>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Best Time to Do This</div>
+                <p>Do your audit on a windy day - it's much easier to find air leaks! Also, turn off fans and HVAC temporarily so you can feel drafts better.</p>
             </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="3"></div>
-          <div class="task-content">
-            <div class="task-title">Step 4: Invest in smart upgrades</div>
-            <div class="task-desc">Smart thermostat, LED bulbs throughout, weatherstripping. These pay for themselves quickly!</div>
-            <div class="task-meta">
-              <span class="task-badge">💵 $50-200</span>
-              <span class="task-badge easy">Good ROI</span>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🏠</span> Room-by-Room Energy Audit</h2>
+            
+            <div class="audit-section">
+                <div class="audit-header">
+                    <span class="room-icon">🚪</span>
+                    <h3>Doors & Windows (Biggest Savings!)</h3>
+                </div>
+                <div class="audit-items">
+                    <div class="audit-item">
+                        <div class="audit-checkbox" onclick="toggleAudit(this)">✓</div>
+                        <div class="audit-content">
+                            <h4>Check all exterior doors for drafts</h4>
+                            <p>Hold a lit candle near edges - if it flickers, you have a leak. Feel with your hand on windy days.</p>
+                            <div class="savings">Fix: Weatherstripping ($10-20) • Saves: $50-100/year</div>
+                        </div>
+                    </div>
+                    <div class="audit-item">
+                        <div class="audit-checkbox" onclick="toggleAudit(this)">✓</div>
+                        <div class="audit-content">
+                            <h4>Inspect door sweeps and thresholds</h4>
+                            <p>Can you see light under the door? That's conditioned air escaping!</p>
+                            <div class="savings">Fix: Door sweep ($8-15) • Saves: $30-50/year</div>
+                        </div>
+                    </div>
+                    <div class="audit-item">
+                        <div class="audit-checkbox" onclick="toggleAudit(this)">✓</div>
+                        <div class="audit-content">
+                            <h4>Check all windows for air leaks</h4>
+                            <p>Feel around the frame and where glass meets frame. Old caulk may be cracked.</p>
+                            <div class="savings">Fix: Caulk ($5-10) • Saves: $50-150/year</div>
+                        </div>
+                    </div>
+                    <div class="audit-item">
+                        <div class="audit-checkbox" onclick="toggleAudit(this)">✓</div>
+                        <div class="audit-content">
+                            <h4>Test window locks and seals</h4>
+                            <p>Windows should close tightly. If they rattle or have gaps, they're leaking.</p>
+                            <div class="savings">Fix: Window film ($20-40) or new weatherstrip</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="4"></div>
-          <div class="task-content">
-            <div class="task-title">Step 5: Check for utility rebates and programs</div>
-            <div class="task-desc">Many utilities offer rebates on efficient appliances, free smart thermostats, and discounted energy audits!</div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 30 minutes</span>
-              <span class="task-badge easy">Free money!</span>
+
+            <div class="audit-section">
+                <div class="audit-header">
+                    <span class="room-icon">🌡️</span>
+                    <h3>HVAC System</h3>
+                </div>
+                <div class="audit-items">
+                    <div class="audit-item">
+                        <div class="audit-checkbox" onclick="toggleAudit(this)">✓</div>
+                        <div class="audit-content">
+                            <h4>Check/replace air filter</h4>
+                            <p>Hold it up to light - if you can't see through it, it needs replacing. Check monthly!</p>
+                            <div class="savings">Fix: New filter ($5-20) • Saves: 5-15% on heating/cooling</div>
+                        </div>
+                    </div>
+                    <div class="audit-item">
+                        <div class="audit-checkbox" onclick="toggleAudit(this)">✓</div>
+                        <div class="audit-content">
+                            <h4>Inspect visible ductwork for leaks</h4>
+                            <p>In basement/attic, look for disconnected or damaged ducts. Feel for air escaping at joints.</p>
+                            <div class="savings">Fix: Duct tape/mastic ($10-20) • Saves: $100-200/year</div>
+                        </div>
+                    </div>
+                    <div class="audit-item">
+                        <div class="audit-checkbox" onclick="toggleAudit(this)">✓</div>
+                        <div class="audit-content">
+                            <h4>Check thermostat settings and location</h4>
+                            <p>Is it in direct sunlight? Near a vent? This causes inaccurate readings and wasted energy.</p>
+                            <div class="savings">Tip: Programmable thermostat saves 10-15%/year</div>
+                        </div>
+                    </div>
+                    <div class="audit-item">
+                        <div class="audit-checkbox" onclick="toggleAudit(this)">✓</div>
+                        <div class="audit-content">
+                            <h4>Ensure vents aren't blocked by furniture</h4>
+                            <p>Blocked vents make your system work harder. Keep 6+ inches clearance.</p>
+                            <div class="savings">Fix: FREE! Just move furniture</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </li>
-      </ul>
+
+            <div class="audit-section">
+                <div class="audit-header">
+                    <span class="room-icon">🚿</span>
+                    <h3>Water Heating</h3>
+                </div>
+                <div class="audit-items">
+                    <div class="audit-item">
+                        <div class="audit-checkbox" onclick="toggleAudit(this)">✓</div>
+                        <div class="audit-content">
+                            <h4>Check water heater temperature</h4>
+                            <p>Most are set to 140°F but 120°F is plenty. That's $36-61 saved per year!</p>
+                            <div class="savings">Fix: FREE! Just turn the dial down</div>
+                        </div>
+                    </div>
+                    <div class="audit-item">
+                        <div class="audit-checkbox" onclick="toggleAudit(this)">✓</div>
+                        <div class="audit-content">
+                            <h4>Check for hot water pipe insulation</h4>
+                            <p>First 3 feet of hot water pipes from heater should be insulated.</p>
+                            <div class="savings">Fix: Pipe insulation ($10-15) • Saves: $20-40/year</div>
+                        </div>
+                    </div>
+                    <div class="audit-item">
+                        <div class="audit-checkbox" onclick="toggleAudit(this)">✓</div>
+                        <div class="audit-content">
+                            <h4>Test showerhead flow rate</h4>
+                            <p>Put a bucket under showerhead for 10 seconds. More than 1 gallon = not efficient.</p>
+                            <div class="savings">Fix: Low-flow head ($15-30) • Saves: $50-100/year</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="audit-section">
+                <div class="audit-header">
+                    <span class="room-icon">💡</span>
+                    <h3>Lighting & Electronics</h3>
+                </div>
+                <div class="audit-items">
+                    <div class="audit-item">
+                        <div class="audit-checkbox" onclick="toggleAudit(this)">✓</div>
+                        <div class="audit-content">
+                            <h4>Count incandescent bulbs still in use</h4>
+                            <p>Each incandescent uses 90% more energy than LED. Count them all!</p>
+                            <div class="savings">Fix: LED bulbs ($2-5 each) • Saves: $5-10/bulb/year</div>
+                        </div>
+                    </div>
+                    <div class="audit-item">
+                        <div class="audit-checkbox" onclick="toggleAudit(this)">✓</div>
+                        <div class="audit-content">
+                            <h4>Identify "energy vampires"</h4>
+                            <p>Count devices that stay plugged in: TVs, game consoles, chargers, cable boxes.</p>
+                            <div class="savings">Fix: Smart power strips ($15-30) • Saves: $100+/year</div>
+                        </div>
+                    </div>
+                    <div class="audit-item">
+                        <div class="audit-checkbox" onclick="toggleAudit(this)">✓</div>
+                        <div class="audit-content">
+                            <h4>Check for lights left on habitually</h4>
+                            <p>Which rooms always have lights on? Consider motion sensors or timers.</p>
+                            <div class="savings">Fix: Motion sensors ($15-25) or habit change (FREE)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="audit-section">
+                <div class="audit-header">
+                    <span class="room-icon">🧊</span>
+                    <h3>Appliances</h3>
+                </div>
+                <div class="audit-items">
+                    <div class="audit-item">
+                        <div class="audit-checkbox" onclick="toggleAudit(this)">✓</div>
+                        <div class="audit-content">
+                            <h4>Check refrigerator temperature</h4>
+                            <p>Fridge: 38-42°F, Freezer: 0-5°F. Colder = wasted energy.</p>
+                            <div class="savings">Fix: FREE! Adjust the dial</div>
+                        </div>
+                    </div>
+                    <div class="audit-item">
+                        <div class="audit-checkbox" onclick="toggleAudit(this)">✓</div>
+                        <div class="audit-content">
+                            <h4>Check refrigerator door seals</h4>
+                            <p>Close door on a dollar bill - if it slides out easily, seals are worn.</p>
+                            <div class="savings">Fix: New seals ($30-60) or clean existing seals</div>
+                        </div>
+                    </div>
+                    <div class="audit-item">
+                        <div class="audit-checkbox" onclick="toggleAudit(this)">✓</div>
+                        <div class="audit-content">
+                            <h4>Clean refrigerator coils</h4>
+                            <p>Dusty coils make the compressor work 30% harder. Clean every 6-12 months.</p>
+                            <div class="savings">Fix: FREE! Use vacuum or brush</div>
+                        </div>
+                    </div>
+                    <div class="audit-item">
+                        <div class="audit-checkbox" onclick="toggleAudit(this)">✓</div>
+                        <div class="audit-content">
+                            <h4>Check dryer vent for blockages</h4>
+                            <p>Clogged vents increase drying time and fire risk. Clean lint trap AND vent hose.</p>
+                            <div class="savings">Fix: Vent cleaning kit ($20) • Saves: $25-50/year</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="audit-section">
+                <div class="audit-header">
+                    <span class="room-icon">🏚️</span>
+                    <h3>Attic & Basement</h3>
+                </div>
+                <div class="audit-items">
+                    <div class="audit-item">
+                        <div class="audit-checkbox" onclick="toggleAudit(this)">✓</div>
+                        <div class="audit-content">
+                            <h4>Check attic insulation depth</h4>
+                            <p>Should be 10-14 inches of insulation. Less than 6 inches = major heat loss!</p>
+                            <div class="savings">Fix: Add insulation ($500-1500) • Saves: $200-500/year</div>
+                        </div>
+                    </div>
+                    <div class="audit-item">
+                        <div class="audit-checkbox" onclick="toggleAudit(this)">✓</div>
+                        <div class="audit-content">
+                            <h4>Look for gaps around pipes and wires</h4>
+                            <p>Where pipes/wires enter from outside or attic, check for unsealed gaps.</p>
+                            <div class="savings">Fix: Expanding foam ($5-10) • Saves: $20-50/year</div>
+                        </div>
+                    </div>
+                    <div class="audit-item">
+                        <div class="audit-checkbox" onclick="toggleAudit(this)">✓</div>
+                        <div class="audit-content">
+                            <h4>Check basement rim joists</h4>
+                            <p>The area where foundation meets wood framing is often uninsulated.</p>
+                            <div class="savings">Fix: Foam board ($50-100) • Saves: $50-100/year</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🛠️</span> Top Fixes by ROI</h2>
+            <div class="fix-grid">
+                <div class="fix-card">
+                    <h4>Weatherstripping & Caulk</h4>
+                    <div class="cost">Cost: $20-50</div>
+                    <div class="saves">Saves: $100-200/yr</div>
+                </div>
+                <div class="fix-card">
+                    <h4>LED Bulb Swap (10 bulbs)</h4>
+                    <div class="cost">Cost: $20-50</div>
+                    <div class="saves">Saves: $75-100/yr</div>
+                </div>
+                <div class="fix-card">
+                    <h4>Smart Power Strips</h4>
+                    <div class="cost">Cost: $25-50</div>
+                    <div class="saves">Saves: $100+/yr</div>
+                </div>
+                <div class="fix-card">
+                    <h4>Programmable Thermostat</h4>
+                    <div class="cost">Cost: $25-100</div>
+                    <div class="saves">Saves: $150-200/yr</div>
+                </div>
+                <div class="fix-card">
+                    <h4>Low-Flow Showerhead</h4>
+                    <div class="cost">Cost: $15-30</div>
+                    <div class="saves">Saves: $50-100/yr</div>
+                </div>
+                <div class="fix-card">
+                    <h4>Water Heater to 120°F</h4>
+                    <div class="cost">Cost: FREE</div>
+                    <div class="saves">Saves: $36-61/yr</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📱</span> Energy Efficiency Experts</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🏠</div>
+                    <h4>This Old House</h4>
+                    <div class="platform">📺 YouTube • 3M+ Subscribers</div>
+                    <p>Expert home improvement including weatherization, insulation, and energy efficiency projects.</p>
+                    <a href="https://www.youtube.com/thisoldhouse" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🔧</div>
+                    <h4>Matt Risinger</h4>
+                    <div class="platform">📺 YouTube • 1M+ Subscribers</div>
+                    <p>Build Show host covering building science, energy efficiency, and home performance.</p>
+                    <a href="https://www.youtube.com/@MattRisinger" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">⭐</div>
+                    <h4>ENERGY STAR</h4>
+                    <div class="platform">🌐 Government Program</div>
+                    <p>Official EPA program with home energy tips, product finder, and rebate information.</p>
+                    <a href="https://www.energystar.gov" class="influencer-link" target="_blank">energystar.gov →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📊</div>
+                    <h4>Energy Saver (DOE)</h4>
+                    <div class="platform">🌐 Government Resource</div>
+                    <p>Department of Energy's official guide to home energy savings with calculators and tips.</p>
+                    <a href="https://www.energy.gov/energysaver" class="influencer-link" target="_blank">energy.gov/energysaver →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🔌</div>
+                    <h4>Technology Connections</h4>
+                    <div class="platform">📺 YouTube • 2M+ Subscribers</div>
+                    <p>Deep dives into how appliances work and how to use them more efficiently.</p>
+                    <a href="https://www.youtube.com/@TechnologyConnections" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🏡</div>
+                    <h4>Home Energy Saver</h4>
+                    <div class="platform">🌐 Free Tool</div>
+                    <p>Free online tool to analyze your home's energy use and get personalized recommendations.</p>
+                    <a href="https://homeenergysaver.lbl.gov" class="influencer-link" target="_blank">homeenergysaver.lbl.gov →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Audit Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of <span id="total">0</span> items checked</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Findings</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Document what you find!
+
+ISSUES FOUND:
+1. ____________________
+2. ____________________
+3. ____________________
+
+PRIORITY FIXES (Quick & Cheap):
+☐ 
+☐ 
+☐ 
+
+BIGGER PROJECTS FOR LATER:
+☐ 
+☐ 
+
+ESTIMATED ANNUAL SAVINGS: $____
+
+TOTAL FIX COST: $____
+
+NOTES:
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Budget?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="#" class="cta-button">Get Support →</a>
+        </div>
     </div>
 
-    <div class="section-card">
-      <h2><span class="icon">📝</span> Your Notes</h2>
-      <textarea id="userNotes" placeholder="Example: Current electric bill: $180/month average. Found drafts around 3 windows - bought weatherstripping ($15). Replaced 15 bulbs with LEDs ($25). Lowered water heater from 140° to 120° (free!). Got free Nest thermostat from utility rebate program. First month: bill down to $145 = $35 saved!"></textarea>
-    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            updateProgress();
+            const saved = localStorage.getItem('playbook-energy-audit');
+            if (saved) {
+                const data = JSON.parse(saved);
+                const checkboxes = document.querySelectorAll('.audit-checkbox');
+                data.checks.forEach((checked, index) => {
+                    if (checked && checkboxes[index]) {
+                        checkboxes[index].classList.add('checked');
+                    }
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
 
-    <div class="help-section">
-      <div class="help-icon">💬</div>
-      <div class="help-content">
-        <h3>Need Help?</h3>
-        <p>Have questions about energy savings? Chat with an ASAP Financial coach!</p>
-      </div>
-      <button class="chat-btn" onclick="openChat()">
-        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
-        Start Chat
-      </button>
-    </div>
-  </main>
+        function toggleAudit(el) {
+            el.classList.toggle('checked');
+            updateProgress();
+            saveProgress();
+        }
 
-  <script>
-    const STORAGE_KEY = 'playbook_energy-audit';
-    function loadState() { const saved = localStorage.getItem(STORAGE_KEY); if (saved) { const state = JSON.parse(saved); document.querySelectorAll('.task-checkbox').forEach((box, i) => { if (state.tasks && state.tasks[i]) { box.classList.add('checked'); box.innerHTML = '✓'; } }); if (state.notes) document.getElementById('userNotes').value = state.notes; updateProgress(); } }
-    function saveState() { const tasks = []; document.querySelectorAll('.task-checkbox').forEach(box => { tasks.push(box.classList.contains('checked')); }); localStorage.setItem(STORAGE_KEY, JSON.stringify({ tasks, notes: document.getElementById('userNotes').value })); }
-    function updateProgress() { const boxes = document.querySelectorAll('.task-checkbox'); const checked = document.querySelectorAll('.task-checkbox.checked').length; const percent = Math.round((checked / boxes.length) * 100); document.getElementById('progressFill').style.width = percent + '%'; document.getElementById('progressText').textContent = percent + '%'; }
-    document.querySelectorAll('.task-checkbox').forEach(box => { box.addEventListener('click', function() { this.classList.toggle('checked'); this.innerHTML = this.classList.contains('checked') ? '✓' : ''; updateProgress(); saveState(); }); });
-    document.getElementById('userNotes').addEventListener('input', saveState);
-    function openChat() { window.location.href = 'https://asapcreditrepairusa.com/chat'; }
-    loadState();
-  </script>
+        function updateProgress() {
+            const total = document.querySelectorAll('.audit-checkbox').length;
+            const completed = document.querySelectorAll('.audit-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('total').textContent = total;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+
+        function saveProgress() {
+            const checks = Array.from(document.querySelectorAll('.audit-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-energy-audit', JSON.stringify({ checks, notes }));
+        }
+
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>

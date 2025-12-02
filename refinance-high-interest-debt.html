@@ -1,290 +1,612 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Refinance High-Interest Debt | ASAP Credit Repair Playbook</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root { --primary: #063d86; --primary-light: #0a4fa8; --primary-dark: #042a5c; --accent: #00c9a7; --success: #10b981; --warning: #f59e0b; --bg: #f8fafc; --text: #1e293b; --text-light: #64748b; --border: #e2e8f0; }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 17px; }
-    .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 40px 20px 50px; text-align: center; }
-    .header-content { max-width: 800px; margin: 0 auto; }
-    .back-link { display: inline-flex; align-items: center; gap: 8px; color: white; text-decoration: none; opacity: 0.8; font-size: 0.9rem; margin-bottom: 16px; }
-    .category-badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; margin-bottom: 16px; }
-    .header h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 12px; }
-    .header-subtitle { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
-    .main-content { max-width: 800px; margin: -30px auto 40px; padding: 0 20px; }
-    .progress-section { position: sticky; top: 0; background: white; padding: 16px 20px; margin: 0 -20px 20px; border-bottom: 1px solid var(--border); z-index: 100; display: flex; align-items: center; gap: 16px; }
-    .progress-bar { flex: 1; height: 10px; background: var(--border); border-radius: 5px; overflow: hidden; }
-    .progress-fill { height: 100%; background: linear-gradient(90deg, var(--success), var(--accent)); border-radius: 5px; transition: width 0.3s; width: 0%; }
-    .progress-text { font-weight: 600; color: var(--text); min-width: 50px; }
-    .goal-card { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border: 2px solid var(--success); border-radius: 16px; padding: 24px 28px; margin-bottom: 30px; }
-    .goal-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; color: #065f46; margin-bottom: 12px; }
-    .goal-card p { color: #047857; font-size: 1.05rem; }
-    .goal-card .earnings { background: white; display: inline-block; padding: 10px 18px; border-radius: 10px; margin-top: 14px; font-weight: 600; color: #065f46; font-size: 1.1rem; }
-    .section-card { background: white; border-radius: 16px; padding: 28px; margin-bottom: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid var(--border); }
-    .section-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; color: var(--primary); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
-    .section-card h2 .icon { width: 40px; height: 40px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; }
-    .section-intro { color: var(--text-light); margin-bottom: 20px; font-size: 1rem; }
-    .task-list { list-style: none; }
-    .task-item { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border); }
-    .task-item:last-child { border-bottom: none; }
-    .task-checkbox { flex-shrink: 0; width: 28px; height: 28px; border: 2px solid var(--border); border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; margin-top: 2px; font-weight: bold; }
-    .task-checkbox:hover { border-color: var(--primary); }
-    .task-checkbox.checked { background: var(--success); border-color: var(--success); color: white; }
-    .task-content { flex: 1; }
-    .task-title { font-weight: 600; font-size: 1.1rem; margin-bottom: 8px; color: var(--text); }
-    .task-desc { color: var(--text-light); font-size: 0.95rem; line-height: 1.6; }
-    .task-meta { display: flex; gap: 12px; margin-top: 10px; flex-wrap: wrap; }
-    .task-badge { font-size: 0.8rem; padding: 4px 10px; border-radius: 6px; background: var(--bg); color: var(--text-light); }
-    .task-badge.easy { background: #dcfce7; color: #166534; }
-    .details-box { background: #f8fafc; border-radius: 10px; padding: 16px; margin-top: 12px; border-left: 4px solid var(--primary); }
-    .details-box h4 { font-size: 0.9rem; color: var(--primary); margin-bottom: 10px; }
-    .details-box ul { margin-left: 18px; color: var(--text); font-size: 0.9rem; }
-    .details-box li { margin-bottom: 8px; line-height: 1.5; }
-    .comparison-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 0.9rem; }
-    .comparison-table th, .comparison-table td { padding: 12px; text-align: left; border-bottom: 1px solid var(--border); }
-    .comparison-table th { background: var(--bg); font-weight: 600; color: var(--primary); }
-    .comparison-table .bad { color: #dc2626; }
-    .comparison-table .good { color: var(--success); font-weight: 600; }
-    .option-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; margin-top: 16px; }
-    .option-card { background: var(--bg); border-radius: 12px; padding: 18px; }
-    .option-card h4 { font-size: 1.05rem; color: var(--primary); margin-bottom: 6px; }
-    .option-card .rate { font-size: 0.85rem; color: var(--success); font-weight: 600; margin-bottom: 8px; }
-    .option-card p { font-size: 0.85rem; color: var(--text-light); }
-    .warning-box { background: #fef2f2; border: 2px solid #fca5a5; border-radius: 12px; padding: 16px; margin-top: 16px; }
-    .warning-box h4 { color: #991b1b; margin-bottom: 8px; }
-    .warning-box p { color: #7f1d1d; font-size: 0.9rem; }
-    .resources-section { background: linear-gradient(135deg, #ede9fe, #ddd6fe); border: 2px solid #a78bfa; }
-    .resources-section h2 { color: #5b21b6; }
-    .resource-item { background: white; border-radius: 12px; padding: 16px 20px; margin-bottom: 12px; display: block; text-decoration: none; color: var(--text); transition: all 0.2s; }
-    .resource-item:hover { transform: translateX(4px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-    .resource-item h4 { font-size: 1rem; margin-bottom: 4px; color: #5b21b6; }
-    .resource-item p { font-size: 0.85rem; color: var(--text-light); }
-    .resource-item .link { font-size: 0.8rem; color: #7c3aed; }
-    .section-card textarea { width: 100%; min-height: 150px; padding: 16px 18px; border: 2px solid var(--border); border-radius: 12px; font-family: inherit; font-size: 1rem; resize: vertical; box-sizing: border-box; display: block; line-height: 1.6; }
-    .section-card textarea:focus { outline: none; border-color: var(--primary); }
-    .help-section { background: linear-gradient(135deg, #f0f9ff, #e0f2fe); border: 2px solid #7dd3fc; border-radius: 16px; padding: 24px 28px; margin-top: 30px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
-    .help-icon { width: 56px; height: 56px; background: white; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; }
-    .help-content { flex: 1; min-width: 200px; }
-    .help-content h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; margin-bottom: 4px; }
-    .help-content p { color: var(--text-light); font-size: 0.95rem; }
-    .chat-btn { background: var(--primary); color: white; border: none; padding: 14px 28px; border-radius: 12px; font-family: inherit; font-size: 1rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: all 0.2s; }
-    .chat-btn:hover { background: var(--primary-light); transform: translateY(-2px); }
-    @media (max-width: 600px) { .header { padding: 30px 20px 40px; } .section-card { padding: 20px; } .help-section { flex-direction: column; text-align: center; } }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refinance High-Interest Debt - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #2e7d32; font-size: 1.1em; line-height: 1.6; }
+        .savings-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .savings-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .savings-highlight p { font-size: 1.1em; opacity: 0.95; }
+        
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #e8f5e9; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        
+        /* Options Grid */
+        .options-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 20px 0; }
+        .option-card { background: #f8f9fa; border-radius: 15px; overflow: hidden; }
+        .option-header { padding: 20px; color: white; }
+        .option-header.best { background: linear-gradient(135deg, #4caf50, #66bb6a); }
+        .option-header.good { background: linear-gradient(135deg, #2196f3, #42a5f5); }
+        .option-header.caution { background: linear-gradient(135deg, #ff9800, #ffb74d); }
+        .option-header h4 { font-size: 1.2em; margin-bottom: 5px; }
+        .option-header .rate { font-size: 1.5em; font-weight: 700; }
+        .option-body { padding: 20px; }
+        .option-body p { color: #666; font-size: 14px; line-height: 1.5; margin-bottom: 15px; }
+        .option-body ul { list-style: none; }
+        .option-body li { padding: 8px 0; color: #666; font-size: 14px; display: flex; align-items: center; gap: 10px; }
+        .option-body li.pro::before { content: "✓"; color: #4caf50; font-weight: 700; }
+        .option-body li.con::before { content: "✗"; color: #f44336; font-weight: 700; }
+        .option-body .best-for { background: #e3f2fd; padding: 10px; border-radius: 8px; font-size: 13px; color: #1565c0; margin-top: 15px; }
+        
+        /* Rate Comparison */
+        .rate-compare { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin: 20px 0; }
+        .rate-compare h3 { margin-bottom: 20px; text-align: center; }
+        .rate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; }
+        .rate-item { background: rgba(255,255,255,0.15); border-radius: 10px; padding: 15px; text-align: center; }
+        .rate-item .type { font-size: 12px; opacity: 0.9; margin-bottom: 5px; }
+        .rate-item .rate { font-size: 1.8em; font-weight: 700; }
+        .rate-item .range { font-size: 11px; opacity: 0.8; }
+        
+        /* Calculator */
+        .calculator-box { background: #e3f2fd; border-radius: 15px; padding: 25px; margin: 20px 0; }
+        .calculator-box h4 { color: #1565c0; margin-bottom: 20px; }
+        .calc-row { display: flex; gap: 15px; margin-bottom: 15px; align-items: center; flex-wrap: wrap; }
+        .calc-row label { font-weight: 600; color: #1a1a2e; min-width: 180px; }
+        .calc-row input, .calc-row select { padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px; width: 150px; }
+        .calc-row input:focus, .calc-row select:focus { outline: none; border-color: #2196f3; }
+        .calc-btn { background: linear-gradient(135deg, #2196f3, #1976d2); color: white; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; font-weight: 600; margin-top: 15px; }
+        .calc-result { display: none; background: white; border-radius: 10px; padding: 20px; margin-top: 20px; }
+        .calc-result .comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .calc-result .column { text-align: center; padding: 15px; border-radius: 10px; }
+        .calc-result .column.old { background: #ffebee; }
+        .calc-result .column.new { background: #e8f5e9; }
+        .calc-result .column h5 { color: #1a1a2e; margin-bottom: 10px; }
+        .calc-result .column .amount { font-size: 1.5em; font-weight: 700; }
+        .calc-result .column.old .amount { color: #c62828; }
+        .calc-result .column.new .amount { color: #2e7d32; }
+        .calc-result .savings-row { text-align: center; margin-top: 20px; padding-top: 20px; border-top: 2px solid #e0e0e0; }
+        .calc-result .savings-row .big { font-size: 2em; font-weight: 700; color: #4caf50; }
+        
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        
+        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .warning-box h4 { color: #c62828; margin-bottom: 10px; }
+        .warning-box p { color: #666; }
+        
+        /* Influencer Section */
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #667eea; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; }
+        
+        /* Lender Grid */
+        .lender-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin: 20px 0; }
+        .lender-card { background: #f8f9fa; border-radius: 10px; padding: 15px; text-align: center; }
+        .lender-card h5 { color: #1a1a2e; margin-bottom: 5px; font-size: 14px; }
+        .lender-card p { color: #666; font-size: 12px; }
+        .lender-card .rate-range { color: #4caf50; font-weight: 600; margin-top: 5px; }
+        
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 150px; resize: vertical; margin-top: 20px; }
+        .notes-section textarea:focus { outline: none; border-color: #667eea; }
+        
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+        
+        @media (max-width: 768px) {
+            .calc-result .comparison { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
-  <header class="header">
-    <div class="header-content">
-      <a href="index.html" class="back-link">← Back to All Playbooks</a>
-      <span class="category-badge">💳 Debt & Credit</span>
-      <h1>Refinance High-Interest Debt</h1>
-      <p class="header-subtitle">Paying 20%+ interest on credit cards? You might be able to cut that rate in HALF with a balance transfer or personal loan - and save thousands!</p>
-    </div>
-  </header>
-
-  <main class="main-content">
-    <div class="progress-section">
-      <span style="font-size: 0.9rem; color: var(--text-light);">Your Progress:</span>
-      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
-      <span class="progress-text" id="progressText">0%</span>
-    </div>
-
-    <div class="goal-card">
-      <h2>🎯 What You'll Achieve</h2>
-      <p>You'll explore options to lower your interest rate on existing debt. Moving from 24% to 10% (or even 0% temporarily) can save you hundreds or thousands of dollars AND help you pay off debt faster!</p>
-      <div class="earnings">💰 Potential savings: $500-5,000+ depending on debt amount</div>
-    </div>
-
-    <div class="section-card">
-      <h2><span class="icon">📊</span> See the Math</h2>
-      <p class="section-intro">Here's why interest rate matters SO much:</p>
-      <table class="comparison-table">
-        <thead><tr><th>$10,000 Debt</th><th>24% APR (typical credit card)</th><th>10% APR (personal loan)</th></tr></thead>
-        <tbody>
-          <tr><td>Monthly payment</td><td>$300</td><td>$300</td></tr>
-          <tr><td>Time to pay off</td><td class="bad">50 months</td><td class="good">38 months</td></tr>
-          <tr><td>Total interest paid</td><td class="bad">$4,900</td><td class="good">$1,600</td></tr>
-          <tr><td><strong>Savings</strong></td><td></td><td class="good"><strong>$3,300 saved!</strong></td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="section-card">
-      <h2><span class="icon">🔄</span> Your Options</h2>
-      <p class="section-intro">Choose based on your credit score and situation:</p>
-      
-      <div class="option-grid">
-        <div class="option-card">
-          <h4">0% Balance Transfer Card</h4>
-          <div class="rate">0% APR for 12-21 months</div>
-          <p>Transfer credit card debt to a new card with 0% intro APR. Pay it off before the promo ends!</p>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Playbooks</a>
+        
+        <div class="header">
+            <h1>💳 Refinance High-Interest Debt</h1>
+            <p class="subtitle">Lower your rates and pay off debt faster</p>
+            <div class="time-badge">⏱️ 1-2 hours to apply • Save $1,000-5,000+</div>
         </div>
-        <div class="option-card">
-          <h4">Personal Loan</h4>
-          <div class="rate">7-20% APR (fixed)</div>
-          <p>Consolidate all debts into one fixed monthly payment. Know exactly when you'll be debt-free.</p>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>If you're paying 20%+ interest on credit cards, you're losing thousands to interest every year. By refinancing to a lower rate - through balance transfers, personal loans, or other options - you can save money AND pay off debt faster. This guide shows you all your options!</p>
+            </div>
+            <div class="savings-highlight">
+                <h3>Save $1,000-5,000+ in Interest</h3>
+                <p>Dropping from 24% to 8% APR on $10,000 saves over $1,600/year!</p>
+            </div>
         </div>
-        <div class="option-card">
-          <h4">Credit Union Loan</h4>
-          <div class="rate">Often lowest rates</div>
-          <p">Credit unions are non-profit and often offer better rates than banks, especially if your credit isn't perfect.</p>
+
+        <div class="card">
+            <h2><span class="icon">📊</span> Average Interest Rates Comparison</h2>
+            <div class="rate-compare">
+                <h3>What Are You Paying vs. What You Could Pay?</h3>
+                <div class="rate-grid">
+                    <div class="rate-item">
+                        <div class="type">Credit Cards</div>
+                        <div class="rate">24.6%</div>
+                        <div class="range">Average APR</div>
+                    </div>
+                    <div class="rate-item">
+                        <div class="type">Store Cards</div>
+                        <div class="rate">28.9%</div>
+                        <div class="range">Average APR</div>
+                    </div>
+                    <div class="rate-item">
+                        <div class="type">Personal Loan</div>
+                        <div class="rate">12.3%</div>
+                        <div class="range">6-36% range</div>
+                    </div>
+                    <div class="rate-item">
+                        <div class="type">Balance Transfer</div>
+                        <div class="rate">0%</div>
+                        <div class="range">12-21 months</div>
+                    </div>
+                    <div class="rate-item">
+                        <div class="type">Credit Union</div>
+                        <div class="rate">9.5%</div>
+                        <div class="range">Average</div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="option-card">
-          <h4">Negotiate with Current Cards</h4>
-          <div class="rate">Free to try!</div>
-          <p">Call your credit card company and ask for a lower rate. Works surprisingly often!</p>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Debt Refinancing Checklist</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">List all your debts with balances and interest rates</div>
+                    <div class="step-desc">Write down every credit card, store card, and loan with its balance, APR, and minimum payment. This is your starting point.</div>
+                </div>
+            </div>
+
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Check your credit score</div>
+                    <div class="step-desc">Your credit score determines what rates you'll qualify for. Check free at Credit Karma, Credit Sesame, or your bank.</div>
+                </div>
+            </div>
+
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Choose your best refinancing option</div>
+                    <div class="step-desc">0% balance transfer (if you can pay off in promo period), personal loan (fixed payment), or other options below.</div>
+                </div>
+            </div>
+
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Compare offers from multiple lenders</div>
+                    <div class="step-desc">Get pre-qualified (soft pull, no credit impact) from at least 3-5 lenders to find the best rate.</div>
+                </div>
+            </div>
+
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Calculate total cost including fees</div>
+                    <div class="step-desc">Balance transfers have 3-5% fees. Personal loans may have origination fees. Factor these into your decision!</div>
+                </div>
+            </div>
+
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Apply and transfer/consolidate your debt</div>
+                    <div class="step-desc">Once approved, transfer balances or use loan proceeds to pay off high-interest debt immediately.</div>
+                </div>
+            </div>
+
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Set up autopay and create a payoff plan</div>
+                    <div class="step-desc">Calculate how much you need to pay monthly to be debt-free by your target date. Automate it!</div>
+                </div>
+            </div>
+
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Don't add new debt to paid-off cards!</div>
+                    <div class="step-desc">This is crucial. Keep the cards open (for credit score) but don't use them while paying off the consolidated debt.</div>
+                </div>
+            </div>
         </div>
-      </div>
+
+        <div class="card">
+            <h2><span class="icon">💡</span> Your Refinancing Options</h2>
+            
+            <div class="options-grid">
+                <div class="option-card">
+                    <div class="option-header best">
+                        <h4>0% Balance Transfer Card</h4>
+                        <div class="rate">0% for 12-21 months</div>
+                    </div>
+                    <div class="option-body">
+                        <p>Transfer high-interest credit card debt to a new card with 0% intro APR. Pay no interest during the promo period!</p>
+                        <ul>
+                            <li class="pro">0% interest for 12-21 months</li>
+                            <li class="pro">Can save thousands in interest</li>
+                            <li class="pro">Single payment to manage</li>
+                            <li class="con">3-5% balance transfer fee</li>
+                            <li class="con">Need good/excellent credit (670+)</li>
+                            <li class="con">Rate jumps to 20%+ after promo</li>
+                        </ul>
+                        <div class="best-for">💡 Best for: High credit score, can pay off within promo period</div>
+                    </div>
+                </div>
+                
+                <div class="option-card">
+                    <div class="option-header good">
+                        <h4>Personal Loan</h4>
+                        <div class="rate">6-36% APR (fixed)</div>
+                    </div>
+                    <div class="option-body">
+                        <p>Borrow a lump sum to pay off all credit cards. Fixed rate and fixed monthly payment until it's paid off.</p>
+                        <ul>
+                            <li class="pro">Fixed rate won't increase</li>
+                            <li class="pro">Fixed payoff date (2-7 years)</li>
+                            <li class="pro">One simple monthly payment</li>
+                            <li class="con">May have origination fee (1-8%)</li>
+                            <li class="con">Need fair-good credit for best rates</li>
+                            <li class="con">Longer term = more interest</li>
+                        </ul>
+                        <div class="best-for">💡 Best for: Want predictable payments, need more time to pay off</div>
+                    </div>
+                </div>
+                
+                <div class="option-card">
+                    <div class="option-header good">
+                        <h4>Credit Union Loan</h4>
+                        <div class="rate">6-18% APR typically</div>
+                    </div>
+                    <div class="option-body">
+                        <p>Credit unions often offer lower rates than banks, especially for members with less-than-perfect credit.</p>
+                        <ul>
+                            <li class="pro">Often lower rates than banks</li>
+                            <li class="pro">More flexible with credit issues</li>
+                            <li class="pro">Personal service</li>
+                            <li class="con">Must be a member (easy to join)</li>
+                            <li class="con">May have smaller loan limits</li>
+                            <li class="con">Less tech-forward</li>
+                        </ul>
+                        <div class="best-for">💡 Best for: Fair credit, want personal service, already a member</div>
+                    </div>
+                </div>
+                
+                <div class="option-card">
+                    <div class="option-header caution">
+                        <h4>Home Equity Loan/HELOC</h4>
+                        <div class="rate">8-10% APR typically</div>
+                    </div>
+                    <div class="option-body">
+                        <p>Borrow against your home equity. Very low rates, but your home is collateral!</p>
+                        <ul>
+                            <li class="pro">Lowest rates available</li>
+                            <li class="pro">Interest may be tax-deductible</li>
+                            <li class="pro">Large amounts available</li>
+                            <li class="con">Your HOME is at risk!</li>
+                            <li class="con">Closing costs apply</li>
+                            <li class="con">Takes weeks to close</li>
+                        </ul>
+                        <div class="best-for">⚠️ Caution: Only if very disciplined - you could lose your home</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🧮</span> Savings Calculator</h2>
+            <div class="calculator-box">
+                <h4>How Much Could You Save?</h4>
+                <div class="calc-row">
+                    <label>Total Debt Amount: $</label>
+                    <input type="number" id="debtAmount" placeholder="10000" value="10000">
+                </div>
+                <div class="calc-row">
+                    <label>Current Interest Rate: </label>
+                    <input type="number" id="currentRate" placeholder="24" value="24">
+                    <span>%</span>
+                </div>
+                <div class="calc-row">
+                    <label>New Interest Rate: </label>
+                    <input type="number" id="newRate" placeholder="8" value="8">
+                    <span>%</span>
+                </div>
+                <div class="calc-row">
+                    <label>Payoff Timeline: </label>
+                    <select id="years">
+                        <option value="2">2 years</option>
+                        <option value="3" selected>3 years</option>
+                        <option value="4">4 years</option>
+                        <option value="5">5 years</option>
+                    </select>
+                </div>
+                <button class="calc-btn" onclick="calculateSavings()">Calculate My Savings</button>
+                <div class="calc-result" id="calcResult">
+                    <div class="comparison">
+                        <div class="column old">
+                            <h5>Current Rate</h5>
+                            <div class="amount" id="oldInterest">$0</div>
+                            <p>Total Interest Paid</p>
+                        </div>
+                        <div class="column new">
+                            <h5>New Lower Rate</h5>
+                            <div class="amount" id="newInterest">$0</div>
+                            <p>Total Interest Paid</p>
+                        </div>
+                    </div>
+                    <div class="savings-row">
+                        <p>Your Total Savings:</p>
+                        <div class="big" id="totalSavings">$0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🏦</span> Where to Get Offers</h2>
+            <h3 style="color: #1a1a2e; margin: 15px 0;">Balance Transfer Cards:</h3>
+            <div class="lender-grid">
+                <div class="lender-card">
+                    <h5>Chase Slate Edge</h5>
+                    <p>0% intro APR</p>
+                    <div class="rate-range">18-21 months</div>
+                </div>
+                <div class="lender-card">
+                    <h5>Citi Simplicity</h5>
+                    <p>0% intro APR</p>
+                    <div class="rate-range">21 months</div>
+                </div>
+                <div class="lender-card">
+                    <h5>Wells Fargo Reflect</h5>
+                    <p>0% intro APR</p>
+                    <div class="rate-range">21 months</div>
+                </div>
+                <div class="lender-card">
+                    <h5>Discover it Balance</h5>
+                    <p>0% intro APR</p>
+                    <div class="rate-range">18 months</div>
+                </div>
+            </div>
+            
+            <h3 style="color: #1a1a2e; margin: 25px 0 15px;">Personal Loan Lenders:</h3>
+            <div class="lender-grid">
+                <div class="lender-card">
+                    <h5>SoFi</h5>
+                    <p>No fees, unemployment protection</p>
+                    <div class="rate-range">8.99-25.81% APR</div>
+                </div>
+                <div class="lender-card">
+                    <h5>LightStream</h5>
+                    <p>Rate beat program</p>
+                    <div class="rate-range">7.49-25.49% APR</div>
+                </div>
+                <div class="lender-card">
+                    <h5>Marcus by Goldman</h5>
+                    <p>No fees</p>
+                    <div class="rate-range">6.99-24.99% APR</div>
+                </div>
+                <div class="lender-card">
+                    <h5>Discover Personal</h5>
+                    <p>Fast funding</p>
+                    <div class="rate-range">7.99-24.99% APR</div>
+                </div>
+                <div class="lender-card">
+                    <h5>Upstart</h5>
+                    <p>Good for fair credit</p>
+                    <div class="rate-range">6.4-35.99% APR</div>
+                </div>
+                <div class="lender-card">
+                    <h5>Avant</h5>
+                    <p>Fair credit welcome</p>
+                    <div class="rate-range">9.95-35.99% APR</div>
+                </div>
+            </div>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Pro Tip: Pre-qualify First!</div>
+                <p>Most lenders let you check your rate with a "soft pull" that doesn't affect your credit score. Pre-qualify with several lenders to compare before applying.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">⚠️</span> Important Warnings</h2>
+            <div class="warning-box">
+                <h4>🚫 Don't Run Up New Debt!</h4>
+                <p>The biggest mistake: consolidating debt and then charging up the old cards again. You'll end up with DOUBLE the debt. Cut up the cards or freeze them!</p>
+            </div>
+            <div class="warning-box">
+                <h4>📅 Watch the 0% Promo End Date</h4>
+                <p>Balance transfer rates jump to 20%+ after the promo period. Set calendar reminders and have a plan to pay it off OR transfer again before it ends.</p>
+            </div>
+            <div class="warning-box">
+                <h4>💰 Factor in ALL Fees</h4>
+                <p>A 3% balance transfer fee on $10,000 = $300 upfront. An origination fee on a personal loan adds to your cost. Calculate total cost, not just the rate!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📱</span> Debt & Personal Finance Experts</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💰</div>
+                    <h4>Dave Ramsey</h4>
+                    <div class="platform">📻 Radio & YouTube</div>
+                    <div class="followers">Millions of Followers</div>
+                    <p>Famous for debt-free strategies. His Baby Steps program has helped millions pay off debt.</p>
+                    <a href="https://www.ramseysolutions.com" class="influencer-link" target="_blank">ramseysolutions.com →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📊</div>
+                    <h4>NerdWallet</h4>
+                    <div class="platform">🌐 Website</div>
+                    <div class="followers">Major Finance Site</div>
+                    <p>Compare personal loans and balance transfer cards with detailed reviews and calculators.</p>
+                    <a href="https://www.nerdwallet.com/personal-loans" class="influencer-link" target="_blank">nerdwallet.com →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🎯</div>
+                    <h4>The Points Guy</h4>
+                    <div class="platform">🌐 Website</div>
+                    <div class="followers">Credit Card Expert</div>
+                    <p>Best balance transfer card comparisons and credit card strategy guides.</p>
+                    <a href="https://thepointsguy.com" class="influencer-link" target="_blank">thepointsguy.com →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💳</div>
+                    <h4>Bankrate</h4>
+                    <div class="platform">🌐 Website</div>
+                    <div class="followers">Finance Resource</div>
+                    <p>Personal loan and credit card rate comparisons with expert reviews.</p>
+                    <a href="https://www.bankrate.com" class="influencer-link" target="_blank">bankrate.com →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🌟</div>
+                    <h4>Tori Dunlap (Her First $100K)</h4>
+                    <div class="platform">📱 TikTok & Podcast</div>
+                    <div class="followers">2.8M+ Followers</div>
+                    <p>Feminist finance expert with practical debt payoff strategies for millennials.</p>
+                    <a href="https://www.tiktok.com/@herfirst100k" class="influencer-link" target="_blank">@herfirst100k →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📈</div>
+                    <h4>Humphrey Yang</h4>
+                    <div class="platform">📱 TikTok & YouTube</div>
+                    <div class="followers">3.3M+ Followers</div>
+                    <p>Former financial advisor explaining debt, credit, and money in simple terms.</p>
+                    <a href="https://www.tiktok.com/@humphreytalks" class="influencer-link" target="_blank">@humphreytalks →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Debt Refinancing Notes</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your debt refinancing journey!
+
+MY CURRENT DEBTS:
+Card/Loan          Balance      APR       Min Payment
+1. ____________    $______     ____%     $______
+2. ____________    $______     ____%     $______
+3. ____________    $______     ____%     $______
+4. ____________    $______     ____%     $______
+
+TOTAL DEBT: $______
+AVERAGE APR: ____%
+TOTAL MIN PAYMENTS: $______
+
+MY CREDIT SCORE: ______
+
+OFFERS I'VE RECEIVED:
+1. Lender: ______ | Rate: ____% | Term: ____ | Fee: $____
+2. Lender: ______ | Rate: ____% | Term: ____ | Fee: $____
+3. Lender: ______ | Rate: ____% | Term: ____ | Fee: $____
+
+BEST OPTION: ______
+ESTIMATED SAVINGS: $______
+
+PAYOFF PLAN:
+Monthly payment: $______
+Payoff date: ______
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Debt?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="#" class="cta-button">Get Support →</a>
+        </div>
     </div>
 
-    <div class="section-card">
-      <h2><span class="icon">📋</span> Step-by-Step: Lower Your Rates</h2>
-      <ul class="task-list">
-        <li class="task-item">
-          <div class="task-checkbox" data-task="0"></div>
-          <div class="task-content">
-            <div class="task-title">Step 1: List all your debts with interest rates</div>
-            <div class="task-desc">Know what you're working with. List each debt, balance, interest rate, and minimum payment.</div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 15 minutes</span>
-              <span class="task-badge easy">Important!</span>
-            </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="1"></div>
-          <div class="task-content">
-            <div class="task-title">Step 2: Check your credit score</div>
-            <div class="task-desc">Your score determines which options are available. Check free at Credit Karma or your bank.</div>
-            <div class="details-box">
-              <h4">Score guides options:</h4>
-              <ul>
-                <li><strong>720+:</strong> Best balance transfer cards, lowest personal loan rates</li>
-                <li><strong>670-719:</strong> Good options still available</li>
-                <li><strong>580-669:</strong> Credit union or secured loans may be best</li>
-                <li><strong>Below 580:</strong> Focus on building credit first, or try negotiating</li>
-              </ul>
-            </div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 5 minutes</span>
-              <span class="task-badge easy">Free to check</span>
-            </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="2"></div>
-          <div class="task-content">
-            <div class="task-title">Step 3: Call current credit cards and ask for lower rate</div>
-            <div class="task-desc">This is FREE and works more often than you'd think! Just call and ask.</div>
-            <div class="details-box">
-              <h4">What to say:</h4>
-              <ul>
-                <li>"Hi, I've been a customer for [X years] and I'd like to request a lower interest rate on my card."</li>
-                <li>"I've received offers for cards with lower rates and I'm considering transferring my balance."</li>
-                <li>"Is there anything you can do to lower my current rate?"</li>
-                <li>If they say no: "Can I speak with a supervisor?" or "Is there a hardship program?"</li>
-              </ul>
-            </div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 15 min per card</span>
-              <span class="task-badge easy">Often works!</span>
-            </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="3"></div>
-          <div class="task-content">
-            <div class="task-title">Step 4: Compare balance transfer offers</div>
-            <div class="task-desc">Look for 0% APR intro offers. Note the transfer fee (usually 3-5%) and how long the 0% lasts.</div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 20 minutes</span>
-              <span class="task-badge easy">NerdWallet has good comparisons</span>
-            </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="4"></div>
-          <div class="task-content">
-            <div class="task-title">Step 5: Compare personal loan offers</div>
-            <div class="task-desc">Check rates at multiple lenders. Many let you prequalify without affecting your credit!</div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 20 minutes</span>
-              <span class="task-badge easy">Soft pull = no credit impact</span>
-            </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="5"></div>
-          <div class="task-content">
-            <div class="task-title">Step 6: Choose best option and apply</div>
-            <div class="task-desc">Pick the option that saves you the most. Apply and use the funds to pay off high-interest debt!</div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 15-30 minutes</span>
-              <span class="task-badge easy">Start saving!</span>
-            </div>
-          </div>
-        </li>
-      </ul>
-      
-      <div class="warning-box">
-        <h4">⚠️ Important Warning</h4>
-        <p">Don't rack up new debt on the old cards after you pay them off! Cut them up or freeze them if you need to. The goal is to get OUT of debt, not just move it around.</p>
-      </div>
-    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-refinance-debt');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) {
+                        document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                    }
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
 
-    <div class="section-card resources-section">
-      <h2><span class="icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">💡</span> Compare Your Options</h2>
-      
-      <a href="https://www.nerdwallet.com/best/credit-cards/balance-transfer" target="_blank" class="resource-item">
-        <h4">💳 Best Balance Transfer Cards (NerdWallet)</h4>
-        <p">Compare 0% APR balance transfer offers.</p>
-        <span class="link">nerdwallet.com →</span>
-      </a>
-      <a href="https://www.nerdwallet.com/best/loans/personal-loans/best-personal-loans" target="_blank" class="resource-item">
-        <h4">💰 Best Personal Loans (NerdWallet)</h4>
-        <p">Compare personal loan rates without affecting your credit.</p>
-        <span class="link">nerdwallet.com →</span>
-      </a>
-      <a href="https://www.creditkarma.com" target="_blank" class="resource-item">
-        <h4">📊 Credit Karma</h4>
-        <p">Free credit score and personalized loan/card offers.</p>
-        <span class="link">creditkarma.com →</span>
-      </a>
-    </div>
+        function toggleStep(el) {
+            el.classList.toggle('checked');
+            updateProgress();
+            saveProgress();
+        }
 
-    <div class="section-card">
-      <h2><span class="icon">📝</span> Your Notes</h2>
-      <textarea id="userNotes" placeholder="Example: Debts: Chase card $5,000 @ 24%, Discover $3,000 @ 22%. Credit score: 695. Called Chase - they lowered to 19%! Checking balance transfer options..."></textarea>
-    </div>
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
 
-    <div class="help-section">
-      <div class="help-icon">💬</div>
-      <div class="help-content">
-        <h3">Need Help?</h3>
-        <p">Have questions about debt options? Chat with an ASAP Financial coach!</p>
-      </div>
-      <button class="chat-btn" onclick="openChat()">
-        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
-        Start Chat
-      </button>
-    </div>
-  </main>
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-refinance-debt', JSON.stringify({ steps, notes }));
+        }
 
-  <script>
-    const STORAGE_KEY = 'playbook_refinance-debt';
-    function loadState() { const saved = localStorage.getItem(STORAGE_KEY); if (saved) { const state = JSON.parse(saved); document.querySelectorAll('.task-checkbox').forEach((box, i) => { if (state.tasks && state.tasks[i]) { box.classList.add('checked'); box.innerHTML = '✓'; } }); if (state.notes) document.getElementById('userNotes').value = state.notes; updateProgress(); } }
-    function saveState() { const tasks = []; document.querySelectorAll('.task-checkbox').forEach(box => { tasks.push(box.classList.contains('checked')); }); localStorage.setItem(STORAGE_KEY, JSON.stringify({ tasks, notes: document.getElementById('userNotes').value })); }
-    function updateProgress() { const boxes = document.querySelectorAll('.task-checkbox'); const checked = document.querySelectorAll('.task-checkbox.checked').length; const percent = Math.round((checked / boxes.length) * 100); document.getElementById('progressFill').style.width = percent + '%'; document.getElementById('progressText').textContent = percent + '%'; }
-    document.querySelectorAll('.task-checkbox').forEach(box => { box.addEventListener('click', function() { this.classList.toggle('checked'); this.innerHTML = this.classList.contains('checked') ? '✓' : ''; updateProgress(); saveState(); }); });
-    document.getElementById('userNotes').addEventListener('input', saveState);
-    function openChat() { window.location.href = 'https://asapcreditrepairusa.com/chat'; }
-    loadState();
-  </script>
+        function calculateSavings() {
+            const principal = parseFloat(document.getElementById('debtAmount').value) || 10000;
+            const currentRate = parseFloat(document.getElementById('currentRate').value) || 24;
+            const newRate = parseFloat(document.getElementById('newRate').value) || 8;
+            const years = parseFloat(document.getElementById('years').value) || 3;
+            
+            // Simple interest calculation for illustration
+            const oldInterest = principal * (currentRate / 100) * years * 0.6; // Rough approximation
+            const newInterest = principal * (newRate / 100) * years * 0.6;
+            const savings = oldInterest - newInterest;
+            
+            document.getElementById('oldInterest').textContent = '$' + Math.round(oldInterest).toLocaleString();
+            document.getElementById('newInterest').textContent = '$' + Math.round(newInterest).toLocaleString();
+            document.getElementById('totalSavings').textContent = '$' + Math.round(savings).toLocaleString();
+            document.getElementById('calcResult').style.display = 'block';
+        }
+
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>
