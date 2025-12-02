@@ -1,28 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>No Spend Challenge | ASAP Credit Repair Playbook</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>:root{--primary:#063d86;--success:#10b981;--bg:#f8fafc;--text:#1e293b;--text-light:#64748b;--border:#e2e8f0}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}.header{background:linear-gradient(135deg,#10b981,#059669);color:#fff;padding:40px 20px 50px;text-align:center}.header h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:12px}.main-content{max-width:800px;margin:-30px auto 40px;padding:0 20px}.back-link{color:#fff;text-decoration:none;opacity:.8;display:block;margin-bottom:16px}.category-badge{display:inline-block;background:rgba(255,255,255,.2);padding:6px 16px;border-radius:20px;font-size:.85rem;margin-bottom:16px}.goal-card{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid var(--success);border-radius:16px;padding:24px;margin-bottom:24px}.goal-card h2{color:#065f46;margin-bottom:12px}.goal-card .earnings{background:#fff;padding:10px 18px;border-radius:10px;margin-top:14px;font-weight:600;color:#065f46;display:inline-block}.section-card{background:#fff;border-radius:16px;padding:28px;margin-bottom:24px;border:1px solid var(--border)}.section-card h2{color:var(--primary);margin-bottom:20px}.task-list{list-style:none}.task-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)}.task-checkbox{width:28px;height:28px;border:2px solid var(--border);border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}.task-checkbox.checked{background:var(--success);border-color:var(--success);color:#fff}.task-title{font-weight:600;margin-bottom:6px}.task-desc{color:var(--text-light);font-size:.95rem}.task-badge{font-size:.8rem;padding:4px 10px;border-radius:6px;background:var(--bg);margin-top:10px;display:inline-block;margin-right:8px}textarea{width:100%;min-height:120px;padding:14px;border:2px solid var(--border);border-radius:10px;font-family:inherit;margin-top:10px}.help-section{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border:2px solid #7dd3fc;border-radius:16px;padding:20px;margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}.chat-btn{background:var(--primary);color:#fff;border:none;padding:12px 24px;border-radius:10px;font-weight:600;cursor:pointer}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No-Spend Challenge Guide - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #2e7d32; font-size: 1.1em; line-height: 1.6; }
+        .savings-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .savings-item { background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 20px; border-radius: 15px; text-align: center; }
+        .savings-item .amount { font-size: 2em; font-weight: 700; }
+        .savings-item .label { opacity: 0.9; margin-top: 5px; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #e8f5e9; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .challenge-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .challenge-option { background: #f5f5f5; border: 3px solid transparent; border-radius: 15px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.3s; }
+        .challenge-option:hover { border-color: #667eea; }
+        .challenge-option.selected { border-color: #667eea; background: #e8eaf6; }
+        .challenge-option h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .challenge-option p { color: #666; font-size: 14px; }
+        .challenge-option .savings { color: #4caf50; font-weight: 700; margin-top: 10px; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .rules-section { background: #f5f5f5; border-radius: 15px; padding: 25px; margin: 20px 0; }
+        .rule-category { margin-bottom: 20px; }
+        .rule-category:last-child { margin-bottom: 0; }
+        .rule-category h4 { color: #1a1a2e; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .rule-list { list-style: none; padding-left: 30px; }
+        .rule-list li { padding: 5px 0; color: #666; }
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section { margin-top: 20px; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 100px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #667eea; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-section h3 { margin-bottom: 15px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; transition: transform 0.3s; }
+        .cta-button:hover { transform: scale(1.05); }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+        .back-link:hover { opacity: 1; }
+    </style>
 </head>
 <body>
-  <header class="header"><a href="index.html" class="back-link">← Back to All Playbooks</a><span class="category-badge">💰 Save Money</span><h1>No Spend Challenge</h1><p style="opacity:.9;max-width:600px;margin:0 auto">Step-by-step guide to saving money!</p></header>
-  <main class="main-content">
-    <div class="goal-card"><h2>🎯 What You'll Achieve</h2><p>Start saving money immediately with these proven strategies!</p><div class="earnings">💰 Save hundreds to thousands per year</div></div>
-    <div class="section-card"><h2>📋 Quick Start Guide</h2>
-      <ul class="task-list">
-        <li class="task-item"><div class="task-checkbox" data-task="0"></div><div><div class="task-title">Step 1: Assess your current situation</div><div class="task-desc">Understand where your money is going now.</div></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="1"></div><div><div class="task-title">Step 2: Identify savings opportunities</div><div class="task-desc">Find the biggest areas to cut costs.</div></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="2"></div><div><div class="task-title">Step 3: Take action</div><div class="task-desc">Implement the changes to start saving.</div></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="3"></div><div><div class="task-title">Step 4: Track your savings</div><div class="task-desc">Monitor how much you're saving each month.</div></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="4"></div><div><div class="task-title">Step 5: Automate where possible</div><div class="task-desc">Set up systems to save automatically.</div></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="5"></div><div><div class="task-title">Step 6: Reinvest your savings</div><div class="task-desc">Put the money saved toward your goals.</div></div></li>
-      </ul></div>
-    <div class="section-card"><h2>📝 Your Savings Tracker</h2><textarea id="userNotes" placeholder="Track your savings progress here..."></textarea></div>
-    <div class="help-section"><span style="font-size:24px">💬</span><div style="flex:1"><strong>Need Help?</strong> Chat with a coach!</div><button class="chat-btn" onclick="location.href='https://asapcreditrepairusa.com/chat'">Start Chat</button></div>
-  </main>
-  <script>const K='pb_no-spend-challenge';function load(){const s=localStorage.getItem(K);if(s){const d=JSON.parse(s);document.querySelectorAll('.task-checkbox').forEach((b,i)=>{if(d.tasks&&d.tasks[i]){b.classList.add('checked');b.innerHTML='✓'}});if(d.notes)document.getElementById('userNotes').value=d.notes}}function save(){const t=[];document.querySelectorAll('.task-checkbox').forEach(b=>t.push(b.classList.contains('checked')));localStorage.setItem(K,JSON.stringify({tasks:t,notes:document.getElementById('userNotes').value}))}document.querySelectorAll('.task-checkbox').forEach(b=>b.onclick=function(){this.classList.toggle('checked');this.innerHTML=this.classList.contains('checked')?'✓':'';save()});document.getElementById('userNotes').oninput=save;load();</script>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Playbooks</a>
+        
+        <div class="header">
+            <h1>🚫 No-Spend Challenge Guide</h1>
+            <p class="subtitle">Your complete guide to spending freezes of any length</p>
+            <div class="time-badge">⏱️ 10 min to set up</div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>No-spend challenges are the fastest way to reset your spending habits, save money quickly, and gain awareness of your triggers. Whether you do 24 hours or 30 days, you'll learn that you need far less than you think to be happy!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📊</span> See the Savings</h2>
+            <p>Your potential savings depend on the challenge length you choose:</p>
+            <div class="savings-grid">
+                <div class="savings-item">
+                    <div class="amount">$100-400</div>
+                    <div class="label">Per Challenge</div>
+                </div>
+                <div class="savings-item">
+                    <div class="amount">$1,200+</div>
+                    <div class="label">Annual (monthly challenges)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">⏰</span> Choose Your Challenge Level</h2>
+            <p>Pick the challenge that fits your situation. You can always level up later!</p>
+            <div class="challenge-options">
+                <div class="challenge-option" onclick="selectChallenge(this, '24h')">
+                    <h4>🌱 Beginner</h4>
+                    <p>24-Hour Challenge</p>
+                    <div class="savings">Save $25-75</div>
+                </div>
+                <div class="challenge-option" onclick="selectChallenge(this, '48h')">
+                    <h4>🌿 Easy</h4>
+                    <p>48-Hour Challenge</p>
+                    <div class="savings">Save $50-150</div>
+                </div>
+                <div class="challenge-option" onclick="selectChallenge(this, 'weekend')">
+                    <h4>🌳 Moderate</h4>
+                    <p>Weekend Challenge</p>
+                    <div class="savings">Save $75-200</div>
+                </div>
+                <div class="challenge-option" onclick="selectChallenge(this, 'week')">
+                    <h4>🔥 Intermediate</h4>
+                    <p>Full Week Challenge</p>
+                    <div class="savings">Save $200-500</div>
+                </div>
+                <div class="challenge-option" onclick="selectChallenge(this, 'month')">
+                    <h4>💪 Advanced</h4>
+                    <p>30-Day Challenge</p>
+                    <div class="savings">Save $500-1500</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📜</span> The Universal Rules</h2>
+            <div class="rules-section">
+                <div class="rule-category">
+                    <h4>✅ Always Allowed</h4>
+                    <ul class="rule-list">
+                        <li>• Pre-scheduled bills on autopay</li>
+                        <li>• True emergencies (medical, car breakdown for work)</li>
+                        <li>• Things you already own or have at home</li>
+                        <li>• Free activities and entertainment</li>
+                    </ul>
+                </div>
+                <div class="rule-category">
+                    <h4>❌ Never Allowed</h4>
+                    <ul class="rule-list">
+                        <li>• Eating out or ordering food delivery</li>
+                        <li>• Coffee shops</li>
+                        <li>• Any online shopping</li>
+                        <li>• Convenience store purchases</li>
+                        <li>• Entertainment purchases (movies, games, etc.)</li>
+                        <li>• "But it's on sale!" purchases</li>
+                    </ul>
+                </div>
+                <div class="rule-category">
+                    <h4>🤔 Case-by-Case (Pre-plan)</h4>
+                    <ul class="rule-list">
+                        <li>• Groceries (ideally shop before challenge starts)</li>
+                        <li>• Gas (fill up before or count as essential)</li>
+                        <li>• Work-related purchases (get reimbursed or pre-approve)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> How to Run Any No-Spend Challenge</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Choose your challenge level (above)</div>
+                    <div class="step-desc">Be honest with yourself. If you've never done this, start with 24-48 hours. Success breeds success!</div>
+                </div>
+            </div>
+
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Set your start and end dates</div>
+                    <div class="step-desc">Put it in your calendar. Pick a time without major events, travel, or celebrations.</div>
+                </div>
+            </div>
+
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Do all necessary shopping BEFORE</div>
+                    <div class="step-desc">Groceries, gas, prescriptions - anything you truly need, get it before your start date.</div>
+                </div>
+            </div>
+
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Remove temptation</div>
+                    <div class="step-desc">Delete shopping apps, unsubscribe from sale emails, avoid stores and malls, leave cards at home.</div>
+                </div>
+            </div>
+
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Tell someone for accountability</div>
+                    <div class="step-desc">Text a friend, post on social media, or tell your partner. Accountability dramatically increases success!</div>
+                </div>
+            </div>
+
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Plan free activities</div>
+                    <div class="step-desc">Boredom leads to spending. Plan walks, library visits, home workouts, calling friends, cooking, cleaning.</div>
+                </div>
+            </div>
+
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Keep a "want" list</div>
+                    <div class="step-desc">Write down everything you want to buy. After the challenge, review - you'll want most things much less!</div>
+                </div>
+            </div>
+
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Celebrate and reflect!</div>
+                    <div class="step-desc">Calculate how much you saved. Transfer that amount to savings. Plan your next challenge!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💡</span> Pro Tips</h2>
+            <div class="pro-tip">
+                <div class="pro-tip-title">🧠 When You Want to Give Up</div>
+                <p>• Remember: the urge to spend passes in 10-15 minutes</p>
+                <p>• Call or text someone instead of shopping</p>
+                <p>• Ask yourself: "Will I remember this purchase in a year?"</p>
+                <p>• Review your financial goals - is this purchase worth delaying them?</p>
+            </div>
+            <div class="pro-tip">
+                <div class="pro-tip-title">🏆 Making It a Habit</div>
+                <p>• Do a weekend challenge every month</p>
+                <p>• Try "No-Spend November" or "Frugal February"</p>
+                <p>• Compete with friends or family</p>
+                <p>• Track your cumulative savings over time</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your "Want" List & Notes</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Write down everything you want to buy during your challenge. After it ends, review this list - how many items do you still truly want?"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help Staying on Track?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="#" class="cta-button">Get Support →</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-no-spend-challenge');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) {
+                        document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                    }
+                });
+                if (data.challenge) {
+                    document.querySelectorAll('.challenge-option').forEach(el => {
+                        if (el.getAttribute('onclick').includes(data.challenge)) {
+                            el.classList.add('selected');
+                        }
+                    });
+                }
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+
+        function selectChallenge(el, type) {
+            document.querySelectorAll('.challenge-option').forEach(opt => opt.classList.remove('selected'));
+            el.classList.add('selected');
+            saveProgress();
+        }
+
+        function toggleStep(el) {
+            el.classList.toggle('checked');
+            updateProgress();
+            saveProgress();
+        }
+
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const selectedChallenge = document.querySelector('.challenge-option.selected');
+            const challenge = selectedChallenge ? selectedChallenge.getAttribute('onclick').match(/'(\w+)'/)[1] : null;
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-no-spend-challenge', JSON.stringify({ steps, challenge, notes }));
+        }
+
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>

@@ -1,102 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zero-Spend Week Challenge | ASAP Playbook</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial,sans-serif;background:#f5f7fa;color:#333;line-height:1.6}.container{max-width:800px;margin:0 auto;padding:20px}.header{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:30px;border-radius:10px 10px 0 0;text-align:center}.header h1{font-size:28px;margin-bottom:10px}.header p{opacity:.9;font-size:16px}.content{background:#fff;padding:30px;border-radius:0 0 10px 10px;box-shadow:0 2px 10px rgba(0,0,0,.1)}.section{margin-bottom:30px}.section h2{color:#667eea;font-size:20px;margin-bottom:15px;padding-bottom:10px;border-bottom:2px solid #eee}.step{background:#f8f9fa;padding:15px;border-radius:8px;margin-bottom:15px;border-left:4px solid #667eea}.step h3{color:#333;margin-bottom:8px}.step p{color:#666;font-size:14px}.checklist{list-style:none;padding:0}.checklist li{padding:12px 15px;background:#fff;margin-bottom:8px;border-radius:6px;border:1px solid #e0e0e0;display:flex;align-items:center;gap:10px}.checklist input[type="checkbox"]{width:20px;height:20px;cursor:pointer}.tip-box{background:#fff3cd;border:1px solid #ffc107;padding:15px;border-radius:8px;margin:15px 0}.tip-box strong{color:#856404}.success-box{background:#d4edda;border:1px solid #c3e6cb;padding:15px;border-radius:8px;margin:15px 0}.success-box strong{color:#155724}.warning-box{background:#f8d7da;border:1px solid #f5c6cb;padding:15px;border-radius:8px;margin:15px 0}.warning-box strong{color:#721c24}.day-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;margin:20px 0}.day-box{background:#f8f9fa;border:2px solid #ddd;border-radius:8px;padding:15px 10px;text-align:center}.day-box.active{border-color:#667eea;background:#f0f4ff}.day-label{font-size:11px;color:#666;text-transform:uppercase}.day-num{font-size:24px;font-weight:700;color:#667eea}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zero-Spend Week Challenge - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #2e7d32; font-size: 1.1em; line-height: 1.6; }
+        .savings-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .savings-item { background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 20px; border-radius: 15px; text-align: center; }
+        .savings-item .amount { font-size: 2em; font-weight: 700; }
+        .savings-item .label { opacity: 0.9; margin-top: 5px; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #e8f5e9; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .week-tracker { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; margin: 20px 0; }
+        .day-box { background: #f5f5f5; border-radius: 10px; padding: 15px 10px; text-align: center; cursor: pointer; transition: all 0.3s; }
+        .day-box:hover { background: #e8f5e9; }
+        .day-box.completed { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; }
+        .day-box .day-name { font-size: 12px; margin-bottom: 5px; }
+        .day-box .day-icon { font-size: 24px; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .activities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin: 20px 0; }
+        .activity-item { background: #e3f2fd; padding: 15px; border-radius: 10px; text-align: center; font-weight: 500; color: #1565c0; }
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section { margin-top: 20px; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 100px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #667eea; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-section h3 { margin-bottom: 15px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; transition: transform 0.3s; }
+        .cta-button:hover { transform: scale(1.05); }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+        .back-link:hover { opacity: 1; }
+    </style>
 </head>
 <body>
-<div class="container">
-<div class="header">
-<h1>🔥 Zero-Spend Week Challenge</h1>
-<p>7 days of spending NOTHING except absolute essentials</p>
-</div>
-<div class="content">
-<div class="section">
-<h2>Why This Works</h2>
-<p>A full week of zero spending resets your relationship with money. It proves you can survive without impulse purchases and shows exactly how much you waste on "small" things that add up.</p>
-</div>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Playbooks</a>
+        
+        <div class="header">
+            <h1>📅 Zero-Spend Week Challenge</h1>
+            <p class="subtitle">A full week of no unnecessary spending - the ultimate reset!</p>
+            <div class="time-badge">⏱️ 5 min setup + 7 days</div>
+        </div>
 
-<div class="success-box">
-<strong>💰 Average savings:</strong> Most people save $200-500 during a single Zero-Spend Week!
-</div>
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>A full week without discretionary spending transforms your relationship with money. You'll discover how much you spend on autopilot, prove to yourself that you don't need to buy things to be happy, and save $200-500 in just one week!</p>
+            </div>
+        </div>
 
-<div class="section">
-<h2>The Rules</h2>
-<div class="step">
-<h3>✅ ALLOWED (Pre-committed expenses only)</h3>
-<p>Rent/mortgage, utilities, insurance, gas for work commute, groceries you already have</p>
-</div>
-<div class="step">
-<h3>❌ NOT ALLOWED</h3>
-<p>Coffee shops, restaurants, takeout, online shopping, subscriptions you can pause, entertainment, any "just this once" purchases</p>
-</div>
-</div>
+        <div class="card">
+            <h2><span class="icon">📊</span> See the Savings</h2>
+            <p>Most people spend $30-70 per day on non-essentials without even realizing it. Here's what a full week saves:</p>
+            <div class="savings-grid">
+                <div class="savings-item">
+                    <div class="amount">$200-500</div>
+                    <div class="label">Per Week</div>
+                </div>
+                <div class="savings-item">
+                    <div class="amount">$800-2000</div>
+                    <div class="label">Monthly (4 weeks)</div>
+                </div>
+                <div class="savings-item">
+                    <div class="amount">🧠</div>
+                    <div class="label">Mindset Shift</div>
+                </div>
+            </div>
+        </div>
 
-<div class="section">
-<h2>Your 7-Day Tracker</h2>
-<div class="day-grid">
-<div class="day-box"><div class="day-label">Day 1</div><div class="day-num">$0</div></div>
-<div class="day-box"><div class="day-label">Day 2</div><div class="day-num">$0</div></div>
-<div class="day-box"><div class="day-label">Day 3</div><div class="day-num">$0</div></div>
-<div class="day-box"><div class="day-label">Day 4</div><div class="day-num">$0</div></div>
-<div class="day-box"><div class="day-label">Day 5</div><div class="day-num">$0</div></div>
-<div class="day-box"><div class="day-label">Day 6</div><div class="day-num">$0</div></div>
-<div class="day-box"><div class="day-label">Day 7</div><div class="day-num">$0</div></div>
-</div>
-</div>
+        <div class="card">
+            <h2><span class="icon">📅</span> Your Week Tracker</h2>
+            <p>Click each day to mark it complete. Can you get all 7?</p>
+            <div class="week-tracker">
+                <div class="day-box" onclick="toggleDayBox(this)" data-day="1">
+                    <div class="day-name">DAY 1</div>
+                    <div class="day-icon">⬜</div>
+                </div>
+                <div class="day-box" onclick="toggleDayBox(this)" data-day="2">
+                    <div class="day-name">DAY 2</div>
+                    <div class="day-icon">⬜</div>
+                </div>
+                <div class="day-box" onclick="toggleDayBox(this)" data-day="3">
+                    <div class="day-name">DAY 3</div>
+                    <div class="day-icon">⬜</div>
+                </div>
+                <div class="day-box" onclick="toggleDayBox(this)" data-day="4">
+                    <div class="day-name">DAY 4</div>
+                    <div class="day-icon">⬜</div>
+                </div>
+                <div class="day-box" onclick="toggleDayBox(this)" data-day="5">
+                    <div class="day-name">DAY 5</div>
+                    <div class="day-icon">⬜</div>
+                </div>
+                <div class="day-box" onclick="toggleDayBox(this)" data-day="6">
+                    <div class="day-name">DAY 6</div>
+                    <div class="day-icon">⬜</div>
+                </div>
+                <div class="day-box" onclick="toggleDayBox(this)" data-day="7">
+                    <div class="day-name">DAY 7</div>
+                    <div class="day-icon">⬜</div>
+                </div>
+            </div>
+        </div>
 
-<div class="section">
-<h2>Preparation Checklist (Do BEFORE You Start)</h2>
-<ul class="checklist">
-<li><input type="checkbox"> <span>Meal prep enough food for the full week</span></li>
-<li><input type="checkbox"> <span>Fill up your gas tank</span></li>
-<li><input type="checkbox"> <span>Delete shopping apps from your phone</span></li>
-<li><input type="checkbox"> <span>Leave credit cards at home</span></li>
-<li><input type="checkbox"> <span>Tell your accountability partner</span></li>
-<li><input type="checkbox"> <span>Unsubscribe from promotional emails</span></li>
-<li><input type="checkbox"> <span>Plan free activities (walks, library, home workouts)</span></li>
-</ul>
-</div>
+        <div class="card">
+            <h2><span class="icon">📋</span> Preparation Steps</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Pick your week and commit</div>
+                    <div class="step-desc">Choose a week without major events. Write the start date here. Tell at least one person for accountability!</div>
+                </div>
+            </div>
 
-<div class="section">
-<h2>Daily Survival Checklist</h2>
-<ul class="checklist">
-<li><input type="checkbox"> <span><strong>Morning:</strong> Pack lunch, snacks, and water bottle</span></li>
-<li><input type="checkbox"> <span><strong>Temptation hits:</strong> Text your accountability partner instead</span></li>
-<li><input type="checkbox"> <span><strong>Evening:</strong> Write down any urges you resisted</span></li>
-<li><input type="checkbox"> <span><strong>Before bed:</strong> Celebrate another $0 day!</span></li>
-</ul>
-</div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Do a thorough grocery shop BEFORE</div>
+                    <div class="step-desc">Stock up on everything you need for the full week. Plan meals in advance. This is your one allowed shopping trip!</div>
+                </div>
+            </div>
 
-<div class="warning-box">
-<strong>⚠️ If You Slip:</strong> Don't give up! Write down what happened, why, and restart the next day. Progress over perfection!
-</div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Fill your car with gas</div>
+                    <div class="step-desc">If you drive, fill up before the week starts. No gas station trips = no temptation to buy snacks!</div>
+                </div>
+            </div>
 
-<div class="tip-box">
-<strong>💡 Pro Tip:</strong> Schedule your Zero-Spend Week for the week AFTER payday. You'll have groceries stocked and bills paid, making it easier to succeed.
-</div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Delete or log out of shopping apps</div>
+                    <div class="step-desc">Amazon, Target, DoorDash, Uber Eats - all of them. Remove the temptation completely.</div>
+                </div>
+            </div>
 
-<div class="section">
-<h2>After the Challenge</h2>
-<ul class="checklist">
-<li><input type="checkbox"> <span>Calculate how much you saved</span></li>
-<li><input type="checkbox"> <span>Transfer that amount to your savings account</span></li>
-<li><input type="checkbox"> <span>Schedule your next Zero-Spend Week (1 per month recommended)</span></li>
-<li><input type="checkbox"> <span>Identify 2-3 habits you want to keep permanently</span></li>
-</ul>
-</div>
-</div>
-</div>
-<script>
-document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
-  const key = 'playbook_zeroweek_' + cb.closest('li').innerText.substring(0,25);
-  cb.checked = localStorage.getItem(key) === 'true';
-  cb.addEventListener('change', () => localStorage.setItem(key, cb.checked));
-});
-</script>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Plan 7 days of FREE activities</div>
+                    <div class="step-desc">See ideas below! Having a plan prevents boredom spending.</div>
+                </div>
+            </div>
+
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Prepare a "temptation list"</div>
+                    <div class="step-desc">When you want to buy something, write it on this list instead. Review after the week ends.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎉</span> Free Activities to Fill Your Week</h2>
+            <div class="activities-grid">
+                <div class="activity-item">🚶 Go for walks/hikes</div>
+                <div class="activity-item">📚 Library visit (books, movies, events)</div>
+                <div class="activity-item">🏋️ Home workouts (YouTube)</div>
+                <div class="activity-item">📞 Call friends & family</div>
+                <div class="activity-item">🧹 Deep clean & organize</div>
+                <div class="activity-item">🍳 Cook new recipes</div>
+                <div class="activity-item">🎮 Play games you already own</div>
+                <div class="activity-item">📺 Watch shows you already pay for</div>
+                <div class="activity-item">🌳 Visit free parks</div>
+                <div class="activity-item">✍️ Journal or write</div>
+                <div class="activity-item">🧘 Meditate or yoga</div>
+                <div class="activity-item">📸 Go through old photos</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💡</span> Pro Tips</h2>
+            <div class="pro-tip">
+                <div class="pro-tip-title">🧠 Surviving the Hard Days</div>
+                <p>• Days 2-3 are usually hardest - your brain is adjusting. Push through!</p>
+                <p>• If you slip up, don't quit! Just continue with the remaining days.</p>
+                <p>• Stay busy! Boredom is the #1 spending trigger.</p>
+                <p>• When tempted, ask: "Will I even remember this purchase in a week?"</p>
+            </div>
+            <div class="pro-tip">
+                <div class="pro-tip-title">🏆 After the Week</div>
+                <p>• Review your "temptation list" - how many things do you still want?</p>
+                <p>• Calculate your total savings and CELEBRATE!</p>
+                <p>• Transfer the money you saved to your savings account immediately</p>
+                <p>• Consider doing this one week per month for massive yearly savings</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 6 prep steps completed</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Temptation List & Notes</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Write down everything you wanted to buy this week but didn't. Review after 7 days - how many do you still want?"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help Staying on Track?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="#" class="cta-button">Get Support →</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-zero-spend-week');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) {
+                        document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                    }
+                });
+                if (data.days) {
+                    data.days.forEach((completed, index) => {
+                        if (completed) {
+                            const dayBox = document.querySelectorAll('.day-box')[index];
+                            dayBox.classList.add('completed');
+                            dayBox.querySelector('.day-icon').textContent = '✅';
+                        }
+                    });
+                }
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+
+        function toggleStep(el) {
+            el.classList.toggle('checked');
+            updateProgress();
+            saveProgress();
+        }
+
+        function toggleDayBox(el) {
+            el.classList.toggle('completed');
+            const icon = el.querySelector('.day-icon');
+            icon.textContent = el.classList.contains('completed') ? '✅' : '⬜';
+            saveProgress();
+        }
+
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const days = Array.from(document.querySelectorAll('.day-box')).map(el => el.classList.contains('completed'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-zero-spend-week', JSON.stringify({ steps, days, notes }));
+        }
+
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>
