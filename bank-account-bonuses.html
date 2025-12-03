@@ -1,52 +1,368 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bank Account Bonuses | ASAP Credit Repair Playbook</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{--primary:#063d86;--success:#10b981;--bg:#f8fafc;--text:#1e293b;--text-light:#64748b;--border:#e2e8f0}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}.header{background:linear-gradient(135deg,#10b981,#059669);color:#fff;padding:40px 20px 50px;text-align:center}.header h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:12px}.main-content{max-width:800px;margin:-30px auto 40px;padding:0 20px}.back-link{color:#fff;text-decoration:none;opacity:.8;display:block;margin-bottom:16px}.category-badge{display:inline-block;background:rgba(255,255,255,.2);padding:6px 16px;border-radius:20px;font-size:.85rem;margin-bottom:16px}.goal-card{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid var(--success);border-radius:16px;padding:24px;margin-bottom:24px}.goal-card h2{color:#065f46;margin-bottom:12px}.goal-card .earnings{background:#fff;padding:10px 18px;border-radius:10px;margin-top:14px;font-weight:600;color:#065f46;display:inline-block}.section-card{background:#fff;border-radius:16px;padding:28px;margin-bottom:24px;border:1px solid var(--border)}.section-card h2{color:var(--primary);margin-bottom:20px}.task-list{list-style:none}.task-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)}.task-checkbox{width:28px;height:28px;border:2px solid var(--border);border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}.task-checkbox.checked{background:var(--success);border-color:var(--success);color:#fff}.task-title{font-weight:600;margin-bottom:6px}.task-desc{color:var(--text-light);font-size:.95rem}.task-badge{font-size:.8rem;padding:4px 10px;border-radius:6px;background:var(--bg);margin-top:10px;display:inline-block;margin-right:8px}.details-box{background:#f8fafc;padding:14px;border-radius:8px;margin-top:12px;border-left:4px solid #10b981}.details-box h4{color:#059669;margin-bottom:8px;font-size:.9rem}.details-box ul{margin-left:18px;font-size:.9rem}.details-box li{margin-bottom:6px}.pricing-table{width:100%;border-collapse:collapse;margin-top:12px}.pricing-table th,.pricing-table td{padding:10px;text-align:left;border-bottom:1px solid var(--border)}.pricing-table th{background:var(--bg);font-weight:600}textarea{width:100%;min-height:120px;padding:14px;border:2px solid var(--border);border-radius:10px;font-family:inherit;margin-top:10px}.help-section{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border:2px solid #7dd3fc;border-radius:16px;padding:20px;margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}.chat-btn{background:var(--primary);color:#fff;border:none;padding:12px 24px;border-radius:10px;font-weight:600;cursor:pointer}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Account Bonuses - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #2e7d32; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #e8f5e9; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .bonus-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 15px; overflow: hidden; font-size: 14px; }
+        .bonus-table th, .bonus-table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .bonus-table th { background: #667eea; color: white; font-weight: 600; }
+        .bonus-table tr:hover { background: #f5f5f5; }
+        .bonus-table .bonus { color: #4caf50; font-weight: 600; }
+        .type-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .type-card { border-radius: 15px; padding: 20px; text-align: center; }
+        .type-card.checking { background: linear-gradient(135deg, #e3f2fd, #bbdefb); }
+        .type-card.savings { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); }
+        .type-card.brokerage { background: linear-gradient(135deg, #fff3e0, #ffe0b2); }
+        .type-card .emoji { font-size: 2em; margin-bottom: 10px; }
+        .type-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .type-card p { color: #666; font-size: 13px; }
+        .type-card .range { color: #4caf50; font-weight: 600; margin-top: 8px; }
+        .req-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 20px 0; }
+        .req-card { background: #f8f9fa; border-radius: 10px; padding: 12px; text-align: center; }
+        .req-card h4 { color: #1a1a2e; font-size: 13px; margin-bottom: 5px; }
+        .req-card p { color: #666; font-size: 12px; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .warning-box h4 { color: #c62828; margin-bottom: 10px; }
+        .warning-box p { color: #666; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #667eea; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; }
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #667eea; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+    </style>
 </head>
 <body>
-  <header class="header"><a href="index.html" class="back-link">← Back to All Playbooks</a><span class="category-badge">🏦 Free Money</span><h1>Bank Account Bonuses</h1><p style="opacity:.9;max-width:600px;margin:0 auto">Banks pay $100-$500+ to open new accounts! Earn $1,000-3,000/year in bonuses with minimal effort.</p></header>
-  <main class="main-content">
-    <div class="goal-card"><h2>🎯 What You'll Achieve</h2><p>Systematically earn bank account bonuses. Open accounts, meet requirements, collect bonus, repeat. Legitimate free money!</p><div class="earnings">💰 Per bonus: $100-500+ | Per year: $1,000-3,000+ | Time investment: 1-2 hours per bonus</div></div>
-    
-    <div class="section-card"><h2>💵 Example Current Bonuses</h2>
-      <table class="pricing-table">
-        <tr><th>Bank</th><th>Bonus</th><th>Requirement</th></tr>
-        <tr><td>Chase Total Checking</td><td>$300</td><td>Direct deposit within 90 days</td></tr>
-        <tr><td>Citi Priority</td><td>$700</td><td>$50K deposit, maintain 60 days</td></tr>
-        <tr><td>US Bank</td><td>$400</td><td>Direct deposits + debit card use</td></tr>
-        <tr><td>Wells Fargo</td><td>$325</td><td>Direct deposits within 90 days</td></tr>
-        <tr><td>SoFi</td><td>$250</td><td>$5,000 direct deposit</td></tr>
-        <tr><td>Discover Savings</td><td>$200</td><td>$15K deposit, maintain 30 days</td></tr>
-      </table>
-      <p style="font-size:.85rem;color:var(--text-light);margin-top:10px">*Bonuses change frequently - always verify current offers at Doctor of Credit or bank websites</p>
+    <div class="container">
+        <a href="income-playbooks.html" class="back-link">← Back to Income Playbooks</a>
+        
+        <div class="header">
+            <h1>🏦 Bank Account Bonuses</h1>
+            <p class="subtitle">Earn $200-700+ per account just for opening and meeting simple requirements</p>
+            <div class="time-badge">⏱️ 20-30 min per account • Earn $1,500-3,000+/year</div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Banks pay you $200-700+ just to open accounts and meet basic requirements like direct deposit. This is legitimate free money! By systematically churning through bonuses, you can earn $1,500-3,000+ per year with minimal effort. Open account → meet requirements → collect bonus → repeat.</p>
+            </div>
+            <div class="income-highlight">
+                <h3>Earn $1,500-3,000+/Year</h3>
+                <p>Do 4-8 bank bonuses per year = consistent extra income!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💵</span> Types of Bank Bonuses</h2>
+            <div class="type-grid">
+                <div class="type-card checking">
+                    <div class="emoji">💳</div>
+                    <h4>Checking Bonuses</h4>
+                    <p>Most common. Usually require direct deposit within 60-90 days.</p>
+                    <div class="range">$200-500 typical</div>
+                </div>
+                <div class="type-card savings">
+                    <div class="emoji">🏦</div>
+                    <h4>Savings Bonuses</h4>
+                    <p>Deposit required amount and maintain for 30-90 days.</p>
+                    <div class="range">$150-400 typical</div>
+                </div>
+                <div class="type-card brokerage">
+                    <div class="emoji">📈</div>
+                    <h4>Brokerage Bonuses</h4>
+                    <p>Transfer investments or deposit cash. Higher amounts = bigger bonus.</p>
+                    <div class="range">$50-3,000+ possible</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💰</span> Example Current Bonuses</h2>
+            <table class="bonus-table">
+                <thead>
+                    <tr>
+                        <th>Bank</th>
+                        <th>Bonus</th>
+                        <th>Requirement</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Chase Total Checking</td><td class="bonus">$300</td><td>Direct deposit within 90 days</td></tr>
+                    <tr><td>Citi Priority</td><td class="bonus">$700</td><td>$50K deposit, maintain 60 days</td></tr>
+                    <tr><td>US Bank</td><td class="bonus">$400</td><td>Direct deposits + debit card use</td></tr>
+                    <tr><td>Wells Fargo</td><td class="bonus">$325</td><td>Direct deposits within 90 days</td></tr>
+                    <tr><td>SoFi Checking</td><td class="bonus">$250</td><td>$5,000 direct deposit</td></tr>
+                    <tr><td>Discover Savings</td><td class="bonus">$200</td><td>$15K deposit, maintain 30 days</td></tr>
+                    <tr><td>Capital One 360</td><td class="bonus">$250</td><td>Direct deposits within 75 days</td></tr>
+                    <tr><td>PNC</td><td class="bonus">$400</td><td>$5K direct deposits within 60 days</td></tr>
+                </tbody>
+            </table>
+            <p style="color: #888; font-size: 12px; margin-top: 10px;">*Bonuses change frequently - always verify current offers at Doctor of Credit or bank websites</p>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Bank Bonus Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Check your eligibility</div>
+                    <div class="step-desc">Most bonuses require you to be a "new customer" (haven't had account in 12-24 months). Check the fine print! Also check if bonus is state-specific.</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Research current best offers</div>
+                    <div class="step-desc">Check Doctor of Credit (best resource!), r/churning, and bank websites. Bonuses change monthly - always verify current offers before applying.</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Screenshot the terms!</div>
+                    <div class="step-desc">CRITICAL: Screenshot or print the bonus terms before applying. Banks sometimes deny bonuses - you need proof of what was offered.</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Open account online</div>
+                    <div class="step-desc">Online is usually faster than in-branch. Make sure you're using the bonus link/code. Note all deadlines for requirements.</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Meet the requirements</div>
+                    <div class="step-desc">Set up direct deposit or transfer funds immediately. ACH transfers from another bank often count as "direct deposit." Mark calendar for ALL deadlines!</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Track and wait for bonus</div>
+                    <div class="step-desc">Bonus usually posts 1-2 weeks after meeting requirements, sometimes at end of statement cycle. Keep funds in account until bonus posts!</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Keep account open to avoid clawback</div>
+                    <div class="step-desc">Most require keeping account open 3-6 months after bonus. Early closure = they take the bonus back! Set reminder for earliest close date.</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Close (if desired) and start next one!</div>
+                    <div class="step-desc">After required period, close if you don't want to keep it. Track which banks you've done. Do 1-2 bonuses per month for steady income!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Common Requirements</h2>
+            <div class="req-grid">
+                <div class="req-card">
+                    <h4>💵 Direct Deposit</h4>
+                    <p>Paycheck or ACH transfer from another bank</p>
+                </div>
+                <div class="req-card">
+                    <h4>💳 Debit Card Use</h4>
+                    <p>Make X purchases within timeframe</p>
+                </div>
+                <div class="req-card">
+                    <h4>🏦 Minimum Balance</h4>
+                    <p>Maintain $X for 30-90 days</p>
+                </div>
+                <div class="req-card">
+                    <h4>📅 Time Limit</h4>
+                    <p>Complete within 60-90 days</p>
+                </div>
+                <div class="req-card">
+                    <h4>🆕 New Customer</h4>
+                    <p>No account in past 12-24 months</p>
+                </div>
+                <div class="req-card">
+                    <h4>📍 State Specific</h4>
+                    <p>Some only available in certain states</p>
+                </div>
+            </div>
+            
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 ACH Transfer Hack</div>
+                <p>Many banks accept ACH transfers from another bank as "direct deposit." Transfer $500+ from your main bank using ACH (not wire). This counts as DD for many bonuses! Check Doctor of Credit for data points on what works.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">⚠️</span> Important Warnings</h2>
+            <div class="warning-box">
+                <h4>Know Before You Start:</h4>
+                <p>• <strong>Bonus is taxable income</strong> - You'll get a 1099-INT. Plan for taxes!</p>
+                <p>• <strong>ChexSystems matters</strong> - Banks check this like credit. Too many accounts = denials.</p>
+                <p>• <strong>Early closure = clawback</strong> - They WILL take the bonus back if you close too soon.</p>
+                <p>• <strong>Monthly fees</strong> - Make sure you can waive them or bonus isn't worth it.</p>
+                <p>• <strong>Track everything</strong> - Use a spreadsheet. It's easy to lose track of deadlines.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎓</span> Bank Bonus Experts</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🏥</div>
+                    <h4>Doctor of Credit</h4>
+                    <div class="platform">🌐 Website</div>
+                    <p>THE best resource for bank bonuses. Comprehensive list, data points, and updates.</p>
+                    <a href="https://www.doctorofcredit.com" class="influencer-link" target="_blank">doctorofcredit.com →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💬</div>
+                    <h4>r/churning</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Community sharing bank bonus experiences and data points on what counts as DD.</p>
+                    <a href="https://reddit.com/r/churning" class="influencer-link" target="_blank">r/churning →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💰</div>
+                    <h4>NerdWallet</h4>
+                    <div class="platform">🌐 Website</div>
+                    <p>Bank bonus comparisons with detailed requirements and fine print.</p>
+                    <a href="https://www.nerdwallet.com" class="influencer-link" target="_blank">nerdwallet.com →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📊</div>
+                    <h4>Bankrate</h4>
+                    <div class="platform">🌐 Website</div>
+                    <p>Bank bonus rankings and comparisons with eligibility details.</p>
+                    <a href="https://www.bankrate.com" class="influencer-link" target="_blank">bankrate.com →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Bank Bonus Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your bank bonuses!
+
+ACTIVE BONUSES:
+
+Bonus 1:
+Bank: ____
+Bonus amount: $____
+Opened: ____
+Requirements: ____
+Deadline to meet requirements: ____
+☐ Requirements met | Date: ____
+☐ Bonus received | Date: ____
+Earliest close date: ____
+☐ Account closed | Date: ____
+
+Bonus 2:
+Bank: ____
+Bonus amount: $____
+Opened: ____
+Requirements: ____
+Deadline: ____
+☐ Requirements met
+☐ Bonus received
+Earliest close date: ____
+
+BANKS I'VE DONE (track for 'new customer' eligibility):
+Bank: ____ | Last closed: ____
+Bank: ____ | Last closed: ____
+Bank: ____ | Last closed: ____
+
+YEARLY TOTAL EARNED: $____
+
+NEXT TARGETS:
+1. ____
+2. ____
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
     </div>
 
-    <div class="section-card"><h2>📋 Step-by-Step Action Plan</h2>
-      <ul class="task-list">
-        <li class="task-item"><div class="task-checkbox" data-task="0"></div><div><div class="task-title">Step 1: Check your eligibility</div><div class="task-desc">Most bonuses require you to be a new customer (haven't had account in 12-24 months). Check terms.</div><div class="details-box"><h4>⚠️ Common Requirements:</h4><ul><li>New customer (check "haven't had account since" date)</li><li>May require ChexSystems check (like credit for banks)</li><li>Some are state-specific</li><li>Direct deposit often required (paycheck or transfer from other bank)</li></ul></div><span class="task-badge">⏱️ 10 min per bank</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="1"></div><div><div class="task-title">Step 2: Find the best current offers</div><div class="task-desc">Check Doctor of Credit, r/churning, bank websites. Bonuses change monthly - always verify!</div><div class="details-box"><h4>🔍 Where to Find Offers:</h4><ul><li>DoctorOfCredit.com - best comprehensive list</li><li>Reddit r/churning - community verified</li><li>Bank websites directly</li><li>NerdWallet, Bankrate comparisons</li></ul></div><span class="task-badge">⏱️ 30 min research</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="2"></div><div><div class="task-title">Step 3: Open account & document everything</div><div class="task-desc">Screenshot the bonus terms! Open account online (usually faster). Note all deadlines.</div><span class="task-badge">⏱️ 15-20 min</span><span class="task-badge">📸 Screenshot terms!</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="3"></div><div><div class="task-title">Step 4: Meet the requirements</div><div class="task-desc">Set up direct deposit or transfer funds. Use debit card if required. Mark calendar for deadlines!</div><div class="details-box"><h4>💡 Tips:</h4><ul><li>ACH transfers from another bank often count as "direct deposit"</li><li>Split real direct deposit between accounts</li><li>Set reminders for minimum balance requirements</li><li>Keep funds in account until bonus posts</li></ul></div><span class="task-badge">📅 Track deadlines!</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="4"></div><div><div class="task-title">Step 5: Collect bonus & decide on account</div><div class="task-desc">Bonus usually posts within 1-2 weeks of meeting requirements. Keep account open to avoid clawback!</div><div class="details-box"><h4>⚠️ Important:</h4><ul><li>Most require keeping account open 3-6 months</li><li>Early closure may forfeit bonus (clawback)</li><li>Bonus is taxable income (1099-INT)</li><li>Wait required period, then close if desired</li></ul></div><span class="task-badge">💰 Bonus time!</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="5"></div><div><div class="task-title">Step 6: Rinse and repeat</div><div class="task-desc">Track which banks you've done. Wait out "new customer" periods. Do 1-2 bonuses per month for steady income!</div><span class="task-badge">📊 Track in spreadsheet</span><span class="task-badge">🔄 $1-3K/year</span></div></li>
-      </ul>
-    </div>
-
-    <div class="section-card"><h2>📝 Your Bonus Tracker</h2><textarea id="userNotes" placeholder="Track your bonuses:
-
-Chase - Opened 3/15, DD set up, bonus due by 6/15
-Citi - Need $50K deposit, opened 3/20
-US Bank - Completed! $400 received 4/1
-
-Year total: $400 so far"></textarea></div>
-    <div class="help-section"><span style="font-size:24px">💬</span><div style="flex:1"><strong>Need Help?</strong> Chat with a coach!</div><button class="chat-btn" onclick="location.href='https://asapcreditrepairusa.com/chat'">Start Chat</button></div>
-  </main>
-  <script>const K='pb_bank_bonus';function load(){const s=localStorage.getItem(K);if(s){const d=JSON.parse(s);document.querySelectorAll('.task-checkbox').forEach((b,i)=>{if(d.tasks&&d.tasks[i]){b.classList.add('checked');b.innerHTML='✓'}});if(d.notes)document.getElementById('userNotes').value=d.notes}}function save(){const t=[];document.querySelectorAll('.task-checkbox').forEach(b=>t.push(b.classList.contains('checked')));localStorage.setItem(K,JSON.stringify({tasks:t,notes:document.getElementById('userNotes').value}))}document.querySelectorAll('.task-checkbox').forEach(b=>b.onclick=function(){this.classList.toggle('checked');this.innerHTML=this.classList.contains('checked')?'✓':'';save()});document.getElementById('userNotes').oninput=save;load();</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-bank-account-bonuses');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-bank-account-bonuses', JSON.stringify({ steps, notes }));
+        }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>
