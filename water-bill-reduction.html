@@ -1,28 +1,478 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Water Bill Reduction | ASAP Credit Repair Playbook</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>:root{--primary:#063d86;--success:#10b981;--bg:#f8fafc;--text:#1e293b;--text-light:#64748b;--border:#e2e8f0}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}.header{background:linear-gradient(135deg,#10b981,#059669);color:#fff;padding:40px 20px 50px;text-align:center}.header h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:12px}.main-content{max-width:800px;margin:-30px auto 40px;padding:0 20px}.back-link{color:#fff;text-decoration:none;opacity:.8;display:block;margin-bottom:16px}.category-badge{display:inline-block;background:rgba(255,255,255,.2);padding:6px 16px;border-radius:20px;font-size:.85rem;margin-bottom:16px}.goal-card{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid var(--success);border-radius:16px;padding:24px;margin-bottom:24px}.goal-card h2{color:#065f46;margin-bottom:12px}.goal-card .earnings{background:#fff;padding:10px 18px;border-radius:10px;margin-top:14px;font-weight:600;color:#065f46;display:inline-block}.section-card{background:#fff;border-radius:16px;padding:28px;margin-bottom:24px;border:1px solid var(--border)}.section-card h2{color:var(--primary);margin-bottom:20px}.task-list{list-style:none}.task-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)}.task-checkbox{width:28px;height:28px;border:2px solid var(--border);border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}.task-checkbox.checked{background:var(--success);border-color:var(--success);color:#fff}.task-title{font-weight:600;margin-bottom:6px}.task-desc{color:var(--text-light);font-size:.95rem}.task-badge{font-size:.8rem;padding:4px 10px;border-radius:6px;background:var(--bg);margin-top:10px;display:inline-block;margin-right:8px}textarea{width:100%;min-height:120px;padding:14px;border:2px solid var(--border);border-radius:10px;font-family:inherit;margin-top:10px}.help-section{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border:2px solid #7dd3fc;border-radius:16px;padding:20px;margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}.chat-btn{background:var(--primary);color:#fff;border:none;padding:12px 24px;border-radius:10px;font-weight:600;cursor:pointer}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Bill Reduction - Save on Every Drop - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #1565c0; font-size: 1.1em; line-height: 1.6; }
+        .savings-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .savings-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .savings-highlight p { font-size: 1.1em; opacity: 0.95; }
+        
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #e3f2fd; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        
+        /* Water Usage Breakdown */
+        .usage-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; margin: 20px 0; }
+        .usage-card { background: #e3f2fd; border-radius: 15px; padding: 15px; text-align: center; }
+        .usage-card .emoji { font-size: 2em; margin-bottom: 8px; }
+        .usage-card h4 { color: #1565c0; font-size: 14px; margin-bottom: 5px; }
+        .usage-card .percent { color: #0d47a1; font-weight: 700; font-size: 1.3em; }
+        .usage-card p { color: #666; font-size: 11px; margin-top: 5px; }
+        
+        /* Fix Grid */
+        .fix-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 20px 0; }
+        .fix-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #2196f3; }
+        .fix-card h4 { color: #1a1a2e; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; }
+        .fix-card h4 .savings { color: #4caf50; font-size: 14px; }
+        .fix-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .fix-card .cost { display: inline-block; margin-top: 10px; background: #e3f2fd; color: #1565c0; padding: 5px 10px; border-radius: 5px; font-size: 12px; font-weight: 600; }
+        
+        /* Leak Detection */
+        .leak-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-radius: 15px; padding: 25px; margin: 20px 0; }
+        .leak-box h4 { color: #c62828; margin-bottom: 15px; }
+        .leak-box ol { margin-left: 20px; color: #666; }
+        .leak-box li { margin-bottom: 10px; line-height: 1.5; }
+        
+        /* Outdoor Tips */
+        .outdoor-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .outdoor-card { background: #e8f5e9; border-radius: 15px; padding: 15px; text-align: center; }
+        .outdoor-card .emoji { font-size: 1.5em; margin-bottom: 8px; }
+        .outdoor-card h4 { color: #2e7d32; font-size: 14px; margin-bottom: 5px; }
+        .outdoor-card p { color: #666; font-size: 12px; }
+        
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        
+        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .warning-box h4 { color: #c62828; margin-bottom: 10px; }
+        .warning-box p { color: #666; }
+        
+        /* Influencer Section */
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #667eea; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card .followers { color: #999; font-size: 12px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; }
+        
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        
+        .notes-section { margin-top: 20px; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #667eea; }
+        
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+    </style>
 </head>
 <body>
-  <header class="header"><a href="index.html" class="back-link">← Back to All Playbooks</a><span class="category-badge">💰 Save Money</span><h1>Water Bill Reduction</h1><p style="opacity:.9;max-width:600px;margin:0 auto">Step-by-step guide to saving money!</p></header>
-  <main class="main-content">
-    <div class="goal-card"><h2>🎯 What You'll Achieve</h2><p>Start saving money immediately with these proven strategies!</p><div class="earnings">💰 Save hundreds to thousands per year</div></div>
-    <div class="section-card"><h2>📋 Quick Start Guide</h2>
-      <ul class="task-list">
-        <li class="task-item"><div class="task-checkbox" data-task="0"></div><div><div class="task-title">Step 1: Assess your current situation</div><div class="task-desc">Understand where your money is going now.</div></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="1"></div><div><div class="task-title">Step 2: Identify savings opportunities</div><div class="task-desc">Find the biggest areas to cut costs.</div></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="2"></div><div><div class="task-title">Step 3: Take action</div><div class="task-desc">Implement the changes to start saving.</div></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="3"></div><div><div class="task-title">Step 4: Track your savings</div><div class="task-desc">Monitor how much you're saving each month.</div></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="4"></div><div><div class="task-title">Step 5: Automate where possible</div><div class="task-desc">Set up systems to save automatically.</div></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="5"></div><div><div class="task-title">Step 6: Reinvest your savings</div><div class="task-desc">Put the money saved toward your goals.</div></div></li>
-      </ul></div>
-    <div class="section-card"><h2>📝 Your Savings Tracker</h2><textarea id="userNotes" placeholder="Track your savings progress here..."></textarea></div>
-    <div class="help-section"><span style="font-size:24px">💬</span><div style="flex:1"><strong>Need Help?</strong> Chat with a coach!</div><button class="chat-btn" onclick="location.href='https://asapcreditrepairusa.com/chat'">Start Chat</button></div>
-  </main>
-  <script>const K='pb_water-bill-reduction';function load(){const s=localStorage.getItem(K);if(s){const d=JSON.parse(s);document.querySelectorAll('.task-checkbox').forEach((b,i)=>{if(d.tasks&&d.tasks[i]){b.classList.add('checked');b.innerHTML='✓'}});if(d.notes)document.getElementById('userNotes').value=d.notes}}function save(){const t=[];document.querySelectorAll('.task-checkbox').forEach(b=>t.push(b.classList.contains('checked')));localStorage.setItem(K,JSON.stringify({tasks:t,notes:document.getElementById('userNotes').value}))}document.querySelectorAll('.task-checkbox').forEach(b=>b.onclick=function(){this.classList.toggle('checked');this.innerHTML=this.classList.contains('checked')?'✓':'';save()});document.getElementById('userNotes').oninput=save;load();</script>
+    <div class="container">
+        <a href="expense-playbooks.html" class="back-link">← Back to Expense Playbooks</a>
+        
+        <div class="header">
+            <h1>💧 Water Bill Reduction</h1>
+            <p class="subtitle">Save money on every drop with simple fixes and smart habits</p>
+            <div class="time-badge">⏱️ 1-2 hours • Save $100-400/year</div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>The average American family uses 300+ gallons of water per day and spends $70-100/month on water bills. With simple fixes and habit changes, you can cut water use by 20-40% - saving both money and this precious resource. Many fixes cost under $20 and pay for themselves within weeks!</p>
+            </div>
+            <div class="savings-highlight">
+                <h3>Save $100-400/Year</h3>
+                <p>A single leaky faucet can waste 3,000+ gallons/year. Let's find your savings!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📊</span> Where Your Water Goes</h2>
+            <p style="color: #666; margin-bottom: 15px;">Focus on the biggest users first for maximum savings:</p>
+            
+            <div class="usage-grid">
+                <div class="usage-card">
+                    <div class="emoji">🚽</div>
+                    <h4>Toilets</h4>
+                    <div class="percent">24%</div>
+                    <p>Biggest indoor user!</p>
+                </div>
+                <div class="usage-card">
+                    <div class="emoji">🚿</div>
+                    <h4>Showers</h4>
+                    <div class="percent">20%</div>
+                    <p>2.5 gal/minute</p>
+                </div>
+                <div class="usage-card">
+                    <div class="emoji">🚰</div>
+                    <h4>Faucets</h4>
+                    <div class="percent">19%</div>
+                    <p>Kitchen & bathroom</p>
+                </div>
+                <div class="usage-card">
+                    <div class="emoji">👕</div>
+                    <h4>Laundry</h4>
+                    <div class="percent">17%</div>
+                    <p>15-45 gal/load</p>
+                </div>
+                <div class="usage-card">
+                    <div class="emoji">🍽️</div>
+                    <h4>Dishwasher</h4>
+                    <div class="percent">6%</div>
+                    <p>Efficient vs hand wash</p>
+                </div>
+                <div class="usage-card">
+                    <div class="emoji">💧</div>
+                    <h4>Leaks</h4>
+                    <div class="percent">14%</div>
+                    <p>Hidden waste!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Water Savings Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Check for leaks (biggest hidden waste!)</div>
+                    <div class="step-desc">Check all faucets, toilets, and under sinks for drips. A single dripping faucet wastes 3,000+ gallons/year. Running toilets can waste 200+ gallons PER DAY!</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Fix running toilets</div>
+                    <div class="step-desc">Drop food coloring in the tank. If color appears in the bowl without flushing, you have a leak. Usually just needs a $5-10 flapper replacement - 15 minute DIY fix!</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Install low-flow showerhead</div>
+                    <div class="step-desc">Standard showerheads use 2.5 gal/min. Low-flow uses 1.5-2 gal/min with same water pressure feel. Saves 2,700+ gallons/year per person. Costs $15-30, 5-minute install.</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Add faucet aerators</div>
+                    <div class="step-desc">These $3-5 attachments reduce faucet flow from 2.2 gal/min to 1.0-1.5 gal/min. You won't notice the difference but your bill will!</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Optimize toilet water use</div>
+                    <div class="step-desc">If you don't have a low-flow toilet, put a sealed bottle of water or sand in the tank to reduce water per flush. Or upgrade to WaterSense toilet (uses 1.28 vs 1.6+ gallons).</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Change your daily habits</div>
+                    <div class="step-desc">Turn off water while brushing (saves 4 gal/brush), take shorter showers (2 min less = 5 gallons), only run full laundry/dishwasher loads.</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Check outdoor water use (if applicable)</div>
+                    <div class="step-desc">Water lawn in early morning (less evaporation), use mulch in gardens, check for hose/sprinkler leaks, consider drought-resistant plants.</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Read your meter to track progress</div>
+                    <div class="step-desc">Check water meter, then check again after 2 hours with no water use. If it changed, you have a hidden leak. Also compare monthly bills to see savings!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🔧</span> Quick Fixes with Big Savings</h2>
+            <div class="fix-grid">
+                <div class="fix-card">
+                    <h4>Fix leaky faucets <span class="savings">$20-60/yr per faucet</span></h4>
+                    <p>1 drip/second = 5 gallons/day = 1,825 gallons/year wasted. Usually just needs a new washer - $1 part and 10 minutes!</p>
+                    <span class="cost">Cost: $1-5</span>
+                </div>
+                <div class="fix-card">
+                    <h4>Fix running toilet <span class="savings">$100-300/yr</span></h4>
+                    <p>A running toilet wastes 200+ gallons/DAY! Replace the flapper - it's a $5-10 part, 15-minute DIY job.</p>
+                    <span class="cost">Cost: $5-10</span>
+                </div>
+                <div class="fix-card">
+                    <h4>Low-flow showerhead <span class="savings">$70-100/yr</span></h4>
+                    <p>Cuts shower water use by 25-60% with no noticeable pressure loss. Some utilities give these FREE!</p>
+                    <span class="cost">Cost: $15-30</span>
+                </div>
+                <div class="fix-card">
+                    <h4>Faucet aerators <span class="savings">$30-50/yr</span></h4>
+                    <p>Screw onto any faucet in 30 seconds. Cuts flow by 50% without losing pressure.</p>
+                    <span class="cost">Cost: $3-5 each</span>
+                </div>
+                <div class="fix-card">
+                    <h4>Toilet tank bottle <span class="savings">$30-40/yr</span></h4>
+                    <p>Fill a sealed bottle with water/sand, place in toilet tank. Displaces water = less per flush. FREE!</p>
+                    <span class="cost">Cost: FREE</span>
+                </div>
+                <div class="fix-card">
+                    <h4>Shorter showers <span class="savings">$50-100/yr</span></h4>
+                    <p>Cutting 2 minutes from each shower saves 5 gallons. A family of 4 saves 7,300 gallons/year!</p>
+                    <span class="cost">Cost: FREE</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🔍</span> How to Detect Leaks</h2>
+            <div class="leak-box">
+                <h4>🚽 Toilet Dye Test</h4>
+                <ol>
+                    <li>Remove toilet tank lid</li>
+                    <li>Add 5-10 drops of food coloring to tank water</li>
+                    <li>Wait 15-30 minutes WITHOUT flushing</li>
+                    <li>Check the bowl - if color appeared, the flapper is leaking</li>
+                    <li>Replace flapper ($5-10 at hardware store)</li>
+                </ol>
+            </div>
+            
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Meter Check for Hidden Leaks</div>
+                <p>1. Make sure all water is OFF inside and outside your home</p>
+                <p>2. Read your water meter (note the exact number)</p>
+                <p>3. Wait 1-2 hours without using any water</p>
+                <p>4. Read meter again - if it changed, you have a hidden leak!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🌿</span> Outdoor Water Savings</h2>
+            <p style="color: #666; margin-bottom: 15px;">Outdoor watering can be 30-50% of summer water bills!</p>
+            
+            <div class="outdoor-grid">
+                <div class="outdoor-card">
+                    <div class="emoji">🌅</div>
+                    <h4>Water Early AM</h4>
+                    <p>Before 10am = less evaporation</p>
+                </div>
+                <div class="outdoor-card">
+                    <div class="emoji">🌱</div>
+                    <h4>Use Mulch</h4>
+                    <p>Retains moisture, less watering</p>
+                </div>
+                <div class="outdoor-card">
+                    <div class="emoji">🌵</div>
+                    <h4>Native Plants</h4>
+                    <p>Drought-resistant = less water</p>
+                </div>
+                <div class="outdoor-card">
+                    <div class="emoji">🚿</div>
+                    <h4>Check Sprinklers</h4>
+                    <p>Fix leaks, adjust aim</p>
+                </div>
+                <div class="outdoor-card">
+                    <div class="emoji">🌧️</div>
+                    <h4>Rain Barrel</h4>
+                    <p>Collect free water for plants</p>
+                </div>
+                <div class="outdoor-card">
+                    <div class="emoji">🚗</div>
+                    <h4>Car Wash Wisely</h4>
+                    <p>Use bucket or commercial wash</p>
+                </div>
+            </div>
+            
+            <div class="warning-box">
+                <h4>⚠️ Hose Warning</h4>
+                <p>A garden hose uses 5-10 gallons per MINUTE! Leaving it running while washing your car wastes 100+ gallons. Always use a shut-off nozzle.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎓</span> Water Conservation Experts</h2>
+            <p style="color: #666; margin-bottom: 20px;">Learn more about saving water and money:</p>
+            
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💧</div>
+                    <h4>EPA WaterSense</h4>
+                    <div class="platform">🌐 Website</div>
+                    <div class="followers">Official EPA Program</div>
+                    <p>Find certified water-efficient products, calculators, tips, and rebate programs in your area.</p>
+                    <a href="https://www.epa.gov/watersense" class="influencer-link" target="_blank">epa.gov/watersense →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🔧</div>
+                    <h4>This Old House</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <div class="followers">2M+ Subscribers</div>
+                    <p>DIY tutorials for fixing leaks, installing low-flow fixtures, and plumbing maintenance.</p>
+                    <a href="https://www.youtube.com/@thisoldhouse" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📢</div>
+                    <h4>Clark Howard</h4>
+                    <div class="platform">🎙️ Podcast & Website</div>
+                    <div class="followers">Consumer Advocate</div>
+                    <p>Practical tips on lowering all utility bills including water saving strategies.</p>
+                    <a href="https://clark.com" class="influencer-link" target="_blank">clark.com →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🏠</div>
+                    <h4>Home Repair Tutor</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <div class="followers">1M+ Subscribers</div>
+                    <p>Step-by-step videos for fixing toilets, faucets, and other plumbing DIY projects.</p>
+                    <a href="https://www.youtube.com/@HomeRepairTutor" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🌿</div>
+                    <h4>Water Footprint Calculator</h4>
+                    <div class="platform">🌐 Tool</div>
+                    <div class="followers">Educational Tool</div>
+                    <p>Calculate your household water use and get personalized tips for reduction.</p>
+                    <a href="https://www.watercalculator.org" class="influencer-link" target="_blank">watercalculator.org →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💰</div>
+                    <h4>Your Water Utility</h4>
+                    <div class="platform">🌐 Local</div>
+                    <div class="followers">Free Resources</div>
+                    <p>Many utilities offer free audits, rebates on fixtures, and conservation kits. Check your utility's website!</p>
+                    <a href="#" class="influencer-link">Check your local utility →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Water Savings Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your water-saving progress!
+
+BASELINE:
+Average water bill: $____/month
+Meter reading start: ____
+
+LEAK CHECK:
+☐ All faucets checked - leaks found: ____
+☐ Toilet dye test done - leaks found: ____
+☐ Under-sink check - leaks found: ____
+☐ Outdoor hose/sprinklers checked
+
+FIXES COMPLETED:
+☐ Leaky faucet(s) fixed | Cost: $____
+☐ Running toilet(s) fixed | Cost: $____
+☐ Low-flow showerhead installed | Cost: $____
+☐ Faucet aerators installed | Cost: $____
+☐ Toilet tank bottle added | Cost: FREE
+
+HABIT CHANGES:
+☐ Shorter showers (goal: ____ minutes)
+☐ Turn off water while brushing
+☐ Full loads only (laundry/dishes)
+☐ Early morning outdoor watering
+
+OUTDOOR (if applicable):
+☐ Sprinklers checked/adjusted
+☐ Mulch added to garden
+☐ Hose nozzle with shutoff
+
+RESULTS:
+Total invested: $____
+New average water bill: $____/month
+Monthly savings: $____
+Yearly projected savings: $____
+
+METER CHECK (after 1 month):
+Old reading: ____
+New reading: ____
+Gallons saved: ____
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-water-bill-reduction');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) {
+                        document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                    }
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+
+        function toggleStep(el) {
+            el.classList.toggle('checked');
+            updateProgress();
+            saveProgress();
+        }
+
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-water-bill-reduction', JSON.stringify({ steps, notes }));
+        }
+
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>
