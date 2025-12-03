@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cash Back Apps Guide - Complete Guide - ASAP Financial Playbook</title>
+    <title>Cash Back Apps Guide - ASAP Financial Playbook</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
@@ -20,7 +20,6 @@
         .savings-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
         .savings-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
         .savings-highlight p { font-size: 1.1em; opacity: 0.95; }
-        
         .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
         .step:hover { background: #e8f5e9; }
         .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
@@ -28,49 +27,28 @@
         .step-content { flex: 1; }
         .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
         .step-desc { color: #666; line-height: 1.5; }
-        
-        /* App Cards */
-        .app-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 20px 0; }
+        .app-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
         .app-card { background: #f8f9fa; border-radius: 15px; overflow: hidden; }
-        .app-header { padding: 20px; color: white; text-align: center; }
-        .app-header.receipt { background: linear-gradient(135deg, #4caf50, #66bb6a); }
-        .app-header.shopping { background: linear-gradient(135deg, #2196f3, #42a5f5); }
-        .app-header.browser { background: linear-gradient(135deg, #9c27b0, #ba68c8); }
-        .app-header.grocery { background: linear-gradient(135deg, #ff9800, #ffb74d); }
-        .app-header h4 { font-size: 1.3em; margin-bottom: 5px; }
-        .app-header .type { font-size: 12px; opacity: 0.9; }
-        .app-body { padding: 20px; }
-        .app-body .earnings { color: #4caf50; font-weight: 700; font-size: 1.2em; margin-bottom: 10px; }
-        .app-body ul { list-style: none; }
-        .app-body li { padding: 8px 0; color: #666; font-size: 14px; display: flex; align-items: center; gap: 10px; }
-        .app-body li.pro::before { content: "✓"; color: #4caf50; font-weight: 700; }
-        .app-body li.con::before { content: "✗"; color: #f44336; font-weight: 700; }
-        .app-body .how-it-works { background: #e3f2fd; padding: 12px; border-radius: 8px; font-size: 13px; color: #1565c0; margin-top: 15px; }
-        
-        /* Category Tabs */
-        .category-header { display: flex; align-items: center; gap: 15px; margin: 25px 0 15px; padding-bottom: 10px; border-bottom: 3px solid #667eea; }
-        .category-header .cat-icon { font-size: 1.5em; }
-        .category-header h3 { color: #1a1a2e; }
-        
+        .app-header { padding: 15px 20px; color: white; }
+        .app-header.grocery { background: linear-gradient(135deg, #4caf50, #66bb6a); }
+        .app-header.online { background: linear-gradient(135deg, #2196f3, #64b5f6); }
+        .app-header.receipt { background: linear-gradient(135deg, #ff9800, #ffb74d); }
+        .app-header h4 { margin-bottom: 3px; }
+        .app-header .type { font-size: 11px; opacity: 0.9; }
+        .app-body { padding: 15px 20px; }
+        .app-body p { color: #666; font-size: 13px; line-height: 1.5; margin-bottom: 8px; }
+        .app-body .earning { background: #e8f5e9; padding: 8px 12px; border-radius: 8px; color: #2e7d32; font-weight: 600; font-size: 13px; }
+        .category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .category-card { background: #e3f2fd; border-radius: 15px; padding: 15px; text-align: center; }
+        .category-card .emoji { font-size: 2em; margin-bottom: 8px; }
+        .category-card h4 { color: #1565c0; font-size: 14px; margin-bottom: 5px; }
+        .category-card p { color: #666; font-size: 12px; }
         .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
         .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
         .pro-tip p { color: #666; margin: 8px 0; }
-        
-        /* Stacking Strategy */
-        .stacking-box { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin: 20px 0; }
-        .stacking-box h3 { margin-bottom: 20px; }
-        .stacking-step { display: flex; align-items: center; gap: 15px; padding: 15px; background: rgba(255,255,255,0.15); border-radius: 10px; margin-bottom: 10px; }
-        .stacking-step:last-child { margin-bottom: 0; }
-        .stacking-num { width: 40px; height: 40px; background: white; color: #667eea; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2em; }
-        .stacking-content h4 { margin-bottom: 5px; }
-        .stacking-content p { opacity: 0.9; font-size: 14px; }
-        .stacking-example { background: rgba(255,255,255,0.1); border-radius: 10px; padding: 20px; margin-top: 20px; }
-        .stacking-example h4 { margin-bottom: 15px; }
-        .stacking-example .line { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.2); }
-        .stacking-example .line:last-child { border-bottom: none; }
-        .stacking-example .total { font-size: 1.3em; font-weight: 700; padding-top: 15px; border-top: 2px solid rgba(255,255,255,0.3); margin-top: 10px; }
-        
-        /* Influencer Section */
+        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .warning-box h4 { color: #c62828; margin-bottom: 10px; }
+        .warning-box p { color: #666; }
         .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
         .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
         .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
@@ -79,20 +57,12 @@
         .influencer-card .platform { color: #667eea; font-size: 14px; margin-bottom: 10px; }
         .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
         .influencer-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; }
-        
-        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
-        .warning-box h4 { color: #c62828; margin-bottom: 10px; }
-        .warning-box p { color: #666; }
-        
         .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
         .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
         .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
         .progress-text { font-size: 1.2em; font-weight: 600; }
-        
-        .notes-section { margin-top: 20px; }
         .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
         .notes-section textarea:focus { outline: none; border-color: #667eea; }
-        
         .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
         .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
         .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
@@ -100,374 +70,218 @@
 </head>
 <body>
     <div class="container">
-        <a href="index.html" class="back-link">← Back to Playbooks</a>
+        <a href="expense-playbooks.html" class="back-link">← Back to Expense Playbooks</a>
         
         <div class="header">
             <h1>💰 Cash Back Apps Guide</h1>
             <p class="subtitle">Get money back on purchases you're already making</p>
-            <div class="time-badge">⏱️ 30 min to set up • Earn $200-500+/year</div>
+            <div class="time-badge">⏱️ 20 min setup • Earn $300-600+/year</div>
         </div>
 
         <div class="card">
             <h2><span class="icon">🎯</span> What You'll Achieve</h2>
             <div class="achieve-box">
-                <p>Cash back apps let you earn money on purchases you're already making - groceries, gas, online shopping, and more. By using multiple apps together (stacking), you can earn 5-15% back on almost everything you buy. It takes just minutes per week!</p>
+                <p>Cash back apps pay you money for shopping you're already doing - groceries, gas, online shopping, restaurants. By using multiple apps together, you can earn 5-15% back on almost everything. Just scan receipts or shop through apps - takes minutes per week!</p>
             </div>
             <div class="savings-highlight">
-                <h3>Earn $200-500+ Per Year</h3>
-                <p>Just by scanning receipts and shopping through apps you've set up!</p>
+                <h3>Earn $300-600+/Year</h3>
+                <p>Just by scanning receipts and clicking through apps before buying!</p>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">📋</span> Your Cash Back Setup Checklist</h2>
+            <h2><span class="icon">📱</span> The 4 Types of Cash Back</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="emoji">🧾</div>
+                    <h4>Receipt Scanning</h4>
+                    <p>Scan ANY receipt for points (Fetch, Shopkick)</p>
+                </div>
+                <div class="category-card">
+                    <div class="emoji">🛒</div>
+                    <h4>Grocery Cash Back</h4>
+                    <p>Specific product offers (Ibotta, Checkout 51)</p>
+                </div>
+                <div class="category-card">
+                    <div class="emoji">💻</div>
+                    <h4>Online Shopping</h4>
+                    <p>Shop through portals (Rakuten, TopCashback)</p>
+                </div>
+                <div class="category-card">
+                    <div class="emoji">💳</div>
+                    <h4>Credit Card Rewards</h4>
+                    <p>1-5% on everything (stacks with all above!)</p>
+                </div>
+            </div>
+            
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Yes, You Can Stack!</div>
+                <p>Scan the SAME receipt in multiple apps! Fetch for any receipt + Ibotta for specific offers + Checkout 51 for different offers. Each app has different offers, so you can triple-dip!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Cash Back Setup Plan</h2>
             
             <div class="step" data-step="1">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Download receipt scanning apps (Ibotta, Fetch, Checkout 51)</div>
-                    <div class="step-desc">These apps give you cash back just for scanning ANY receipt - groceries, restaurants, gas stations, etc.</div>
+                    <div class="step-title">Step 1: Download receipt scanning apps</div>
+                    <div class="step-desc">Get Fetch Rewards (any receipt = points) and Shopkick (scan barcodes in store). These work on literally every purchase.</div>
                 </div>
             </div>
-
             <div class="step" data-step="2">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Install browser extensions (Honey, Capital One Shopping, Rakuten)</div>
-                    <div class="step-desc">These automatically apply coupon codes and give you cash back when shopping online. Set it and forget it!</div>
+                    <div class="step-title">Step 2: Download grocery cash back apps</div>
+                    <div class="step-desc">Get Ibotta (most offers), Checkout 51, and Shopmium. Activate offers BEFORE shopping, then scan receipt after to get cash back.</div>
                 </div>
             </div>
-
             <div class="step" data-step="3">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Link your cards to automatic cash back (Dosh, Upside)</div>
-                    <div class="step-desc">These apps give you cash back automatically when you use linked cards at participating stores.</div>
+                    <div class="step-title">Step 3: Set up browser extension for online shopping</div>
+                    <div class="step-desc">Install Rakuten, Honey, and Capital One Shopping browser extensions. They automatically alert you to cash back when shopping online.</div>
                 </div>
             </div>
-
             <div class="step" data-step="4">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Sign up for store loyalty apps (Target Circle, Kroger, Walmart+)</div>
-                    <div class="step-desc">Stack store rewards on top of cash back apps for maximum savings!</div>
+                    <div class="step-title">Step 4: Link store loyalty cards</div>
+                    <div class="step-desc">Connect your Kroger, Target, Walmart, etc. accounts to Ibotta for automatic cash back - no receipt scanning needed!</div>
                 </div>
             </div>
-
             <div class="step" data-step="5">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Set a weekly reminder to scan receipts</div>
-                    <div class="step-desc">Don't let receipts pile up! Scan them within 7-14 days or you'll lose the cash back.</div>
+                    <div class="step-title">Step 5: Check apps BEFORE shopping</div>
+                    <div class="step-desc">Before each shopping trip, check Ibotta and Checkout 51 for offers on items you need. Add them to your list!</div>
                 </div>
             </div>
-
             <div class="step" data-step="6">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Check apps BEFORE making big purchases</div>
-                    <div class="step-desc">Before buying anything over $50, check all your apps for cash back offers. Could save 5-20%!</div>
+                    <div class="step-title">Step 6: Scan receipts immediately after shopping</div>
+                    <div class="step-desc">Do it in the parking lot! Receipts expire in 7-14 days. Scan in Fetch first (any receipt), then Ibotta/Checkout 51 for specific offers.</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Always shop online through cash back portals</div>
+                    <div class="step-desc">Before any online purchase, go to Rakuten or TopCashback first, then click through to the store. Get 1-15% back!</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Cash out regularly</div>
+                    <div class="step-desc">Withdraw to PayPal or gift cards when you hit minimum thresholds. Don't let points expire! Set monthly reminders.</div>
                 </div>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">📱</span> Best Cash Back Apps by Category</h2>
-            
-            <div class="category-header">
-                <span class="cat-icon">🧾</span>
-                <h3>Receipt Scanning Apps (Scan ANY Receipt)</h3>
-            </div>
+            <h2><span class="icon">⭐</span> Top Cash Back Apps</h2>
             <div class="app-grid">
                 <div class="app-card">
                     <div class="app-header receipt">
                         <h4>Fetch Rewards</h4>
-                        <div class="type">Receipt Scanner</div>
+                        <div class="type">Receipt Scanning</div>
                     </div>
                     <div class="app-body">
-                        <div class="earnings">💵 Earn 25-100+ points per receipt</div>
-                        <ul>
-                            <li class="pro">Scan ANY receipt (not just groceries)</li>
-                            <li class="pro">Points for e-receipts too</li>
-                            <li class="pro">Low cashout threshold ($3)</li>
-                            <li class="pro">Bonus points for specific brands</li>
-                            <li class="con">Points expire after 90 days of inactivity</li>
-                        </ul>
-                        <div class="how-it-works">📸 Just snap a photo of any receipt within 14 days!</div>
+                        <p>Scan ANY receipt - grocery, gas, restaurant, anything. Points on every purchase plus bonus offers.</p>
+                        <div class="earning">💰 Typical: $3-8/month</div>
                     </div>
                 </div>
                 <div class="app-card">
-                    <div class="app-header receipt">
+                    <div class="app-header grocery">
                         <h4>Ibotta</h4>
                         <div class="type">Grocery Cash Back</div>
                     </div>
                     <div class="app-body">
-                        <div class="earnings">💵 Earn $0.25-$5+ per offer</div>
-                        <ul>
-                            <li class="pro">High payouts on specific items</li>
-                            <li class="pro">Link loyalty cards for auto-credit</li>
-                            <li class="pro">Works at 2,000+ stores</li>
-                            <li class="pro">Browser extension for online shopping</li>
-                            <li class="con">Must activate offers before shopping</li>
-                        </ul>
-                        <div class="how-it-works">🛒 Activate offers, shop, scan receipt to get cash back!</div>
+                        <p>Most grocery offers. Link loyalty cards for automatic cash back. "Any brand" offers on milk, eggs, bread.</p>
+                        <div class="earning">💰 Typical: $10-30/month</div>
+                    </div>
+                </div>
+                <div class="app-card">
+                    <div class="app-header online">
+                        <h4>Rakuten</h4>
+                        <div class="type">Online Shopping</div>
+                    </div>
+                    <div class="app-body">
+                        <p>Shop 3,500+ stores through their portal. Get 1-15% back. Pays quarterly via PayPal or check.</p>
+                        <div class="earning">💰 Typical: $10-50/quarter</div>
+                    </div>
+                </div>
+                <div class="app-card">
+                    <div class="app-header grocery">
+                        <h4>Checkout 51</h4>
+                        <div class="type">Grocery Cash Back</div>
+                    </div>
+                    <div class="app-body">
+                        <p>Different offers than Ibotta - use BOTH! New offers every Thursday. $20 minimum to cash out.</p>
+                        <div class="earning">💰 Typical: $5-15/month</div>
                     </div>
                 </div>
                 <div class="app-card">
                     <div class="app-header receipt">
-                        <h4>Checkout 51</h4>
-                        <div class="type">Weekly Offers</div>
+                        <h4>Shopkick</h4>
+                        <div class="type">In-Store + Receipt</div>
                     </div>
                     <div class="app-body">
-                        <div class="earnings">💵 Earn $0.25-$2+ per offer</div>
-                        <ul>
-                            <li class="pro">New offers every Thursday</li>
-                            <li class="pro">Works at any store</li>
-                            <li class="pro">Often has produce offers</li>
-                            <li class="pro">Stack with other apps</li>
-                            <li class="con">$20 minimum to cash out</li>
-                        </ul>
-                        <div class="how-it-works">📋 Check offers Thursday, shop, scan by Tuesday!</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="category-header">
-                <span class="cat-icon">💻</span>
-                <h3>Browser Extensions (Online Shopping)</h3>
-            </div>
-            <div class="app-grid">
-                <div class="app-card">
-                    <div class="app-header browser">
-                        <h4>Rakuten (Ebates)</h4>
-                        <div class="type">Cash Back Portal</div>
-                    </div>
-                    <div class="app-body">
-                        <div class="earnings">💵 Earn 1-15% cash back</div>
-                        <ul>
-                            <li class="pro">3,500+ stores</li>
-                            <li class="pro">$10 sign-up bonus</li>
-                            <li class="pro">Quarterly "Big Fat Check"</li>
-                            <li class="pro">In-store cash back too</li>
-                            <li class="con">Quarterly payouts (not instant)</li>
-                        </ul>
-                        <div class="how-it-works">🖱️ Click through Rakuten before shopping online!</div>
+                        <p>Earn "kicks" for walking into stores, scanning items, and receipts. Redeem for gift cards.</p>
+                        <div class="earning">💰 Typical: $3-10/month</div>
                     </div>
                 </div>
                 <div class="app-card">
-                    <div class="app-header browser">
-                        <h4>Honey (PayPal)</h4>
-                        <div class="type">Coupon Finder + Cash Back</div>
+                    <div class="app-header online">
+                        <h4>TopCashback</h4>
+                        <div class="type">Online Shopping</div>
                     </div>
                     <div class="app-body">
-                        <div class="earnings">💵 Earn "Honey Gold" (gift cards)</div>
-                        <ul>
-                            <li class="pro">Auto-applies coupon codes at checkout</li>
-                            <li class="pro">Price tracking & alerts</li>
-                            <li class="pro">Works on 30,000+ sites</li>
-                            <li class="pro">Droplist for price drops</li>
-                            <li class="con">Rewards are gift cards, not cash</li>
-                        </ul>
-                        <div class="how-it-works">🍯 Install extension - it works automatically!</div>
-                    </div>
-                </div>
-                <div class="app-card">
-                    <div class="app-header browser">
-                        <h4>Capital One Shopping</h4>
-                        <div class="type">Coupon + Price Compare</div>
-                    </div>
-                    <div class="app-body">
-                        <div class="earnings">💵 Earn credits for gift cards</div>
-                        <ul>
-                            <li class="pro">No Capital One card needed</li>
-                            <li class="pro">Auto-applies coupon codes</li>
-                            <li class="pro">Price comparison across sites</li>
-                            <li class="pro">Finds lower prices elsewhere</li>
-                            <li class="con">Limited cash back vs coupons</li>
-                        </ul>
-                        <div class="how-it-works">🔍 Finds coupons AND cheaper prices automatically!</div>
+                        <p>Often has HIGHER rates than Rakuten. Compare both before buying. No minimum to cash out!</p>
+                        <div class="earning">💰 Typical: $10-40/quarter</div>
                     </div>
                 </div>
             </div>
-
-            <div class="category-header">
-                <span class="cat-icon">⛽</span>
-                <h3>Gas & Automatic Cash Back</h3>
-            </div>
-            <div class="app-grid">
-                <div class="app-card">
-                    <div class="app-header grocery">
-                        <h4>Upside (GetUpside)</h4>
-                        <div class="type">Gas, Groceries, Restaurants</div>
-                    </div>
-                    <div class="app-body">
-                        <div class="earnings">💵 Earn 5-25¢/gallon on gas</div>
-                        <ul>
-                            <li class="pro">Up to 25¢/gallon cash back on gas</li>
-                            <li class="pro">Cash back at restaurants too</li>
-                            <li class="pro">Works at major gas stations</li>
-                            <li class="pro">PayPal or bank transfer</li>
-                            <li class="con">Must "claim" offer before pumping</li>
-                        </ul>
-                        <div class="how-it-works">⛽ Claim offer → Get gas → Take receipt photo!</div>
-                    </div>
-                </div>
-                <div class="app-card">
-                    <div class="app-header grocery">
-                        <h4>GasBuddy</h4>
-                        <div class="type">Gas Price Finder + Savings</div>
-                    </div>
-                    <div class="app-body">
-                        <div class="earnings">💵 Save 5-25¢/gallon</div>
-                        <ul>
-                            <li class="pro">Find cheapest gas nearby</li>
-                            <li class="pro">Pay with GasBuddy card for extra savings</li>
-                            <li class="pro">Price alerts</li>
-                            <li class="pro">Trip cost calculator</li>
-                            <li class="con">Card links to bank account</li>
-                        </ul>
-                        <div class="how-it-works">📍 Find cheap gas + save more with their card!</div>
-                    </div>
-                </div>
-                <div class="app-card">
-                    <div class="app-header grocery">
-                        <h4>Dosh</h4>
-                        <div class="type">Automatic Card-Linked</div>
-                    </div>
-                    <div class="app-body">
-                        <div class="earnings">💵 Earn 1-10% automatically</div>
-                        <ul>
-                            <li class="pro">100% automatic - no scanning</li>
-                            <li class="pro">Works at hotels, restaurants, shops</li>
-                            <li class="pro">Link multiple cards</li>
-                            <li class="pro">Instant cash back</li>
-                            <li class="con">Limited participating merchants</li>
-                        </ul>
-                        <div class="how-it-works">💳 Link card once, earn automatically forever!</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2><span class="icon">📊</span> The Stacking Strategy (Maximum Savings!)</h2>
-            <div class="stacking-box">
-                <h3>How to Stack Cash Back for 10%+ Savings</h3>
-                
-                <div class="stacking-step">
-                    <div class="stacking-num">1</div>
-                    <div class="stacking-content">
-                        <h4>Use a cash back credit card</h4>
-                        <p>Cards like Chase Freedom, Discover, or Citi Double Cash give 1-5% back</p>
-                    </div>
-                </div>
-                
-                <div class="stacking-step">
-                    <div class="stacking-num">2</div>
-                    <div class="stacking-content">
-                        <h4>Shop through Rakuten or Ibotta first</h4>
-                        <p>Click through the app/extension before making online purchases</p>
-                    </div>
-                </div>
-                
-                <div class="stacking-step">
-                    <div class="stacking-num">3</div>
-                    <div class="stacking-content">
-                        <h4>Use store loyalty programs</h4>
-                        <p>Target Circle, Kroger Plus, CVS ExtraCare - free points!</p>
-                    </div>
-                </div>
-                
-                <div class="stacking-step">
-                    <div class="stacking-num">4</div>
-                    <div class="stacking-content">
-                        <h4>Scan receipt in Fetch + Ibotta + Checkout 51</h4>
-                        <p>Yes, you can scan the SAME receipt in multiple apps!</p>
-                    </div>
-                </div>
-                
-                <div class="stacking-example">
-                    <h4>📱 Example: $100 Grocery Trip</h4>
-                    <div class="line"><span>Cash back credit card (2%)</span><span>$2.00</span></div>
-                    <div class="line"><span>Ibotta offers activated</span><span>$3.50</span></div>
-                    <div class="line"><span>Store loyalty discount</span><span>$5.00</span></div>
-                    <div class="line"><span>Fetch receipt scan</span><span>$0.50</span></div>
-                    <div class="line"><span>Checkout 51 offers</span><span>$1.25</span></div>
-                    <div class="line total"><span>TOTAL SAVINGS</span><span>$12.25 (12%!)</span></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2><span class="icon">⚠️</span> Cash Back App Tips & Warnings</h2>
-            <div class="pro-tip">
-                <div class="pro-tip-title">💡 Pro Tips for Maximum Earnings</div>
-                <p>• Check apps BEFORE shopping, not after - many require pre-activation</p>
-                <p>• Scan receipts within 7-14 days - don't let them expire!</p>
-                <p>• Stack multiple apps on the same purchase for more savings</p>
-                <p>• Look for "any brand" or "any item" offers for easy cash back</p>
-                <p>• Refer friends - most apps give $5-20 per referral</p>
-            </div>
+            
             <div class="warning-box">
-                <h4>⚠️ Don't Fall for These Traps</h4>
-                <p>• <strong>Don't buy something just because there's cash back</strong> - you're still spending money!</p>
-                <p>• <strong>Watch expiration dates</strong> - offers and points can expire</p>
-                <p>• <strong>Read the fine print</strong> - some offers require specific sizes or quantities</p>
-                <p>• <strong>Don't share receipts with personal info visible</strong></p>
+                <h4>⚠️ Don't Buy Just for Cash Back!</h4>
+                <p>Cash back is for purchases you were ALREADY making. Spending $10 to get $1 back is still losing $9. Stick to your shopping list!</p>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">📱</span> Cash Back & Couponing Experts to Follow</h2>
-            <p>Learn more strategies from these savings experts:</p>
+            <h2><span class="icon">🎓</span> Cash Back Experts</h2>
             <div class="influencer-grid">
                 <div class="influencer-card">
-                    <div class="influencer-avatar">💰</div>
+                    <div class="influencer-avatar">🏷️</div>
                     <h4>The Krazy Coupon Lady</h4>
                     <div class="platform">🌐 Website & App</div>
-                    <div class="followers">Millions of Readers</div>
-                    <p>The OG deals site! Daily deals, cash back tips, and coupon matchups for every store.</p>
+                    <p>Daily deals and cash back tips. Shows which apps have the best offers right now.</p>
                     <a href="https://thekrazycouponlady.com" class="influencer-link" target="_blank">thekrazycouponlady.com →</a>
                 </div>
                 <div class="influencer-card">
-                    <div class="influencer-avatar">🛒</div>
-                    <h4>Hip2Save</h4>
-                    <div class="platform">🌐 Website & App</div>
-                    <div class="followers">Major Deals Site</div>
-                    <p>Hot deals, freebies, and cash back app tips. Great for finding the best current offers!</p>
-                    <a href="https://hip2save.com" class="influencer-link" target="_blank">hip2save.com →</a>
-                </div>
-                <div class="influencer-card">
-                    <div class="influencer-avatar">🏷️</div>
-                    <h4>Couponing With Toni</h4>
-                    <div class="platform">📺 YouTube</div>
-                    <div class="followers">500K+ Subscribers</div>
-                    <p>Weekly hauls showing how to stack coupons and cash back apps at CVS, Walgreens, Target.</p>
-                    <a href="https://www.youtube.com/@CouponingWithToni" class="influencer-link" target="_blank">YouTube →</a>
-                </div>
-                <div class="influencer-card">
-                    <div class="influencer-avatar">🎯</div>
-                    <h4>Totally Target</h4>
-                    <div class="platform">🌐 Blog</div>
-                    <div class="followers">Target Deals Expert</div>
-                    <p>Everything Target - Circle deals, clearance finds, and how to stack for maximum savings.</p>
-                    <a href="https://totallytarget.com" class="influencer-link" target="_blank">totallytarget.com →</a>
-                </div>
-                <div class="influencer-card">
-                    <div class="influencer-avatar">📊</div>
+                    <div class="influencer-avatar">🔥</div>
                     <h4>Slickdeals</h4>
                     <div class="platform">🌐 Website & App</div>
-                    <div class="followers">12M+ Users</div>
-                    <p>Community-driven deals site. Users post and vote on the best deals and cash back offers.</p>
+                    <p>Community posts best cash back offers. Great for finding bonus promotions.</p>
                     <a href="https://slickdeals.net" class="influencer-link" target="_blank">slickdeals.net →</a>
                 </div>
                 <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Coupon With Star</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Weekly hauls showing how to maximize cash back at drugstores and grocery.</p>
+                    <a href="https://www.youtube.com/@CouponWithStar" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
                     <div class="influencer-avatar">⚖️</div>
-                    <h4>Erika Kullberg</h4>
-                    <div class="platform">📱 TikTok</div>
-                    <div class="followers">9M+ Followers</div>
-                    <p>Lawyer sharing money tips including the best cash back apps and hidden ways to save.</p>
-                    <a href="https://www.tiktok.com/@erikakullberg" class="influencer-link" target="_blank">@erikakullberg →</a>
+                    <h4>Erika Taught Me</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Lawyer sharing money tips including the best cash back strategies.</p>
+                    <a href="https://www.youtube.com/@ErikaTaughtMe" class="influencer-link" target="_blank">YouTube →</a>
                 </div>
             </div>
         </div>
@@ -475,86 +289,80 @@
         <div class="card">
             <h2><span class="icon">📈</span> Your Progress</h2>
             <div class="progress-tracker">
-                <div class="progress-text"><span id="completed">0</span> of 6 steps completed</div>
-                <div class="progress-bar">
-                    <div class="progress-fill" id="progressFill"></div>
-                </div>
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">📝</span> Your Notes</h2>
+            <h2><span class="icon">📝</span> Your Cash Back Tracker</h2>
             <div class="notes-section">
                 <textarea id="notes" placeholder="Track your cash back earnings!
 
-APPS I'VE DOWNLOADED:
-☐ Fetch Rewards
-☐ Ibotta
-☐ Checkout 51
-☐ Rakuten
-☐ Honey
-☐ Upside
-☐ Dosh
-☐ GasBuddy
+APPS INSTALLED:
+Receipt Scanning:
+☐ Fetch Rewards  ☐ Shopkick
 
-MY REFERRAL CODES (to share with friends):
-Fetch: ____
-Ibotta: ____
-Rakuten: ____
+Grocery Cash Back:
+☐ Ibotta  ☐ Checkout 51  ☐ Shopmium
 
-MONTHLY EARNINGS TRACKER:
-Jan: $____
-Feb: $____
-Mar: $____
+Online Shopping:
+☐ Rakuten  ☐ TopCashback  ☐ Honey
 
-TOTAL CASH BACK EARNED: $____
+LOYALTY CARDS LINKED TO IBOTTA:
+☐ Kroger  ☐ Target  ☐ Walmart
+☐ CVS  ☐ Walgreens  ☐ Other: ____
 
-NOTES:
+MONTHLY EARNINGS:
+Fetch: $____
+Ibotta: $____
+Checkout 51: $____
+Rakuten: $____
+TopCashback: $____
+Other: $____
+TOTAL: $____
+
+CASH OUT LOG:
+Date: ____ | App: ____ | Amount: $____
+Date: ____ | App: ____ | Amount: $____
+Date: ____ | App: ____ | Amount: $____
+
+YEARLY TOTAL: $____
 "></textarea>
             </div>
         </div>
 
         <div class="cta-section">
-            <h3>Need Help With Your Budget?</h3>
+            <h3>Need Help With Your Finances?</h3>
             <p>Chat with an ASAP Financial coach for personalized guidance!</p>
-            <a href="#" class="cta-button">Get Support →</a>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
         </div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const saved = localStorage.getItem('playbook-cashback-apps');
+            const saved = localStorage.getItem('playbook-use-cash-back-apps');
             if (saved) {
                 const data = JSON.parse(saved);
                 data.steps.forEach((checked, index) => {
-                    if (checked) {
-                        document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
-                    }
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
                 });
                 document.getElementById('notes').value = data.notes || '';
                 updateProgress();
             }
         });
-
-        function toggleStep(el) {
-            el.classList.toggle('checked');
-            updateProgress();
-            saveProgress();
-        }
-
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
         function updateProgress() {
             const total = document.querySelectorAll('.step-checkbox').length;
             const completed = document.querySelectorAll('.step-checkbox.checked').length;
             document.getElementById('completed').textContent = completed;
             document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
         }
-
         function saveProgress() {
             const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
             const notes = document.getElementById('notes').value;
-            localStorage.setItem('playbook-cashback-apps', JSON.stringify({ steps, notes }));
+            localStorage.setItem('playbook-use-cash-back-apps', JSON.stringify({ steps, notes }));
         }
-
         document.getElementById('notes').addEventListener('input', saveProgress);
     </script>
 </body>
