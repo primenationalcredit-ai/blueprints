@@ -1,59 +1,502 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Negotiate Your Bills Lower | ASAP Credit Repair Playbook</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{--primary:#063d86;--success:#10b981;--bg:#f8fafc;--text:#1e293b;--text-light:#64748b;--border:#e2e8f0}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}.header{background:linear-gradient(135deg,#10b981,#059669);color:#fff;padding:40px 20px 50px;text-align:center}.header h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:12px}.main-content{max-width:800px;margin:-30px auto 40px;padding:0 20px}.back-link{color:#fff;text-decoration:none;opacity:.8;display:block;margin-bottom:16px}.category-badge{display:inline-block;background:rgba(255,255,255,.2);padding:6px 16px;border-radius:20px;font-size:.85rem;margin-bottom:16px}.goal-card{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid var(--success);border-radius:16px;padding:24px;margin-bottom:24px}.goal-card h2{color:#065f46;margin-bottom:12px}.goal-card .earnings{background:#fff;padding:10px 18px;border-radius:10px;margin-top:14px;font-weight:600;color:#065f46;display:inline-block}.section-card{background:#fff;border-radius:16px;padding:28px;margin-bottom:24px;border:1px solid var(--border)}.section-card h2{color:var(--primary);margin-bottom:20px}.task-list{list-style:none}.task-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)}.task-checkbox{width:28px;height:28px;border:2px solid var(--border);border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}.task-checkbox.checked{background:var(--success);border-color:var(--success);color:#fff}.task-title{font-weight:600;margin-bottom:6px}.task-desc{color:var(--text-light);font-size:.95rem}.task-badge{font-size:.8rem;padding:4px 10px;border-radius:6px;background:var(--bg);margin-top:10px;display:inline-block;margin-right:8px}.details-box{background:#f8fafc;padding:14px;border-radius:8px;margin-top:12px;border-left:4px solid #10b981}.details-box h4{color:#059669;margin-bottom:8px;font-size:.9rem}.details-box ul{margin-left:18px;font-size:.9rem}.details-box li{margin-bottom:6px}.pricing-table{width:100%;border-collapse:collapse;margin-top:12px}.pricing-table th,.pricing-table td{padding:10px;text-align:left;border-bottom:1px solid var(--border)}.pricing-table th{background:var(--bg);font-weight:600}textarea{width:100%;min-height:120px;padding:14px;border:2px solid var(--border);border-radius:10px;font-family:inherit;margin-top:10px}.help-section{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border:2px solid #7dd3fc;border-radius:16px;padding:20px;margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}.chat-btn{background:var(--primary);color:#fff;border:none;padding:12px 24px;border-radius:10px;font-weight:600;cursor:pointer}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Negotiate Your Bills Lower - Master Guide - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #2e7d32; font-size: 1.1em; line-height: 1.6; }
+        .savings-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .savings-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .savings-highlight p { font-size: 1.1em; opacity: 0.95; }
+        
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #e8f5e9; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        
+        /* Bill Types Grid */
+        .bill-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin: 20px 0; }
+        .bill-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.3s; border: 2px solid transparent; }
+        .bill-card:hover { border-color: #667eea; transform: translateY(-3px); }
+        .bill-card .emoji { font-size: 2em; margin-bottom: 10px; }
+        .bill-card h4 { color: #1a1a2e; font-size: 0.95em; margin-bottom: 5px; }
+        .bill-card .savings { color: #4caf50; font-weight: 600; font-size: 0.85em; }
+        .bill-card .rate { color: #666; font-size: 0.75em; }
+        
+        /* Comparison Table */
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 15px; overflow: hidden; font-size: 14px; }
+        .comparison-table th, .comparison-table td { padding: 12px 10px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .comparison-table th { background: #667eea; color: white; font-weight: 600; }
+        .comparison-table tr:hover { background: #f5f5f5; }
+        .comparison-table .high { color: #4caf50; font-weight: 600; }
+        .comparison-table .medium { color: #ff9800; font-weight: 600; }
+        .comparison-table .low { color: #f44336; font-weight: 600; }
+        
+        /* Strategy Cards */
+        .strategy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .strategy-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-top: 5px solid #667eea; }
+        .strategy-card h4 { color: #1a1a2e; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+        .strategy-card p { color: #666; font-size: 14px; line-height: 1.6; }
+        .strategy-card .example { background: #e8f5e9; padding: 10px; border-radius: 8px; margin-top: 10px; font-size: 13px; color: #2e7d32; font-style: italic; }
+        
+        /* Discount Checklist */
+        .discount-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin: 20px 0; }
+        .discount-item { background: #f8f9fa; border-radius: 10px; padding: 12px 15px; display: flex; align-items: center; gap: 10px; font-size: 14px; color: #666; }
+        .discount-item .check { color: #4caf50; font-weight: 700; }
+        
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        
+        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .warning-box h4 { color: #c62828; margin-bottom: 10px; }
+        .warning-box p { color: #666; }
+        
+        /* Tool Cards */
+        .tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .tool-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; }
+        .tool-card h4 { color: #1a1a2e; margin-bottom: 8px; }
+        .tool-card .type { font-size: 12px; color: #667eea; margin-bottom: 8px; }
+        .tool-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .tool-card a { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; font-size: 14px; }
+        
+        /* Influencer Section */
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #667eea; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card .followers { color: #999; font-size: 12px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; }
+        
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        
+        .notes-section { margin-top: 20px; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #667eea; }
+        
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+        
+        @media (max-width: 768px) {
+            .comparison-table { font-size: 12px; }
+            .comparison-table th, .comparison-table td { padding: 8px 5px; }
+        }
+    </style>
 </head>
 <body>
-  <header class="header"><a href="index.html" class="back-link">← Back to All Playbooks</a><span class="category-badge">💰 Save Money</span><h1>Negotiate Your Bills Lower</h1><p style="opacity:.9;max-width:600px;margin:0 auto">Call and negotiate lower rates on internet, phone, insurance, and more. Save $500-2,000+ per year with a few calls!</p></header>
-  <main class="main-content">
-    <div class="goal-card"><h2>🎯 What You'll Achieve</h2><p>Learn to negotiate lower rates on recurring bills. One afternoon of calls can save you hundreds to thousands annually!</p><div class="earnings">💰 Internet: Save $10-30/month | Phone: Save $20-50/month | Insurance: Save $200-800/year | Total: $500-2,000+/year</div></div>
-    
-    <div class="section-card"><h2>💵 Bills You Can Negotiate</h2>
-      <table class="pricing-table">
-        <tr><th>Bill Type</th><th>Typical Savings</th><th>Success Rate</th></tr>
-        <tr><td>Cable/Internet</td><td>$10-50/month</td><td>Very High</td></tr>
-        <tr><td>Cell Phone</td><td>$20-50/month</td><td>High</td></tr>
-        <tr><td>Car Insurance</td><td>$200-600/year</td><td>High</td></tr>
-        <tr><td>Home Insurance</td><td>$100-500/year</td><td>High</td></tr>
-        <tr><td>Credit Card Interest</td><td>2-10% APR reduction</td><td>Medium</td></tr>
-        <tr><td>Medical Bills</td><td>20-50% off</td><td>Medium-High</td></tr>
-        <tr><td>Gym Membership</td><td>$10-30/month</td><td>Medium</td></tr>
-      </table>
+    <div class="container">
+        <a href="expense-playbooks.html" class="back-link">← Back to Expense Playbooks</a>
+        
+        <div class="header">
+            <h1>💵 Negotiate Your Bills Lower</h1>
+            <p class="subtitle">Master guide to reducing every monthly bill</p>
+            <div class="time-badge">⏱️ 2-3 hours total • Save $1,000-3,000/year</div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Almost every recurring bill is negotiable - from internet and phone to insurance and medical bills. Companies have retention budgets specifically designed to keep customers. One afternoon of strategic phone calls can reduce your bills by $100-300/month. This guide covers EVERY bill type with specific strategies for each!</p>
+            </div>
+            <div class="savings-highlight">
+                <h3>Save $1,000-3,000/Year</h3>
+                <p>Most people have never tried negotiating. Those who do save an average of $1,200/year!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💰</span> Bills You Can Negotiate</h2>
+            <p style="color: #666; margin-bottom: 15px;">Click each bill type for specific strategies:</p>
+            
+            <div class="bill-grid">
+                <div class="bill-card">
+                    <div class="emoji">📺</div>
+                    <h4>Cable/Internet</h4>
+                    <div class="savings">$20-60/mo</div>
+                    <div class="rate">85% success</div>
+                </div>
+                <div class="bill-card">
+                    <div class="emoji">📱</div>
+                    <h4>Cell Phone</h4>
+                    <div class="savings">$20-50/mo</div>
+                    <div class="rate">75% success</div>
+                </div>
+                <div class="bill-card">
+                    <div class="emoji">🚗</div>
+                    <h4>Car Insurance</h4>
+                    <div class="savings">$200-800/yr</div>
+                    <div class="rate">80% success</div>
+                </div>
+                <div class="bill-card">
+                    <div class="emoji">🏠</div>
+                    <h4>Home Insurance</h4>
+                    <div class="savings">$100-500/yr</div>
+                    <div class="rate">70% success</div>
+                </div>
+                <div class="bill-card">
+                    <div class="emoji">🏥</div>
+                    <h4>Medical Bills</h4>
+                    <div class="savings">20-50% off</div>
+                    <div class="rate">65% success</div>
+                </div>
+                <div class="bill-card">
+                    <div class="emoji">💳</div>
+                    <h4>Credit Card APR</h4>
+                    <div class="savings">2-10% lower</div>
+                    <div class="rate">55% success</div>
+                </div>
+                <div class="bill-card">
+                    <div class="emoji">🏋️</div>
+                    <h4>Gym Membership</h4>
+                    <div class="savings">$10-30/mo</div>
+                    <div class="rate">60% success</div>
+                </div>
+                <div class="bill-card">
+                    <div class="emoji">💡</div>
+                    <h4>Utilities</h4>
+                    <div class="savings">$20-50/mo</div>
+                    <div class="rate">50% success</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Complete Negotiation Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Create your bill inventory</div>
+                    <div class="step-desc">List every recurring bill with the amount you pay. Include: internet, phone, insurance (all types), streaming, gym, subscriptions. Calculate your total monthly spend.</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Research competitor pricing</div>
+                    <div class="step-desc">For each major bill, find what competitors charge. Screenshot new customer deals. For insurance, get actual quotes from 3+ companies. This is your leverage!</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Know your customer history</div>
+                    <div class="step-desc">Check how long you've been a customer, your payment history, and any recent rate increases. Loyalty and reliability are powerful negotiating points.</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Schedule your negotiation day</div>
+                    <div class="step-desc">Block 2-3 hours on a Tuesday, Wednesday, or Thursday mid-morning. End of month is best. Make ALL your calls in one session - you'll build momentum!</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Start with easy wins (cable/internet)</div>
+                    <div class="step-desc">Cable and internet companies have the highest success rate. Start here to build confidence. Ask for the retention department immediately.</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Work through your list systematically</div>
+                    <div class="step-desc">Phone → Insurance → Medical → Credit cards → Other subscriptions. Use the strategies specific to each bill type.</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Get everything in writing</div>
+                    <div class="step-desc">Request email confirmation of new rates. Note the rep's name and the date. Ask when the promotional rate expires.</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Set calendar reminders</div>
+                    <div class="step-desc">Promotional rates expire! Set reminders 2-4 weeks before each expiration to renegotiate. Also set an annual "bill review day."</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> Key Negotiation Strategies</h2>
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <h4>📞 The Retention Trick</h4>
+                    <p>Regular customer service can't give big discounts. Say "I'm thinking of canceling" to get transferred to the retention department - they have authority for real discounts!</p>
+                    <div class="example">"Hi, I'd like to speak to someone about canceling my service, please."</div>
+                </div>
+                <div class="strategy-card">
+                    <h4>🔇 Strategic Silence</h4>
+                    <p>After asking for a discount, STOP TALKING. The silence feels uncomfortable, but the rep will often fill it with a better offer. Count to 10 in your head.</p>
+                    <div class="example">Ask: "What can you do to lower my bill?" Then stay silent.</div>
+                </div>
+                <div class="strategy-card">
+                    <h4>💰 Competitor Leverage</h4>
+                    <p>Nothing motivates a company like losing you to a competitor. Have specific competitor prices ready to quote - even better if you have actual quotes.</p>
+                    <div class="example">"I've gotten a quote from [competitor] for $X. Can you match or beat that?"</div>
+                </div>
+                <div class="strategy-card">
+                    <h4>🔄 The Callback Method</h4>
+                    <p>Different rep = different result. If the first rep can't help, politely end the call and try again later. Some reps are more empowered (or generous) than others.</p>
+                    <div class="example">Try 2-3 times before accepting "no" as final.</div>
+                </div>
+                <div class="strategy-card">
+                    <h4>❓ "What Else?" Question</h4>
+                    <p>After they give you something, always ask: "Is there anything else you can do?" or "What other discounts might I qualify for?" Their first offer is rarely their best.</p>
+                    <div class="example">"That's helpful, thank you. What else can you do for me?"</div>
+                </div>
+                <div class="strategy-card">
+                    <h4>💳 Payment History Power</h4>
+                    <p>If you've never missed a payment, SAY SO. Companies value reliable customers. Your loyalty and reliability are worth money to them.</p>
+                    <div class="example">"I've been a customer for 5 years and have always paid on time..."</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">✅</span> Discounts to Always Ask For</h2>
+            <div class="discount-grid">
+                <div class="discount-item"><span class="check">☐</span> Autopay discount</div>
+                <div class="discount-item"><span class="check">☐</span> Paperless billing discount</div>
+                <div class="discount-item"><span class="check">☐</span> Loyalty/long-term customer</div>
+                <div class="discount-item"><span class="check">☐</span> Bundle discount</div>
+                <div class="discount-item"><span class="check">☐</span> Military/veteran</div>
+                <div class="discount-item"><span class="check">☐</span> Senior citizen</div>
+                <div class="discount-item"><span class="check">☐</span> Student discount</div>
+                <div class="discount-item"><span class="check">☐</span> Professional association</div>
+                <div class="discount-item"><span class="check">☐</span> Employer discount</div>
+                <div class="discount-item"><span class="check">☐</span> Good credit discount</div>
+                <div class="discount-item"><span class="check">☐</span> Safe driver (insurance)</div>
+                <div class="discount-item"><span class="check">☐</span> Low mileage (auto)</div>
+            </div>
+            
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 The Magic Question</div>
+                <p>"What discounts am I currently getting, and what other discounts might I qualify for that I'm not getting?" - This question alone uncovers hidden savings most people miss!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🛠️</span> Bill Negotiation Services</h2>
+            <p style="color: #666; margin-bottom: 15px;">Don't want to call yourself? These services negotiate for you:</p>
+            
+            <div class="tool-grid">
+                <div class="tool-card">
+                    <h4>Billshark</h4>
+                    <div class="type">Pay per savings</div>
+                    <p>They negotiate your bills for you. You only pay 40% of first year savings.</p>
+                    <a href="https://www.billshark.com" target="_blank">billshark.com →</a>
+                </div>
+                <div class="tool-card">
+                    <h4>Trim</h4>
+                    <div class="type">15% of savings</div>
+                    <p>AI analyzes bills and negotiates automatically. Also cancels unused subscriptions.</p>
+                    <a href="https://www.asktrim.com" target="_blank">asktrim.com →</a>
+                </div>
+                <div class="tool-card">
+                    <h4>Rocket Money</h4>
+                    <div class="type">$3-12/month</div>
+                    <p>Formerly Truebill. Negotiates bills and tracks subscriptions. Premium required for negotiation.</p>
+                    <a href="https://www.rocketmoney.com" target="_blank">rocketmoney.com →</a>
+                </div>
+                <div class="tool-card">
+                    <h4>BillCutterz</h4>
+                    <div class="type">50% of savings</div>
+                    <p>Human negotiators handle your bills. No savings = no fee.</p>
+                    <a href="https://www.billcutterz.com" target="_blank">billcutterz.com →</a>
+                </div>
+            </div>
+            
+            <div class="warning-box">
+                <h4>⚠️ DIY vs. Service</h4>
+                <p>If you negotiate yourself, you keep 100% of savings. Services charge 15-50% of savings but save you time. For most people, one afternoon of calls is worth keeping all your savings!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎓</span> Bill Negotiation Experts</h2>
+            <p style="color: #666; margin-bottom: 20px;">Learn advanced negotiation tactics from these sources:</p>
+            
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">⚖️</div>
+                    <h4>Erika Kullberg</h4>
+                    <div class="platform">📺 TikTok & YouTube</div>
+                    <div class="followers">10M+ Followers</div>
+                    <p>Lawyer sharing consumer rights tips, negotiation scripts, and hidden fees to avoid.</p>
+                    <a href="https://www.youtube.com/@ErikaKullberg" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📢</div>
+                    <h4>Clark Howard</h4>
+                    <div class="platform">🎙️ Podcast & Website</div>
+                    <div class="followers">Consumer Advocate</div>
+                    <p>Decades of experience helping people save on bills. Highly trusted consumer advocate.</p>
+                    <a href="https://clark.com" class="influencer-link" target="_blank">clark.com →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📊</div>
+                    <h4>Ramit Sethi</h4>
+                    <div class="platform">📺 YouTube & Netflix</div>
+                    <div class="followers">1.5M+ Subscribers</div>
+                    <p>"I Will Teach You To Be Rich" author. His negotiation scripts have saved people millions.</p>
+                    <a href="https://www.youtube.com/@ramborsethi" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💰</div>
+                    <h4>NerdWallet</h4>
+                    <div class="platform">🌐 Website</div>
+                    <div class="followers">Finance Resource</div>
+                    <p>Detailed guides on negotiating every bill type with success rates and strategies.</p>
+                    <a href="https://www.nerdwallet.com" class="influencer-link" target="_blank">nerdwallet.com →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💸</div>
+                    <h4>The Penny Hoarder</h4>
+                    <div class="platform">🌐 Website</div>
+                    <div class="followers">Finance Blog</div>
+                    <p>Real success stories and detailed scripts for every type of bill negotiation.</p>
+                    <a href="https://www.thepennyhoarder.com" class="influencer-link" target="_blank">thepennyhoarder.com →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>r/personalfinance</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <div class="followers">18M+ Members</div>
+                    <p>Active community sharing bill negotiation success stories and real-time tips.</p>
+                    <a href="https://www.reddit.com/r/personalfinance" class="influencer-link" target="_blank">r/personalfinance →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Bill Negotiation Master Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track ALL your bill negotiations here!
+
+BILL INVENTORY (list all recurring bills):
+1. Internet: $____/mo | Company: ____
+2. Cell phone: $____/mo | Company: ____
+3. Car insurance: $____/yr | Company: ____
+4. Home/Renters insurance: $____/yr | Company: ____
+5. Streaming: $____/mo | Services: ____
+6. Gym: $____/mo | Name: ____
+7. Other: ____ : $____
+
+TOTAL MONTHLY RECURRING: $____
+
+COMPETITOR RESEARCH:
+Internet: [Competitor] offers ____ for $____
+Phone: [Competitor] offers ____ for $____
+Insurance quote 1: ____ for $____
+Insurance quote 2: ____ for $____
+Insurance quote 3: ____ for $____
+
+NEGOTIATION LOG:
+
+Date: ____ | Bill: ____
+Called: ____ | Rep: ____
+Asked for: ____
+Result: ____
+New rate: $____ | Savings: $____/mo
+Expires: ____
+
+Date: ____ | Bill: ____
+Called: ____ | Rep: ____
+Result: ____
+New rate: $____ | Savings: $____/mo
+
+TOTAL MONTHLY SAVINGS: $____
+TOTAL YEARLY SAVINGS: $____
+
+RENEGOTIATION REMINDERS:
+☐ ____ - renegotiate by: ____
+☐ ____ - renegotiate by: ____
+☐ ____ - renegotiate by: ____
+
+Annual bill review day: ____
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
     </div>
 
-    <div class="section-card"><h2>📋 Step-by-Step Action Plan</h2>
-      <ul class="task-list">
-        <li class="task-item"><div class="task-checkbox" data-task="0"></div><div><div class="task-title">Step 1: Gather your current bills</div><div class="task-desc">List all recurring bills: internet, phone, insurance, subscriptions. Know exactly what you're paying.</div><div class="details-box"><h4>📋 Common Bills to Review:</h4><ul><li>Internet/cable</li><li>Cell phone plan</li><li>Car and home insurance</li><li>Credit cards (interest rates)</li><li>Gym memberships</li><li>Streaming services</li><li>Any subscription services</li></ul></div><span class="task-badge">⏱️ 30 min to gather</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="1"></div><div><div class="task-title">Step 2: Research competitor pricing</div><div class="task-desc">Know what competitors charge. This is your leverage! "I can get X from Competitor for $Y."</div><div class="details-box"><h4>🔍 Research Tips:</h4><ul><li>Check competitor websites for new customer pricing</li><li>Note promotional rates</li><li>Screenshot offers as proof</li><li>For insurance: get quotes from 3+ companies</li></ul></div><span class="task-badge">⏱️ 15-30 min per service</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="2"></div><div><div class="task-title">Step 3: Call during optimal times</div><div class="task-desc">Call Tuesday-Thursday mid-morning. Reps are less rushed and more helpful than Monday or Friday.</div><span class="task-badge">📞 Tues-Thurs best</span><span class="task-badge">⏰ 10am-2pm ideal</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="3"></div><div><div class="task-title">Step 4: Use the right approach</div><div class="task-desc">Be polite but firm. Mention loyalty, competitor prices, financial hardship if relevant.</div><div class="details-box"><h4>📞 What to Say:</h4><ul><li>"I've been a customer for X years and love your service, but my bill seems high compared to what I'm seeing elsewhere."</li><li>"Can you check for any promotions or discounts I might qualify for?"</li><li>"I've gotten a quote from [competitor] for $X. Can you match or beat that?"</li><li>Ask to speak to "retention" or "loyalty" department</li><li>Be willing to cancel (they'll often offer more to keep you)</li></ul></div><span class="task-badge">😊 Polite but firm</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="4"></div><div><div class="task-title">Step 5: Ask for specific discounts</div><div class="task-desc">Many companies have hidden discounts they don't advertise. Ask directly!</div><div class="details-box"><h4>💡 Discounts to Ask For:</h4><ul><li>Loyalty discount (long-term customer)</li><li>Autopay discount (common)</li><li>Paperless billing discount</li><li>Bundle discounts</li><li>Military/veteran/senior discounts</li><li>Professional association discounts</li></ul></div><span class="task-badge">❓ If you don't ask, you don't get</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="5"></div><div><div class="task-title">Step 6: Set calendar reminders</div><div class="task-desc">Promotional rates expire! Set reminders to renegotiate every 6-12 months.</div><span class="task-badge">📅 Renegotiate annually</span><span class="task-badge">🔄 Ongoing savings</span></div></li>
-      </ul>
-    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-negotiate-bills');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) {
+                        document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                    }
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
 
-    <div class="section-card"><h2>📝 Your Savings Tracker</h2><textarea id="userNotes" placeholder="Track your negotiation wins:
+        function toggleStep(el) {
+            el.classList.toggle('checked');
+            updateProgress();
+            saveProgress();
+        }
 
-Internet (Xfinity):
-- Was: $89/month
-- Now: $59/month
-- Saved: $30/month = $360/year
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
 
-Car insurance (Geico):
-- Got quotes from Progressive, State Farm
-- Switched to Progressive: saving $400/year
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-negotiate-bills', JSON.stringify({ steps, notes }));
+        }
 
-Total annual savings: $760
-
-Next up: Cell phone bill (call Tuesday)"></textarea></div>
-    <div class="help-section"><span style="font-size:24px">💬</span><div style="flex:1"><strong>Need Help?</strong> Chat with a coach!</div><button class="chat-btn" onclick="location.href='https://asapcreditrepairusa.com/chat'">Start Chat</button></div>
-  </main>
-  <script>const K='pb_negotiate_bills';function load(){const s=localStorage.getItem(K);if(s){const d=JSON.parse(s);document.querySelectorAll('.task-checkbox').forEach((b,i)=>{if(d.tasks&&d.tasks[i]){b.classList.add('checked');b.innerHTML='✓'}});if(d.notes)document.getElementById('userNotes').value=d.notes}}function save(){const t=[];document.querySelectorAll('.task-checkbox').forEach(b=>t.push(b.classList.contains('checked')));localStorage.setItem(K,JSON.stringify({tasks:t,notes:document.getElementById('userNotes').value}))}document.querySelectorAll('.task-checkbox').forEach(b=>b.onclick=function(){this.classList.toggle('checked');this.innerHTML=this.classList.contains('checked')?'✓':'';save()});document.getElementById('userNotes').oninput=save;load();</script>
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>

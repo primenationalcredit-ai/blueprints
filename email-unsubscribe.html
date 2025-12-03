@@ -3,147 +3,528 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email Unsubscribe Guide | ASAP Financial Playbook</title>
+    <title>Email Unsubscribe Guide - Stop Marketing Temptation - ASAP Financial Playbook</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; background: #f5f5f5; color: #333; line-height: 1.6; }
-        .playbook { max-width: 700px; margin: 0 auto; background: white; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
-        .header { background: linear-gradient(135deg, #5c6bc0 0%, #3949ab 100%); color: white; padding: 30px; text-align: center; }
-        .header h1 { font-size: 28px; margin-bottom: 10px; }
-        .header p { opacity: 0.9; font-size: 14px; }
-        .meta { display: flex; justify-content: center; gap: 20px; margin-top: 15px; font-size: 12px; }
-        .meta span { background: rgba(255,255,255,0.2); padding: 5px 12px; border-radius: 15px; }
-        .content { padding: 30px; }
-        .section { margin-bottom: 30px; }
-        .section h2 { color: #3949ab; font-size: 18px; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 2px solid #5c6bc0; }
-        .section p { margin-bottom: 12px; color: #555; }
-        .highlight-box { background: #e8eaf6; border-left: 4px solid #5c6bc0; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
-        .checklist { list-style: none; padding: 0; }
-        .checklist li { padding: 12px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 12px; }
-        .checklist li:last-child { border-bottom: none; }
-        .checklist input[type="checkbox"] { width: 20px; height: 20px; margin-top: 2px; cursor: pointer; flex-shrink: 0; }
-        .checklist label { cursor: pointer; flex: 1; }
-        .checklist .done { text-decoration: line-through; color: #888; }
-        .method-box { background: #f8f9fa; border: 2px solid #e0e0e0; padding: 20px; border-radius: 8px; margin: 20px 0; }
-        .method-box h3 { color: #3949ab; margin-bottom: 10px; }
-        .method-box ol { margin-left: 20px; }
-        .method-box li { margin: 8px 0; }
-        .counter-box { background: linear-gradient(135deg, #4caf50, #2e7d32); color: white; padding: 25px; border-radius: 8px; margin: 20px 0; text-align: center; }
-        .counter-box h3 { font-size: 16px; margin-bottom: 10px; }
-        .counter-box .count { font-size: 48px; font-weight: 700; }
-        .counter-box .label { font-size: 14px; opacity: 0.9; }
-        .progress-section { background: #f8f9fa; padding: 20px; border-radius: 8px; margin-top: 30px; }
-        .progress-bar { height: 20px; background: #e0e0e0; border-radius: 10px; overflow: hidden; margin: 10px 0; }
-        .progress-fill { height: 100%; background: linear-gradient(90deg, #5c6bc0, #3949ab); transition: width 0.3s; border-radius: 10px; }
-        .progress-text { text-align: center; font-weight: 600; color: #3949ab; }
-        .cta-button { display: block; width: 100%; padding: 15px; background: #5c6bc0; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; text-align: center; text-decoration: none; margin-top: 20px; }
-        .cta-button:hover { background: #3949ab; }
-        .back-link { display: inline-block; margin: 20px 30px; color: #666; text-decoration: none; font-size: 14px; }
-        .back-link:hover { color: #5c6bc0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #2e7d32; font-size: 1.1em; line-height: 1.6; }
+        .savings-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .savings-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .savings-highlight p { font-size: 1.1em; opacity: 0.95; }
+        
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #e8f5e9; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        
+        /* Priority Grid */
+        .priority-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .priority-card { border-radius: 15px; padding: 20px; text-align: center; }
+        .priority-card.high { background: #ffebee; border: 2px solid #f44336; }
+        .priority-card.medium { background: #fff8e1; border: 2px solid #ffc107; }
+        .priority-card.low { background: #e8f5e9; border: 2px solid #4caf50; }
+        .priority-card .emoji { font-size: 2em; margin-bottom: 10px; }
+        .priority-card h4 { font-size: 0.95em; margin-bottom: 5px; }
+        .priority-card.high h4 { color: #c62828; }
+        .priority-card.medium h4 { color: #f57f17; }
+        .priority-card.low h4 { color: #2e7d32; }
+        .priority-card p { font-size: 12px; color: #666; }
+        
+        /* Method Comparison */
+        .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 20px 0; }
+        .method-card { background: #f8f9fa; border-radius: 15px; overflow: hidden; }
+        .method-header { padding: 15px 20px; color: white; }
+        .method-header.manual { background: linear-gradient(135deg, #ff9800, #ffb74d); }
+        .method-header.tool { background: linear-gradient(135deg, #4caf50, #66bb6a); }
+        .method-header.filter { background: linear-gradient(135deg, #2196f3, #64b5f6); }
+        .method-header h4 { display: flex; align-items: center; gap: 10px; }
+        .method-body { padding: 20px; }
+        .method-body .time { font-weight: 600; color: #667eea; margin-bottom: 10px; }
+        .method-body ol, .method-body ul { margin-left: 20px; color: #666; font-size: 14px; }
+        .method-body li { margin-bottom: 8px; line-height: 1.5; }
+        .method-body .best-for { background: #e3f2fd; padding: 10px; border-radius: 8px; margin-top: 15px; font-size: 13px; color: #1565c0; }
+        
+        /* Psychology Box */
+        .psychology-box { background: linear-gradient(135deg, #fce4ec, #f8bbd9); border-left: 5px solid #e91e63; padding: 20px; border-radius: 0 15px 15px 0; margin: 20px 0; }
+        .psychology-box h4 { color: #c2185b; margin-bottom: 15px; }
+        .psychology-box ul { margin-left: 20px; color: #666; }
+        .psychology-box li { margin-bottom: 10px; line-height: 1.5; }
+        
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        
+        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .warning-box h4 { color: #c62828; margin-bottom: 10px; }
+        .warning-box p { color: #666; }
+        
+        /* Tool Grid */
+        .tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .tool-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-top: 5px solid #667eea; }
+        .tool-card h4 { color: #1a1a2e; margin-bottom: 8px; }
+        .tool-card .type { font-size: 12px; color: #667eea; margin-bottom: 10px; }
+        .tool-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .tool-card a { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; }
+        
+        /* Search Terms */
+        .search-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin: 20px 0; }
+        .search-term { background: #f5f5f5; border-radius: 10px; padding: 12px 15px; font-family: monospace; font-size: 14px; color: #333; text-align: center; }
+        
+        /* Influencer Section */
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #667eea; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card .followers { color: #999; font-size: 12px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; }
+        
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        
+        .notes-section { margin-top: 20px; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #667eea; }
+        
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
     </style>
 </head>
 <body>
-    <a href="javascript:history.back()" class="back-link">← Back to Blueprint</a>
-    
-    <div class="playbook">
+    <div class="container">
+        <a href="expense-playbooks.html" class="back-link">← Back to Expense Playbooks</a>
+        
         <div class="header">
-            <h1>📧 Email Unsubscribe Guide</h1>
-            <p>Stop the daily temptation in your inbox</p>
-            <div class="meta">
-                <span>⏱️ 20-30 Minutes</span>
-                <span>📩 Clean Inbox</span>
-                <span>🛡️ Remove Triggers</span>
+            <h1>📧 Email Unsubscribe Blitz</h1>
+            <p class="subtitle">Stop marketing emails from triggering impulse purchases</p>
+            <div class="time-badge">⏱️ 20-30 minutes • Save $50-200/month</div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Every "FLASH SALE - 24 HOURS ONLY!" email is scientifically designed to trigger impulse purchases. By unsubscribing from marketing emails, you remove thousands of buying triggers from your life. No more FOMO, no more fake urgency, no more "I wasn't going to buy anything but then I saw this email..."</p>
+            </div>
+            <div class="savings-highlight">
+                <h3>Save $50-200/Month</h3>
+                <p>The average person receives 120+ marketing emails/week. Each one is a potential impulse buy!</p>
             </div>
         </div>
-        
-        <div class="content">
-            <div class="section">
-                <h2>Why Marketing Emails Hurt</h2>
-                <p>Every "SALE ENDS TODAY!" email is designed to create urgency and FOMO. They're not informing you - they're manipulating you into spending money you didn't plan to spend.</p>
-                <div class="highlight-box">
-                    <strong>Goal:</strong> Unsubscribe from 10+ marketing emails today. Remove the daily temptation from your inbox.
+
+        <div class="card">
+            <h2><span class="icon">🧠</span> Why Marketing Emails Are So Dangerous</h2>
+            <div class="psychology-box">
+                <h4>The Psychological Tricks They Use:</h4>
+                <ul>
+                    <li><strong>Artificial Scarcity:</strong> "Only 3 left!" (They have warehouses full)</li>
+                    <li><strong>Fake Urgency:</strong> "Sale ends in 2 hours!" (It'll be back next week)</li>
+                    <li><strong>Personalization:</strong> "Sarah, we picked these just for you!" (An algorithm picked them)</li>
+                    <li><strong>Loss Aversion:</strong> "Don't miss out!" (You can't miss what you never had)</li>
+                    <li><strong>Social Proof:</strong> "1,247 people bought this today!" (Manufactured FOMO)</li>
+                    <li><strong>Reciprocity:</strong> "Here's 20% off just for you!" (You'll spend more than 20%)</li>
+                </ul>
+            </div>
+            
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 The Math on Marketing Emails</div>
+                <p>If you get 100 marketing emails/week and just 1% leads to a $30 impulse purchase, that's $120/month or $1,440/year in purchases you never intended to make!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🚨</span> Priority Unsubscribes - Start Here!</h2>
+            <p style="color: #666; margin-bottom: 20px;">These are the WORST offenders for triggering impulse spending:</p>
+            
+            <div class="priority-grid">
+                <div class="priority-card high">
+                    <div class="emoji">📦</div>
+                    <h4>Amazon</h4>
+                    <p>Personalized recommendations based on your browsing</p>
+                </div>
+                <div class="priority-card high">
+                    <div class="emoji">🎯</div>
+                    <h4>Target</h4>
+                    <p>Constant "deals" and cartwheel offers</p>
+                </div>
+                <div class="priority-card high">
+                    <div class="emoji">👗</div>
+                    <h4>Shein/Fashion Sites</h4>
+                    <p>Daily flash sales create constant FOMO</p>
+                </div>
+                <div class="priority-card high">
+                    <div class="emoji">🍔</div>
+                    <h4>Food Delivery Apps</h4>
+                    <p>DoorDash, UberEats meal deals</p>
+                </div>
+                <div class="priority-card medium">
+                    <div class="emoji">✈️</div>
+                    <h4>Travel Sites</h4>
+                    <p>Airlines, hotels, booking sites</p>
+                </div>
+                <div class="priority-card medium">
+                    <div class="emoji">💄</div>
+                    <h4>Beauty Brands</h4>
+                    <p>Sephora, Ulta, cosmetics</p>
+                </div>
+                <div class="priority-card medium">
+                    <div class="emoji">🎮</div>
+                    <h4>Gaming/Tech</h4>
+                    <p>Steam, Best Buy, gadget sites</p>
+                </div>
+                <div class="priority-card low">
+                    <div class="emoji">📰</div>
+                    <h4>Newsletters</h4>
+                    <p>Daily digests you never read</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Email Cleanup Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Search for "unsubscribe" in your inbox</div>
+                    <div class="step-desc">This magic search finds ALL marketing emails. Gmail, Outlook, Yahoo - they all have unsubscribe links at the bottom. This one search reveals the scope of the problem!</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Unsubscribe from shopping sites FIRST</div>
+                    <div class="step-desc">Amazon, Target, Walmart, Shein, any fashion or retail site. These are the biggest impulse triggers. Don't just delete - UNSUBSCRIBE!</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Eliminate food delivery emails</div>
+                    <div class="step-desc">DoorDash, UberEats, Grubhub, Instacart - these "free delivery!" emails lead to $30-50 orders you didn't plan. Unsubscribe from all of them.</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Use a bulk unsubscribe tool</div>
+                    <div class="step-desc">Tools like Unroll.me, Clean Email, or Leave Me Alone can unsubscribe you from hundreds of lists in minutes. Worth the time investment!</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Set up Gmail filters (or equivalent)</div>
+                    <div class="step-desc">Create a filter: emails containing "unsubscribe" + "sale" or "deal" or "off" → Skip Inbox, Delete. This catches new marketing emails automatically.</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Check your "Promotions" tab</div>
+                    <div class="step-desc">Gmail's Promotions tab is a goldmine of companies you forgot you signed up for. Open it and mass-unsubscribe. Consider never checking this tab again!</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Stop future signups at the source</div>
+                    <div class="step-desc">Uncheck "Sign me up for emails" when shopping. Use a separate email for shopping accounts. Never give your main email for "10% off your first order."</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Schedule a monthly cleanup</div>
+                    <div class="step-desc">New marketing emails will creep in. Set a monthly 10-minute calendar reminder to search "unsubscribe" and clear out new offenders.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🔧</span> Three Methods: Choose Your Approach</h2>
+            <div class="method-grid">
+                <div class="method-card">
+                    <div class="method-header manual">
+                        <h4>📝 Manual Method</h4>
+                    </div>
+                    <div class="method-body">
+                        <div class="time">⏱️ 30-60 minutes</div>
+                        <ol>
+                            <li>Search "unsubscribe" in inbox</li>
+                            <li>Open each email</li>
+                            <li>Scroll to bottom, click "Unsubscribe"</li>
+                            <li>Confirm on the website</li>
+                            <li>Repeat 50-100+ times</li>
+                        </ol>
+                        <div class="best-for">Best for: People who want full control over each decision</div>
+                    </div>
+                </div>
+                <div class="method-card">
+                    <div class="method-header tool">
+                        <h4>🚀 Bulk Unsubscribe Tool</h4>
+                    </div>
+                    <div class="method-body">
+                        <div class="time">⏱️ 5-10 minutes</div>
+                        <ol>
+                            <li>Sign up for Unroll.me or similar</li>
+                            <li>Connect your email account</li>
+                            <li>See ALL subscriptions in one list</li>
+                            <li>One-click unsubscribe from each</li>
+                            <li>Done in minutes!</li>
+                        </ol>
+                        <div class="best-for">Best for: People with 100+ subscriptions who want speed</div>
+                    </div>
+                </div>
+                <div class="method-card">
+                    <div class="method-header filter">
+                        <h4>🔒 Filter + Block Method</h4>
+                    </div>
+                    <div class="method-body">
+                        <div class="time">⏱️ 15 minutes setup</div>
+                        <ol>
+                            <li>Create inbox filter rules</li>
+                            <li>Auto-delete emails with "sale" "deal" "% off"</li>
+                            <li>Block sender domains</li>
+                            <li>Set up a "shopping" email for signups</li>
+                            <li>Never see marketing emails again!</li>
+                        </ol>
+                        <div class="best-for">Best for: Technical users who want automation</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🔍</span> Gmail Search Hacks</h2>
+            <p style="color: #666; margin-bottom: 20px;">Use these searches to find different types of marketing emails:</p>
+            
+            <div class="search-grid">
+                <div class="search-term">unsubscribe</div>
+                <div class="search-term">sale OR deal</div>
+                <div class="search-term">"limited time"</div>
+                <div class="search-term">"% off"</div>
+                <div class="search-term">"flash sale"</div>
+                <div class="search-term">"don't miss"</div>
+                <div class="search-term">"ends today"</div>
+                <div class="search-term">"free shipping"</div>
+                <div class="search-term">"just for you"</div>
+                <div class="search-term">"we miss you"</div>
+                <div class="search-term">"cart" OR "order"</div>
+                <div class="search-term">category:promotions</div>
+            </div>
+            
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Power Tip: Create a Filter</div>
+                <p>In Gmail: Settings → Filters → Create new filter → Enter "unsubscribe sale" → Check "Skip Inbox" and "Delete it" → Apply to existing emails too!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🛠️</span> Best Email Cleanup Tools</h2>
+            <div class="tool-grid">
+                <div class="tool-card">
+                    <h4>Unroll.me</h4>
+                    <div class="type">Free</div>
+                    <p>See all subscriptions in one dashboard. One-click unsubscribe. Can also "roll up" emails you want into a daily digest.</p>
+                    <a href="https://unroll.me" target="_blank">unroll.me →</a>
+                </div>
+                <div class="tool-card">
+                    <h4>Clean Email</h4>
+                    <div class="type">Free trial, then $9.99/mo</div>
+                    <p>More powerful filtering, bulk actions, and automation. Great for very messy inboxes.</p>
+                    <a href="https://clean.email" target="_blank">clean.email →</a>
+                </div>
+                <div class="tool-card">
+                    <h4>Leave Me Alone</h4>
+                    <div class="type">Pay per use ($8 for 50)</div>
+                    <p>Privacy-focused, no data selling. See how many emails each sender has sent you. Pay only for what you use.</p>
+                    <a href="https://leavemealone.app" target="_blank">leavemealone.app →</a>
+                </div>
+                <div class="tool-card">
+                    <h4>Gmail's Built-In Tools</h4>
+                    <div class="type">Free</div>
+                    <p>Promotions tab, filters, block sender. Not as fast but doesn't require third-party access to your email.</p>
+                    <a href="https://support.google.com/mail" target="_blank">Gmail Help →</a>
                 </div>
             </div>
             
-            <div class="method-box">
-                <h3>Method 1: Manual Unsubscribe (15 min)</h3>
-                <ol>
-                    <li>Open your email inbox</li>
-                    <li>Search for "unsubscribe" - this finds marketing emails</li>
-                    <li>Open each email and scroll to the bottom</li>
-                    <li>Click the tiny "Unsubscribe" link</li>
-                    <li>Confirm on the website</li>
-                    <li>Repeat 10+ times</li>
-                </ol>
+            <div class="warning-box">
+                <h4>⚠️ Privacy Note</h4>
+                <p>Free tools like Unroll.me may scan your emails for market research (anonymized). If privacy is a concern, use Leave Me Alone (paid) or the manual method. Either way, the benefit of stopping impulse purchases outweighs most concerns!</p>
             </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎓</span> Digital Declutter & Inbox Management Experts</h2>
+            <p style="color: #666; margin-bottom: 20px;">Learn more about reclaiming your digital life:</p>
             
-            <div class="method-box">
-                <h3>Method 2: Use Unroll.me (5 min)</h3>
-                <ol>
-                    <li>Go to Unroll.me</li>
-                    <li>Connect your email account</li>
-                    <li>See ALL your subscriptions in one list</li>
-                    <li>One-click unsubscribe from each</li>
-                    <li>Free and fast!</li>
-                </ol>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📵</div>
+                    <h4>Cal Newport</h4>
+                    <div class="platform">📚 Author & Podcast</div>
+                    <div class="followers">NYT Bestselling Author</div>
+                    <p>"Digital Minimalism" author. Teaches how to reclaim attention from digital distractions including email overload.</p>
+                    <a href="https://www.calnewport.com" class="influencer-link" target="_blank">calnewport.com →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📧</div>
+                    <h4>Merlin Mann</h4>
+                    <div class="platform">📺 YouTube & Podcast</div>
+                    <div class="followers">Inbox Zero Pioneer</div>
+                    <p>Creator of "Inbox Zero" methodology. His techniques for email management are legendary in productivity circles.</p>
+                    <a href="https://www.merlinmann.com" class="influencer-link" target="_blank">merlinmann.com →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💸</div>
+                    <h4>The Financial Diet</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <div class="followers">1M+ Subscribers</div>
+                    <p>Chelsea Fagan covers how marketing emails trigger spending and practical tips for digital declutter.</p>
+                    <a href="https://www.youtube.com/@TheFInancialDiet" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🧹</div>
+                    <h4>Marie Kondo</h4>
+                    <div class="platform">📚 Author</div>
+                    <div class="followers">Declutter Expert</div>
+                    <p>While known for physical declutter, her "spark joy" principle applies to digital life too. Does that email bring value?</p>
+                    <a href="https://konmari.com" class="influencer-link" target="_blank">konmari.com →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🚀</div>
+                    <h4>Unroll.me</h4>
+                    <div class="platform">🌐 Tool</div>
+                    <div class="followers">Millions of Users</div>
+                    <p>The most popular email cleanup tool. Their blog also has tips on managing inbox overload.</p>
+                    <a href="https://unroll.me" class="influencer-link" target="_blank">unroll.me →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📱</div>
+                    <h4>r/declutter</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <div class="followers">500K+ Members</div>
+                    <p>Community focused on decluttering all aspects of life including digital. Great for motivation and tips.</p>
+                    <a href="https://www.reddit.com/r/declutter" class="influencer-link" target="_blank">r/declutter →</a>
+                </div>
             </div>
-            
-            <div class="section">
-                <h2>Priority Unsubscribes</h2>
-                <ul class="checklist">
-                    <li><input type="checkbox" id="u1" onchange="updateProgress(); updateCounter()"><label for="u1">Amazon - daily deals, recommendations</label></li>
-                    <li><input type="checkbox" id="u2" onchange="updateProgress(); updateCounter()"><label for="u2">Target - weekly ads, Circle offers</label></li>
-                    <li><input type="checkbox" id="u3" onchange="updateProgress(); updateCounter()"><label for="u3">Walmart - rollbacks, savings catcher</label></li>
-                    <li><input type="checkbox" id="u4" onchange="updateProgress(); updateCounter()"><label for="u4">Clothing stores (Gap, Old Navy, H&M, etc.)</label></li>
-                    <li><input type="checkbox" id="u5" onchange="updateProgress(); updateCounter()"><label for="u5">Department stores (Macy's, Nordstrom, etc.)</label></li>
-                    <li><input type="checkbox" id="u6" onchange="updateProgress(); updateCounter()"><label for="u6">Food delivery (DoorDash, Uber Eats)</label></li>
-                    <li><input type="checkbox" id="u7" onchange="updateProgress(); updateCounter()"><label for="u7">Restaurant chains (Starbucks, Chipotle, etc.)</label></li>
-                    <li><input type="checkbox" id="u8" onchange="updateProgress(); updateCounter()"><label for="u8">Beauty/cosmetics stores</label></li>
-                    <li><input type="checkbox" id="u9" onchange="updateProgress(); updateCounter()"><label for="u9">Electronics (Best Buy, Apple, etc.)</label></li>
-                    <li><input type="checkbox" id="u10" onchange="updateProgress(); updateCounter()"><label for="u10">Home goods (Wayfair, Bed Bath, etc.)</label></li>
-                </ul>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
             </div>
-            
-            <div class="counter-box">
-                <h3>🎉 Your Unsubscribe Count</h3>
-                <div class="count" id="unsubscribe-count">0</div>
-                <div class="label">emails eliminated</div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Email Cleanup Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your email unsubscribe progress!
+
+DATE OF CLEANUP: ____
+
+BEFORE CLEANUP:
+Total emails in Promotions tab: ____
+Estimated marketing emails received/day: ____
+
+UNSUBSCRIBED FROM (track your count!):
+☐ Shopping sites (Amazon, Target, etc.): ____ unsubscribed
+☐ Food delivery (DoorDash, etc.): ____ unsubscribed  
+☐ Fashion/clothing: ____ unsubscribed
+☐ Travel sites: ____ unsubscribed
+☐ Tech/gaming: ____ unsubscribed
+☐ Beauty/cosmetics: ____ unsubscribed
+☐ Newsletters I never read: ____ unsubscribed
+☐ Other: ____ unsubscribed
+
+TOTAL UNSUBSCRIBED: ____
+
+TOOL USED:
+☐ Manual unsubscribe
+☐ Unroll.me
+☐ Clean Email
+☐ Leave Me Alone
+☐ Gmail filters
+
+FILTERS SET UP:
+☐ Auto-delete 'sale' emails
+☐ Auto-delete 'deal' emails
+☐ Block specific senders
+☐ Created shopping email for future signups
+
+ONE WEEK CHECK-IN:
+Marketing emails received this week: ____
+Estimated impulse purchases avoided: $____
+
+ONE MONTH CHECK-IN:
+Total estimated savings: $____
+"></textarea>
             </div>
-            
-            <div class="section">
-                <h2>Bonus: Set Up Filters</h2>
-                <ul class="checklist">
-                    <li><input type="checkbox" id="f1" onchange="updateProgress()"><label for="f1">Create a filter to auto-delete emails with "% off"</label></li>
-                    <li><input type="checkbox" id="f2" onchange="updateProgress()"><label for="f2">Create a filter for "sale ends" → trash</label></li>
-                    <li><input type="checkbox" id="f3" onchange="updateProgress()"><label for="f3">Create a filter for "limited time" → trash</label></li>
-                </ul>
-            </div>
-            
-            <div class="section">
-                <h2>Going Forward</h2>
-                <ul class="checklist">
-                    <li><input type="checkbox" id="g1" onchange="updateProgress()"><label for="g1">Never give stores your real email at checkout</label></li>
-                    <li><input type="checkbox" id="g2" onchange="updateProgress()"><label for="g2">Use a separate email for shopping (check monthly only)</label></li>
-                    <li><input type="checkbox" id="g3" onchange="updateProgress()"><label for="g3">Uncheck "send me offers" boxes when buying online</label></li>
-                </ul>
-            </div>
-            
-            <div class="progress-section">
-                <h3>Your Progress</h3>
-                <div class="progress-bar"><div class="progress-fill" id="progress-bar" style="width: 0%"></div></div>
-                <div class="progress-text" id="progress-text">0 of 16 tasks complete</div>
-            </div>
-            
-            <a href="javascript:history.back()" class="cta-button">✓ Return to Blueprint</a>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
         </div>
     </div>
-    
+
     <script>
-        const STORAGE_KEY = 'playbook_email';
-        function loadProgress() { const saved = localStorage.getItem(STORAGE_KEY); if (saved) { JSON.parse(saved).forEach(id => { const cb = document.getElementById(id); if (cb) { cb.checked = true; cb.nextElementSibling.classList.add('done'); } }); } updateProgress(); updateCounter(); }
-        function updateProgress() { const checkboxes = document.querySelectorAll('input[type="checkbox"]'); const checked = []; let count = 0; checkboxes.forEach(cb => { if (cb.checked) { count++; checked.push(cb.id); cb.nextElementSibling.classList.add('done'); } else { cb.nextElementSibling.classList.remove('done'); } }); localStorage.setItem(STORAGE_KEY, JSON.stringify(checked)); document.getElementById('progress-bar').style.width = Math.round((count / checkboxes.length) * 100) + '%'; document.getElementById('progress-text').textContent = count + ' of ' + checkboxes.length + ' tasks complete'; }
-        function updateCounter() { let count = 0; for (let i = 1; i <= 10; i++) { if (document.getElementById('u' + i).checked) count++; } document.getElementById('unsubscribe-count').textContent = count; }
-        document.addEventListener('DOMContentLoaded', loadProgress);
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-email-unsubscribe');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) {
+                        document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                    }
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+
+        function toggleStep(el) {
+            el.classList.toggle('checked');
+            updateProgress();
+            saveProgress();
+        }
+
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-email-unsubscribe', JSON.stringify({ steps, notes }));
+        }
+
+        document.getElementById('notes').addEventListener('input', saveProgress);
     </script>
 </body>
 </html>
