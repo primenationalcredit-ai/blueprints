@@ -1,28 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bulk Buying Savings | ASAP Credit Repair Playbook</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>:root{--primary:#063d86;--success:#10b981;--bg:#f8fafc;--text:#1e293b;--text-light:#64748b;--border:#e2e8f0}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}.header{background:linear-gradient(135deg,#10b981,#059669);color:#fff;padding:40px 20px 50px;text-align:center}.header h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:12px}.main-content{max-width:800px;margin:-30px auto 40px;padding:0 20px}.back-link{color:#fff;text-decoration:none;opacity:.8;display:block;margin-bottom:16px}.category-badge{display:inline-block;background:rgba(255,255,255,.2);padding:6px 16px;border-radius:20px;font-size:.85rem;margin-bottom:16px}.goal-card{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid var(--success);border-radius:16px;padding:24px;margin-bottom:24px}.goal-card h2{color:#065f46;margin-bottom:12px}.goal-card .earnings{background:#fff;padding:10px 18px;border-radius:10px;margin-top:14px;font-weight:600;color:#065f46;display:inline-block}.section-card{background:#fff;border-radius:16px;padding:28px;margin-bottom:24px;border:1px solid var(--border)}.section-card h2{color:var(--primary);margin-bottom:20px}.task-list{list-style:none}.task-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)}.task-checkbox{width:28px;height:28px;border:2px solid var(--border);border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}.task-checkbox.checked{background:var(--success);border-color:var(--success);color:#fff}.task-title{font-weight:600;margin-bottom:6px}.task-desc{color:var(--text-light);font-size:.95rem}.task-badge{font-size:.8rem;padding:4px 10px;border-radius:6px;background:var(--bg);margin-top:10px;display:inline-block;margin-right:8px}textarea{width:100%;min-height:120px;padding:14px;border:2px solid var(--border);border-radius:10px;font-family:inherit;margin-top:10px}.help-section{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border:2px solid #7dd3fc;border-radius:16px;padding:20px;margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}.chat-btn{background:var(--primary);color:#fff;border:none;padding:12px 24px;border-radius:10px;font-weight:600;cursor:pointer}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📦 Bulk Buying Savings | ASAP Financial Services</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; font-size: 1.1em; opacity: 0.9; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .header { text-align: center; padding: 40px 30px; background: white; border-radius: 20px; margin-bottom: 20px; }
+        .header h1 { font-size: 2.5em; color: #1a1a2e; margin-bottom: 15px; }
+        .header .subtitle { font-size: 1.2em; color: #666; margin-bottom: 20px; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 10px 25px; border-radius: 25px; font-weight: 600; }
+        h2 { color: #1a1a2e; margin-bottom: 20px; font-size: 1.6em; }
+        .achieve-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 25px; }
+        .achieve-box p { color: #2e7d32; font-size: 1.1em; line-height: 1.6; margin-bottom: 20px; }
+        .savings-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; padding: 25px; border-radius: 15px; text-align: center; }
+        .savings-highlight .amount { font-size: 2.8em; font-weight: 700; }
+        .savings-highlight .label { font-size: 1.1em; opacity: 0.95; margin-top: 5px; }
+        .buy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .buy-card { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 20px; text-align: center; border-top: 4px solid #4caf50; }
+        .buy-card h4 { color: #2e7d32; margin-bottom: 8px; }
+        .buy-card .savings { color: #1b5e20; font-weight: 700; font-size: 1.2em; }
+        .buy-card p { color: #666; font-size: 0.85em; margin-top: 5px; }
+        .skip-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .skip-card { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-radius: 15px; padding: 20px; text-align: center; border-top: 4px solid #f44336; }
+        .skip-card h4 { color: #c62828; margin-bottom: 8px; }
+        .skip-card p { color: #666; font-size: 0.85em; }
+        .steps-container { display: flex; flex-direction: column; gap: 15px; }
+        .step { display: flex; gap: 15px; padding: 20px; background: #f8f9fa; border-radius: 15px; }
+        .step-checkbox { width: 30px; height: 30px; min-width: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 14px; color: transparent; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-content h4 { color: #1a1a2e; margin-bottom: 8px; }
+        .step-content p { color: #666; line-height: 1.5; font-size: 0.95em; }
+        .store-comparison { background: #f8f9fa; border-radius: 15px; padding: 25px; margin: 20px 0; }
+        .store-comparison h4 { color: #1a1a2e; margin-bottom: 15px; }
+        .store-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #e0e0e0; }
+        .store-row:last-child { border-bottom: none; }
+        .store-row .name { color: #333; font-weight: 600; }
+        .store-row .details { color: #666; font-size: 0.9em; }
+        .store-row .cost { color: #4caf50; font-weight: 700; }
+        .math-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 25px; margin: 20px 0; border-left: 4px solid #2196f3; }
+        .math-box h4 { color: #1565c0; margin-bottom: 15px; }
+        .math-box .calculation { background: white; padding: 15px; border-radius: 10px; font-family: monospace; color: #333; line-height: 1.8; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 20px 0; }
+        .pro-tip h4 { color: #f57c00; margin-bottom: 10px; }
+        .pro-tip p, .pro-tip ul { color: #666; line-height: 1.6; }
+        .pro-tip ul { margin-left: 20px; margin-top: 10px; }
+        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 20px 0; }
+        .warning-box h4 { color: #c62828; margin-bottom: 10px; }
+        .warning-box ul { color: #666; line-height: 1.8; margin-left: 20px; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #667eea; font-size: 0.9em; }
+        .influencer-card p { color: #666; font-size: 0.9em; margin: 10px 0; }
+        .influencer-link { color: #667eea; text-decoration: none; font-weight: 600; font-size: 0.9em; }
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; text-align: center; }
+        .progress-tracker h3 { color: white; margin-bottom: 20px; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; overflow: hidden; margin-bottom: 15px; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s ease; width: 0%; }
+        .notes-section textarea { width: 100%; min-height: 200px; padding: 20px; border: 2px solid #e0e0e0; border-radius: 15px; font-family: inherit; font-size: 1em; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #667eea; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 40px 30px; text-align: center; }
+        .cta-section h3 { color: white; margin-bottom: 15px; }
+        .cta-section p { opacity: 0.9; margin-bottom: 25px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .stat-card { background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 20px; border-radius: 15px; text-align: center; }
+        .stat-card .number { font-size: 2em; font-weight: 700; }
+        .stat-card .label { font-size: 0.9em; opacity: 0.9; }
+        @media (max-width: 768px) { .header h1 { font-size: 1.8em; } .card { padding: 20px; } }
+    </style>
 </head>
 <body>
-  <header class="header"><a href="index.html" class="back-link">← Back to All Playbooks</a><span class="category-badge">💰 Save Money</span><h1>Bulk Buying Savings</h1><p style="opacity:.9;max-width:600px;margin:0 auto">Step-by-step guide to saving money!</p></header>
-  <main class="main-content">
-    <div class="goal-card"><h2>🎯 What You'll Achieve</h2><p>Start saving money immediately with these proven strategies!</p><div class="earnings">💰 Save hundreds to thousands per year</div></div>
-    <div class="section-card"><h2>📋 Quick Start Guide</h2>
-      <ul class="task-list">
-        <li class="task-item"><div class="task-checkbox" data-task="0"></div><div><div class="task-title">Step 1: Assess your current situation</div><div class="task-desc">Understand where your money is going now.</div></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="1"></div><div><div class="task-title">Step 2: Identify savings opportunities</div><div class="task-desc">Find the biggest areas to cut costs.</div></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="2"></div><div><div class="task-title">Step 3: Take action</div><div class="task-desc">Implement the changes to start saving.</div></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="3"></div><div><div class="task-title">Step 4: Track your savings</div><div class="task-desc">Monitor how much you're saving each month.</div></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="4"></div><div><div class="task-title">Step 5: Automate where possible</div><div class="task-desc">Set up systems to save automatically.</div></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="5"></div><div><div class="task-title">Step 6: Reinvest your savings</div><div class="task-desc">Put the money saved toward your goals.</div></div></li>
-      </ul></div>
-    <div class="section-card"><h2>📝 Your Savings Tracker</h2><textarea id="userNotes" placeholder="Track your savings progress here..."></textarea></div>
-    <div class="help-section"><span style="font-size:24px">💬</span><div style="flex:1"><strong>Need Help?</strong> Chat with a coach!</div><button class="chat-btn" onclick="location.href='https://asapcreditrepairusa.com/chat'">Start Chat</button></div>
-  </main>
-  <script>const K='pb_bulk-buying-savings';function load(){const s=localStorage.getItem(K);if(s){const d=JSON.parse(s);document.querySelectorAll('.task-checkbox').forEach((b,i)=>{if(d.tasks&&d.tasks[i]){b.classList.add('checked');b.innerHTML='✓'}});if(d.notes)document.getElementById('userNotes').value=d.notes}}function save(){const t=[];document.querySelectorAll('.task-checkbox').forEach(b=>t.push(b.classList.contains('checked')));localStorage.setItem(K,JSON.stringify({tasks:t,notes:document.getElementById('userNotes').value}))}document.querySelectorAll('.task-checkbox').forEach(b=>b.onclick=function(){this.classList.toggle('checked');this.innerHTML=this.classList.contains('checked')?'✓':'';save()});document.getElementById('userNotes').oninput=save;load();</script>
+    <div class="container">
+        <a href="expense-playbooks.html" class="back-link">← Back to Expense Playbooks</a>
+        
+        <div class="header">
+            <h1>📦 Bulk Buying Guide</h1>
+            <p class="subtitle">What to buy in bulk (and what to skip)</p>
+            <div class="time-badge">⏱️ Strategic shopping • Save $100-$300/month</div>
+        </div>
+        
+        <div class="card">
+            <div class="achieve-box">
+                <h2>🎯 What You'll Achieve</h2>
+                <p>Bulk buying can save 20-50% on staples—but it can also waste money if you buy the wrong things. This guide shows exactly what's worth buying in bulk, what to skip, and how to calculate whether that Costco membership actually pays off.</p>
+                <div class="savings-highlight">
+                    <div class="amount">20-50% Off</div>
+                    <div class="label">Average savings on the RIGHT bulk purchases</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>📊 Bulk Buying Math</h2>
+            <div class="stats-grid">
+                <div class="stat-card"><div class="number">$60</div><div class="label">Costco annual fee</div></div>
+                <div class="stat-card"><div class="number">$120</div><div class="label">Executive (2% back)</div></div>
+                <div class="stat-card"><div class="number">20-50%</div><div class="label">Savings on staples</div></div>
+                <div class="stat-card"><div class="number">$500+</div><div class="label">Avg annual savings</div></div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>✅ Best Items to Buy in Bulk</h2>
+            <div class="buy-grid">
+                <div class="buy-card"><h4>🧻 Toilet Paper</h4><div class="savings">Save 30-40%</div><p>Non-perishable, always needed</p></div>
+                <div class="buy-card"><h4>🧴 Paper Towels</h4><div class="savings">Save 30-40%</div><p>Long shelf life</p></div>
+                <div class="buy-card"><h4>🧼 Laundry Detergent</h4><div class="savings">Save 25-35%</div><p>Never expires</p></div>
+                <div class="buy-card"><h4>🍚 Rice/Pasta</h4><div class="savings">Save 30-50%</div><p>Stores for years</p></div>
+                <div class="buy-card"><h4>🥜 Nuts</h4><div class="savings">Save 40-50%</div><p>Freeze for freshness</p></div>
+                <div class="buy-card"><h4>🧀 Cheese (blocks)</h4><div class="savings">Save 30-40%</div><p>Freeze extra portions</p></div>
+                <div class="buy-card"><h4>🥩 Meat</h4><div class="savings">Save 20-40%</div><p>Portion & freeze immediately</p></div>
+                <div class="buy-card"><h4>☕ Coffee</h4><div class="savings">Save 25-35%</div><p>Freeze extra bags</p></div>
+                <div class="buy-card"><h4>🫒 Olive Oil</h4><div class="savings">Save 30-40%</div><p>Long shelf life</p></div>
+                <div class="buy-card"><h4>💊 OTC Medicine</h4><div class="savings">Save 40-60%</div><p>Check expiration dates</p></div>
+                <div class="buy-card"><h4>🔋 Batteries</h4><div class="savings">Save 30-50%</div><p>Never expire</p></div>
+                <div class="buy-card"><h4>🧽 Cleaning Supplies</h4><div class="savings">Save 25-35%</div><p>Always needed</p></div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>❌ Skip These in Bulk</h2>
+            <div class="skip-grid">
+                <div class="skip-card"><h4>🥬 Fresh Produce</h4><p>Spoils before you use it</p></div>
+                <div class="skip-card"><h4>🍞 Bread</h4><p>Goes stale/moldy fast</p></div>
+                <div class="skip-card"><h4>🥛 Milk (unless you use it fast)</h4><p>Short shelf life</p></div>
+                <div class="skip-card"><h4>🥣 Cereal</h4><p>Goes stale, often not cheaper</p></div>
+                <div class="skip-card"><h4>🧴 Condiments</h4><p>Expire before you finish</p></div>
+                <div class="skip-card"><h4>🌾 Flour</h4><p>Goes rancid, attracts bugs</p></div>
+                <div class="skip-card"><h4>🫘 Spices</h4><p>Lose potency over time</p></div>
+                <div class="skip-card"><h4>🧃 Soda/Juice</h4><p>Not actually cheaper in bulk</p></div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>📝 Smart Bulk Buying Steps</h2>
+            <div class="steps-container">
+                <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><h4>Step 1: Calculate Your Real Usage</h4><p>How fast do you actually go through toilet paper? Laundry detergent? Don't buy 6 months supply if you've never tracked usage.</p></div></div>
+                <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><h4>Step 2: Compare Unit Prices</h4><p>Always check price per ounce/unit. Sometimes regular stores beat warehouse prices, especially with sales + coupons.</p></div></div>
+                <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><h4>Step 3: Check Storage Space</h4><p>No point buying bulk if you don't have room. Calculate what you can actually store properly.</p></div></div>
+                <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><h4>Step 4: Consider Membership Math</h4><p>Costco is $60/year. You need to save more than that to break even. Calculate before joining.</p></div></div>
+                <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><h4>Step 5: Have a List (and Stick to It)</h4><p>Costco is designed to make you impulse buy. Go in with a specific list. Don't browse.</p></div></div>
+                <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><h4>Step 6: Split with Friends/Family</h4><p>Can't use 5 lbs of nuts? Split bulk purchases with someone. Both save money.</p></div></div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>🏪 Warehouse Store Comparison</h2>
+            <div class="store-comparison">
+                <div class="store-row"><span class="name">🔴 Costco</span><span class="details">Best: Meat, cheese, rotisserie chicken, Kirkland brand</span><span class="cost">$60-$120/yr</span></div>
+                <div class="store-row"><span class="name">🟡 Sam's Club</span><span class="details">Best: Pharmacy, Scan & Go app, household items</span><span class="cost">$50-$110/yr</span></div>
+                <div class="store-row"><span class="name">🟢 BJ's</span><span class="details">Best: Accepts manufacturer coupons, smaller sizes</span><span class="cost">$55-$110/yr</span></div>
+                <div class="store-row"><span class="name">🛒 Restaurant Depot</span><span class="details">Best: Meat, produce (need business license or day pass)</span><span class="cost">Free with license</span></div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>🧮 Is a Membership Worth It?</h2>
+            <div class="math-box">
+                <h4>Costco Break-Even Calculation</h4>
+                <div class="calculation">
+Membership cost: $60/year<br>
+<br>
+If bulk saves 25% on average, you need to spend:<br>
+$60 ÷ 0.25 = $240/year on bulk items<br>
+<br>
+That's only $20/month on bulk staples!<br>
+<br>
+Most families easily spend $100+/month at Costco<br>
+→ Saves $25+/month = $300/year<br>
+→ Membership pays for itself 5x over
+                </div>
+            </div>
+            
+            <div class="pro-tip">
+                <h4>💡 Executive Membership Math</h4>
+                <p>Executive costs $120 but gives 2% back. Worth it if you spend $3,000+/year at Costco ($250/month). That earns you $60 back, covering the difference. Spend more? You profit.</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="pro-tip">
+                <h4>💡 Bulk Buying Pro Tips</h4>
+                <ul>
+                    <li><strong>Costco rotisserie chicken:</strong> $4.99, loss leader. Best deal in store. Buy two, shred one for meals all week.</li>
+                    <li><strong>Kirkland = name brand:</strong> Kirkland vodka = Grey Goose. Kirkland batteries = Duracell. Same factories.</li>
+                    <li><strong>Price ending in .97:</strong> Manager markdown. Price ending in .00 or asterisk = clearance.</li>
+                    <li><strong>Gas savings:</strong> Costco gas is often 20-40¢ cheaper per gallon. Can save $200+/year alone.</li>
+                    <li><strong>Don't need pharmacy membership:</strong> Costco pharmacy is open to non-members (by law).</li>
+                </ul>
+            </div>
+            
+            <div class="warning-box">
+                <h4>⚠️ Bulk Buying Traps</h4>
+                <ul>
+                    <li><strong>Buying perishables you can't use:</strong> 5 lbs of spinach will rot</li>
+                    <li><strong>Not comparing unit prices:</strong> Sometimes regular store + coupon beats bulk</li>
+                    <li><strong>Impulse "deals":</strong> That 72" TV wasn't on your list for a reason</li>
+                    <li><strong>Forgetting storage costs:</strong> Buying a freezer to store bulk food adds cost</li>
+                    <li><strong>Over-consuming:</strong> Having 50 granola bars means eating more granola bars</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>🌟 Bulk Buying Resources</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card"><div class="influencer-avatar">📺</div><h4>Costco Insider</h4><div class="platform">📺 YouTube</div><p>Deep dives on best Costco deals, what to buy and skip.</p><a href="https://www.youtube.com/results?search_query=costco+best+deals" class="influencer-link" target="_blank">Watch Videos →</a></div>
+                <div class="influencer-card"><div class="influencer-avatar">💬</div><h4>r/Costco</h4><div class="platform">🔗 Reddit</div><div class="followers">500K+ members</div><p>Deal alerts, product reviews, insider tips from employees.</p><a href="https://www.reddit.com/r/Costco/" class="influencer-link" target="_blank">Join Community →</a></div>
+                <div class="influencer-card"><div class="influencer-avatar">🎯</div><h4>Costco Deals</h4><div class="platform">🌐 Website</div><p>Tracks Costco deals and clearance items. </p><a href="https://www.costcoinsider.com" class="influencer-link" target="_blank">Find Deals →</a></div>
+                <div class="influencer-card"><div class="influencer-avatar">📱</div><h4>Costco App</h4><div class="platform">📱 App</div><p>Digital membership card, warehouse-specific pricing, delivery options.</p><a href="https://www.costco.com/my-warehouse-app.html" class="influencer-link" target="_blank">Download →</a></div>
+            </div>
+        </div>
+        
+        <div class="card"><div class="progress-tracker"><h3>📈 Your Progress</h3><div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div><p class="progress-text"><span id="completed">0</span> of 6 steps completed</p></div></div>
+        
+        <div class="card notes-section">
+            <h2>📓 Your Bulk Buying Tracker</h2>
+            <textarea id="notes" placeholder="Track your bulk purchases!
+
+MEMBERSHIP STATUS:
+━━━━━━━━━━━━━━━━━
+☐ Costco ($60 or $120)
+☐ Sam's Club
+☐ BJ's
+
+MY BULK BUY LIST:
+━━━━━━━━━━━━━━━━━
+(Only items I use enough)
+☐ Toilet paper
+☐ Paper towels
+☐ Laundry detergent
+☐ Rice/pasta
+☐ Meat (freeze)
+☐ ____
+☐ ____
+
+PRICE COMPARISONS:
+━━━━━━━━━━━━━━━━━
+Item | Bulk Price | Regular Price
+____ | $____ | $____
+____ | $____ | $____
+
+MONTHLY BULK SPENDING: $____
+ESTIMATED SAVINGS: $____
+
+ANNUAL CALCULATION:
+Membership: $____
+Savings: $____
+NET BENEFIT: $____"></textarea>
+        </div>
+        
+        <div class="card"><div class="cta-section"><h3>🚀 Need Help With Your Finances?</h3><p>ASAP Financial Services helps you save money and build wealth.</p><a href="https://asapcreditrepairusa.com" class="cta-button" target="_blank">Get Support →</a></div></div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-bulk-buying-savings');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => { if (checked) { document.querySelectorAll('.step-checkbox')[index].classList.add('checked'); } });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-bulk-buying-savings', JSON.stringify({ steps, notes }));
+        }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>
