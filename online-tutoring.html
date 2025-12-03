@@ -1,312 +1,395 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Online Tutoring | ASAP Credit Repair Playbook</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root { --primary: #063d86; --primary-light: #0a4fa8; --primary-dark: #042a5c; --accent: #00c9a7; --success: #10b981; --warning: #f59e0b; --bg: #f8fafc; --text: #1e293b; --text-light: #64748b; --border: #e2e8f0; }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 17px; }
-    .header { background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%); color: white; padding: 40px 20px 50px; text-align: center; }
-    .header-content { max-width: 800px; margin: 0 auto; }
-    .back-link { display: inline-flex; align-items: center; gap: 8px; color: white; text-decoration: none; opacity: 0.8; font-size: 0.9rem; margin-bottom: 16px; }
-    .category-badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; margin-bottom: 16px; }
-    .header h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 12px; }
-    .header-subtitle { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
-    .main-content { max-width: 800px; margin: -30px auto 40px; padding: 0 20px; }
-    .progress-section { position: sticky; top: 0; background: white; padding: 16px 20px; margin: 0 -20px 20px; border-bottom: 1px solid var(--border); z-index: 100; display: flex; align-items: center; gap: 16px; }
-    .progress-bar { flex: 1; height: 10px; background: var(--border); border-radius: 5px; overflow: hidden; }
-    .progress-fill { height: 100%; background: linear-gradient(90deg, #7c3aed, #a78bfa); border-radius: 5px; transition: width 0.3s; width: 0%; }
-    .progress-text { font-weight: 600; color: var(--text); min-width: 50px; }
-    .goal-card { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border: 2px solid var(--success); border-radius: 16px; padding: 24px 28px; margin-bottom: 30px; }
-    .goal-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; color: #065f46; margin-bottom: 12px; }
-    .goal-card p { color: #047857; font-size: 1.05rem; }
-    .goal-card .earnings { background: white; display: inline-block; padding: 10px 18px; border-radius: 10px; margin-top: 14px; font-weight: 600; color: #065f46; font-size: 1.1rem; }
-    .section-card { background: white; border-radius: 16px; padding: 28px; margin-bottom: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid var(--border); }
-    .section-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; color: var(--primary); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
-    .section-card h2 .icon { width: 40px; height: 40px; background: linear-gradient(135deg, #7c3aed, #a78bfa); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; }
-    .section-intro { color: var(--text-light); margin-bottom: 20px; font-size: 1rem; }
-    .task-list { list-style: none; }
-    .task-item { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border); }
-    .task-item:last-child { border-bottom: none; }
-    .task-checkbox { flex-shrink: 0; width: 28px; height: 28px; border: 2px solid var(--border); border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; margin-top: 2px; font-weight: bold; }
-    .task-checkbox:hover { border-color: var(--primary); }
-    .task-checkbox.checked { background: var(--success); border-color: var(--success); color: white; }
-    .task-content { flex: 1; }
-    .task-title { font-weight: 600; font-size: 1.1rem; margin-bottom: 8px; color: var(--text); }
-    .task-desc { color: var(--text-light); font-size: 0.95rem; line-height: 1.6; }
-    .task-meta { display: flex; gap: 12px; margin-top: 10px; flex-wrap: wrap; }
-    .task-badge { font-size: 0.8rem; padding: 4px 10px; border-radius: 6px; background: var(--bg); color: var(--text-light); }
-    .task-badge.easy { background: #dcfce7; color: #166534; }
-    .details-box { background: #f8fafc; border-radius: 10px; padding: 16px; margin-top: 12px; border-left: 4px solid #7c3aed; }
-    .details-box h4 { font-size: 0.9rem; color: #6d28d9; margin-bottom: 10px; }
-    .details-box ul { margin-left: 18px; color: var(--text); font-size: 0.9rem; }
-    .details-box li { margin-bottom: 8px; line-height: 1.5; }
-    .subject-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; margin-top: 16px; }
-    .subject-card { background: var(--bg); border-radius: 10px; padding: 14px; text-align: center; }
-    .subject-card .emoji { font-size: 1.5rem; margin-bottom: 6px; }
-    .subject-card h4 { font-size: 0.9rem; color: var(--text); margin-bottom: 2px; }
-    .subject-card .rate { font-size: 0.8rem; color: var(--success); font-weight: 600; }
-    .platform-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin-top: 16px; }
-    .platform-card { background: var(--bg); border-radius: 12px; padding: 18px; }
-    .platform-card h4 { font-size: 1.05rem; color: #6d28d9; margin-bottom: 4px; }
-    .platform-card .rate { font-size: 0.85rem; color: var(--success); font-weight: 600; margin-bottom: 8px; }
-    .platform-card p { font-size: 0.85rem; color: var(--text-light); }
-    .resources-section { background: linear-gradient(135deg, #ede9fe, #ddd6fe); border: 2px solid #a78bfa; }
-    .resources-section h2 { color: #5b21b6; }
-    .resource-item { background: white; border-radius: 12px; padding: 16px 20px; margin-bottom: 12px; display: block; text-decoration: none; color: var(--text); transition: all 0.2s; }
-    .resource-item:hover { transform: translateX(4px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-    .resource-item h4 { font-size: 1rem; margin-bottom: 4px; color: #5b21b6; }
-    .resource-item p { font-size: 0.85rem; color: var(--text-light); }
-    .resource-item .link { font-size: 0.8rem; color: #7c3aed; }
-    .section-card textarea { width: 100%; min-height: 150px; padding: 16px 18px; border: 2px solid var(--border); border-radius: 12px; font-family: inherit; font-size: 1rem; resize: vertical; box-sizing: border-box; display: block; line-height: 1.6; }
-    .section-card textarea:focus { outline: none; border-color: var(--primary); }
-    .help-section { background: linear-gradient(135deg, #f0f9ff, #e0f2fe); border: 2px solid #7dd3fc; border-radius: 16px; padding: 24px 28px; margin-top: 30px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
-    .help-icon { width: 56px; height: 56px; background: white; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; }
-    .help-content { flex: 1; min-width: 200px; }
-    .help-content h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; margin-bottom: 4px; }
-    .help-content p { color: var(--text-light); font-size: 0.95rem; }
-    .chat-btn { background: var(--primary); color: white; border: none; padding: 14px 28px; border-radius: 12px; font-family: inherit; font-size: 1rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: all 0.2s; }
-    .chat-btn:hover { background: var(--primary-light); transform: translateY(-2px); }
-    @media (max-width: 600px) { .header { padding: 30px 20px 40px; } .section-card { padding: 20px; } .help-section { flex-direction: column; text-align: center; } }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Tutoring - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #fff3e0, #ffe0b2); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #e65100; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #fff3e0; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .subject-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; margin: 20px 0; }
+        .subject-card { border-radius: 12px; padding: 15px; text-align: center; }
+        .subject-card.math { background: linear-gradient(135deg, #e3f2fd, #bbdefb); }
+        .subject-card.science { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); }
+        .subject-card.english { background: linear-gradient(135deg, #fff3e0, #ffe0b2); }
+        .subject-card.lang { background: linear-gradient(135deg, #fce4ec, #f8bbd9); }
+        .subject-card.test { background: linear-gradient(135deg, #f3e5f5, #e1bee7); }
+        .subject-card.code { background: linear-gradient(135deg, #e0f2f1, #b2dfdb); }
+        .subject-card.music { background: linear-gradient(135deg, #fff8e1, #ffecb3); }
+        .subject-card.esl { background: linear-gradient(135deg, #e8eaf6, #c5cae9); }
+        .subject-card .emoji { font-size: 1.5em; margin-bottom: 5px; }
+        .subject-card h4 { color: #1a1a2e; font-size: 12px; }
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .platform-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #667eea; }
+        .platform-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .platform-card .rate { color: #4caf50; font-weight: 600; font-size: 13px; margin-bottom: 5px; }
+        .platform-card p { color: #666; font-size: 12px; }
+        .platform-card a { color: #667eea; text-decoration: none; font-weight: 600; font-size: 13px; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .qualify-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .qualify-card { background: #e8f5e9; border-radius: 12px; padding: 15px; }
+        .qualify-card p { color: #2e7d32; font-size: 13px; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #667eea; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; }
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #667eea; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+    </style>
 </head>
 <body>
-  <header class="header">
-    <div class="header-content">
-      <a href="index.html" class="back-link">← Back to All Playbooks</a>
-      <span class="category-badge">📚 Education</span>
-      <h1>Online Tutoring</h1>
-      <p class="header-subtitle">Share your knowledge and get paid! Tutor students in subjects you're good at - from your couch, on your schedule. Earn $20-80+/hour.</p>
-    </div>
-  </header>
+    <div class="container">
+        <a href="income-playbooks.html" class="back-link">← Back to Income Playbooks</a>
+        
+        <div class="header">
+            <h1>📚 Online Tutoring</h1>
+            <p class="subtitle">Tutor students in subjects you know well - from home!</p>
+            <div class="time-badge">⏱️ No startup cost • Earn $20-80/hour • Flexible schedule!</div>
+        </div>
 
-  <main class="main-content">
-    <div class="progress-section">
-      <span style="font-size: 0.9rem; color: var(--text-light);">Your Progress:</span>
-      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
-      <span class="progress-text" id="progressText">0%</span>
-    </div>
-
-    <div class="goal-card">
-      <h2>🎯 What You'll Achieve</h2>
-      <p>You'll tutor students online in subjects you know well. Work from home, set your own hours, and help students succeed while earning great money!</p>
-      <div class="earnings">💰 Earn $20-80+/hour depending on subject and experience</div>
-    </div>
-
-    <div class="section-card">
-      <h2><span class="icon">📖</span> High-Demand Subjects</h2>
-      <p class="section-intro">These subjects pay well and have lots of students looking for help!</p>
-      
-      <div class="subject-grid">
-        <div class="subject-card">
-          <div class="emoji">➕</div>
-          <h4>Math (all levels)</h4>
-          <div class="rate">$25-60/hr</div>
-        </div>
-        <div class="subject-card">
-          <div class="emoji">🔬</div>
-          <h4>Science</h4>
-          <div class="rate">$25-50/hr</div>
-        </div>
-        <div class="subject-card">
-          <div class="emoji">📝</div>
-          <h4>English/Writing</h4>
-          <div class="rate">$20-45/hr</div>
-        </div>
-        <div class="subject-card">
-          <div class="emoji">🌍</div>
-          <h4>Foreign Languages</h4>
-          <div class="rate">$25-60/hr</div>
-        </div>
-        <div class="subject-card">
-          <div class="emoji">📊</div>
-          <h4">SAT/ACT Prep</h4>
-          <div class="rate">$40-100/hr</div>
-        </div>
-        <div class="subject-card">
-          <div class="emoji">💻</div>
-          <h4">Coding/CS</h4>
-          <div class="rate">$40-80/hr</div>
-        </div>
-        <div class="subject-card">
-          <div class="emoji">🎸</div>
-          <h4">Music</h4>
-          <div class="rate">$30-75/hr</div>
-        </div>
-        <div class="subject-card">
-          <div class="emoji">🗣️</div>
-          <h4">ESL/English</h4>
-          <div class="rate">$15-35/hr</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section-card">
-      <h2><span class="icon">🖥️</span> Tutoring Platforms</h2>
-      <p class="section-intro">These platforms connect you with students looking for tutors!</p>
-      
-      <div class="platform-grid">
-        <div class="platform-card">
-          <h4">Wyzant</h4>
-          <div class="rate">$20-80+/hour</div>
-          <p>Set your own rate, keep 75%. All subjects, all ages.</p>
-        </div>
-        <div class="platform-card">
-          <h4">Tutor.com</h4>
-          <div class="rate">$15-25/hour</div>
-          <p>Steady work, flexible hours. Good for starting out.</p>
-        </div>
-        <div class="platform-card">
-          <h4">Varsity Tutors</h4>
-          <div class="rate">$15-40/hour</div>
-          <p>They find students for you. Good variety of subjects.</p>
-        </div>
-        <div class="platform-card">
-          <h4">Preply</h4>
-          <div class="rate">$15-50+/hour</div>
-          <p>Great for language tutoring. Students worldwide.</p>
-        </div>
-        <div class="platform-card">
-          <h4">Cambly</h4>
-          <div class="rate">$10-12/hour</div>
-          <p>Easy ESL conversation. No lesson planning needed.</p>
-        </div>
-        <div class="platform-card">
-          <h4">Private (your own clients)</h4>
-          <div class="rate">$30-100+/hour</div>
-          <p>Keep 100% of earnings. Build through word of mouth!</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="section-card">
-      <h2><span class="icon">📋</span> Step-by-Step: Start Tutoring</h2>
-      <ul class="task-list">
-        <li class="task-item">
-          <div class="task-checkbox" data-task="0"></div>
-          <div class="task-content">
-            <div class="task-title">Step 1: Identify your best subjects</div>
-            <div class="task-desc">What do you know well? What could you teach? Even if you're not an expert, you can tutor levels below yours!</div>
-            <div class="details-box">
-              <h4">You can tutor if you:</h4>
-              <ul>
-                <li>Got an A or B in a subject</li>
-                <li>Scored well on standardized tests</li>
-                <li>Are fluent in another language</li>
-                <li>Play an instrument</li>
-                <li>Have professional skills (Excel, coding, etc.)</li>
-              </ul>
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Tutor students online in subjects you know well. Work from home, set your own hours, and help students succeed while earning great money! Even if you're not an expert, you can tutor levels below yours. SAT/ACT prep and coding pay the highest rates.</p>
             </div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 15 minutes</span>
-              <span class="task-badge easy">Think it through</span>
+            <div class="income-highlight">
+                <h3>Earn $20-80/Hour</h3>
+                <p>General subjects $20-40/hr • Test prep $40-80/hr • 100% remote!</p>
             </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="1"></div>
-          <div class="task-content">
-            <div class="task-title">Step 2: Sign up on 1-2 tutoring platforms</div>
-            <div class="task-desc">Wyzant and Tutor.com are good starting points. Fill out your profile completely!</div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 30-60 minutes</span>
-              <span class="task-badge easy">Get on multiple platforms</span>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📖</span> High-Demand Subjects</h2>
+            <p style="color: #666; margin-bottom: 15px;">These subjects pay well and have lots of students!</p>
+            <div class="subject-grid">
+                <div class="subject-card math">
+                    <div class="emoji">🔢</div>
+                    <h4>Math (All Levels)</h4>
+                </div>
+                <div class="subject-card science">
+                    <div class="emoji">🔬</div>
+                    <h4>Science</h4>
+                </div>
+                <div class="subject-card english">
+                    <div class="emoji">📝</div>
+                    <h4>English/Writing</h4>
+                </div>
+                <div class="subject-card lang">
+                    <div class="emoji">🌍</div>
+                    <h4>Languages</h4>
+                </div>
+                <div class="subject-card test">
+                    <div class="emoji">📋</div>
+                    <h4>SAT/ACT Prep</h4>
+                </div>
+                <div class="subject-card code">
+                    <div class="emoji">💻</div>
+                    <h4>Coding/CS</h4>
+                </div>
+                <div class="subject-card music">
+                    <div class="emoji">🎵</div>
+                    <h4>Music</h4>
+                </div>
+                <div class="subject-card esl">
+                    <div class="emoji">🗣️</div>
+                    <h4>ESL/English</h4>
+                </div>
             </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="2"></div>
-          <div class="task-content">
-            <div class="task-title">Step 3: Set up your tutoring space</div>
-            <div class="task-desc">Quiet room, good lighting, reliable internet, webcam. Professional background!</div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 30 minutes</span>
-              <span class="task-badge easy">Look professional</span>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">✅</span> Can You Tutor?</h2>
+            <p style="color: #666; margin-bottom: 15px;">You can tutor if you...</p>
+            <div class="qualify-grid">
+                <div class="qualify-card">
+                    <p>✅ Got an A or B in a subject</p>
+                </div>
+                <div class="qualify-card">
+                    <p>✅ Scored well on standardized tests</p>
+                </div>
+                <div class="qualify-card">
+                    <p>✅ Are fluent in another language</p>
+                </div>
+                <div class="qualify-card">
+                    <p>✅ Play an instrument</p>
+                </div>
+                <div class="qualify-card">
+                    <p>✅ Have professional skills (Excel, coding)</p>
+                </div>
+                <div class="qualify-card">
+                    <p>✅ Are 1-2 levels ahead of who you'd teach</p>
+                </div>
             </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="3"></div>
-          <div class="task-content">
-            <div class="task-title">Step 4: Price competitively to start</div>
-            <div class="task-desc">Start lower to build reviews, then raise rates. $20-30/hr is reasonable to start for most subjects.</div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ Research</span>
-              <span class="task-badge easy">Build reviews first</span>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🖥️</span> Tutoring Platforms</h2>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h4>Wyzant</h4>
+                    <div class="rate">Set your rate, keep 75%</div>
+                    <p>All subjects, all ages. Most popular platform!</p>
+                    <a href="https://www.wyzant.com" target="_blank">wyzant.com →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>Tutor.com</h4>
+                    <div class="rate">Steady work, flexible hours</div>
+                    <p>Good for starting out. Consistent student flow.</p>
+                    <a href="https://www.tutor.com" target="_blank">tutor.com →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>Varsity Tutors</h4>
+                    <div class="rate">They find students for you</div>
+                    <p>Good variety of subjects. Handles scheduling.</p>
+                    <a href="https://www.varsitytutors.com" target="_blank">varsitytutors.com →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>Preply</h4>
+                    <div class="rate">Great for languages</div>
+                    <p>Students worldwide. Set your own schedule.</p>
+                    <a href="https://preply.com" target="_blank">preply.com →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>Cambly</h4>
+                    <div class="rate">$0.17/min (~$10/hr)</div>
+                    <p>Easy ESL conversation. No lesson planning needed!</p>
+                    <a href="https://www.cambly.com" target="_blank">cambly.com →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>Private (Own Clients)</h4>
+                    <div class="rate">Keep 100% of earnings!</div>
+                    <p>Build through word of mouth and referrals.</p>
+                </div>
             </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="4"></div>
-          <div class="task-content">
-            <div class="task-title">Step 5: Do great sessions and get reviews!</div>
-            <div class="task-desc">Be patient, be prepared, celebrate student wins. Great reviews = higher rates and more students!</div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ Ongoing</span>
-              <span class="task-badge easy">Build your reputation</span>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Online Tutoring Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Identify your best subjects</div>
+                    <div class="step-desc">What do you know well? What could you teach? Even if you're not an expert, you can tutor levels below yours!</div>
+                </div>
             </div>
-          </div>
-        </li>
-      </ul>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Set up your tutoring space</div>
+                    <div class="step-desc">Quiet room, good lighting, reliable internet, webcam. Professional background! Test your video and audio before sessions.</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Sign up on 1-2 tutoring platforms</div>
+                    <div class="step-desc">Wyzant and Tutor.com are good starting points. Fill out your profile completely! Great photo and detailed bio matter.</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Price competitively to start</div>
+                    <div class="step-desc">Start lower to build reviews, then raise rates. $20-30/hr is reasonable to start for most subjects. Test prep can start higher.</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Prepare for your first session</div>
+                    <div class="step-desc">Review the material, have examples ready, test your tech. Being prepared builds confidence and impresses students!</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Do great sessions and get reviews</div>
+                    <div class="step-desc">Be patient, be prepared, celebrate student wins! Ask students to leave reviews. Great reviews = higher rates and more students!</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Raise your rates as you get reviews</div>
+                    <div class="step-desc">After 5-10 good reviews, increase your rate by $5-10. Repeat as demand grows. Top tutors charge $60-100+/hour!</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Build private clients</div>
+                    <div class="step-desc">Platform clients become private clients (you keep 100%!). Ask for referrals. Word of mouth builds your private tutoring business.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💡</span> Session Tips</h2>
+            <div class="pro-tip">
+                <div class="pro-tip-title">Keys to Being a Great Tutor</div>
+                <p>• <strong>Be patient</strong> - Students learn at different paces</p>
+                <p>• <strong>Be prepared</strong> - Review material before each session</p>
+                <p>• <strong>Celebrate wins</strong> - Positive reinforcement builds confidence</p>
+                <p>• <strong>Ask questions</strong> - Let students discover answers, don't just give them</p>
+                <p>• <strong>Use visuals</strong> - Screen share, whiteboard apps, diagrams help</p>
+                <p>• <strong>Follow up</strong> - Send summary notes or practice problems after sessions</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎓</span> Tutoring Platforms</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📚</div>
+                    <h4>Wyzant</h4>
+                    <div class="platform">🌐 Website</div>
+                    <p>Most popular platform. Set your own rates, all subjects.</p>
+                    <a href="https://www.wyzant.com" class="influencer-link" target="_blank">wyzant.com →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📖</div>
+                    <h4>Tutor.com</h4>
+                    <div class="platform">🌐 Website</div>
+                    <p>Steady work, flexible schedule. Good for beginners.</p>
+                    <a href="https://www.tutor.com" class="influencer-link" target="_blank">tutor.com →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🎓</div>
+                    <h4>Varsity Tutors</h4>
+                    <div class="platform">🌐 Website</div>
+                    <p>They match you with students. Wide variety of subjects.</p>
+                    <a href="https://www.varsitytutors.com" class="influencer-link" target="_blank">varsitytutors.com →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🌍</div>
+                    <h4>Preply</h4>
+                    <div class="platform">🌐 Website</div>
+                    <p>Great for language tutoring. Global student base.</p>
+                    <a href="https://preply.com" class="influencer-link" target="_blank">preply.com →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Tutoring Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your online tutoring!
+
+MY SUBJECTS:
+Subject 1: ____ | Level: ____ | Rate: $____/hr
+Subject 2: ____ | Level: ____ | Rate: $____/hr
+Subject 3: ____ | Level: ____ | Rate: $____/hr
+
+SETUP:
+☐ Quiet room with good lighting
+☐ Webcam working
+☐ Reliable internet
+☐ Professional background
+☐ Whiteboard app (Miro, Zoom whiteboard)
+
+PLATFORM PROFILES:
+☐ Wyzant | Profile complete? Y/N | Reviews: ____
+☐ Tutor.com | Profile complete? Y/N
+☐ Varsity Tutors | Applied? Y/N
+☐ Preply | Profile complete? Y/N
+
+MY RATES:
+Starting rate: $____/hr
+Current rate: $____/hr
+Goal rate: $____/hr
+
+STUDENTS:
+Student 1: ____ | Subject: ____ | Frequency: ____
+Student 2: ____ | Subject: ____ | Frequency: ____
+Student 3: ____ | Subject: ____ | Frequency: ____
+
+WEEKLY HOURS: ____
+WEEKLY INCOME: $____
+MONTHLY INCOME: $____
+
+PRIVATE CLIENTS (100% yours!):
+Student: ____ | Rate: $____/hr
+Student: ____ | Rate: $____/hr
+
+REVIEWS: ____
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
     </div>
 
-    <div class="section-card resources-section">
-      <h2><span class="icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">💡</span> Sign Up for Platforms</h2>
-      
-      <a href="https://www.wyzant.com/tutorjobs" target="_blank" class="resource-item">
-        <h4">📚 Wyzant - Become a Tutor</h4>
-        <p">Most popular platform. Set your own rates, all subjects.</p>
-        <span class="link">wyzant.com →</span>
-      </a>
-      <a href="https://www.tutor.com/apply" target="_blank" class="resource-item">
-        <h4">📖 Tutor.com - Apply</h4>
-        <p">Steady work, flexible schedule. Good for beginners.</p>
-        <span class="link">tutor.com →</span>
-      </a>
-      <a href="https://www.varsitytutors.com/tutoring-jobs" target="_blank" class="resource-item">
-        <h4">🎓 Varsity Tutors - Jobs</h4>
-        <p">They match you with students. Wide variety of subjects.</p>
-        <span class="link">varsitytutors.com →</span>
-      </a>
-      <a href="https://preply.com/en/teach" target="_blank" class="resource-item">
-        <h4">🌍 Preply - Teach</h4>
-        <p">Great for language tutoring. Global student base.</p>
-        <span class="link">preply.com →</span>
-      </a>
-    </div>
-
-    <div class="section-card">
-      <h2><span class="icon">📝</span> Your Notes</h2>
-      <textarea id="userNotes" placeholder="Example: Can tutor: Algebra, Geometry, Spanish. Signed up for Wyzant - set rate at $25/hr to start. First session Thursday 4pm - Algebra with 8th grader..."></textarea>
-    </div>
-
-    <div class="help-section">
-      <div class="help-icon">💬</div>
-      <div class="help-content">
-        <h3">Need Help?</h3>
-        <p">Have questions about tutoring? Chat with an ASAP Financial coach!</p>
-      </div>
-      <button class="chat-btn" onclick="openChat()">
-        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
-        Start Chat
-      </button>
-    </div>
-  </main>
-
-  <script>
-    const STORAGE_KEY = 'playbook_online-tutoring';
-    function loadState() { const saved = localStorage.getItem(STORAGE_KEY); if (saved) { const state = JSON.parse(saved); document.querySelectorAll('.task-checkbox').forEach((box, i) => { if (state.tasks && state.tasks[i]) { box.classList.add('checked'); box.innerHTML = '✓'; } }); if (state.notes) document.getElementById('userNotes').value = state.notes; updateProgress(); } }
-    function saveState() { const tasks = []; document.querySelectorAll('.task-checkbox').forEach(box => { tasks.push(box.classList.contains('checked')); }); localStorage.setItem(STORAGE_KEY, JSON.stringify({ tasks, notes: document.getElementById('userNotes').value })); }
-    function updateProgress() { const boxes = document.querySelectorAll('.task-checkbox'); const checked = document.querySelectorAll('.task-checkbox.checked').length; const percent = Math.round((checked / boxes.length) * 100); document.getElementById('progressFill').style.width = percent + '%'; document.getElementById('progressText').textContent = percent + '%'; }
-    document.querySelectorAll('.task-checkbox').forEach(box => { box.addEventListener('click', function() { this.classList.toggle('checked'); this.innerHTML = this.classList.contains('checked') ? '✓' : ''; updateProgress(); saveState(); }); });
-    document.getElementById('userNotes').addEventListener('input', saveState);
-    function openChat() { window.location.href = 'https://asapcreditrepairusa.com/chat'; }
-    loadState();
-  </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-online-tutoring');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-online-tutoring', JSON.stringify({ steps, notes }));
+        }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>
