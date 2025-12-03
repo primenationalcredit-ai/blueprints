@@ -1,840 +1,386 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dog Waste Removal Service | ASAP Credit Repair Playbook</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #063d86;
-      --primary-light: #0a4fa8;
-      --primary-dark: #042a5c;
-      --accent: #00c9a7;
-      --success: #10b981;
-      --warning: #f59e0b;
-      --bg: #f8fafc;
-      --text: #1e293b;
-      --text-light: #64748b;
-      --border: #e2e8f0;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      font-size: 17px;
-    }
-    .header {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-      color: white;
-      padding: 40px 20px 50px;
-      text-align: center;
-    }
-    .header-content { max-width: 800px; margin: 0 auto; }
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: white;
-      text-decoration: none;
-      opacity: 0.8;
-      font-size: 0.9rem;
-      margin-bottom: 16px;
-    }
-    .back-link:hover { opacity: 1; }
-    .category-badge {
-      display: inline-block;
-      background: rgba(255,255,255,0.2);
-      padding: 6px 16px;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      margin-bottom: 16px;
-    }
-    .header h1 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-    .header-subtitle {
-      font-size: 1.2rem;
-      opacity: 0.9;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    .main-content {
-      max-width: 800px;
-      margin: -30px auto 40px;
-      padding: 0 20px;
-    }
-    .progress-section {
-      position: sticky;
-      top: 0;
-      background: white;
-      padding: 16px 20px;
-      margin: 0 -20px 20px;
-      border-bottom: 1px solid var(--border);
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-    .progress-bar {
-      flex: 1;
-      height: 10px;
-      background: var(--border);
-      border-radius: 5px;
-      overflow: hidden;
-    }
-    .progress-fill {
-      height: 100%;
-      background: linear-gradient(90deg, var(--success), var(--accent));
-      border-radius: 5px;
-      transition: width 0.3s;
-      width: 0%;
-    }
-    .progress-text {
-      font-weight: 600;
-      color: var(--text);
-      min-width: 50px;
-    }
-    .goal-card {
-      background: linear-gradient(135deg, #ecfdf5, #d1fae5);
-      border: 2px solid var(--success);
-      border-radius: 16px;
-      padding: 24px 28px;
-      margin-bottom: 30px;
-    }
-    .goal-card h2 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.3rem;
-      color: #065f46;
-      margin-bottom: 12px;
-    }
-    .goal-card p { color: #047857; font-size: 1.05rem; }
-    .goal-card .earnings {
-      background: white;
-      display: inline-block;
-      padding: 10px 18px;
-      border-radius: 10px;
-      margin-top: 14px;
-      font-weight: 600;
-      color: #065f46;
-      font-size: 1.1rem;
-    }
-    .section-card {
-      background: white;
-      border-radius: 16px;
-      padding: 28px;
-      margin-bottom: 24px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-      border: 1px solid var(--border);
-    }
-    .section-card h2 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.4rem;
-      color: var(--primary);
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .section-card h2 .icon {
-      width: 40px;
-      height: 40px;
-      background: linear-gradient(135deg, var(--primary), var(--primary-light));
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 20px;
-    }
-    .section-intro {
-      color: var(--text-light);
-      margin-bottom: 20px;
-      font-size: 1rem;
-    }
-    .task-list { list-style: none; }
-    .task-item {
-      display: flex;
-      gap: 16px;
-      padding: 20px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .task-item:last-child { border-bottom: none; }
-    .task-checkbox {
-      flex-shrink: 0;
-      width: 28px;
-      height: 28px;
-      border: 2px solid var(--border);
-      border-radius: 8px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.2s;
-      margin-top: 2px;
-      font-weight: bold;
-    }
-    .task-checkbox:hover { border-color: var(--primary); }
-    .task-checkbox.checked {
-      background: var(--success);
-      border-color: var(--success);
-      color: white;
-    }
-    .task-content { flex: 1; }
-    .task-title {
-      font-weight: 600;
-      font-size: 1.1rem;
-      margin-bottom: 8px;
-      color: var(--text);
-    }
-    .task-desc {
-      color: var(--text-light);
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-    .task-meta {
-      display: flex;
-      gap: 12px;
-      margin-top: 10px;
-      flex-wrap: wrap;
-    }
-    .task-badge {
-      font-size: 0.8rem;
-      padding: 4px 10px;
-      border-radius: 6px;
-      background: var(--bg);
-      color: var(--text-light);
-    }
-    .task-badge.easy { background: #dcfce7; color: #166534; }
-    .task-badge.medium { background: #fef3c7; color: #92400e; }
-    .details-box {
-      background: #f8fafc;
-      border-radius: 10px;
-      padding: 16px;
-      margin-top: 12px;
-      border-left: 4px solid var(--primary);
-    }
-    .details-box h4 {
-      font-size: 0.9rem;
-      color: var(--primary);
-      margin-bottom: 10px;
-    }
-    .details-box ul {
-      margin-left: 18px;
-      color: var(--text);
-      font-size: 0.9rem;
-    }
-    .details-box li { margin-bottom: 8px; line-height: 1.5; }
-    .marketing-section {
-      background: linear-gradient(135deg, #fef3c7, #fde68a);
-      border: 2px solid #fbbf24;
-    }
-    .marketing-section h2 { color: #92400e; }
-    .marketing-tip {
-      background: white;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 16px;
-    }
-    .marketing-tip:last-child { margin-bottom: 0; }
-    .marketing-tip h3 {
-      font-size: 1.1rem;
-      color: #92400e;
-      margin-bottom: 12px;
-    }
-    .marketing-tip p {
-      color: #78350f;
-      font-size: 0.95rem;
-      margin-bottom: 12px;
-      line-height: 1.6;
-    }
-    .script-box {
-      background: #fffbeb;
-      border-left: 4px solid #f59e0b;
-      padding: 14px 18px;
-      border-radius: 0 10px 10px 0;
-      font-size: 0.9rem;
-      color: #78350f;
-      margin-top: 12px;
-    }
-    .script-box strong {
-      display: block;
-      margin-bottom: 8px;
-      color: #92400e;
-      font-size: 0.85rem;
-    }
-    .places-list {
-      background: white;
-      border-radius: 10px;
-      padding: 16px;
-      margin-top: 12px;
-    }
-    .places-list h4 {
-      font-size: 0.9rem;
-      color: #92400e;
-      margin-bottom: 10px;
-    }
-    .places-list ul {
-      margin-left: 18px;
-      color: #78350f;
-      font-size: 0.9rem;
-    }
-    .places-list li { margin-bottom: 6px; }
-    .resources-section {
-      background: linear-gradient(135deg, #ede9fe, #ddd6fe);
-      border: 2px solid #a78bfa;
-    }
-    .resources-section h2 { color: #5b21b6; }
-    .resource-item {
-      background: white;
-      border-radius: 12px;
-      padding: 16px 20px;
-      margin-bottom: 12px;
-      display: block;
-      text-decoration: none;
-      color: var(--text);
-      transition: all 0.2s;
-    }
-    .resource-item:hover {
-      transform: translateX(4px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    .resource-item h4 {
-      font-size: 1rem;
-      margin-bottom: 4px;
-      color: #5b21b6;
-    }
-    .resource-item p {
-      font-size: 0.85rem;
-      color: var(--text-light);
-      margin-bottom: 6px;
-    }
-    .resource-item .link {
-      font-size: 0.8rem;
-      color: #7c3aed;
-    }
-    .section-card textarea {
-      width: 100%;
-      min-height: 150px;
-      padding: 16px 18px;
-      border: 2px solid var(--border);
-      border-radius: 12px;
-      font-family: inherit;
-      font-size: 1rem;
-      resize: vertical;
-      box-sizing: border-box;
-      display: block;
-      line-height: 1.6;
-    }
-    .section-card textarea:focus {
-      outline: none;
-      border-color: var(--primary);
-    }
-    .help-section {
-      background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
-      border: 2px solid #7dd3fc;
-      border-radius: 16px;
-      padding: 24px 28px;
-      margin-top: 30px;
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    .help-icon {
-      width: 56px;
-      height: 56px;
-      background: white;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-    }
-    .help-content { flex: 1; min-width: 200px; }
-    .help-content h3 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.2rem;
-      margin-bottom: 4px;
-    }
-    .help-content p { color: var(--text-light); font-size: 0.95rem; }
-    .chat-btn {
-      background: var(--primary);
-      color: white;
-      border: none;
-      padding: 14px 28px;
-      border-radius: 12px;
-      font-family: inherit;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      transition: all 0.2s;
-    }
-    .chat-btn:hover {
-      background: var(--primary-light);
-      transform: translateY(-2px);
-    }
-    @media (max-width: 600px) {
-      .header { padding: 30px 20px 40px; }
-      .section-card { padding: 20px; }
-      .help-section { flex-direction: column; text-align: center; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Waste Removal Service - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #2e7d32; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #e8f5e9; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 20px 0; }
+        .why-card { background: #e8f5e9; border-radius: 12px; padding: 15px; text-align: center; }
+        .why-card .emoji { font-size: 1.5em; margin-bottom: 5px; }
+        .why-card p { color: #2e7d32; font-size: 12px; font-weight: 500; }
+        .supply-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .supply-card { background: #f8f9fa; border-radius: 15px; padding: 15px; border-left: 5px solid #667eea; }
+        .supply-card h4 { color: #1a1a2e; font-size: 14px; margin-bottom: 5px; }
+        .supply-card .cost { color: #4caf50; font-weight: 600; font-size: 13px; margin-bottom: 5px; }
+        .supply-card p { color: #666; font-size: 12px; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 15px; overflow: hidden; font-size: 14px; }
+        .pricing-table th, .pricing-table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .pricing-table th { background: #667eea; color: white; font-weight: 600; }
+        .pricing-table tr:hover { background: #f5f5f5; }
+        .pricing-table .rate { color: #4caf50; font-weight: 600; }
+        .find-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 20px 0; }
+        .find-card { background: #f8f9fa; border-radius: 15px; padding: 20px; }
+        .find-card h4 { color: #1a1a2e; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+        .find-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .warning-box h4 { color: #c62828; margin-bottom: 10px; }
+        .warning-box p { color: #666; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #667eea; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; }
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #667eea; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+    </style>
 </head>
 <body>
-
-  <header class="header">
-    <div class="header-content">
-      <a href="index.html" class="back-link">← Back to All Playbooks</a>
-      <span class="category-badge">🐕 Pets</span>
-      <h1>Dog Waste Removal Service</h1>
-      <p class="header-subtitle">A simple business you can start this weekend. No experience needed - just a strong stomach and a willingness to work!</p>
-    </div>
-  </header>
-
-  <main class="main-content">
-    <div class="progress-section">
-      <span style="font-size: 0.9rem; color: var(--text-light);">Your Progress:</span>
-      <div class="progress-bar">
-        <div class="progress-fill" id="progressFill"></div>
-      </div>
-      <span class="progress-text" id="progressText">0%</span>
-    </div>
-
-    <!-- Goal Card -->
-    <div class="goal-card">
-      <h2>🎯 What You'll Achieve</h2>
-      <p>You'll build a weekly route of yards you clean. Customers pay you $10-20 per week to scoop their dog's poop so they don't have to. It's not glamorous, but it's steady money that adds up FAST. Many people turn this into $500-2,000/month working just a few hours per week!</p>
-      <div class="earnings">💰 Earn $300-800/month with just 20-40 weekly clients</div>
-    </div>
-
-    <!-- Why This Works -->
-    <div class="section-card">
-      <h2><span class="icon">💡</span> Why This Business Works</h2>
-      <p class="section-intro">Before you think "that's gross" - hear this out!</p>
-      
-      <div class="details-box">
-        <h4>The truth about this business:</h4>
-        <ul>
-          <li><strong>People HATE doing this</strong> - Seriously, it's one of the most-hated chores</li>
-          <li><strong>It's recession-proof</strong> - Dogs poop no matter what the economy does</li>
-          <li><strong>Low startup cost</strong> - Under $50 to get started</li>
-          <li><strong>Recurring income</strong> - Same customers pay you every single week</li>
-          <li><strong>Takes 10-15 minutes per yard</strong> - You can do 4-6 yards per hour</li>
-          <li><strong>No special skills needed</strong> - If you can walk and bend over, you can do this</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- What You Need -->
-    <div class="section-card">
-      <h2><span class="icon">🎒</span> What You Need to Start</h2>
-      <p class="section-intro">Total startup cost: $30-50. That's it!</p>
-      
-      <ul class="task-list">
-        <li class="task-item">
-          <div class="task-checkbox" data-task="0"></div>
-          <div class="task-content">
-            <div class="task-title">Pooper scooper or rake + dustpan</div>
-            <div class="task-desc">You can get a long-handled scooper at Walmart or Amazon for $15-25. This saves your back! A garden rake and dustpan also works.</div>
-            <div class="task-meta">
-              <span class="task-badge">💵 $15-25</span>
-              <span class="task-badge easy">Easy</span>
-            </div>
-          </div>
-        </li>
+    <div class="container">
+        <a href="income-playbooks.html" class="back-link">← Back to Income Playbooks</a>
         
-        <li class="task-item">
-          <div class="task-checkbox" data-task="1"></div>
-          <div class="task-content">
-            <div class="task-title">Heavy-duty trash bags</div>
-            <div class="task-desc">Get the thick ones that won't rip. A box of 50 bags costs about $10 and will last you months.</div>
-            <div class="task-meta">
-              <span class="task-badge">💵 $10</span>
-              <span class="task-badge easy">Easy</span>
-            </div>
-          </div>
-        </li>
-        
-        <li class="task-item">
-          <div class="task-checkbox" data-task="2"></div>
-          <div class="task-content">
-            <div class="task-title">5-gallon bucket with lid</div>
-            <div class="task-desc">This holds the waste while you work. The lid keeps the smell in. Get one at Home Depot or any hardware store for about $5.</div>
-            <div class="task-meta">
-              <span class="task-badge">💵 $5</span>
-              <span class="task-badge easy">Easy</span>
-            </div>
-          </div>
-        </li>
-        
-        <li class="task-item">
-          <div class="task-checkbox" data-task="3"></div>
-          <div class="task-content">
-            <div class="task-title">Rubber gloves</div>
-            <div class="task-desc">Cheap disposable ones work, or get reusable rubber gloves you can wash. About $5-10.</div>
-            <div class="task-meta">
-              <span class="task-badge">💵 $5-10</span>
-              <span class="task-badge easy">Easy</span>
-            </div>
-          </div>
-        </li>
-        
-        <li class="task-item">
-          <div class="task-checkbox" data-task="4"></div>
-          <div class="task-content">
-            <div class="task-title">Hand sanitizer and paper towels</div>
-            <div class="task-desc">Keep these in your car. You'll want to clean up between yards.</div>
-            <div class="task-meta">
-              <span class="task-badge">💵 $5</span>
-              <span class="task-badge easy">Easy</span>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Step by Step -->
-    <div class="section-card">
-      <h2><span class="icon">📋</span> Step-by-Step: Getting Started</h2>
-      <p class="section-intro">Follow these steps and you could have your first paying customer THIS WEEK!</p>
-      
-      <ul class="task-list">
-        <li class="task-item">
-          <div class="task-checkbox" data-task="5"></div>
-          <div class="task-content">
-            <div class="task-title">Step 1: Set your prices</div>
-            <div class="task-desc">Most people charge $10-15 per week for one visit. Offer discounts for twice-weekly service or multiple dogs.</div>
-            <div class="details-box">
-              <h4>Sample pricing:</h4>
-              <ul>
-                <li><strong>1 dog, once/week:</strong> $12-15</li>
-                <li><strong>1 dog, twice/week:</strong> $20-25</li>
-                <li><strong>Each additional dog:</strong> +$3-5</li>
-                <li><strong>First-time cleanup (if yard is really bad):</strong> $25-50 one-time fee</li>
-              </ul>
-            </div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 10 minutes</span>
-              <span class="task-badge easy">Easy</span>
-            </div>
-          </div>
-        </li>
-        
-        <li class="task-item">
-          <div class="task-checkbox" data-task="6"></div>
-          <div class="task-content">
-            <div class="task-title">Step 2: Pick your service area</div>
-            <div class="task-desc">Start small! Pick 2-3 neighborhoods within 10 minutes of your home. This keeps your driving time down and profits up.</div>
-            <div class="details-box">
-              <h4>Good neighborhoods to target:</h4>
-              <ul>
-                <li>Neighborhoods with lots of fenced yards</li>
-                <li>Subdivisions with HOAs (people care about yard appearance)</li>
-                <li>Areas with busy professionals (they don't have time)</li>
-                <li>Neighborhoods with older residents (harder for them to do)</li>
-              </ul>
-            </div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 15 minutes</span>
-              <span class="task-badge easy">Easy</span>
-            </div>
-          </div>
-        </li>
-        
-        <li class="task-item">
-          <div class="task-checkbox" data-task="7"></div>
-          <div class="task-content">
-            <div class="task-title">Step 3: Create a simple flyer</div>
-            <div class="task-desc">Keep it simple! A catchy headline, what you do, your price, and your phone number. Use Canva (free) or just type it in Word.</div>
-            <div class="details-box">
-              <h4>What to put on your flyer:</h4>
-              <ul>
-                <li>Headline: "Tired of Scooping Poop? Let Me Do It!"</li>
-                <li>What you do: "Weekly yard cleanup for dog owners"</li>
-                <li>Price: "Starting at $12/week"</li>
-                <li>Your phone number</li>
-                <li>Optional: A cute dog picture or poop emoji 💩</li>
-              </ul>
-            </div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 30 minutes</span>
-              <span class="task-badge easy">Easy</span>
-            </div>
-          </div>
-        </li>
-        
-        <li class="task-item">
-          <div class="task-checkbox" data-task="8"></div>
-          <div class="task-content">
-            <div class="task-title">Step 4: Go door-to-door (the fastest way!)</div>
-            <div class="task-desc">Walk through your target neighborhoods. Look for houses with dog toys in the yard, "beware of dog" signs, or dogs barking. Knock on those doors!</div>
-            <div class="details-box">
-              <h4>Signs a house has a dog:</h4>
-              <ul>
-                <li>Dog toys or bowls in the yard</li>
-                <li>Worn paths in the grass</li>
-                <li>Dog barking when you approach</li>
-                <li>"Beware of Dog" or dog breed signs</li>
-                <li>Visible dog door</li>
-              </ul>
-            </div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 2-3 hours</span>
-              <span class="task-badge medium">Medium</span>
-            </div>
-          </div>
-        </li>
-        
-        <li class="task-item">
-          <div class="task-checkbox" data-task="9"></div>
-          <div class="task-content">
-            <div class="task-title">Step 5: Do your first cleanup</div>
-            <div class="task-desc">Show up on time, do a thorough job, and let the customer know when you're done. Take a "before and after" photo for your own marketing!</div>
-            <div class="details-box">
-              <h4>Pro tips for your first job:</h4>
-              <ul>
-                <li>Walk the ENTIRE yard in a grid pattern so you don't miss spots</li>
-                <li>Check around bushes and along fence lines</li>
-                <li>Leave a "we were here" door hanger or text the customer</li>
-                <li>Take the waste with you - don't leave it in their trash</li>
-              </ul>
-            </div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 15-20 min/yard</span>
-              <span class="task-badge easy">Easy</span>
-            </div>
-          </div>
-        </li>
-        
-        <li class="task-item">
-          <div class="task-checkbox" data-task="10"></div>
-          <div class="task-content">
-            <div class="task-title">Step 6: Set up weekly billing</div>
-            <div class="task-desc">Use Venmo, Zelle, Cash App, or just collect cash. Many people like to pay monthly in advance. Make it easy for them!</div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 15 minutes</span>
-              <span class="task-badge easy">Easy</span>
-            </div>
-          </div>
-        </li>
-        
-        <li class="task-item">
-          <div class="task-checkbox" data-task="11"></div>
-          <div class="task-content">
-            <div class="task-title">Step 7: Ask for referrals</div>
-            <div class="task-desc">After 2-3 weeks of service, ask happy customers: "Do you know any neighbors with dogs who might want this service?" Offer $5 off their next month for every referral.</div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 5 minutes</span>
-              <span class="task-badge easy">Easy</span>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Marketing Section -->
-    <div class="section-card marketing-section">
-      <h2><span class="icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);">📣</span> How to Find Clients</h2>
-      <p class="section-intro" style="color: #92400e;">Here's exactly where to advertise and what to say!</p>
-      
-      <div class="marketing-tip">
-        <h3>🚪 Door-to-Door (BEST method for this business!)</h3>
-        <p>This is the #1 way to get clients fast. Spend 2-3 hours walking a neighborhood, and you'll likely get 3-5 new customers. Look for houses with dogs and knock!</p>
-        
-        <div class="script-box">
-          <strong>📝 What to say when they answer:</strong>
-          "Hi! I'm [Name], and I run a dog waste cleanup service in the neighborhood. I noticed you have a dog - I was wondering if you'd be interested in having me come by once a week to clean up your yard? It's only $12 a week, and you'd never have to scoop poop again! Can I leave you a flyer?"
+        <div class="header">
+            <h1>💩 Dog Waste Removal Service</h1>
+            <p class="subtitle">Build a weekly route cleaning yards - steady recurring income!</p>
+            <div class="time-badge">⏱️ Under $50 startup • Earn $500-2,000+/month</div>
         </div>
-      </div>
-      
-      <div class="marketing-tip">
-        <h3>📱 Post on Nextdoor</h3>
-        <p>Nextdoor is PERFECT for this because everyone on there is your neighbor. Post in the "For Sale & Free" section.</p>
-        
-        <div class="script-box">
-          <strong>📝 Copy this post:</strong>
-          "🐕 Hate scooping poop? I'll do it for you! 💩
 
-I'm offering weekly dog waste cleanup in [neighborhood names]. I come once a week, clean your entire yard, and take the waste with me. You never have to think about it again!
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Build a weekly route of yards you clean. Customers pay $10-20/week so THEY don't have to scoop poop. It's not glamorous, but it's steady money that adds up FAST. Many people turn this into $500-2,000/month working just a few hours per week!</p>
+            </div>
+            <div class="income-highlight">
+                <h3>Earn $500-2,000+/Month</h3>
+                <p>20 weekly clients at $15/each = $1,200/month • Just a few hours/week!</p>
+            </div>
+        </div>
 
-✅ $12/week for 1 dog
-✅ Reliable weekly service  
-✅ You'll actually WANT to use your backyard again!
+        <div class="card">
+            <h2><span class="icon">💡</span> Why This Business Works</h2>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="emoji">😫</div>
+                    <p>People HATE doing this</p>
+                </div>
+                <div class="why-card">
+                    <div class="emoji">📉</div>
+                    <p>Recession-proof</p>
+                </div>
+                <div class="why-card">
+                    <div class="emoji">💵</div>
+                    <p>Under $50 startup</p>
+                </div>
+                <div class="why-card">
+                    <div class="emoji">🔄</div>
+                    <p>Recurring weekly income</p>
+                </div>
+                <div class="why-card">
+                    <div class="emoji">⏱️</div>
+                    <p>10-15 min per yard</p>
+                </div>
+                <div class="why-card">
+                    <div class="emoji">🎓</div>
+                    <p>No skills needed</p>
+                </div>
+            </div>
+        </div>
 
-Message me to get started. First cleanup is 50% off! 🎉"
+        <div class="card">
+            <h2><span class="icon">🎒</span> What You Need to Start</h2>
+            <p style="color: #4caf50; font-weight: 600; margin-bottom: 15px;">Total startup cost: $30-50. That's it!</p>
+            <div class="supply-grid">
+                <div class="supply-card">
+                    <h4>Pooper Scooper</h4>
+                    <div class="cost">$15-25</div>
+                    <p>Long-handled scooper from Walmart/Amazon. Saves your back!</p>
+                </div>
+                <div class="supply-card">
+                    <h4>Heavy-Duty Trash Bags</h4>
+                    <div class="cost">~$10</div>
+                    <p>Thick ones that won't rip. 50-pack lasts months.</p>
+                </div>
+                <div class="supply-card">
+                    <h4>5-Gallon Bucket with Lid</h4>
+                    <div class="cost">~$5</div>
+                    <p>Holds waste while you work. Lid keeps smell in.</p>
+                </div>
+                <div class="supply-card">
+                    <h4>Rubber Gloves</h4>
+                    <div class="cost">$5-10</div>
+                    <p>Disposable or reusable. Essential protection!</p>
+                </div>
+            </div>
         </div>
-      </div>
-      
-      <div class="marketing-tip">
-        <h3>📲 Post in Local Facebook Groups</h3>
-        <p>Search for groups like "[Your Town] Dog Owners" or "[Your Town] Pet Parents." These people LOVE their dogs but hate the cleanup!</p>
-        
-        <div class="places-list">
-          <h4>Facebook groups to join:</h4>
-          <ul>
-            <li>[Your Town] Dog Lovers / Dog Owners</li>
-            <li>[Your Town] Pet Parents</li>
-            <li>[Your Town] Community / Neighbors</li>
-            <li>[Your Town] Buy/Sell/Trade (services allowed)</li>
-            <li>Breed-specific groups in your area</li>
-          </ul>
+
+        <div class="card">
+            <h2><span class="icon">💵</span> Sample Pricing</h2>
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Price</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1 dog, once/week</td><td class="rate">$12-15</td><td>Base rate</td></tr>
+                    <tr><td>1 dog, twice/week</td><td class="rate">$20-25</td><td>Better for big poopers</td></tr>
+                    <tr><td>Each additional dog</td><td class="rate">+$3-5</td><td>Per dog add-on</td></tr>
+                    <tr><td>First-time cleanup</td><td class="rate">$25-50</td><td>One-time fee if yard is bad</td></tr>
+                    <tr><td>Large yard premium</td><td class="rate">+$5-10</td><td>Over 1/4 acre</td></tr>
+                </tbody>
+            </table>
         </div>
-      </div>
-      
-      <div class="marketing-tip">
-        <h3>🏪 Partner with Local Pet Businesses</h3>
-        <p>Ask if you can leave flyers at pet stores, groomers, dog daycares, and vet offices. These businesses see dog owners all day!</p>
-        
-        <div class="places-list">
-          <h4>Places to leave flyers:</h4>
-          <ul>
-            <li>Pet supply stores (not big chains - local ones)</li>
-            <li>Dog groomers</li>
-            <li>Veterinarian offices (ask first)</li>
-            <li>Dog daycare facilities</li>
-            <li>Dog training centers</li>
-            <li>Pet-friendly apartment complexes (ask the office)</li>
-          </ul>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Poop Scoop Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Buy your supplies</div>
+                    <div class="step-desc">Pooper scooper, heavy-duty bags, bucket with lid, gloves. Under $50 total. Get hand sanitizer and paper towels for your car too.</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Set your prices</div>
+                    <div class="step-desc">Research local competition. Most charge $12-15/week for one dog. Decide on add-on pricing for extra dogs and services.</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Pick your service area</div>
+                    <div class="step-desc">Start with 2-3 neighborhoods within 10 minutes of home. Target subdivisions with fenced yards, HOAs (people care about appearance), and busy professionals.</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Create a simple flyer</div>
+                    <div class="step-desc">Headline: "Tired of Scooping Poop? Let Me Do It!" List services, price, phone number. Use Canva (free) for a professional look.</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Go door-to-door (fastest method!)</div>
+                    <div class="step-desc">Walk neighborhoods looking for dog signs: toys in yard, "beware of dog" signs, worn paths in grass, barking dogs. Knock on those doors!</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Post on Nextdoor and Facebook groups</div>
+                    <div class="step-desc">Nextdoor is perfect - neighbors helping neighbors! Join local dog owner groups on Facebook. These people love their dogs but hate cleanup!</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Do excellent work on your first customers</div>
+                    <div class="step-desc">Walk the ENTIRE yard in a grid pattern. Check bushes and fence lines. Text when done. Take before/after photos for marketing!</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Set up billing and ask for referrals</div>
+                    <div class="step-desc">Use Venmo, Zelle, or Cash App. Many prefer paying monthly. After 2-3 weeks, ask: "Know any neighbors who might want this?" Offer $5 off for referrals!</div>
+                </div>
+            </div>
         </div>
-      </div>
-      
-      <div class="marketing-tip">
-        <h3>🎥 Make a Quick Video</h3>
-        <p>A simple video of you explaining your service builds trust. Post it on Nextdoor, Facebook, and even TikTok!</p>
-        
-        <div class="script-box">
-          <strong>📝 Video script (30 seconds):</strong>
-          "Hey, I'm [Name]! If you're tired of scooping your dog's poop, I'm here to help. I do weekly yard cleanups in [Your Town] for just $12 a week. I show up, clean your entire yard, and take the waste with me. You never have to think about it again. Message me to get started - first cleanup is 50% off!"
+
+        <div class="card">
+            <h2><span class="icon">📣</span> How to Find Clients</h2>
+            <div class="find-grid">
+                <div class="find-card">
+                    <h4>🚪 Door-to-Door (BEST!)</h4>
+                    <p>Spend 2-3 hours walking a neighborhood and you'll likely get 3-5 new customers. Look for houses with dogs and knock!</p>
+                </div>
+                <div class="find-card">
+                    <h4>📱 Nextdoor</h4>
+                    <p>PERFECT for this business. Everyone on there is your neighbor. Post in "For Sale & Free" section.</p>
+                </div>
+                <div class="find-card">
+                    <h4>📘 Facebook Groups</h4>
+                    <p>Search "[Your Town] Dog Owners" or "Pet Parents." These people love dogs but hate cleanup!</p>
+                </div>
+                <div class="find-card">
+                    <h4>🏪 Local Pet Businesses</h4>
+                    <p>Leave flyers at pet stores, groomers, vet offices, dog daycares. They see dog owners all day!</p>
+                </div>
+            </div>
+            
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Signs a House Has a Dog</div>
+                <p>• Dog toys or bowls in the yard</p>
+                <p>• Worn paths in the grass</p>
+                <p>• Dog barking when you approach</p>
+                <p>• "Beware of Dog" or breed signs</p>
+                <p>• Visible dog door</p>
+            </div>
         </div>
-      </div>
+
+        <div class="card">
+            <h2><span class="icon">🎓</span> Learn From Others</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Sweaty Startup (Reddit)</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Real people sharing experiences, tips, and income numbers from poop scoop businesses.</p>
+                    <a href="https://reddit.com/r/sweatystartup" class="influencer-link" target="_blank">r/sweatystartup →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🎬</div>
+                    <h4>Pet Waste Removal YouTube</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Day-in-the-life videos showing how long yards take and what to charge.</p>
+                    <a href="https://youtube.com" class="influencer-link" target="_blank">Search YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📱</div>
+                    <h4>@scoopsoldierspoop</h4>
+                    <div class="platform">📱 TikTok</div>
+                    <p>Real poop scoop business owner sharing tips and daily content.</p>
+                    <a href="https://tiktok.com/@scoopsoldierspoop" class="influencer-link" target="_blank">TikTok →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🎙️</div>
+                    <h4>Side Hustle Nation</h4>
+                    <div class="platform">🎙️ Podcast</div>
+                    <p>Episodes featuring service business success stories.</p>
+                    <a href="https://www.sidehustlenation.com" class="influencer-link" target="_blank">sidehustlenation.com →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Poop Scoop Business Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your poop scoop business!
+
+SUPPLIES PURCHASED:
+☐ Pooper scooper | Cost: $____
+☐ Heavy-duty bags | Cost: $____
+☐ Bucket with lid | Cost: $____
+☐ Gloves | Cost: $____
+☐ Sanitizer & towels | Cost: $____
+Total startup: $____
+
+MY PRICING:
+1 dog, weekly: $____
+2 dogs, weekly: $____
+Twice weekly: $____
+First-time cleanup: $____
+
+SERVICE AREA:
+Neighborhood 1: ____
+Neighborhood 2: ____
+Neighborhood 3: ____
+
+MARKETING DONE:
+☐ Flyers created
+☐ Door-to-door (date: ____)
+☐ Posted on Nextdoor
+☐ Posted in FB groups
+☐ Flyers at pet stores
+
+WEEKLY CLIENTS:
+1. ____ | Dogs: __ | Weekly: $____ | Pay method: ____
+2. ____ | Dogs: __ | Weekly: $____ | Pay method: ____
+3. ____ | Dogs: __ | Weekly: $____ | Pay method: ____
+4. ____ | Dogs: __ | Weekly: $____ | Pay method: ____
+5. ____ | Dogs: __ | Weekly: $____ | Pay method: ____
+
+WEEKLY INCOME: $____
+MONTHLY INCOME: $____
+
+REFERRALS GIVEN:
+Client: ____ → Referred: ____
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
     </div>
 
-    <!-- Resources & Inspiration -->
-    <div class="section-card resources-section">
-      <h2><span class="icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">💡</span> Learn From Others Who Do This</h2>
-      <p class="section-intro" style="color: #5b21b6;">These people built real businesses doing exactly this. Watch and learn!</p>
-      
-      <a href="https://www.youtube.com/watch?v=4Nh1Xo7xCNI" target="_blank" class="resource-item">
-        <h4>📺 How I Started a $2,000/Month Pooper Scooper Business</h4>
-        <p>A guy shares exactly how he built his route and what he charges. Super helpful!</p>
-        <span class="link">YouTube →</span>
-      </a>
-      
-      <a href="https://www.youtube.com/watch?v=k0iKQtXVPvE" target="_blank" class="resource-item">
-        <h4>📺 Day in the Life: Pet Waste Removal Business</h4>
-        <p>See what a typical day looks like and how long each yard takes.</p>
-        <span class="link">YouTube →</span>
-      </a>
-      
-      <a href="https://www.petbusinessinsurance.com/pooper-scooper-business/" target="_blank" class="resource-item">
-        <h4>📖 Complete Guide to Starting a Pooper Scooper Business</h4>
-        <p>Everything from pricing to equipment to growing your route.</p>
-        <span class="link">Article →</span>
-      </a>
-      
-      <a href="https://www.reddit.com/r/sweatystartup/comments/dog_waste_removal/" target="_blank" class="resource-item">
-        <h4>💬 Reddit: Sweaty Startup - Dog Waste Removal Threads</h4>
-        <p>Real people sharing their experiences, tips, and income numbers.</p>
-        <span class="link">Reddit →</span>
-      </a>
-      
-      <a href="https://www.tiktok.com/@scoopsoldierspoop" target="_blank" class="resource-item">
-        <h4>📱 @scoopsoldierspoop on TikTok</h4>
-        <p>A real pooper scooper business owner sharing tips and day-in-the-life content.</p>
-        <span class="link">TikTok →</span>
-      </a>
-    </div>
-
-    <!-- Notes Section -->
-    <div class="section-card">
-      <h2><span class="icon">📝</span> Your Notes</h2>
-      <p class="section-intro">Write down your ideas, questions, or progress here. It saves automatically!</p>
-      <textarea id="userNotes" placeholder="Example: Neighborhoods to target: Oak Hills, Maple Grove. Need to buy scooper from Amazon. Will start knocking on doors Saturday morning..."></textarea>
-    </div>
-
-    <!-- Help Section -->
-    <div class="help-section">
-      <div class="help-icon">💬</div>
-      <div class="help-content">
-        <h3>Need Help?</h3>
-        <p>Have questions about getting started? Chat with an ASAP Financial coach!</p>
-      </div>
-      <button class="chat-btn" onclick="openChat()">
-        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
-        </svg>
-        Start Chat
-      </button>
-    </div>
-  </main>
-
-  <script>
-    const STORAGE_KEY = 'playbook_dog-waste-removal';
-    
-    function loadState() {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        const state = JSON.parse(saved);
-        document.querySelectorAll('.task-checkbox').forEach((box, i) => {
-          if (state.tasks && state.tasks[i]) {
-            box.classList.add('checked');
-            box.innerHTML = '✓';
-          }
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-dog-waste-removal');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
         });
-        if (state.notes) {
-          document.getElementById('userNotes').value = state.notes;
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
         }
-        updateProgress();
-      }
-    }
-    
-    function saveState() {
-      const tasks = [];
-      document.querySelectorAll('.task-checkbox').forEach(box => {
-        tasks.push(box.classList.contains('checked'));
-      });
-      const state = {
-        tasks: tasks,
-        notes: document.getElementById('userNotes').value
-      };
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-    }
-    
-    function updateProgress() {
-      const boxes = document.querySelectorAll('.task-checkbox');
-      const checked = document.querySelectorAll('.task-checkbox.checked').length;
-      const percent = Math.round((checked / boxes.length) * 100);
-      document.getElementById('progressFill').style.width = percent + '%';
-      document.getElementById('progressText').textContent = percent + '%';
-    }
-    
-    document.querySelectorAll('.task-checkbox').forEach(box => {
-      box.addEventListener('click', function() {
-        this.classList.toggle('checked');
-        this.innerHTML = this.classList.contains('checked') ? '✓' : '';
-        updateProgress();
-        saveState();
-      });
-    });
-    
-    document.getElementById('userNotes').addEventListener('input', saveState);
-    
-    function openChat() {
-      window.location.href = 'https://asapcreditrepairusa.com/chat';
-    }
-    
-    loadState();
-  </script>
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-dog-waste-removal', JSON.stringify({ steps, notes }));
+        }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>
