@@ -7,7 +7,7 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
-        .container { max-width: 900px; margin: 0 auto; }
+        .container { max-width: 800px; margin: 0 auto; }
         .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
         .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
         .header .subtitle { color: #666; font-size: 1.2em; }
@@ -15,48 +15,43 @@
         .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
         .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
         .card h2 .icon { font-size: 1.5em; }
-        .achieve-box { background: linear-gradient(135deg, #fff3e0, #ffe0b2); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
-        .achieve-box p { color: #e65100; font-size: 1.1em; line-height: 1.6; }
+        .achieve-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #2e7d32; font-size: 1.1em; line-height: 1.6; }
         .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
-        .income-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .income-highlight h3 { font-size: 2.2em; margin-bottom: 10px; }
         .income-highlight p { font-size: 1.1em; opacity: 0.95; }
         .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
-        .step:hover { background: #fff3e0; }
+        .step:hover { background: #e8f5e9; }
         .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
         .step-checkbox.checked { background: #667eea; color: white; }
         .step-content { flex: 1; }
         .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
         .step-desc { color: #666; line-height: 1.5; }
-        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 15px; overflow: hidden; font-size: 14px; }
-        .pricing-table th, .pricing-table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #e0e0e0; }
-        .pricing-table th { background: #667eea; color: white; font-weight: 600; }
-        .pricing-table tr:hover { background: #f5f5f5; }
-        .pricing-table .rate { color: #4caf50; font-weight: 600; }
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 20px 0; }
-        .skill-card { border-radius: 15px; padding: 15px; text-align: center; }
-        .skill-card.plumb { background: linear-gradient(135deg, #e3f2fd, #bbdefb); }
-        .skill-card.elec { background: linear-gradient(135deg, #fff8e1, #ffecb3); }
-        .skill-card.drywall { background: linear-gradient(135deg, #f3e5f5, #e1bee7); }
-        .skill-card.door { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); }
-        .skill-card.paint { background: linear-gradient(135deg, #fce4ec, #f8bbd9); }
-        .skill-card.mount { background: linear-gradient(135deg, #e0f2f1, #b2dfdb); }
-        .skill-card .emoji { font-size: 1.5em; margin-bottom: 5px; }
-        .skill-card h4 { color: #1a1a2e; font-size: 12px; margin-bottom: 3px; }
-        .skill-card p { color: #666; font-size: 10px; }
-        .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
-        .tool-card { background: #f8f9fa; border-radius: 15px; padding: 15px; border-left: 5px solid #ff9800; }
-        .tool-card h4 { color: #1a1a2e; font-size: 14px; margin-bottom: 5px; }
-        .tool-card p { color: #666; font-size: 12px; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+        .pricing-table th, .pricing-table td { padding: 12px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .pricing-table th { background: #667eea; color: white; }
+        .pricing-table tr:hover { background: #f8f9fa; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .service-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; border-left: 4px solid #ff9800; }
+        .service-card .emoji { font-size: 2em; margin-bottom: 10px; }
+        .service-card h4 { color: #1a1a2e; font-size: 13px; margin-bottom: 5px; }
+        .service-card p { color: #666; font-size: 11px; }
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .platform-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #4caf50; }
+        .platform-card h4 { color: #1a1a2e; margin-bottom: 8px; }
+        .platform-card h4 a { color: #667eea; text-decoration: none; }
+        .platform-card h4 a:hover { text-decoration: underline; }
+        .platform-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .platform-card .type { color: #2e7d32; font-weight: 600; font-size: 12px; margin-top: 8px; }
         .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
         .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
         .pro-tip p { color: #666; margin: 8px 0; }
-        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
-        .warning-box h4 { color: #c62828; margin-bottom: 10px; }
-        .warning-box p { color: #666; }
-        .find-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
-        .find-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #667eea; }
-        .find-card h4 { color: #1a1a2e; margin-bottom: 10px; }
-        .find-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .skills-box { background: #f8f9fa; border-radius: 15px; padding: 20px; margin: 15px 0; }
+        .skills-box h4 { color: #1a1a2e; margin-bottom: 15px; }
+        .skills-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+        .skills-item { display: flex; align-items: center; gap: 10px; padding: 10px; background: white; border-radius: 8px; }
+        .skills-item .emoji { font-size: 1.3em; }
+        .skills-item span { color: #666; font-size: 13px; }
         .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
         .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
         .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
@@ -78,236 +73,222 @@
 </head>
 <body>
     <div class="container">
-        <a href="income-playbooks.html" class="back-link">← Back to Income Playbooks</a>
+        <a href="index.html" class="back-link">← Back to Playbooks</a>
         
         <div class="header">
             <h1>🔧 Handyman Business</h1>
-            <p class="subtitle">Do repairs and odd jobs with flexible schedule</p>
-            <div class="time-badge">⏱️ Use existing tools • Earn $50-100/hour • Steady work!</div>
+            <p class="subtitle">Earn great money doing repairs and odd jobs</p>
+            <div class="time-badge">💰 $1,000-4,000/mo • Flexible schedule • Always in demand</div>
         </div>
 
         <div class="card">
             <h2><span class="icon">🎯</span> What You'll Achieve</h2>
             <div class="achieve-box">
-                <p>Start a handyman business doing repairs and odd jobs. If you're handy around the house, you already have most of the skills! People pay premium rates for reliable handymen because good ones are HARD to find. Flexible schedule, variety of work, and you can charge $50-100/hour.</p>
+                <p>Start a handyman business doing repairs and odd jobs for homeowners. If you're handy and can fix things, people will pay good money for your skills! Most handymen charge $50-100/hour and stay busy with TV mounting, furniture assembly, drywall repair, and general fixes. Build a reputation and you'll have more work than you can handle!</p>
             </div>
             <div class="income-highlight">
-                <h3>Earn $50-100/Hour</h3>
-                <p>$75 minimum + $50-100/hr after • 4-5 jobs/day = $300-500!</p>
+                <h3>$1,000-4,000/Month</h3>
+                <p>$50-100/hour • 2-4 jobs per day • Set your own schedule!</p>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">🔨</span> Common Handyman Skills</h2>
-            <p style="color: #666; margin-bottom: 15px;">You probably already know many of these!</p>
-            <div class="skills-grid">
-                <div class="skill-card plumb">
-                    <div class="emoji">🚿</div>
-                    <h4>Basic Plumbing</h4>
-                    <p>Faucets, toilets, drains</p>
+            <h2><span class="icon">🔨</span> Popular Handyman Services</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="emoji">📺</div>
+                    <h4>TV Mounting</h4>
+                    <p>$100-200 per job</p>
                 </div>
-                <div class="skill-card elec">
-                    <div class="emoji">💡</div>
-                    <h4>Basic Electrical</h4>
-                    <p>Outlets, fixtures, switches</p>
+                <div class="service-card">
+                    <div class="emoji">🪑</div>
+                    <h4>Furniture Assembly</h4>
+                    <p>$75-200 (IKEA, etc)</p>
                 </div>
-                <div class="skill-card drywall">
-                    <div class="emoji">🧱</div>
+                <div class="service-card">
+                    <div class="emoji">🕳️</div>
                     <h4>Drywall Repair</h4>
-                    <p>Holes, cracks, patching</p>
+                    <p>$100-300 per job</p>
                 </div>
-                <div class="skill-card door">
+                <div class="service-card">
                     <div class="emoji">🚪</div>
                     <h4>Door/Lock Install</h4>
-                    <p>Knobs, deadbolts, hinges</p>
+                    <p>$100-250 + hardware</p>
                 </div>
-                <div class="skill-card paint">
+                <div class="service-card">
                     <div class="emoji">🎨</div>
                     <h4>Painting/Caulking</h4>
-                    <p>Touch-ups, sealing</p>
+                    <p>$50-100/hour</p>
                 </div>
-                <div class="skill-card mount">
-                    <div class="emoji">📺</div>
-                    <h4>TV/Shelf Mounting</h4>
-                    <p>Most popular job!</p>
+                <div class="service-card">
+                    <div class="emoji">💧</div>
+                    <h4>Faucet/Toilet Fixes</h4>
+                    <p>$75-200 per job</p>
                 </div>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">💵</span> Handyman Pricing</h2>
+            <h2><span class="icon">💰</span> Pricing Guide</h2>
             <table class="pricing-table">
-                <thead>
-                    <tr>
-                        <th>Service</th>
-                        <th>Price</th>
-                        <th>Notes</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>Minimum service call</td><td class="rate">$75-100</td><td>First hour included</td></tr>
-                    <tr><td>Hourly rate</td><td class="rate">$50-100/hr</td><td>After first hour</td></tr>
-                    <tr><td>TV mounting</td><td class="rate">$100-200</td><td>Very popular job!</td></tr>
-                    <tr><td>Furniture assembly</td><td class="rate">$75-200</td><td>IKEA, desks, beds</td></tr>
-                    <tr><td>Drywall repair (small)</td><td class="rate">$100-200</td><td>Hole patching</td></tr>
-                    <tr><td>Drywall repair (large)</td><td class="rate">$200-400</td><td>Multiple holes/damage</td></tr>
-                    <tr><td>Door/lock installation</td><td class="rate">$100-250</td><td>Plus hardware cost</td></tr>
-                    <tr><td>Faucet replacement</td><td class="rate">$100-175</td><td>Plus faucet cost</td></tr>
-                    <tr><td>Toilet repair/replace</td><td class="rate">$100-200</td><td>Plus parts</td></tr>
-                    <tr><td>Ceiling fan install</td><td class="rate">$100-200</td><td>Plus fan if needed</td></tr>
-                </tbody>
+                <tr><th>Service</th><th>Price</th><th>Notes</th></tr>
+                <tr><td>Minimum Service Call</td><td>$75-100</td><td>First hour included</td></tr>
+                <tr><td>Hourly Rate (after 1st hour)</td><td>$50-100</td><td>Varies by skill level</td></tr>
+                <tr><td>TV Mounting</td><td>$100-200</td><td>Very popular job!</td></tr>
+                <tr><td>Furniture Assembly</td><td>$75-200</td><td>IKEA is common</td></tr>
+                <tr><td>Drywall Repair</td><td>$100-300</td><td>Size dependent</td></tr>
+                <tr><td>Door/Lock Install</td><td>$100-250</td><td>Plus hardware cost</td></tr>
+                <tr><td>Ceiling Fan Install</td><td>$100-200</td><td>Plus fixture cost</td></tr>
             </table>
         </div>
 
         <div class="card">
-            <h2><span class="icon">🧰</span> Essential Tools</h2>
-            <p style="color: #666; margin-bottom: 15px;">Start with what you have - build your kit over time</p>
-            <div class="tools-grid">
-                <div class="tool-card">
-                    <h4>Power Drill/Driver</h4>
-                    <p>Cordless with bit set. Most used tool!</p>
+            <h2><span class="icon">🌐</span> Where to Find Clients</h2>
+            <p style="color: #666; margin-bottom: 15px;">Sign up on ALL these platforms to maximize your bookings:</p>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h4><a href="https://nextdoor.com/business" target="_blank">Nextdoor →</a></h4>
+                    <p>GOLD for handymen! Neighbors recommend local handymen constantly. FREE and essential for any handyman business!</p>
+                    <div class="type">🏘️ Best for: Local reputation</div>
                 </div>
-                <div class="tool-card">
-                    <h4>Level & Stud Finder</h4>
-                    <p>Essential for mounting anything.</p>
+                <div class="platform-card">
+                    <h4><a href="https://www.thumbtack.com/pro" target="_blank">Thumbtack →</a></h4>
+                    <p>Get matched with people searching for handyman services. Pay per lead. Great for getting started quickly!</p>
+                    <div class="type">🎯 Best for: Consistent leads</div>
                 </div>
-                <div class="tool-card">
-                    <h4>Basic Hand Tools</h4>
-                    <p>Hammer, screwdrivers, pliers, adjustable wrench.</p>
+                <div class="platform-card">
+                    <h4><a href="https://www.taskrabbit.com/become-a-tasker" target="_blank">TaskRabbit →</a></h4>
+                    <p>Popular gig platform for handyman work. Customers book you for specific tasks. Set your own rates!</p>
+                    <div class="type">📱 Best for: Task-based work</div>
                 </div>
-                <div class="tool-card">
-                    <h4>Tape Measure & Pencil</h4>
-                    <p>Measure twice, cut once!</p>
+                <div class="platform-card">
+                    <h4><a href="https://business.google.com" target="_blank">Google Business Profile →</a></h4>
+                    <p>Show up when people search "handyman near me." FREE and essential for local SEO and reviews!</p>
+                    <div class="type">🗺️ Best for: Local search</div>
                 </div>
-                <div class="tool-card">
-                    <h4>Utility Knife & Putty Knives</h4>
-                    <p>For drywall and general cutting.</p>
+                <div class="platform-card">
+                    <h4><a href="https://www.facebook.com/business" target="_blank">Facebook Business →</a></h4>
+                    <p>Create a business page, join local community groups. Homeowners always asking for handyman recommendations!</p>
+                    <div class="type">📱 Best for: Community reach</div>
                 </div>
-                <div class="tool-card">
-                    <h4>Ladder (6-8 ft)</h4>
-                    <p>A-frame for most indoor work.</p>
+                <div class="platform-card">
+                    <h4><a href="https://www.homeadvisor.com/pro" target="_blank">HomeAdvisor/Angi →</a></h4>
+                    <p>Lead generation for home services. Customers looking for professionals for bigger projects.</p>
+                    <div class="type">🔨 Best for: Larger jobs</div>
                 </div>
             </div>
-            
-            <div class="warning-box">
-                <h4>⚠️ Know Your Limits</h4>
-                <p>Most states allow handymen to do small repairs without a contractor license, but major electrical, plumbing, or structural work requires licensed contractors. Check your state's limits (often $500-1,000 per job).</p>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Property Managers = Steady Work!</div>
+                <p>Reach out to property management companies and Airbnb/VRBO hosts. They ALWAYS need reliable handymen for maintenance. One relationship can mean constant work!</p>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">📋</span> Your Handyman Action Plan</h2>
+            <h2><span class="icon">🛠️</span> Skills You'll Need</h2>
+            <div class="skills-box">
+                <h4>Common Handyman Skills (learn on YouTube!)</h4>
+                <div class="skills-list">
+                    <div class="skills-item"><span class="emoji">💧</span><span>Basic plumbing (faucets, toilets)</span></div>
+                    <div class="skills-item"><span class="emoji">💡</span><span>Basic electrical (outlets, fixtures)</span></div>
+                    <div class="skills-item"><span class="emoji">🕳️</span><span>Drywall repair and patching</span></div>
+                    <div class="skills-item"><span class="emoji">🚪</span><span>Door and lock installation</span></div>
+                    <div class="skills-item"><span class="emoji">🎨</span><span>Painting and caulking</span></div>
+                    <div class="skills-item"><span class="emoji">📺</span><span>TV and shelf mounting</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Action Plan</h2>
             
             <div class="step" data-step="1">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Step 1: Assess your skills</div>
-                    <div class="step-desc">List what you can confidently do. Focus on common jobs: TV mounting, furniture assembly, drywall, basic plumbing, painting. Learn new skills via YouTube!</div>
+                    <div class="step-title">Step 1: Build your skills</div>
+                    <div class="step-desc">Learn common repairs on YouTube. Practice on your own home. Focus on high-demand skills: TV mounting, drywall, plumbing basics, furniture assembly.</div>
                 </div>
             </div>
             <div class="step" data-step="2">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Step 2: Organize your tools</div>
-                    <div class="step-desc">Get your tools organized and accessible. Invest in a good tool bag or box. Having the right tool ready saves time and looks professional.</div>
+                    <div class="step-title">Step 2: Get quality tools and organized vehicle</div>
+                    <div class="step-desc">Invest in quality basic tools. Keep them organized in a van, truck, or car. You should be ready to handle most common jobs on the spot.</div>
                 </div>
             </div>
             <div class="step" data-step="3">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Step 3: Get licensed and insured</div>
-                    <div class="step-desc">Check local requirements for handyman license. Get general liability insurance ($400-800/year) - many customers require it.</div>
+                    <div class="step-title">Step 3: Check licensing and get insured</div>
+                    <div class="step-desc">Handyman license requirements vary by state—check yours! Get general liability insurance ($300-500/year). This protects you and builds trust with customers.</div>
                 </div>
             </div>
             <div class="step" data-step="4">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Step 4: Set up business basics</div>
-                    <div class="step-desc">Google Business Profile (essential!), separate phone number, simple invoicing. These build trust and make you look professional.</div>
+                    <div class="step-title">Step 4: Set up your online presence</div>
+                    <div class="step-desc">Create profiles on Nextdoor, TaskRabbit, Thumbtack, and Google Business. These are your main sources of leads!</div>
                 </div>
             </div>
             <div class="step" data-step="5">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Step 5: Do jobs for friends/family first</div>
-                    <div class="step-desc">Build experience and confidence. Take before/after photos! Ask for reviews and referrals.</div>
+                    <div class="step-title">Step 5: Do first jobs and collect reviews</div>
+                    <div class="step-desc">Start with friends/family or low-priced jobs to build reviews. Ask EVERY customer for a Google/Nextdoor review. Reviews are everything!</div>
                 </div>
             </div>
             <div class="step" data-step="6">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Step 6: Get customers on Nextdoor & Thumbtack</div>
-                    <div class="step-desc">Nextdoor is GOLD for handymen - neighbors trust local recommendations. Thumbtack sends you leads. Google Business gets you found.</div>
+                    <div class="step-title">Step 6: Deliver reliable, professional service</div>
+                    <div class="step-desc">Show up on time, communicate clearly, clean up after yourself. Reliability is what makes customers call you again and refer friends!</div>
                 </div>
             </div>
             <div class="step" data-step="7">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Step 7: Deliver reliable service</div>
-                    <div class="step-desc">Show up ON TIME, communicate clearly, clean up after yourself. Reliability is #1 - good handymen are hard to find!</div>
+                    <div class="step-title">Step 7: Build relationships with property managers</div>
+                    <div class="step-desc">Reach out to property management companies, Airbnb hosts, real estate agents. One good relationship = steady, ongoing work.</div>
                 </div>
             </div>
             <div class="step" data-step="8">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Step 8: Build property manager relationships</div>
-                    <div class="step-desc">Property managers, Airbnb hosts, and landlords need regular handyman work. One relationship = steady stream of jobs!</div>
+                    <div class="step-title">Step 8: Scale and specialize</div>
+                    <div class="step-desc">Once busy, raise prices. Hire helpers for bigger jobs. Consider specializing in high-value work (bathroom remodels, decks, etc.).</div>
                 </div>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">📣</span> Finding Customers</h2>
-            <div class="find-grid">
-                <div class="find-card">
-                    <h4>📱 Nextdoor (Best!)</h4>
-                    <p>HUGE for handymen. Neighbors recommend neighbors. Respond to any "looking for handyman" posts immediately!</p>
-                </div>
-                <div class="find-card">
-                    <h4>👍 Thumbtack</h4>
-                    <p>Pay per lead, but quality customers. Good for building initial client base. Set your service area.</p>
-                </div>
-                <div class="find-card">
-                    <h4>🏢 Property Managers</h4>
-                    <p>Landlords, Airbnb hosts, and rental companies need ongoing work. Reach out directly - offer reliability!</p>
-                </div>
-                <div class="find-card">
-                    <h4>📍 Google Business</h4>
-                    <p>When people search "handyman near me" you want to show up. Get reviews to rank higher!</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2><span class="icon">🎓</span> Learn New Skills</h2>
+            <h2><span class="icon">🎓</span> Learn From These Creators</h2>
             <div class="influencer-grid">
                 <div class="influencer-card">
-                    <div class="influencer-avatar">🏠</div>
-                    <h4>Home Repair Tutor</h4>
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Home RenoVision DIY</h4>
                     <div class="platform">📺 YouTube</div>
-                    <p>Step-by-step home repair tutorials. Great for learning new skills!</p>
-                    <a href="https://www.youtube.com/c/HomeRepairTutor" class="influencer-link" target="_blank">YouTube →</a>
-                </div>
-                <div class="influencer-card">
-                    <div class="influencer-avatar">🔧</div>
-                    <h4>This Old House</h4>
-                    <div class="platform">📺 YouTube</div>
-                    <p>Professional techniques for all home repairs.</p>
-                    <a href="https://www.youtube.com/c/thisoldhouse" class="influencer-link" target="_blank">YouTube →</a>
+                    <p>Excellent tutorials on common repairs and renovations. Learn skills to charge more!</p>
+                    <a href="https://www.youtube.com/c/HomeRenoVisionDIY" class="influencer-link" target="_blank">YouTube →</a>
                 </div>
                 <div class="influencer-card">
                     <div class="influencer-avatar">💬</div>
-                    <h4>r/HomeImprovement</h4>
+                    <h4>r/handyman</h4>
                     <div class="platform">🌐 Reddit</div>
-                    <p>Community answering home repair questions.</p>
-                    <a href="https://reddit.com/r/HomeImprovement" class="influencer-link" target="_blank">r/HomeImprovement →</a>
+                    <p>Community of handymen sharing tips, pricing advice, and business strategies.</p>
+                    <a href="https://reddit.com/r/handyman" class="influencer-link" target="_blank">r/handyman →</a>
                 </div>
                 <div class="influencer-card">
-                    <div class="influencer-avatar">🚀</div>
-                    <h4>r/sweatystartup</h4>
-                    <div class="platform">🌐 Reddit</div>
-                    <p>Handymen sharing business tips and income.</p>
-                    <a href="https://reddit.com/r/sweatystartup" class="influencer-link" target="_blank">r/sweatystartup →</a>
+                    <div class="influencer-avatar">🏘️</div>
+                    <h4>Nextdoor</h4>
+                    <div class="platform">🌐 App</div>
+                    <p>The #1 platform for local handyman work. Neighbors recommend handymen constantly!</p>
+                    <a href="https://nextdoor.com" class="influencer-link" target="_blank">Nextdoor →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📱</div>
+                    <h4>Jobber</h4>
+                    <div class="platform">🌐 Software</div>
+                    <p>Quotes, scheduling, invoicing software for handyman and service businesses.</p>
+                    <a href="https://getjobber.com" class="influencer-link" target="_blank">Jobber →</a>
                 </div>
             </div>
         </div>
@@ -325,23 +306,18 @@
             <div class="notes-section">
                 <textarea id="notes" placeholder="Track your handyman business!
 
-MY SKILLS:
-☐ TV mounting
-☐ Furniture assembly
-☐ Drywall repair
-☐ Door/lock installation
-☐ Basic plumbing (faucets, toilets)
-☐ Basic electrical (outlets, fixtures)
-☐ Painting/caulking
-☐ Other: ____
-
-BUSINESS SETUP:
-☐ Liability insurance | Provider: ____ | Cost: $____/yr
-☐ Business license (if required)
+PLATFORMS SIGNED UP:
+☐ Nextdoor Business
+☐ TaskRabbit
+☐ Thumbtack
 ☐ Google Business Profile
-☐ Thumbtack profile
-☐ Nextdoor account
-☐ Business phone/Google Voice: ____
+☐ Facebook Business Page
+☐ HomeAdvisor/Angi
+
+LICENSE & INSURANCE:
+☐ Business license: ____
+☐ Handyman license (if required): ____
+☐ Liability insurance: $____/year
 
 MY PRICING:
 Minimum service call: $____
@@ -349,23 +325,25 @@ Hourly rate: $____/hr
 TV mounting: $____
 Furniture assembly: $____
 Drywall repair: $____
-Door/lock install: $____
+
+TOOLS I HAVE:
+☐ Basic hand tools
+☐ Power drill/driver
+☐ Stud finder
+☐ Level
+☐ Drywall repair supplies
+☐ ____
+
+REVIEWS:
+Google: ____ reviews (____★)
+Nextdoor: ____ recommendations
 
 PROPERTY MANAGER CONTACTS:
-Name: ____ | Company: ____ | Phone: ____
-Name: ____ | Company: ____ | Phone: ____
+1. ____ | Company: ____ | Phone: ____
+2. ____ | Company: ____ | Phone: ____
 
-JOBS COMPLETED:
-Date: ____ | Customer: ____ | Job: ____ | Earned: $____
-Date: ____ | Customer: ____ | Job: ____ | Earned: $____
-Date: ____ | Customer: ____ | Job: ____ | Earned: $____
-
-MONTHLY INCOME: $____
-
-REVIEWS COLLECTED:
-☐ Google: ____
-☐ Thumbtack: ____
-☐ Nextdoor: ____
+MONTHLY INCOME:
+Month: ____ | Jobs: ____ | Revenue: $____
 "></textarea>
             </div>
         </div>
