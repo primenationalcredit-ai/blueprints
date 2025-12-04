@@ -1,61 +1,417 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Become a Social Media Influencer | ASAP Credit Repair Playbook</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{--primary:#063d86;--success:#10b981;--bg:#f8fafc;--text:#1e293b;--text-light:#64748b;--border:#e2e8f0}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}.header{background:linear-gradient(135deg,#ec4899,#db2777);color:#fff;padding:40px 20px 50px;text-align:center}.header h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:12px}.main-content{max-width:800px;margin:-30px auto 40px;padding:0 20px}.back-link{color:#fff;text-decoration:none;opacity:.8;display:block;margin-bottom:16px}.category-badge{display:inline-block;background:rgba(255,255,255,.2);padding:6px 16px;border-radius:20px;font-size:.85rem;margin-bottom:16px}.goal-card{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid var(--success);border-radius:16px;padding:24px;margin-bottom:24px}.goal-card h2{color:#065f46;margin-bottom:12px}.goal-card .earnings{background:#fff;padding:10px 18px;border-radius:10px;margin-top:14px;font-weight:600;color:#065f46;display:inline-block}.section-card{background:#fff;border-radius:16px;padding:28px;margin-bottom:24px;border:1px solid var(--border)}.section-card h2{color:var(--primary);margin-bottom:20px}.task-list{list-style:none}.task-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)}.task-checkbox{width:28px;height:28px;border:2px solid var(--border);border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}.task-checkbox.checked{background:var(--success);border-color:var(--success);color:#fff}.task-title{font-weight:600;margin-bottom:6px}.task-desc{color:var(--text-light);font-size:.95rem}.task-badge{font-size:.8rem;padding:4px 10px;border-radius:6px;background:var(--bg);margin-top:10px;display:inline-block;margin-right:8px}.details-box{background:#f8fafc;padding:14px;border-radius:8px;margin-top:12px;border-left:4px solid #ec4899}.details-box h4{color:#db2777;margin-bottom:8px;font-size:.9rem}.details-box ul{margin-left:18px;font-size:.9rem}.details-box li{margin-bottom:6px}.pricing-table{width:100%;border-collapse:collapse;margin-top:12px}.pricing-table th,.pricing-table td{padding:10px;text-align:left;border-bottom:1px solid var(--border)}.pricing-table th{background:var(--bg);font-weight:600}textarea{width:100%;min-height:120px;padding:14px;border:2px solid var(--border);border-radius:10px;font-family:inherit;margin-top:10px}.help-section{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border:2px solid #7dd3fc;border-radius:16px;padding:20px;margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}.chat-btn{background:var(--primary);color:#fff;border:none;padding:12px 24px;border-radius:10px;font-weight:600;cursor:pointer}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become a Social Media Influencer - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #f39c12, #e74c3c); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #fdebd0, #f9e79f); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #9c640c; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.2em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #fdebd0; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #f39c12; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #f39c12; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+        .pricing-table th, .pricing-table td { padding: 12px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .pricing-table th { background: #f39c12; color: white; }
+        .pricing-table tr:hover { background: #f8f9fa; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .service-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; border-left: 4px solid #f39c12; }
+        .service-card .emoji { font-size: 2em; margin-bottom: 10px; }
+        .service-card h4 { color: #1a1a2e; font-size: 13px; margin-bottom: 5px; }
+        .service-card p { color: #666; font-size: 11px; }
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .platform-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #4caf50; }
+        .platform-card h4 { color: #1a1a2e; margin-bottom: 8px; }
+        .platform-card h4 a { color: #f39c12; text-decoration: none; }
+        .platform-card h4 a:hover { text-decoration: underline; }
+        .platform-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .platform-card .type { color: #2e7d32; font-weight: 600; font-size: 12px; margin-top: 8px; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .skills-box { background: #f8f9fa; border-radius: 15px; padding: 20px; margin: 15px 0; }
+        .skills-box h4 { color: #1a1a2e; margin-bottom: 15px; }
+        .skills-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+        .skill-item { display: flex; align-items: center; gap: 10px; padding: 10px; background: white; border-radius: 8px; }
+        .skill-item .emoji { font-size: 1.3em; }
+        .skill-item span { color: #666; font-size: 13px; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #f39c12, #e74c3c); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #f39c12; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #f39c12; text-decoration: none; font-weight: 600; }
+        .progress-tracker { background: linear-gradient(135deg, #f39c12, #e74c3c); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #f39c12; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #f39c12, #e74c3c); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+    </style>
 </head>
 <body>
-  <header class="header"><a href="index.html" class="back-link">← Back to All Playbooks</a><span class="category-badge">📱 Content Creation</span><h1>Become a Social Media Influencer</h1><p style="opacity:.9;max-width:600px;margin:0 auto">Build an audience, partner with brands, create content you love! TikTok, Instagram, YouTube - pick your platform.</p></header>
-  <main class="main-content">
-    <div class="goal-card"><h2>🎯 What You'll Achieve</h2><p>Build a following on social media and monetize through brand deals, affiliate marketing, and your own products!</p><div class="earnings">💰 1K-10K followers: $100-500/post | 10K-100K: $500-5,000/post | 100K+: $5,000-50,000+/post</div></div>
-    
-    <div class="section-card"><h2>💵 Income by Follower Count</h2>
-      <table class="pricing-table">
-        <tr><th>Follower Range</th><th>Per Sponsored Post</th><th>Monthly Potential</th></tr>
-        <tr><td>1K-5K (nano)</td><td>$50-250</td><td>$200-1,000</td></tr>
-        <tr><td>5K-20K (micro)</td><td>$200-1,000</td><td>$500-3,000</td></tr>
-        <tr><td>20K-100K (mid-tier)</td><td>$500-5,000</td><td>$2,000-15,000</td></tr>
-        <tr><td>100K-500K (macro)</td><td>$2,000-15,000</td><td>$10,000-50,000+</td></tr>
-        <tr><td>500K+ (mega)</td><td>$10,000-100,000+</td><td>$50,000-500,000+</td></tr>
-      </table>
-      <p style="font-size:.85rem;color:var(--text-light);margin-top:10px">Rates vary by niche - finance, business, tech pay highest</p>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Playbooks</a>
+        
+        <div class="header">
+            <h1>⭐ Become a Social Media Influencer</h1>
+            <p class="subtitle">Build a following and monetize through multiple income streams</p>
+            <div class="time-badge">💰 $50-100,000+ per post • Brand deals • Your own products</div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Build a following on social media and monetize through brand deals, affiliate marketing, and your own products! You can start monetizing with as few as 1,000 engaged followers. Nano-influencers (1K-10K) earn $50-500 per post. Grow to 100K+ followers and earn $2,000-15,000+ per sponsored post!</p>
+            </div>
+            <div class="income-highlight">
+                <h3>$50-100,000+ Per Sponsored Post</h3>
+                <p>1K-10K: $50-500 • 10K-100K: $500-5,000 • 100K+: $2,000-100,000+ per post!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💰</span> Income by Follower Count</h2>
+            <table class="pricing-table">
+                <tr><th>Follower Range</th><th>Per Sponsored Post</th><th>Monthly Potential</th></tr>
+                <tr><td>1K-5K (nano)</td><td>$50-250</td><td>$200-1,000</td></tr>
+                <tr><td>5K-20K (micro)</td><td>$200-1,000</td><td>$500-3,000</td></tr>
+                <tr><td>20K-100K (mid-tier)</td><td>$500-5,000</td><td>$2,000-15,000</td></tr>
+                <tr><td>100K-500K (macro)</td><td>$2,000-15,000</td><td>$10,000-50,000+</td></tr>
+                <tr><td>500K+ (mega)</td><td>$10,000-100,000+</td><td>$50,000-500,000+</td></tr>
+            </table>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Niche Matters More Than Size!</div>
+                <p>Finance, business, and tech niches pay 2-3x more than lifestyle. A 10K finance account can earn more than a 100K lifestyle account!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📱</span> Platform Strengths</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="emoji">🎵</div>
+                    <h4>TikTok</h4>
+                    <p>Fastest growth, short video</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">📸</div>
+                    <h4>Instagram</h4>
+                    <p>Visual, Reels growing</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">📺</div>
+                    <h4>YouTube</h4>
+                    <p>Highest ad revenue</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">💼</div>
+                    <h4>LinkedIn</h4>
+                    <p>B2B, professional</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🐦</div>
+                    <h4>Twitter/X</h4>
+                    <p>Thoughts, opinions, tech</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">📌</div>
+                    <h4>Pinterest</h4>
+                    <p>Visual search, evergreen</p>
+                </div>
+            </div>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Pick ONE Platform First!</div>
+                <p>Master one platform before expanding. TikTok has fastest organic growth. Instagram is best for lifestyle. YouTube builds long-term passive income!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💵</span> Monetization Methods</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="emoji">🤝</div>
+                    <h4>Sponsored Posts</h4>
+                    <p>Brands pay for promotion</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🔗</div>
+                    <h4>Affiliate Marketing</h4>
+                    <p>Commission on sales</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">💰</div>
+                    <h4>Creator Funds</h4>
+                    <p>TikTok, YouTube, IG</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">📦</div>
+                    <h4>Your Products</h4>
+                    <p>Courses, merch, digital</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🎬</div>
+                    <h4>UGC Creation</h4>
+                    <p>Content for brands</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">📧</div>
+                    <h4>Email List</h4>
+                    <p>You own this audience!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🌐</span> Where to Connect with Brands</h2>
+            <p style="color: #666; margin-bottom: 15px;">Platforms that connect influencers with brand deals:</p>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h4><a href="https://www.aspireiq.com/creators" target="_blank">AspireIQ →</a></h4>
+                    <p>Connect with major brands looking for influencers. Apply with your social profiles!</p>
+                    <div class="type">🤝 Best for: Brand deals</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://brands.joingrapevine.com/creator-signup" target="_blank">Grapevine →</a></h4>
+                    <p>Influencer marketplace connecting creators with brands. Good for YouTube especially!</p>
+                    <div class="type">📺 Best for: YouTube creators</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.influenster.com" target="_blank">Influenster →</a></h4>
+                    <p>Review products, get free items, build relationships with brands. Good starting point!</p>
+                    <div class="type">📦 Best for: Free products</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=G4P5N5YFRWJ9JBRD" target="_blank">Amazon Associates →</a></h4>
+                    <p>Affiliate program for any product. Share links, earn commission. Works immediately!</p>
+                    <div class="type">🔗 Best for: Affiliate income</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://ltk.com/creator" target="_blank">LTK (LIKEtoKNOW.it) →</a></h4>
+                    <p>Fashion and lifestyle affiliate platform. Share outfits, earn commission!</p>
+                    <div class="type">👗 Best for: Fashion/lifestyle</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://creatormarketplace.tiktok.com" target="_blank">TikTok Creator Marketplace →</a></h4>
+                    <p>Official TikTok platform connecting creators with brands. Requires 10K+ followers.</p>
+                    <div class="type">🎵 Best for: TikTok creators</div>
+                </div>
+            </div>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Pitch Brands Directly!</div>
+                <p>Don't wait for brands to find you. DM or email brands you already use and love. Create a media kit showing your stats and engagement. Many deals come from direct outreach!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Choose your niche and platform</div>
+                    <div class="step-desc">What can you talk about endlessly? Pick a topic you're passionate about. Choose ONE platform to master first—TikTok for fastest growth, YouTube for long-term!</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Create your content strategy</div>
+                    <div class="step-desc">Define 3-5 content themes/topics. Mix educational, entertaining, personal. Study what works for others in your niche. Consistency beats perfection!</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Optimize your profile</div>
+                    <div class="step-desc">Clear bio, professional photo, link in bio. Someone should instantly understand what you're about. Make it easy to follow you!</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Post consistently and engage</div>
+                    <div class="step-desc">Daily on TikTok, 4-7x/week on Instagram. Reply to every comment when starting. Engagement in first hour boosts reach!</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Grow your audience</div>
+                    <div class="step-desc">Use trending audio/formats. Collaborate with similar-sized creators. Cross-promote on other platforms. Growth takes time—stay consistent!</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Start monetizing</div>
+                    <div class="step-desc">You can monetize with 1,000+ engaged followers! Start with affiliate links (Amazon Associates), then add brand deals. Sign up on influencer platforms!</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Build your email list</div>
+                    <div class="step-desc">You OWN your email list—social platforms can change. Offer a free resource to collect emails. This is your most valuable asset!</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Scale and diversify</div>
+                    <div class="step-desc">Expand to multiple platforms. Launch your own products (courses, merch). Negotiate long-term brand partnerships. Don't rely on one income source!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎓</span> Learn From These Creators</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Think Media</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>How to grow on YouTube and monetize your channel.</p>
+                    <a href="https://www.youtube.com/c/ThinkMediaTV" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📱</div>
+                    <h4>Later Blog</h4>
+                    <div class="platform">🌐 Resource</div>
+                    <p>Instagram and TikTok growth strategies and tips.</p>
+                    <a href="https://later.com/blog" class="influencer-link" target="_blank">Later →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💬</div>
+                    <h4>r/influencermarketing</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Community for influencers discussing growth and brand deals.</p>
+                    <a href="https://reddit.com/r/influencermarketing" class="influencer-link" target="_blank">Reddit →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🔗</div>
+                    <h4>Linktree</h4>
+                    <div class="platform">🌐 Tool</div>
+                    <p>Essential link-in-bio tool for all your important links!</p>
+                    <a href="https://linktr.ee" class="influencer-link" target="_blank">Linktree →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Influencer Journey Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your influencer journey!
+
+MY NICHE: ____
+
+MY PRIMARY PLATFORM: ____
+
+CONTENT PILLARS (3-5 topics):
+1. ____
+2. ____
+3. ____
+4. ____
+5. ____
+
+FOLLOWER GROWTH:
+Platform: ____ | Followers: ____
+Platform: ____ | Followers: ____
+
+POSTING SCHEDULE:
+☐ Daily
+☐ 4-7x/week
+☐ 3x/week
+
+BRAND PLATFORMS SIGNED UP:
+☐ AspireIQ
+☐ Grapevine
+☐ Influenster
+☐ Amazon Associates
+☐ LTK
+☐ TikTok Creator Marketplace
+
+BRAND DEALS COMPLETED:
+1. ____ | Brand: ____ | Paid: $____
+2. ____ | Brand: ____ | Paid: $____
+3. ____ | Brand: ____ | Paid: $____
+
+AFFILIATE INCOME THIS MONTH: $____
+
+EMAIL LIST SIZE: ____
+
+TOTAL MONTHLY INCOME:
+Sponsored posts: $____
+Affiliate: $____
+Creator fund: $____
+Products: $____
+TOTAL: $____
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
     </div>
 
-    <div class="section-card"><h2>📋 Step-by-Step Action Plan</h2>
-      <ul class="task-list">
-        <li class="task-item"><div class="task-checkbox" data-task="0"></div><div><div class="task-title">Step 1: Choose your niche and platform</div><div class="task-desc">What do you know about? What can you talk about endlessly? Pick a platform that fits your content style.</div><div class="details-box"><h4>📱 Platform Strengths:</h4><ul><li><strong>TikTok:</strong> Fastest growth, short video, younger audience</li><li><strong>Instagram:</strong> Visual content, Reels growing, lifestyle</li><li><strong>YouTube:</strong> Long-form, highest ad revenue, evergreen</li><li><strong>Twitter/X:</strong> Thoughts/opinions, B2B, tech</li><li><strong>LinkedIn:</strong> Professional content, B2B brands pay well</li></ul></div><span class="task-badge">🎯 Pick ONE platform first</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="1"></div><div><div class="task-title">Step 2: Create your content strategy</div><div class="task-desc">What value do you provide? Entertainment, education, inspiration? Consistency is more important than perfection.</div><div class="details-box"><h4>📊 Content Pillars:</h4><ul><li>Define 3-5 content themes/topics</li><li>Mix of educational, entertaining, personal</li><li>Post consistently (daily on TikTok, 4-7x/week IG)</li><li>Study what works for others in your niche</li><li>Trending audio/formats boost reach</li></ul></div><span class="task-badge">📅 Consistency wins</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="2"></div><div><div class="task-title">Step 3: Optimize your profile</div><div class="task-desc">Clear bio, professional photo, link in bio. Someone should instantly understand what you're about!</div><span class="task-badge">📸 Professional photo</span><span class="task-badge">✍️ Clear bio</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="3"></div><div><div class="task-title">Step 4: Grow your audience</div><div class="task-desc">Create valuable content, engage with your community, collaborate with others. Growth takes time!</div><div class="details-box"><h4>📈 Growth Tactics:</h4><ul><li>Post at optimal times for your audience</li><li>Use relevant hashtags strategically</li><li>Engage with comments within first hour</li><li>Collaborate with similar-sized creators</li><li>Cross-promote on other platforms</li><li>Reply to every comment when starting</li></ul></div><span class="task-badge">💬 Engagement matters</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="4"></div><div><div class="task-title">Step 5: Start monetizing</div><div class="task-desc">You can monetize with as few as 1,000 engaged followers! Start with affiliate links, then brand deals.</div><div class="details-box"><h4>💰 Monetization Methods:</h4><ul><li><strong>Affiliate marketing:</strong> Amazon Associates, brand programs</li><li><strong>Sponsored posts:</strong> Brands pay for promotion</li><li><strong>Creator funds:</strong> TikTok, YouTube, IG bonuses</li><li><strong>Your own products:</strong> Courses, merch, digital products</li><li><strong>UGC:</strong> Create content for brands (no following needed)</li></ul></div><span class="task-badge">💵 Multiple income streams</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="5"></div><div><div class="task-title">Step 6: Scale and diversify</div><div class="task-desc">Expand to multiple platforms, create your own products, build an email list. Don't rely on one income source!</div><div class="details-box"><h4>🚀 Scaling Strategies:</h4><ul><li>Build email list (you own this audience)</li><li>Launch digital products or courses</li><li>Expand to additional platforms</li><li>Negotiate long-term brand partnerships</li><li>Consider management or joining creator networks</li></ul></div><span class="task-badge">📈 Diversify income</span></div></li>
-      </ul>
-    </div>
-
-    <div class="section-card"><h2>📝 Your Influencer Tracker</h2><textarea id="userNotes" placeholder="Track your influencer journey:
-
-Platform: TikTok (primary), Instagram (secondary)
-Niche: Personal finance for millennials
-
-Current stats:
-- TikTok: 8,400 followers
-- Instagram: 2,100 followers
-- Email list: 340 subscribers
-
-This month:
-- Posts: 28 TikToks, 12 Reels
-- Best video: 145K views
-- Brand deal: $350 (finance app)
-- Affiliate income: $125
-
-Goal: 25K followers, $1,000/month by month 6"></textarea></div>
-    <div class="help-section"><span style="font-size:24px">💬</span><div style="flex:1"><strong>Need Help?</strong> Chat with a coach!</div><button class="chat-btn" onclick="location.href='https://asapcreditrepairusa.com/chat'">Start Chat</button></div>
-  </main>
-  <script>const K='pb_influencer';function load(){const s=localStorage.getItem(K);if(s){const d=JSON.parse(s);document.querySelectorAll('.task-checkbox').forEach((b,i)=>{if(d.tasks&&d.tasks[i]){b.classList.add('checked');b.innerHTML='✓'}});if(d.notes)document.getElementById('userNotes').value=d.notes}}function save(){const t=[];document.querySelectorAll('.task-checkbox').forEach(b=>t.push(b.classList.contains('checked')));localStorage.setItem(K,JSON.stringify({tasks:t,notes:document.getElementById('userNotes').value}))}document.querySelectorAll('.task-checkbox').forEach(b=>b.onclick=function(){this.classList.toggle('checked');this.innerHTML=this.classList.contains('checked')?'✓':'';save()});document.getElementById('userNotes').oninput=save;load();</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-social-media-influencer');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-social-media-influencer', JSON.stringify({ steps, notes }));
+        }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>
