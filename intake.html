@@ -636,6 +636,29 @@
             color: #78350f;
         }
 
+        /* After-Tax Banner */
+        .aftertax-banner {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            border: 2px solid #10b981;
+            border-radius: var(--radius);
+            padding: 12px 20px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .aftertax-banner-icon {
+            font-size: 20px;
+        }
+
+        .aftertax-banner-text {
+            font-size: 15px;
+            font-weight: 700;
+            color: #065f46;
+        }
+
         .info-box-icon {
             font-size: 20px;
             flex-shrink: 0;
@@ -998,8 +1021,13 @@
                 <!-- Step 3: Monthly Income -->
                 <div class="step" data-step="3">
                     <span class="step-label"><span class="icon">💰</span> Income</span>
-                    <h2 class="step-title">What's your monthly income?</h2>
-                    <p class="step-subtitle">After taxes. Include all income sources.</p>
+                    <h2 class="step-title">What's your monthly take-home pay?</h2>
+                    <p class="step-subtitle">The amount that actually hits your bank account.</p>
+
+                    <div class="aftertax-banner">
+                        <span class="aftertax-banner-icon">🏦</span>
+                        <span class="aftertax-banner-text">AFTER TAXES — What you actually receive</span>
+                    </div>
 
                     <div class="big-input-container">
                         <div class="big-input-wrapper">
@@ -1011,7 +1039,7 @@
 
                     <div class="info-box">
                         <span class="info-box-icon">💡</span>
-                        <span class="info-box-text">Include salary, side gigs, rental income, child support, and any other regular income.</span>
+                        <span class="info-box-text"><strong>After taxes only!</strong> Add up your paycheck deposits, side gigs, rental income, child support - everything that lands in your account each month.</span>
                     </div>
 
                     <div class="btn-container">
