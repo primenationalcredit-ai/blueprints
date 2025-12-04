@@ -3,316 +3,363 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🪟 Window Cleaning Business | ASAP Financial Services</title>
+    <title>Window Cleaning Business - ASAP Financial Playbook</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
-        .container { max-width: 900px; margin: 0 auto; }
-        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; font-size: 1.1em; opacity: 0.9; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
         .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
-        .header { text-align: center; padding: 40px 30px; background: white; border-radius: 20px; margin-bottom: 20px; }
-        .header h1 { font-size: 2.5em; color: #1a1a2e; margin-bottom: 15px; }
-        .header .subtitle { font-size: 1.2em; color: #666; margin-bottom: 20px; }
-        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 10px 25px; border-radius: 25px; font-weight: 600; }
-        h2 { color: #1a1a2e; margin-bottom: 20px; font-size: 1.6em; }
-        .achieve-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 25px; }
-        .achieve-box p { color: #2e7d32; font-size: 1.1em; line-height: 1.6; margin-bottom: 20px; }
-        .earnings-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; padding: 25px; border-radius: 15px; text-align: center; }
-        .earnings-highlight .amount { font-size: 2.8em; font-weight: 700; }
-        .earnings-highlight .label { font-size: 1.1em; opacity: 0.95; margin-top: 5px; }
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
-        .stat-card { background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 20px; border-radius: 15px; text-align: center; }
-        .stat-card .number { font-size: 2em; font-weight: 700; }
-        .stat-card .label { font-size: 0.9em; opacity: 0.9; }
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
-        .pricing-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; border-left: 4px solid #4caf50; }
-        .pricing-card h5 { color: #1a1a2e; margin-bottom: 8px; }
-        .pricing-card .price { font-size: 1.8em; font-weight: 700; color: #4caf50; }
-        .pricing-card p { color: #666; font-size: 0.85em; margin-top: 5px; }
-        .equipment-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 25px; margin: 20px 0; border-left: 4px solid #2196f3; }
-        .equipment-box h4 { color: #1565c0; margin-bottom: 15px; }
-        .equipment-box ul { color: #666; margin-left: 20px; line-height: 1.8; }
-        .steps-container { display: flex; flex-direction: column; gap: 15px; }
-        .step { display: flex; gap: 15px; padding: 20px; background: #f8f9fa; border-radius: 15px; }
-        .step-checkbox { width: 30px; height: 30px; min-width: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 14px; color: transparent; }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #2e7d32; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.2em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #e8f5e9; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
         .step-checkbox.checked { background: #667eea; color: white; }
-        .step-content h4 { color: #1a1a2e; margin-bottom: 8px; }
-        .step-content p { color: #666; line-height: 1.5; font-size: 0.95em; }
-        .technique-box { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-radius: 15px; padding: 25px; margin: 20px 0; border-left: 4px solid #ffc107; }
-        .technique-box h4 { color: #f57c00; margin-bottom: 15px; }
-        .technique-box ul { color: #666; margin-left: 20px; line-height: 1.8; }
-        .market-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 20px 0; }
-        .market-card { background: #f8f9fa; border-radius: 15px; padding: 25px; border-left: 4px solid #667eea; }
-        .market-card h4 { color: #1a1a2e; margin-bottom: 10px; }
-        .market-card .rate { color: #4caf50; font-weight: 700; margin-bottom: 10px; }
-        .market-card p { color: #666; font-size: 0.95em; line-height: 1.5; }
-        .math-box { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-radius: 15px; padding: 25px; margin: 20px 0; border-left: 4px solid #ffc107; }
-        .math-box h4 { color: #f57c00; margin-bottom: 15px; }
-        .math-box .calculation { background: white; padding: 15px; border-radius: 10px; font-family: monospace; color: #333; line-height: 1.8; }
-        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 20px 0; }
-        .pro-tip h4 { color: #f57c00; margin-bottom: 10px; }
-        .pro-tip ul { color: #666; line-height: 1.8; margin-left: 20px; }
-        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 20px 0; }
-        .warning-box h4 { color: #c62828; margin-bottom: 10px; }
-        .warning-box ul { color: #666; line-height: 1.8; margin-left: 20px; }
-        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+        .pricing-table th, .pricing-table td { padding: 12px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .pricing-table th { background: #667eea; color: white; }
+        .pricing-table tr:hover { background: #f8f9fa; }
+        .market-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .market-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 4px solid #2196f3; }
+        .market-card h4 { color: #1a1a2e; font-size: 14px; margin-bottom: 8px; }
+        .market-card p { color: #666; font-size: 12px; line-height: 1.5; }
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .platform-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #4caf50; }
+        .platform-card h4 { color: #1a1a2e; margin-bottom: 8px; }
+        .platform-card h4 a { color: #667eea; text-decoration: none; }
+        .platform-card h4 a:hover { text-decoration: underline; }
+        .platform-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .platform-card .type { color: #2e7d32; font-weight: 600; font-size: 12px; margin-top: 8px; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .equipment-box { background: #f8f9fa; border-radius: 15px; padding: 20px; margin: 15px 0; }
+        .equipment-box h4 { color: #1a1a2e; margin-bottom: 15px; }
+        .equipment-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+        .equipment-item { display: flex; align-items: center; gap: 10px; padding: 10px; background: white; border-radius: 8px; }
+        .equipment-item .emoji { font-size: 1.3em; }
+        .equipment-item span { color: #666; font-size: 13px; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
         .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
         .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
-        .influencer-card .platform { color: #667eea; font-size: 0.9em; }
-        .influencer-card p { color: #666; font-size: 0.9em; margin: 10px 0; }
-        .influencer-link { color: #667eea; text-decoration: none; font-weight: 600; font-size: 0.9em; }
-        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; text-align: center; }
-        .progress-tracker h3 { color: white; margin-bottom: 20px; }
-        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; overflow: hidden; margin-bottom: 15px; }
-        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s ease; width: 0%; }
-        .notes-section textarea { width: 100%; min-height: 200px; padding: 20px; border: 2px solid #e0e0e0; border-radius: 15px; font-family: inherit; font-size: 1em; resize: vertical; }
+        .influencer-card .platform { color: #667eea; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; }
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
         .notes-section textarea:focus { outline: none; border-color: #667eea; }
-        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 40px 30px; text-align: center; }
-        .cta-section h3 { color: white; margin-bottom: 15px; }
-        .cta-section p { opacity: 0.9; margin-bottom: 25px; }
-        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; }
-        @media (max-width: 768px) { .header h1 { font-size: 1.8em; } .card { padding: 20px; } }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="expense-playbooks.html" class="back-link">← Back to Expense Playbooks</a>
+        <a href="index.html" class="back-link">← Back to Playbooks</a>
         
         <div class="header">
             <h1>🪟 Window Cleaning Business</h1>
             <p class="subtitle">Professional service with excellent profit margins</p>
-            <div class="time-badge">⏱️ $150-400/house • $50-100/hour • Low startup</div>
+            <div class="time-badge">💰 $1,000-3,000/mo • Low startup ($50-150) • Residential + Commercial</div>
         </div>
-        
+
         <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
             <div class="achieve-box">
-                <h2>🎯 What You'll Achieve</h2>
-                <p>Window cleaning is one of the most profitable service businesses you can start. Low startup costs ($50-150), high demand from both residential and commercial clients, and excellent hourly rates ($50-100+). Master the squeegee technique and you can earn $300-600 per day.</p>
-                <div class="earnings-highlight">
-                    <div class="amount">$50-100+/hour</div>
-                    <div class="label">Residential & commercial rates</div>
-                </div>
+                <p>Window cleaning is one of the most profitable service businesses you can start. Low startup costs ($50-150), high demand from both residential and commercial clients, and excellent hourly rates ($50-100+). Master the squeegee technique and you can earn $300-600 per day!</p>
+            </div>
+            <div class="income-highlight">
+                <h3>$1,000-3,000/Month</h3>
+                <p>$5-10 per window • $150-400 per house • Commercial routes = weekly income!</p>
             </div>
         </div>
-        
+
         <div class="card">
-            <h2>📊 Window Cleaning Numbers</h2>
-            <div class="stats-grid">
-                <div class="stat-card"><div class="number">$50-150</div><div class="label">Startup cost</div></div>
-                <div class="stat-card"><div class="number">$5-15</div><div class="label">Per window (exterior)</div></div>
-                <div class="stat-card"><div class="number">$150-400</div><div class="label">Avg house (both sides)</div></div>
-                <div class="stat-card"><div class="number">$4,000+</div><div class="label">Monthly potential</div></div>
-            </div>
+            <h2><span class="icon">💰</span> Pricing Guide</h2>
+            <table class="pricing-table">
+                <tr><th>Service</th><th>Price</th><th>Notes</th></tr>
+                <tr><td>Per Window (Exterior Only)</td><td>$5-8</td><td>Double for in & out</td></tr>
+                <tr><td>Small Home (10-15 windows)</td><td>$100-175</td><td>Both sides</td></tr>
+                <tr><td>Medium Home (16-25 windows)</td><td>$175-300</td><td>Both sides</td></tr>
+                <tr><td>Large Home (25+ windows)</td><td>$300-500+</td><td>Both sides</td></tr>
+                <tr><td>Storefront (weekly)</td><td>$25-75</td><td>Recurring weekly</td></tr>
+                <tr><td>Screen Cleaning</td><td>$2-5 each</td><td>Easy add-on</td></tr>
+                <tr><td>Track/Sill Cleaning</td><td>$3-5 each</td><td>Detailed service</td></tr>
+            </table>
         </div>
-        
+
         <div class="card">
-            <h2>💰 Pricing Guide</h2>
-            <div class="pricing-grid">
-                <div class="pricing-card"><h5>Per Window</h5><div class="price">$5-15</div><p>Exterior only. Double for in & out.</p></div>
-                <div class="pricing-card"><h5>Small House</h5><div class="price">$100-175</div><p>10-15 windows, both sides</p></div>
-                <div class="pricing-card"><h5>Average House</h5><div class="price">$175-300</div><p>16-25 windows, both sides</p></div>
-                <div class="pricing-card"><h5>Large House</h5><div class="price">$300-500</div><p>25+ windows, both sides</p></div>
-                <div class="pricing-card"><h5>Storefront</h5><div class="price">$50-150/visit</div><p>Weekly or bi-weekly recurring</p></div>
-                <div class="pricing-card"><h5>Screen Cleaning</h5><div class="price">+$3-5 each</div><p>Easy add-on service</p></div>
-            </div>
-        </div>
-        
-        <div class="card">
-            <h2>🎯 Market Segments</h2>
+            <h2><span class="icon">🏠</span> Market Types</h2>
             <div class="market-grid">
                 <div class="market-card">
-                    <h4>🏠 Residential</h4>
-                    <div class="rate">$150-400 per home</div>
+                    <h4>🏡 Residential</h4>
                     <p>One-time or annual cleaning. Spring and fall are peak. Great for weekends. Build recurring annual clients.</p>
                 </div>
                 <div class="market-card">
-                    <h4>🏪 Storefront/Commercial</h4>
-                    <div class="rate">$50-150/visit recurring</div>
-                    <p>Weekly or bi-weekly contracts. Steady income. Clean in early morning before open. Build route of 20+ stops.</p>
+                    <h4>🏪 Storefronts</h4>
+                    <p>Weekly or bi-weekly contracts. Steady income! Clean early morning before open. Build route of 20+ stops.</p>
                 </div>
                 <div class="market-card">
-                    <h4>🏢 Office Buildings</h4>
-                    <div class="rate">$200-2,000+ per job</div>
-                    <p>Larger contracts. Often require insurance. Monthly or quarterly. Can be very lucrative.</p>
+                    <h4>🏢 Commercial</h4>
+                    <p>Larger contracts, often require insurance. Monthly or quarterly. Can be very lucrative.</p>
                 </div>
                 <div class="market-card">
                     <h4>🏗️ Post-Construction</h4>
-                    <div class="rate">Premium pricing</div>
                     <p>New builds need cleaning. Partner with contractors. Higher rates for tough work. Consistent pipeline.</p>
                 </div>
             </div>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Commercial Routes = Steady Income</div>
+                <p>Build a route of 20+ storefronts paying $30-50/week each. That's $600-1,000+/week RECURRING. Clean them all in 1-2 days, same time every week!</p>
+            </div>
         </div>
-        
+
         <div class="card">
-            <h2>🔧 Equipment Needed</h2>
+            <h2><span class="icon">🌐</span> Where to Find Clients</h2>
+            <p style="color: #666; margin-bottom: 15px;">Sign up on ALL these platforms to maximize your bookings:</p>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h4><a href="https://nextdoor.com/business" target="_blank">Nextdoor →</a></h4>
+                    <p>Post services to your neighborhood. FREE and perfect for residential clients. Neighbors recommend you!</p>
+                    <div class="type">🏘️ Best for: Residential clients</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.thumbtack.com/pro" target="_blank">Thumbtack →</a></h4>
+                    <p>Get matched with customers searching for window cleaning. Pay per lead. Great for getting started!</p>
+                    <div class="type">🎯 Best for: Consistent leads</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://business.google.com" target="_blank">Google Business Profile →</a></h4>
+                    <p>Show up in Google Maps when people search "window cleaning near me." FREE and essential!</p>
+                    <div class="type">🗺️ Best for: Local SEO</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.facebook.com/business" target="_blank">Facebook Business →</a></h4>
+                    <p>Create a business page, join local community groups. Post before/after photos of sparkling windows!</p>
+                    <div class="type">📱 Best for: Visual marketing</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://business.yelp.com" target="_blank">Yelp for Business →</a></h4>
+                    <p>Claim your business listing. Many people search Yelp for local services. Build reviews!</p>
+                    <div class="type">⭐ Best for: Building trust</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.homeadvisor.com/pro" target="_blank">HomeAdvisor/Angi →</a></h4>
+                    <p>Lead generation for home services. Serious customers looking for professionals.</p>
+                    <div class="type">🔨 Best for: Bigger jobs</div>
+                </div>
+            </div>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Walk Into Local Businesses!</div>
+                <p>For commercial clients, walk into local shops, restaurants, and offices. Offer first clean free or discounted. Once they see quality work, you have a weekly client!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🧰</span> Equipment You'll Need</h2>
             <div class="equipment-box">
-                <h4>Starter Kit ($50-150)</h4>
-                <ul>
-                    <li><strong>Squeegee:</strong> 12" and 18" brass channel ($15-30 each)</li>
-                    <li><strong>Scrubber/T-bar:</strong> Applicator for soap solution ($15-25)</li>
-                    <li><strong>Bucket:</strong> 3-5 gallon ($10-15)</li>
-                    <li><strong>Cleaning solution:</strong> Dawn dish soap or pro solution ($5-15)</li>
-                    <li><strong>Microfiber towels:</strong> For detailing edges ($10-15)</li>
-                    <li><strong>Ladder:</strong> 6ft stepladder for most residential ($50-100)</li>
-                </ul>
+                <h4>Starter Kit (Under $100)</h4>
+                <div class="equipment-list">
+                    <div class="equipment-item"><span class="emoji">🔲</span><span>Professional Squeegee (12" & 18")</span></div>
+                    <div class="equipment-item"><span class="emoji">🧽</span><span>Scrubber/Washer Sleeve</span></div>
+                    <div class="equipment-item"><span class="emoji">🪣</span><span>Bucket (5 gallon)</span></div>
+                    <div class="equipment-item"><span class="emoji">🧴</span><span>Window Cleaning Solution</span></div>
+                    <div class="equipment-item"><span class="emoji">🧻</span><span>Microfiber Towels</span></div>
+                    <div class="equipment-item"><span class="emoji">🪜</span><span>Extension Pole (for high windows)</span></div>
+                </div>
             </div>
-            <div class="equipment-box">
-                <h4>Advanced Tools</h4>
-                <ul>
-                    <li><strong>Extension pole:</strong> Reach 2nd story from ground ($30-100)</li>
-                    <li><strong>Water-fed pole system:</strong> Pure water cleaning, no ladder needed ($200-1,000)</li>
-                    <li><strong>Razor scraper:</strong> For paint, stickers, hard water deposits ($10-15)</li>
-                    <li><strong>Screen cleaner:</strong> Quick screen washing tool ($15-25)</li>
-                </ul>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Master the Squeegee!</div>
+                <p>Watch YouTube tutorials on squeegee technique. The "Window Cleaning Resource" channel is excellent. Practice until you're streak-free—this is the key skill!</p>
             </div>
         </div>
-        
+
         <div class="card">
-            <h2>🎓 Squeegee Technique</h2>
-            <div class="technique-box">
-                <h4>Master the Basics</h4>
-                <ul>
-                    <li><strong>Wet the window:</strong> Apply solution generously with scrubber</li>
-                    <li><strong>Scrub if needed:</strong> Work dirt loose, especially corners and edges</li>
-                    <li><strong>Squeegee stroke:</strong> Start at top, pull down in overlapping strokes</li>
-                    <li><strong>Wipe blade:</strong> After each stroke, wipe squeegee blade clean</li>
-                    <li><strong>Detail edges:</strong> Use microfiber to wipe edges and sill</li>
-                    <li><strong>Practice makes perfect:</strong> Speed comes with practice. Aim for streak-free.</li>
-                </ul>
+            <h2><span class="icon">📋</span> Your Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Get basic equipment</div>
+                    <div class="step-desc">Squeegee, scrubber, bucket, towels, soap. Under $100 to start! Get quality tools—they make a difference.</div>
+                </div>
             </div>
-            <p style="color: #666; text-align: center; margin-top: 15px;">💡 <strong>Pro tip:</strong> Watch YouTube tutorials. Window Cleaning Resource channel is excellent.</p>
-        </div>
-        
-        <div class="card">
-            <h2>📝 Starting Your Business</h2>
-            <div class="steps-container">
-                <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><h4>Step 1: Get Basic Equipment</h4><p>Squeegee, scrubber, bucket, towels, soap. Under $100 to start.</p></div></div>
-                <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><h4>Step 2: Practice Your Technique</h4><p>Your windows, friends, family. Get streak-free before charging.</p></div></div>
-                <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><h4>Step 3: Set Your Pricing</h4><p>Per window ($5-10) or per house. Research local rates.</p></div></div>
-                <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><h4>Step 4: Get First Residential Jobs</h4><p>Nextdoor, Facebook, door hangers in nice neighborhoods.</p></div></div>
-                <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><h4>Step 5: Approach Storefronts</h4><p>Walk into local shops. Offer first clean free or discounted. Build route.</p></div></div>
-                <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><h4>Step 6: Get Reviews & Referrals</h4><p>Ask every customer for Google review. Reviews = more customers.</p></div></div>
-                <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><h4>Step 7: Build Recurring Revenue</h4><p>Commercial route = weekly income. Residential annual = predictable.</p></div></div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Practice until streak-free</div>
+                    <div class="step-desc">Your windows, friends, family. Watch YouTube tutorials. Get streak-free technique before charging customers!</div>
+                </div>
             </div>
-        </div>
-        
-        <div class="card">
-            <h2>🧮 Income Examples</h2>
-            <div class="math-box">
-                <h4>Part-Time Residential (Weekends)</h4>
-                <div class="calculation">
-SATURDAY:<br>
-3 houses × $200 avg = $600<br>
-Time: 6-7 hours<br>
-<br>
-MONTHLY (4 Saturdays):<br>
-12 houses × $200 = $2,400<br>
-Supplies: -$50<br>
-NET: ~$2,350/month<br>
-<br>
-━━━━━━━━━━━━━━━━━━━━━━━━━<br>
-<br>
-COMMERCIAL ROUTE (Part-Time):<br>
-15 storefronts × $75/visit = $1,125<br>
-Weekly (every Tue/Thu AM)<br>
-Monthly: $4,500<br>
-<br>
-💡 Combine both for $5,000+/month!
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Set your prices</div>
+                    <div class="step-desc">Per window ($5-10) or per house. Research local rates on Thumbtack. Start competitive, raise with reviews.</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Set up your online presence</div>
+                    <div class="step-desc">Create profiles on Nextdoor, Google Business, Thumbtack, Facebook. FREE or low-cost, essential for getting found!</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Market residential - door hangers in nice neighborhoods</div>
+                    <div class="step-desc">Post on Nextdoor, Facebook groups. Leave door hangers in nice neighborhoods. Spring cleaning season is HUGE!</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Walk into storefronts for commercial</div>
+                    <div class="step-desc">Visit local shops, offer first clean free or discounted. Build a route of weekly/bi-weekly clients for steady income!</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Ask every customer for reviews</div>
+                    <div class="step-desc">After every job, ask for Google review. Reviews = more customers = more money. This is absolutely critical!</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Build recurring routes</div>
+                    <div class="step-desc">Commercial route = weekly income. Residential annual clients = predictable schedule. This is how you build a real business!</div>
                 </div>
             </div>
         </div>
-        
-        <div class="card">
-            <div class="pro-tip">
-                <h4>💡 Pro Tips</h4>
-                <ul>
-                    <li><strong>Early morning commercial:</strong> Clean storefronts 6-8am before they open</li>
-                    <li><strong>Bundle services:</strong> Add gutter cleaning, pressure washing for bigger tickets</li>
-                    <li><strong>Screens extra:</strong> Always quote screens separately—easy add-on revenue</li>
-                    <li><strong>Get route density:</strong> 5 storefronts on same block = efficient route</li>
-                    <li><strong>Seasonal push:</strong> Market hard before holidays (Thanksgiving, Christmas)</li>
-                    <li><strong>Annual reminders:</strong> Email past customers: "Time for your spring cleaning!"</li>
-                </ul>
-            </div>
-            
-            <div class="warning-box">
-                <h4>⚠️ Avoid These Mistakes</h4>
-                <ul>
-                    <li><strong>Cleaning in direct sun:</strong> Solution dries too fast = streaks. Work in shade.</li>
-                    <li><strong>Dirty squeegee blade:</strong> Wipe blade between strokes. Dirty blade = streaks.</li>
-                    <li><strong>Skipping screens:</strong> Dirty screens = dirty windows right after rain</li>
-                    <li><strong>Underpricing:</strong> Know your value. Cheap prices = cheap customers.</li>
-                    <li><strong>No insurance:</strong> Get general liability ($300-500/yr). One broken window...</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="card">
-            <h2>🌟 Window Cleaning Resources</h2>
-            <div class="influencer-grid">
-                <div class="influencer-card"><div class="influencer-avatar">📺</div><h4>Window Cleaning Resource</h4><div class="platform">📺 YouTube</div><p>Best channel for technique and business. Free training.</p><a href="https://www.youtube.com/@WindowCleaningResource" class="influencer-link" target="_blank">Watch →</a></div>
-                <div class="influencer-card"><div class="influencer-avatar">💬</div><h4>r/WindowCleaning</h4><div class="platform">🔗 Reddit</div><p>Active community. Equipment, pricing, technique tips.</p><a href="https://www.reddit.com/r/WindowCleaning/" class="influencer-link" target="_blank">Join →</a></div>
-                <div class="influencer-card"><div class="influencer-avatar">🛒</div><h4>WCR (Window Cleaning Resource)</h4><div class="platform">🌐 Store</div><p>Pro equipment and supplies. Quality tools matter.</p><a href="https://www.windowcleaningresource.com" class="influencer-link" target="_blank">Shop →</a></div>
-                <div class="influencer-card"><div class="influencer-avatar">📋</div><h4>Jobber</h4><div class="platform">📱 Software</div><p>Quotes, scheduling, invoicing. Scales your business.</p><a href="https://getjobber.com" class="influencer-link" target="_blank">Try Free →</a></div>
-            </div>
-        </div>
-        
-        <div class="card"><div class="progress-tracker"><h3>📈 Your Progress</h3><div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div><p class="progress-text"><span id="completed">0</span> of 7 steps completed</p></div></div>
-        
-        <div class="card notes-section">
-            <h2>📓 Your Window Cleaning Business Plan</h2>
-            <textarea id="notes" placeholder="Plan your window cleaning business!
 
-MY EQUIPMENT:
-━━━━━━━━━━━━
-☐ Squeegee (12" + 18") - $____
-☐ Scrubber/T-bar - $____
-☐ Bucket - $____
-☐ Solution - $____
-☐ Microfiber towels - $____
-☐ Ladder - $____
-Total startup: $____
+        <div class="card">
+            <h2><span class="icon">🎓</span> Learn From These Creators</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Window Cleaning Resource</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Best channel for technique and business advice. Free training from pros!</p>
+                    <a href="https://www.youtube.com/c/WindowCleaningResource" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💬</div>
+                    <h4>r/windowcleaning</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Active community. Equipment reviews, pricing tips, technique advice.</p>
+                    <a href="https://reddit.com/r/windowcleaning" class="influencer-link" target="_blank">r/windowcleaning →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🛒</div>
+                    <h4>J. Racenstein</h4>
+                    <div class="platform">🌐 Website</div>
+                    <p>Pro equipment and supplies. Quality tools make a difference in results!</p>
+                    <a href="https://www.jracenstein.com" class="influencer-link" target="_blank">J. Racenstein →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📱</div>
+                    <h4>Jobber</h4>
+                    <div class="platform">🌐 Software</div>
+                    <p>Quotes, scheduling, invoicing. Scales your business as you grow.</p>
+                    <a href="https://getjobber.com" class="influencer-link" target="_blank">Jobber →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Window Cleaning Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your window cleaning business!
+
+EQUIPMENT:
+☐ Squeegees (12" and 18")
+☐ Scrubber/washer sleeve
+☐ 5-gallon bucket
+☐ Cleaning solution
+☐ Microfiber towels
+☐ Extension pole
+
+PLATFORMS SIGNED UP:
+☐ Nextdoor Business
+☐ Google Business Profile
+☐ Facebook Business Page
+☐ Thumbtack
+☐ Yelp
+☐ HomeAdvisor
 
 MY PRICING:
-━━━━━━━━━━
 Per window (exterior): $____
-Per window (both sides): $____
-Small house (10-15 windows): $____
-Medium house (16-25): $____
-Large house (25+): $____
-Screen cleaning: +$____ each
-Storefront: $____/visit
+Per window (in & out): $____
+Small home (10-15 windows): $____
+Medium home (16-25 windows): $____
+Large home (25+ windows): $____
+Storefront weekly: $____
 
-RESIDENTIAL CLIENTS:
-━━━━━━━━━━━━━━━━━━
-Name | Windows | Price | Next Service
-____ | _______ | $____ | ____/____
-____ | _______ | $____ | ____/____
+INSURANCE:
+☐ Liability insurance: $____/year
 
-COMMERCIAL ROUTE:
-━━━━━━━━━━━━━━━━
-Business | Day | Frequency | Price
-________ | ___ | _________ | $____
-________ | ___ | _________ | $____
-________ | ___ | _________ | $____
+REVIEWS:
+Google: ____ reviews (____★)
+Nextdoor: ____ recommendations
 
-MONTHLY TOTALS:
-━━━━━━━━━━━━━━
-Residential: $____
-Commercial: $____
-Total: $____"></textarea>
+COMMERCIAL ROUTE (Weekly):
+1. ____ | Day: ____ | Price: $____/week
+2. ____ | Day: ____ | Price: $____/week
+3. ____ | Day: ____ | Price: $____/week
+4. ____ | Day: ____ | Price: $____/week
+5. ____ | Day: ____ | Price: $____/week
+
+Weekly route income: $____
+
+MONTHLY INCOME:
+Month: ____ | Jobs: ____ | Revenue: $____
+"></textarea>
+            </div>
         </div>
-        
-        <div class="card"><div class="cta-section"><h3>🚀 Need Help Building Credit & Cash Flow?</h3><p>ASAP Financial Services helps with credit repair and financial planning.</p><a href="https://asapcreditrepairusa.com" class="cta-button" target="_blank">Get Started →</a></div></div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
     </div>
-    
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const saved = localStorage.getItem('playbook-window-cleaning');
             if (saved) {
                 const data = JSON.parse(saved);
-                data.steps.forEach((checked, index) => { if (checked) { document.querySelectorAll('.step-checkbox')[index].classList.add('checked'); } });
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
                 document.getElementById('notes').value = data.notes || '';
                 updateProgress();
             }
