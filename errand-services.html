@@ -3,264 +3,410 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🏃 Errand Services Guide | ASAP Financial Services</title>
+    <title>Errand Running Service - ASAP Financial Playbook</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
         .container { max-width: 900px; margin: 0 auto; }
-        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; font-size: 1.1em; opacity: 0.9; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
         .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
-        .header { text-align: center; padding: 40px 30px; background: white; border-radius: 20px; margin-bottom: 20px; }
-        .header h1 { font-size: 2.5em; color: #1a1a2e; margin-bottom: 15px; }
-        .header .subtitle { font-size: 1.2em; color: #666; margin-bottom: 20px; }
-        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 10px 25px; border-radius: 25px; font-weight: 600; }
-        h2 { color: #1a1a2e; margin-bottom: 20px; font-size: 1.6em; }
-        .achieve-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 25px; }
-        .achieve-box p { color: #2e7d32; font-size: 1.1em; line-height: 1.6; margin-bottom: 20px; }
-        .earnings-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; padding: 25px; border-radius: 15px; text-align: center; }
-        .earnings-highlight .amount { font-size: 2.8em; font-weight: 700; }
-        .earnings-highlight .label { font-size: 1.1em; opacity: 0.95; margin-top: 5px; }
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
-        .stat-card { background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 20px; border-radius: 15px; text-align: center; }
-        .stat-card .number { font-size: 2em; font-weight: 700; }
-        .stat-card .label { font-size: 0.9em; opacity: 0.9; }
-        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
-        .service-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 4px solid #667eea; }
-        .service-card h4 { color: #1a1a2e; margin-bottom: 8px; }
-        .service-card .rate { color: #4caf50; font-weight: 700; margin-bottom: 8px; }
-        .service-card p { color: #666; font-size: 0.9em; line-height: 1.4; }
-        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 20px 0; }
-        .platform-card { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 25px; border-left: 4px solid #2196f3; }
-        .platform-card h4 { color: #1565c0; margin-bottom: 10px; }
-        .platform-card .rate { color: #4caf50; font-weight: 700; margin-bottom: 10px; }
-        .platform-card p { color: #666; font-size: 0.95em; line-height: 1.5; }
-        .steps-container { display: flex; flex-direction: column; gap: 15px; }
-        .step { display: flex; gap: 15px; padding: 20px; background: #f8f9fa; border-radius: 15px; }
-        .step-checkbox { width: 30px; height: 30px; min-width: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 14px; color: transparent; }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #1565c0; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #e3f2fd; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
         .step-checkbox.checked { background: #667eea; color: white; }
-        .step-content h4 { color: #1a1a2e; margin-bottom: 8px; }
-        .step-content p { color: #666; line-height: 1.5; font-size: 0.95em; }
-        .math-box { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-radius: 15px; padding: 25px; margin: 20px 0; border-left: 4px solid #ffc107; }
-        .math-box h4 { color: #f57c00; margin-bottom: 15px; }
-        .math-box .calculation { background: white; padding: 15px; border-radius: 10px; font-family: monospace; color: #333; line-height: 1.8; }
-        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 20px 0; }
-        .pro-tip h4 { color: #f57c00; margin-bottom: 10px; }
-        .pro-tip ul { color: #666; line-height: 1.8; margin-left: 20px; }
-        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 20px 0; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 15px; overflow: hidden; font-size: 14px; }
+        .pricing-table th, .pricing-table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .pricing-table th { background: #667eea; color: white; font-weight: 600; }
+        .pricing-table tr:hover { background: #f5f5f5; }
+        .pricing-table .rate { color: #4caf50; font-weight: 600; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .service-card { background: #f8f9fa; border-radius: 15px; padding: 15px; text-align: center; border-left: 5px solid #667eea; }
+        .service-card .emoji { font-size: 2em; margin-bottom: 8px; }
+        .service-card h4 { color: #1a1a2e; font-size: 14px; margin-bottom: 5px; }
+        .service-card .rate { color: #4caf50; font-weight: 600; font-size: 13px; }
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .platform-card { background: #f8f9fa; border-radius: 15px; padding: 15px; border-left: 5px solid #2196f3; }
+        .platform-card h4 { color: #1a1a2e; font-size: 14px; margin-bottom: 5px; }
+        .platform-card p { color: #666; font-size: 12px; line-height: 1.4; }
+        .platform-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; font-size: 13px; }
+        .platform-link:hover { text-decoration: underline; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
         .warning-box h4 { color: #c62828; margin-bottom: 10px; }
-        .warning-box ul { color: #666; line-height: 1.8; margin-left: 20px; }
-        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; }
+        .warning-box p, .warning-box li { color: #666; }
+        .warning-box ul { margin-left: 20px; margin-top: 10px; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
         .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
         .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
-        .influencer-card .platform { color: #667eea; font-size: 0.9em; }
-        .influencer-card p { color: #666; font-size: 0.9em; margin: 10px 0; }
-        .influencer-link { color: #667eea; text-decoration: none; font-weight: 600; font-size: 0.9em; }
-        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; text-align: center; }
-        .progress-tracker h3 { color: white; margin-bottom: 20px; }
-        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; overflow: hidden; margin-bottom: 15px; }
-        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s ease; width: 0%; }
-        .notes-section textarea { width: 100%; min-height: 200px; padding: 20px; border: 2px solid #e0e0e0; border-radius: 15px; font-family: inherit; font-size: 1em; resize: vertical; }
+        .influencer-card .platform { color: #667eea; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; }
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
         .notes-section textarea:focus { outline: none; border-color: #667eea; }
-        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 40px 30px; text-align: center; }
-        .cta-section h3 { color: white; margin-bottom: 15px; }
-        .cta-section p { opacity: 0.9; margin-bottom: 25px; }
-        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; }
-        @media (max-width: 768px) { .header h1 { font-size: 1.8em; } .card { padding: 20px; } }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="expense-playbooks.html" class="back-link">← Back to Expense Playbooks</a>
+        <a href="income-playbooks.html" class="back-link">← Back to Income Playbooks</a>
         
         <div class="header">
-            <h1>🏃 Errand Services Guide</h1>
-            <p class="subtitle">Get paid to run errands for busy people</p>
-            <div class="time-badge">⏱️ $20-50/hour • Flexible schedule</div>
+            <h1>🏃 Errand Running Service</h1>
+            <p class="subtitle">Get paid $20-50/hour helping busy people with everyday tasks</p>
+            <div class="time-badge">⏱️ $50-100 startup • Earn $300-1,500+/month part-time</div>
         </div>
-        
+
         <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
             <div class="achieve-box">
-                <h2>🎯 What You'll Achieve</h2>
-                <p>Busy professionals, families, and seniors need help with everyday tasks. Errand running lets you earn $20-50/hour doing things like grocery shopping, returns, pickups, waiting for deliveries, and more. Low startup costs, flexible hours, and growing demand make this an ideal side gig.</p>
-                <div class="earnings-highlight">
-                    <div class="amount">$20-50/hour</div>
-                    <div class="label">Running errands for others</div>
-                </div>
+                <p>Start earning within 24-48 hours running errands for busy professionals, families, and anyone who values their time. Grocery shopping, returns, waiting in line, pharmacy runs — tasks people hate doing are money in your pocket. Flexible hours, low startup, and growing demand make this ideal for extra income!</p>
+            </div>
+            <div class="income-highlight">
+                <h3>$300-1,500+/Month Part-Time</h3>
+                <p>12-15 hours/week × $25-35/hr avg = $1,200-2,000/month • Full-time taskers earn $3,000-5,000!</p>
             </div>
         </div>
-        
+
         <div class="card">
-            <h2>📊 Errand Service Numbers</h2>
-            <div class="stats-grid">
-                <div class="stat-card"><div class="number">$25-35</div><div class="label">Avg hourly rate</div></div>
-                <div class="stat-card"><div class="number">$0</div><div class="label">Startup cost</div></div>
-                <div class="stat-card"><div class="number">3-5</div><div class="label">Tasks/day typical</div></div>
-                <div class="stat-card"><div class="number">$1,500+</div><div class="label">Monthly part-time</div></div>
-            </div>
-        </div>
-        
-        <div class="card">
-            <h2>📋 Errand Services You Can Offer</h2>
+            <h2><span class="icon">🛒</span> Popular Errand Services</h2>
+            <p style="color: #666; margin-bottom: 15px;">Focus on tasks people hate doing — that's where the money is!</p>
             <div class="service-grid">
-                <div class="service-card"><h4>🛒 Grocery Shopping</h4><div class="rate">$25-40/trip</div><p>Shop and deliver groceries. Know store layouts for speed.</p></div>
-                <div class="service-card"><h4>📦 Package Pickup/Drop-off</h4><div class="rate">$15-25/trip</div><p>Post office, UPS, FedEx runs. Quick and easy.</p></div>
-                <div class="service-card"><h4>🔄 Returns & Exchanges</h4><div class="rate">$20-35/task</div><p>Handle store returns. People hate doing this.</p></div>
-                <div class="service-card"><h4>💊 Prescription Pickup</h4><div class="rate">$15-25/trip</div><p>Pharmacy runs. Essential for seniors and busy families.</p></div>
-                <div class="service-card"><h4>🏠 Wait for Deliveries</h4><div class="rate">$20-40/hour</div><p>Be there for cable, furniture, repairs. Hourly rate.</p></div>
-                <div class="service-card"><h4>🚗 DMV/Government Offices</h4><div class="rate">$30-50/task</div><p>Wait in line for others. Premium pricing for painful tasks.</p></div>
-                <div class="service-card"><h4>🐕 Pet Errands</h4><div class="rate">$20-35/task</div><p>Vet visits, groomer drop-off, pet supply runs.</p></div>
-                <div class="service-card"><h4>🎁 Gift Shopping</h4><div class="rate">$25-50/task</div><p>Holiday/birthday shopping. Add personal shopper services.</p></div>
-            </div>
-        </div>
-        
-        <div class="card">
-            <h2>📱 Platforms to Find Clients</h2>
-            <div class="platform-grid">
-                <div class="platform-card">
-                    <h4>🔧 TaskRabbit</h4>
-                    <div class="rate">$25-60/hour • You set rates</div>
-                    <p>Largest task marketplace. Errands, deliveries, waiting in line. Background check required. Best in urban areas.</p>
+                <div class="service-card">
+                    <div class="emoji">🛒</div>
+                    <h4>Grocery Shopping</h4>
+                    <div class="rate">$25-35/hr + tips</div>
                 </div>
-                <div class="platform-card">
-                    <h4>📣 Nextdoor</h4>
-                    <div class="rate">Keep 100% • Direct clients</div>
-                    <p>Post your services to neighbors. Build local reputation. No platform fees. Great for recurring clients.</p>
+                <div class="service-card">
+                    <div class="emoji">📦</div>
+                    <h4>Returns & Exchanges</h4>
+                    <div class="rate">$20-30/hr</div>
                 </div>
-                <div class="platform-card">
-                    <h4>🏠 Care.com</h4>
-                    <div class="rate">$20-40/hour • Subscription</div>
-                    <p>Senior care and family assistance. Includes errand services. Background checks build trust.</p>
+                <div class="service-card">
+                    <div class="emoji">📮</div>
+                    <h4>Post Office/Shipping</h4>
+                    <div class="rate">$20-25/hr</div>
                 </div>
-                <div class="platform-card">
-                    <h4>📱 Dumpling</h4>
-                    <div class="rate">Keep 100% • Build your brand</div>
-                    <p>Create your own personal shopping/errand business. Clients book directly with you.</p>
+                <div class="service-card">
+                    <div class="emoji">💊</div>
+                    <h4>Pharmacy Runs</h4>
+                    <div class="rate">$20-30/hr</div>
                 </div>
-            </div>
-        </div>
-        
-        <div class="card">
-            <h2>📝 Starting Your Errand Business</h2>
-            <div class="steps-container">
-                <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><h4>Step 1: Define Your Services</h4><p>Decide what errands you'll run. Start with 3-5 core services you're comfortable with.</p></div></div>
-                <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><h4>Step 2: Set Your Rates</h4><p>Research local rates. Start with $25-30/hour or per-task pricing. Adjust based on demand.</p></div></div>
-                <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><h4>Step 3: Sign Up for Platforms</h4><p>Create profiles on TaskRabbit, Nextdoor, Care.com. Complete background checks where required.</p></div></div>
-                <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><h4>Step 4: Create a Simple Flyer</h4><p>For local posting—community boards, senior centers, apartment buildings. Include services and contact.</p></div></div>
-                <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><h4>Step 5: Get Your First Clients</h4><p>Accept all reasonable jobs initially. Focus on getting 5-star reviews to build reputation.</p></div></div>
-                <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><h4>Step 6: Deliver Exceptional Service</h4><p>Communicate proactively, be reliable, go above and beyond. Happy clients = referrals.</p></div></div>
-                <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><h4>Step 7: Build Recurring Clients</h4><p>Weekly grocery runs, regular prescription pickups. Recurring = predictable income.</p></div></div>
-            </div>
-        </div>
-        
-        <div class="card">
-            <h2>🧮 Earnings Example</h2>
-            <div class="math-box">
-                <h4>Part-Time Errand Runner (20 hrs/week)</h4>
-                <div class="calculation">
-TYPICAL WEEK:<br>
-Mon: 3 grocery shops × $30 = $90<br>
-Wed: 2 pharmacy + 2 returns = $80<br>
-Fri: Wait for delivery (3 hrs) = $90<br>
-Sat: 4 misc errands = $120<br>
-<br>
-WEEKLY GROSS: $380<br>
-Gas/mileage: -$40<br>
-NET: $340/week<br>
-<br>
-MONTHLY: ~$1,360<br>
-<br>
-💡 Build recurring weekly clients<br>
-for predictable income!
+                <div class="service-card">
+                    <div class="emoji">🏠</div>
+                    <h4>Wait for Deliveries</h4>
+                    <div class="rate">$25-35/hr</div>
                 </div>
-            </div>
-        </div>
-        
-        <div class="card">
-            <div class="pro-tip">
-                <h4>💡 Pro Errand Runner Tips</h4>
-                <ul>
-                    <li><strong>Batch errands:</strong> Multiple clients, same area = more $/hour</li>
-                    <li><strong>Know store layouts:</strong> Faster shopping = more jobs per day</li>
-                    <li><strong>Communicate constantly:</strong> "On my way!" "Task complete!" Clients love updates.</li>
-                    <li><strong>Build relationships:</strong> Remember preferences. Personal touch = loyal clients.</li>
-                    <li><strong>Target seniors:</strong> Consistent need, appreciate reliability, often become recurring.</li>
-                    <li><strong>Offer packages:</strong> "Weekly essentials run" at a slight discount for commitment.</li>
-                </ul>
+                <div class="service-card">
+                    <div class="emoji">⏳</div>
+                    <h4>Wait in Line (DMV)</h4>
+                    <div class="rate">$30-50/hr</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🐕</div>
+                    <h4>Pet Errands</h4>
+                    <div class="rate">$25-35/hr</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🎁</div>
+                    <h4>Gift Shopping</h4>
+                    <div class="rate">$30-45/hr</div>
+                </div>
             </div>
             
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 The Premium Tasks</div>
+                <p>Waiting in line at the DMV, sitting at home for the cable guy, standing in return lines — these tasks are PAINFUL for people. They'll pay premium rates ($35-50/hr) because the time savings is worth it. Market these specifically!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💵</span> Errand Service Pricing</h2>
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Service Type</th>
+                        <th>Hourly Rate</th>
+                        <th>Per Task</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Basic errands (post office, returns)</td><td class="rate">$20-25/hr</td><td>$15-25</td><td>Quick tasks under 1 hour</td></tr>
+                    <tr><td>Grocery shopping</td><td class="rate">$25-35/hr</td><td>$30-50</td><td>Plus mileage for delivery</td></tr>
+                    <tr><td>Wait time services</td><td class="rate">$25-40/hr</td><td>Varies</td><td>DMV, cable, deliveries</td></tr>
+                    <tr><td>Personal shopping</td><td class="rate">$35-50/hr</td><td>$50-100</td><td>Gifts, clothes, specialty</td></tr>
+                    <tr><td>Same-day rush</td><td class="rate">+50%</td><td>+$15-25</td><td>Premium for urgent requests</td></tr>
+                    <tr><td>Weekly package (5 hrs)</td><td class="rate">$22-28/hr</td><td>$110-140</td><td>Discount for recurring</td></tr>
+                </tbody>
+            </table>
+            
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Pricing Strategy</div>
+                <p><strong>Start at $25/hour</strong> to get reviews, then raise to $35-45 as your rating improves. Set a <strong>1-hour minimum</strong> so tiny tasks are still worth your time. Add <strong>mileage fees ($0.67/mile)</strong> for delivery errands!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📱</span> Where to Find Clients</h2>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h4>📱 TaskRabbit (Best!)</h4>
+                    <p>Largest task marketplace. Instant demand in cities. Background check required. 15% fee but worth it for volume.</p>
+                    <a href="https://www.taskrabbit.com" class="platform-link" target="_blank">Join TaskRabbit →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>🏘️ Nextdoor (Free!)</h4>
+                    <p>Post services to neighbors. No fees! Great for recurring clients. Neighbors trust neighbors.</p>
+                    <a href="https://www.nextdoor.com" class="platform-link" target="_blank">Join Nextdoor →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>👨‍👩‍👧 Care.com</h4>
+                    <p>Family services including errands. Background check builds trust. Monthly subscription model.</p>
+                    <a href="https://www.care.com" class="platform-link" target="_blank">Join Care.com →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>📌 Thumbtack</h4>
+                    <p>Service marketplace. Pay per lead. Good for personal assistant positioning.</p>
+                    <a href="https://www.thumbtack.com" class="platform-link" target="_blank">Join Thumbtack →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>📘 Facebook Groups</h4>
+                    <p>Local buy/sell groups. Post services. Adult children hire help for aging parents.</p>
+                    <a href="https://www.facebook.com/groups" class="platform-link" target="_blank">Find Local Groups →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>📋 Craigslist</h4>
+                    <p>Gigs section. Free posting. Screen clients carefully. Still gets responses!</p>
+                    <a href="https://www.craigslist.org" class="platform-link" target="_blank">Post on Craigslist →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Errand Business Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Define your services</div>
+                    <div class="step-desc">Pick 4-6 errand types you'll offer. Start with grocery shopping, returns, post office, and wait-time services. Be specific about what you will and won't do.</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Set your rates</div>
+                    <div class="step-desc">Research local TaskRabbit rates. Start at $25/hr for basic errands, $35/hr for wait services. Set 1-hour minimum. Add mileage for delivery.</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Sign up for TaskRabbit</div>
+                    <div class="step-desc">Create profile, complete background check (~$25), set availability. Approval takes 3-5 days. Write a friendly, professional bio!</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Post on Nextdoor</div>
+                    <div class="step-desc">Create a recommendations post offering errand services. Include rates, availability, and what makes you reliable. It's free!</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Accept your first jobs</div>
+                    <div class="step-desc">Say yes to almost everything initially. Focus on getting 5-star reviews. Reputation is EVERYTHING on these platforms.</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Over-deliver on service</div>
+                    <div class="step-desc">Communicate proactively, send photo updates, be early. Text "On my way!" and "Task complete!" Ask for reviews after every job.</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Build recurring clients</div>
+                    <div class="step-desc">Offer weekly packages at slight discount. "Every Tuesday grocery run" = predictable income. Move loyal clients off-platform to keep more money.</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Raise rates and expand</div>
+                    <div class="step-desc">After 10+ five-star reviews, raise rates $5-10/hr. Add premium services like personal shopping. Position as "personal assistant" for higher rates.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📊</span> Weekly Income Example</h2>
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Tasks</th>
+                        <th>Hours</th>
+                        <th>Income</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Tuesday</td><td>3 grocery runs</td><td>4 hrs</td><td class="rate">$120</td></tr>
+                    <tr><td>Thursday</td><td>Returns + pharmacy runs</td><td>3 hrs</td><td class="rate">$75</td></tr>
+                    <tr><td>Saturday</td><td>Wait services + misc errands</td><td>5 hrs</td><td class="rate">$175</td></tr>
+                    <tr><td colspan="2"><strong>Weekly Total</strong></td><td><strong>12 hrs</strong></td><td class="rate"><strong>$370</strong></td></tr>
+                    <tr><td colspan="2"><strong>Monthly Total (4 weeks)</strong></td><td><strong>48 hrs</strong></td><td class="rate"><strong>$1,480</strong></td></tr>
+                </tbody>
+            </table>
+            <p style="color: #666; font-size: 14px; margin-top: 15px;">This is part-time work! Full-time taskers in busy markets earn $3,000-5,000/month.</p>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">⚠️</span> Avoid These Mistakes</h2>
             <div class="warning-box">
-                <h4>⚠️ Important Considerations</h4>
+                <h4>🚨 Common Pitfalls</h4>
                 <ul>
-                    <li><strong>Track mileage:</strong> 67¢/mile deduction (2024). Essential for taxes.</li>
-                    <li><strong>Get payment upfront:</strong> For purchases, collect money or use client's card.</li>
-                    <li><strong>Insurance:</strong> Consider general liability insurance as you grow.</li>
-                    <li><strong>Set boundaries:</strong> Define what you will/won't do. Some tasks aren't worth it.</li>
-                    <li><strong>Keep receipts:</strong> Always provide itemized receipts for purchases.</li>
+                    <li><strong>Using your own money:</strong> Never pay for items yourself. Get payment or client's card upfront.</li>
+                    <li><strong>No mileage tracking:</strong> Use Stride or MileIQ app. This is a big tax deduction!</li>
+                    <li><strong>Underpricing:</strong> Account for drive time, parking, waiting. $15/hr doesn't work after expenses.</li>
+                    <li><strong>Cash payments:</strong> Keep records! Use Venmo/PayPal for paper trail.</li>
+                    <li><strong>Illegal errands:</strong> Never pick up controlled substances. Decline sketchy requests.</li>
                 </ul>
             </div>
         </div>
-        
+
         <div class="card">
-            <h2>🌟 Errand Service Resources</h2>
+            <h2><span class="icon">🎓</span> Learn From the Pros</h2>
             <div class="influencer-grid">
-                <div class="influencer-card"><div class="influencer-avatar">🔧</div><h4>TaskRabbit</h4><div class="platform">📱 Platform</div><p>Largest task marketplace. Get started quickly.</p><a href="https://www.taskrabbit.com/become-a-tasker" class="influencer-link" target="_blank">Sign Up →</a></div>
-                <div class="influencer-card"><div class="influencer-avatar">🏘️</div><h4>Nextdoor</h4><div class="platform">📱 App</div><p>Post services to your neighborhood. No fees.</p><a href="https://nextdoor.com" class="influencer-link" target="_blank">Post Services →</a></div>
-                <div class="influencer-card"><div class="influencer-avatar">📱</div><h4>Stride</h4><div class="platform">📱 App</div><p>Track mileage and expenses automatically.</p><a href="https://www.stridehealth.com" class="influencer-link" target="_blank">Download →</a></div>
-                <div class="influencer-card"><div class="influencer-avatar">💬</div><h4>r/TaskRabbit</h4><div class="platform">🔗 Reddit</div><p>TaskRabbit community tips and experiences.</p><a href="https://www.reddit.com/r/TaskRabbit/" class="influencer-link" target="_blank">Join →</a></div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💼</div>
+                    <h4>Side Hustle Nation</h4>
+                    <div class="platform">🎙️ Podcast</div>
+                    <p>Nick Loper covers errand running, TaskRabbit success stories, and service business tactics.</p>
+                    <a href="https://www.sidehustlenation.com" class="influencer-link" target="_blank">Website →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📱</div>
+                    <h4>TaskRabbit Blog</h4>
+                    <div class="platform">🌐 Resource</div>
+                    <p>Official tips, success stories, and best practices from top-earning Taskers.</p>
+                    <a href="https://www.taskrabbit.com/blog" class="influencer-link" target="_blank">Read Blog →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💬</div>
+                    <h4>r/TaskRabbit</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Real tasker experiences, market-specific advice, and honest earnings discussions.</p>
+                    <a href="https://www.reddit.com/r/TaskRabbit/" class="influencer-link" target="_blank">r/TaskRabbit →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🚀</div>
+                    <h4>r/sweatystartup</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Service business owners sharing real income numbers and growth strategies.</p>
+                    <a href="https://www.reddit.com/r/sweatystartup/" class="influencer-link" target="_blank">r/sweatystartup →</a>
+                </div>
             </div>
         </div>
-        
-        <div class="card"><div class="progress-tracker"><h3>📈 Your Progress</h3><div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div><p class="progress-text"><span id="completed">0</span> of 7 steps completed</p></div></div>
-        
-        <div class="card notes-section">
-            <h2>📓 Your Errand Business Planner</h2>
-            <textarea id="notes" placeholder="Plan your errand services!
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Errand Business Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your errand running business!
+
+PLATFORMS JOINED:
+☐ TaskRabbit | Username: ____ | Status: ____
+☐ Nextdoor | Posted: Y/N
+☐ Care.com | Username: ____
+☐ Thumbtack | Username: ____
 
 MY SERVICES & RATES:
-━━━━━━━━━━━━━━━━━━━
-☐ Grocery shopping: $____/trip
-☐ Pharmacy runs: $____/trip
-☐ Returns/exchanges: $____/task
-☐ Package pickup: $____/trip
-☐ Waiting services: $____/hour
-☐ Other: ____________: $____
+Grocery shopping: $____/hr
+Returns/exchanges: $____/hr
+Post office runs: $____/hr
+Wait time services: $____/hr
+Personal shopping: $____/hr
+Minimum charge: $____
 
-PLATFORMS SIGNED UP:
-━━━━━━━━━━━━━━━━━━━
-☐ TaskRabbit - Status: ________
-☐ Nextdoor - Posted services
-☐ Care.com - Status: ________
-☐ Flyers distributed: ____
+MILEAGE TRACKING:
+App used: ☐ Stride ☐ MileIQ ☐ Other: ____
 
-MY SERVICE AREA:
-━━━━━━━━━━━━━━━
-Neighborhoods: ____________
-Max distance: ____ miles
+WEEKLY SCHEDULE:
+Monday: Available ____-____ 
+Tuesday: Available ____-____
+Wednesday: Available ____-____
+Thursday: Available ____-____
+Friday: Available ____-____
+Saturday: Available ____-____
+Sunday: Available ____-____
 
-CLIENT TRACKER:
-━━━━━━━━━━━━━━
-Name | Services | Frequency | Paid
-____ | ________ | _________ | $____
-____ | ________ | _________ | $____
-____ | ________ | _________ | $____
+EARNINGS LOG:
+Week 1: $____ (___hrs) = $____/hr avg
+Week 2: $____ (___hrs) = $____/hr avg
+Week 3: $____ (___hrs) = $____/hr avg
+Week 4: $____ (___hrs) = $____/hr avg
+MONTHLY TOTAL: $____
 
-WEEKLY INCOME:
-━━━━━━━━━━━━━━
-Week | Tasks | Gross | Miles | Net
-1    | _____ | $____ | _____ | $____
-2    | _____ | $____ | _____ | $____"></textarea>
+RECURRING CLIENTS:
+1. ____ | Service: ____ | Day: ____ | Rate: $____
+2. ____ | Service: ____ | Day: ____ | Rate: $____
+3. ____ | Service: ____ | Day: ____ | Rate: $____
+
+REVIEWS: _____ stars (_____ reviews)
+"></textarea>
+            </div>
         </div>
-        
-        <div class="card"><div class="cta-section"><h3>🚀 Need Help Building Credit & Cash Flow?</h3><p>ASAP Financial Services helps with credit repair and financial planning.</p><a href="https://asapcreditrepairusa.com" class="cta-button" target="_blank">Get Started →</a></div></div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
     </div>
-    
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const saved = localStorage.getItem('playbook-errand-services');
             if (saved) {
                 const data = JSON.parse(saved);
-                data.steps.forEach((checked, index) => { if (checked) { document.querySelectorAll('.step-checkbox')[index].classList.add('checked'); } });
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
                 document.getElementById('notes').value = data.notes || '';
                 updateProgress();
             }

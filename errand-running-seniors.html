@@ -3,288 +3,488 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>👴 Senior Errand Services | ASAP Financial Services</title>
+    <title>Senior Errand Services - ASAP Financial Playbook</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
         .container { max-width: 900px; margin: 0 auto; }
-        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; font-size: 1.1em; opacity: 0.9; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
         .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
-        .header { text-align: center; padding: 40px 30px; background: white; border-radius: 20px; margin-bottom: 20px; }
-        .header h1 { font-size: 2.5em; color: #1a1a2e; margin-bottom: 15px; }
-        .header .subtitle { font-size: 1.2em; color: #666; margin-bottom: 20px; }
-        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 10px 25px; border-radius: 25px; font-weight: 600; }
-        h2 { color: #1a1a2e; margin-bottom: 20px; font-size: 1.6em; }
-        .achieve-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 25px; }
-        .achieve-box p { color: #2e7d32; font-size: 1.1em; line-height: 1.6; margin-bottom: 20px; }
-        .earnings-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; padding: 25px; border-radius: 15px; text-align: center; }
-        .earnings-highlight .amount { font-size: 2.8em; font-weight: 700; }
-        .earnings-highlight .label { font-size: 1.1em; opacity: 0.95; margin-top: 5px; }
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
-        .stat-card { background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 20px; border-radius: 15px; text-align: center; }
-        .stat-card .number { font-size: 2em; font-weight: 700; }
-        .stat-card .label { font-size: 0.9em; opacity: 0.9; }
-        .why-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 25px; margin: 20px 0; border-left: 4px solid #2196f3; }
-        .why-box h4 { color: #1565c0; margin-bottom: 15px; }
-        .why-box ul { color: #666; margin-left: 20px; line-height: 1.8; }
-        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
-        .service-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 4px solid #667eea; }
-        .service-card h4 { color: #1a1a2e; margin-bottom: 8px; }
-        .service-card .rate { color: #4caf50; font-weight: 700; margin-bottom: 8px; }
-        .service-card p { color: #666; font-size: 0.9em; line-height: 1.4; }
-        .steps-container { display: flex; flex-direction: column; gap: 15px; }
-        .step { display: flex; gap: 15px; padding: 20px; background: #f8f9fa; border-radius: 15px; }
-        .step-checkbox { width: 30px; height: 30px; min-width: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 14px; color: transparent; }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #1565c0; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #e3f2fd; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
         .step-checkbox.checked { background: #667eea; color: white; }
-        .step-content h4 { color: #1a1a2e; margin-bottom: 8px; }
-        .step-content p { color: #666; line-height: 1.5; font-size: 0.95em; }
-        .client-sources { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 20px 0; }
-        .source-card { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 25px; border-left: 4px solid #4caf50; }
-        .source-card h4 { color: #2e7d32; margin-bottom: 10px; }
-        .source-card p { color: #666; font-size: 0.95em; line-height: 1.5; }
-        .math-box { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-radius: 15px; padding: 25px; margin: 20px 0; border-left: 4px solid #ffc107; }
-        .math-box h4 { color: #f57c00; margin-bottom: 15px; }
-        .math-box .calculation { background: white; padding: 15px; border-radius: 10px; font-family: monospace; color: #333; line-height: 1.8; }
-        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 20px 0; }
-        .pro-tip h4 { color: #f57c00; margin-bottom: 10px; }
-        .pro-tip ul { color: #666; line-height: 1.8; margin-left: 20px; }
-        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 20px 0; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 15px; overflow: hidden; font-size: 14px; }
+        .pricing-table th, .pricing-table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .pricing-table th { background: #667eea; color: white; font-weight: 600; }
+        .pricing-table tr:hover { background: #f5f5f5; }
+        .pricing-table .rate { color: #4caf50; font-weight: 600; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .service-card { background: #f8f9fa; border-radius: 15px; padding: 15px; text-align: center; border-left: 5px solid #667eea; }
+        .service-card .emoji { font-size: 2em; margin-bottom: 8px; }
+        .service-card h4 { color: #1a1a2e; font-size: 14px; margin-bottom: 5px; }
+        .service-card .rate { color: #4caf50; font-weight: 600; font-size: 13px; }
+        .find-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .find-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #667eea; }
+        .find-card h4 { color: #1a1a2e; margin-bottom: 10px; }
+        .find-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .find-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; font-size: 13px; }
+        .find-link:hover { text-decoration: underline; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
         .warning-box h4 { color: #c62828; margin-bottom: 10px; }
-        .warning-box ul { color: #666; line-height: 1.8; margin-left: 20px; }
-        .relationship-box { background: linear-gradient(135deg, #fce4ec, #f8bbd9); border-radius: 15px; padding: 25px; margin: 20px 0; border-left: 4px solid #e91e63; }
-        .relationship-box h4 { color: #c2185b; margin-bottom: 15px; }
-        .relationship-box ul { color: #666; margin-left: 20px; line-height: 1.8; }
-        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; }
+        .warning-box p, .warning-box li { color: #666; }
+        .warning-box ul { margin-left: 20px; margin-top: 10px; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
         .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
         .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
-        .influencer-card .platform { color: #667eea; font-size: 0.9em; }
-        .influencer-card p { color: #666; font-size: 0.9em; margin: 10px 0; }
-        .influencer-link { color: #667eea; text-decoration: none; font-weight: 600; font-size: 0.9em; }
-        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; text-align: center; }
-        .progress-tracker h3 { color: white; margin-bottom: 20px; }
-        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; overflow: hidden; margin-bottom: 15px; }
-        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s ease; width: 0%; }
-        .notes-section textarea { width: 100%; min-height: 200px; padding: 20px; border: 2px solid #e0e0e0; border-radius: 15px; font-family: inherit; font-size: 1em; resize: vertical; }
+        .influencer-card .platform { color: #667eea; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; }
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
         .notes-section textarea:focus { outline: none; border-color: #667eea; }
-        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 40px 30px; text-align: center; }
-        .cta-section h3 { color: white; margin-bottom: 15px; }
-        .cta-section p { opacity: 0.9; margin-bottom: 25px; }
-        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; }
-        @media (max-width: 768px) { .header h1 { font-size: 1.8em; } .card { padding: 20px; } }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="expense-playbooks.html" class="back-link">← Back to Expense Playbooks</a>
+        <a href="income-playbooks.html" class="back-link">← Back to Income Playbooks</a>
         
         <div class="header">
             <h1>👴 Senior Errand Services</h1>
-            <p class="subtitle">Help seniors while building reliable income</p>
-            <div class="time-badge">⏱️ $25-45/hour • Growing demand • Rewarding work</div>
+            <p class="subtitle">Build reliable recurring income helping seniors maintain independence</p>
+            <div class="time-badge">⏱️ $50-150 startup • Earn $500-2,000+/month • 54M+ potential clients</div>
         </div>
-        
+
         <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
             <div class="achieve-box">
-                <h2>🎯 What You'll Achieve</h2>
-                <p>Seniors are the BEST clients for errand services—consistent needs, loyal relationships, and they truly appreciate your help. With 54 million Americans over 65, demand is massive and growing. Build a sustainable business helping seniors maintain independence while earning $25-45/hour.</p>
-                <div class="earnings-highlight">
-                    <div class="amount">$25-45/hour</div>
-                    <div class="label">Serving senior clients</div>
-                </div>
+                <p>Seniors are the BEST errand clients — consistent weekly needs, loyal relationships, and they genuinely appreciate your help. With 10,000 Americans turning 65 every day and 90% wanting to age at home, demand is massive. Build a roster of 5-10 regular clients for predictable monthly income!</p>
+            </div>
+            <div class="income-highlight">
+                <h3>$500-2,000+/Month Part-Time</h3>
+                <p>5 regular clients × 4 hrs/week × $28/hr = $2,240/month • Seniors stay with you for YEARS!</p>
             </div>
         </div>
-        
+
         <div class="card">
-            <h2>📊 Senior Services Market</h2>
-            <div class="stats-grid">
-                <div class="stat-card"><div class="number">54M</div><div class="label">US seniors (65+)</div></div>
-                <div class="stat-card"><div class="number">90%</div><div class="label">Want to age at home</div></div>
-                <div class="stat-card"><div class="number">$30-40</div><div class="label">Avg hourly rate</div></div>
-                <div class="stat-card"><div class="number">Weekly</div><div class="label">Typical client frequency</div></div>
-            </div>
-        </div>
-        
-        <div class="card">
-            <h2>💡 Why Seniors Are Ideal Clients</h2>
-            <div class="why-box">
-                <h4>🎯 The Best Client Base</h4>
-                <ul>
-                    <li><strong>Consistent weekly needs:</strong> Same errands, same schedule, predictable income</li>
-                    <li><strong>Long-term relationships:</strong> Once trusted, they stay with you for years</li>
-                    <li><strong>Referral machines:</strong> Seniors know other seniors who need help</li>
-                    <li><strong>Appreciate quality:</strong> They value reliability over lowest price</li>
-                    <li><strong>Less price-sensitive:</strong> Willing to pay for trustworthy service</li>
-                    <li><strong>Adult children pay:</strong> Often families pay for parents' care</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="card">
-            <h2>📋 Services Seniors Need Most</h2>
+            <h2><span class="icon">💎</span> Why Seniors Are the BEST Clients</h2>
             <div class="service-grid">
-                <div class="service-card"><h4>🛒 Grocery Shopping</h4><div class="rate">$30-45/trip</div><p>Weekly grocery runs. Learn their preferences, brands, stores.</p></div>
-                <div class="service-card"><h4>💊 Prescription Pickup</h4><div class="rate">$20-30/trip</div><p>Essential and recurring. Many need weekly or bi-weekly.</p></div>
-                <div class="service-card"><h4>🏥 Medical Appointments</h4><div class="rate">$35-50/trip</div><p>Drive to doctor, wait, drive home. Often 2-3 hours.</p></div>
-                <div class="service-card"><h4>🏦 Banking Errands</h4><div class="rate">$25-35/task</div><p>Deposits, withdrawals, bill payments at bank.</p></div>
-                <div class="service-card"><h4>📬 Mail & Post Office</h4><div class="rate">$20-30/trip</div><p>Shipping packages, collecting mail, PO box runs.</p></div>
-                <div class="service-card"><h4>🧹 Light Housekeeping</h4><div class="rate">$25-40/hour</div><p>Not heavy cleaning, but organizing, light tidying.</p></div>
-                <div class="service-card"><h4>💻 Tech Help</h4><div class="rate">$30-50/hour</div><p>Phone setup, TV remotes, computer basics. High demand!</p></div>
-                <div class="service-card"><h4>👥 Companionship</h4><div class="rate">$20-35/hour</div><p>Social visits, conversation, playing games. Often combined with errands.</p></div>
-            </div>
-        </div>
-        
-        <div class="card">
-            <h2>🔍 Where to Find Senior Clients</h2>
-            <div class="client-sources">
-                <div class="source-card"><h4>🏠 Senior Centers</h4><p>Post flyers at local senior centers. Ask to speak at events. Many have bulletin boards.</p></div>
-                <div class="source-card"><h4>⛪ Churches & Places of Worship</h4><p>Announce in bulletins. Congregations have seniors who need help and families willing to pay.</p></div>
-                <div class="source-card"><h4>🏘️ Independent Living Communities</h4><p>Residents live independently but need occasional help. Post flyers, talk to management.</p></div>
-                <div class="source-card"><h4>👨‍👩‍👧 Adult Children (Facebook)</h4><p>Post in local Facebook groups. Adult children search for help for aging parents.</p></div>
-                <div class="source-card"><h4>🏥 Hospital Discharge Planners</h4><p>Social workers at hospitals connect patients with care. Introduce yourself.</p></div>
-                <div class="source-card"><h4>📱 Care.com</h4><p>List senior care services. Many families search here for help with aging parents.</p></div>
-            </div>
-        </div>
-        
-        <div class="card">
-            <h2>📝 Building Your Senior Service</h2>
-            <div class="steps-container">
-                <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><h4>Step 1: Get Background Check</h4><p>Essential for working with seniors. Care.com offers checks. Many families require it.</p></div></div>
-                <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><h4>Step 2: Define Your Services</h4><p>List specific services and rates. Be clear about what you will and won't do.</p></div></div>
-                <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><h4>Step 3: Create Professional Materials</h4><p>Simple flyer with your photo, services, rates, and contact. Makes seniors comfortable.</p></div></div>
-                <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><h4>Step 4: Post at Senior Locations</h4><p>Senior centers, churches, libraries, community centers, doctor office bulletin boards.</p></div></div>
-                <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><h4>Step 5: Meet With Families</h4><p>Often adult children hire you. Be prepared to meet them first, explain services.</p></div></div>
-                <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><h4>Step 6: Start With One Client</h4><p>Build trust with excellent service. Get testimonials. Ask for referrals to their friends.</p></div></div>
-                <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><h4>Step 7: Build Recurring Schedule</h4><p>"Every Tuesday I shop for Mrs. Johnson." Recurring clients = stable income.</p></div></div>
-            </div>
-        </div>
-        
-        <div class="card">
-            <h2>💝 Building Trust With Seniors</h2>
-            <div class="relationship-box">
-                <h4>Keys to Long-Term Relationships</h4>
-                <ul>
-                    <li><strong>Be patient:</strong> Seniors may move slowly, repeat stories, need extra time. That's okay.</li>
-                    <li><strong>Be reliable:</strong> Show up when you say you will. Every time. No exceptions.</li>
-                    <li><strong>Learn their preferences:</strong> Which grocery store, which brands, their routines.</li>
-                    <li><strong>Communicate with family:</strong> Keep adult children updated. They're often paying.</li>
-                    <li><strong>Notice changes:</strong> Health, mood, home condition. Alert family to concerns.</li>
-                    <li><strong>Be honest:</strong> About what you can do, pricing, timing. Trust is everything.</li>
-                    <li><strong>Provide receipts:</strong> Always show itemized costs. Transparency builds trust.</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="card">
-            <h2>🧮 Senior Service Income</h2>
-            <div class="math-box">
-                <h4>Part-Time Senior Helper (15 hrs/week)</h4>
-                <div class="calculation">
-RECURRING WEEKLY CLIENTS:<br>
-Client 1 (Tues): Groceries + pharmacy = $55<br>
-Client 2 (Wed): Doctor appt (3 hrs) = $105<br>
-Client 3 (Thu): Groceries + errands = $65<br>
-Client 4 (Fri): Shopping + companionship = $80<br>
-<br>
-WEEKLY GROSS: $305<br>
-Mileage: -$30<br>
-NET: $275/week<br>
-<br>
-MONTHLY: ~$1,100<br>
-<br>
-💡 4 regular clients = predictable income.<br>
-Each refers 1-2 more within 6 months!
+                <div class="service-card">
+                    <div class="emoji">🔄</div>
+                    <h4>Recurring Weekly</h4>
+                    <div class="rate">Predictable income</div>
                 </div>
-            </div>
-        </div>
-        
-        <div class="card">
-            <div class="pro-tip">
-                <h4>💡 Senior Service Pro Tips</h4>
-                <ul>
-                    <li><strong>Photo + name on flyers:</strong> Seniors want to see who's helping them</li>
-                    <li><strong>Start with one neighborhood:</strong> Efficiency + word spreads locally</li>
-                    <li><strong>Accept checks:</strong> Many seniors don't use apps. Checks are fine.</li>
-                    <li><strong>Keep emergency contacts:</strong> Know who to call for each client</li>
-                    <li><strong>Holiday visits:</strong> Check on clients during holidays. Means a lot.</li>
-                    <li><strong>Thank the family:</strong> A note to adult children goes a long way</li>
-                </ul>
+                <div class="service-card">
+                    <div class="emoji">🤝</div>
+                    <h4>Loyal Relationships</h4>
+                    <div class="rate">Years of work</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">💬</div>
+                    <h4>Referral Network</h4>
+                    <div class="rate">Seniors know seniors</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">💰</div>
+                    <h4>Family Pays Premium</h4>
+                    <div class="rate">Adult children hire</div>
+                </div>
             </div>
             
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Who's Actually Paying?</div>
+                <p>Often it's <strong>adult children</strong> hiring you to help their aging parents. They're busy professionals who can't be there daily but want mom/dad to have reliable help. They'll pay premium rates for trustworthy, patient assistance!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🛒</span> Services Seniors Need Most</h2>
+            <p style="color: #666; margin-bottom: 15px;">These are the high-demand services seniors and their families pay for!</p>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="emoji">🛒</div>
+                    <h4>Weekly Grocery Runs</h4>
+                    <div class="rate">$25-35/hr</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">💊</div>
+                    <h4>Pharmacy Pickup</h4>
+                    <div class="rate">$20-30/hr</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🏥</div>
+                    <h4>Medical Transport</h4>
+                    <div class="rate">$30-45/hr</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🏦</div>
+                    <h4>Banking Assistance</h4>
+                    <div class="rate">$25-35/hr</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">📮</div>
+                    <h4>Post Office/Mail</h4>
+                    <div class="rate">$20-25/hr</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🧹</div>
+                    <h4>Light Organizing</h4>
+                    <div class="rate">$25-35/hr</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">📱</div>
+                    <h4>Tech Help</h4>
+                    <div class="rate">$30-45/hr</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">💬</div>
+                    <h4>Companionship</h4>
+                    <div class="rate">$20-30/hr</div>
+                </div>
+            </div>
+            
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Tech Help = Gold Mine</div>
+                <p>Setting up phones, explaining TV remotes, video calls with grandkids, computer basics — seniors (and their adult children) pay <strong>premium rates ($40-50/hr)</strong> for patient tech assistance. Combine with errands for longer, higher-paying visits!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💵</span> Senior Services Pricing</h2>
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Rate</th>
+                        <th>Typical Time</th>
+                        <th>Monthly Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Weekly grocery run</td><td class="rate">$30/hr</td><td>1.5-2 hours</td><td>$180-240/client</td></tr>
+                    <tr><td>Pharmacy pickup (2x/month)</td><td class="rate">$25/hr</td><td>45 min each</td><td>$40-50/client</td></tr>
+                    <tr><td>Medical appointment transport</td><td class="rate">$35/hr</td><td>2-3 hours</td><td>$70-105/visit</td></tr>
+                    <tr><td>Tech help session</td><td class="rate">$40/hr</td><td>1-2 hours</td><td>$40-80/session</td></tr>
+                    <tr><td>Banking + errands combo</td><td class="rate">$28/hr</td><td>2 hours</td><td>$56/visit</td></tr>
+                    <tr><td>Weekly package (4-5 hrs)</td><td class="rate">$27/hr</td><td>Weekly</td><td>$430-540/client</td></tr>
+                </tbody>
+            </table>
+            
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 The Math: 5 Regular Clients</div>
+                <p>5 clients × 4 hours/week average × $28/hr = <strong>$560/week = $2,240/month</strong> working just 20 hours. Add medical transport and tech help for even more. This is relationship-based recurring income!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📍</span> Where to Find Senior Clients</h2>
+            <div class="find-grid">
+                <div class="find-card">
+                    <h4>🏛️ Senior Centers</h4>
+                    <p>Post flyers on bulletin boards. Ask to speak at events. Staff often refer reliable helpers to members.</p>
+                </div>
+                <div class="find-card">
+                    <h4>⛪ Churches</h4>
+                    <p>Announce in bulletins. Congregations trust member referrals. Ask if they have a seniors ministry to connect with.</p>
+                </div>
+                <div class="find-card">
+                    <h4>🏘️ Independent Living</h4>
+                    <p>Residents live alone but need occasional help. Talk to management about posting flyers or getting referrals.</p>
+                </div>
+                <div class="find-card">
+                    <h4>🏥 Hospital Discharge</h4>
+                    <p>Social workers connect patients with care after discharge. Introduce yourself to discharge planners!</p>
+                </div>
+                <div class="find-card">
+                    <h4>👨‍👩‍👧 Care.com</h4>
+                    <p>Adult children search here for senior help. Background check available builds trust with families.</p>
+                    <a href="https://www.care.com" class="find-link" target="_blank">Join Care.com →</a>
+                </div>
+                <div class="find-card">
+                    <h4>🏘️ Nextdoor</h4>
+                    <p>Adult children post looking for help for aging parents. Local reputation matters. Neighbors trust neighbors.</p>
+                    <a href="https://www.nextdoor.com" class="find-link" target="_blank">Join Nextdoor →</a>
+                </div>
+            </div>
+            
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 The Referral Gold Mine</div>
+                <p>Seniors talk to each other! One happy client at an independent living community can lead to <strong>5-10 more clients</strong>. Always ask: "Do any of your friends need help too?"</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Senior Services Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Get a background check</div>
+                    <div class="step-desc">Essential for senior work. Care.com offers checks. Many families require this before hiring. It builds instant trust!</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Create your service menu</div>
+                    <div class="step-desc">List specific services and rates. Be clear about what you will and won't do. Transparency builds trust with seniors and families.</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Make a professional flyer</div>
+                    <div class="step-desc">Include YOUR PHOTO (builds trust!), services, rates, and phone number. Seniors prefer paper flyers and phone calls over apps.</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Visit senior centers and churches</div>
+                    <div class="step-desc">Drop off flyers, talk to staff. Ask about bulletin boards and upcoming events where you could introduce yourself.</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Post on Care.com and Nextdoor</div>
+                    <div class="step-desc">Create profiles highlighting senior care experience. Adult children actively search these platforms for help with aging parents.</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Meet with families first</div>
+                    <div class="step-desc">Adult children often interview you before you meet the senior. Be patient, explain services clearly, bring references if you have them.</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Build trust through excellent service</div>
+                    <div class="step-desc">Be reliable, patient, and communicative. Text families after visits: "Took Mom shopping, she's doing great!" Get testimonials.</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Ask for referrals</div>
+                    <div class="step-desc">"Do any of your friends need help?" Senior communities are tight-knit. One great client relationship = many more through word of mouth!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📊</span> Weekly Income Example</h2>
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Client</th>
+                        <th>Service</th>
+                        <th>Hours</th>
+                        <th>Income</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Monday</td><td>Mrs. Johnson</td><td>Groceries + pharmacy</td><td>2 hrs</td><td class="rate">$60</td></tr>
+                    <tr><td>Tuesday</td><td>Mr. Williams</td><td>Medical transport</td><td>3 hrs</td><td class="rate">$105</td></tr>
+                    <tr><td>Wednesday</td><td>Mrs. Chen</td><td>Banking + errands</td><td>2 hrs</td><td class="rate">$56</td></tr>
+                    <tr><td>Thursday</td><td>Mr. Davis</td><td>Groceries + tech help</td><td>2.5 hrs</td><td class="rate">$85</td></tr>
+                    <tr><td>Friday</td><td>Mrs. Miller</td><td>Pharmacy + companionship</td><td>2 hrs</td><td class="rate">$54</td></tr>
+                    <tr><td colspan="3"><strong>Weekly Total</strong></td><td><strong>11.5 hrs</strong></td><td class="rate"><strong>$360</strong></td></tr>
+                    <tr><td colspan="3"><strong>Monthly Total (4 weeks)</strong></td><td><strong>46 hrs</strong></td><td class="rate"><strong>$1,440</strong></td></tr>
+                </tbody>
+            </table>
+            <p style="color: #666; font-size: 14px; margin-top: 15px;">Just 5 regular clients = predictable monthly income. Add 2-3 more clients for $2,000+/month!</p>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💡</span> Pro Tips for Senior Clients</h2>
+            <div class="pro-tip">
+                <div class="pro-tip-title">🎯 Be Patient — Always</div>
+                <p>Seniors move slower, repeat questions, and need extra time. Your patience is part of what they're paying for. Never rush them. This patience is what keeps them (and their families) loyal for years!</p>
+            </div>
+            <div class="pro-tip">
+                <div class="pro-tip-title">📞 Communicate with Families</div>
+                <p>Send a quick text after each visit: "Took Mom grocery shopping, she's doing great, picked up her prescription too." Families LOVE this and will keep you forever!</p>
+            </div>
+            <div class="pro-tip">
+                <div class="pro-tip-title">📝 Learn Their Preferences</div>
+                <p>Mrs. Johnson likes Honeycrisp apples, not Gala. Mr. Williams needs low-sodium options. Keep notes on each client. Remembering details shows you genuinely care.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">⚠️</span> Important Boundaries</h2>
             <div class="warning-box">
-                <h4>⚠️ Important Boundaries</h4>
+                <h4>🚨 What You Should NOT Do</h4>
                 <ul>
-                    <li><strong>No medical care:</strong> You're not a nurse. Don't give medications or medical advice.</li>
-                    <li><strong>No financial management:</strong> Don't sign checks or manage accounts. Too much liability.</li>
-                    <li><strong>Document everything:</strong> Keep records of visits, purchases, time spent.</li>
-                    <li><strong>Report concerns:</strong> If you notice abuse, neglect, or health decline, tell family.</li>
-                    <li><strong>Insurance:</strong> Consider liability insurance as you grow. Protects you.</li>
+                    <li><strong>Handle finances directly:</strong> Don't manage money, pay bills, or access accounts. Banking assistance means driving them there.</li>
+                    <li><strong>Administer medication:</strong> Picking up prescriptions is fine. Giving medication requires certification.</li>
+                    <li><strong>Medical care:</strong> You're not a nurse. No wound care, injections, or medical procedures.</li>
+                    <li><strong>Heavy lifting/transfers:</strong> Moving furniture or lifting seniors requires training and insurance.</li>
+                    <li><strong>Legal documents:</strong> Never witness wills or handle legal/financial paperwork.</li>
+                </ul>
+            </div>
+            <div class="warning-box">
+                <h4>⚠️ Protect Yourself</h4>
+                <ul>
+                    <li><strong>Written agreement:</strong> Simple contract listing services, rates, and payment terms.</li>
+                    <li><strong>Never alone with valuables:</strong> If organizing, family should be present or aware.</li>
+                    <li><strong>Document visits:</strong> Quick log of time, services provided, any concerns.</li>
+                    <li><strong>Insurance:</strong> Consider liability insurance ($300-500/year) as you grow.</li>
                 </ul>
             </div>
         </div>
-        
+
         <div class="card">
-            <h2>🌟 Senior Service Resources</h2>
+            <h2><span class="icon">🎓</span> Learn From the Pros</h2>
             <div class="influencer-grid">
-                <div class="influencer-card"><div class="influencer-avatar">🏠</div><h4>Care.com</h4><div class="platform">📱 Platform</div><p>List senior care services. Families search here.</p><a href="https://www.care.com/enroll-senior-care" class="influencer-link" target="_blank">Sign Up →</a></div>
-                <div class="influencer-card"><div class="influencer-avatar">👵</div><h4>Senior Living Locator</h4><div class="platform">🌐 Resource</div><p>Find senior centers and communities in your area.</p><a href="https://eldercare.acl.gov" class="influencer-link" target="_blank">Find Centers →</a></div>
-                <div class="influencer-card"><div class="influencer-avatar">📱</div><h4>Nextdoor</h4><div class="platform">📱 App</div><p>Post services. Neighbors recommend to neighbors.</p><a href="https://nextdoor.com" class="influencer-link" target="_blank">Post Services →</a></div>
-                <div class="influencer-card"><div class="influencer-avatar">💬</div><h4>r/CaregiverSupport</h4><div class="platform">🔗 Reddit</div><p>Community for people helping seniors. Tips and support.</p><a href="https://www.reddit.com/r/CaregiverSupport/" class="influencer-link" target="_blank">Join →</a></div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📊</div>
+                    <h4>Home Care Pulse</h4>
+                    <div class="platform">🌐 Resource</div>
+                    <p>Industry research and best practices for senior care services. Training resources and insights.</p>
+                    <a href="https://www.homecarepulse.com" class="influencer-link" target="_blank">Website →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🤝</div>
+                    <h4>Aging Life Care Assoc.</h4>
+                    <div class="platform">🌐 Network</div>
+                    <p>Resources for those helping seniors. Local networking and training opportunities.</p>
+                    <a href="https://www.aginglifecare.org" class="influencer-link" target="_blank">Website →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">❤️</div>
+                    <h4>Caregiver Action Network</h4>
+                    <div class="platform">🌐 Community</div>
+                    <p>Free caregiver education, support groups, and resources for working with seniors.</p>
+                    <a href="https://www.caregiveraction.org" class="influencer-link" target="_blank">Website →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🏠</div>
+                    <h4>AARP Caregiving</h4>
+                    <div class="platform">🌐 Resource</div>
+                    <p>Understanding senior needs, caregiving resources, and community connections.</p>
+                    <a href="https://www.aarp.org/caregiving/" class="influencer-link" target="_blank">AARP →</a>
+                </div>
             </div>
         </div>
-        
-        <div class="card"><div class="progress-tracker"><h3>📈 Your Progress</h3><div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div><p class="progress-text"><span id="completed">0</span> of 7 steps completed</p></div></div>
-        
-        <div class="card notes-section">
-            <h2>📓 Your Senior Service Planner</h2>
-            <textarea id="notes" placeholder="Plan your senior errand service!
 
-MY SERVICES & RATES:
-━━━━━━━━━━━━━━━━━━━
-☐ Grocery shopping: $____/trip
-☐ Prescription pickup: $____/trip
-☐ Medical transport: $____/hour
-☐ Tech help: $____/hour
-☐ Companionship: $____/hour
-☐ Other: ____________: $____
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
 
-BACKGROUND CHECK: ☐ Complete
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Senior Services Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your senior errand services!
+
+SETUP COMPLETED:
+☐ Background check | Provider: ____ | Date: ____
+☐ Service menu created | Rates set: Y/N
+☐ Flyer designed | Printed: ____ copies
+☐ Care.com profile | Username: ____
+☐ Nextdoor posted | Date: ____
+
+MY RATES:
+Grocery shopping: $____/hr
+Pharmacy pickup: $____/hr  
+Medical transport: $____/hr
+Tech help: $____/hr
+Companionship: $____/hr
+Weekly package rate: $____/hr
 
 MARKETING DONE:
-━━━━━━━━━━━━━━
-☐ Flyer created (with photo)
-☐ Posted at senior center: ______
-☐ Posted at church: ______
-☐ Care.com profile
-☐ Nextdoor post
+☐ Senior center: ____ | Flyers posted: Y/N
+☐ Church: ____ | Bulletin: Y/N
+☐ Independent living: ____ | Contact: ____
+☐ Hospital discharge planner: ____ | Contact: ____
 
-MY CLIENTS:
-━━━━━━━━━━
-Name | Services | Day/Time | Rate | Family Contact
-____ | ________ | ________ | $___ | ____________
-____ | ________ | ________ | $___ | ____________
-____ | ________ | ________ | $___ | ____________
+MY REGULAR CLIENTS:
+1. Name: ____ | Services: ____ | Day: ____ | Monthly: $____
+   Family contact: ____ | Phone: ____
+   Preferences: ____
+
+2. Name: ____ | Services: ____ | Day: ____ | Monthly: $____
+   Family contact: ____ | Phone: ____
+   Preferences: ____
+
+3. Name: ____ | Services: ____ | Day: ____ | Monthly: $____
+   Family contact: ____ | Phone: ____
+   Preferences: ____
+
+4. Name: ____ | Services: ____ | Day: ____ | Monthly: $____
+   Family contact: ____ | Phone: ____
+   Preferences: ____
+
+5. Name: ____ | Services: ____ | Day: ____ | Monthly: $____
+   Family contact: ____ | Phone: ____
+   Preferences: ____
 
 WEEKLY SCHEDULE:
-━━━━━━━━━━━━━━
-Mon: ____________
-Tue: ____________
-Wed: ____________
-Thu: ____________
-Fri: ____________
+Monday: ____ | Client: ____ | Time: ____
+Tuesday: ____ | Client: ____ | Time: ____
+Wednesday: ____ | Client: ____ | Time: ____
+Thursday: ____ | Client: ____ | Time: ____
+Friday: ____ | Client: ____ | Time: ____
 
-MONTHLY INCOME: $____"></textarea>
+MONTHLY INCOME:
+Total clients: ____
+Total hours/week: ____
+Monthly income: $____
+
+REFERRALS RECEIVED:
+From ____ → New client: ____
+From ____ → New client: ____
+"></textarea>
+            </div>
         </div>
-        
-        <div class="card"><div class="cta-section"><h3>🚀 Need Help Building Credit & Cash Flow?</h3><p>ASAP Financial Services helps with credit repair and financial planning.</p><a href="https://asapcreditrepairusa.com" class="cta-button" target="_blank">Get Started →</a></div></div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
     </div>
-    
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const saved = localStorage.getItem('playbook-errand-running-seniors');
             if (saved) {
                 const data = JSON.parse(saved);
-                data.steps.forEach((checked, index) => { if (checked) { document.querySelectorAll('.step-checkbox')[index].classList.add('checked'); } });
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
                 document.getElementById('notes').value = data.notes || '';
                 updateProgress();
             }
