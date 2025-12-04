@@ -942,7 +942,7 @@
     <!-- Main Container -->
     <main class="main-container">
         <div class="form-card">
-            <form id="blueprint-form">
+            <form id="blueprint-form" onsubmit="return false;">
 
                 <!-- Step 0: Welcome -->
                 <div class="step active" data-step="0">
@@ -984,13 +984,13 @@
 
                     <div class="input-group">
                         <label class="input-label">First Name</label>
-                        <input type="text" id="name_first" name="name_first" placeholder="Enter your first name" required>
+                        <input type="text" id="name_first" name="name_first" placeholder="Enter your first name">
                         <div class="error-message" id="error-name_first">Please enter your first name</div>
                     </div>
 
                     <div class="input-group">
                         <label class="input-label">Last Name</label>
-                        <input type="text" id="name_last" name="name_last" placeholder="Enter your last name" required>
+                        <input type="text" id="name_last" name="name_last" placeholder="Enter your last name">
                         <div class="error-message" id="error-name_last">Please enter your last name</div>
                     </div>
 
@@ -1008,7 +1008,7 @@
 
                     <div class="input-group">
                         <label class="input-label">Email Address</label>
-                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                        <input type="email" id="email" name="email" placeholder="you@example.com">
                         <div class="error-message" id="error-email">Please enter a valid email address</div>
                     </div>
 
@@ -1032,7 +1032,7 @@
                     <div class="big-input-container">
                         <div class="big-input-wrapper">
                             <span class="big-input-prefix">$</span>
-                            <input type="number" class="big-input" id="income" name="income" placeholder="5,000" min="0" required>
+                            <input type="number" class="big-input" id="income" name="income" placeholder="5,000" min="0">
                         </div>
                         <div class="big-input-label">per month</div>
                     </div>
@@ -1341,6 +1341,17 @@
         // ==================== STATE ====================
         let currentStep = 0;
         const totalSteps = 8;
+
+        // Prevent Enter key from submitting form
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && e.target.tagName !== 'TEXTAREA') {
+                e.preventDefault();
+                // If on a step with a Continue button, trigger next step
+                if (currentStep < 7) {
+                    nextStep();
+                }
+            }
+        });
 
         // Step names for progress display
         const stepNames = [
