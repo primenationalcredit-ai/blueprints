@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASAP Financial Blueprint | Get Your Free Plan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a56db;
+            --primary-dark: #1e40af;
+            --primary-light: #3b82f6;
+            --accent: #10b981;
+            --accent-glow: rgba(16, 185, 129, 0.2);
+            --bg-main: #f8fafc;
+            --bg-card: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+            --border: #e2e8f0;
+            --error: #ef4444;
+            --success: #10b981;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+            --radius: 12px;
+            --radius-lg: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-main);
+            color: var(--text-primary);
+            min-height: 100vh;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Background Pattern */
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at 20% 0%, rgba(26, 86, 219, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 100%, rgba(16, 185, 129, 0.06) 0%, transparent 50%),
+                linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+            z-index: -1;
+        }
+
+        /* Header */
+        .header {
+            padding: 20px 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: white;
+            box-shadow: var(--shadow-md);
+            padding: 4px;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .logo-text {
+            font-family: 'Fraunces', serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .logo-text span {
+            color: var(--primary);
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            max-width: 600px;
+            margin: 0 auto 20px;
+            padding: 0 24px;
+        }
+
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .progress-step {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .progress-percent {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .progress-bar {
+            height: 6px;
+            background: var(--border);
+            border-radius: 100px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 100px;
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 20px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4));
+        }
+
+        /* Main Container */
+        .main-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 24px 40px;
+        }
+
+        /* Form Card */
+        .form-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+            padding: 48px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+        }
+
+        @media (max-width: 640px) {
+            .form-card {
+                padding: 32px 24px;
+                border-radius: var(--radius);
+            }
+        }
+
+        /* Step Container */
+        .step {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .step.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Typography */
+        .step-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .step-label .icon {
+            font-size: 14px;
+        }
+
+        .step-title {
+            font-family: 'Fraunces', serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .step-subtitle {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        /* Input Styles */
+        .input-group {
+            margin-bottom: 24px;
+        }
+
+        .input-group:last-of-type {
+            margin-bottom: 32px;
+        }
+
+        .input-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-prefix {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-muted);
+            pointer-events: none;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            padding: 16px 20px;
+            font-size: 18px;
+            font-family: inherit;
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--bg-card);
+            color: var(--text-primary);
+            transition: all 0.2s ease;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        input.has-prefix {
+            padding-left: 36px;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(26, 86, 219, 0.1);
+        }
+
+        input::placeholder {
+            color: var(--text-muted);
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+
+        select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            background-size: 20px;
+            padding-right: 48px;
+            cursor: pointer;
+        }
+
+        /* Big Number Input */
+        .big-input-container {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .big-input-wrapper {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .big-input-prefix {
+            font-size: 48px;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .big-input {
+            font-size: 48px !important;
+            font-weight: 700 !important;
+            text-align: left;
+            border: none !important;
+            background: transparent !important;
+            padding: 0 !important;
+            width: auto;
+            min-width: 120px;
+            max-width: 240px;
+            color: var(--text-primary);
+        }
+
+        .big-input:focus {
+            box-shadow: none !important;
+        }
+
+        .big-input-label {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-top: 8px;
+        }
+
+        /* Expense Grid */
+        .expense-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        @media (max-width: 500px) {
+            .expense-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .expense-item {
+            position: relative;
+        }
+
+        .expense-item label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+        }
+
+        .expense-item input {
+            padding: 14px 16px 14px 32px;
+            font-size: 16px;
+        }
+
+        .expense-item .input-prefix {
+            left: 14px;
+            font-size: 16px;
+        }
+
+        /* Debt Repeater */
+        .debt-section {
+            margin-bottom: 32px;
+        }
+
+        .debt-section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .debt-section-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .debt-items {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .debt-card {
+            background: var(--bg-main);
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+
+        .debt-card:hover {
+            border-color: var(--primary-light);
+        }
+
+        .debt-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .debt-card-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .debt-card-remove {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            padding: 4px 8px;
+            font-size: 20px;
+            line-height: 1;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .debt-card-remove:hover {
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--error);
+        }
+
+        .debt-card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+        }
+
+        @media (max-width: 500px) {
+            .debt-card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .debt-card-grid.installment {
+            grid-template-columns: 2fr 1fr 1fr;
+        }
+
+        @media (max-width: 500px) {
+            .debt-card-grid.installment {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .debt-field label {
+            display: block;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .debt-field input,
+        .debt-field select {
+            padding: 12px 14px;
+            font-size: 15px;
+        }
+
+        .debt-field input.has-prefix {
+            padding-left: 28px;
+        }
+
+        .debt-field .input-prefix {
+            left: 12px;
+            font-size: 14px;
+        }
+
+        /* Add Button */
+        .add-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary);
+            background: rgba(26, 86, 219, 0.08);
+            border: 2px dashed var(--primary-light);
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: all 0.2s;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .add-btn:hover {
+            background: rgba(26, 86, 219, 0.12);
+            border-style: solid;
+        }
+
+        /* Buttons */
+        .btn-container {
+            display: flex;
+            gap: 12px;
+            margin-top: 32px;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: 700;
+            font-family: inherit;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            flex: 1;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border: none;
+            box-shadow: 0 4px 14px rgba(26, 86, 219, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(26, 86, 219, 0.5);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        .btn-secondary {
+            background: var(--bg-main);
+            color: var(--text-secondary);
+            border: 2px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--border);
+            color: var(--text-primary);
+        }
+
+        .btn-icon {
+            font-size: 18px;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: linear-gradient(135deg, rgba(26, 86, 219, 0.08) 0%, rgba(16, 185, 129, 0.08) 100%);
+            border: 1px solid rgba(26, 86, 219, 0.15);
+            border-radius: var(--radius);
+            padding: 16px 20px;
+            margin-bottom: 24px;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .info-box-icon {
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .info-box-text {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Welcome Step */
+        .welcome-icon {
+            font-size: 64px;
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        .benefits-list {
+            list-style: none;
+            margin: 24px 0 32px;
+        }
+
+        .benefits-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .benefits-list li:last-child {
+            border-bottom: none;
+        }
+
+        .benefits-list .check {
+            width: 24px;
+            height: 24px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        /* Review Step */
+        .review-section {
+            margin-bottom: 24px;
+        }
+
+        .review-section-title {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--primary);
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .review-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px 16px;
+        }
+
+        .review-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+        }
+
+        .review-item-label {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .review-item-value {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* Success State */
+        .success-container {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent) 0%, #059669 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 40px;
+            color: white;
+            box-shadow: 0 8px 24px rgba(16, 185, 129, 0.4);
+            animation: successPop 0.5s ease;
+        }
+
+        @keyframes successPop {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .success-title {
+            font-family: 'Fraunces', serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .success-text {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        /* Skip Button */
+        .skip-link {
+            display: block;
+            text-align: center;
+            margin-top: 16px;
+            font-size: 14px;
+            color: var(--text-muted);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .skip-link:hover {
+            color: var(--text-secondary);
+        }
+
+        /* Loading Spinner */
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Tooltip */
+        .tooltip-trigger {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 18px;
+            height: 18px;
+            background: var(--border);
+            border-radius: 50%;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--text-muted);
+            cursor: help;
+            margin-left: 6px;
+        }
+
+        /* No Debt Option */
+        .no-debt-option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 20px;
+            background: var(--bg-main);
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .no-debt-option:hover {
+            border-color: var(--accent);
+        }
+
+        .no-debt-option.selected {
+            border-color: var(--accent);
+            background: rgba(16, 185, 129, 0.08);
+        }
+
+        .no-debt-checkbox {
+            width: 22px;
+            height: 22px;
+            border: 2px solid var(--border);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+
+        .no-debt-option.selected .no-debt-checkbox {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+
+        .no-debt-text {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 24px;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: var(--primary);
+        }
+
+        /* Validation */
+        .input-error {
+            border-color: var(--error) !important;
+        }
+
+        .error-message {
+            color: var(--error);
+            font-size: 13px;
+            margin-top: 6px;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-pattern"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">
+                <img src="https://storage.googleapis.com/msgsndr/f58EcBfh5X2TxJZZE1MR/media/692e66f073043a1a9b285b1c.png" alt="ASAP" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=&quot;font-weight:700;color:#1a56db;font-size:14px;&quot;>ASAP</span>';">
+            </div>
+            <div class="logo-text">ASAP <span>Financial</span></div>
+        </div>
+    </header>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-info">
+            <span class="progress-step" id="progress-step">Let's get started</span>
+            <span class="progress-percent" id="progress-percent">0%</span>
+        </div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <main class="main-container">
+        <div class="form-card">
+            <form id="blueprint-form">
+
+                <!-- Step 0: Welcome -->
+                <div class="step active" data-step="0">
+                    <span class="welcome-icon">📊</span>
+                    <h1 class="step-title">Get Your Free Financial Blueprint</h1>
+                    <p class="step-subtitle">In just 3 minutes, we'll create a personalized action plan to help you take control of your finances.</p>
+                    
+                    <ul class="benefits-list">
+                        <li>
+                            <span class="check">✓</span>
+                            <span>Custom 50/30/20 budget breakdown</span>
+                        </li>
+                        <li>
+                            <span class="check">✓</span>
+                            <span>Identify exactly where your money is going</span>
+                        </li>
+                        <li>
+                            <span class="check">✓</span>
+                            <span>Step-by-step action plan with playbooks</span>
+                        </li>
+                        <li>
+                            <span class="check">✓</span>
+                            <span>Emergency fund & debt payoff roadmap</span>
+                        </li>
+                    </ul>
+
+                    <div class="btn-container">
+                        <button type="button" class="btn btn-primary" onclick="nextStep()">
+                            Get Started <span class="btn-icon">→</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 1: Name -->
+                <div class="step" data-step="1">
+                    <span class="step-label"><span class="icon">👋</span> Let's Meet</span>
+                    <h2 class="step-title">What's your name?</h2>
+                    <p class="step-subtitle">We'll use this to personalize your blueprint.</p>
+
+                    <div class="input-group">
+                        <label class="input-label">First Name</label>
+                        <input type="text" id="name_first" name="name_first" placeholder="Enter your first name" required>
+                        <div class="error-message" id="error-name_first">Please enter your first name</div>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label">Last Name</label>
+                        <input type="text" id="name_last" name="name_last" placeholder="Enter your last name" required>
+                        <div class="error-message" id="error-name_last">Please enter your last name</div>
+                    </div>
+
+                    <div class="btn-container">
+                        <button type="button" class="btn btn-secondary" onclick="prevStep()">← Back</button>
+                        <button type="button" class="btn btn-primary" onclick="nextStep()">Continue →</button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Email -->
+                <div class="step" data-step="2">
+                    <span class="step-label"><span class="icon">📧</span> Contact Info</span>
+                    <h2 class="step-title">What's your email?</h2>
+                    <p class="step-subtitle">We'll send your personalized blueprint here.</p>
+
+                    <div class="input-group">
+                        <label class="input-label">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                        <div class="error-message" id="error-email">Please enter a valid email address</div>
+                    </div>
+
+                    <div class="btn-container">
+                        <button type="button" class="btn btn-secondary" onclick="prevStep()">← Back</button>
+                        <button type="button" class="btn btn-primary" onclick="nextStep()">Continue →</button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Monthly Income -->
+                <div class="step" data-step="3">
+                    <span class="step-label"><span class="icon">💰</span> Income</span>
+                    <h2 class="step-title">What's your monthly income?</h2>
+                    <p class="step-subtitle">After taxes. Include all income sources.</p>
+
+                    <div class="big-input-container">
+                        <div class="big-input-wrapper">
+                            <span class="big-input-prefix">$</span>
+                            <input type="number" class="big-input" id="income" name="income" placeholder="5,000" min="0" required>
+                        </div>
+                        <div class="big-input-label">per month</div>
+                    </div>
+
+                    <div class="info-box">
+                        <span class="info-box-icon">💡</span>
+                        <span class="info-box-text">Include salary, side gigs, rental income, child support, and any other regular income.</span>
+                    </div>
+
+                    <div class="btn-container">
+                        <button type="button" class="btn btn-secondary" onclick="prevStep()">← Back</button>
+                        <button type="button" class="btn btn-primary" onclick="nextStep()">Continue →</button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Savings -->
+                <div class="step" data-step="4">
+                    <span class="step-label"><span class="icon">🏦</span> Savings</span>
+                    <h2 class="step-title">Tell us about your savings</h2>
+                    <p class="step-subtitle">This helps us build your emergency fund target.</p>
+
+                    <div class="input-group">
+                        <label class="input-label">How much do you currently save per month?</label>
+                        <div class="input-wrapper">
+                            <span class="input-prefix">$</span>
+                            <input type="number" class="has-prefix" id="savings" name="savings" placeholder="500" min="0">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label">Current emergency fund balance</label>
+                        <div class="input-wrapper">
+                            <span class="input-prefix">$</span>
+                            <input type="number" class="has-prefix" id="emergency_fund" name="emergency_fund" placeholder="1,000" min="0">
+                        </div>
+                    </div>
+
+                    <div class="btn-container">
+                        <button type="button" class="btn btn-secondary" onclick="prevStep()">← Back</button>
+                        <button type="button" class="btn btn-primary" onclick="nextStep()">Continue →</button>
+                    </div>
+                </div>
+
+                <!-- Step 5: Essential Expenses (Needs) -->
+                <div class="step" data-step="5">
+                    <span class="step-label"><span class="icon">🏠</span> Essential Expenses</span>
+                    <h2 class="step-title">Monthly essentials</h2>
+                    <p class="step-subtitle">Enter the amount you pay <strong>each month</strong> for these essentials.</p>
+
+                    <div class="expense-grid">
+                        <div class="expense-item">
+                            <label>Rent / Mortgage</label>
+                            <div class="input-wrapper">
+                                <span class="input-prefix">$</span>
+                                <input type="number" class="has-prefix" id="mortgage_rent" name="mortgage_rent" placeholder="0" min="0">
+                            </div>
+                        </div>
+                        <div class="expense-item">
+                            <label>Utilities</label>
+                            <div class="input-wrapper">
+                                <span class="input-prefix">$</span>
+                                <input type="number" class="has-prefix" id="utilities" name="utilities" placeholder="0" min="0">
+                            </div>
+                        </div>
+                        <div class="expense-item">
+                            <label>Groceries</label>
+                            <div class="input-wrapper">
+                                <span class="input-prefix">$</span>
+                                <input type="number" class="has-prefix" id="groceries" name="groceries" placeholder="0" min="0">
+                            </div>
+                        </div>
+                        <div class="expense-item">
+                            <label>Car Payment</label>
+                            <div class="input-wrapper">
+                                <span class="input-prefix">$</span>
+                                <input type="number" class="has-prefix" id="car_payment" name="car_payment" placeholder="0" min="0">
+                            </div>
+                        </div>
+                        <div class="expense-item">
+                            <label>Gas / Transportation</label>
+                            <div class="input-wrapper">
+                                <span class="input-prefix">$</span>
+                                <input type="number" class="has-prefix" id="gas_transportation" name="gas_transportation" placeholder="0" min="0">
+                            </div>
+                        </div>
+                        <div class="expense-item">
+                            <label>Insurance</label>
+                            <div class="input-wrapper">
+                                <span class="input-prefix">$</span>
+                                <input type="number" class="has-prefix" id="insurance" name="insurance" placeholder="0" min="0">
+                            </div>
+                        </div>
+                        <div class="expense-item">
+                            <label>Phone Service</label>
+                            <div class="input-wrapper">
+                                <span class="input-prefix">$</span>
+                                <input type="number" class="has-prefix" id="phone_service" name="phone_service" placeholder="0" min="0">
+                            </div>
+                        </div>
+                        <div class="expense-item">
+                            <label>Healthcare</label>
+                            <div class="input-wrapper">
+                                <span class="input-prefix">$</span>
+                                <input type="number" class="has-prefix" id="healthcare" name="healthcare" placeholder="0" min="0">
+                            </div>
+                        </div>
+                        <div class="expense-item">
+                            <label>Childcare</label>
+                            <div class="input-wrapper">
+                                <span class="input-prefix">$</span>
+                                <input type="number" class="has-prefix" id="childcare" name="childcare" placeholder="0" min="0">
+                            </div>
+                        </div>
+                        <div class="expense-item">
+                            <label>Student Loans</label>
+                            <div class="input-wrapper">
+                                <span class="input-prefix">$</span>
+                                <input type="number" class="has-prefix" id="student_loans_payment" name="student_loans_payment" placeholder="0" min="0">
+                            </div>
+                        </div>
+                        <div class="expense-item">
+                            <label>Taxes (if applicable)</label>
+                            <div class="input-wrapper">
+                                <span class="input-prefix">$</span>
+                                <input type="number" class="has-prefix" id="taxes" name="taxes" placeholder="0" min="0">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="btn-container">
+                        <button type="button" class="btn btn-secondary" onclick="prevStep()">← Back</button>
+                        <button type="button" class="btn btn-primary" onclick="nextStep()">Continue →</button>
+                    </div>
+                </div>
+
+                <!-- Step 6: Discretionary Expenses (Wants) -->
+                <div class="step" data-step="6">
+                    <span class="step-label"><span class="icon">🎯</span> Lifestyle Spending</span>
+                    <h2 class="step-title">Monthly discretionary spending</h2>
+                    <p class="step-subtitle">Enter what you typically spend <strong>each month</strong> on these items.</p>
+
+                    <div class="expense-grid">
+                        <div class="expense-item">
+                            <label>Restaurants / Dining</label>
+                            <div class="input-wrapper">
+                                <span class="input-prefix">$</span>
+                                <input type="number" class="has-prefix" id="restaurants" name="restaurants" placeholder="0" min="0">
+                            </div>
+                        </div>
+                        <div class="expense-item">
+                            <label>Food Delivery</label>
+                            <div class="input-wrapper">
+                                <span class="input-prefix">$</span>
+                                <input type="number" class="has-prefix" id="food_delivery" name="food_delivery" placeholder="0" min="0">
+                            </div>
+                        </div>
+                        <div class="expense-item">
+                            <label>Streaming Services</label>
+                            <div class="input-wrapper">
+                                <span class="input-prefix">$</span>
+                                <input type="number" class="has-prefix" id="netflix_streaming" name="netflix_streaming" placeholder="0" min="0">
+                            </div>
+                        </div>
+                        <div class="expense-item">
+                            <label>Software / Apps</label>
+                            <div class="input-wrapper">
+                                <span class="input-prefix">$</span>
+                                <input type="number" class="has-prefix" id="software_apps" name="software_apps" placeholder="0" min="0">
+                            </div>
+                        </div>
+                        <div class="expense-item">
+                            <label>Gym / Fitness</label>
+                            <div class="input-wrapper">
+                                <span class="input-prefix">$</span>
+                                <input type="number" class="has-prefix" id="gym_fitness" name="gym_fitness" placeholder="0" min="0">
+                            </div>
+                        </div>
+                        <div class="expense-item">
+                            <label>Shopping</label>
+                            <div class="input-wrapper">
+                                <span class="input-prefix">$</span>
+                                <input type="number" class="has-prefix" id="shopping" name="shopping" placeholder="0" min="0">
+                            </div>
+                        </div>
+                        <div class="expense-item">
+                            <label>Entertainment</label>
+                            <div class="input-wrapper">
+                                <span class="input-prefix">$</span>
+                                <input type="number" class="has-prefix" id="entertainment" name="entertainment" placeholder="0" min="0">
+                            </div>
+                        </div>
+                        <div class="expense-item">
+                            <label>Other Subscriptions</label>
+                            <div class="input-wrapper">
+                                <span class="input-prefix">$</span>
+                                <input type="number" class="has-prefix" id="other_subscriptions" name="other_subscriptions" placeholder="0" min="0">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="btn-container">
+                        <button type="button" class="btn btn-secondary" onclick="prevStep()">← Back</button>
+                        <button type="button" class="btn btn-primary" onclick="nextStep()">Review My Info →</button>
+                    </div>
+                </div>
+
+                <!-- Step 7: Review -->
+                <div class="step" data-step="7">
+                    <span class="step-label"><span class="icon">✅</span> Almost Done!</span>
+                    <h2 class="step-title">Review your information</h2>
+                    <p class="step-subtitle">Make sure everything looks correct before we create your blueprint.</p>
+
+                    <div class="review-section">
+                        <div class="review-section-title">Personal Info</div>
+                        <div class="review-grid">
+                            <div class="review-item">
+                                <span class="review-item-label">Name</span>
+                                <span class="review-item-value" id="review-name">-</span>
+                            </div>
+                            <div class="review-item">
+                                <span class="review-item-label">Email</span>
+                                <span class="review-item-value" id="review-email">-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="review-section">
+                        <div class="review-section-title">Income & Savings</div>
+                        <div class="review-grid">
+                            <div class="review-item">
+                                <span class="review-item-label">Monthly Income</span>
+                                <span class="review-item-value" id="review-income">-</span>
+                            </div>
+                            <div class="review-item">
+                                <span class="review-item-label">Monthly Savings</span>
+                                <span class="review-item-value" id="review-savings">-</span>
+                            </div>
+                            <div class="review-item">
+                                <span class="review-item-label">Emergency Fund</span>
+                                <span class="review-item-value" id="review-emergency">-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="review-section">
+                        <div class="review-section-title">Monthly Expenses</div>
+                        <div class="review-grid">
+                            <div class="review-item">
+                                <span class="review-item-label">Essential (Needs)</span>
+                                <span class="review-item-value" id="review-needs">-</span>
+                            </div>
+                            <div class="review-item">
+                                <span class="review-item-label">Discretionary (Wants)</span>
+                                <span class="review-item-value" id="review-wants">-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <span class="info-box-icon">📋</span>
+                        <span class="info-box-text">Your debt information will be added from your credit report by our team after submission.</span>
+                    </div>
+
+                    <div class="btn-container">
+                        <button type="button" class="btn btn-secondary" onclick="prevStep()">← Back</button>
+                        <button type="submit" class="btn btn-primary" id="submit-btn">
+                            Create My Blueprint 🚀
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 8: Success -->
+                <div class="step" data-step="8">
+                    <div class="success-container">
+                        <div class="success-icon">✓</div>
+                        <h2 class="success-title">You're All Set!</h2>
+                        <p class="success-text">Your personalized Financial Blueprint is being created. Check your email at <strong id="success-email">your@email.com</strong> for your custom action plan.</p>
+                        
+                        <div class="info-box">
+                            <span class="info-box-icon">📧</span>
+                            <span class="info-box-text">Your blueprint will arrive within a few minutes. Be sure to check your spam folder if you don't see it.</span>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2024 ASAP Credit Repair. <a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></p>
+    </footer>
+
+    <script>
+        // ==================== STATE ====================
+        let currentStep = 0;
+        const totalSteps = 8;
+
+        // Step names for progress display
+        const stepNames = [
+            "Let's get started",
+            "Step 1 of 6: Your name",
+            "Step 2 of 6: Contact info",
+            "Step 3 of 6: Income",
+            "Step 4 of 6: Savings",
+            "Step 5 of 6: Monthly essentials",
+            "Step 6 of 6: Lifestyle spending",
+            "Review & Submit",
+            "Complete!"
+        ];
+
+        // ==================== NAVIGATION ====================
+        function showStep(step) {
+            document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+            document.querySelector(`[data-step="${step}"]`).classList.add('active');
+            
+            // Update progress
+            const progress = Math.round((step / (totalSteps - 1)) * 100);
+            document.getElementById('progress-fill').style.width = `${progress}%`;
+            document.getElementById('progress-percent').textContent = `${progress}%`;
+            document.getElementById('progress-step').textContent = stepNames[step];
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function nextStep() {
+            if (!validateStep(currentStep)) return;
+            
+            if (currentStep === 6) {
+                populateReview();
+            }
+            
+            currentStep++;
+            showStep(currentStep);
+        }
+
+        function prevStep() {
+            if (currentStep > 0) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        }
+
+        // ==================== VALIDATION ====================
+        function validateStep(step) {
+            let isValid = true;
+            
+            if (step === 1) {
+                // Validate name
+                const firstName = document.getElementById('name_first').value.trim();
+                const lastName = document.getElementById('name_last').value.trim();
+                
+                if (!firstName) {
+                    showError('name_first');
+                    isValid = false;
+                } else {
+                    hideError('name_first');
+                }
+                
+                if (!lastName) {
+                    showError('name_last');
+                    isValid = false;
+                } else {
+                    hideError('name_last');
+                }
+            }
+            
+            if (step === 2) {
+                // Validate email
+                const email = document.getElementById('email').value.trim();
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                
+                if (!email || !emailRegex.test(email)) {
+                    showError('email');
+                    isValid = false;
+                } else {
+                    hideError('email');
+                }
+            }
+            
+            if (step === 3) {
+                // Validate income
+                const income = document.getElementById('income').value;
+                if (!income || parseFloat(income) <= 0) {
+                    document.getElementById('income').classList.add('input-error');
+                    isValid = false;
+                } else {
+                    document.getElementById('income').classList.remove('input-error');
+                }
+            }
+            
+            return isValid;
+        }
+
+        function showError(fieldId) {
+            document.getElementById(fieldId).classList.add('input-error');
+            document.getElementById(`error-${fieldId}`).classList.add('show');
+        }
+
+        function hideError(fieldId) {
+            document.getElementById(fieldId).classList.remove('input-error');
+            document.getElementById(`error-${fieldId}`).classList.remove('show');
+        }
+
+        // ==================== REVIEW ====================
+        function populateReview() {
+            // Personal
+            document.getElementById('review-name').textContent = 
+                `${document.getElementById('name_first').value} ${document.getElementById('name_last').value}`;
+            document.getElementById('review-email').textContent = document.getElementById('email').value;
+            
+            // Income & Savings
+            document.getElementById('review-income').textContent = formatCurrency(document.getElementById('income').value);
+            document.getElementById('review-savings').textContent = formatCurrency(document.getElementById('savings').value || 0);
+            document.getElementById('review-emergency').textContent = formatCurrency(document.getElementById('emergency_fund').value || 0);
+            
+            // Calculate Needs total
+            const needsFields = ['mortgage_rent', 'utilities', 'groceries', 'car_payment', 'gas_transportation', 
+                                 'insurance', 'phone_service', 'healthcare', 'childcare', 'student_loans_payment', 'taxes'];
+            let needsTotal = 0;
+            needsFields.forEach(field => {
+                needsTotal += parseFloat(document.getElementById(field).value || 0);
+            });
+            document.getElementById('review-needs').textContent = formatCurrency(needsTotal);
+            
+            // Calculate Wants total
+            const wantsFields = ['restaurants', 'food_delivery', 'netflix_streaming', 'software_apps', 
+                                 'gym_fitness', 'shopping', 'entertainment', 'other_subscriptions'];
+            let wantsTotal = 0;
+            wantsFields.forEach(field => {
+                wantsTotal += parseFloat(document.getElementById(field).value || 0);
+            });
+            document.getElementById('review-wants').textContent = formatCurrency(wantsTotal);
+        }
+
+        function formatCurrency(value) {
+            const num = parseFloat(value) || 0;
+            return '$' + num.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+        }
+
+        // ==================== FORM SUBMISSION ====================
+        // PASTE YOUR ZAPIER WEBHOOK URL HERE:
+        const ZAPIER_WEBHOOK_URL = 'YOUR_ZAPIER_WEBHOOK_URL_HERE';
+
+        document.getElementById('blueprint-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Show loading state
+            const submitBtn = document.getElementById('submit-btn');
+            submitBtn.innerHTML = '<span class="spinner"></span> Submitting...';
+            submitBtn.disabled = true;
+            
+            // Collect all form data
+            const formData = collectFormData();
+            
+            // Add timestamp and generate unique ID
+            formData.submission_id = 'client_' + Date.now() + '_' + Math.random().toString(36).substring(2, 8);
+            formData.submission_date = new Date().toISOString();
+            formData.status = 'pending_debt_entry'; // Waiting for admin to add debt data
+            
+            console.log('Submitting to Zapier:', formData);
+            
+            try {
+                // Send to Zapier webhook
+                if (ZAPIER_WEBHOOK_URL && ZAPIER_WEBHOOK_URL !== 'YOUR_ZAPIER_WEBHOOK_URL_HERE') {
+                    await fetch(ZAPIER_WEBHOOK_URL, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        mode: 'no-cors', // Required for Zapier webhooks
+                        body: JSON.stringify(formData)
+                    });
+                }
+                
+                // Update success email
+                document.getElementById('success-email').textContent = document.getElementById('email').value;
+                
+                // Show success step
+                currentStep = 8;
+                showStep(currentStep);
+                
+            } catch (error) {
+                console.error('Submission error:', error);
+                alert('There was an error submitting your form. Please try again.');
+                submitBtn.innerHTML = 'Create My Blueprint 🚀';
+                submitBtn.disabled = false;
+            }
+        });
+
+        function collectFormData() {
+            // Personal
+            const data = {
+                name_first: document.getElementById('name_first').value,
+                name_last: document.getElementById('name_last').value,
+                email: document.getElementById('email').value,
+                
+                // Income & Savings
+                income: parseFloat(document.getElementById('income').value) || 0,
+                savings: parseFloat(document.getElementById('savings').value) || 0,
+                emergency_fund: parseFloat(document.getElementById('emergency_fund').value) || 0,
+                
+                // Essential Expenses
+                mortgage_rent: parseFloat(document.getElementById('mortgage_rent').value) || 0,
+                utilities: parseFloat(document.getElementById('utilities').value) || 0,
+                groceries: parseFloat(document.getElementById('groceries').value) || 0,
+                car_payment: parseFloat(document.getElementById('car_payment').value) || 0,
+                gas_transportation: parseFloat(document.getElementById('gas_transportation').value) || 0,
+                insurance: parseFloat(document.getElementById('insurance').value) || 0,
+                phone_service: parseFloat(document.getElementById('phone_service').value) || 0,
+                healthcare: parseFloat(document.getElementById('healthcare').value) || 0,
+                childcare: parseFloat(document.getElementById('childcare').value) || 0,
+                student_loans_payment: parseFloat(document.getElementById('student_loans_payment').value) || 0,
+                taxes: parseFloat(document.getElementById('taxes').value) || 0,
+                
+                // Discretionary Expenses
+                restaurants: parseFloat(document.getElementById('restaurants').value) || 0,
+                food_delivery: parseFloat(document.getElementById('food_delivery').value) || 0,
+                netflix_streaming: parseFloat(document.getElementById('netflix_streaming').value) || 0,
+                software_apps: parseFloat(document.getElementById('software_apps').value) || 0,
+                gym_fitness: parseFloat(document.getElementById('gym_fitness').value) || 0,
+                shopping: parseFloat(document.getElementById('shopping').value) || 0,
+                entertainment: parseFloat(document.getElementById('entertainment').value) || 0,
+                other_subscriptions: parseFloat(document.getElementById('other_subscriptions').value) || 0,
+            };
+            
+            return data;
+        }
+    </script>
+</body>
+</html>

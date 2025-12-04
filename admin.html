@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASAP Admin | Debt Entry Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a56db;
+            --primary-dark: #1e40af;
+            --primary-light: #3b82f6;
+            --accent: #10b981;
+            --accent-dark: #059669;
+            --bg-main: #f1f5f9;
+            --bg-card: #ffffff;
+            --bg-dark: #0f172a;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+            --border: #e2e8f0;
+            --border-dark: #cbd5e1;
+            --error: #ef4444;
+            --warning: #f59e0b;
+            --success: #10b981;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+            --radius: 10px;
+            --radius-lg: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-main);
+            color: var(--text-primary);
+            min-height: 100vh;
+            line-height: 1.5;
+        }
+
+        /* Login Screen */
+        .login-screen {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #1e293b 100%);
+            padding: 20px;
+        }
+
+        .login-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 48px 40px;
+            width: 100%;
+            max-width: 420px;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+        }
+
+        .login-logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 24px;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .login-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .login-title {
+            font-family: 'Fraunces', serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .login-subtitle {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        .login-input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .login-label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .login-input {
+            width: 100%;
+            padding: 14px 16px;
+            font-size: 16px;
+            font-family: inherit;
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--bg-card);
+            transition: all 0.2s;
+        }
+
+        .login-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(26, 86, 219, 0.1);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 14px 24px;
+            font-size: 16px;
+            font-weight: 700;
+            font-family: inherit;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border: none;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-top: 8px;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(26, 86, 219, 0.4);
+        }
+
+        .login-error {
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--error);
+            padding: 12px 16px;
+            border-radius: var(--radius);
+            font-size: 14px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .login-error.show {
+            display: block;
+        }
+
+        /* Admin Dashboard */
+        .admin-container {
+            display: none;
+        }
+
+        .admin-container.active {
+            display: block;
+        }
+
+        /* Header */
+        .admin-header {
+            background: var(--bg-dark);
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .admin-header-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .admin-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .admin-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .admin-title {
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .admin-badge {
+            background: var(--warning);
+            color: var(--bg-dark);
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 100px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .logout-btn {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: inherit;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .logout-btn:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Main Content */
+        .admin-main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 32px 24px;
+        }
+
+        /* Client Lookup */
+        .client-lookup {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .client-lookup-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .client-lookup-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .client-search-row {
+            display: flex;
+            gap: 12px;
+        }
+
+        .client-search-input {
+            flex: 1;
+            padding: 12px 16px;
+            font-size: 15px;
+            font-family: inherit;
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--bg-main);
+        }
+
+        .client-search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .client-search-btn {
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: inherit;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .client-search-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Client Info Card */
+        .client-info {
+            display: none;
+            background: linear-gradient(135deg, rgba(26, 86, 219, 0.08) 0%, rgba(16, 185, 129, 0.08) 100%);
+            border: 2px solid var(--primary-light);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .client-info.show {
+            display: block;
+        }
+
+        .client-info-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .client-info-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .client-info-item {
+            text-align: center;
+        }
+
+        .client-info-label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .client-info-value {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        /* Debt Sections */
+        .debt-section {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-title h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .section-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .add-item-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: inherit;
+            color: var(--primary);
+            background: rgba(26, 86, 219, 0.1);
+            border: 2px solid var(--primary);
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .add-item-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Debt Table */
+        .debt-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .debt-table th {
+            text-align: left;
+            padding: 12px 8px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            border-bottom: 2px solid var(--border);
+        }
+
+        .debt-table th.center {
+            text-align: center;
+        }
+
+        .debt-table td {
+            padding: 12px 8px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: middle;
+        }
+
+        .debt-table tbody tr:hover {
+            background: var(--bg-main);
+        }
+
+        .debt-table input,
+        .debt-table select {
+            width: 100%;
+            padding: 10px 12px;
+            font-size: 14px;
+            font-family: inherit;
+            border: 2px solid var(--border);
+            border-radius: 6px;
+            background: var(--bg-card);
+            transition: all 0.2s;
+        }
+
+        .debt-table input:focus,
+        .debt-table select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .debt-table input.currency {
+            text-align: right;
+        }
+
+        .debt-table .remove-btn {
+            width: 32px;
+            height: 32px;
+            border: none;
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--error);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .debt-table .remove-btn:hover {
+            background: var(--error);
+            color: white;
+        }
+
+        /* Summary Row */
+        .summary-row {
+            background: var(--bg-main);
+        }
+
+        .summary-row td {
+            padding: 16px 8px;
+            font-weight: 700;
+            border-bottom: none;
+        }
+
+        .summary-label {
+            text-align: right;
+            color: var(--text-secondary);
+        }
+
+        .summary-value {
+            font-size: 18px;
+            color: var(--primary);
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+        }
+
+        .empty-state-icon {
+            font-size: 48px;
+            margin-bottom: 12px;
+            opacity: 0.5;
+        }
+
+        .empty-state-text {
+            font-size: 14px;
+        }
+
+        /* Total Section */
+        .total-section {
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #1e293b 100%);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            margin-bottom: 24px;
+            color: white;
+        }
+
+        .total-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            text-align: center;
+        }
+
+        @media (max-width: 640px) {
+            .total-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+        }
+
+        .total-item {
+            padding: 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: var(--radius);
+        }
+
+        .total-label {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 8px;
+        }
+
+        .total-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .total-value.negative {
+            color: #f87171;
+        }
+
+        /* Save Button */
+        .save-section {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        @media (max-width: 640px) {
+            .save-section {
+                flex-direction: column;
+            }
+        }
+
+        .save-info {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .save-btn {
+            padding: 16px 48px;
+            font-size: 16px;
+            font-weight: 700;
+            font-family: inherit;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            color: white;
+            border: none;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .save-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+        }
+
+        .save-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: var(--bg-dark);
+            color: white;
+            padding: 16px 24px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast.success {
+            background: var(--accent-dark);
+        }
+
+        .toast.error {
+            background: var(--error);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .admin-header {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .client-search-row {
+                flex-direction: column;
+            }
+
+            .debt-table {
+                font-size: 13px;
+            }
+
+            .debt-table th,
+            .debt-table td {
+                padding: 8px 4px;
+            }
+
+            .debt-table input,
+            .debt-table select {
+                padding: 8px;
+                font-size: 13px;
+            }
+        }
+
+        /* Spinner */
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Login Screen -->
+    <div class="login-screen" id="login-screen">
+        <div class="login-card">
+            <div class="login-logo">
+                <img src="https://storage.googleapis.com/msgsndr/f58EcBfh5X2TxJZZE1MR/media/692e66f073043a1a9b285b1c.png" alt="ASAP">
+            </div>
+            <h1 class="login-title">Admin Portal</h1>
+            <p class="login-subtitle">Enter your employee code to access the debt entry system.</p>
+            
+            <div class="login-error" id="login-error">
+                Invalid employee code. Please try again.
+            </div>
+            
+            <div class="login-input-group">
+                <label class="login-label">Employee Code</label>
+                <input type="password" class="login-input" id="employee-code" placeholder="Enter code" autocomplete="off">
+            </div>
+            
+            <button class="login-btn" onclick="handleLogin()">Access Portal</button>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div class="admin-container" id="admin-container">
+        <!-- Header -->
+        <header class="admin-header">
+            <div class="admin-header-left">
+                <div class="admin-logo">
+                    <img src="https://storage.googleapis.com/msgsndr/f58EcBfh5X2TxJZZE1MR/media/692e66f073043a1a9b285b1c.png" alt="ASAP">
+                </div>
+                <span class="admin-title">ASAP Financial</span>
+                <span class="admin-badge">Admin</span>
+            </div>
+            <button class="logout-btn" onclick="handleLogout()">Logout</button>
+        </header>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Client Lookup -->
+            <div class="client-lookup">
+                <div class="client-lookup-header">
+                    <h2 class="client-lookup-title">🔍 Client Lookup</h2>
+                </div>
+                <div class="client-search-row">
+                    <input type="email" class="client-search-input" id="client-search" placeholder="Enter client email address...">
+                    <button class="client-search-btn" onclick="searchClient()">Load Client</button>
+                </div>
+                
+                <div class="client-info" id="client-info">
+                    <div class="client-info-grid" style="grid-template-columns: 1fr;">
+                        <div class="client-info-item">
+                            <div class="client-info-label">Client Email</div>
+                            <div class="client-info-value" id="client-email">-</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Credit Card Debts -->
+            <div class="debt-section">
+                <div class="section-header">
+                    <div class="section-title">
+                        <div class="section-icon">💳</div>
+                        <h2>Credit Card Debts</h2>
+                    </div>
+                    <button class="add-item-btn" onclick="addCreditCard()">
+                        <span>+</span> Add Card
+                    </button>
+                </div>
+                
+                <table class="debt-table" id="cc-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 22%">Credit Card</th>
+                            <th style="width: 20%">Balance</th>
+                            <th style="width: 20%">Credit Limit</th>
+                            <th style="width: 20%">Min Payment</th>
+                            <th style="width: 18%" class="center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cc-tbody">
+                        <!-- Cards added dynamically -->
+                    </tbody>
+                    <tfoot>
+                        <tr class="summary-row">
+                            <td class="summary-label">Totals:</td>
+                            <td class="summary-value" id="cc-balance-total">$0</td>
+                            <td class="summary-value" id="cc-limit-total">$0</td>
+                            <td class="summary-value" id="cc-payment-total">$0</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+                
+                <div class="empty-state" id="cc-empty">
+                    <div class="empty-state-icon">💳</div>
+                    <div class="empty-state-text">No credit cards added yet. Click "Add Card" to begin.</div>
+                </div>
+            </div>
+
+            <!-- Installment Debts -->
+            <div class="debt-section">
+                <div class="section-header">
+                    <div class="section-title">
+                        <div class="section-icon">📋</div>
+                        <h2>Installment Debts</h2>
+                    </div>
+                    <button class="add-item-btn" onclick="addInstallment()">
+                        <span>+</span> Add Debt
+                    </button>
+                </div>
+                
+                <table class="debt-table" id="installment-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 22%">Debtor / Lender</th>
+                            <th style="width: 20%">Balance</th>
+                            <th style="width: 20%">Monthly Payment</th>
+                            <th style="width: 20%">Type</th>
+                            <th style="width: 18%" class="center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="installment-tbody">
+                        <!-- Debts added dynamically -->
+                    </tbody>
+                    <tfoot>
+                        <tr class="summary-row">
+                            <td class="summary-label">Totals:</td>
+                            <td class="summary-value" id="installment-balance-total">$0</td>
+                            <td class="summary-value" id="installment-payment-total">$0</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+                
+                <div class="empty-state" id="installment-empty">
+                    <div class="empty-state-icon">📋</div>
+                    <div class="empty-state-text">No installment debts added yet. Click "Add Debt" to begin.</div>
+                </div>
+            </div>
+
+            <!-- Totals Section -->
+            <div class="total-section">
+                <div class="total-grid">
+                    <div class="total-item">
+                        <div class="total-label">Total Credit Card Debt</div>
+                        <div class="total-value" id="total-cc-debt">$0</div>
+                    </div>
+                    <div class="total-item">
+                        <div class="total-label">Total Installment Debt</div>
+                        <div class="total-value" id="total-installment-debt">$0</div>
+                    </div>
+                    <div class="total-item">
+                        <div class="total-label">Total Negative Debt</div>
+                        <div class="total-value negative" id="total-negative-debt">$0</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Save Section -->
+            <div class="save-section">
+                <div class="save-info">
+                    💡 All changes will be saved and synced to the client's Financial Blueprint.
+                </div>
+                <button class="save-btn" id="save-btn" onclick="saveData()">
+                    <span>💾</span> Save Client Data
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span id="toast-message">Saved successfully!</span>
+    </div>
+
+    <script>
+        // ==================== CONFIGURATION ====================
+        // CHANGE THIS PASSWORD TO YOUR DESIRED EMPLOYEE CODE
+        const EMPLOYEE_CODE = 'asap2024';
+        
+        let ccCounter = 0;
+        let installmentCounter = 0;
+        let currentClient = null;
+
+        // ==================== LOGIN ====================
+        function handleLogin() {
+            const code = document.getElementById('employee-code').value;
+            
+            if (code === EMPLOYEE_CODE) {
+                document.getElementById('login-screen').style.display = 'none';
+                document.getElementById('admin-container').classList.add('active');
+                document.getElementById('login-error').classList.remove('show');
+            } else {
+                document.getElementById('login-error').classList.add('show');
+                document.getElementById('employee-code').value = '';
+            }
+        }
+
+        function handleLogout() {
+            document.getElementById('login-screen').style.display = 'flex';
+            document.getElementById('admin-container').classList.remove('active');
+            document.getElementById('employee-code').value = '';
+        }
+
+        // Enter key to login
+        document.getElementById('employee-code').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') handleLogin();
+        });
+
+        // ==================== CLIENT SEARCH ====================
+        function searchClient() {
+            const query = document.getElementById('client-search').value.trim();
+            
+            if (!query) {
+                showToast('Please enter a client email', 'error');
+                return;
+            }
+            
+            if (!query.includes('@')) {
+                showToast('Please enter a valid email address', 'error');
+                return;
+            }
+            
+            // Store the client email - this will be used to match with their original submission
+            currentClient = {
+                email: query,
+                lookup_date: new Date().toISOString()
+            };
+            
+            document.getElementById('client-email').textContent = currentClient.email;
+            document.getElementById('client-info').classList.add('show');
+            
+            showToast('Client loaded! Now add their debt information below.', 'success');
+        }
+
+        // ==================== CREDIT CARD MANAGEMENT ====================
+        function addCreditCard() {
+            ccCounter++;
+            const tbody = document.getElementById('cc-tbody');
+            
+            const row = document.createElement('tr');
+            row.id = `cc-row-${ccCounter}`;
+            row.innerHTML = `
+                <td>
+                    <input type="text" placeholder="Card name" class="cc-name">
+                </td>
+                <td>
+                    <input type="number" class="currency cc-balance" placeholder="0.00" min="0" step="0.01" oninput="updateCCTotals()">
+                </td>
+                <td>
+                    <input type="number" class="currency cc-limit" placeholder="0.00" min="0" step="0.01" oninput="updateCCTotals()">
+                </td>
+                <td>
+                    <input type="number" class="currency cc-payment" placeholder="0.00" min="0" step="0.01" oninput="updateCCTotals()">
+                </td>
+                <td style="text-align: center">
+                    <button class="remove-btn" onclick="removeCreditCard(${ccCounter})">×</button>
+                </td>
+            `;
+            
+            tbody.appendChild(row);
+            updateCCEmptyState();
+        }
+
+        function removeCreditCard(id) {
+            const row = document.getElementById(`cc-row-${id}`);
+            if (row) {
+                row.remove();
+                updateCCTotals();
+                updateCCEmptyState();
+            }
+        }
+
+        function updateCCTotals() {
+            let balanceTotal = 0;
+            let limitTotal = 0;
+            let paymentTotal = 0;
+            
+            document.querySelectorAll('.cc-balance').forEach(input => {
+                balanceTotal += parseFloat(input.value) || 0;
+            });
+            document.querySelectorAll('.cc-limit').forEach(input => {
+                limitTotal += parseFloat(input.value) || 0;
+            });
+            document.querySelectorAll('.cc-payment').forEach(input => {
+                paymentTotal += parseFloat(input.value) || 0;
+            });
+            
+            document.getElementById('cc-balance-total').textContent = formatCurrency(balanceTotal);
+            document.getElementById('cc-limit-total').textContent = formatCurrency(limitTotal);
+            document.getElementById('cc-payment-total').textContent = formatCurrency(paymentTotal);
+            document.getElementById('total-cc-debt').textContent = formatCurrency(balanceTotal);
+            
+            updateTotalDebt();
+        }
+
+        function updateCCEmptyState() {
+            const tbody = document.getElementById('cc-tbody');
+            const empty = document.getElementById('cc-empty');
+            const table = document.getElementById('cc-table');
+            
+            if (tbody.children.length === 0) {
+                empty.style.display = 'block';
+                table.style.display = 'none';
+            } else {
+                empty.style.display = 'none';
+                table.style.display = 'table';
+            }
+        }
+
+        // ==================== INSTALLMENT DEBT MANAGEMENT ====================
+        function addInstallment() {
+            installmentCounter++;
+            const tbody = document.getElementById('installment-tbody');
+            
+            const row = document.createElement('tr');
+            row.id = `installment-row-${installmentCounter}`;
+            row.innerHTML = `
+                <td>
+                    <input type="text" placeholder="Lender name" class="installment-debtor">
+                </td>
+                <td>
+                    <input type="number" class="currency installment-balance" placeholder="0.00" min="0" step="0.01" oninput="updateInstallmentTotals()">
+                </td>
+                <td>
+                    <input type="number" class="currency installment-payment" placeholder="0.00" min="0" step="0.01" oninput="updateInstallmentTotals()">
+                </td>
+                <td>
+                    <select class="installment-type">
+                        <option value="Mortgage">Mortgage</option>
+                        <option value="Auto">Auto Loan</option>
+                        <option value="Student Loan">Student Loan</option>
+                        <option value="Personal Loan">Personal Loan</option>
+                        <option value="Medical">Medical Debt</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </td>
+                <td style="text-align: center">
+                    <button class="remove-btn" onclick="removeInstallment(${installmentCounter})">×</button>
+                </td>
+            `;
+            
+            tbody.appendChild(row);
+            updateInstallmentEmptyState();
+        }
+
+        function removeInstallment(id) {
+            const row = document.getElementById(`installment-row-${id}`);
+            if (row) {
+                row.remove();
+                updateInstallmentTotals();
+                updateInstallmentEmptyState();
+            }
+        }
+
+        function updateInstallmentTotals() {
+            let balanceTotal = 0;
+            let paymentTotal = 0;
+            
+            document.querySelectorAll('.installment-balance').forEach(input => {
+                balanceTotal += parseFloat(input.value) || 0;
+            });
+            document.querySelectorAll('.installment-payment').forEach(input => {
+                paymentTotal += parseFloat(input.value) || 0;
+            });
+            
+            document.getElementById('installment-balance-total').textContent = formatCurrency(balanceTotal);
+            document.getElementById('installment-payment-total').textContent = formatCurrency(paymentTotal);
+            document.getElementById('total-installment-debt').textContent = formatCurrency(balanceTotal);
+            
+            updateTotalDebt();
+        }
+
+        function updateInstallmentEmptyState() {
+            const tbody = document.getElementById('installment-tbody');
+            const empty = document.getElementById('installment-empty');
+            const table = document.getElementById('installment-table');
+            
+            if (tbody.children.length === 0) {
+                empty.style.display = 'block';
+                table.style.display = 'none';
+            } else {
+                empty.style.display = 'none';
+                table.style.display = 'table';
+            }
+        }
+
+        // ==================== TOTAL DEBT ====================
+        function updateTotalDebt() {
+            let ccTotal = 0;
+            let installmentTotal = 0;
+            
+            document.querySelectorAll('.cc-balance').forEach(input => {
+                ccTotal += parseFloat(input.value) || 0;
+            });
+            document.querySelectorAll('.installment-balance').forEach(input => {
+                installmentTotal += parseFloat(input.value) || 0;
+            });
+            
+            const totalDebt = ccTotal + installmentTotal;
+            document.getElementById('total-negative-debt').textContent = formatCurrency(totalDebt);
+        }
+
+        // ==================== SAVE DATA ====================
+        // PASTE YOUR ZAPIER WEBHOOK URL HERE (can be different from client form):
+        const ZAPIER_ADMIN_WEBHOOK_URL = 'YOUR_ZAPIER_ADMIN_WEBHOOK_URL_HERE';
+
+        async function saveData() {
+            if (!currentClient) {
+                showToast('Please search for a client first', 'error');
+                return;
+            }
+
+            const saveBtn = document.getElementById('save-btn');
+            saveBtn.disabled = true;
+            saveBtn.innerHTML = '<span class="spinner"></span> Saving...';
+            
+            // Collect all data
+            const data = collectAllData();
+            
+            // Add metadata
+            data.admin_submission_date = new Date().toISOString();
+            data.status = 'ready_for_blueprint'; // Ready for blueprint generation
+            
+            console.log('Saving data to Zapier:', data);
+            
+            try {
+                // Send to Zapier webhook
+                if (ZAPIER_ADMIN_WEBHOOK_URL && ZAPIER_ADMIN_WEBHOOK_URL !== 'YOUR_ZAPIER_ADMIN_WEBHOOK_URL_HERE') {
+                    await fetch(ZAPIER_ADMIN_WEBHOOK_URL, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        mode: 'no-cors',
+                        body: JSON.stringify(data)
+                    });
+                }
+                
+                saveBtn.disabled = false;
+                saveBtn.innerHTML = '<span>💾</span> Save Client Data';
+                showToast('Client debt data saved! Blueprint will be generated.', 'success');
+                
+            } catch (error) {
+                console.error('Save error:', error);
+                saveBtn.disabled = false;
+                saveBtn.innerHTML = '<span>💾</span> Save Client Data';
+                showToast('Error saving data. Please try again.', 'error');
+            }
+        }
+
+        function collectAllData() {
+            // Credit Cards
+            const creditCards = [];
+            document.querySelectorAll('#cc-tbody tr').forEach(row => {
+                creditCards.push({
+                    name: row.querySelector('.cc-name')?.value || '',
+                    balance: parseFloat(row.querySelector('.cc-balance')?.value) || 0,
+                    limit: parseFloat(row.querySelector('.cc-limit')?.value) || 0,
+                    payment: parseFloat(row.querySelector('.cc-payment')?.value) || 0
+                });
+            });
+            
+            // Installment Debts
+            const installmentDebts = [];
+            document.querySelectorAll('#installment-tbody tr').forEach(row => {
+                installmentDebts.push({
+                    debtor: row.querySelector('.installment-debtor')?.value || '',
+                    balance: parseFloat(row.querySelector('.installment-balance')?.value) || 0,
+                    payment: parseFloat(row.querySelector('.installment-payment')?.value) || 0,
+                    type: row.querySelector('.installment-type')?.value || ''
+                });
+            });
+            
+            // Calculate totals
+            const ccBalanceTotal = creditCards.reduce((sum, card) => sum + card.balance, 0);
+            const ccLimitTotal = creditCards.reduce((sum, card) => sum + card.limit, 0);
+            const ccPaymentTotal = creditCards.reduce((sum, card) => sum + card.payment, 0);
+            const installmentBalanceTotal = installmentDebts.reduce((sum, debt) => sum + debt.balance, 0);
+            const installmentPaymentTotal = installmentDebts.reduce((sum, debt) => sum + debt.payment, 0);
+            
+            return {
+                client: currentClient,
+                creditCards,
+                installmentDebts,
+                totals: {
+                    revolving_balance: ccBalanceTotal,
+                    revolving_limit: ccLimitTotal,
+                    revolving_payment: ccPaymentTotal,
+                    installment_balance: installmentBalanceTotal,
+                    installment_payment: installmentPaymentTotal,
+                    total_negative_debt: ccBalanceTotal + installmentBalanceTotal
+                }
+            };
+        }
+
+        // ==================== UTILITIES ====================
+        function formatCurrency(value) {
+            const num = parseFloat(value) || 0;
+            return '$' + num.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+        }
+
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toast-message');
+            
+            toastMessage.textContent = message;
+            toast.className = 'toast ' + type;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // ==================== INITIALIZATION ====================
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCCEmptyState();
+            updateInstallmentEmptyState();
+        });
+    </script>
+</body>
+</html>
