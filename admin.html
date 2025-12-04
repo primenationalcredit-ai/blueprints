@@ -232,353 +232,115 @@
             background: rgba(255,255,255,0.2);
         }
 
-        /* Main Layout */
-        .admin-layout {
-            display: grid;
-            grid-template-columns: 380px 1fr;
-            min-height: calc(100vh - 72px);
+        /* Main Content */
+        .admin-main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 32px 24px;
         }
 
-        @media (max-width: 1024px) {
-            .admin-layout {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Sidebar - Client List */
-        .sidebar {
+        /* Client Lookup */
+        .client-lookup {
             background: var(--bg-card);
-            border-right: 2px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .client-lookup-header {
             display: flex;
-            flex-direction: column;
-            max-height: calc(100vh - 72px);
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
         }
 
-        .sidebar-header {
-            padding: 20px;
-            border-bottom: 2px solid var(--border);
-        }
-
-        .sidebar-title {
+        .client-lookup-title {
             font-size: 18px;
             font-weight: 700;
             color: var(--text-primary);
-            margin-bottom: 16px;
+        }
+
+        .client-search-row {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
+            gap: 12px;
         }
 
-        .refresh-btn {
-            background: var(--bg-main);
-            border: 2px solid var(--border);
-            padding: 8px 12px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 14px;
-            transition: all 0.2s;
-        }
-
-        .refresh-btn:hover {
-            background: var(--border);
-        }
-
-        .search-box {
-            position: relative;
-        }
-
-        .search-box input {
-            width: 100%;
-            padding: 12px 16px 12px 40px;
-            font-size: 14px;
+        .client-search-input {
+            flex: 1;
+            padding: 12px 16px;
+            font-size: 15px;
             font-family: inherit;
             border: 2px solid var(--border);
             border-radius: var(--radius);
             background: var(--bg-main);
         }
 
-        .search-box input:focus {
+        .client-search-input:focus {
             outline: none;
             border-color: var(--primary);
         }
 
-        .search-box::before {
-            content: '🔍';
-            position: absolute;
-            left: 14px;
-            top: 50%;
-            transform: translateY(-50%);
+        .client-search-btn {
+            padding: 12px 24px;
             font-size: 14px;
-        }
-
-        /* Stats */
-        .stats-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            padding: 16px 20px;
-            border-bottom: 2px solid var(--border);
-            background: var(--bg-main);
-        }
-
-        .stat-box {
-            text-align: center;
-            padding: 12px;
-            background: var(--bg-card);
-            border-radius: 8px;
-            border: 2px solid var(--border);
-        }
-
-        .stat-value {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-
-        .stat-value.pending {
-            color: var(--warning);
-        }
-
-        .stat-value.completed {
-            color: var(--success);
-        }
-
-        .stat-label {
-            font-size: 11px;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: var(--text-muted);
-            margin-top: 4px;
-        }
-
-        /* Client List */
-        .client-list {
-            flex: 1;
-            overflow-y: auto;
-            padding: 12px;
-        }
-
-        .client-card {
-            background: var(--bg-card);
-            border: 2px solid var(--border);
+            font-family: inherit;
+            background: var(--primary);
+            color: white;
+            border: none;
             border-radius: var(--radius);
-            padding: 16px;
-            margin-bottom: 10px;
             cursor: pointer;
             transition: all 0.2s;
         }
 
-        .client-card:hover {
-            border-color: var(--primary-light);
-            transform: translateX(4px);
+        .client-search-btn:hover {
+            background: var(--primary-dark);
         }
 
-        .client-card.active {
-            border-color: var(--primary);
-            background: rgba(26, 86, 219, 0.05);
-        }
-
-        .client-card.completed {
-            border-left: 4px solid var(--success);
-        }
-
-        .client-card.pending {
-            border-left: 4px solid var(--warning);
-        }
-
-        .client-card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 8px;
-        }
-
-        .client-name {
-            font-weight: 700;
-            font-size: 15px;
-            color: var(--text-primary);
-        }
-
-        .client-status {
-            font-size: 10px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            padding: 4px 8px;
-            border-radius: 20px;
-        }
-
-        .client-status.pending {
-            background: rgba(245, 158, 11, 0.15);
-            color: #b45309;
-        }
-
-        .client-status.completed {
-            background: rgba(16, 185, 129, 0.15);
-            color: #047857;
-        }
-
-        .client-email {
-            font-size: 13px;
-            color: var(--text-secondary);
-            margin-bottom: 8px;
-        }
-
-        .client-meta {
-            display: flex;
-            gap: 16px;
-            font-size: 12px;
-            color: var(--text-muted);
-        }
-
-        .client-meta span {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        /* Empty State */
-        .empty-state {
-            text-align: center;
-            padding: 40px 20px;
-            color: var(--text-muted);
-        }
-
-        .empty-state-icon {
-            font-size: 48px;
-            margin-bottom: 12px;
-            opacity: 0.5;
-        }
-
-        .empty-state-text {
-            font-size: 14px;
-        }
-
-        /* Loading State */
-        .loading-state {
-            text-align: center;
-            padding: 60px 20px;
-        }
-
-        .loading-spinner {
-            width: 40px;
-            height: 40px;
-            border: 3px solid var(--border);
-            border-top-color: var(--primary);
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
-            margin: 0 auto 16px;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
-        /* Main Content */
-        .main-content {
-            padding: 24px;
-            overflow-y: auto;
-        }
-
-        /* No Client Selected */
-        .no-client-selected {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            text-align: center;
-            color: var(--text-muted);
-        }
-
-        .no-client-selected-icon {
-            font-size: 64px;
-            margin-bottom: 16px;
-            opacity: 0.5;
-        }
-
-        .no-client-selected-text {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--text-secondary);
-            margin-bottom: 8px;
-        }
-
-        .no-client-selected-subtext {
-            font-size: 14px;
-        }
-
-        /* Debt Entry Panel */
-        .debt-entry-panel {
+        /* Client Info Card */
+        .client-info {
             display: none;
+            background: linear-gradient(135deg, rgba(26, 86, 219, 0.08) 0%, rgba(16, 185, 129, 0.08) 100%);
+            border: 2px solid var(--primary-light);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-top: 20px;
         }
 
-        .debt-entry-panel.active {
+        .client-info.show {
             display: block;
         }
 
-        /* Client Info Banner */
-        .client-banner {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
-            padding: 24px;
-            border-radius: var(--radius-lg);
-            margin-bottom: 24px;
-        }
-
-        .client-banner-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 16px;
-        }
-
-        .client-banner-name {
-            font-family: 'Fraunces', serif;
-            font-size: 24px;
-            font-weight: 600;
-        }
-
-        .client-banner-status {
-            background: rgba(255,255,255,0.2);
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 700;
-        }
-
-        .client-banner-status.completed {
-            background: var(--success);
-        }
-
-        .client-banner-grid {
+        .client-info-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            gap: 16px;
         }
 
         @media (max-width: 768px) {
-            .client-banner-grid {
+            .client-info-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
 
-        .client-banner-item {
+        .client-info-item {
             text-align: center;
         }
 
-        .client-banner-label {
+        .client-info-label {
             font-size: 11px;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            opacity: 0.8;
+            color: var(--text-muted);
             margin-bottom: 4px;
         }
 
-        .client-banner-value {
-            font-size: 18px;
+        .client-info-value {
+            font-size: 16px;
             font-weight: 700;
+            color: var(--text-primary);
         }
 
         /* Debt Sections */
@@ -737,6 +499,23 @@
             color: var(--primary);
         }
 
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+        }
+
+        .empty-state-icon {
+            font-size: 48px;
+            margin-bottom: 12px;
+            opacity: 0.5;
+        }
+
+        .empty-state-text {
+            font-size: 14px;
+        }
+
         /* Total Section */
         .total-section {
             background: linear-gradient(135deg, var(--bg-dark) 0%, #1e293b 100%);
@@ -867,6 +646,33 @@
             background: var(--error);
         }
 
+        /* Responsive */
+        @media (max-width: 768px) {
+            .admin-header {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .client-search-row {
+                flex-direction: column;
+            }
+
+            .debt-table {
+                font-size: 13px;
+            }
+
+            .debt-table th,
+            .debt-table td {
+                padding: 8px 4px;
+            }
+
+            .debt-table input,
+            .debt-table select {
+                padding: 8px;
+                font-size: 13px;
+            }
+        }
+
         /* Spinner */
         .spinner {
             width: 20px;
@@ -877,98 +683,8 @@
             animation: spin 0.8s linear infinite;
         }
 
-        /* Config Modal */
-        .config-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.5);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .config-modal.show {
-            display: flex;
-        }
-
-        .config-modal-content {
-            background: white;
-            border-radius: var(--radius-lg);
-            padding: 32px;
-            max-width: 500px;
-            width: 100%;
-        }
-
-        .config-modal-title {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .config-modal-desc {
-            font-size: 14px;
-            color: var(--text-secondary);
-            margin-bottom: 24px;
-        }
-
-        .config-input {
-            width: 100%;
-            padding: 14px 16px;
-            font-size: 14px;
-            font-family: inherit;
-            border: 2px solid var(--border);
-            border-radius: var(--radius);
-            margin-bottom: 16px;
-        }
-
-        .config-input:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
-        .config-btns {
-            display: flex;
-            gap: 12px;
-            justify-content: flex-end;
-        }
-
-        .config-btn {
-            padding: 12px 24px;
-            font-size: 14px;
-            font-weight: 600;
-            font-family: inherit;
-            border-radius: var(--radius);
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .config-btn-secondary {
-            background: var(--bg-main);
-            border: 2px solid var(--border);
-            color: var(--text-secondary);
-        }
-
-        .config-btn-primary {
-            background: var(--primary);
-            border: none;
-            color: white;
-        }
-
-        @media (max-width: 1024px) {
-            .sidebar {
-                max-height: none;
-                border-right: none;
-                border-bottom: 2px solid var(--border);
-            }
-
-            .client-list {
-                max-height: 300px;
-            }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
     </style>
 </head>
@@ -1007,209 +723,143 @@
                 <span class="admin-title">ASAP Financial</span>
                 <span class="admin-badge">Admin</span>
             </div>
-            <div style="display: flex; gap: 12px;">
-                <button class="logout-btn" onclick="showConfigModal()">⚙️ Settings</button>
-                <button class="logout-btn" onclick="handleLogout()">Logout</button>
-            </div>
+            <button class="logout-btn" onclick="handleLogout()">Logout</button>
         </header>
 
-        <!-- Main Layout -->
-        <div class="admin-layout">
-            <!-- Sidebar - Client List -->
-            <aside class="sidebar">
-                <div class="sidebar-header">
-                    <div class="sidebar-title">
-                        <span>📋 Clients</span>
-                        <button class="refresh-btn" onclick="loadClients()">🔄 Refresh</button>
-                    </div>
-                    <div class="search-box">
-                        <input type="text" id="client-search" placeholder="Search clients..." oninput="filterClients()">
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Client Lookup -->
+            <div class="client-lookup">
+                <div class="client-lookup-header">
+                    <h2 class="client-lookup-title">🔍 Client Lookup</h2>
+                </div>
+                <div class="client-search-row">
+                    <input type="email" class="client-search-input" id="client-search" placeholder="Enter client email address...">
+                    <button class="client-search-btn" onclick="searchClient()">Load Client</button>
+                </div>
+                
+                <div class="client-info" id="client-info">
+                    <div class="client-info-grid" style="grid-template-columns: 1fr;">
+                        <div class="client-info-item">
+                            <div class="client-info-label">Client Email</div>
+                            <div class="client-info-value" id="client-email">-</div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="stats-row">
-                    <div class="stat-box">
-                        <div class="stat-value pending" id="stat-pending">0</div>
-                        <div class="stat-label">Pending</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-value completed" id="stat-completed">0</div>
-                        <div class="stat-label">Completed</div>
-                    </div>
-                </div>
-
-                <div class="client-list" id="client-list">
-                    <div class="loading-state" id="loading-state">
-                        <div class="loading-spinner"></div>
-                        <div>Loading clients...</div>
-                    </div>
-                </div>
-            </aside>
-
-            <!-- Main Content -->
-            <main class="main-content">
-                <!-- No Client Selected -->
-                <div class="no-client-selected" id="no-client-selected">
-                    <div class="no-client-selected-icon">👈</div>
-                    <div class="no-client-selected-text">Select a client to begin</div>
-                    <div class="no-client-selected-subtext">Choose a client from the list to add their debt information</div>
-                </div>
-
-                <!-- Debt Entry Panel -->
-                <div class="debt-entry-panel" id="debt-entry-panel">
-                    <!-- Client Banner -->
-                    <div class="client-banner">
-                        <div class="client-banner-header">
-                            <div class="client-banner-name" id="banner-name">Client Name</div>
-                            <div class="client-banner-status" id="banner-status">Pending</div>
-                        </div>
-                        <div class="client-banner-grid">
-                            <div class="client-banner-item">
-                                <div class="client-banner-label">Email</div>
-                                <div class="client-banner-value" id="banner-email">-</div>
-                            </div>
-                            <div class="client-banner-item">
-                                <div class="client-banner-label">Monthly Income</div>
-                                <div class="client-banner-value" id="banner-income">-</div>
-                            </div>
-                            <div class="client-banner-item">
-                                <div class="client-banner-label">Total Expenses</div>
-                                <div class="client-banner-value" id="banner-expenses">-</div>
-                            </div>
-                            <div class="client-banner-item">
-                                <div class="client-banner-label">Submitted</div>
-                                <div class="client-banner-value" id="banner-date">-</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Credit Card Debts -->
-                    <div class="debt-section">
-                        <div class="section-header">
-                            <div class="section-title">
-                                <div class="section-icon">💳</div>
-                                <h2>Credit Card Debts</h2>
-                            </div>
-                            <button class="add-item-btn" onclick="addCreditCard()">
-                                <span>+</span> Add Card
-                            </button>
-                        </div>
-                        
-                        <table class="debt-table" id="cc-table">
-                            <thead>
-                                <tr>
-                                    <th style="width: 22%">Credit Card</th>
-                                    <th style="width: 20%">Balance</th>
-                                    <th style="width: 20%">Credit Limit</th>
-                                    <th style="width: 20%">Min Payment</th>
-                                    <th style="width: 18%" class="center">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody id="cc-tbody">
-                                <!-- Cards added dynamically -->
-                            </tbody>
-                            <tfoot>
-                                <tr class="summary-row">
-                                    <td class="summary-label">Totals:</td>
-                                    <td class="summary-value" id="cc-balance-total">$0</td>
-                                    <td class="summary-value" id="cc-limit-total">$0</td>
-                                    <td class="summary-value" id="cc-payment-total">$0</td>
-                                    <td></td>
-                                </tr>
-                            </tfoot>
-                        </table>
-                        
-                        <div class="empty-state" id="cc-empty">
-                            <div class="empty-state-icon">💳</div>
-                            <div class="empty-state-text">No credit cards added yet. Click "Add Card" to begin.</div>
-                        </div>
-                    </div>
-
-                    <!-- Installment Debts -->
-                    <div class="debt-section">
-                        <div class="section-header">
-                            <div class="section-title">
-                                <div class="section-icon">📋</div>
-                                <h2>Installment Debts</h2>
-                            </div>
-                            <button class="add-item-btn" onclick="addInstallment()">
-                                <span>+</span> Add Debt
-                            </button>
-                        </div>
-                        
-                        <table class="debt-table" id="installment-table">
-                            <thead>
-                                <tr>
-                                    <th style="width: 22%">Debtor / Lender</th>
-                                    <th style="width: 20%">Balance</th>
-                                    <th style="width: 20%">Monthly Payment</th>
-                                    <th style="width: 20%">Type</th>
-                                    <th style="width: 18%" class="center">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody id="installment-tbody">
-                                <!-- Debts added dynamically -->
-                            </tbody>
-                            <tfoot>
-                                <tr class="summary-row">
-                                    <td class="summary-label">Totals:</td>
-                                    <td class="summary-value" id="installment-balance-total">$0</td>
-                                    <td class="summary-value" id="installment-payment-total">$0</td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tfoot>
-                        </table>
-                        
-                        <div class="empty-state" id="installment-empty">
-                            <div class="empty-state-icon">📋</div>
-                            <div class="empty-state-text">No installment debts added yet. Click "Add Debt" to begin.</div>
-                        </div>
-                    </div>
-
-                    <!-- Totals Section -->
-                    <div class="total-section">
-                        <div class="total-grid">
-                            <div class="total-item">
-                                <div class="total-label">Total Credit Card Debt</div>
-                                <div class="total-value" id="total-cc-debt">$0</div>
-                            </div>
-                            <div class="total-item">
-                                <div class="total-label">Total Installment Debt</div>
-                                <div class="total-value" id="total-installment-debt">$0</div>
-                            </div>
-                            <div class="total-item">
-                                <div class="total-label">Total Negative Debt</div>
-                                <div class="total-value negative" id="total-negative-debt">$0</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Save Section -->
-                    <div class="save-section">
-                        <div class="save-info">
-                            💡 Saving will trigger the blueprint generation and email it to the client.
-                        </div>
-                        <button class="save-btn" id="save-btn" onclick="saveData()">
-                            <span>💾</span> Save & Generate Blueprint
-                        </button>
-                    </div>
-                </div>
-            </main>
-        </div>
-    </div>
-
-    <!-- Config Modal -->
-    <div class="config-modal" id="config-modal">
-        <div class="config-modal-content">
-            <div class="config-modal-title">⚙️ Settings</div>
-            <div class="config-modal-desc">Enter your Google Apps Script URL to connect to your Google Sheet.</div>
-            <input type="text" class="config-input" id="config-sheets-url" placeholder="https://script.google.com/macros/s/xxxxx/exec">
-            <div class="config-btns">
-                <button class="config-btn config-btn-secondary" onclick="hideConfigModal()">Cancel</button>
-                <button class="config-btn config-btn-primary" onclick="saveConfig()">Save</button>
             </div>
-        </div>
+
+            <!-- Credit Card Debts -->
+            <div class="debt-section">
+                <div class="section-header">
+                    <div class="section-title">
+                        <div class="section-icon">💳</div>
+                        <h2>Credit Card Debts</h2>
+                    </div>
+                    <button class="add-item-btn" onclick="addCreditCard()">
+                        <span>+</span> Add Card
+                    </button>
+                </div>
+                
+                <table class="debt-table" id="cc-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 22%">Credit Card</th>
+                            <th style="width: 20%">Balance</th>
+                            <th style="width: 20%">Credit Limit</th>
+                            <th style="width: 20%">Min Payment</th>
+                            <th style="width: 18%" class="center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cc-tbody">
+                        <!-- Cards added dynamically -->
+                    </tbody>
+                    <tfoot>
+                        <tr class="summary-row">
+                            <td class="summary-label">Totals:</td>
+                            <td class="summary-value" id="cc-balance-total">$0</td>
+                            <td class="summary-value" id="cc-limit-total">$0</td>
+                            <td class="summary-value" id="cc-payment-total">$0</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+                
+                <div class="empty-state" id="cc-empty">
+                    <div class="empty-state-icon">💳</div>
+                    <div class="empty-state-text">No credit cards added yet. Click "Add Card" to begin.</div>
+                </div>
+            </div>
+
+            <!-- Installment Debts -->
+            <div class="debt-section">
+                <div class="section-header">
+                    <div class="section-title">
+                        <div class="section-icon">📋</div>
+                        <h2>Installment Debts</h2>
+                    </div>
+                    <button class="add-item-btn" onclick="addInstallment()">
+                        <span>+</span> Add Debt
+                    </button>
+                </div>
+                
+                <table class="debt-table" id="installment-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 22%">Debtor / Lender</th>
+                            <th style="width: 20%">Balance</th>
+                            <th style="width: 20%">Monthly Payment</th>
+                            <th style="width: 20%">Type</th>
+                            <th style="width: 18%" class="center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="installment-tbody">
+                        <!-- Debts added dynamically -->
+                    </tbody>
+                    <tfoot>
+                        <tr class="summary-row">
+                            <td class="summary-label">Totals:</td>
+                            <td class="summary-value" id="installment-balance-total">$0</td>
+                            <td class="summary-value" id="installment-payment-total">$0</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+                
+                <div class="empty-state" id="installment-empty">
+                    <div class="empty-state-icon">📋</div>
+                    <div class="empty-state-text">No installment debts added yet. Click "Add Debt" to begin.</div>
+                </div>
+            </div>
+
+            <!-- Totals Section -->
+            <div class="total-section">
+                <div class="total-grid">
+                    <div class="total-item">
+                        <div class="total-label">Total Credit Card Debt</div>
+                        <div class="total-value" id="total-cc-debt">$0</div>
+                    </div>
+                    <div class="total-item">
+                        <div class="total-label">Total Installment Debt</div>
+                        <div class="total-value" id="total-installment-debt">$0</div>
+                    </div>
+                    <div class="total-item">
+                        <div class="total-label">Total Negative Debt</div>
+                        <div class="total-value negative" id="total-negative-debt">$0</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Save Section -->
+            <div class="save-section">
+                <div class="save-info">
+                    💡 All changes will be saved and synced to the client's Financial Blueprint.
+                </div>
+                <button class="save-btn" id="save-btn" onclick="saveData()">
+                    <span>💾</span> Save Client Data
+                </button>
+            </div>
+        </main>
     </div>
 
     <!-- Toast Notification -->
@@ -1219,18 +869,12 @@
 
     <script>
         // ==================== CONFIGURATION ====================
+        // CHANGE THIS PASSWORD TO YOUR DESIRED EMPLOYEE CODE
         const EMPLOYEE_CODE = 'asap2024';
         
-        // PASTE YOUR ZAPIER ADMIN WEBHOOK URL HERE:
-        const ZAPIER_ADMIN_WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/172130/ukm9b65/';
-        
-        // Google Apps Script URL (set via Settings modal)
-        let SHEETS_API_URL = localStorage.getItem('sheetsApiUrl') || '';
-        
-        let clients = [];
-        let currentClient = null;
         let ccCounter = 0;
         let installmentCounter = 0;
+        let currentClient = null;
 
         // ==================== LOGIN ====================
         function handleLogin() {
@@ -1240,13 +884,6 @@
                 document.getElementById('login-screen').style.display = 'none';
                 document.getElementById('admin-container').classList.add('active');
                 document.getElementById('login-error').classList.remove('show');
-                
-                // Check if API URL is configured
-                if (!SHEETS_API_URL) {
-                    showConfigModal();
-                } else {
-                    loadClients();
-                }
             } else {
                 document.getElementById('login-error').classList.add('show');
                 document.getElementById('employee-code').value = '';
@@ -1259,175 +896,35 @@
             document.getElementById('employee-code').value = '';
         }
 
+        // Enter key to login
         document.getElementById('employee-code').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') handleLogin();
         });
 
-        // ==================== CONFIG MODAL ====================
-        function showConfigModal() {
-            document.getElementById('config-sheets-url').value = SHEETS_API_URL;
-            document.getElementById('config-modal').classList.add('show');
-        }
-
-        function hideConfigModal() {
-            document.getElementById('config-modal').classList.remove('show');
-        }
-
-        function saveConfig() {
-            const url = document.getElementById('config-sheets-url').value.trim();
-            if (url) {
-                SHEETS_API_URL = url;
-                localStorage.setItem('sheetsApiUrl', url);
-                hideConfigModal();
-                loadClients();
-                showToast('Settings saved!', 'success');
-            } else {
-                showToast('Please enter a valid URL', 'error');
-            }
-        }
-
-        // ==================== LOAD CLIENTS ====================
-        async function loadClients() {
-            const listEl = document.getElementById('client-list');
-            listEl.innerHTML = `
-                <div class="loading-state">
-                    <div class="loading-spinner"></div>
-                    <div>Loading clients...</div>
-                </div>
-            `;
-
-            if (!SHEETS_API_URL) {
-                listEl.innerHTML = `
-                    <div class="empty-state">
-                        <div class="empty-state-icon">⚙️</div>
-                        <div class="empty-state-text">Please configure your Google Sheets API in Settings</div>
-                    </div>
-                `;
+        // ==================== CLIENT SEARCH ====================
+        function searchClient() {
+            const query = document.getElementById('client-search').value.trim();
+            
+            if (!query) {
+                showToast('Please enter a client email', 'error');
                 return;
             }
-
-            try {
-                const response = await fetch(SHEETS_API_URL);
-                const data = await response.json();
-                
-                clients = data.clients || [];
-                renderClientList();
-                updateStats();
-                
-            } catch (error) {
-                console.error('Error loading clients:', error);
-                listEl.innerHTML = `
-                    <div class="empty-state">
-                        <div class="empty-state-icon">❌</div>
-                        <div class="empty-state-text">Error loading clients. Check your API URL in Settings.</div>
-                    </div>
-                `;
-            }
-        }
-
-        function renderClientList(filteredClients = null) {
-            const listEl = document.getElementById('client-list');
-            const clientsToRender = filteredClients || clients;
-
-            if (clientsToRender.length === 0) {
-                listEl.innerHTML = `
-                    <div class="empty-state">
-                        <div class="empty-state-icon">📭</div>
-                        <div class="empty-state-text">No clients found</div>
-                    </div>
-                `;
+            
+            if (!query.includes('@')) {
+                showToast('Please enter a valid email address', 'error');
                 return;
             }
-
-            listEl.innerHTML = clientsToRender.map((client, index) => {
-                const isCompleted = client.status === 'completed' || client.status === 'ready_for_blueprint' || (client.revolving_balance && parseFloat(client.revolving_balance) > 0);
-                const statusClass = isCompleted ? 'completed' : 'pending';
-                const statusText = isCompleted ? 'Completed' : 'Pending';
-                const isActive = currentClient && currentClient.email === client.email;
-                
-                // Calculate total expenses
-                const expenses = (parseFloat(client.mortgage_rent) || 0) + (parseFloat(client.utilities) || 0) + 
-                                 (parseFloat(client.groceries) || 0) + (parseFloat(client.car_payment) || 0);
-                
-                return `
-                    <div class="client-card ${statusClass} ${isActive ? 'active' : ''}" onclick="selectClient(${index})">
-                        <div class="client-card-header">
-                            <div class="client-name">${client.name_first} ${client.name_last}</div>
-                            <div class="client-status ${statusClass}">${statusText}</div>
-                        </div>
-                        <div class="client-email">${client.email}</div>
-                        <div class="client-meta">
-                            <span>💰 ${formatCurrency(client.income)}</span>
-                            <span>📅 ${formatDate(client.submission_date)}</span>
-                        </div>
-                    </div>
-                `;
-            }).join('');
-        }
-
-        function filterClients() {
-            const search = document.getElementById('client-search').value.toLowerCase();
-            const filtered = clients.filter(c => 
-                c.name_first?.toLowerCase().includes(search) ||
-                c.name_last?.toLowerCase().includes(search) ||
-                c.email?.toLowerCase().includes(search)
-            );
-            renderClientList(filtered);
-        }
-
-        function updateStats() {
-            const pending = clients.filter(c => c.status === 'pending_debt_entry' || !c.revolving_balance).length;
-            const completed = clients.length - pending;
             
-            document.getElementById('stat-pending').textContent = pending;
-            document.getElementById('stat-completed').textContent = completed;
-        }
-
-        // ==================== SELECT CLIENT ====================
-        function selectClient(index) {
-            currentClient = clients[index];
+            // Store the client email - this will be used to match with their original submission
+            currentClient = {
+                email: query,
+                lookup_date: new Date().toISOString()
+            };
             
-            // Update UI
-            document.getElementById('no-client-selected').style.display = 'none';
-            document.getElementById('debt-entry-panel').classList.add('active');
+            document.getElementById('client-email').textContent = currentClient.email;
+            document.getElementById('client-info').classList.add('show');
             
-            // Update banner
-            document.getElementById('banner-name').textContent = `${currentClient.name_first} ${currentClient.name_last}`;
-            document.getElementById('banner-email').textContent = currentClient.email;
-            document.getElementById('banner-income').textContent = formatCurrency(currentClient.income);
-            
-            const totalExpenses = calculateTotalExpenses(currentClient);
-            document.getElementById('banner-expenses').textContent = formatCurrency(totalExpenses);
-            document.getElementById('banner-date').textContent = formatDate(currentClient.submission_date);
-            
-            const isCompleted = currentClient.status === 'completed' || currentClient.status === 'ready_for_blueprint';
-            document.getElementById('banner-status').textContent = isCompleted ? 'Completed' : 'Pending';
-            document.getElementById('banner-status').className = 'client-banner-status' + (isCompleted ? ' completed' : '');
-            
-            // Clear existing debt entries
-            document.getElementById('cc-tbody').innerHTML = '';
-            document.getElementById('installment-tbody').innerHTML = '';
-            ccCounter = 0;
-            installmentCounter = 0;
-            
-            // Load existing debt data if any
-            // (You could pre-populate if the client already has debt data)
-            
-            updateCCEmptyState();
-            updateInstallmentEmptyState();
-            updateCCTotals();
-            updateInstallmentTotals();
-            
-            // Re-render list to show active state
-            renderClientList();
-        }
-
-        function calculateTotalExpenses(client) {
-            const fields = ['mortgage_rent', 'utilities', 'groceries', 'car_payment', 'gas_transportation', 
-                           'insurance', 'phone_service', 'healthcare', 'childcare', 'student_loans_payment', 
-                           'taxes', 'restaurants', 'food_delivery', 'netflix_streaming', 'software_apps',
-                           'gym_fitness', 'shopping', 'entertainment', 'other_subscriptions'];
-            return fields.reduce((sum, field) => sum + (parseFloat(client[field]) || 0), 0);
+            showToast('Client loaded! Now add their debt information below.', 'success');
         }
 
         // ==================== CREDIT CARD MANAGEMENT ====================
@@ -1469,7 +966,9 @@
         }
 
         function updateCCTotals() {
-            let balanceTotal = 0, limitTotal = 0, paymentTotal = 0;
+            let balanceTotal = 0;
+            let limitTotal = 0;
+            let paymentTotal = 0;
             
             document.querySelectorAll('.cc-balance').forEach(input => {
                 balanceTotal += parseFloat(input.value) || 0;
@@ -1549,7 +1048,8 @@
         }
 
         function updateInstallmentTotals() {
-            let balanceTotal = 0, paymentTotal = 0;
+            let balanceTotal = 0;
+            let paymentTotal = 0;
             
             document.querySelectorAll('.installment-balance').forEach(input => {
                 balanceTotal += parseFloat(input.value) || 0;
@@ -1581,7 +1081,8 @@
 
         // ==================== TOTAL DEBT ====================
         function updateTotalDebt() {
-            let ccTotal = 0, installmentTotal = 0;
+            let ccTotal = 0;
+            let installmentTotal = 0;
             
             document.querySelectorAll('.cc-balance').forEach(input => {
                 ccTotal += parseFloat(input.value) || 0;
@@ -1590,13 +1091,17 @@
                 installmentTotal += parseFloat(input.value) || 0;
             });
             
-            document.getElementById('total-negative-debt').textContent = formatCurrency(ccTotal + installmentTotal);
+            const totalDebt = ccTotal + installmentTotal;
+            document.getElementById('total-negative-debt').textContent = formatCurrency(totalDebt);
         }
 
         // ==================== SAVE DATA ====================
+        // PASTE YOUR ZAPIER WEBHOOK URL HERE (can be different from client form):
+        const ZAPIER_ADMIN_WEBHOOK_URL = 'YOUR_ZAPIER_ADMIN_WEBHOOK_URL_HERE';
+
         async function saveData() {
             if (!currentClient) {
-                showToast('Please select a client first', 'error');
+                showToast('Please search for a client first', 'error');
                 return;
             }
 
@@ -1604,42 +1109,42 @@
             saveBtn.disabled = true;
             saveBtn.innerHTML = '<span class="spinner"></span> Saving...';
             
+            // Collect all data
             const data = collectAllData();
-            console.log('Saving to Zapier:', data);
+            
+            // Add metadata
+            data.admin_submission_date = new Date().toISOString();
+            data.status = 'ready_for_blueprint'; // Ready for blueprint generation
+            
+            console.log('Saving data to Zapier:', data);
             
             try {
+                // Send to Zapier webhook
                 if (ZAPIER_ADMIN_WEBHOOK_URL && ZAPIER_ADMIN_WEBHOOK_URL !== 'YOUR_ZAPIER_ADMIN_WEBHOOK_URL_HERE') {
                     await fetch(ZAPIER_ADMIN_WEBHOOK_URL, {
                         method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
                         mode: 'no-cors',
                         body: JSON.stringify(data)
                     });
                 }
                 
-                // Update local client status
-                const clientIndex = clients.findIndex(c => c.email === currentClient.email);
-                if (clientIndex !== -1) {
-                    clients[clientIndex].status = 'ready_for_blueprint';
-                    clients[clientIndex].revolving_balance = data.totals.revolving_balance;
-                }
-                
-                renderClientList();
-                updateStats();
-                
                 saveBtn.disabled = false;
-                saveBtn.innerHTML = '<span>💾</span> Save & Generate Blueprint';
-                showToast('Saved! Blueprint is being generated and will be emailed to client.', 'success');
+                saveBtn.innerHTML = '<span>💾</span> Save Client Data';
+                showToast('Client debt data saved! Blueprint will be generated.', 'success');
                 
             } catch (error) {
                 console.error('Save error:', error);
                 saveBtn.disabled = false;
-                saveBtn.innerHTML = '<span>💾</span> Save & Generate Blueprint';
+                saveBtn.innerHTML = '<span>💾</span> Save Client Data';
                 showToast('Error saving data. Please try again.', 'error');
             }
         }
 
         function collectAllData() {
+            // Credit Cards
             const creditCards = [];
             document.querySelectorAll('#cc-tbody tr').forEach(row => {
                 creditCards.push({
@@ -1650,6 +1155,7 @@
                 });
             });
             
+            // Installment Debts
             const installmentDebts = [];
             document.querySelectorAll('#installment-tbody tr').forEach(row => {
                 installmentDebts.push({
@@ -1660,6 +1166,7 @@
                 });
             });
             
+            // Calculate totals
             const ccBalanceTotal = creditCards.reduce((sum, card) => sum + card.balance, 0);
             const ccLimitTotal = creditCards.reduce((sum, card) => sum + card.limit, 0);
             const ccPaymentTotal = creditCards.reduce((sum, card) => sum + card.payment, 0);
@@ -1667,11 +1174,7 @@
             const installmentPaymentTotal = installmentDebts.reduce((sum, debt) => sum + debt.payment, 0);
             
             return {
-                client: {
-                    email: currentClient.email,
-                    name_first: currentClient.name_first,
-                    name_last: currentClient.name_last
-                },
+                client: currentClient,
                 creditCards,
                 installmentDebts,
                 totals: {
@@ -1681,9 +1184,7 @@
                     installment_balance: installmentBalanceTotal,
                     installment_payment: installmentPaymentTotal,
                     total_negative_debt: ccBalanceTotal + installmentBalanceTotal
-                },
-                admin_submission_date: new Date().toISOString(),
-                status: 'ready_for_blueprint'
+                }
             };
         }
 
@@ -1693,17 +1194,17 @@
             return '$' + num.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
         }
 
-        function formatDate(dateString) {
-            if (!dateString) return '-';
-            const date = new Date(dateString);
-            return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-        }
-
         function showToast(message, type = 'success') {
             const toast = document.getElementById('toast');
-            document.getElementById('toast-message').textContent = message;
-            toast.className = 'toast ' + type + ' show';
-            setTimeout(() => { toast.classList.remove('show'); }, 4000);
+            const toastMessage = document.getElementById('toast-message');
+            
+            toastMessage.textContent = message;
+            toast.className = 'toast ' + type;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
         }
 
         // ==================== INITIALIZATION ====================
