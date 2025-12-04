@@ -1,53 +1,437 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Translation Services Business | ASAP Credit Repair Playbook</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>:root{--primary:#063d86;--success:#10b981;--bg:#f8fafc;--text:#1e293b;--text-light:#64748b;--border:#e2e8f0}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}.header{background:linear-gradient(135deg,#6366f1,#4f46e5);color:#fff;padding:40px 20px 50px;text-align:center}.header h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:12px}.main-content{max-width:800px;margin:-30px auto 40px;padding:0 20px}.back-link{color:#fff;text-decoration:none;opacity:.8;display:block;margin-bottom:16px}.category-badge{display:inline-block;background:rgba(255,255,255,.2);padding:6px 16px;border-radius:20px;font-size:.85rem;margin-bottom:16px}.goal-card{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid var(--success);border-radius:16px;padding:24px;margin-bottom:24px}.goal-card h2{color:#065f46;margin-bottom:12px}.goal-card .earnings{background:#fff;padding:10px 18px;border-radius:10px;margin-top:14px;font-weight:600;color:#065f46;display:inline-block}.section-card{background:#fff;border-radius:16px;padding:28px;margin-bottom:24px;border:1px solid var(--border)}.section-card h2{color:var(--primary);margin-bottom:20px}.task-list{list-style:none}.task-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)}.task-checkbox{width:28px;height:28px;border:2px solid var(--border);border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}.task-checkbox.checked{background:var(--success);border-color:var(--success);color:#fff}.task-title{font-weight:600;margin-bottom:6px}.task-desc{color:var(--text-light);font-size:.95rem}.task-badge{font-size:.8rem;padding:4px 10px;border-radius:6px;background:var(--bg);margin-top:10px;display:inline-block;margin-right:8px}.details-box{background:#f8fafc;padding:14px;border-radius:8px;margin-top:12px;border-left:4px solid #6366f1}.details-box h4{color:#4f46e5;margin-bottom:8px;font-size:.9rem}.details-box ul{margin-left:18px;font-size:.9rem}.details-box li{margin-bottom:6px}.pricing-table{width:100%;border-collapse:collapse;margin-top:12px}.pricing-table th,.pricing-table td{padding:10px;text-align:left;border-bottom:1px solid var(--border)}.pricing-table th{background:var(--bg);font-weight:600}textarea{width:100%;min-height:120px;padding:14px;border:2px solid var(--border);border-radius:10px;font-family:inherit;margin-top:10px}.help-section{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border:2px solid #7dd3fc;border-radius:16px;padding:20px;margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}.chat-btn{background:var(--primary);color:#fff;border:none;padding:12px 24px;border-radius:10px;font-weight:600;cursor:pointer}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translation Services Business - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #1565c0; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #e3f2fd; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 15px; overflow: hidden; font-size: 14px; }
+        .pricing-table th, .pricing-table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .pricing-table th { background: #667eea; color: white; font-weight: 600; }
+        .pricing-table tr:hover { background: #f5f5f5; }
+        .pricing-table .rate { color: #4caf50; font-weight: 600; }
+        .language-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .language-card { background: #f8f9fa; border-radius: 15px; padding: 15px; text-align: center; border-left: 5px solid #667eea; }
+        .language-card .flag { font-size: 2em; margin-bottom: 5px; }
+        .language-card h4 { color: #1a1a2e; font-size: 14px; margin-bottom: 3px; }
+        .language-card .demand { color: #4caf50; font-weight: 600; font-size: 12px; }
+        .find-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .find-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #667eea; }
+        .find-card h4 { color: #1a1a2e; margin-bottom: 10px; }
+        .find-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .find-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; font-size: 13px; }
+        .find-link:hover { text-decoration: underline; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .warning-box h4 { color: #c62828; margin-bottom: 10px; }
+        .warning-box p, .warning-box li { color: #666; }
+        .warning-box ul { margin-left: 20px; margin-top: 10px; }
+        .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .cert-card { background: #f8f9fa; border-radius: 15px; padding: 15px; border-left: 5px solid #4caf50; }
+        .cert-card h4 { color: #1a1a2e; font-size: 14px; margin-bottom: 5px; }
+        .cert-card .benefit { color: #4caf50; font-weight: 600; font-size: 12px; margin-bottom: 5px; }
+        .cert-card p { color: #666; font-size: 12px; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #667eea; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; }
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #667eea; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+    </style>
 </head>
 <body>
-  <header class="header"><a href="index.html" class="back-link">← Back to All Playbooks</a><span class="category-badge">🌍 Language Services</span><h1>Translation Services Business</h1><p style="opacity:.9;max-width:600px;margin:0 auto">Turn bilingual skills into income! Documents, websites, interpretation.</p></header>
-  <main class="main-content">
-    <div class="goal-card"><h2>🎯 What You'll Achieve</h2><p>Start a translation business using your language skills. Remote work, flexible hours!</p><div class="earnings">💰 Per word: $0.10-0.30 | Per hour: $30-100+ | Per project: $100-2,000+ | Monthly: $3,000-15,000+</div></div>
-    <div class="section-card"><h2>💵 Translation Pricing</h2>
-      <table class="pricing-table"><tr><th>Service Type</th><th>Rate</th><th>Notes</th></tr><tr><td>General translation</td><td>$0.10-0.15/word</td><td>Standard documents</td></tr><tr><td>Technical translation</td><td>$0.15-0.25/word</td><td>Specialized knowledge</td></tr><tr><td>Legal translation</td><td>$0.20-0.30/word</td><td>Certified may be needed</td></tr><tr><td>Medical translation</td><td>$0.20-0.30/word</td><td>Accuracy critical</td></tr><tr><td>Interpretation (phone)</td><td>$30-60/hour</td><td>On-demand</td></tr><tr><td>Interpretation (in-person)</td><td>$50-100/hour</td><td>Usually 2hr minimum</td></tr></table></div>
-    <div class="section-card"><h2>📋 Step-by-Step Action Plan</h2>
-      <ul class="task-list">
-        <li class="task-item"><div class="task-checkbox" data-task="0"></div><div><div class="task-title">Step 1: Assess and improve your language skills</div><div class="task-desc">Native-level fluency in both languages. Specialize in a field!</div><div class="details-box"><h4>🌍 In-Demand Languages:</h4><ul><li>Spanish (huge US demand)</li><li>Chinese (Mandarin)</li><li>French, German, Japanese</li><li>Arabic, Portuguese, Korean</li><li>Less common = higher rates</li><li>Specialize: legal, medical, tech</li></ul></div><span class="task-badge">🎯 Specialize for higher rates</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="1"></div><div><div class="task-title">Step 2: Get certified (optional but valuable)</div><div class="task-desc">ATA certification, court certification, or medical interpreter training.</div><div class="details-box"><h4>📜 Certifications:</h4><ul><li>ATA (American Translators Association)</li><li>Court interpreter certification</li><li>Medical interpreter (CCHI, NBCMI)</li><li>State certifications vary</li><li>Not always required but helps</li><li>Commands higher rates</li></ul></div><span class="task-badge">📜 Certification = higher rates</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="2"></div><div><div class="task-title">Step 3: Set up your tools</div><div class="task-desc">CAT tools, dictionaries, terminology databases. Efficiency matters!</div><span class="task-badge">💻 CAT tools (SDL Trados, MemoQ)</span><span class="task-badge">📚 Terminology databases</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="3"></div><div><div class="task-title">Step 4: Find translation work</div><div class="task-desc">Platforms, agencies, direct clients. Build relationships!</div><div class="details-box"><h4>📣 Finding Work:</h4><ul><li>ProZ.com (translator marketplace)</li><li>TranslatorsCafe</li><li>Upwork/Fiverr</li><li>Translation agencies</li><li>Direct outreach to businesses</li><li>LinkedIn networking</li></ul></div><span class="task-badge">🌐 ProZ.com essential</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="4"></div><div><div class="task-title">Step 5: Deliver quality translations</div><div class="task-desc">Accuracy, deadlines, formatting. Build your reputation!</div><span class="task-badge">✅ Accuracy first</span><span class="task-badge">⏰ Meet deadlines</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="5"></div><div><div class="task-title">Step 6: Scale your translation business</div><div class="task-desc">Direct clients pay more. Add interpretation, subtitling, localization.</div><div class="details-box"><h4>🚀 Growth Options:</h4><ul><li>Direct corporate clients</li><li>Add interpretation services</li><li>Subtitling/video translation</li><li>Website localization</li><li>Build a team of translators</li></ul></div><span class="task-badge">🏢 Direct clients = best rates</span></div></li>
-      </ul></div>
-    <div class="section-card"><h2>📝 Your Translation Tracker</h2><textarea id="userNotes" placeholder="Track your translation business:
+    <div class="container">
+        <a href="income-playbooks.html" class="back-link">← Back to Income Playbooks</a>
+        
+        <div class="header">
+            <h1>🌍 Translation Services Business</h1>
+            <p class="subtitle">Turn your language skills into $50-100+/hour income</p>
+            <div class="time-badge">⏱️ $0-500 startup • Earn $1,000-5,000+/month</div>
+        </div>
 
-Languages: Spanish ↔ English
-Specialization: Legal, medical
-Certifications: ATA certified ✓
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Start a translation business using your bilingual skills! Translate documents, interpret calls/meetings, localize websites. Remote work, flexible hours, and specialized translators (legal, medical, technical) command premium rates. If you speak two languages fluently, you have a marketable skill worth $50-100+/hour!</p>
+            </div>
+            <div class="income-highlight">
+                <h3>$1,000-5,000+/Month</h3>
+                <p>5,000 words/week × $0.15/word = $3,000/month • Interpreters: $50-100/hr!</p>
+            </div>
+        </div>
 
-This month:
-- Legal documents (15K words): $3,000
-- Medical translations (8K words): $1,600
-- Phone interpretation (12 hrs): $540
-- Court interpretation (3 days): $900
+        <div class="card">
+            <h2><span class="icon">🌐</span> In-Demand Languages</h2>
+            <div class="language-grid">
+                <div class="language-card">
+                    <div class="flag">🇪🇸</div>
+                    <h4>Spanish</h4>
+                    <div class="demand">HUGE US demand</div>
+                </div>
+                <div class="language-card">
+                    <div class="flag">🇨🇳</div>
+                    <h4>Chinese</h4>
+                    <div class="demand">High demand</div>
+                </div>
+                <div class="language-card">
+                    <div class="flag">🇫🇷</div>
+                    <h4>French</h4>
+                    <div class="demand">Steady demand</div>
+                </div>
+                <div class="language-card">
+                    <div class="flag">🇩🇪</div>
+                    <h4>German</h4>
+                    <div class="demand">Technical/business</div>
+                </div>
+                <div class="language-card">
+                    <div class="flag">🇯🇵</div>
+                    <h4>Japanese</h4>
+                    <div class="demand">Tech/gaming</div>
+                </div>
+                <div class="language-card">
+                    <div class="flag">🇸🇦</div>
+                    <h4>Arabic</h4>
+                    <div class="demand">Premium rates</div>
+                </div>
+                <div class="language-card">
+                    <div class="flag">🇧🇷</div>
+                    <h4>Portuguese</h4>
+                    <div class="demand">Growing demand</div>
+                </div>
+                <div class="language-card">
+                    <div class="flag">🇰🇷</div>
+                    <h4>Korean</h4>
+                    <div class="demand">Entertainment/tech</div>
+                </div>
+            </div>
+            
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Less Common = Higher Rates</div>
+                <p><strong>Rare language pairs command premium rates.</strong> If you speak a less common language (Swahili, Vietnamese, Farsi, etc.), you can charge 2-3x standard rates due to limited supply!</p>
+            </div>
+        </div>
 
-Monthly revenue: $6,040
-Tools/subscriptions: $100
-Net: $5,940
+        <div class="card">
+            <h2><span class="icon">💵</span> Translation Pricing</h2>
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Service Type</th>
+                        <th>Rate</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>General translation</td><td class="rate">$0.10-0.15/word</td><td>Standard documents, business</td></tr>
+                    <tr><td>Technical translation</td><td class="rate">$0.15-0.25/word</td><td>Manuals, engineering, IT</td></tr>
+                    <tr><td>Legal translation</td><td class="rate">$0.20-0.30/word</td><td>Contracts, court docs (certification often needed)</td></tr>
+                    <tr><td>Medical translation</td><td class="rate">$0.20-0.30/word</td><td>Clinical, pharma, healthcare</td></tr>
+                    <tr><td>Phone interpretation</td><td class="rate">$30-60/hour</td><td>On-demand, flexible scheduling</td></tr>
+                    <tr><td>In-person interpretation</td><td class="rate">$50-100/hour</td><td>Usually 2-hour minimum</td></tr>
+                    <tr><td>Conference interpretation</td><td class="rate">$400-800/day</td><td>Specialized, premium work</td></tr>
+                </tbody>
+            </table>
+        </div>
 
-Active agency relationships: 4
-Direct clients: 6
-ProZ rating: 5.0
+        <div class="card">
+            <h2><span class="icon">📜</span> Certifications (Optional but Valuable)</h2>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <h4>ATA Certification</h4>
+                    <div class="benefit">+30-50% higher rates</div>
+                    <p>American Translators Association. Gold standard for translators.</p>
+                </div>
+                <div class="cert-card">
+                    <h4>Court Interpreter</h4>
+                    <div class="benefit">$50-100/hr work</div>
+                    <p>State certification for legal interpretation. Steady court work.</p>
+                </div>
+                <div class="cert-card">
+                    <h4>Medical Interpreter</h4>
+                    <div class="benefit">Healthcare access</div>
+                    <p>CCHI or NBCMI certification. Required by many hospitals.</p>
+                </div>
+                <div class="cert-card">
+                    <h4>Specialized Training</h4>
+                    <div class="benefit">Premium niches</div>
+                    <p>Patent, financial, technical specializations command top rates.</p>
+                </div>
+            </div>
+        </div>
 
-Avg words/day: 2,500
-Turnaround: 24-48 hours
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Translation Business Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Assess your language skills</div>
+                    <div class="step-desc">Native-level fluency in both languages required. Take proficiency tests. Choose a specialization (legal, medical, technical, general).</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Get certified (if pursuing specialty)</div>
+                    <div class="step-desc">ATA certification for general. Court certification for legal. CCHI/NBCMI for medical. Not always required, but opens doors and justifies higher rates.</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Set up your tools</div>
+                    <div class="step-desc">CAT tools (SDL Trados, MemoQ, Wordfast) increase speed. Build terminology glossaries. Get quality dictionaries for your specialty.</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Create profiles on platforms</div>
+                    <div class="step-desc">ProZ.com is essential! Also TranslatorsCafe, Upwork. Complete profiles with language pairs, specialties, rates.</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Apply to translation agencies</div>
+                    <div class="step-desc">Apply to 10-20 agencies. Take their tests. Agency work provides steady flow while building direct clients.</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Deliver quality translations</div>
+                    <div class="step-desc">Accuracy first! Meet deadlines always. Match formatting. Communicate proactively. Build reputation through quality.</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Build direct client relationships</div>
+                    <div class="step-desc">Direct clients pay 50-100% more than agencies. Network on LinkedIn. Reach out to businesses in your language market.</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Expand your services</div>
+                    <div class="step-desc">Add interpretation (phone/video). Website localization. Subtitling. Build a team of translators for larger projects!</div>
+                </div>
+            </div>
+        </div>
 
-Goal: More direct clients = $8,000+/month"></textarea></div>
-    <div class="help-section"><span style="font-size:24px">💬</span><div style="flex:1"><strong>Need Help?</strong> Chat with a coach!</div><button class="chat-btn" onclick="location.href='https://asapcreditrepairusa.com/chat'">Start Chat</button></div>
-  </main>
-  <script>const K='pb_translation';function load(){const s=localStorage.getItem(K);if(s){const d=JSON.parse(s);document.querySelectorAll('.task-checkbox').forEach((b,i)=>{if(d.tasks&&d.tasks[i]){b.classList.add('checked');b.innerHTML='✓'}});if(d.notes)document.getElementById('userNotes').value=d.notes}}function save(){const t=[];document.querySelectorAll('.task-checkbox').forEach(b=>t.push(b.classList.contains('checked')));localStorage.setItem(K,JSON.stringify({tasks:t,notes:document.getElementById('userNotes').value}))}document.querySelectorAll('.task-checkbox').forEach(b=>b.onclick=function(){this.classList.toggle('checked');this.innerHTML=this.classList.contains('checked')?'✓':'';save()});document.getElementById('userNotes').oninput=save;load();</script>
+        <div class="card">
+            <h2><span class="icon">📣</span> Finding Translation Clients</h2>
+            <div class="find-grid">
+                <div class="find-card">
+                    <h4>🌐 ProZ.com (Essential!)</h4>
+                    <p>The #1 translator marketplace. Job postings, direct client access, networking. Create detailed profile!</p>
+                    <a href="https://www.proz.com" class="find-link" target="_blank">Join ProZ →</a>
+                </div>
+                <div class="find-card">
+                    <h4>☕ TranslatorsCafe</h4>
+                    <p>Another major translator platform. Job board, agency contacts, community forums.</p>
+                    <a href="https://www.translatorscafe.com" class="find-link" target="_blank">Join TranslatorsCafe →</a>
+                </div>
+                <div class="find-card">
+                    <h4>💚 Upwork</h4>
+                    <p>Huge freelance marketplace. Good for building reviews and finding direct clients.</p>
+                    <a href="https://www.upwork.com" class="find-link" target="_blank">Join Upwork →</a>
+                </div>
+                <div class="find-card">
+                    <h4>🟢 Fiverr</h4>
+                    <p>Create translation gigs. Good for quick projects and steady work flow.</p>
+                    <a href="https://www.fiverr.com" class="find-link" target="_blank">Join Fiverr →</a>
+                </div>
+                <div class="find-card">
+                    <h4>💼 LinkedIn</h4>
+                    <p>Connect with agencies and businesses. Optimize profile for translation services!</p>
+                    <a href="https://www.linkedin.com" class="find-link" target="_blank">LinkedIn →</a>
+                </div>
+                <div class="find-card">
+                    <h4>🏢 Translation Agencies</h4>
+                    <p>Apply directly! Google "[language] translation agency" and apply to 10-20. They provide steady work.</p>
+                </div>
+            </div>
+            
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 The Direct Client Strategy</div>
+                <p><strong>Agencies pay $0.08-0.12/word. Direct clients pay $0.15-0.30/word.</strong> Use agency work to build experience, then pursue direct clients through LinkedIn outreach, networking, and your own marketing. One direct client = 2-3x agency rates!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎓</span> Learn From the Pros</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🌍</div>
+                    <h4>ATA</h4>
+                    <div class="platform">🌐 Association</div>
+                    <p>American Translators Association. Certification, resources, networking, job board.</p>
+                    <a href="https://www.atanet.org" class="influencer-link" target="_blank">ATA →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📚</div>
+                    <h4>ProZ.com</h4>
+                    <div class="platform">🌐 Community</div>
+                    <p>Forums, KudoZ Q&A, training, and networking with experienced translators.</p>
+                    <a href="https://www.proz.com" class="influencer-link" target="_blank">ProZ →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💬</div>
+                    <h4>r/TranslationStudies</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Active community discussing translation careers, rates, tools, and advice.</p>
+                    <a href="https://www.reddit.com/r/TranslationStudies/" class="influencer-link" target="_blank">Reddit →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🎙️</div>
+                    <h4>Speaking of Translation</h4>
+                    <div class="platform">🎙️ Podcast</div>
+                    <p>Podcast covering translation business, marketing, rates, and career advice.</p>
+                    <a href="https://speakingoftranslation.com" class="influencer-link" target="_blank">Podcast →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Translation Business Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your translation business!
+
+MY LANGUAGE PAIRS:
+Primary: ____ ↔ ____
+Secondary: ____ ↔ ____
+
+MY SPECIALIZATION:
+☐ General / Business
+☐ Legal
+☐ Medical
+☐ Technical
+☐ Other: ____
+
+CERTIFICATIONS:
+☐ ATA Certified | Date: ____
+☐ Court Interpreter | State: ____
+☐ Medical (CCHI/NBCMI) | Date: ____
+☐ Other: ____
+
+TOOLS SETUP:
+☐ CAT tool: ____ (Trados, MemoQ, Wordfast)
+☐ Terminology database created
+☐ Specialty dictionaries acquired
+
+PLATFORMS JOINED:
+☐ ProZ.com | Profile: ____
+☐ TranslatorsCafe
+☐ Upwork | Profile: ____
+☐ Fiverr | Profile: ____
+☐ LinkedIn optimized
+
+AGENCIES APPLIED TO:
+1. ____ | Status: ____
+2. ____ | Status: ____
+3. ____ | Status: ____
+4. ____ | Status: ____
+5. ____ | Status: ____
+
+MY RATES:
+General: $____/word
+Specialized: $____/word
+Interpretation: $____/hour
+
+CLIENTS & PROJECTS:
+1. Client: ____ | Type: ____ | Words: ____ | Paid: $____
+2. Client: ____ | Type: ____ | Words: ____ | Paid: $____
+3. Client: ____ | Type: ____ | Words: ____ | Paid: $____
+
+DIRECT CLIENTS:
+1. Company: ____ | Contact: ____ | Avg monthly: $____
+2. Company: ____ | Contact: ____ | Avg monthly: $____
+
+THIS MONTH:
+Words translated: ____
+Interpretation hours: ____
+Total revenue: $____
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-translation-services');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-translation-services', JSON.stringify({ steps, notes }));
+        }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>

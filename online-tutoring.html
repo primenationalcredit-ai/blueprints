@@ -15,42 +15,42 @@
         .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
         .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
         .card h2 .icon { font-size: 1.5em; }
-        .achieve-box { background: linear-gradient(135deg, #fff3e0, #ffe0b2); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
-        .achieve-box p { color: #e65100; font-size: 1.1em; line-height: 1.6; }
+        .achieve-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #1565c0; font-size: 1.1em; line-height: 1.6; }
         .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
         .income-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
         .income-highlight p { font-size: 1.1em; opacity: 0.95; }
         .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
-        .step:hover { background: #fff3e0; }
+        .step:hover { background: #e3f2fd; }
         .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
         .step-checkbox.checked { background: #667eea; color: white; }
         .step-content { flex: 1; }
         .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
         .step-desc { color: #666; line-height: 1.5; }
-        .subject-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; margin: 20px 0; }
-        .subject-card { border-radius: 12px; padding: 15px; text-align: center; }
-        .subject-card.math { background: linear-gradient(135deg, #e3f2fd, #bbdefb); }
-        .subject-card.science { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); }
-        .subject-card.english { background: linear-gradient(135deg, #fff3e0, #ffe0b2); }
-        .subject-card.lang { background: linear-gradient(135deg, #fce4ec, #f8bbd9); }
-        .subject-card.test { background: linear-gradient(135deg, #f3e5f5, #e1bee7); }
-        .subject-card.code { background: linear-gradient(135deg, #e0f2f1, #b2dfdb); }
-        .subject-card.music { background: linear-gradient(135deg, #fff8e1, #ffecb3); }
-        .subject-card.esl { background: linear-gradient(135deg, #e8eaf6, #c5cae9); }
-        .subject-card .emoji { font-size: 1.5em; margin-bottom: 5px; }
-        .subject-card h4 { color: #1a1a2e; font-size: 12px; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 15px; overflow: hidden; font-size: 14px; }
+        .pricing-table th, .pricing-table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .pricing-table th { background: #667eea; color: white; font-weight: 600; }
+        .pricing-table tr:hover { background: #f5f5f5; }
+        .pricing-table .rate { color: #4caf50; font-weight: 600; }
+        .subject-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; margin: 20px 0; }
+        .subject-card { background: #f8f9fa; border-radius: 15px; padding: 15px; text-align: center; border-left: 5px solid #667eea; }
+        .subject-card .emoji { font-size: 2em; margin-bottom: 8px; }
+        .subject-card h4 { color: #1a1a2e; font-size: 13px; margin-bottom: 3px; }
+        .subject-card .demand { color: #4caf50; font-weight: 600; font-size: 11px; }
         .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
         .platform-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #667eea; }
         .platform-card h4 { color: #1a1a2e; margin-bottom: 5px; }
-        .platform-card .rate { color: #4caf50; font-weight: 600; font-size: 13px; margin-bottom: 5px; }
-        .platform-card p { color: #666; font-size: 12px; }
-        .platform-card a { color: #667eea; text-decoration: none; font-weight: 600; font-size: 13px; }
+        .platform-card .detail { color: #667eea; font-size: 12px; margin-bottom: 8px; }
+        .platform-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .platform-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; font-size: 13px; }
+        .platform-link:hover { text-decoration: underline; }
         .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
         .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
         .pro-tip p { color: #666; margin: 8px 0; }
-        .qualify-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
-        .qualify-card { background: #e8f5e9; border-radius: 12px; padding: 15px; }
-        .qualify-card p { color: #2e7d32; font-size: 13px; }
+        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .warning-box h4 { color: #c62828; margin-bottom: 10px; }
+        .warning-box p, .warning-box li { color: #666; }
+        .warning-box ul { margin-left: 20px; margin-top: 10px; }
         .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
         .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
         .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
@@ -76,230 +76,232 @@
         
         <div class="header">
             <h1>📚 Online Tutoring</h1>
-            <p class="subtitle">Tutor students in subjects you know well - from home!</p>
-            <div class="time-badge">⏱️ No startup cost • Earn $20-80/hour • Flexible schedule!</div>
+            <p class="subtitle">Teach subjects you know well for $25-80+/hour</p>
+            <div class="time-badge">⏱️ $0-50 startup • Earn $500-3,000+/month</div>
         </div>
 
         <div class="card">
             <h2><span class="icon">🎯</span> What You'll Achieve</h2>
             <div class="achieve-box">
-                <p>Tutor students online in subjects you know well. Work from home, set your own hours, and help students succeed while earning great money! Even if you're not an expert, you can tutor levels below yours. SAT/ACT prep and coding pay the highest rates.</p>
+                <p>Tutor students online in subjects you know well! Work from home, set your own hours, help students succeed while earning $25-80+/hour. You don't need a teaching degree - if you got an A in a subject, scored well on tests, or have a skill to teach (coding, music, languages), you can tutor!</p>
             </div>
             <div class="income-highlight">
-                <h3>Earn $20-80/Hour</h3>
-                <p>General subjects $20-40/hr • Test prep $40-80/hr • 100% remote!</p>
+                <h3>$500-3,000+/Month</h3>
+                <p>5-10 hours/week × $40/hr = $800-1,600/month • Test prep tutors: $80-150/hr!</p>
             </div>
         </div>
 
         <div class="card">
             <h2><span class="icon">📖</span> High-Demand Subjects</h2>
-            <p style="color: #666; margin-bottom: 15px;">These subjects pay well and have lots of students!</p>
             <div class="subject-grid">
-                <div class="subject-card math">
+                <div class="subject-card">
                     <div class="emoji">🔢</div>
-                    <h4>Math (All Levels)</h4>
+                    <h4>Math</h4>
+                    <div class="demand">Highest demand!</div>
                 </div>
-                <div class="subject-card science">
+                <div class="subject-card">
                     <div class="emoji">🔬</div>
                     <h4>Science</h4>
+                    <div class="demand">High demand</div>
                 </div>
-                <div class="subject-card english">
+                <div class="subject-card">
                     <div class="emoji">📝</div>
                     <h4>English/Writing</h4>
+                    <div class="demand">Steady demand</div>
                 </div>
-                <div class="subject-card lang">
+                <div class="subject-card">
                     <div class="emoji">🌍</div>
-                    <h4>Languages</h4>
+                    <h4>Foreign Languages</h4>
+                    <div class="demand">Growing fast</div>
                 </div>
-                <div class="subject-card test">
-                    <div class="emoji">📋</div>
+                <div class="subject-card">
+                    <div class="emoji">📊</div>
                     <h4>SAT/ACT Prep</h4>
+                    <div class="demand">$$$$ Premium!</div>
                 </div>
-                <div class="subject-card code">
+                <div class="subject-card">
                     <div class="emoji">💻</div>
                     <h4>Coding/CS</h4>
+                    <div class="demand">High rates!</div>
                 </div>
-                <div class="subject-card music">
+                <div class="subject-card">
                     <div class="emoji">🎵</div>
                     <h4>Music</h4>
+                    <div class="demand">Steady demand</div>
                 </div>
-                <div class="subject-card esl">
+                <div class="subject-card">
                     <div class="emoji">🗣️</div>
                     <h4>ESL/English</h4>
+                    <div class="demand">Global demand</div>
                 </div>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">✅</span> Can You Tutor?</h2>
-            <p style="color: #666; margin-bottom: 15px;">You can tutor if you...</p>
-            <div class="qualify-grid">
-                <div class="qualify-card">
-                    <p>✅ Got an A or B in a subject</p>
-                </div>
-                <div class="qualify-card">
-                    <p>✅ Scored well on standardized tests</p>
-                </div>
-                <div class="qualify-card">
-                    <p>✅ Are fluent in another language</p>
-                </div>
-                <div class="qualify-card">
-                    <p>✅ Play an instrument</p>
-                </div>
-                <div class="qualify-card">
-                    <p>✅ Have professional skills (Excel, coding)</p>
-                </div>
-                <div class="qualify-card">
-                    <p>✅ Are 1-2 levels ahead of who you'd teach</p>
-                </div>
+            <h2><span class="icon">💵</span> Tutoring Rates</h2>
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Subject/Level</th>
+                        <th>Beginner Rate</th>
+                        <th>Experienced Rate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Elementary subjects</td><td class="rate">$20-30/hr</td><td class="rate">$35-50/hr</td></tr>
+                    <tr><td>Middle/High school</td><td class="rate">$25-40/hr</td><td class="rate">$45-70/hr</td></tr>
+                    <tr><td>College level</td><td class="rate">$35-50/hr</td><td class="rate">$60-100/hr</td></tr>
+                    <tr><td>SAT/ACT prep</td><td class="rate">$50-75/hr</td><td class="rate">$80-150/hr</td></tr>
+                    <tr><td>ESL/Language</td><td class="rate">$20-35/hr</td><td class="rate">$40-60/hr</td></tr>
+                    <tr><td>Coding/Programming</td><td class="rate">$40-60/hr</td><td class="rate">$75-120/hr</td></tr>
+                    <tr><td>Music lessons</td><td class="rate">$30-50/hr</td><td class="rate">$50-80/hr</td></tr>
+                </tbody>
+            </table>
+            
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Test Prep = Premium Rates</div>
+                <p><strong>SAT/ACT/GRE tutors earn $80-150/hr!</strong> Parents pay premium for college prep. If you scored well on standardized tests, this is your niche. High scorers can start immediately!</p>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">🖥️</span> Tutoring Platforms</h2>
-            <div class="platform-grid">
-                <div class="platform-card">
-                    <h4>Wyzant</h4>
-                    <div class="rate">Set your rate, keep 75%</div>
-                    <p>All subjects, all ages. Most popular platform!</p>
-                    <a href="https://www.wyzant.com" target="_blank">wyzant.com →</a>
-                </div>
-                <div class="platform-card">
-                    <h4>Tutor.com</h4>
-                    <div class="rate">Steady work, flexible hours</div>
-                    <p>Good for starting out. Consistent student flow.</p>
-                    <a href="https://www.tutor.com" target="_blank">tutor.com →</a>
-                </div>
-                <div class="platform-card">
-                    <h4>Varsity Tutors</h4>
-                    <div class="rate">They find students for you</div>
-                    <p>Good variety of subjects. Handles scheduling.</p>
-                    <a href="https://www.varsitytutors.com" target="_blank">varsitytutors.com →</a>
-                </div>
-                <div class="platform-card">
-                    <h4>Preply</h4>
-                    <div class="rate">Great for languages</div>
-                    <p>Students worldwide. Set your own schedule.</p>
-                    <a href="https://preply.com" target="_blank">preply.com →</a>
-                </div>
-                <div class="platform-card">
-                    <h4>Cambly</h4>
-                    <div class="rate">$0.17/min (~$10/hr)</div>
-                    <p>Easy ESL conversation. No lesson planning needed!</p>
-                    <a href="https://www.cambly.com" target="_blank">cambly.com →</a>
-                </div>
-                <div class="platform-card">
-                    <h4>Private (Own Clients)</h4>
-                    <div class="rate">Keep 100% of earnings!</div>
-                    <p>Build through word of mouth and referrals.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2><span class="icon">📋</span> Your Online Tutoring Action Plan</h2>
+            <h2><span class="icon">📋</span> Your Tutoring Action Plan</h2>
             
             <div class="step" data-step="1">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
                     <div class="step-title">Step 1: Identify your best subjects</div>
-                    <div class="step-desc">What do you know well? What could you teach? Even if you're not an expert, you can tutor levels below yours!</div>
+                    <div class="step-desc">What did you ace? High test scores? Languages? Skills like coding or music? You can tutor levels below your expertise - college students can tutor high school!</div>
                 </div>
             </div>
             <div class="step" data-step="2">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
                     <div class="step-title">Step 2: Set up your tutoring space</div>
-                    <div class="step-desc">Quiet room, good lighting, reliable internet, webcam. Professional background! Test your video and audio before sessions.</div>
+                    <div class="step-desc">Quiet room, good lighting, reliable internet, webcam. Professional background (bookshelf, clean wall). Good microphone helps!</div>
                 </div>
             </div>
             <div class="step" data-step="3">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Step 3: Sign up on 1-2 tutoring platforms</div>
-                    <div class="step-desc">Wyzant and Tutor.com are good starting points. Fill out your profile completely! Great photo and detailed bio matter.</div>
+                    <div class="step-title">Step 3: Sign up on tutoring platforms</div>
+                    <div class="step-desc">Start with Wyzant and Tutor.com. Complete profiles fully! Add all subjects you can teach. Include any test scores, degrees, experience.</div>
                 </div>
             </div>
             <div class="step" data-step="4">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
                     <div class="step-title">Step 4: Price competitively to start</div>
-                    <div class="step-desc">Start lower to build reviews, then raise rates. $20-30/hr is reasonable to start for most subjects. Test prep can start higher.</div>
+                    <div class="step-desc">Start lower to build reviews ($20-30/hr for most subjects). After 5-10 great reviews, raise rates! Reviews are everything on platforms.</div>
                 </div>
             </div>
             <div class="step" data-step="5">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Step 5: Prepare for your first session</div>
-                    <div class="step-desc">Review the material, have examples ready, test your tech. Being prepared builds confidence and impresses students!</div>
+                    <div class="step-title">Step 5: Deliver amazing sessions</div>
+                    <div class="step-desc">Be patient, prepared, encouraging. Celebrate student wins! Great sessions = 5-star reviews = more students = higher rates.</div>
                 </div>
             </div>
             <div class="step" data-step="6">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Step 6: Do great sessions and get reviews</div>
-                    <div class="step-desc">Be patient, be prepared, celebrate student wins! Ask students to leave reviews. Great reviews = higher rates and more students!</div>
+                    <div class="step-title">Step 6: Ask for reviews & referrals</div>
+                    <div class="step-desc">After successful sessions, ask for platform reviews. Ask parents for referrals. Word of mouth grows your business!</div>
                 </div>
             </div>
             <div class="step" data-step="7">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Step 7: Raise your rates as you get reviews</div>
-                    <div class="step-desc">After 5-10 good reviews, increase your rate by $5-10. Repeat as demand grows. Top tutors charge $60-100+/hour!</div>
+                    <div class="step-title">Step 7: Build private client base</div>
+                    <div class="step-desc">As you get referrals, take clients privately (keep 100% vs platform's 25% cut). But honor platform rules - don't poach their clients!</div>
                 </div>
             </div>
             <div class="step" data-step="8">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Step 8: Build private clients</div>
-                    <div class="step-desc">Platform clients become private clients (you keep 100%!). Ask for referrals. Word of mouth builds your private tutoring business.</div>
+                    <div class="step-title">Step 8: Raise rates & specialize</div>
+                    <div class="step-desc">After 20+ great reviews, raise rates gradually. Consider specializing (test prep pays best). Build recurring weekly students!</div>
                 </div>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">💡</span> Session Tips</h2>
+            <h2><span class="icon">📣</span> Finding Tutoring Students</h2>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h4>📚 Wyzant</h4>
+                    <div class="detail">Keep 75% • Set your own rate</div>
+                    <p>Most popular platform. All subjects, all ages. You set rates and schedule. Great for building client base!</p>
+                    <a href="https://www.wyzant.com/tutorinfo" class="platform-link" target="_blank">Become a Wyzant Tutor →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>📖 Tutor.com</h4>
+                    <div class="detail">Set hourly rate • Flexible hours</div>
+                    <p>Steady work flow, flexible scheduling. Good for starting out. Apply and take subject tests.</p>
+                    <a href="https://www.tutor.com/apply" class="platform-link" target="_blank">Apply to Tutor.com →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>🎓 Varsity Tutors</h4>
+                    <div class="detail">They match students to you</div>
+                    <p>Wide variety of subjects. They find students for you. Less control but less marketing work!</p>
+                    <a href="https://www.varsitytutors.com/tutor-jobs" class="platform-link" target="_blank">Apply to Varsity Tutors →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>🌍 Preply</h4>
+                    <div class="detail">Global student base • Languages focus</div>
+                    <p>Great for language tutoring! Students worldwide. Set your own rates and availability.</p>
+                    <a href="https://preply.com/en/teach" class="platform-link" target="_blank">Teach on Preply →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>💬 Cambly</h4>
+                    <div class="detail">$0.17/min (~$10/hr) • ESL only</div>
+                    <p>Easy ESL conversation practice. No lesson planning needed. Get paid to talk in English!</p>
+                    <a href="https://www.cambly.com/en/tutors" class="platform-link" target="_blank">Join Cambly →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>👤 Private Clients</h4>
+                    <div class="detail">Keep 100% • Word of mouth</div>
+                    <p>Build through referrals, Nextdoor, Facebook groups. You keep everything you charge!</p>
+                    <a href="https://www.nextdoor.com" class="platform-link" target="_blank">Post on Nextdoor →</a>
+                </div>
+            </div>
+            
             <div class="pro-tip">
-                <div class="pro-tip-title">Keys to Being a Great Tutor</div>
-                <p>• <strong>Be patient</strong> - Students learn at different paces</p>
-                <p>• <strong>Be prepared</strong> - Review material before each session</p>
-                <p>• <strong>Celebrate wins</strong> - Positive reinforcement builds confidence</p>
-                <p>• <strong>Ask questions</strong> - Let students discover answers, don't just give them</p>
-                <p>• <strong>Use visuals</strong> - Screen share, whiteboard apps, diagrams help</p>
-                <p>• <strong>Follow up</strong> - Send summary notes or practice problems after sessions</p>
+                <div class="pro-tip-title">💡 The Private Client Goal</div>
+                <p><strong>Platforms take 25%. Private clients = 100%.</strong> Use platforms to build reviews and experience. As referrals come, take them privately. $50/hr private beats $37.50 through Wyzant!</p>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">🎓</span> Tutoring Platforms</h2>
+            <h2><span class="icon">🎓</span> Learn From the Pros</h2>
             <div class="influencer-grid">
                 <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Khan Academy</h4>
+                    <div class="platform">🌐 Teaching Example</div>
+                    <p>Study how Sal Khan explains concepts. Great teaching technique examples!</p>
+                    <a href="https://www.khanacademy.org" class="influencer-link" target="_blank">Khan Academy →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💬</div>
+                    <h4>r/tutors</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Community of tutors sharing advice, platforms, rates, and strategies!</p>
+                    <a href="https://www.reddit.com/r/tutors/" class="influencer-link" target="_blank">r/tutors →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🎙️</div>
+                    <h4>Side Hustle Nation</h4>
+                    <div class="platform">🎙️ Podcast</div>
+                    <p>Nick Loper covers tutoring side hustles with successful tutors' stories.</p>
+                    <a href="https://www.sidehustlenation.com" class="influencer-link" target="_blank">Website →</a>
+                </div>
+                <div class="influencer-card">
                     <div class="influencer-avatar">📚</div>
-                    <h4>Wyzant</h4>
-                    <div class="platform">🌐 Website</div>
-                    <p>Most popular platform. Set your own rates, all subjects.</p>
-                    <a href="https://www.wyzant.com" class="influencer-link" target="_blank">wyzant.com →</a>
-                </div>
-                <div class="influencer-card">
-                    <div class="influencer-avatar">📖</div>
-                    <h4>Tutor.com</h4>
-                    <div class="platform">🌐 Website</div>
-                    <p>Steady work, flexible schedule. Good for beginners.</p>
-                    <a href="https://www.tutor.com" class="influencer-link" target="_blank">tutor.com →</a>
-                </div>
-                <div class="influencer-card">
-                    <div class="influencer-avatar">🎓</div>
-                    <h4>Varsity Tutors</h4>
-                    <div class="platform">🌐 Website</div>
-                    <p>They match you with students. Wide variety of subjects.</p>
-                    <a href="https://www.varsitytutors.com" class="influencer-link" target="_blank">varsitytutors.com →</a>
-                </div>
-                <div class="influencer-card">
-                    <div class="influencer-avatar">🌍</div>
-                    <h4>Preply</h4>
-                    <div class="platform">🌐 Website</div>
-                    <p>Great for language tutoring. Global student base.</p>
-                    <a href="https://preply.com" class="influencer-link" target="_blank">preply.com →</a>
+                    <h4>Wyzant Blog</h4>
+                    <div class="platform">🌐 Resource</div>
+                    <p>Tips for tutors on building your business, marketing, and teaching techniques.</p>
+                    <a href="https://www.wyzant.com/blog/tutors/" class="influencer-link" target="_blank">Wyzant Blog →</a>
                 </div>
             </div>
         </div>
@@ -313,47 +315,54 @@
         </div>
 
         <div class="card">
-            <h2><span class="icon">📝</span> Your Tutoring Tracker</h2>
+            <h2><span class="icon">📝</span> Your Tutoring Business Tracker</h2>
             <div class="notes-section">
-                <textarea id="notes" placeholder="Track your online tutoring!
+                <textarea id="notes" placeholder="Track your tutoring business!
 
 MY SUBJECTS:
-Subject 1: ____ | Level: ____ | Rate: $____/hr
-Subject 2: ____ | Level: ____ | Rate: $____/hr
-Subject 3: ____ | Level: ____ | Rate: $____/hr
+Primary subject: ____
+Secondary subjects: ____
+Test scores I can leverage: ____
 
-SETUP:
-☐ Quiet room with good lighting
-☐ Webcam working
+SETUP COMPLETE:
+☐ Tutoring space set up
+☐ Webcam & mic working
 ☐ Reliable internet
-☐ Professional background
-☐ Whiteboard app (Miro, Zoom whiteboard)
 
-PLATFORM PROFILES:
-☐ Wyzant | Profile complete? Y/N | Reviews: ____
-☐ Tutor.com | Profile complete? Y/N
-☐ Varsity Tutors | Applied? Y/N
-☐ Preply | Profile complete? Y/N
+PLATFORMS JOINED:
+☐ Wyzant | Profile link: ____
+☐ Tutor.com | Status: ____
+☐ Varsity Tutors | Status: ____
+☐ Preply | Profile: ____
+☐ Cambly | Profile: ____
 
 MY RATES:
 Starting rate: $____/hr
 Current rate: $____/hr
 Goal rate: $____/hr
 
-STUDENTS:
-Student 1: ____ | Subject: ____ | Frequency: ____
-Student 2: ____ | Subject: ____ | Frequency: ____
-Student 3: ____ | Subject: ____ | Frequency: ____
+REVIEWS COLLECTED:
+Wyzant: ____ reviews | ____ stars
+Other platforms: ____ reviews
 
-WEEKLY HOURS: ____
-WEEKLY INCOME: $____
-MONTHLY INCOME: $____
+REGULAR STUDENTS:
+1. Name: ____ | Subject: ____ | Weekly hrs: ____
+2. Name: ____ | Subject: ____ | Weekly hrs: ____
+3. Name: ____ | Subject: ____ | Weekly hrs: ____
+4. Name: ____ | Subject: ____ | Weekly hrs: ____
 
-PRIVATE CLIENTS (100% yours!):
-Student: ____ | Rate: $____/hr
-Student: ____ | Rate: $____/hr
+PRIVATE CLIENTS:
+1. Name: ____ | Rate: $____/hr
+2. Name: ____ | Rate: $____/hr
 
-REVIEWS: ____
+THIS WEEK:
+Hours tutored: ____
+Students helped: ____
+Revenue: $____
+
+THIS MONTH:
+Total hours: ____
+Total revenue: $____
 "></textarea>
             </div>
         </div>

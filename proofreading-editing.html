@@ -1,213 +1,409 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Proofreading & Editing | ASAP Credit Repair Playbook</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root { --primary: #063d86; --primary-light: #0a4fa8; --primary-dark: #042a5c; --accent: #00c9a7; --success: #10b981; --warning: #f59e0b; --bg: #f8fafc; --text: #1e293b; --text-light: #64748b; --border: #e2e8f0; }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 17px; }
-    .header { background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%); color: white; padding: 40px 20px 50px; text-align: center; }
-    .header-content { max-width: 800px; margin: 0 auto; }
-    .back-link { display: inline-flex; align-items: center; gap: 8px; color: white; text-decoration: none; opacity: 0.8; font-size: 0.9rem; margin-bottom: 16px; }
-    .category-badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; margin-bottom: 16px; }
-    .header h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 12px; }
-    .header-subtitle { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
-    .main-content { max-width: 800px; margin: -30px auto 40px; padding: 0 20px; }
-    .progress-section { position: sticky; top: 0; background: white; padding: 16px 20px; margin: 0 -20px 20px; border-bottom: 1px solid var(--border); z-index: 100; display: flex; align-items: center; gap: 16px; }
-    .progress-bar { flex: 1; height: 10px; background: var(--border); border-radius: 5px; overflow: hidden; }
-    .progress-fill { height: 100%; background: linear-gradient(90deg, #6366f1, #a5b4fc); border-radius: 5px; transition: width 0.3s; width: 0%; }
-    .progress-text { font-weight: 600; color: var(--text); min-width: 50px; }
-    .goal-card { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border: 2px solid var(--success); border-radius: 16px; padding: 24px 28px; margin-bottom: 30px; }
-    .goal-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; color: #065f46; margin-bottom: 12px; }
-    .goal-card p { color: #047857; font-size: 1.05rem; }
-    .goal-card .earnings { background: white; display: inline-block; padding: 10px 18px; border-radius: 10px; margin-top: 14px; font-weight: 600; color: #065f46; font-size: 1.1rem; }
-    .section-card { background: white; border-radius: 16px; padding: 28px; margin-bottom: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid var(--border); }
-    .section-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; color: var(--primary); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
-    .section-card h2 .icon { width: 40px; height: 40px; background: linear-gradient(135deg, #6366f1, #a5b4fc); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; }
-    .task-list { list-style: none; }
-    .task-item { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border); }
-    .task-item:last-child { border-bottom: none; }
-    .task-checkbox { flex-shrink: 0; width: 28px; height: 28px; border: 2px solid var(--border); border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; margin-top: 2px; font-weight: bold; }
-    .task-checkbox:hover { border-color: var(--primary); }
-    .task-checkbox.checked { background: var(--success); border-color: var(--success); color: white; }
-    .task-content { flex: 1; }
-    .task-title { font-weight: 600; font-size: 1.1rem; margin-bottom: 8px; color: var(--text); }
-    .task-desc { color: var(--text-light); font-size: 0.95rem; line-height: 1.6; }
-    .task-meta { display: flex; gap: 12px; margin-top: 10px; flex-wrap: wrap; }
-    .task-badge { font-size: 0.8rem; padding: 4px 10px; border-radius: 6px; background: var(--bg); color: var(--text-light); }
-    .task-badge.easy { background: #dcfce7; color: #166534; }
-    .details-box { background: #f8fafc; border-radius: 10px; padding: 16px; margin-top: 12px; border-left: 4px solid #6366f1; }
-    .details-box h4 { font-size: 0.9rem; color: #4f46e5; margin-bottom: 10px; }
-    .details-box ul { margin-left: 18px; color: var(--text); font-size: 0.9rem; }
-    .details-box li { margin-bottom: 8px; line-height: 1.5; }
-    .service-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; margin-top: 16px; }
-    .service-card { background: var(--bg); border-radius: 10px; padding: 14px; }
-    .service-card h4 { font-size: 0.95rem; color: #4f46e5; margin-bottom: 4px; }
-    .service-card .rate { font-size: 0.8rem; color: var(--success); font-weight: 600; margin-bottom: 4px; }
-    .service-card p { font-size: 0.8rem; color: var(--text-light); }
-    .section-card textarea { width: 100%; min-height: 150px; padding: 16px 18px; border: 2px solid var(--border); border-radius: 12px; font-family: inherit; font-size: 1rem; resize: vertical; box-sizing: border-box; display: block; line-height: 1.6; }
-    .section-card textarea:focus { outline: none; border-color: var(--primary); }
-    .help-section { background: linear-gradient(135deg, #f0f9ff, #e0f2fe); border: 2px solid #7dd3fc; border-radius: 16px; padding: 24px 28px; margin-top: 30px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
-    .help-icon { width: 56px; height: 56px; background: white; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; }
-    .help-content { flex: 1; min-width: 200px; }
-    .help-content h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; margin-bottom: 4px; }
-    .help-content p { color: var(--text-light); font-size: 0.95rem; }
-    .chat-btn { background: var(--primary); color: white; border: none; padding: 14px 28px; border-radius: 12px; font-family: inherit; font-size: 1rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: all 0.2s; }
-    .chat-btn:hover { background: var(--primary-light); transform: translateY(-2px); }
-    @media (max-width: 600px) { .header { padding: 30px 20px 40px; } .section-card { padding: 20px; } .help-section { flex-direction: column; text-align: center; } }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proofreading & Editing - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #1565c0; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #e3f2fd; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 15px; overflow: hidden; font-size: 14px; }
+        .pricing-table th, .pricing-table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .pricing-table th { background: #667eea; color: white; font-weight: 600; }
+        .pricing-table tr:hover { background: #f5f5f5; }
+        .pricing-table .rate { color: #4caf50; font-weight: 600; }
+        .type-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .type-card { background: #f8f9fa; border-radius: 15px; padding: 15px; text-align: center; border-left: 5px solid #667eea; }
+        .type-card .emoji { font-size: 2em; margin-bottom: 8px; }
+        .type-card h4 { color: #1a1a2e; font-size: 14px; margin-bottom: 5px; }
+        .type-card p { color: #666; font-size: 12px; }
+        .find-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .find-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #667eea; }
+        .find-card h4 { color: #1a1a2e; margin-bottom: 10px; }
+        .find-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .find-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; font-size: 13px; }
+        .find-link:hover { text-decoration: underline; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .warning-box h4 { color: #c62828; margin-bottom: 10px; }
+        .warning-box p, .warning-box li { color: #666; }
+        .warning-box ul { margin-left: 20px; margin-top: 10px; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #667eea; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; }
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #667eea; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+        .difference-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .difference-card { background: #f8f9fa; border-radius: 15px; padding: 20px; }
+        .difference-card h4 { color: #667eea; margin-bottom: 10px; }
+        .difference-card p { color: #666; font-size: 13px; line-height: 1.5; }
+    </style>
 </head>
 <body>
-  <header class="header">
-    <div class="header-content">
-      <a href="index.html" class="back-link">← Back to All Playbooks</a>
-      <span class="category-badge">✍️ Writing Services</span>
-      <h1>Proofreading & Editing</h1>
-      <p class="header-subtitle">Get paid to spot errors and polish writing! Perfect for detail-oriented people who love grammar. Work from anywhere.</p>
-    </div>
-  </header>
-
-  <main class="main-content">
-    <div class="progress-section">
-      <span style="font-size: 0.9rem; color: var(--text-light);">Your Progress:</span>
-      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
-      <span class="progress-text" id="progressText">0%</span>
-    </div>
-
-    <div class="goal-card">
-      <h2>🎯 What You'll Achieve</h2>
-      <p>You'll earn money reviewing and polishing written content. From blog posts to books, businesses and authors need proofreaders!</p>
-      <div class="earnings">💰 Beginner: $15-25/hour | Experienced: $30-50/hour | Specialized: $50-100+/hour</div>
-    </div>
-
-    <div class="section-card">
-      <h2><span class="icon">📝</span> Types of Proofreading Work</h2>
-      <div class="service-grid">
-        <div class="service-card">
-          <h4>📄 General</h4>
-          <div class="rate">$15-30/hour</div>
-          <p>Blogs, articles, business docs</p>
+    <div class="container">
+        <a href="income-playbooks.html" class="back-link">← Back to Income Playbooks</a>
+        
+        <div class="header">
+            <h1>📝 Proofreading & Editing Business</h1>
+            <p class="subtitle">Polish written content for $25-50+/hour</p>
+            <div class="time-badge">⏱️ $0-100 startup • Earn $500-3,000+/month</div>
         </div>
-        <div class="service-card">
-          <h4>📚 Book Editing</h4>
-          <div class="rate">$25-50/hour</div>
-          <p>Fiction, non-fiction manuscripts</p>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Earn money reviewing and polishing written content! From blog posts to books, businesses and authors desperately need proofreaders and editors. If you have strong grammar skills and attention to detail, you can build a flexible, remote business earning $25-50+/hour. Specialized editors (academic, medical, legal) command even higher rates!</p>
+            </div>
+            <div class="income-highlight">
+                <h3>$500-3,000+/Month</h3>
+                <p>5-10 hours/week × $30/hr = $600-1,200/month • Full-time: $3,000-5,000+!</p>
+            </div>
         </div>
-        <div class="service-card">
-          <h4>🎓 Academic</h4>
-          <div class="rate">$30-60/hour</div>
-          <p>Dissertations, research papers</p>
+
+        <div class="card">
+            <h2><span class="icon">📚</span> Types of Proofreading & Editing Work</h2>
+            <div class="type-grid">
+                <div class="type-card">
+                    <div class="emoji">📄</div>
+                    <h4>General Business</h4>
+                    <p>Blogs, articles, marketing content, business docs</p>
+                </div>
+                <div class="type-card">
+                    <div class="emoji">📚</div>
+                    <h4>Book Editing</h4>
+                    <p>Fiction, non-fiction manuscripts for authors</p>
+                </div>
+                <div class="type-card">
+                    <div class="emoji">🎓</div>
+                    <h4>Academic</h4>
+                    <p>Dissertations, theses, research papers</p>
+                </div>
+                <div class="type-card">
+                    <div class="emoji">⚖️</div>
+                    <h4>Legal</h4>
+                    <p>Contracts, briefs, legal documents</p>
+                </div>
+                <div class="type-card">
+                    <div class="emoji">⚕️</div>
+                    <h4>Medical</h4>
+                    <p>Clinical docs, research, healthcare content</p>
+                </div>
+                <div class="type-card">
+                    <div class="emoji">🌐</div>
+                    <h4>Website/SEO</h4>
+                    <p>Web copy, landing pages, SEO content</p>
+                </div>
+            </div>
         </div>
-        <div class="service-card">
-          <h4">⚖️ Legal/Medical</h4>
-          <div class="rate">$40-100/hour</div>
-          <p>Specialized terminology</p>
+
+        <div class="card">
+            <h2><span class="icon">🔍</span> Proofreading vs Editing</h2>
+            <div class="difference-grid">
+                <div class="difference-card">
+                    <h4>📋 Proofreading</h4>
+                    <p><strong>Surface-level corrections:</strong> Spelling, punctuation, grammar, typos, formatting. The final polish before publication. Easier to learn, lower rates.</p>
+                </div>
+                <div class="difference-card">
+                    <h4>✏️ Copy Editing</h4>
+                    <p><strong>Line-by-line improvement:</strong> Grammar, style, clarity, word choice, sentence structure. More involved than proofreading. Medium rates.</p>
+                </div>
+                <div class="difference-card">
+                    <h4>📝 Developmental Editing</h4>
+                    <p><strong>Big-picture feedback:</strong> Structure, flow, arguments, plot, character. Most skilled, highest rates. Common for books.</p>
+                </div>
+            </div>
         </div>
-      </div>
+
+        <div class="card">
+            <h2><span class="icon">💵</span> Proofreading & Editing Rates</h2>
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Service Type</th>
+                        <th>Beginner Rate</th>
+                        <th>Experienced Rate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Proofreading (per word)</td><td class="rate">$0.01-0.02</td><td class="rate">$0.02-0.04</td></tr>
+                    <tr><td>Copy editing (per word)</td><td class="rate">$0.02-0.03</td><td class="rate">$0.04-0.08</td></tr>
+                    <tr><td>Developmental editing</td><td class="rate">$0.04-0.06</td><td class="rate">$0.08-0.15</td></tr>
+                    <tr><td>Hourly rate</td><td class="rate">$20-30/hr</td><td class="rate">$40-75+/hr</td></tr>
+                    <tr><td>Blog post (1,000 words)</td><td class="rate">$20-30</td><td class="rate">$40-80</td></tr>
+                    <tr><td>Book manuscript (80K words)</td><td class="rate">$800-1,600</td><td class="rate">$1,600-4,000+</td></tr>
+                    <tr><td>Academic paper</td><td class="rate">$50-100</td><td class="rate">$100-300</td></tr>
+                </tbody>
+            </table>
+            
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Specialize for Higher Rates</div>
+                <p><strong>Specialized editors earn 50-100% more.</strong> Academic editing for PhD students, medical editing for pharma companies, legal proofreading for law firms - all pay premium rates because they require specific knowledge!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Proofreading Business Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Test your skills</div>
+                    <div class="step-desc">Take free proofreading tests online. You need strong grammar and eagle-eye attention to detail. Be honest about your level!</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Learn style guides & standards</div>
+                    <div class="step-desc">Learn AP Style (journalism/blogs), Chicago Manual of Style (books), APA (academic). Know proofreading marks. These are your tools!</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Choose your niche</div>
+                    <div class="step-desc">General content? Books? Academic? Business? Legal/medical (higher pay)? Pick 1-2 areas to specialize in.</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Practice on real content</div>
+                    <div class="step-desc">Proofread blog posts, friend's work, or volunteer for non-profits. Build samples and testimonials before charging.</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Create profiles on platforms</div>
+                    <div class="step-desc">Upwork, Fiverr, Reedsy (books), Scribendi (apply). Complete profiles, highlight specialties, start with competitive rates.</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Deliver quality & build reputation</div>
+                    <div class="step-desc">Meet deadlines ALWAYS. Be thorough. Communicate clearly. Great reviews = more clients = higher rates.</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Get direct clients</div>
+                    <div class="step-desc">As you build reputation, reach out directly to authors, businesses, agencies. Direct clients pay more than platforms!</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Raise rates & expand services</div>
+                    <div class="step-desc">After building reviews, raise rates gradually. Add developmental editing. Build recurring client relationships!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📣</span> Finding Proofreading Clients</h2>
+            <div class="find-grid">
+                <div class="find-card">
+                    <h4>💚 Upwork</h4>
+                    <p>Tons of proofreading jobs posted daily. Great for building reviews and finding steady work!</p>
+                    <a href="https://www.upwork.com" class="find-link" target="_blank">Join Upwork →</a>
+                </div>
+                <div class="find-card">
+                    <h4>🟢 Fiverr</h4>
+                    <p>Create proofreading gigs. Set your rates, let clients come to you. Good for steady flow!</p>
+                    <a href="https://www.fiverr.com" class="find-link" target="_blank">Join Fiverr →</a>
+                </div>
+                <div class="find-card">
+                    <h4>📚 Reedsy</h4>
+                    <p>THE platform for book editors. Connect with indie authors. Higher quality clients!</p>
+                    <a href="https://reedsy.com" class="find-link" target="_blank">Join Reedsy →</a>
+                </div>
+                <div class="find-card">
+                    <h4>✏️ Scribendi</h4>
+                    <p>Editing company that hires freelancers. Apply, take their test. Steady work flow!</p>
+                    <a href="https://www.scribendi.com" class="find-link" target="_blank">Apply to Scribendi →</a>
+                </div>
+                <div class="find-card">
+                    <h4>🎓 Academia.edu</h4>
+                    <p>Network with researchers who need academic editing. Many non-native speakers need help!</p>
+                    <a href="https://www.academia.edu" class="find-link" target="_blank">Join Academia →</a>
+                </div>
+                <div class="find-card">
+                    <h4>💼 LinkedIn</h4>
+                    <p>Optimize profile for editing services. Connect with content managers, authors, businesses!</p>
+                    <a href="https://www.linkedin.com" class="find-link" target="_blank">LinkedIn →</a>
+                </div>
+            </div>
+            
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 The Self-Publishing Market</div>
+                <p><strong>Self-published authors NEED editors.</strong> Over 4 million books self-published annually. Most authors know they need editing. Join Reedsy, search Facebook groups for indie authors, connect on Twitter/X. One book client = $800-4,000!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎓</span> Learn From the Pros</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📖</div>
+                    <h4>Chicago Manual of Style</h4>
+                    <div class="platform">🌐 Resource</div>
+                    <p>Industry standard for book editing. The editor's bible!</p>
+                    <a href="https://www.chicagomanualofstyle.org" class="influencer-link" target="_blank">CMOS →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">✏️</div>
+                    <h4>Grammarly Blog</h4>
+                    <div class="platform">🌐 Blog</div>
+                    <p>Free grammar lessons, style tips, writing advice. Great for learning!</p>
+                    <a href="https://www.grammarly.com/blog/" class="influencer-link" target="_blank">Grammarly Blog →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🏢</div>
+                    <h4>EFA</h4>
+                    <div class="platform">🌐 Association</div>
+                    <p>Editorial Freelancers Association. Resources, job board, rate guide!</p>
+                    <a href="https://www.the-efa.org" class="influencer-link" target="_blank">EFA →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💬</div>
+                    <h4>r/proofreading</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Community for proofreaders. Practice, advice, job leads!</p>
+                    <a href="https://www.reddit.com/r/proofreading/" class="influencer-link" target="_blank">r/proofreading →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Proofreading Business Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your proofreading business!
+
+SKILLS ASSESSMENT:
+☐ Proofreading test taken | Score: ____
+☐ Grammar skills: Strong / Needs work
+☐ Attention to detail: Strong / Needs work
+
+STYLE GUIDES LEARNED:
+☐ AP Style
+☐ Chicago Manual of Style
+☐ APA (academic)
+☐ Proofreading marks
+
+MY SPECIALIZATION:
+☐ General/business content
+☐ Book editing
+☐ Academic papers
+☐ Legal documents
+☐ Medical content
+☐ Other: ____
+
+PLATFORMS JOINED:
+☐ Upwork | Profile: ____
+☐ Fiverr | Profile: ____
+☐ Reedsy | Profile: ____
+☐ Scribendi | Applied: Y/N
+☐ LinkedIn optimized
+
+MY RATES:
+Proofreading (per word): $____
+Copy editing (per word): $____
+Hourly rate: $____
+
+CLIENTS & PROJECTS:
+1. Client: ____ | Type: ____ | Words: ____ | Paid: $____
+2. Client: ____ | Type: ____ | Words: ____ | Paid: $____
+3. Client: ____ | Type: ____ | Words: ____ | Paid: $____
+4. Client: ____ | Type: ____ | Words: ____ | Paid: $____
+
+REVIEWS RECEIVED: ____
+Star rating: ____
+
+THIS MONTH:
+Projects completed: ____
+Words edited: ____
+Total revenue: $____
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
     </div>
 
-    <div class="section-card">
-      <h2><span class="icon">📋</span> Step-by-Step: Start Proofreading</h2>
-      <ul class="task-list">
-        <li class="task-item">
-          <div class="task-checkbox" data-task="0"></div>
-          <div class="task-content">
-            <div class="task-title">Step 1: Test your skills</div>
-            <div class="task-desc">Take free proofreading tests online to gauge your current level. You need strong grammar and attention to detail!</div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 30 minutes</span>
-              <span class="task-badge easy">Know your level</span>
-            </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="1"></div>
-          <div class="task-content">
-            <div class="task-title">Step 2: Learn proofreading marks and standards</div>
-            <div class="task-desc">Understand standard proofreading symbols and style guides (AP, Chicago, etc.).</div>
-            <div class="details-box">
-              <h4>Resources to learn:</h4>
-              <ul>
-                <li><strong>Grammarly Blog</strong> - Free grammar lessons</li>
-                <li><strong>Chicago Manual of Style</strong> - Industry standard</li>
-                <li><strong>AP Stylebook</strong> - For journalism/blogs</li>
-                <li><strong>Proofread Anywhere</strong> - Popular course ($500-1,000)</li>
-              </ul>
-            </div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 5-20 hours</span>
-              <span class="task-badge easy">Free resources available</span>
-            </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="2"></div>
-          <div class="task-content">
-            <div class="task-title">Step 3: Practice on real content</div>
-            <div class="task-desc">Proofread blog posts, ebooks, or volunteer for free to build samples and experience.</div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 5-10 hours</span>
-              <span class="task-badge easy">Build your portfolio</span>
-            </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="3"></div>
-          <div class="task-content">
-            <div class="task-title">Step 4: Create profiles on freelance platforms</div>
-            <div class="task-desc">Set up on Upwork, Fiverr, Reedsy (for books), and Scribendi. Start with competitive rates to build reviews.</div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 2-3 hours</span>
-              <span class="task-badge easy">Where clients find you</span>
-            </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="4"></div>
-          <div class="task-content">
-            <div class="task-title">Step 5: Deliver quality and build reputation</div>
-            <div class="task-desc">Meet deadlines, communicate clearly, and do thorough work. Great reviews = more clients = higher rates!</div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ Ongoing</span>
-              <span class="task-badge easy">Quality builds business</span>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-
-    <div class="section-card">
-      <h2><span class="icon">📝</span> Your Notes</h2>
-      <textarea id="userNotes" placeholder="Example: Took 3 online grammar tests - scored 90%+. Reading Chicago Manual of Style. Set up Upwork profile, starting at $20/hour. First client: 5,000-word blog post, earned $50. Building reviews!"></textarea>
-    </div>
-
-    <div class="help-section">
-      <div class="help-icon">💬</div>
-      <div class="help-content">
-        <h3>Need Help?</h3>
-        <p>Have questions about proofreading? Chat with an ASAP Financial coach!</p>
-      </div>
-      <button class="chat-btn" onclick="openChat()">
-        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
-        Start Chat
-      </button>
-    </div>
-  </main>
-
-  <script>
-    const STORAGE_KEY = 'playbook_proofreading';
-    function loadState() { const saved = localStorage.getItem(STORAGE_KEY); if (saved) { const state = JSON.parse(saved); document.querySelectorAll('.task-checkbox').forEach((box, i) => { if (state.tasks && state.tasks[i]) { box.classList.add('checked'); box.innerHTML = '✓'; } }); if (state.notes) document.getElementById('userNotes').value = state.notes; updateProgress(); } }
-    function saveState() { const tasks = []; document.querySelectorAll('.task-checkbox').forEach(box => { tasks.push(box.classList.contains('checked')); }); localStorage.setItem(STORAGE_KEY, JSON.stringify({ tasks, notes: document.getElementById('userNotes').value })); }
-    function updateProgress() { const boxes = document.querySelectorAll('.task-checkbox'); const checked = document.querySelectorAll('.task-checkbox.checked').length; const percent = Math.round((checked / boxes.length) * 100); document.getElementById('progressFill').style.width = percent + '%'; document.getElementById('progressText').textContent = percent + '%'; }
-    document.querySelectorAll('.task-checkbox').forEach(box => { box.addEventListener('click', function() { this.classList.toggle('checked'); this.innerHTML = this.classList.contains('checked') ? '✓' : ''; updateProgress(); saveState(); }); });
-    document.getElementById('userNotes').addEventListener('input', saveState);
-    function openChat() { window.location.href = 'https://asapcreditrepairusa.com/chat'; }
-    loadState();
-  </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-proofreading-editing');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-proofreading-editing', JSON.stringify({ steps, notes }));
+        }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>
