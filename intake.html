@@ -1361,7 +1361,7 @@
             document.querySelector(`[data-step="${step}"]`).classList.add('active');
             
             // Update progress
-            const progress = Math.round((step / (totalSteps - 1)) * 100);
+            const progress = Math.min(100, Math.round((step / (totalSteps - 1)) * 100));
             document.getElementById('progress-fill').style.width = `${progress}%`;
             document.getElementById('progress-percent').textContent = `${progress}%`;
             document.getElementById('progress-step').textContent = stepNames[step];
