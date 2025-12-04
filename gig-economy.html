@@ -3,266 +3,494 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>💼 Gig Economy Guide | ASAP Financial Services</title>
+    <title>Gig Economy Guide - ASAP Financial Playbook</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
-        .container { max-width: 900px; margin: 0 auto; }
-        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; font-size: 1.1em; opacity: 0.9; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
         .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
-        .header { text-align: center; padding: 40px 30px; background: white; border-radius: 20px; margin-bottom: 20px; }
-        .header h1 { font-size: 2.5em; color: #1a1a2e; margin-bottom: 15px; }
-        .header .subtitle { font-size: 1.2em; color: #666; margin-bottom: 20px; }
-        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 10px 25px; border-radius: 25px; font-weight: 600; }
-        h2 { color: #1a1a2e; margin-bottom: 20px; font-size: 1.6em; }
-        .achieve-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 25px; }
-        .achieve-box p { color: #2e7d32; font-size: 1.1em; line-height: 1.6; margin-bottom: 20px; }
-        .earnings-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; padding: 25px; border-radius: 15px; text-align: center; }
-        .earnings-highlight .amount { font-size: 2.8em; font-weight: 700; }
-        .earnings-highlight .label { font-size: 1.1em; opacity: 0.95; margin-top: 5px; }
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
-        .stat-card { background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 20px; border-radius: 15px; text-align: center; }
-        .stat-card .number { font-size: 2em; font-weight: 700; }
-        .stat-card .label { font-size: 0.9em; opacity: 0.9; }
-        .category-section { margin: 25px 0; }
-        .category-header { background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 20px; border-radius: 15px 15px 0 0; }
-        .category-header h3 { color: white; margin: 0; }
-        .gig-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; padding: 20px; background: #f8f9fa; border-radius: 0 0 15px 15px; }
-        .gig-card { background: white; border-radius: 12px; padding: 20px; border-left: 4px solid #667eea; }
-        .gig-card h4 { color: #1a1a2e; margin-bottom: 8px; }
-        .gig-card .rate { color: #4caf50; font-weight: 700; margin-bottom: 8px; }
-        .gig-card p { color: #666; font-size: 0.9em; line-height: 1.4; }
-        .gig-card .reqs { color: #667eea; font-size: 0.8em; margin-top: 8px; font-style: italic; }
-        .steps-container { display: flex; flex-direction: column; gap: 15px; }
-        .step { display: flex; gap: 15px; padding: 20px; background: #f8f9fa; border-radius: 15px; }
-        .step-checkbox { width: 30px; height: 30px; min-width: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 14px; color: transparent; }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #2e7d32; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.2em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #e8f5e9; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
         .step-checkbox.checked { background: #667eea; color: white; }
-        .step-content h4 { color: #1a1a2e; margin-bottom: 8px; }
-        .step-content p { color: #666; line-height: 1.5; font-size: 0.95em; }
-        .strategy-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 25px; margin: 20px 0; border-left: 4px solid #2196f3; }
-        .strategy-box h4 { color: #1565c0; margin-bottom: 15px; }
-        .strategy-box ul { color: #666; margin-left: 20px; line-height: 1.8; }
-        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 20px 0; }
-        .pro-tip h4 { color: #f57c00; margin-bottom: 10px; }
-        .pro-tip ul { color: #666; line-height: 1.8; margin-left: 20px; }
-        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 20px 0; }
-        .warning-box h4 { color: #c62828; margin-bottom: 10px; }
-        .warning-box ul { color: #666; line-height: 1.8; margin-left: 20px; }
-        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .category-section { margin-bottom: 25px; }
+        .category-header { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #667eea; }
+        .category-header h3 { color: #1a1a2e; font-size: 1.2em; }
+        .category-header .cat-icon { font-size: 1.5em; }
+        .gig-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
+        .gig-card { background: #f8f9fa; border-radius: 12px; padding: 15px; border-left: 4px solid #667eea; text-decoration: none; color: inherit; transition: all 0.3s; display: block; }
+        .gig-card:hover { background: #e8f5e9; transform: translateX(5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .gig-card h4 { color: #1a1a2e; font-size: 14px; margin-bottom: 5px; display: flex; align-items: center; gap: 8px; }
+        .gig-card h4 .arrow { color: #667eea; margin-left: auto; }
+        .gig-card p { color: #666; font-size: 12px; line-height: 1.4; }
+        .gig-card .earnings { color: #2e7d32; font-weight: 600; font-size: 11px; margin-top: 8px; }
+        .gig-card.driving { border-left-color: #2196f3; }
+        .gig-card.driving:hover { background: #e3f2fd; }
+        .gig-card.services { border-left-color: #ff9800; }
+        .gig-card.services:hover { background: #fff3e0; }
+        .gig-card.online { border-left-color: #9c27b0; }
+        .gig-card.online:hover { background: #f3e5f5; }
+        .gig-card.passive { border-left-color: #4caf50; }
+        .gig-card.passive:hover { background: #e8f5e9; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .comparison-box { background: #f8f9fa; border-radius: 15px; padding: 20px; margin: 15px 0; }
+        .comparison-box h4 { color: #1a1a2e; margin-bottom: 15px; }
+        .comparison-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+        .comparison-item { text-align: center; padding: 15px; background: white; border-radius: 10px; }
+        .comparison-item .emoji { font-size: 2em; margin-bottom: 8px; }
+        .comparison-item h5 { color: #1a1a2e; font-size: 13px; margin-bottom: 5px; }
+        .comparison-item p { color: #666; font-size: 11px; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
         .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
         .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
-        .influencer-card .platform { color: #667eea; font-size: 0.9em; }
-        .influencer-card p { color: #666; font-size: 0.9em; margin: 10px 0; }
-        .influencer-link { color: #667eea; text-decoration: none; font-weight: 600; font-size: 0.9em; }
-        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; text-align: center; }
-        .progress-tracker h3 { color: white; margin-bottom: 20px; }
-        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; overflow: hidden; margin-bottom: 15px; }
-        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s ease; width: 0%; }
-        .notes-section textarea { width: 100%; min-height: 200px; padding: 20px; border: 2px solid #e0e0e0; border-radius: 15px; font-family: inherit; font-size: 1em; resize: vertical; }
+        .influencer-card .platform { color: #667eea; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; }
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
         .notes-section textarea:focus { outline: none; border-color: #667eea; }
-        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 40px 30px; text-align: center; }
-        .cta-section h3 { color: white; margin-bottom: 15px; }
-        .cta-section p { opacity: 0.9; margin-bottom: 25px; }
-        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; }
-        @media (max-width: 768px) { .header h1 { font-size: 1.8em; } .card { padding: 20px; } }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="expense-playbooks.html" class="back-link">← Back to Expense Playbooks</a>
+        <a href="index.html" class="back-link">← Back to Playbooks</a>
         
         <div class="header">
             <h1>💼 Gig Economy Guide</h1>
-            <p class="subtitle">Your complete guide to making money on your schedule</p>
-            <div class="time-badge">⏱️ 50+ gig opportunities • Start earning this week</div>
+            <p class="subtitle">Your complete guide to making money on YOUR schedule</p>
+            <div class="time-badge">🚀 Start earning this week • Multiple income streams • Total flexibility</div>
         </div>
-        
+
         <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
             <div class="achieve-box">
-                <h2>🎯 What You'll Achieve</h2>
-                <p>The gig economy lets you earn money on YOUR terms. Whether you need an extra $500/month or want to replace your 9-5, there's a gig for your skills, schedule, and situation. This guide covers every major category so you can find your perfect fit.</p>
-                <div class="earnings-highlight">
-                    <div class="amount">$500-$5,000+/month</div>
-                    <div class="label">Depending on hours and gig type</div>
-                </div>
+                <p>The gig economy lets you earn money on YOUR terms. Whether you need an extra $500/month or want to replace your 9-5, there's a gig for your skills, schedule, and situation. This master guide covers every major category with links to detailed playbooks so you can find your perfect fit and start earning!</p>
+            </div>
+            <div class="income-highlight">
+                <h3>$500-5,000+/Month Possible</h3>
+                <p>Combine multiple gigs • Work when YOU want • No boss, no commute</p>
             </div>
         </div>
-        
+
         <div class="card">
-            <h2>📊 Gig Economy Numbers</h2>
-            <div class="stats-grid">
-                <div class="stat-card"><div class="number">59M</div><div class="label">US gig workers</div></div>
-                <div class="stat-card"><div class="number">36%</div><div class="label">Of US workforce</div></div>
-                <div class="stat-card"><div class="number">$1.5T</div><div class="label">Annual gig revenue</div></div>
-                <div class="stat-card"><div class="number">$15-40</div><div class="label">Avg hourly range</div></div>
-            </div>
-        </div>
-        
-        <div class="card">
-            <h2>🚗 Driving & Delivery</h2>
-            <div class="category-section">
-                <div class="category-header"><h3>Get Paid to Drive</h3></div>
-                <div class="gig-grid">
-                    <div class="gig-card"><h4>🚗 Uber/Lyft</h4><div class="rate">$15-30/hour</div><p>Rideshare driving. Flexible hours, good during peak times.</p><div class="reqs">Car, license, insurance, 21+</div></div>
-                    <div class="gig-card"><h4>🍕 DoorDash</h4><div class="rate">$15-25/hour</div><p>Food delivery. Multi-app for best earnings.</p><div class="reqs">Car/bike, license, 18+</div></div>
-                    <div class="gig-card"><h4>🍔 Uber Eats</h4><div class="rate">$15-28/hour</div><p>Food delivery with surge pricing.</p><div class="reqs">Car/bike/walk, 18+</div></div>
-                    <div class="gig-card"><h4>📦 Amazon Flex</h4><div class="rate">$18-25/hour</div><p>Package delivery blocks. Predictable pay.</p><div class="reqs">Car, 21+, can lift 50 lbs</div></div>
-                    <div class="gig-card"><h4>🛒 Instacart</h4><div class="rate">$15-35/hour</div><p>Grocery shopping & delivery. Good tips.</p><div class="reqs">Car, 18+, smartphone</div></div>
-                    <div class="gig-card"><h4>🔵 Spark (Walmart)</h4><div class="rate">$15-22/hour</div><p>Walmart grocery delivery.</p><div class="reqs">Car, 18+</div></div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="card">
-            <h2>🏠 Services & Tasks</h2>
-            <div class="category-section">
-                <div class="category-header"><h3>Get Paid for Skills & Services</h3></div>
-                <div class="gig-grid">
-                    <div class="gig-card"><h4>🔧 TaskRabbit</h4><div class="rate">$20-60/hour</div><p>Handyman, moving, assembly, cleaning.</p><div class="reqs">Skills, smartphone, pass background</div></div>
-                    <div class="gig-card"><h4>🐕 Rover</h4><div class="rate">$15-40/hour</div><p>Dog walking, pet sitting, boarding.</p><div class="reqs">Love animals, smartphone</div></div>
-                    <div class="gig-card"><h4>🏡 Thumbtack</h4><div class="rate">$25-100/hour</div><p>Home services, photography, lessons.</p><div class="reqs">Professional skills</div></div>
-                    <div class="gig-card"><h4>🧹 Handy</h4><div class="rate">$18-35/hour</div><p>Cleaning and handyman services.</p><div class="reqs">Cleaning/handy skills</div></div>
-                    <div class="gig-card"><h4>👶 Care.com</h4><div class="rate">$15-30/hour</div><p>Babysitting, senior care, pet care.</p><div class="reqs">Background check, experience</div></div>
-                    <div class="gig-card"><h4>📦 Dolly</h4><div class="rate">$20-40/hour</div><p>Moving and delivery help.</p><div class="reqs">Truck/SUV helpful, can lift</div></div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="card">
-            <h2>💻 Online & Remote</h2>
-            <div class="category-section">
-                <div class="category-header"><h3>Work From Anywhere</h3></div>
-                <div class="gig-grid">
-                    <div class="gig-card"><h4>✍️ Upwork</h4><div class="rate">$15-150/hour</div><p>Freelance writing, design, dev, VA work.</p><div class="reqs">Marketable skills, portfolio</div></div>
-                    <div class="gig-card"><h4>🎨 Fiverr</h4><div class="rate">$5-500/gig</div><p>Creative services, digital tasks.</p><div class="reqs">Specific skill to offer</div></div>
-                    <div class="gig-card"><h4>🖥️ Amazon MTurk</h4><div class="rate">$6-15/hour</div><p>Micro-tasks, surveys, data entry.</p><div class="reqs">Computer, attention to detail</div></div>
-                    <div class="gig-card"><h4>📝 Rev</h4><div class="rate">$10-25/hour</div><p>Transcription and captioning.</p><div class="reqs">Good typing, English skills</div></div>
-                    <div class="gig-card"><h4>🎓 Chegg/Tutor.com</h4><div class="rate">$20-40/hour</div><p>Online tutoring in various subjects.</p><div class="reqs">Expertise in subject area</div></div>
-                    <div class="gig-card"><h4>📞 LiveWorld</h4><div class="rate">$12-18/hour</div><p>Social media moderation, customer service.</p><div class="reqs">Good communication</div></div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="card">
-            <h2>💰 Passive & Creative</h2>
-            <div class="category-section">
-                <div class="category-header"><h3>Earn While You Sleep (Eventually)</h3></div>
-                <div class="gig-grid">
-                    <div class="gig-card"><h4>🏠 Airbnb</h4><div class="rate">$50-300/night</div><p>Rent spare room or whole property.</p><div class="reqs">Space to rent, hosting skills</div></div>
-                    <div class="gig-card"><h4>🚗 Turo</h4><div class="rate">$30-150/day</div><p>Rent out your car when not using.</p><div class="reqs">Car in good condition</div></div>
-                    <div class="gig-card"><h4>📸 Stock Photos</h4><div class="rate">$0.25-$100/download</div><p>Sell photos on Shutterstock, Adobe.</p><div class="reqs">Photography skills, camera</div></div>
-                    <div class="gig-card"><h4>👕 Print on Demand</h4><div class="rate">$2-15/sale</div><p>Design t-shirts, mugs on Redbubble.</p><div class="reqs">Design skills</div></div>
-                    <div class="gig-card"><h4>📚 Amazon KDP</h4><div class="rate">$1-1000s/month</div><p>Self-publish books, low-content.</p><div class="reqs">Writing or design ability</div></div>
-                    <div class="gig-card"><h4>🎵 Music Licensing</h4><div class="rate">$10-500/license</div><p>License music for videos, ads.</p><div class="reqs">Music production skills</div></div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="card">
-            <h2>📝 Getting Started</h2>
-            <div class="steps-container">
-                <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><h4>Step 1: Assess Your Assets</h4><p>What do you have? Car, skills, time, space? Your assets determine your best gigs. List everything available.</p></div></div>
-                <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><h4>Step 2: Pick 2-3 Gigs to Start</h4><p>Don't spread too thin. Pick gigs that fit your schedule and assets. Apply to all of them.</p></div></div>
-                <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><h4>Step 3: Complete All Onboarding</h4><p>Background checks, training, setup. Do everything to get approved and active ASAP.</p></div></div>
-                <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><h4>Step 4: Set Income Goals</h4><p>How much do you need? Work backwards to hours required. Be realistic about time.</p></div></div>
-                <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><h4>Step 5: Track Everything</h4><p>Miles, hours, earnings, expenses. Use apps like Stride. You'll need this for taxes.</p></div></div>
-                <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><h4>Step 6: Optimize & Scale</h4><p>After 2-4 weeks, analyze what's working. Double down on highest $/hour gigs.</p></div></div>
-            </div>
-        </div>
-        
-        <div class="card">
-            <h2>💡 Gig Economy Strategy</h2>
-            <div class="strategy-box">
-                <h4>🎯 Maximize Your Earnings</h4>
-                <ul>
-                    <li><strong>Stack apps:</strong> Run multiple delivery apps. Accept best orders from any platform.</li>
-                    <li><strong>Peak hours only:</strong> If time is limited, work only during surge/peak times.</li>
-                    <li><strong>Build reputation:</strong> 5-star ratings unlock better opportunities on every platform.</li>
-                    <li><strong>Specialize over time:</strong> Find what pays best for YOU and go deep.</li>
-                    <li><strong>Think long-term:</strong> Some gigs (freelance, rentals) build passive income over time.</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="card">
-            <div class="pro-tip">
-                <h4>💡 Gig Worker Essentials</h4>
-                <ul>
-                    <li><strong>Separate bank account:</strong> Keep gig income separate for easy tracking</li>
-                    <li><strong>Save 25-30% for taxes:</strong> You're self-employed. Quarterlies are real.</li>
-                    <li><strong>Track mileage religiously:</strong> 67¢/mile deduction (2024) adds up fast</li>
-                    <li><strong>Get gig insurance:</strong> Personal insurance may not cover you working</li>
-                    <li><strong>Build emergency fund:</strong> Gig income fluctuates. Have 3 months saved.</li>
-                </ul>
+            <h2><span class="icon">🚗</span> Driving & Delivery</h2>
+            <p style="color: #666; margin-bottom: 15px;">Best for: People with reliable vehicles who want flexible hours. Click any gig for the full playbook:</p>
+            
+            <div class="gig-grid">
+                <a href="rideshare-driver.html" class="gig-card driving">
+                    <h4>🚙 Uber/Lyft Driver <span class="arrow">→</span></h4>
+                    <p>Drive passengers on your schedule. Best during peak hours, events, and weekends.</p>
+                    <div class="earnings">💰 $500-2,000/mo</div>
+                </a>
+                <a href="delivery-driver-gig.html" class="gig-card driving">
+                    <h4>🍔 DoorDash/UberEats <span class="arrow">→</span></h4>
+                    <p>Deliver food from restaurants. Multi-app for best earnings. Great lunch/dinner rushes.</p>
+                    <div class="earnings">💰 $400-1,500/mo</div>
+                </a>
+                <a href="grocery-delivery.html" class="gig-card driving">
+                    <h4>🛒 Instacart/Shipt <span class="arrow">→</span></h4>
+                    <p>Shop and deliver groceries. Higher tips than food delivery. Build regular customers.</p>
+                    <div class="earnings">💰 $400-1,200/mo</div>
+                </a>
+                <a href="grocery-shopping-gigs.html" class="gig-card driving">
+                    <h4>🏪 Walmart Spark <span class="arrow">→</span></h4>
+                    <p>Walmart's delivery service. Consistent orders, predictable pay. Good in suburban areas.</p>
+                    <div class="earnings">💰 $300-1,000/mo</div>
+                </a>
             </div>
             
-            <div class="warning-box">
-                <h4>⚠️ Common Mistakes</h4>
-                <ul>
-                    <li><strong>Ignoring expenses:</strong> $25/hour gross might be $15/hour net after gas/wear</li>
-                    <li><strong>Tax surprises:</strong> Don't spend it all—IRS wants their cut</li>
-                    <li><strong>Burnout:</strong> Flexibility is great until you work 60+ hours. Set limits.</li>
-                    <li><strong>No diversification:</strong> One app can deactivate you anytime. Have backups.</li>
-                </ul>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Multi-App Strategy</div>
+                <p>The best gig drivers use 2-3 apps simultaneously! Accept the best-paying order from whichever app offers it. This can increase earnings 30-50%.</p>
             </div>
         </div>
-        
+
         <div class="card">
-            <h2>🌟 Gig Economy Resources</h2>
-            <div class="influencer-grid">
-                <div class="influencer-card"><div class="influencer-avatar">📱</div><h4>Stride</h4><div class="platform">📱 App</div><p>Track mileage, expenses, and find tax deductions automatically.</p><a href="https://www.stridehealth.com" class="influencer-link" target="_blank">Download →</a></div>
-                <div class="influencer-card"><div class="influencer-avatar">📺</div><h4>The Rideshare Guy</h4><div class="platform">📺 YouTube</div><p>Best gig economy content. Tips for every platform.</p><a href="https://www.youtube.com/@TheRideshareGuy" class="influencer-link" target="_blank">Watch →</a></div>
-                <div class="influencer-card"><div class="influencer-avatar">💬</div><h4>r/gigwork</h4><div class="platform">🔗 Reddit</div><p>Community for all gig workers. Tips, experiences, advice.</p><a href="https://www.reddit.com/r/gigwork/" class="influencer-link" target="_blank">Join →</a></div>
-                <div class="influencer-card"><div class="influencer-avatar">📊</div><h4>Gridwise</h4><div class="platform">📱 App</div><p>Track earnings across all apps. See peak times and demand.</p><a href="https://gridwise.io" class="influencer-link" target="_blank">Download →</a></div>
+            <h2><span class="icon">🔧</span> Services & Tasks</h2>
+            <p style="color: #666; margin-bottom: 15px;">Best for: Handy people, animal lovers, and caregivers. Click any gig for the full playbook:</p>
+            
+            <div class="gig-grid">
+                <a href="pet-sitting-dog-walking.html" class="gig-card services">
+                    <h4>🐾 Rover/Wag (Pet Care) <span class="arrow">→</span></h4>
+                    <p>Dog walking, pet sitting, boarding. Animal lovers dream job with great pay!</p>
+                    <div class="earnings">💰 $500-3,000/mo</div>
+                </a>
+                <a href="handyman.html" class="gig-card services">
+                    <h4>🔨 TaskRabbit/Thumbtack <span class="arrow">→</span></h4>
+                    <p>Handyman work, furniture assembly, mounting TVs, odd jobs. Set your own rates.</p>
+                    <div class="earnings">💰 $500-2,500/mo</div>
+                </a>
+                <a href="house-cleaning-maid-service.html" class="gig-card services">
+                    <h4>🧹 Handy (Cleaning) <span class="arrow">→</span></h4>
+                    <p>House cleaning and maid services. Recurring clients = steady income.</p>
+                    <div class="earnings">💰 $800-3,000/mo</div>
+                </a>
+                <a href="babysitting-childcare.html" class="gig-card services">
+                    <h4>👶 Care.com (Childcare) <span class="arrow">→</span></h4>
+                    <p>Babysitting, nanny work, after-school care. Build relationships with families.</p>
+                    <div class="earnings">💰 $400-1,500/mo</div>
+                </a>
+                <a href="elder-care-companion.html" class="gig-card services">
+                    <h4>👴 Care.com (Senior Care) <span class="arrow">→</span></h4>
+                    <p>Companion care, errands, light housekeeping for seniors. Meaningful work.</p>
+                    <div class="earnings">💰 $400-1,500/mo</div>
+                </a>
+                <a href="moving-helper.html" class="gig-card services">
+                    <h4>📦 Dolly/TaskRabbit (Moving) <span class="arrow">→</span></h4>
+                    <p>Help people move, deliver furniture. Physical work but great hourly pay.</p>
+                    <div class="earnings">💰 $500-2,000/mo</div>
+                </a>
+                <a href="lawn-care-business.html" class="gig-card services">
+                    <h4>🌿 Lawn Care <span class="arrow">→</span></h4>
+                    <p>Mow lawns, yard work, seasonal cleanup. Build recurring weekly clients.</p>
+                    <div class="earnings">💰 $500-2,000/mo</div>
+                </a>
+                <a href="mobile-car-detailing.html" class="gig-card services">
+                    <h4>🚗 Car Detailing <span class="arrow">→</span></h4>
+                    <p>Detail cars at customers' homes. Low startup, high profit margins.</p>
+                    <div class="earnings">💰 $1,000-4,000/mo</div>
+                </a>
             </div>
         </div>
-        
-        <div class="card"><div class="progress-tracker"><h3>📈 Your Progress</h3><div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div><p class="progress-text"><span id="completed">0</span> of 6 steps completed</p></div></div>
-        
-        <div class="card notes-section">
-            <h2>📓 Your Gig Economy Plan</h2>
-            <textarea id="notes" placeholder="Plan your gig economy income!
+
+        <div class="card">
+            <h2><span class="icon">💻</span> Online & Remote</h2>
+            <p style="color: #666; margin-bottom: 15px;">Best for: Work from home, no car needed. Click any gig for the full playbook:</p>
+            
+            <div class="gig-grid">
+                <a href="virtual-assistant.html" class="gig-card online">
+                    <h4>📋 Virtual Assistant <span class="arrow">→</span></h4>
+                    <p>Admin support, email, scheduling, data entry. Find clients on Upwork, Fiverr.</p>
+                    <div class="earnings">💰 $500-2,500/mo</div>
+                </a>
+                <a href="graphic-design.html" class="gig-card online">
+                    <h4>🎨 Graphic Design <span class="arrow">→</span></h4>
+                    <p>Logos, social media graphics, flyers. Use Canva or Adobe. Sell on Fiverr/Upwork.</p>
+                    <div class="earnings">💰 $500-3,000/mo</div>
+                </a>
+                <a href="copywriting.html" class="gig-card online">
+                    <h4>✍️ Copywriting <span class="arrow">→</span></h4>
+                    <p>Write blogs, ads, emails, website copy. High demand skill with great pay.</p>
+                    <div class="earnings">💰 $1,000-5,000/mo</div>
+                </a>
+                <a href="amazon-mturk.html" class="gig-card online">
+                    <h4>🖱️ Amazon MTurk <span class="arrow">→</span></h4>
+                    <p>Micro-tasks, surveys, data labeling. Low pay per task but very flexible.</p>
+                    <div class="earnings">💰 $100-500/mo</div>
+                </a>
+                <a href="transcription-work.html" class="gig-card online">
+                    <h4>🎧 Rev (Transcription) <span class="arrow">→</span></h4>
+                    <p>Convert audio to text. Good typing skills required. Work anytime.</p>
+                    <div class="earnings">💰 $300-1,500/mo</div>
+                </a>
+                <a href="online-tutoring.html" class="gig-card online">
+                    <h4>📚 Wyzant/Tutor.com <span class="arrow">→</span></h4>
+                    <p>Tutor students online in any subject. Set your own rates and schedule.</p>
+                    <div class="earnings">💰 $500-2,000/mo</div>
+                </a>
+                <a href="online-surveys.html" class="gig-card online">
+                    <h4>📝 Online Surveys <span class="arrow">→</span></h4>
+                    <p>Get paid for opinions on Swagbucks, Survey Junkie. Easy but low pay.</p>
+                    <div class="earnings">💰 $50-300/mo</div>
+                </a>
+                <a href="video-editing.html" class="gig-card online">
+                    <h4>🎬 Video Editing <span class="arrow">→</span></h4>
+                    <p>Edit videos for YouTubers, businesses. Learn DaVinci Resolve (free) to start.</p>
+                    <div class="earnings">💰 $500-3,000/mo</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🌙</span> Passive & Creative</h2>
+            <p style="color: #666; margin-bottom: 15px;">Best for: Earn while you sleep with assets or creativity. Click any gig for the full playbook:</p>
+            
+            <div class="gig-grid">
+                <a href="airbnb-hosting.html" class="gig-card passive">
+                    <h4>🏠 Airbnb Hosting <span class="arrow">→</span></h4>
+                    <p>Rent spare room or whole property. Premium income from your space.</p>
+                    <div class="earnings">💰 $500-3,000/mo</div>
+                </a>
+                <a href="rent-your-car.html" class="gig-card passive">
+                    <h4>🚗 Turo (Rent Your Car) <span class="arrow">→</span></h4>
+                    <p>Rent out your car when not using it. Passive income from your vehicle.</p>
+                    <div class="earnings">💰 $300-1,000/mo</div>
+                </a>
+                <a href="rent-spare-room.html" class="gig-card passive">
+                    <h4>🛏️ Rent Spare Room <span class="arrow">→</span></h4>
+                    <p>Long-term roommate or short-term rental. Consistent monthly income.</p>
+                    <div class="earnings">💰 $500-1,500/mo</div>
+                </a>
+                <a href="stock-photography.html" class="gig-card passive">
+                    <h4>📸 Stock Photography <span class="arrow">→</span></h4>
+                    <p>Sell photos on Shutterstock, Adobe Stock. Upload once, earn forever.</p>
+                    <div class="earnings">💰 $100-1,000/mo</div>
+                </a>
+                <a href="print-on-demand.html" class="gig-card passive">
+                    <h4>👕 Print on Demand <span class="arrow">→</span></h4>
+                    <p>Design t-shirts, mugs on Redbubble, Merch by Amazon. No inventory needed.</p>
+                    <div class="earnings">💰 $200-2,000/mo</div>
+                </a>
+                <a href="amazon-kdp.html" class="gig-card passive">
+                    <h4>📖 Amazon KDP <span class="arrow">→</span></h4>
+                    <p>Self-publish books, journals, planners. Royalties on every sale.</p>
+                    <div class="earnings">💰 $100-5,000/mo</div>
+                </a>
+                <a href="etsy-seller.html" class="gig-card passive">
+                    <h4>🎨 Etsy Shop <span class="arrow">→</span></h4>
+                    <p>Sell handmade items, digital downloads, vintage. Build a brand.</p>
+                    <div class="earnings">💰 $300-3,000/mo</div>
+                </a>
+                <a href="youtube-channel.html" class="gig-card passive">
+                    <h4>🎥 YouTube Channel <span class="arrow">→</span></h4>
+                    <p>Create content, earn ad revenue. Takes time but scales infinitely.</p>
+                    <div class="earnings">💰 $100-10,000/mo</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> Find Your Best Gig Match</h2>
+            <div class="comparison-box">
+                <h4>What assets do you have?</h4>
+                <div class="comparison-grid">
+                    <div class="comparison-item">
+                        <div class="emoji">🚗</div>
+                        <h5>Reliable Car</h5>
+                        <p>Rideshare, Delivery, Mobile Services</p>
+                    </div>
+                    <div class="comparison-item">
+                        <div class="emoji">💻</div>
+                        <h5>Computer/WiFi</h5>
+                        <p>Freelancing, VA, Online Work</p>
+                    </div>
+                    <div class="comparison-item">
+                        <div class="emoji">🏠</div>
+                        <h5>Extra Space</h5>
+                        <p>Airbnb, Storage Rental, Pet Boarding</p>
+                    </div>
+                    <div class="comparison-item">
+                        <div class="emoji">🛠️</div>
+                        <h5>Skills/Tools</h5>
+                        <p>Handyman, Lawn Care, Cleaning</p>
+                    </div>
+                    <div class="comparison-item">
+                        <div class="emoji">⏰</div>
+                        <h5>Flexible Time</h5>
+                        <p>Pet Sitting, Babysitting, Errands</p>
+                    </div>
+                    <div class="comparison-item">
+                        <div class="emoji">🎨</div>
+                        <h5>Creative Skills</h5>
+                        <p>Design, Writing, Video, Photography</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Inventory your assets</div>
+                    <div class="step-desc">What do you have? Car, skills, time, space, computer? Your assets determine your best gigs. Make a list of everything available to you.</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Pick 2-3 gigs that fit YOU</div>
+                    <div class="step-desc">Don't spread too thin. Choose gigs that match your schedule, skills, and assets. Click the playbooks above to learn more about each one.</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Sign up and get approved</div>
+                    <div class="step-desc">Apply to all your chosen platforms. Background checks can take 3-7 days. Complete all training and setup requirements to get active ASAP.</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Set your income goal</div>
+                    <div class="step-desc">How much do you need? Work backwards to hours required. Be realistic about your time. $500/month might be 5-10 hours/week depending on the gig.</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Track EVERYTHING</div>
+                    <div class="step-desc">Miles, hours, earnings, expenses. Use apps like Stride for automatic mileage tracking. You'll need this for taxes AND to know your true $/hour.</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Analyze and optimize after 2-4 weeks</div>
+                    <div class="step-desc">Which gigs are paying best per hour? What times are most profitable? Double down on what works, drop what doesn't. Constantly improve!</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Build recurring income streams</div>
+                    <div class="step-desc">The real money is in repeat clients. Whether it's weekly dog walking, regular cleaning clients, or freelance retainers - recurring income beats one-off gigs.</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Scale or stabilize</div>
+                    <div class="step-desc">Once you're earning consistently, decide: scale up for more income, or maintain for work-life balance. You're in control of your gig economy career!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💡</span> Pro Tips for Gig Success</h2>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Tax Tip: Set Aside 25-30%</div>
+                <p>Gig income is self-employment income. No taxes are withheld! Set aside 25-30% of every payment for quarterly taxes. Use Stride app to track mileage deductions.</p>
+            </div>
+            
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Multi-App = More Money</div>
+                <p>Never rely on just one platform. If you're doing delivery, run DoorDash + UberEats + Instacart. If you're freelancing, be on Upwork + Fiverr + direct clients.</p>
+            </div>
+            
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Reviews Are Everything</div>
+                <p>On every platform, your rating determines your success. Go above and beyond for your first 10-20 jobs to build a stellar rating. It pays off forever.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎓</span> Learn From These Creators</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>The Rideshare Guy</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Best gig economy content. Tips for Uber, Lyft, DoorDash, and every platform.</p>
+                    <a href="https://youtube.com/therideshareguy" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💬</div>
+                    <h4>r/gigwork</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Community for all gig workers. Tips, experiences, advice across platforms.</p>
+                    <a href="https://reddit.com/r/gigwork" class="influencer-link" target="_blank">r/gigwork →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📱</div>
+                    <h4>Stride App</h4>
+                    <div class="platform">🌐 App</div>
+                    <p>Free mileage tracking, expense tracking, and tax deduction finder for gig workers.</p>
+                    <a href="https://www.stridehealth.com/stride-tax" class="influencer-link" target="_blank">Stride →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📊</div>
+                    <h4>Gridwise</h4>
+                    <div class="platform">🌐 App</div>
+                    <p>Track earnings across all gig apps. See peak times, demand, and optimize your schedule.</p>
+                    <a href="https://gridwise.io" class="influencer-link" target="_blank">Gridwise →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Gig Economy Planner</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Plan your gig economy journey!
 
 MY ASSETS:
-━━━━━━━━━
-☐ Car (year/condition): ____________
-☐ Bike/scooter
-☐ Spare room/property
-☐ Professional skills: ____________
-☐ Available hours: ____/week
+☐ Reliable car
+☐ Computer/WiFi
+☐ Extra space (room, garage, etc.)
+☐ Skills: ____
+☐ Tools: ____
+☐ Available hours/week: ____
 
 GIGS I'M PURSUING:
-━━━━━━━━━━━━━━━━━
-1. ____________ - Status: ________
-2. ____________ - Status: ________
-3. ____________ - Status: ________
+1. ____
+2. ____
+3. ____
 
-INCOME GOALS:
-━━━━━━━━━━━━
-Weekly goal: $____
-Monthly goal: $____
-Hours available: ____/week
+SIGN-UP STATUS:
+☐ Platform 1: ____ (pending/approved)
+☐ Platform 2: ____ (pending/approved)
+☐ Platform 3: ____ (pending/approved)
 
-TRACKING (Week 1):
-━━━━━━━━━━━━━━━━
-Platform | Hours | Gross | Expenses | Net
-________ | _____ | $____ | $_______ | $____
-________ | _____ | $____ | $_______ | $____
-________ | _____ | $____ | $_______ | $____
+INCOME GOAL: $____ /month
+Hours needed: ____ /week
 
-TAX SAVINGS (25-30%): $____/week"></textarea>
+TRACKING:
+Week 1: $____ earned | ____ hours | $__/hr
+Week 2: $____ earned | ____ hours | $__/hr
+Week 3: $____ earned | ____ hours | $__/hr
+Week 4: $____ earned | ____ hours | $__/hr
+
+MONTHLY TOTAL: $____
+Tax set aside (25%): $____
+
+BEST PERFORMING GIG: ____
+WORST PERFORMING GIG: ____
+
+NOTES:
+"></textarea>
+            </div>
         </div>
-        
-        <div class="card"><div class="cta-section"><h3>🚀 Need Help Building Credit & Cash Flow?</h3><p>ASAP Financial Services helps with credit repair and financial planning.</p><a href="https://asapcreditrepairusa.com" class="cta-button" target="_blank">Get Started →</a></div></div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
     </div>
-    
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const saved = localStorage.getItem('playbook-gig-economy');
             if (saved) {
                 const data = JSON.parse(saved);
-                data.steps.forEach((checked, index) => { if (checked) { document.querySelectorAll('.step-checkbox')[index].classList.add('checked'); } });
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
                 document.getElementById('notes').value = data.notes || '';
                 updateProgress();
             }
