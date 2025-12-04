@@ -610,6 +610,32 @@
             align-items: flex-start;
         }
 
+        /* Monthly Banner */
+        .monthly-banner {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 2px solid #f59e0b;
+            border-radius: var(--radius);
+            padding: 12px 20px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .monthly-banner-icon {
+            font-size: 24px;
+        }
+
+        .monthly-banner-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: #92400e;
+        }
+
+        .monthly-banner-text strong {
+            color: #78350f;
+        }
+
         .info-box-icon {
             font-size: 20px;
             flex-shrink: 0;
@@ -1028,6 +1054,11 @@
                     <h2 class="step-title">Monthly essentials</h2>
                     <p class="step-subtitle">Enter the amount you pay <strong>each month</strong> for these essentials.</p>
 
+                    <div class="monthly-banner">
+                        <span class="monthly-banner-icon">📅</span>
+                        <span class="monthly-banner-text">Enter your <strong>MONTHLY</strong> amounts below</span>
+                    </div>
+
                     <div class="expense-grid">
                         <div class="expense-item">
                             <label>Rent / Mortgage</label>
@@ -1100,7 +1131,7 @@
                             </div>
                         </div>
                         <div class="expense-item">
-                            <label>Taxes (if applicable)</label>
+                            <label>Taxes (additional out-of-pocket)</label>
                             <div class="input-wrapper">
                                 <span class="input-prefix">$</span>
                                 <input type="number" class="has-prefix" id="taxes" name="taxes" placeholder="0" min="0">
@@ -1120,6 +1151,11 @@
                     <h2 class="step-title">Monthly discretionary spending</h2>
                     <p class="step-subtitle">Enter what you typically spend <strong>each month</strong> on these items.</p>
 
+                    <div class="monthly-banner">
+                        <span class="monthly-banner-icon">📅</span>
+                        <span class="monthly-banner-text">Enter your <strong>MONTHLY</strong> amounts below</span>
+                    </div>
+
                     <div class="expense-grid">
                         <div class="expense-item">
                             <label>Restaurants / Dining</label>
@@ -1129,21 +1165,21 @@
                             </div>
                         </div>
                         <div class="expense-item">
-                            <label>Food Delivery</label>
+                            <label>Food Delivery (DoorDash, Uber Eats, etc.)</label>
                             <div class="input-wrapper">
                                 <span class="input-prefix">$</span>
                                 <input type="number" class="has-prefix" id="food_delivery" name="food_delivery" placeholder="0" min="0">
                             </div>
                         </div>
                         <div class="expense-item">
-                            <label>Streaming Services</label>
+                            <label>Streaming (Netflix, Disney+, etc.)</label>
                             <div class="input-wrapper">
                                 <span class="input-prefix">$</span>
                                 <input type="number" class="has-prefix" id="netflix_streaming" name="netflix_streaming" placeholder="0" min="0">
                             </div>
                         </div>
                         <div class="expense-item">
-                            <label>Software / Apps</label>
+                            <label>Software & Apps (subscriptions)</label>
                             <div class="input-wrapper">
                                 <span class="input-prefix">$</span>
                                 <input type="number" class="has-prefix" id="software_apps" name="software_apps" placeholder="0" min="0">
@@ -1157,21 +1193,21 @@
                             </div>
                         </div>
                         <div class="expense-item">
-                            <label>Shopping</label>
+                            <label>Shopping (Amazon, clothes, etc.)</label>
                             <div class="input-wrapper">
                                 <span class="input-prefix">$</span>
                                 <input type="number" class="has-prefix" id="shopping" name="shopping" placeholder="0" min="0">
                             </div>
                         </div>
                         <div class="expense-item">
-                            <label>Entertainment</label>
+                            <label>Entertainment (bars, events, etc.)</label>
                             <div class="input-wrapper">
                                 <span class="input-prefix">$</span>
                                 <input type="number" class="has-prefix" id="entertainment" name="entertainment" placeholder="0" min="0">
                             </div>
                         </div>
                         <div class="expense-item">
-                            <label>Other Subscriptions</label>
+                            <label>Other Subscriptions (any other monthly costs)</label>
                             <div class="input-wrapper">
                                 <span class="input-prefix">$</span>
                                 <input type="number" class="has-prefix" id="other_subscriptions" name="other_subscriptions" placeholder="0" min="0">
@@ -1254,8 +1290,8 @@
                 <div class="step" data-step="8">
                     <div class="success-container">
                         <div class="success-icon">✓</div>
-                        <h2 class="success-title">You're All Set!</h2>
-                        <p class="success-text">Your personalized Financial Blueprint is being created. Check your email at <strong id="success-email">your@email.com</strong> for your custom action plan.</p>
+                        <h2 class="success-title">Thank You!</h2>
+                        <p class="success-text">Your personalized Financial Blueprint will be sent to <strong id="success-email">your@email.com</strong> soon. Keep an eye on your inbox!</p>
                         
                         <div class="info-box">
                             <span class="info-box-icon">📧</span>
