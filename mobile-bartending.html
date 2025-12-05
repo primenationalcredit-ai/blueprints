@@ -1,53 +1,412 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mobile Bartending Business | ASAP Credit Repair Playbook</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>:root{--primary:#063d86;--success:#10b981;--bg:#f8fafc;--text:#1e293b;--text-light:#64748b;--border:#e2e8f0}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}.header{background:linear-gradient(135deg,#be185d,#9d174d);color:#fff;padding:40px 20px 50px;text-align:center}.header h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:12px}.main-content{max-width:800px;margin:-30px auto 40px;padding:0 20px}.back-link{color:#fff;text-decoration:none;opacity:.8;display:block;margin-bottom:16px}.category-badge{display:inline-block;background:rgba(255,255,255,.2);padding:6px 16px;border-radius:20px;font-size:.85rem;margin-bottom:16px}.goal-card{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid var(--success);border-radius:16px;padding:24px;margin-bottom:24px}.goal-card h2{color:#065f46;margin-bottom:12px}.goal-card .earnings{background:#fff;padding:10px 18px;border-radius:10px;margin-top:14px;font-weight:600;color:#065f46;display:inline-block}.section-card{background:#fff;border-radius:16px;padding:28px;margin-bottom:24px;border:1px solid var(--border)}.section-card h2{color:var(--primary);margin-bottom:20px}.task-list{list-style:none}.task-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)}.task-checkbox{width:28px;height:28px;border:2px solid var(--border);border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}.task-checkbox.checked{background:var(--success);border-color:var(--success);color:#fff}.task-title{font-weight:600;margin-bottom:6px}.task-desc{color:var(--text-light);font-size:.95rem}.task-badge{font-size:.8rem;padding:4px 10px;border-radius:6px;background:var(--bg);margin-top:10px;display:inline-block;margin-right:8px}.details-box{background:#f8fafc;padding:14px;border-radius:8px;margin-top:12px;border-left:4px solid #be185d}.details-box h4{color:#9d174d;margin-bottom:8px;font-size:.9rem}.details-box ul{margin-left:18px;font-size:.9rem}.details-box li{margin-bottom:6px}.pricing-table{width:100%;border-collapse:collapse;margin-top:12px}.pricing-table th,.pricing-table td{padding:10px;text-align:left;border-bottom:1px solid var(--border)}.pricing-table th{background:var(--bg);font-weight:600}textarea{width:100%;min-height:120px;padding:14px;border:2px solid var(--border);border-radius:10px;font-family:inherit;margin-top:10px}.help-section{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border:2px solid #7dd3fc;border-radius:16px;padding:20px;margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}.chat-btn{background:var(--primary);color:#fff;border:none;padding:12px 24px;border-radius:10px;font-weight:600;cursor:pointer}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Bartending Side Gig - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #8e44ad, #9b59b6); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e8daef, #d7bde2); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #6c3483; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.2em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #e8daef; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #8e44ad; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #8e44ad; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+        .pricing-table th, .pricing-table td { padding: 12px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .pricing-table th { background: #8e44ad; color: white; }
+        .pricing-table tr:hover { background: #f8f9fa; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .service-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; border-left: 4px solid #8e44ad; }
+        .service-card .emoji { font-size: 2em; margin-bottom: 10px; }
+        .service-card h4 { color: #1a1a2e; font-size: 13px; margin-bottom: 5px; }
+        .service-card p { color: #666; font-size: 11px; }
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .platform-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #4caf50; }
+        .platform-card h4 { color: #1a1a2e; margin-bottom: 8px; }
+        .platform-card h4 a { color: #8e44ad; text-decoration: none; }
+        .platform-card h4 a:hover { text-decoration: underline; }
+        .platform-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .platform-card .type { color: #2e7d32; font-weight: 600; font-size: 12px; margin-top: 8px; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .skills-box { background: #f8f9fa; border-radius: 15px; padding: 20px; margin: 15px 0; }
+        .skills-box h4 { color: #1a1a2e; margin-bottom: 15px; }
+        .skills-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+        .skill-item { display: flex; align-items: center; gap: 10px; padding: 10px; background: white; border-radius: 8px; }
+        .skill-item .emoji { font-size: 1.3em; }
+        .skill-item span { color: #666; font-size: 13px; }
+        .skill-item a { color: #8e44ad; text-decoration: none; }
+        .skill-item a:hover { text-decoration: underline; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #8e44ad, #9b59b6); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #8e44ad; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #8e44ad; text-decoration: none; font-weight: 600; }
+        .progress-tracker { background: linear-gradient(135deg, #8e44ad, #9b59b6); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #8e44ad; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #8e44ad, #9b59b6); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+    </style>
 </head>
 <body>
-  <header class="header"><a href="index.html" class="back-link">← Back to All Playbooks</a><span class="category-badge">🍸 Event Services</span><h1>Mobile Bartending Business</h1><p style="opacity:.9;max-width:600px;margin:0 auto">Bring the bar to any event! Weddings, parties, corporate - fun and profitable!</p></header>
-  <main class="main-content">
-    <div class="goal-card"><h2>🎯 What You'll Achieve</h2><p>Start a mobile bartending business serving drinks at private events. Fun work, great tips!</p><div class="earnings">💰 Per event: $300-800+ | Weddings: $500-1,500+ | Plus tips: 15-20% | Monthly: $3,000-12,000+</div></div>
-    <div class="section-card"><h2>💵 Mobile Bartending Pricing</h2>
-      <table class="pricing-table"><tr><th>Service Type</th><th>Price</th><th>Notes</th></tr><tr><td>Hourly rate</td><td>$40-75/hr</td><td>Per bartender</td></tr><tr><td>Small party (3-4 hrs)</td><td>$250-400</td><td>Under 50 guests</td></tr><tr><td>Large party (4-5 hrs)</td><td>$400-700</td><td>50-100 guests</td></tr><tr><td>Wedding (5-6 hrs)</td><td>$500-1,200</td><td>Premium service</td></tr><tr><td>Corporate event</td><td>$400-1,000</td><td>Professional setting</td></tr><tr><td>Portable bar rental</td><td>$150-400</td><td>Add-on service</td></tr></table></div>
-    <div class="section-card"><h2>📋 Step-by-Step Action Plan</h2>
-      <ul class="task-list">
-        <li class="task-item"><div class="task-checkbox" data-task="0"></div><div><div class="task-title">Step 1: Learn bartending skills</div><div class="task-desc">Classic cocktails, speed, customer service. Practice makes perfect!</div><div class="details-box"><h4>🍹 Key Skills:</h4><ul><li>Classic cocktail recipes</li><li>Speed and efficiency</li><li>Customer service</li><li>Responsible alcohol service</li><li>Signature cocktail creation</li><li>Bartending school optional</li></ul></div><span class="task-badge">🍹 Master the classics</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="1"></div><div><div class="task-title">Step 2: Get licensed and insured</div><div class="task-desc">Liquor license requirements vary. Liability insurance is critical!</div><div class="details-box"><h4>📋 Legal Requirements:</h4><ul><li>Check state/local liquor laws</li><li>TIPS or ServSafe Alcohol cert</li><li>Business license</li><li>Liability insurance ($1M+)</li><li>Liquor liability insurance</li><li>Some states: special permit</li></ul></div><span class="task-badge">🛡️ Insurance critical</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="2"></div><div><div class="task-title">Step 3: Get bar equipment and supplies</div><div class="task-desc">Portable bar, tools, glassware. Professional setup impresses!</div><span class="task-badge">🍸 Quality bar tools</span><span class="task-badge">📦 Portable bar setup</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="3"></div><div><div class="task-title">Step 4: Market your bartending services</div><div class="task-desc">Weddings are biggest market! Partner with planners and venues.</div><div class="details-box"><h4>📣 Finding Events:</h4><ul><li>The Knot, WeddingWire</li><li>GigSalad, Thumbtack</li><li>Wedding planner partnerships</li><li>Venue relationships</li><li>Instagram portfolio</li><li>Caterer partnerships</li></ul></div><span class="task-badge">💒 Wedding market</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="4"></div><div><div class="task-title">Step 5: Deliver memorable experiences</div><div class="task-desc">Professional, personable, perfect drinks. Make every event special!</div><span class="task-badge">✨ Create experience</span><span class="task-badge">🍸 Perfect drinks</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="5"></div><div><div class="task-title">Step 6: Scale your bartending business</div><div class="task-desc">Hire bartenders, add mobile bars, corporate accounts.</div><div class="details-box"><h4>🚀 Growth Options:</h4><ul><li>Hire additional bartenders</li><li>Multiple portable bars</li><li>Corporate event contracts</li><li>Cocktail class offerings</li><li>Bar trailer investment</li></ul></div><span class="task-badge">👥 Build a team</span></div></li>
-      </ul></div>
-    <div class="section-card"><h2>📝 Your Bartending Tracker</h2><textarea id="userNotes" placeholder="Track your mobile bartending business:
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Playbooks</a>
+        
+        <div class="header">
+            <h1>🍸 Mobile Bartending Side Gig</h1>
+            <p class="subtitle">Bring the bar to any event! Weddings, parties, corporate - fun work!</p>
+            <div class="time-badge">💰 $300-1,500 per event + tips • Weekends • Have fun!</div>
+        </div>
 
-Certifications: TIPS ✓, ServSafe ✓
-Insurance: $1M liability + liquor ✓
-Equipment: Portable bar, full setup
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Turn your bartending skills into weekend income! Weddings, birthday parties, and corporate events all need bartenders. One Friday wedding pays $500-1,500 + tips. Work 2-3 events/month on weekends = $1,000-5,000+ extra income. Fun work, meet great people, and get paid well!</p>
+            </div>
+            <div class="income-highlight">
+                <h3>$300-1,500+ Per Event</h3>
+                <p>Small party: $250-400 • Large party: $400-700 • Weddings: $500-1,500+ • Plus tips: 15-20%!</p>
+            </div>
+        </div>
 
-This month:
-- Weddings (3): $2,400
-- Birthday parties (4): $1,400
-- Corporate event: $650
-- Tips received: ~$680
+        <div class="card">
+            <h2><span class="icon">💰</span> Pricing Guide</h2>
+            <table class="pricing-table">
+                <tr><th>Event Type</th><th>Price</th><th>Duration</th></tr>
+                <tr><td>Hourly rate</td><td>$40-75/hr</td><td>Per bartender</td></tr>
+                <tr><td>Small party (under 50)</td><td>$250-400</td><td>3-4 hours</td></tr>
+                <tr><td>Large party (50-100)</td><td>$400-700</td><td>4-5 hours</td></tr>
+                <tr><td>Wedding</td><td>$500-1,200</td><td>5-6 hours</td></tr>
+                <tr><td>Corporate event</td><td>$400-1,000</td><td>3-5 hours</td></tr>
+                <tr><td>Portable bar rental</td><td>$150-400</td><td>Add-on service</td></tr>
+            </table>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Wedding Season = Gold!</div>
+                <p>May-October is peak wedding season. One Saturday wedding pays $800-1,500 + $150-300 in tips. Book early—popular bartenders get booked 6-12 months out!</p>
+            </div>
+        </div>
 
-Monthly revenue: $5,130
-Supplies/ice: ~$200
-Net: $4,930
+        <div class="card">
+            <h2><span class="icon">🎉</span> Event Types</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="emoji">💒</div>
+                    <h4>Weddings</h4>
+                    <p>Highest paying!</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🎂</div>
+                    <h4>Birthday Parties</h4>
+                    <p>Milestone events</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🏢</div>
+                    <h4>Corporate Events</h4>
+                    <p>Holiday parties, launches</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🏠</div>
+                    <h4>House Parties</h4>
+                    <p>Private gatherings</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🎓</div>
+                    <h4>Graduations</h4>
+                    <p>Seasonal demand</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">💍</div>
+                    <h4>Engagement Parties</h4>
+                    <p>Celebrations!</p>
+                </div>
+            </div>
+        </div>
 
-The Knot reviews: 5.0 (28 reviews)
-Wedding planner partners: 4
-Booking rate: 80%
-Avg event: 4.5 hours
+        <div class="card">
+            <h2><span class="icon">📜</span> Requirements & Certifications</h2>
+            <div class="skills-box">
+                <h4>Get Legal & Protected!</h4>
+                <div class="skills-list">
+                    <div class="skill-item"><span class="emoji">🍹</span><span><a href="https://www.gettips.com" target="_blank">TIPS Certification</a> - Responsible alcohol service</span></div>
+                    <div class="skill-item"><span class="emoji">🛡️</span><span><a href="https://www.servsafe.com/ServSafe-Alcohol" target="_blank">ServSafe Alcohol</a> - Alternative cert</span></div>
+                    <div class="skill-item"><span class="emoji">📋</span><span>Check local/state liquor laws</span></div>
+                    <div class="skill-item"><span class="emoji">🛡️</span><span>Liability insurance ($1M+ recommended)</span></div>
+                    <div class="skill-item"><span class="emoji">🍾</span><span>Liquor liability insurance (essential!)</span></div>
+                    <div class="skill-item"><span class="emoji">📝</span><span>Business license (check local)</span></div>
+                </div>
+            </div>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Insurance is Non-Negotiable!</div>
+                <p>Serving alcohol = liability. Get proper insurance ($500-1,000/year typically). It protects you AND makes you more bookable—venues require proof of insurance!</p>
+            </div>
+        </div>
 
-Signature cocktails: Custom menu for each event
+        <div class="card">
+            <h2><span class="icon">🌐</span> Where to Find Events</h2>
+            <p style="color: #666; margin-bottom: 15px;">Get booked for events:</p>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h4><a href="https://www.theknot.com/vendors" target="_blank">The Knot →</a></h4>
+                    <p>List your bartending service! Couples actively searching for wedding bartenders. Premium clients with budgets!</p>
+                    <div class="type">💒 Best for: Weddings</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.weddingwire.com/vendors" target="_blank">WeddingWire →</a></h4>
+                    <p>Another major wedding platform. Free listing available. Build reviews, get booked!</p>
+                    <div class="type">💒 Best for: Weddings</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.gigsalad.com" target="_blank">GigSalad →</a></h4>
+                    <p>Event services marketplace. Bartenders, servers, event staff. Corporate and private events!</p>
+                    <div class="type">🎉 Best for: All events</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.thumbtack.com" target="_blank">Thumbtack →</a></h4>
+                    <p>People post event needs, you respond. Pay per lead but high-intent clients!</p>
+                    <div class="type">🎯 Best for: Variety</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.instagram.com" target="_blank">Instagram →</a></h4>
+                    <p>Post your setups, signature cocktails, event highlights. Tag venues and planners. Visual marketing works!</p>
+                    <div class="type">📸 Best for: Visual marketing</div>
+                </div>
+                <div class="platform-card">
+                    <h4>Wedding Planners & Caterers</h4>
+                    <p>Build relationships with planners, caterers, and venues. They refer bartenders constantly! One good relationship = steady bookings.</p>
+                    <div class="type">🤝 Best for: Referrals</div>
+                </div>
+            </div>
+        </div>
 
-Goal: 8 events/month = $7,000+"></textarea></div>
-    <div class="help-section"><span style="font-size:24px">💬</span><div style="flex:1"><strong>Need Help?</strong> Chat with a coach!</div><button class="chat-btn" onclick="location.href='https://asapcreditrepairusa.com/chat'">Start Chat</button></div>
-  </main>
-  <script>const K='pb_bartending';function load(){const s=localStorage.getItem(K);if(s){const d=JSON.parse(s);document.querySelectorAll('.task-checkbox').forEach((b,i)=>{if(d.tasks&&d.tasks[i]){b.classList.add('checked');b.innerHTML='✓'}});if(d.notes)document.getElementById('userNotes').value=d.notes}}function save(){const t=[];document.querySelectorAll('.task-checkbox').forEach(b=>t.push(b.classList.contains('checked')));localStorage.setItem(K,JSON.stringify({tasks:t,notes:document.getElementById('userNotes').value}))}document.querySelectorAll('.task-checkbox').forEach(b=>b.onclick=function(){this.classList.toggle('checked');this.innerHTML=this.classList.contains('checked')?'✓':'';save()});document.getElementById('userNotes').oninput=save;load();</script>
+        <div class="card">
+            <h2><span class="icon">🧰</span> Equipment Needed</h2>
+            <div class="skills-box">
+                <h4>Professional Setup ($500-2,000 to Start)</h4>
+                <div class="skills-list">
+                    <div class="skill-item"><span class="emoji">🍸</span><span>Bar tool kit (shaker, jigger, strainer, etc.)</span></div>
+                    <div class="skill-item"><span class="emoji">📦</span><span>Portable bar or table + bar covering</span></div>
+                    <div class="skill-item"><span class="emoji">🧊</span><span>Ice bins and coolers</span></div>
+                    <div class="skill-item"><span class="emoji">🥤</span><span>Glassware (or offer with plastic)</span></div>
+                    <div class="skill-item"><span class="emoji">🧹</span><span>Bar mats, towels, garnish trays</span></div>
+                    <div class="skill-item"><span class="emoji">👔</span><span>Professional attire (black on black)</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Master bartending skills</div>
+                    <div class="step-desc">Learn classic cocktails (Old Fashioned, Margarita, Mojito, Martini, etc.). Practice speed and consistency. YouTube has tons of free tutorials!</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Get TIPS or ServSafe Alcohol certified</div>
+                    <div class="step-desc">Responsible alcohol service certification. Required in many areas, and venues expect it. Online course, takes a few hours. $30-50.</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Get proper insurance</div>
+                    <div class="step-desc">General liability + liquor liability insurance. Essential for serving alcohol! $500-1,000/year typically. Venues require proof of insurance.</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Get your bar equipment</div>
+                    <div class="step-desc">Bar tools, portable bar/table setup, coolers, glassware. Start basic, upgrade as you book more events. $500-1,500 to start.</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Create your service packages</div>
+                    <div class="step-desc">Hourly rate, event packages, bar rental add-on. Create a simple menu/pricing PDF. Signature cocktail options are a nice upsell!</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Set up your online presence</div>
+                    <div class="step-desc">Instagram for photos, listings on The Knot/WeddingWire/GigSalad. Google Business Profile. Professional photos of your setup!</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Book your first events</div>
+                    <div class="step-desc">Start with friends/family at a discount to build portfolio. Take photos at every event! Collect testimonials. First 5 events are about building proof.</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Build referral relationships</div>
+                    <div class="step-desc">Connect with wedding planners, caterers, venues, photographers. They refer bartenders! Offer to do a tasting event. One good planner relationship = 5-10 bookings/year.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎓</span> Resources</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🍹</div>
+                    <h4>TIPS Certification</h4>
+                    <div class="platform">🌐 Certification</div>
+                    <p>Training for Intervention ProcedureS. Industry standard alcohol service cert!</p>
+                    <a href="https://www.gettips.com" class="influencer-link" target="_blank">Get Certified →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Cocktail Tutorials</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Learn classic cocktails and flair techniques. Tons of free content!</p>
+                    <a href="https://www.youtube.com/results?search_query=classic+cocktail+recipes" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💬</div>
+                    <h4>r/bartenders</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Community of bartenders sharing tips, recipes, and business advice!</p>
+                    <a href="https://reddit.com/r/bartenders" class="influencer-link" target="_blank">Reddit →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📚</div>
+                    <h4>Difford's Guide</h4>
+                    <div class="platform">🌐 Resource</div>
+                    <p>Massive cocktail recipe database. Master the classics!</p>
+                    <a href="https://www.diffordsguide.com" class="influencer-link" target="_blank">Recipes →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Mobile Bartending Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your mobile bartending side gig!
+
+CERTIFICATIONS:
+☐ TIPS or ServSafe Alcohol
+☐ Business license
+☐ General liability insurance
+☐ Liquor liability insurance
+
+EQUIPMENT:
+☐ Bar tool kit
+☐ Portable bar/table
+☐ Coolers and ice bins
+☐ Glassware
+☐ Bar mats and towels
+
+MARKETING:
+☐ Instagram: @____
+☐ The Knot listing
+☐ WeddingWire listing
+☐ GigSalad profile
+☐ Google Business Profile
+
+PRICING:
+Hourly rate: $____
+Small party (3-4 hrs): $____
+Large party (4-5 hrs): $____
+Wedding (5-6 hrs): $____
+Bar rental add-on: $____
+
+SIGNATURE COCKTAILS:
+1. ____
+2. ____
+3. ____
+
+EVENTS COMPLETED: ____
+REVIEWS: ____
+
+REFERRAL PARTNERS:
+1. ____ (planner/caterer/venue)
+2. ____
+3. ____
+
+UPCOMING EVENTS:
+1. Date: ____ | Type: ____ | Price: $____
+2. Date: ____ | Type: ____ | Price: $____
+
+THIS MONTH REVENUE: $____
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-mobile-bartending');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-mobile-bartending', JSON.stringify({ steps, notes }));
+        }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>

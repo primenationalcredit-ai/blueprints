@@ -1,52 +1,391 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Catering Business | ASAP Credit Repair Playbook</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>:root{--primary:#063d86;--success:#10b981;--bg:#f8fafc;--text:#1e293b;--text-light:#64748b;--border:#e2e8f0}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}.header{background:linear-gradient(135deg,#ea580c,#c2410c);color:#fff;padding:40px 20px 50px;text-align:center}.header h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:12px}.main-content{max-width:800px;margin:-30px auto 40px;padding:0 20px}.back-link{color:#fff;text-decoration:none;opacity:.8;display:block;margin-bottom:16px}.category-badge{display:inline-block;background:rgba(255,255,255,.2);padding:6px 16px;border-radius:20px;font-size:.85rem;margin-bottom:16px}.goal-card{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid var(--success);border-radius:16px;padding:24px;margin-bottom:24px}.goal-card h2{color:#065f46;margin-bottom:12px}.goal-card .earnings{background:#fff;padding:10px 18px;border-radius:10px;margin-top:14px;font-weight:600;color:#065f46;display:inline-block}.section-card{background:#fff;border-radius:16px;padding:28px;margin-bottom:24px;border:1px solid var(--border)}.section-card h2{color:var(--primary);margin-bottom:20px}.task-list{list-style:none}.task-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)}.task-checkbox{width:28px;height:28px;border:2px solid var(--border);border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}.task-checkbox.checked{background:var(--success);border-color:var(--success);color:#fff}.task-title{font-weight:600;margin-bottom:6px}.task-desc{color:var(--text-light);font-size:.95rem}.task-badge{font-size:.8rem;padding:4px 10px;border-radius:6px;background:var(--bg);margin-top:10px;display:inline-block;margin-right:8px}.details-box{background:#f8fafc;padding:14px;border-radius:8px;margin-top:12px;border-left:4px solid #ea580c}.details-box h4{color:#c2410c;margin-bottom:8px;font-size:.9rem}.details-box ul{margin-left:18px;font-size:.9rem}.details-box li{margin-bottom:6px}.pricing-table{width:100%;border-collapse:collapse;margin-top:12px}.pricing-table th,.pricing-table td{padding:10px;text-align:left;border-bottom:1px solid var(--border)}.pricing-table th{background:var(--bg);font-weight:600}textarea{width:100%;min-height:120px;padding:14px;border:2px solid var(--border);border-radius:10px;font-family:inherit;margin-top:10px}.help-section{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border:2px solid #7dd3fc;border-radius:16px;padding:20px;margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}.chat-btn{background:var(--primary);color:#fff;border:none;padding:12px 24px;border-radius:10px;font-weight:600;cursor:pointer}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catering Side Gig - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #fadbd8, #f5b7b1); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #922b21; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.2em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #fadbd8; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #e74c3c; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #e74c3c; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+        .pricing-table th, .pricing-table td { padding: 12px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .pricing-table th { background: #e74c3c; color: white; }
+        .pricing-table tr:hover { background: #f8f9fa; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .service-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; border-left: 4px solid #e74c3c; }
+        .service-card .emoji { font-size: 2em; margin-bottom: 10px; }
+        .service-card h4 { color: #1a1a2e; font-size: 13px; margin-bottom: 5px; }
+        .service-card p { color: #666; font-size: 11px; }
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .platform-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #4caf50; }
+        .platform-card h4 { color: #1a1a2e; margin-bottom: 8px; }
+        .platform-card h4 a { color: #c0392b; text-decoration: none; }
+        .platform-card h4 a:hover { text-decoration: underline; }
+        .platform-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .platform-card .type { color: #2e7d32; font-weight: 600; font-size: 12px; margin-top: 8px; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .skills-box { background: #f8f9fa; border-radius: 15px; padding: 20px; margin: 15px 0; }
+        .skills-box h4 { color: #1a1a2e; margin-bottom: 15px; }
+        .skills-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+        .skill-item { display: flex; align-items: center; gap: 10px; padding: 10px; background: white; border-radius: 8px; }
+        .skill-item .emoji { font-size: 1.3em; }
+        .skill-item span { color: #666; font-size: 13px; }
+        .skill-item a { color: #c0392b; text-decoration: none; }
+        .skill-item a:hover { text-decoration: underline; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #e74c3c, #c0392b); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #c0392b; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #c0392b; text-decoration: none; font-weight: 600; }
+        .progress-tracker { background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #e74c3c; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+    </style>
 </head>
 <body>
-  <header class="header"><a href="index.html" class="back-link">← Back to All Playbooks</a><span class="category-badge">🍽️ Food Services</span><h1>Catering Business</h1><p style="opacity:.9;max-width:600px;margin:0 auto">Feed events and parties! High-ticket jobs with great profit margins.</p></header>
-  <main class="main-content">
-    <div class="goal-card"><h2>🎯 What You'll Achieve</h2><p>Start a catering business serving events, parties, and corporate clients. High revenue per event!</p><div class="earnings">💰 Per person: $25-75+ | Small event: $500-2,000 | Large event: $3,000-15,000+ | Monthly: $5,000-30,000+</div></div>
-    <div class="section-card"><h2>💵 Catering Pricing</h2>
-      <table class="pricing-table"><tr><th>Service Type</th><th>Per Person</th><th>Notes</th></tr><tr><td>Drop-off/buffet</td><td>$15-30</td><td>Food only, no service</td></tr><tr><td>Full-service buffet</td><td>$30-50</td><td>Setup + service staff</td></tr><tr><td>Plated dinner</td><td>$45-75</td><td>Premium service</td></tr><tr><td>Corporate lunch</td><td>$15-25</td><td>Regular contracts</td></tr><tr><td>Wedding catering</td><td>$75-150</td><td>Full-service</td></tr><tr><td>Food cost target</td><td>25-35%</td><td>Of menu price</td></tr></table></div>
-    <div class="section-card"><h2>📋 Step-by-Step Action Plan</h2>
-      <ul class="task-list">
-        <li class="task-item"><div class="task-checkbox" data-task="0"></div><div><div class="task-title">Step 1: Develop your menu and specialty</div><div class="task-desc">What cuisine? What's your signature? Specialize to stand out!</div><div class="details-box"><h4>🍴 Menu Planning:</h4><ul><li>Define your cuisine/specialty</li><li>Scalable recipes (cook for 10-200)</li><li>Dietary options (vegan, GF)</li><li>Signature dishes</li><li>Cost out every recipe</li><li>Test and perfect</li></ul></div><span class="task-badge">🍴 Signature dishes</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="1"></div><div><div class="task-title">Step 2: Get licensed and set up kitchen</div><div class="task-desc">Commercial kitchen required in most areas. Health permits essential!</div><div class="details-box"><h4>📋 Legal Requirements:</h4><ul><li>Food handler's certification</li><li>Business license</li><li>Health department permit</li><li>Commercial kitchen (rent or own)</li><li>Liability insurance</li><li>Check cottage food laws</li></ul></div><span class="task-badge">🏭 Commercial kitchen</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="2"></div><div><div class="task-title">Step 3: Get catering equipment</div><div class="task-desc">Chafing dishes, transport containers, serving ware. Buy used to start!</div><span class="task-badge">🍲 Chafing dishes</span><span class="task-badge">📦 Transport containers</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="3"></div><div><div class="task-title">Step 4: Market your catering services</div><div class="task-desc">Weddings, corporate, and parties. Build relationships!</div><div class="details-box"><h4>📣 Finding Clients:</h4><ul><li>Wedding venues and planners</li><li>Corporate offices directly</li><li>The Knot, WeddingWire</li><li>Instagram food photography</li><li>Tastings for planners/venues</li><li>Google Business Profile</li></ul></div><span class="task-badge">💒 Wedding market</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="4"></div><div><div class="task-title">Step 5: Execute flawless events</div><div class="task-desc">On-time, delicious, professional. Presentation matters!</div><span class="task-badge">⏰ Always on time</span><span class="task-badge">✨ Beautiful presentation</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="5"></div><div><div class="task-title">Step 6: Scale your catering business</div><div class="task-desc">Hire staff, get bigger events, corporate contracts.</div><div class="details-box"><h4>🚀 Growth Options:</h4><ul><li>Build reliable staff team</li><li>Corporate lunch contracts</li><li>Exclusive venue partnerships</li><li>Add event rentals</li><li>Own commercial kitchen</li></ul></div><span class="task-badge">🏢 Corporate contracts</span></div></li>
-      </ul></div>
-    <div class="section-card"><h2>📝 Your Catering Tracker</h2><textarea id="userNotes" placeholder="Track your catering business:
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Playbooks</a>
+        
+        <div class="header">
+            <h1>🍽️ Catering Side Gig</h1>
+            <p class="subtitle">Feed events and parties on weekends! High-ticket jobs, great margins</p>
+            <div class="time-badge">💰 $500-5,000+ per event • Weekends • Cook what you love!</div>
+        </div>
 
-Specialty: Southern comfort food
-Kitchen: Shared commercial ($500/mo)
-Insurance: $2M liability ✓
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Turn your cooking skills into weekend income by catering events! Weddings, birthday parties, corporate lunches, and family gatherings all need food. One Saturday wedding can pay $1,500-5,000+. Do 2-4 events/month as a side gig = $2,000-10,000+ extra income while keeping your day job!</p>
+            </div>
+            <div class="income-highlight">
+                <h3>$500-5,000+ Per Event</h3>
+                <p>Small party: $500-1,500 • Large event: $2,000-5,000 • Weddings: $3,000-10,000+</p>
+            </div>
+        </div>
 
-This month's events:
-- Corporate lunches (4): $3,200
-- Birthday party (50 ppl): $1,750
-- Wedding (120 ppl): $7,200
-- Drop-off orders (8): $1,400
+        <div class="card">
+            <h2><span class="icon">💰</span> Pricing Guide</h2>
+            <table class="pricing-table">
+                <tr><th>Service Type</th><th>Per Person</th><th>Total (50 guests)</th></tr>
+                <tr><td>Drop-off buffet (food only)</td><td>$15-30</td><td>$750-1,500</td></tr>
+                <tr><td>Full-service buffet</td><td>$30-50</td><td>$1,500-2,500</td></tr>
+                <tr><td>Plated dinner service</td><td>$45-75</td><td>$2,250-3,750</td></tr>
+                <tr><td>Corporate lunch</td><td>$15-25</td><td>$750-1,250</td></tr>
+                <tr><td>Wedding catering</td><td>$75-150</td><td>$3,750-7,500</td></tr>
+            </table>
+            <p style="color: #666; font-size: 13px; margin-top: 10px;">Target food cost: 25-35% of menu price</p>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Start with Drop-Off Catering!</div>
+                <p>Drop-off is easiest—cook, deliver, done. No staffing needed! Once you're confident, add full-service for higher prices. Many side gig caterers only do drop-off and still make $2,000-5,000/month!</p>
+            </div>
+        </div>
 
-Monthly revenue: $13,550
-Food cost (32%): $4,336
-Kitchen rental: $500
-Staff for events: $1,200
-Net profit: $7,514
+        <div class="card">
+            <h2><span class="icon">🍴</span> Event Types to Cater</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="emoji">💒</div>
+                    <h4>Weddings</h4>
+                    <p>Highest paying events!</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🎂</div>
+                    <h4>Birthday Parties</h4>
+                    <p>Easy, frequent gigs</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🏢</div>
+                    <h4>Corporate Lunches</h4>
+                    <p>Repeat business!</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">👶</div>
+                    <h4>Baby Showers</h4>
+                    <p>Popular, good money</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🎓</div>
+                    <h4>Graduations</h4>
+                    <p>Seasonal demand</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🏠</div>
+                    <h4>House Parties</h4>
+                    <p>Holidays, game days</p>
+                </div>
+            </div>
+        </div>
 
-Upcoming bookings: 6 events
-Wedding inquiries: 4
-Corporate accounts: 3
+        <div class="card">
+            <h2><span class="icon">📜</span> Legal Requirements</h2>
+            <div class="skills-box">
+                <h4>Get Legal Before You Cook!</h4>
+                <div class="skills-list">
+                    <div class="skill-item"><span class="emoji">📋</span><span><a href="https://www.servsafe.com/ServSafe-Food-Handler" target="_blank">Food Handler's Cert</a> ($10-15 online)</span></div>
+                    <div class="skill-item"><span class="emoji">🏠</span><span><a href="https://foodsafetysearch.com/cottage-food-laws-state/" target="_blank">Cottage Food Laws</a> - Check your state!</span></div>
+                    <div class="skill-item"><span class="emoji">🏭</span><span>Commercial kitchen (if required)</span></div>
+                    <div class="skill-item"><span class="emoji">🛡️</span><span>Liability insurance ($300-500/year)</span></div>
+                    <div class="skill-item"><span class="emoji">📝</span><span>Business license (check local)</span></div>
+                    <div class="skill-item"><span class="emoji">🏥</span><span>Health department permit</span></div>
+                </div>
+            </div>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Shared Commercial Kitchens!</div>
+                <p>Don't need your own commercial kitchen! Search "commercial kitchen rental [your city]" or "commissary kitchen." Rent by the hour ($15-50/hr) when you have events.</p>
+            </div>
+        </div>
 
-Goal: 2 weddings + regular corporate = $20,000+/month"></textarea></div>
-    <div class="help-section"><span style="font-size:24px">💬</span><div style="flex:1"><strong>Need Help?</strong> Chat with a coach!</div><button class="chat-btn" onclick="location.href='https://asapcreditrepairusa.com/chat'">Start Chat</button></div>
-  </main>
-  <script>const K='pb_catering';function load(){const s=localStorage.getItem(K);if(s){const d=JSON.parse(s);document.querySelectorAll('.task-checkbox').forEach((b,i)=>{if(d.tasks&&d.tasks[i]){b.classList.add('checked');b.innerHTML='✓'}});if(d.notes)document.getElementById('userNotes').value=d.notes}}function save(){const t=[];document.querySelectorAll('.task-checkbox').forEach(b=>t.push(b.classList.contains('checked')));localStorage.setItem(K,JSON.stringify({tasks:t,notes:document.getElementById('userNotes').value}))}document.querySelectorAll('.task-checkbox').forEach(b=>b.onclick=function(){this.classList.toggle('checked');this.innerHTML=this.classList.contains('checked')?'✓':'';save()});document.getElementById('userNotes').oninput=save;load();</script>
+        <div class="card">
+            <h2><span class="icon">🌐</span> Where to Find Clients</h2>
+            <p style="color: #666; margin-bottom: 15px;">Get booked for events:</p>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h4><a href="https://www.theknot.com/vendors" target="_blank">The Knot →</a></h4>
+                    <p>List your catering service! Couples actively searching for wedding caterers. Premium market, high budgets!</p>
+                    <div class="type">💒 Best for: Weddings</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.weddingwire.com/vendors" target="_blank">WeddingWire →</a></h4>
+                    <p>Another major wedding platform. Free listing available. Couples compare caterers and request quotes!</p>
+                    <div class="type">💒 Best for: Weddings</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.thumbtack.com" target="_blank">Thumbtack →</a></h4>
+                    <p>People post catering needs, you respond. All event types—parties, corporate, private dinners. Pay per lead.</p>
+                    <div class="type">🎯 Best for: All events</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.gigsalad.com" target="_blank">GigSalad →</a></h4>
+                    <p>Event services marketplace. Catering, food trucks, private chefs. Good for corporate events!</p>
+                    <div class="type">🎉 Best for: Variety</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.instagram.com" target="_blank">Instagram →</a></h4>
+                    <p>Food photos sell! Post your dishes, behind-the-scenes, event setups. Use local hashtags. DMs become bookings!</p>
+                    <div class="type">📸 Best for: Visual marketing</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.facebook.com/groups" target="_blank">Facebook Groups →</a></h4>
+                    <p>Join local event planning, wedding, and community groups. Offer your services when people ask!</p>
+                    <div class="type">👥 Best for: Local reach</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Define your specialty cuisine</div>
+                    <div class="step-desc">What do you cook best? BBQ, Italian, Mexican, soul food, vegan? Specializing makes you memorable. "The BBQ guy" gets more calls than "general caterer."</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Get food handler certification</div>
+                    <div class="step-desc">Quick online course ($10-15). Required in most areas. Shows you take food safety seriously. Check cottage food laws for your state—some allow home cooking!</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Create your menu and pricing</div>
+                    <div class="step-desc">Start with 5-8 dishes you do well. Calculate food cost for each, multiply by 2.5-3x for pricing. Create 2-3 packages (basic, standard, premium).</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Get equipment and supplies</div>
+                    <div class="step-desc">Chafing dishes, serving utensils, transport containers, coolers. Buy used on Facebook Marketplace to save! Startup: $200-500 for basics.</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Book your first event</div>
+                    <div class="step-desc">Start with friends/family at a discount to build portfolio. Take lots of photos! Get testimonials. Your first 3 events are about building proof.</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Set up your online presence</div>
+                    <div class="step-desc">Instagram for food photos (essential!), Google Business Profile for local search, listings on The Knot/WeddingWire if targeting weddings.</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Deliver flawless events</div>
+                    <div class="step-desc">On time, delicious, beautiful presentation. Communicate clearly with clients. Handle any issues gracefully. Your reputation is everything!</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Build relationships for referrals</div>
+                    <div class="step-desc">Connect with wedding planners, venues, photographers. They refer clients! Offer tastings to planners. One good venue relationship = steady bookings.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎓</span> Resources</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📋</div>
+                    <h4>ServSafe</h4>
+                    <div class="platform">🌐 Certification</div>
+                    <p>Food handler certification. Quick online course, industry standard!</p>
+                    <a href="https://www.servsafe.com" class="influencer-link" target="_blank">Get Certified →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🏠</div>
+                    <h4>Cottage Food Laws</h4>
+                    <div class="platform">🌐 Legal Guide</div>
+                    <p>Check if you can cook from home legally in your state!</p>
+                    <a href="https://foodsafetysearch.com/cottage-food-laws-state/" class="influencer-link" target="_blank">Check Laws →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>How to Start Catering</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Search for catering business tutorials on YouTube—tons of free advice!</p>
+                    <a href="https://www.youtube.com/results?search_query=how+to+start+catering+business" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💬</div>
+                    <h4>r/Catering</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Community of caterers sharing advice, tips, and experiences!</p>
+                    <a href="https://reddit.com/r/catering" class="influencer-link" target="_blank">Reddit →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Catering Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your catering side gig!
+
+SPECIALTY CUISINE: ____
+
+CERTIFICATIONS:
+☐ Food handler's certificate
+☐ Business license
+☐ Liability insurance
+☐ Health permit (if required)
+
+KITCHEN:
+☐ Home (cottage food legal)
+☐ Shared commercial kitchen: ____
+
+MENU ITEMS:
+1. ____ | Food cost: $____ | Price: $____
+2. ____ | Food cost: $____ | Price: $____
+3. ____ | Food cost: $____ | Price: $____
+4. ____ | Food cost: $____ | Price: $____
+5. ____ | Food cost: $____ | Price: $____
+
+EQUIPMENT OWNED:
+☐ Chafing dishes
+☐ Serving utensils
+☐ Transport containers
+☐ Coolers
+
+MARKETING:
+☐ Instagram: @____
+☐ Google Business Profile
+☐ The Knot / WeddingWire
+☐ Thumbtack
+
+EVENTS COMPLETED: ____
+EVENTS BOOKED: ____
+
+UPCOMING EVENTS:
+1. Date: ____ | Type: ____ | Price: $____
+2. Date: ____ | Type: ____ | Price: $____
+
+THIS MONTH REVENUE: $____
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-catering');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-catering', JSON.stringify({ steps, notes }));
+        }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>

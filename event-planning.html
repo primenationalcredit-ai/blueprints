@@ -1,53 +1,417 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Event Planning Business | ASAP Credit Repair Playbook</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>:root{--primary:#063d86;--success:#10b981;--bg:#f8fafc;--text:#1e293b;--text-light:#64748b;--border:#e2e8f0}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}.header{background:linear-gradient(135deg,#f472b6,#ec4899);color:#fff;padding:40px 20px 50px;text-align:center}.header h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:12px}.main-content{max-width:800px;margin:-30px auto 40px;padding:0 20px}.back-link{color:#fff;text-decoration:none;opacity:.8;display:block;margin-bottom:16px}.category-badge{display:inline-block;background:rgba(255,255,255,.2);padding:6px 16px;border-radius:20px;font-size:.85rem;margin-bottom:16px}.goal-card{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid var(--success);border-radius:16px;padding:24px;margin-bottom:24px}.goal-card h2{color:#065f46;margin-bottom:12px}.goal-card .earnings{background:#fff;padding:10px 18px;border-radius:10px;margin-top:14px;font-weight:600;color:#065f46;display:inline-block}.section-card{background:#fff;border-radius:16px;padding:28px;margin-bottom:24px;border:1px solid var(--border)}.section-card h2{color:var(--primary);margin-bottom:20px}.task-list{list-style:none}.task-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)}.task-checkbox{width:28px;height:28px;border:2px solid var(--border);border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}.task-checkbox.checked{background:var(--success);border-color:var(--success);color:#fff}.task-title{font-weight:600;margin-bottom:6px}.task-desc{color:var(--text-light);font-size:.95rem}.task-badge{font-size:.8rem;padding:4px 10px;border-radius:6px;background:var(--bg);margin-top:10px;display:inline-block;margin-right:8px}.details-box{background:#f8fafc;padding:14px;border-radius:8px;margin-top:12px;border-left:4px solid #f472b6}.details-box h4{color:#ec4899;margin-bottom:8px;font-size:.9rem}.details-box ul{margin-left:18px;font-size:.9rem}.details-box li{margin-bottom:6px}.pricing-table{width:100%;border-collapse:collapse;margin-top:12px}.pricing-table th,.pricing-table td{padding:10px;text-align:left;border-bottom:1px solid var(--border)}.pricing-table th{background:var(--bg);font-weight:600}textarea{width:100%;min-height:120px;padding:14px;border:2px solid var(--border);border-radius:10px;font-family:inherit;margin-top:10px}.help-section{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border:2px solid #7dd3fc;border-radius:16px;padding:20px;margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}.chat-btn{background:var(--primary);color:#fff;border:none;padding:12px 24px;border-radius:10px;font-weight:600;cursor:pointer}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Planning Side Gig - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #f39c12, #e67e22); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #fdebd0, #fad7a0); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #9c640c; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.2em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #fdebd0; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #f39c12; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #f39c12; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+        .pricing-table th, .pricing-table td { padding: 12px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .pricing-table th { background: #f39c12; color: white; }
+        .pricing-table tr:hover { background: #f8f9fa; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .service-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; border-left: 4px solid #f39c12; }
+        .service-card .emoji { font-size: 2em; margin-bottom: 10px; }
+        .service-card h4 { color: #1a1a2e; font-size: 13px; margin-bottom: 5px; }
+        .service-card p { color: #666; font-size: 11px; }
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .platform-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #4caf50; }
+        .platform-card h4 { color: #1a1a2e; margin-bottom: 8px; }
+        .platform-card h4 a { color: #e67e22; text-decoration: none; }
+        .platform-card h4 a:hover { text-decoration: underline; }
+        .platform-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .platform-card .type { color: #2e7d32; font-weight: 600; font-size: 12px; margin-top: 8px; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .skills-box { background: #f8f9fa; border-radius: 15px; padding: 20px; margin: 15px 0; }
+        .skills-box h4 { color: #1a1a2e; margin-bottom: 15px; }
+        .skills-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+        .skill-item { display: flex; align-items: center; gap: 10px; padding: 10px; background: white; border-radius: 8px; }
+        .skill-item .emoji { font-size: 1.3em; }
+        .skill-item span { color: #666; font-size: 13px; }
+        .skill-item a { color: #e67e22; text-decoration: none; }
+        .skill-item a:hover { text-decoration: underline; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #f39c12, #e67e22); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #e67e22; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #e67e22; text-decoration: none; font-weight: 600; }
+        .progress-tracker { background: linear-gradient(135deg, #f39c12, #e67e22); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #f39c12; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #f39c12, #e67e22); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+    </style>
 </head>
 <body>
-  <header class="header"><a href="index.html" class="back-link">← Back to All Playbooks</a><span class="category-badge">🎉 Event Services</span><h1>Event Planning Business</h1><p style="opacity:.9;max-width:600px;margin:0 auto">Create memorable events! Weddings, parties, corporate - high-ticket service.</p></header>
-  <main class="main-content">
-    <div class="goal-card"><h2>🎯 What You'll Achieve</h2><p>Start an event planning business coordinating weddings, parties, and corporate events!</p><div class="earnings">💰 Birthday party: $500-2,000 | Wedding: $2,000-10,000+ | Corporate: $1,500-8,000+ | Monthly: $5,000-25,000+</div></div>
-    <div class="section-card"><h2>💵 Event Planning Pricing</h2>
-      <table class="pricing-table"><tr><th>Event Type</th><th>Price</th><th>Notes</th></tr><tr><td>Day-of coordination</td><td>$800-2,000</td><td>Wedding day only</td></tr><tr><td>Partial planning</td><td>$1,500-4,000</td><td>Some vendor mgmt</td></tr><tr><td>Full wedding planning</td><td>$3,000-10,000+</td><td>Start to finish</td></tr><tr><td>Birthday/shower</td><td>$500-2,000</td><td>Depends on scope</td></tr><tr><td>Corporate event</td><td>$1,500-8,000+</td><td>Size dependent</td></tr><tr><td>Percentage of budget</td><td>10-20%</td><td>Alternative pricing</td></tr></table></div>
-    <div class="section-card"><h2>📋 Step-by-Step Action Plan</h2>
-      <ul class="task-list">
-        <li class="task-item"><div class="task-checkbox" data-task="0"></div><div><div class="task-title">Step 1: Develop event planning skills</div><div class="task-desc">Organization, vendor management, timeline creation, problem-solving!</div><div class="details-box"><h4>📋 Key Skills:</h4><ul><li>Project management</li><li>Vendor negotiation</li><li>Budget management</li><li>Timeline creation</li><li>Crisis management</li><li>Design and aesthetics</li></ul></div><span class="task-badge">📋 Organization is everything</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="1"></div><div><div class="task-title">Step 2: Build vendor relationships</div><div class="task-desc">Venues, caterers, photographers, florists. Your network is your value!</div><div class="details-box"><h4>🤝 Key Vendors:</h4><ul><li>Venues (multiple options)</li><li>Caterers</li><li>Photographers/videographers</li><li>Florists</li><li>DJs/bands</li><li>Rental companies</li></ul></div><span class="task-badge">🤝 Vendor network = value</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="2"></div><div><div class="task-title">Step 3: Create your service packages</div><div class="task-desc">Day-of, partial planning, full planning. Clear deliverables!</div><span class="task-badge">📦 Clear packages</span><span class="task-badge">📝 Written contracts</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="3"></div><div><div class="task-title">Step 4: Build your portfolio and market</div><div class="task-desc">Photos from events, testimonials, social media presence!</div><div class="details-box"><h4>📣 Marketing:</h4><ul><li>Instagram (essential!)</li><li>The Knot, WeddingWire</li><li>Pinterest boards</li><li>Venue partnerships</li><li>Vendor referrals</li><li>Styled shoots for portfolio</li></ul></div><span class="task-badge">📸 Portfolio essential</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="4"></div><div><div class="task-title">Step 5: Execute flawless events</div><div class="task-desc">Detailed timelines, backup plans, stay calm under pressure!</div><span class="task-badge">📋 Detailed timeline</span><span class="task-badge">🆘 Always have Plan B</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="5"></div><div><div class="task-title">Step 6: Scale your planning business</div><div class="task-desc">Hire assistants, corporate accounts, destination events.</div><div class="details-box"><h4>🚀 Growth Options:</h4><ul><li>Hire event assistants</li><li>Corporate event specialty</li><li>Destination weddings</li><li>Event design services</li><li>Rental inventory</li></ul></div><span class="task-badge">🏢 Corporate = volume</span></div></li>
-      </ul></div>
-    <div class="section-card"><h2>📝 Your Event Planning Tracker</h2><textarea id="userNotes" placeholder="Track your event planning business:
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Playbooks</a>
+        
+        <div class="header">
+            <h1>🎉 Event Planning Side Gig</h1>
+            <p class="subtitle">Plan memorable events! Weddings, parties, corporate - high-ticket services</p>
+            <div class="time-badge">💰 $500-10,000+ per event • Flexible hours • Creative work!</div>
+        </div>
 
-Specialty: Weddings + corporate
-Insurance: $1M liability ✓
-Preferred vendor list: 45 vendors
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Turn your organizational skills into event planning income! Weddings, birthday parties, baby showers, and corporate events all need planners. Day-of wedding coordination pays $800-2,000 for one day's work. Plan 2-4 events/month = $2,000-10,000+ extra income while keeping your day job!</p>
+            </div>
+            <div class="income-highlight">
+                <h3>$500-10,000+ Per Event</h3>
+                <p>Day-of coordination: $800-2,000 • Partial planning: $1,500-4,000 • Full wedding: $3,000-10,000+</p>
+            </div>
+        </div>
 
-This month:
-- Full wedding planning: $4,500
-- Day-of coordination (2): $2,400
-- Corporate event: $2,800
-- Birthday party: $800
+        <div class="card">
+            <h2><span class="icon">💰</span> Pricing Guide</h2>
+            <table class="pricing-table">
+                <tr><th>Service Type</th><th>Price</th><th>What's Included</th></tr>
+                <tr><td>Day-of coordination</td><td>$800-2,000</td><td>Wedding day management only</td></tr>
+                <tr><td>Partial planning</td><td>$1,500-4,000</td><td>Some vendor management</td></tr>
+                <tr><td>Full wedding planning</td><td>$3,000-10,000+</td><td>Start to finish</td></tr>
+                <tr><td>Birthday party/shower</td><td>$500-2,000</td><td>Depends on scope</td></tr>
+                <tr><td>Corporate event</td><td>$1,500-8,000+</td><td>Size dependent</td></tr>
+                <tr><td>Percentage of budget</td><td>10-20%</td><td>Alternative pricing</td></tr>
+            </table>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Start with Day-Of Coordination!</div>
+                <p>Day-of wedding coordination is perfect for side gig planners. One Saturday = $800-2,000. Lower commitment than full planning, great entry point. Work 2-3 weddings/month!</p>
+            </div>
+        </div>
 
-Monthly revenue: $10,500
-Assistant for events: $600
-Software/tools: $100
-Net: $9,800
+        <div class="card">
+            <h2><span class="icon">🎊</span> Event Types</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="emoji">💒</div>
+                    <h4>Weddings</h4>
+                    <p>Highest paying!</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🎂</div>
+                    <h4>Birthday Parties</h4>
+                    <p>Milestones events</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">👶</div>
+                    <h4>Baby Showers</h4>
+                    <p>Creative themes</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🏢</div>
+                    <h4>Corporate Events</h4>
+                    <p>Launches, parties</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🎓</div>
+                    <h4>Graduations</h4>
+                    <p>Seasonal demand</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">💍</div>
+                    <h4>Engagement Parties</h4>
+                    <p>Celebrations!</p>
+                </div>
+            </div>
+        </div>
 
-The Knot reviews: 5.0 (24 reviews)
-Booking rate: 65%
-Upcoming weddings: 8
+        <div class="card">
+            <h2><span class="icon">📋</span> Core Skills Needed</h2>
+            <div class="skills-box">
+                <h4>What Makes a Great Event Planner</h4>
+                <div class="skills-list">
+                    <div class="skill-item"><span class="emoji">📋</span><span>Organization & project management</span></div>
+                    <div class="skill-item"><span class="emoji">🤝</span><span>Vendor negotiation & relationships</span></div>
+                    <div class="skill-item"><span class="emoji">💰</span><span>Budget management</span></div>
+                    <div class="skill-item"><span class="emoji">⏰</span><span>Timeline creation & management</span></div>
+                    <div class="skill-item"><span class="emoji">🆘</span><span>Crisis management (things go wrong!)</span></div>
+                    <div class="skill-item"><span class="emoji">🎨</span><span>Design & aesthetics eye</span></div>
+                </div>
+            </div>
+        </div>
 
-Vendor kickbacks: ~$400/month bonus
+        <div class="card">
+            <h2><span class="icon">🤝</span> Key Vendor Relationships</h2>
+            <div class="skills-box">
+                <h4>Your Network = Your Value</h4>
+                <div class="skills-list">
+                    <div class="skill-item"><span class="emoji">🏛️</span><span>Venues (multiple options to recommend)</span></div>
+                    <div class="skill-item"><span class="emoji">🍽️</span><span>Caterers</span></div>
+                    <div class="skill-item"><span class="emoji">📸</span><span>Photographers & videographers</span></div>
+                    <div class="skill-item"><span class="emoji">💐</span><span>Florists</span></div>
+                    <div class="skill-item"><span class="emoji">🎧</span><span>DJs and bands</span></div>
+                    <div class="skill-item"><span class="emoji">🪑</span><span>Rental companies</span></div>
+                </div>
+            </div>
+        </div>
 
-Goal: 3 weddings/month = $15,000+"></textarea></div>
-    <div class="help-section"><span style="font-size:24px">💬</span><div style="flex:1"><strong>Need Help?</strong> Chat with a coach!</div><button class="chat-btn" onclick="location.href='https://asapcreditrepairusa.com/chat'">Start Chat</button></div>
-  </main>
-  <script>const K='pb_events';function load(){const s=localStorage.getItem(K);if(s){const d=JSON.parse(s);document.querySelectorAll('.task-checkbox').forEach((b,i)=>{if(d.tasks&&d.tasks[i]){b.classList.add('checked');b.innerHTML='✓'}});if(d.notes)document.getElementById('userNotes').value=d.notes}}function save(){const t=[];document.querySelectorAll('.task-checkbox').forEach(b=>t.push(b.classList.contains('checked')));localStorage.setItem(K,JSON.stringify({tasks:t,notes:document.getElementById('userNotes').value}))}document.querySelectorAll('.task-checkbox').forEach(b=>b.onclick=function(){this.classList.toggle('checked');this.innerHTML=this.classList.contains('checked')?'✓':'';save()});document.getElementById('userNotes').oninput=save;load();</script>
+        <div class="card">
+            <h2><span class="icon">🌐</span> Where to Find Clients</h2>
+            <p style="color: #666; margin-bottom: 15px;">Get booked for events:</p>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h4><a href="https://www.theknot.com/vendors" target="_blank">The Knot →</a></h4>
+                    <p>List your planning services! Couples actively searching. Premium clients with budgets!</p>
+                    <div class="type">💒 Best for: Weddings</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.weddingwire.com/vendors" target="_blank">WeddingWire →</a></h4>
+                    <p>Another major wedding platform. Free listing available. Build reviews, get booked!</p>
+                    <div class="type">💒 Best for: Weddings</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.instagram.com" target="_blank">Instagram →</a></h4>
+                    <p>Post event photos, behind-the-scenes, decor inspo. Tag venues and vendors! Visual portfolio essential.</p>
+                    <div class="type">📸 Best for: Portfolio</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.pinterest.com" target="_blank">Pinterest →</a></h4>
+                    <p>Create inspiration boards. Brides use Pinterest for planning. Link to your services!</p>
+                    <div class="type">📌 Best for: Inspiration</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.thumbtack.com" target="_blank">Thumbtack →</a></h4>
+                    <p>People post event planning needs. Birthday parties, showers, corporate events!</p>
+                    <div class="type">🎯 Best for: All events</div>
+                </div>
+                <div class="platform-card">
+                    <h4>Venue Partnerships</h4>
+                    <p>Connect with venues! They recommend planners to couples. One venue relationship = 10+ referrals/year.</p>
+                    <div class="type">🤝 Best for: Referrals</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🛠️</span> Essential Tools</h2>
+            <div class="skills-box">
+                <h4>Planning Tools (Many Are Free!)</h4>
+                <div class="skills-list">
+                    <div class="skill-item"><span class="emoji">📋</span><span><a href="https://www.airtable.com" target="_blank">Airtable</a> - Client & vendor management</span></div>
+                    <div class="skill-item"><span class="emoji">📊</span><span><a href="https://docs.google.com/spreadsheets" target="_blank">Google Sheets</a> - Budgets & timelines</span></div>
+                    <div class="skill-item"><span class="emoji">📅</span><span><a href="https://www.canva.com" target="_blank">Canva</a> - Floor plans, mood boards</span></div>
+                    <div class="skill-item"><span class="emoji">✉️</span><span><a href="https://www.honeybook.com" target="_blank">HoneyBook</a> - Contracts & invoices</span></div>
+                    <div class="skill-item"><span class="emoji">💬</span><span><a href="https://slack.com" target="_blank">Slack</a> - Vendor communication</span></div>
+                    <div class="skill-item"><span class="emoji">📝</span><span><a href="https://www.notion.so" target="_blank">Notion</a> - Client portals (free!)</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Define your services</div>
+                    <div class="step-desc">Start with day-of coordination for weddings—it's the easiest entry point. One Saturday = $800-2,000. Create clear packages with defined deliverables.</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Build your vendor network</div>
+                    <div class="step-desc">Connect with photographers, DJs, caterers, florists, and venues. Attend vendor networking events. Your rolodex IS your value to clients!</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Create contracts and systems</div>
+                    <div class="step-desc">Get a proper contract template (HoneyBook has them). Create timeline templates, budget trackers, vendor contact sheets. Systems = professionalism!</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Build your portfolio</div>
+                    <div class="step-desc">Start with friends/family events at a discount. Take LOTS of photos! Styled shoots work too. You need visual proof of your work.</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Set up your online presence</div>
+                    <div class="step-desc">Instagram is essential—post event photos, decor details, vendor tags. Listings on The Knot/WeddingWire. Pinterest boards for inspiration.</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Book your first paying clients</div>
+                    <div class="step-desc">Start with day-of coordination gigs. Lower commitment, lower risk for clients. Build reviews and testimonials. Referrals will follow!</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Execute flawlessly</div>
+                    <div class="step-desc">Detailed timelines, backup plans for everything, stay calm under pressure. The event day is your time to shine! Handle problems invisibly.</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Scale your services</div>
+                    <div class="step-desc">Add partial and full planning packages. Build venue partnerships for steady referrals. Consider an assistant for event days. Corporate events = volume!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎓</span> Resources</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Jamie Wolfer</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Wedding planner business tips, client management, pricing strategies!</p>
+                    <a href="https://www.youtube.com/results?search_query=wedding+planner+business" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">✉️</div>
+                    <h4>HoneyBook</h4>
+                    <div class="platform">🌐 Software</div>
+                    <p>Contracts, invoices, client management. Industry standard for planners!</p>
+                    <a href="https://www.honeybook.com" class="influencer-link" target="_blank">HoneyBook →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💬</div>
+                    <h4>r/weddingplanning</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>See what brides struggle with—understand client pain points!</p>
+                    <a href="https://reddit.com/r/weddingplanning" class="influencer-link" target="_blank">Reddit →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📋</div>
+                    <h4>Aisle Planner</h4>
+                    <div class="platform">🌐 Software</div>
+                    <p>Professional event planning software. Timelines, checklists, seating charts!</p>
+                    <a href="https://www.aisleplanner.com" class="influencer-link" target="_blank">Aisle Planner →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Event Planning Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your event planning side gig!
+
+SERVICE PACKAGES:
+Day-of coordination: $____
+Partial planning: $____
+Full planning: $____
+
+VENDOR NETWORK:
+Venues: ____
+Caterers: ____
+Photographers: ____
+Florists: ____
+DJs: ____
+Rentals: ____
+
+TOOLS:
+☐ Contract template
+☐ Timeline template
+☐ Budget tracker
+☐ HoneyBook/Aisle Planner
+
+MARKETING:
+☐ Instagram: @____
+☐ The Knot listing
+☐ WeddingWire listing
+☐ Pinterest boards
+☐ Website: ____
+
+PORTFOLIO:
+Events completed: ____
+Reviews collected: ____
+
+UPCOMING EVENTS:
+1. Date: ____ | Type: ____ | Price: $____
+2. Date: ____ | Type: ____ | Price: $____
+
+VENUE PARTNERSHIPS:
+1. ____
+2. ____
+
+THIS MONTH REVENUE: $____
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-event-planning');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-event-planning', JSON.stringify({ steps, notes }));
+        }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>
