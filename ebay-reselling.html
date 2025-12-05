@@ -6,224 +6,427 @@
     <title>eBay Reselling Side Gig - ASAP Financial Playbook</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; line-height: 1.6; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
         .container { max-width: 800px; margin: 0 auto; }
-        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
         .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
-        .header h1 { font-size: 2.5em; color: #1a1a2e; margin-bottom: 10px; }
-        .header .subtitle { font-size: 1.2em; color: #666; margin-bottom: 20px; }
-        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 10px 25px; border-radius: 20px; }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #e53935, #c62828); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
         .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
-        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; font-size: 1.5em; }
-        .achieve-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
-        .achieve-box p { color: #2e7d32; font-size: 1.1em; }
-        .savings-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 25px; text-align: center; }
-        .savings-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
-        .source-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin: 20px 0; }
-        .source-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; border-left: 5px solid #4caf50; }
-        .source-card h4 { color: #1a1a2e; margin-bottom: 8px; }
-        .source-card p { color: #666; font-size: 0.85em; }
-        .niche-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 20px 0; }
-        .niche-card { background: #f8f9fa; border-radius: 12px; padding: 15px; text-align: center; border-left: 4px solid #667eea; }
-        .niche-card h4 { color: #1a1a2e; font-size: 0.9em; margin-bottom: 5px; }
-        .niche-card .markup { color: #4caf50; font-size: 0.8em; font-weight: 600; }
-        .example-box { background: #f8f9fa; border-radius: 15px; padding: 25px; margin: 20px 0; border-left: 5px solid #667eea; }
-        .example-box h4 { color: #1a1a2e; margin-bottom: 15px; }
-        .example-box pre { font-family: monospace; font-size: 0.9em; color: #444; line-height: 1.8; white-space: pre-wrap; }
-        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; }
-        .step:hover { background: #e8f5e9; }
-        .step-checkbox { width: 30px; height: 30px; min-width: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; color: transparent; }
-        .step-checkbox.checked { background: #667eea; color: white; }
-        .step-title { font-weight: 700; color: #1a1a2e; margin-bottom: 8px; font-size: 1.1em; }
-        .step-desc { color: #666; font-size: 0.95em; }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #b71c1c; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.2em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #ffebee; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #e53935; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #e53935; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+        .pricing-table th, .pricing-table td { padding: 12px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .pricing-table th { background: #e53935; color: white; }
+        .pricing-table tr:hover { background: #f8f9fa; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .service-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; border-left: 4px solid #e53935; }
+        .service-card .emoji { font-size: 2em; margin-bottom: 10px; }
+        .service-card h4 { color: #1a1a2e; font-size: 13px; margin-bottom: 5px; }
+        .service-card p { color: #666; font-size: 11px; }
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .platform-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #4caf50; }
+        .platform-card h4 { color: #1a1a2e; margin-bottom: 8px; }
+        .platform-card h4 a { color: #c62828; text-decoration: none; }
+        .platform-card h4 a:hover { text-decoration: underline; }
+        .platform-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .platform-card .type { color: #2e7d32; font-weight: 600; font-size: 12px; margin-top: 8px; }
         .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
         .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
-        .pro-tip p { color: #5d4e37; }
-        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
-        .warning-box .warning-title { font-weight: 700; color: #c62828; margin-bottom: 10px; }
-        .warning-box p { color: #5d3a3a; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .skills-box { background: #f8f9fa; border-radius: 15px; padding: 20px; margin: 15px 0; }
+        .skills-box h4 { color: #1a1a2e; margin-bottom: 15px; }
+        .skills-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+        .skill-item { display: flex; align-items: center; gap: 10px; padding: 10px; background: white; border-radius: 8px; }
+        .skill-item .emoji { font-size: 1.3em; }
+        .skill-item span { color: #666; font-size: 13px; }
+        .skill-item a { color: #c62828; text-decoration: none; }
+        .skill-item a:hover { text-decoration: underline; }
         .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
-        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
         .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #e53935, #c62828); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
         .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
-        .influencer-card .platform { color: #667eea; font-size: 0.9em; margin-bottom: 10px; }
-        .influencer-card p { color: #666; font-size: 0.9em; margin-bottom: 15px; }
-        .influencer-link { display: inline-block; color: #667eea; text-decoration: none; font-weight: 600; padding: 8px 20px; border: 2px solid #667eea; border-radius: 20px; }
-        .influencer-link:hover { background: #667eea; color: white; }
-        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; text-align: center; }
+        .influencer-card .platform { color: #c62828; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #c62828; text-decoration: none; font-weight: 600; }
+        .progress-tracker { background: linear-gradient(135deg, #e53935, #c62828); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
         .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
-        .progress-fill { background: white; height: 100%; border-radius: 10px; width: 0%; }
-        .notes-section textarea { width: 100%; min-height: 280px; padding: 20px; border: 2px solid #e0e0e0; border-radius: 15px; font-family: monospace; font-size: 0.95em; resize: vertical; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #e53935; }
         .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
-        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; }
-        @media (max-width: 600px) { .header h1 { font-size: 1.8em; } .step { flex-direction: column; } }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #e53935, #c62828); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+        .profit-example { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 20px; margin: 20px 0; }
+        .profit-example h4 { color: #2e7d32; margin-bottom: 15px; }
+        .profit-example pre { background: white; padding: 15px; border-radius: 10px; font-size: 13px; overflow-x: auto; }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="income-playbooks.html" class="back-link">← Back to Income Playbooks</a>
+        <a href="index.html" class="back-link">← Back to Playbooks</a>
         
         <div class="header">
             <h1>🛒 eBay Reselling Side Gig</h1>
-            <p class="subtitle">Buy low, sell high—turn thrift store finds into real money!</p>
-            <div class="time-badge">⏱️ $100 to start • 2-5x markups • Flexible hours</div>
+            <p class="subtitle">Buy low at thrift stores, sell high on eBay! 187M buyers waiting</p>
+            <div class="time-badge">💰 $500-5,000+/month • Weekend sourcing • Work from home!</div>
         </div>
-        
-        <div class="card">
-            <h2>🎯 What You'll Achieve</h2>
-            <div class="achieve-box">
-                <p>eBay reselling is a proven side gig—buy items cheap at thrift stores, garage sales, and clearance racks, then sell them for profit online. With 187 million buyers worldwide, there's demand for almost everything. Start with $100, hit thrift stores on weekends, and build a profitable side income. Many resellers earn $500-2,000/month part-time!</p>
-            </div>
-            <div class="savings-highlight">
-                <h3>$500-2,000+/Month</h3>
-                <p>Part-time potential • 2-5x typical markups • 187 million eBay buyers • Start with $100!</p>
-            </div>
-        </div>
-        
-        <div class="card">
-            <h2>🔍 Where to Find Inventory</h2>
-            <p style="color: #666; margin-bottom: 15px;">Source items cheap, sell them for more—that's the whole game!</p>
-            <div class="source-grid">
-                <div class="source-card"><h4>🏪 Thrift Stores</h4><p>Goodwill, Salvation Army. Best days: Mon-Tue after weekend donations.</p></div>
-                <div class="source-card"><h4>🏷️ Garage Sales</h4><p>Saturday mornings. Negotiate everything. Estate sales for higher-end.</p></div>
-                <div class="source-card"><h4>🏬 Retail Clearance</h4><p>Target, Walmart clearance sections. Scan barcodes with eBay app!</p></div>
-                <div class="source-card"><h4>📘 FB Marketplace</h4><p>Buy underpriced items locally, flip nationally on eBay.</p></div>
-                <div class="source-card"><h4>📦 Liquidation</h4><p>Bulq, Liquidation.com. Buy customer returns in bulk.</p></div>
-                <div class="source-card"><h4>🗑️ Free Stuff</h4><p>Curbside finds, Craigslist Free. Clean up and sell!</p></div>
-            </div>
-        </div>
-        
-        <div class="card">
-            <h2>🎯 Profitable Niches</h2>
-            <p style="color: #666; margin-bottom: 15px;">Focus on categories with high demand and good margins:</p>
-            <div class="niche-grid">
-                <div class="niche-card"><h4>👕 Vintage Clothing</h4><div class="markup">100-500% markup</div></div>
-                <div class="niche-card"><h4>🎮 Video Games</h4><div class="markup">50-300% markup</div></div>
-                <div class="niche-card"><h4>👟 Shoes (Nike, Jordan)</h4><div class="markup">100-400% markup</div></div>
-                <div class="niche-card"><h4>📚 Textbooks</h4><div class="markup">100-500% markup</div></div>
-                <div class="niche-card"><h4>🧱 LEGO Sets</h4><div class="markup">50-200% markup</div></div>
-                <div class="niche-card"><h4>🍳 Vintage Pyrex</h4><div class="markup">200-1000% markup</div></div>
-            </div>
-        </div>
-        
-        <div class="card">
-            <h2>💵 Real Profit Example</h2>
-            <div class="example-box">
-                <h4>📦 Weekend Thrift Store Haul</h4>
-                <pre>Vintage Levi's jeans: $5 → Sold $45
-Nike shoes: $8 → Sold $55
-Video game lot: $12 → Sold $85
-Vintage Pyrex: $3 → Sold $35
-Band t-shirt: $2 → Sold $25
 
-Total Cost: $30
-Total Sales: $245
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Turn thrift store treasure hunting into real income! eBay has 187 million buyers worldwide looking for exactly what you'll find at Goodwill, garage sales, and clearance racks. Buy items for $2-20, sell for $20-200. Typical markups: 2-5x your cost. Spend Saturdays sourcing, evenings listing, and watch sales roll in while you sleep!</p>
+            </div>
+            <div class="income-highlight">
+                <h3>$500-5,000+ Per Month</h3>
+                <p>Weekend warrior: $500-1,500 • Serious seller: $2,000-5,000+ • All from home!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📊</span> The Numbers</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="emoji">👥</div>
+                    <h4>187M Buyers</h4>
+                    <p>on eBay worldwide</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">📈</div>
+                    <h4>2-5x Markup</h4>
+                    <p>Typical flip profit</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">💳</div>
+                    <h4>~13% Fees</h4>
+                    <p>eBay + payment</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">💵</div>
+                    <h4>$100 Start</h4>
+                    <p>Good initial budget</p>
+                </div>
+            </div>
+            <div class="profit-example">
+                <h4>💰 Example Sourcing Day</h4>
+                <pre>
+THRIFT STORE HAUL:
+Vintage Levi's jeans:  $5  → Sold $45
+Nike shoes:            $8  → Sold $55
+Video game lot:        $12 → Sold $85
+Vintage Pyrex:         $3  → Sold $35
+Band t-shirt:          $2  → Sold $25
+
+Total Cost:     $30
+Total Sales:    $245
 eBay Fees (13%): -$32
-Shipping supplies: -$15
+Shipping:        -$15
 
 NET PROFIT: $168 (560% ROI!)
+Repeat 4x/month = $670+ profit</pre>
+            </div>
+        </div>
 
-💡 Repeat 4x/month = $670+ profit</pre>
+        <div class="card">
+            <h2><span class="icon">🔥</span> Hot Categories to Flip</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="emoji">👕</div>
+                    <h4>Vintage Clothing</h4>
+                    <p>Band tees, Levi's 100-500%</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🎮</div>
+                    <h4>Video Games</h4>
+                    <p>Consoles, retro games</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">👟</div>
+                    <h4>Shoes</h4>
+                    <p>Nike, Jordan, designer</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">📚</div>
+                    <h4>Books</h4>
+                    <p>Textbooks, first editions</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🧱</div>
+                    <h4>LEGO</h4>
+                    <p>Retired sets = gold!</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🍳</div>
+                    <h4>Vintage Kitchen</h4>
+                    <p>Pyrex, cast iron</p>
+                </div>
             </div>
         </div>
-        
+
         <div class="card">
-            <h2>📋 Your eBay Reselling Action Plan</h2>
-            
-            <div class="step" data-step="1"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 1: Create Your eBay Seller Account</div><div class="step-desc">Free to start. Set up eBay managed payments for easy payouts. Download the eBay app—you'll use it to scan barcodes and check prices while sourcing!</div></div></div>
-            
-            <div class="step" data-step="2"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 2: Learn What Sells (Research First!)</div><div class="step-desc">Before buying ANYTHING, search eBay for "sold" listings. See what items ACTUALLY sell for—not asking prices. Know your niches before you source!</div></div></div>
-            
-            <div class="step" data-step="3"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 3: Start Sourcing Inventory</div><div class="step-desc">Hit thrift stores with $50-100 budget. Look for brands, quality items, things that look interesting. Use the eBay app to check prices before buying. Start small!</div></div></div>
-            
-            <div class="step" data-step="4"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 4: Take Great Photos</div><div class="step-desc">Good lighting (natural is best), clean background, multiple angles. Show any flaws. Photos sell items—invest 2-3 minutes per item for good shots!</div></div></div>
-            
-            <div class="step" data-step="5"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 5: List Your First 10-20 Items</div><div class="step-desc">Write detailed descriptions with brand, size, condition, measurements. Use all 12 photo slots. Enable "Best Offer" on every listing. Price competitively!</div></div></div>
-            
-            <div class="step" data-step="6"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 6: Ship Promptly When Items Sell</div><div class="step-desc">Use eBay shipping labels (discounted rates). Ship within 1-2 business days. Good shipping = good reviews. Stock up on boxes, bubble wrap, and tape!</div></div></div>
-            
-            <div class="step" data-step="7"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 7: Reinvest Your Profits</div><div class="step-desc">Put earnings back into more inventory. Your buying budget grows, your listings grow, your sales grow. Scale up steadily—don't spend your profits yet!</div></div></div>
-            
-            <div class="step" data-step="8"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 8: Track What Works and Optimize</div><div class="step-desc">What sells fastest? Best margins? Which sources are most profitable? Double down on what works. Specialize in 2-3 niches you learn deeply!</div></div></div>
+            <h2><span class="icon">🔍</span> Where to Source Inventory</h2>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h4><a href="https://www.goodwill.org/locator/" target="_blank">Thrift Stores →</a></h4>
+                    <p>Goodwill, Salvation Army, local thrifts. Best days: Mon-Tue after weekend donations. Hit multiple stores!</p>
+                    <div class="type">🏪 Best for: Volume sourcing</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.estatesales.net" target="_blank">Estate Sales →</a></h4>
+                    <p>EstateSales.net lists local sales. Higher-end items, vintage finds. Go early for best selection!</p>
+                    <div class="type">🏠 Best for: Quality items</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.facebook.com/marketplace" target="_blank">FB Marketplace →</a></h4>
+                    <p>Buy underpriced items locally, flip on eBay nationally. Search "moving sale" for motivated sellers!</p>
+                    <div class="type">📱 Best for: Local deals</div>
+                </div>
+                <div class="platform-card">
+                    <h4>Garage Sales</h4>
+                    <p>Saturday mornings! Negotiate everything. "Will you take $X for all of this?" Bundle deals!</p>
+                    <div class="type">🏷️ Best for: Cheap finds</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.liquidation.com" target="_blank">Liquidation.com →</a></h4>
+                    <p>Buy customer returns in bulk. Higher risk but can find great deals. Start small!</p>
+                    <div class="type">📦 Best for: Bulk buying</div>
+                </div>
+                <div class="platform-card">
+                    <h4>Retail Clearance</h4>
+                    <p>Target, Walmart, TJ Maxx clearance sections. Scan barcodes with eBay app to check prices!</p>
+                    <div class="type">🏬 Best for: Retail arbitrage</div>
+                </div>
+            </div>
         </div>
-        
+
         <div class="card">
-            <h2>💡 Pro Tips & Warnings</h2>
-            <div class="pro-tip"><div class="pro-tip-title">💡 Always Check "Sold" Listings</div><p><strong>Never buy based on asking prices—check what actually SELLS.</strong> Filter eBay search by "Sold Items" to see real market value. This prevents overpaying for inventory!</p></div>
-            <div class="pro-tip"><div class="pro-tip-title">💡 Free Shipping = More Sales</div><p><strong>Build shipping into your price.</strong> Buyers prefer "free shipping" psychologically. A $30 item with free shipping sells better than $25 + $5 shipping!</p></div>
-            <div class="warning-box"><div class="warning-title">⚠️ Common Mistakes to Avoid</div><p><strong>Buying without checking comps, bad photos, slow shipping, ignoring fees (13% + shipping costs), and overbuying inventory.</strong> Start small, learn the process, then scale up!</p></div>
+            <h2><span class="icon">🛠️</span> Essential Tools</h2>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h4><a href="https://www.ebay.com/sl/sell" target="_blank">eBay App →</a></h4>
+                    <p>Scan barcodes while sourcing! Check "sold listings" to see what items actually sell for. Essential!</p>
+                    <div class="type">📱 Must have!</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.ebay.com/sh/landing" target="_blank">eBay Seller Hub →</a></h4>
+                    <p>Free analytics and listing tools. Track what sells, manage inventory, see your stats!</p>
+                    <div class="type">📊 Free analytics</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.pirateship.com" target="_blank">Pirate Ship →</a></h4>
+                    <p>Cheapest shipping labels! USPS commercial rates. Saves money on every package.</p>
+                    <div class="type">📦 Save on shipping</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.amazon.com/s?k=shipping+supplies" target="_blank">Shipping Supplies →</a></h4>
+                    <p>Poly mailers, boxes, tape in bulk. USPS Priority boxes are free!</p>
+                    <div class="type">📦 Stock up!</div>
+                </div>
+            </div>
         </div>
-        
+
         <div class="card">
-            <h2>🎓 Learn From These Creators</h2>
+            <h2><span class="icon">📋</span> Your Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Create eBay seller account</div>
+                    <div class="step-desc">Free to start. Set up eBay managed payments. Download the eBay app—you'll use it constantly!</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Learn to check "sold listings"</div>
+                    <div class="step-desc">This is THE secret! Filter eBay by "sold" to see what items actually sell for—not asking prices. Check before buying ANYTHING.</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Pick 1-2 niches to start</div>
+                    <div class="step-desc">Don't try to flip everything. Start with one category (vintage clothes, video games, shoes). Learn it deeply, then expand.</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Go sourcing!</div>
+                    <div class="step-desc">Hit thrift stores, garage sales, estate sales. Start with $50-100 budget. Scan everything with eBay app. Look for brands you recognize!</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: List your first 10-20 items</div>
+                    <div class="step-desc">Good photos (natural light!), detailed descriptions, competitive pricing. Enable "Best Offer" on all listings—gets more sales!</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Ship fast, get good reviews</div>
+                    <div class="step-desc">Ship within 1-2 days. Use eBay shipping labels. Package items well. Fast shipping = positive feedback = more sales!</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Reinvest and scale</div>
+                    <div class="step-desc">Put profits back into inventory. Track what sells best. Double down on winners. List consistently—algorithm rewards activity!</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Build your death pile strategy</div>
+                    <div class="step-desc">Source faster than you list. Build inventory backlog ("death pile"). Consistent listing = consistent sales!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💡</span> Pro Tips</h2>
+            <div class="pro-tip">
+                <div class="pro-tip-title">🔥 Secrets from Full-Time Resellers</div>
+                <p><strong>Check "Sold" not "Listed":</strong> Anyone can list at any price. Only "sold" shows what buyers actually pay!</p>
+                <p><strong>Free shipping:</strong> Build it into price. Buyers prefer it and you'll rank higher in search.</p>
+                <p><strong>Enable Best Offer:</strong> On every listing. Many buyers prefer negotiating. More offers = more sales.</p>
+                <p><strong>List daily:</strong> eBay's algorithm boosts active sellers. Even 1-2 new listings/day helps.</p>
+                <p><strong>Specialize first:</strong> Learn one niche deeply before expanding. Experts make more money!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎓</span> Resources</h2>
             <div class="influencer-grid">
-                <div class="influencer-card"><div class="influencer-avatar">📺</div><h4>Ralli Roots</h4><div class="platform">📺 YouTube</div><p>Full-time reseller sharing sourcing strategies, what sells, and real numbers!</p><a href="https://www.youtube.com/@RalliRoots" class="influencer-link" target="_blank">YouTube →</a></div>
-                <div class="influencer-card"><div class="influencer-avatar">💬</div><h4>r/Flipping</h4><div class="platform">🌐 Reddit</div><p>Active reseller community. Tips, finds, what's hot, daily haul threads!</p><a href="https://www.reddit.com/r/Flipping/" class="influencer-link" target="_blank">Reddit →</a></div>
-                <div class="influencer-card"><div class="influencer-avatar">🛒</div><h4>eBay Seller Hub</h4><div class="platform">🌐 eBay</div><p>Free analytics and listing tools from eBay. Track your performance!</p><a href="https://www.ebay.com/sh/landing" class="influencer-link" target="_blank">Seller Hub →</a></div>
-                <div class="influencer-card"><div class="influencer-avatar">📺</div><h4>Daily Refinement</h4><div class="platform">📺 YouTube</div><p>eBay tips, thrift hauls, and reselling strategies for beginners!</p><a href="https://www.youtube.com/@DailyRefinement" class="influencer-link" target="_blank">YouTube →</a></div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Ralli Roots</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Full-time reseller sharing strategies, sourcing tips, what sells!</p>
+                    <a href="https://www.youtube.com/@RalliRoots" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Reselling Secrets</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>eBay tips, sourcing guides, what's selling now!</p>
+                    <a href="https://www.youtube.com/@ResellingSecrets" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💬</div>
+                    <h4>r/Flipping</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Active reseller community. Tips, finds, questions answered!</p>
+                    <a href="https://www.reddit.com/r/Flipping/" class="influencer-link" target="_blank">Reddit →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📊</div>
+                    <h4>eBay Seller Hub</h4>
+                    <div class="platform">🌐 Tool</div>
+                    <p>Free analytics and listing tools from eBay!</p>
+                    <a href="https://www.ebay.com/sh/landing" class="influencer-link" target="_blank">Seller Hub →</a>
+                </div>
             </div>
         </div>
-        
+
         <div class="card">
-            <h2>📈 Your Progress</h2>
+            <h2><span class="icon">📈</span> Your Progress</h2>
             <div class="progress-tracker">
-                <div style="font-size: 1.2em; margin-bottom: 15px;"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
                 <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
             </div>
         </div>
-        
+
         <div class="card">
-            <h2>📝 Your Reselling Tracker</h2>
+            <h2><span class="icon">📝</span> Your eBay Reselling Tracker</h2>
             <div class="notes-section">
-                <textarea id="notes" placeholder="Track your reselling progress!
+                <textarea id="notes" placeholder="Track your eBay reselling side gig!
 
-EBAY ACCOUNT:
-Username: ____
-Started: ____
-
-SOURCING BUDGET:
-Weekly budget: $____
-Best sources: ____
-
-INVENTORY TRACKER:
-Item: ____ | Cost: $____ | Listed: $____
-Item: ____ | Cost: $____ | Listed: $____
-Item: ____ | Cost: $____ | Listed: $____
-
-MONTHLY TRACKER:
-Items sourced: ____
-Items sold: ____
-Revenue: $____
-Costs: $____
-eBay fees: $____
-Net profit: $____
-
-MY BEST NICHES:
+MY NICHES:
 1. ____
 2. ____
-3. ____
 
-NOTES:
+SOURCING SPOTS:
+☐ Goodwill locations: ____
+☐ Other thrifts: ____
+☐ Estate sale sites bookmarked
+☐ Garage sale routes planned
+
+EBAY SETUP:
+☐ Seller account created
+☐ eBay app downloaded
+☐ Managed payments set up
+☐ Shipping supplies stocked
+
+INVENTORY:
+Items listed: ____
+Items in death pile: ____
+
+THIS WEEK:
+Sourcing spend: $____
+Items listed: ____
+Items sold: ____
+Revenue: $____
+Profit: $____
+
+BEST SELLERS:
+1. ____ (bought $____, sold $____)
+2. ____ (bought $____, sold $____)
+3. ____ (bought $____, sold $____)
+
+FEEDBACK SCORE: ____
 "></textarea>
             </div>
         </div>
-        
+
         <div class="cta-section">
             <h3>Need Help With Your Finances?</h3>
-            <p style="opacity: 0.9; margin-bottom: 20px;">Chat with an ASAP Financial coach for personalized guidance!</p>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
             <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
         </div>
     </div>
-    
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const saved = localStorage.getItem('playbook-ebay-reselling');
-            if (saved) { const data = JSON.parse(saved); data.steps.forEach((checked, index) => { if (checked) { const cb = document.querySelectorAll('.step-checkbox')[index]; if (cb) cb.classList.add('checked'); }}); document.getElementById('notes').value = data.notes || ''; updateProgress(); }
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
         });
         function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
-        function updateProgress() { const t = document.querySelectorAll('.step-checkbox').length; const c = document.querySelectorAll('.step-checkbox.checked').length; document.getElementById('completed').textContent = c; document.getElementById('progressFill').style.width = (c/t*100)+'%'; }
-        function saveProgress() { const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked')); const notes = document.getElementById('notes').value; localStorage.setItem('playbook-ebay-reselling', JSON.stringify({steps, notes})); }
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-ebay-reselling', JSON.stringify({ steps, notes }));
+        }
         document.getElementById('notes').addEventListener('input', saveProgress);
     </script>
 </body>
