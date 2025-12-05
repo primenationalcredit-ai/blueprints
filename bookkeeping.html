@@ -7,311 +7,291 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
-        .container { max-width: 900px; margin: 0 auto; }
+        .container { max-width: 800px; margin: 0 auto; }
         .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
         .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
         .header .subtitle { color: #666; font-size: 1.2em; }
-        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #27ae60, #2ecc71); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
         .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
         .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
         .card h2 .icon { font-size: 1.5em; }
-        .achieve-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
-        .achieve-box p { color: #1565c0; font-size: 1.1em; line-height: 1.6; }
+        .achieve-box { background: linear-gradient(135deg, #d5f5e3, #abebc6); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #1e8449; font-size: 1.1em; line-height: 1.6; }
         .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
         .income-highlight h3 { font-size: 2.2em; margin-bottom: 10px; }
         .income-highlight p { font-size: 1.1em; opacity: 0.95; }
         .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
-        .step:hover { background: #e3f2fd; }
-        .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
-        .step-checkbox.checked { background: #667eea; color: white; }
+        .step:hover { background: #d5f5e3; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #27ae60; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #27ae60; color: white; }
         .step-content { flex: 1; }
         .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
         .step-desc { color: #666; line-height: 1.5; }
-        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 15px; overflow: hidden; font-size: 14px; }
-        .pricing-table th, .pricing-table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #e0e0e0; }
-        .pricing-table th { background: #667eea; color: white; font-weight: 600; }
-        .pricing-table tr:hover { background: #f5f5f5; }
-        .pricing-table .rate { color: #4caf50; font-weight: 600; }
-        .software-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
-        .software-card { border-radius: 15px; padding: 20px; text-align: center; }
-        .software-card.qbo { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border: 2px solid #4caf50; }
-        .software-card.xero { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border: 2px solid #2196f3; }
-        .software-card.fresh { background: linear-gradient(135deg, #fff3e0, #ffe0b2); border: 2px solid #ff9800; }
-        .software-card.wave { background: linear-gradient(135deg, #f3e5f5, #e1bee7); border: 2px solid #9c27b0; }
-        .software-card h4 { color: #1a1a2e; font-size: 14px; margin-bottom: 5px; }
-        .software-card .price { color: #4caf50; font-weight: 600; font-size: 12px; }
-        .software-card p { color: #666; font-size: 11px; }
-        .niche-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 20px 0; }
-        .niche-card { background: #f8f9fa; border-radius: 12px; padding: 15px; text-align: center; }
-        .niche-card .emoji { font-size: 1.5em; margin-bottom: 5px; }
-        .niche-card h4 { color: #1a1a2e; font-size: 12px; }
-        .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
-        .cert-card { background: #e8f5e9; border-radius: 15px; padding: 15px; border-left: 5px solid #4caf50; }
-        .cert-card h4 { color: #2e7d32; font-size: 14px; margin-bottom: 5px; }
-        .cert-card .price { color: #4caf50; font-weight: 600; font-size: 12px; }
-        .cert-card p { color: #666; font-size: 12px; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+        .pricing-table th, .pricing-table td { padding: 12px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .pricing-table th { background: #27ae60; color: white; }
+        .pricing-table tr:hover { background: #f8f9fa; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .service-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; border-left: 4px solid #27ae60; }
+        .service-card .emoji { font-size: 2em; margin-bottom: 10px; }
+        .service-card h4 { color: #1a1a2e; font-size: 13px; margin-bottom: 5px; }
+        .service-card p { color: #666; font-size: 11px; }
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .platform-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #4caf50; }
+        .platform-card h4 { color: #1a1a2e; margin-bottom: 8px; }
+        .platform-card h4 a { color: #27ae60; text-decoration: none; }
+        .platform-card h4 a:hover { text-decoration: underline; }
+        .platform-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .platform-card .type { color: #2e7d32; font-weight: 600; font-size: 12px; margin-top: 8px; }
         .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
         .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
         .pro-tip p { color: #666; margin: 8px 0; }
-        .find-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
-        .find-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #667eea; }
-        .find-card h4 { color: #1a1a2e; margin-bottom: 10px; }
-        .find-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .skills-box { background: #f8f9fa; border-radius: 15px; padding: 20px; margin: 15px 0; }
+        .skills-box h4 { color: #1a1a2e; margin-bottom: 15px; }
+        .skills-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+        .skill-item { display: flex; align-items: center; gap: 10px; padding: 10px; background: white; border-radius: 8px; }
+        .skill-item .emoji { font-size: 1.3em; }
+        .skill-item span { color: #666; font-size: 13px; }
         .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
         .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
         .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #27ae60, #2ecc71); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
         .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
-        .influencer-card .platform { color: #667eea; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card .platform { color: #27ae60; font-size: 14px; margin-bottom: 10px; }
         .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
-        .influencer-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; }
-        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #27ae60; text-decoration: none; font-weight: 600; }
+        .progress-tracker { background: linear-gradient(135deg, #27ae60, #2ecc71); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
         .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
         .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
         .progress-text { font-size: 1.2em; font-weight: 600; }
         .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
-        .notes-section textarea:focus { outline: none; border-color: #667eea; }
+        .notes-section textarea:focus { outline: none; border-color: #27ae60; }
         .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
-        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #27ae60, #2ecc71); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
         .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="income-playbooks.html" class="back-link">← Back to Income Playbooks</a>
+        <a href="index.html" class="back-link">← Back to Playbooks</a>
         
         <div class="header">
             <h1>📊 Bookkeeping Business</h1>
-            <p class="subtitle">Serve small businesses with monthly retainers</p>
-            <div class="time-badge">⏱️ Free certification • Earn $300-1,500/client/mo • Recurring income!</div>
+            <p class="subtitle">Serve small businesses with monthly recurring income</p>
+            <div class="time-badge">💰 $150-1,500/mo per client • Monthly retainers • Recurring!</div>
         </div>
 
         <div class="card">
             <h2><span class="icon">🎯</span> What You'll Achieve</h2>
             <div class="achieve-box">
-                <p>Start a bookkeeping business serving small businesses. Monthly retainers mean predictable, recurring income! You don't need an accounting degree - get certified in QuickBooks (FREE!) and start helping local businesses manage their finances. 10 clients at $400/month = $4,000/month!</p>
+                <p>Start a bookkeeping business serving small businesses. Monthly retainers mean predictable, recurring income! Every small business needs bookkeeping, and most hate doing it themselves. Get certified in QuickBooks (FREE!), find 5-10 clients, and build a stable business with $3,000-10,000+/month in recurring revenue!</p>
             </div>
             <div class="income-highlight">
-                <h3>Earn $3,000-8,000+/Month</h3>
-                <p>10 clients × $300-800/month = Predictable recurring income!</p>
+                <h3>$150-1,500/Month Per Client</h3>
+                <p>5 clients @ $500 = $2,500/mo • 10 clients = $5,000+/mo • Recurring income!</p>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">💵</span> Service Pricing</h2>
+            <h2><span class="icon">💰</span> Pricing Guide</h2>
             <table class="pricing-table">
-                <thead>
-                    <tr>
-                        <th>Business Size</th>
-                        <th>Monthly Fee</th>
-                        <th>Transactions/Mo</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>Micro (freelancer)</td><td class="rate">$150-300</td><td>0-50</td></tr>
-                    <tr><td>Small business</td><td class="rate">$300-500</td><td>50-150</td></tr>
-                    <tr><td>Growing business</td><td class="rate">$500-800</td><td>150-300</td></tr>
-                    <tr><td>Established business</td><td class="rate">$800-1,500</td><td>300-500</td></tr>
-                    <tr><td>Catch-up/cleanup</td><td class="rate">$50-100/hr</td><td>One-time</td></tr>
-                    <tr><td>Payroll add-on</td><td class="rate">$50-150/mo</td><td>Per employee basis</td></tr>
-                </tbody>
+                <tr><th>Business Size</th><th>Monthly Fee</th><th>Transactions/Mo</th></tr>
+                <tr><td>Micro (freelancer)</td><td>$150-300</td><td>0-50</td></tr>
+                <tr><td>Small business</td><td>$300-500</td><td>50-150</td></tr>
+                <tr><td>Growing business</td><td>$500-800</td><td>150-300</td></tr>
+                <tr><td>Established business</td><td>$800-1,500</td><td>300-500</td></tr>
+                <tr><td>Catch-up/cleanup</td><td>$50-100/hr</td><td>One-time</td></tr>
+                <tr><td>Payroll add-on</td><td>$50-150/mo</td><td>Per employee basis</td></tr>
             </table>
         </div>
 
         <div class="card">
-            <h2><span class="icon">📜</span> Get Certified (FREE!)</h2>
-            <div class="cert-grid">
-                <div class="cert-card">
-                    <h4>QuickBooks ProAdvisor</h4>
-                    <div class="price">FREE</div>
-                    <p>Most recognized certification. Self-paced online training and exam. Gets you listed in their directory!</p>
-                </div>
-                <div class="cert-card">
-                    <h4>Xero Advisor</h4>
-                    <div class="price">FREE</div>
-                    <p>Growing platform. Free certification and partner benefits. Good to have both!</p>
-                </div>
-            </div>
-            
-            <div class="pro-tip">
-                <div class="pro-tip-title">💡 Start with QuickBooks ProAdvisor</div>
-                <p>• Most small businesses use QuickBooks - it's the standard</p>
-                <p>• FREE certification makes you look professional instantly</p>
-                <p>• Gets you listed in QuickBooks' Find-a-ProAdvisor directory</p>
-                <p>• Takes 1-2 weeks of study to pass the exam</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2><span class="icon">💻</span> Software to Master</h2>
-            <div class="software-grid">
-                <div class="software-card qbo">
-                    <h4>QuickBooks Online</h4>
-                    <div class="price">Most businesses use this</div>
-                    <p>Industry standard. Master this first!</p>
-                </div>
-                <div class="software-card xero">
-                    <h4>Xero</h4>
-                    <div class="price">Growing fast</div>
-                    <p>Modern, user-friendly. Good second software to learn.</p>
-                </div>
-                <div class="software-card fresh">
-                    <h4>FreshBooks</h4>
-                    <div class="price">Service businesses</div>
-                    <p>Simple and clean. Popular with freelancers.</p>
-                </div>
-                <div class="software-card wave">
-                    <h4>Wave</h4>
-                    <div class="price">FREE option</div>
-                    <p>Free accounting software. Good for micro businesses.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
             <h2><span class="icon">🎯</span> Profitable Niches</h2>
-            <p style="color: #666; margin-bottom: 15px;">Specializing lets you charge premium rates!</p>
-            <div class="niche-grid">
-                <div class="niche-card">
+            <div class="service-grid">
+                <div class="service-card">
                     <div class="emoji">🏠</div>
                     <h4>Real Estate</h4>
+                    <p>Agents & investors</p>
                 </div>
-                <div class="niche-card">
+                <div class="service-card">
                     <div class="emoji">🔧</div>
                     <h4>Contractors</h4>
+                    <p>Trades & construction</p>
                 </div>
-                <div class="niche-card">
+                <div class="service-card">
                     <div class="emoji">🛒</div>
                     <h4>E-commerce</h4>
+                    <p>Online sellers</p>
                 </div>
-                <div class="niche-card">
+                <div class="service-card">
                     <div class="emoji">⚖️</div>
-                    <h4>Law Firms</h4>
+                    <h4>Professional Services</h4>
+                    <p>Lawyers, consultants</p>
                 </div>
-                <div class="niche-card">
+                <div class="service-card">
                     <div class="emoji">🍽️</div>
                     <h4>Restaurants</h4>
+                    <p>Food service</p>
                 </div>
-                <div class="niche-card">
+                <div class="service-card">
                     <div class="emoji">🏥</div>
                     <h4>Healthcare</h4>
+                    <p>Medical practices</p>
+                </div>
+            </div>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Specialize = Premium Rates!</div>
+                <p>General bookkeepers charge $30-50/hr. Specialists (real estate, e-commerce, contractors) charge $50-100+/hr. Pick a niche you understand!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🌐</span> Where to Find Bookkeeping Clients</h2>
+            <p style="color: #666; margin-bottom: 15px;">Multiple paths to find bookkeeping clients:</p>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h4><a href="https://quickbooks.intuit.com/accountants/proadvisor/" target="_blank">QuickBooks ProAdvisor →</a></h4>
+                    <p>FREE certification + listing in QuickBooks directory. Clients searching for bookkeepers find YOU! Best source of leads!</p>
+                    <div class="type">⭐ Best for: Qualified leads</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.upwork.com/freelance-jobs/bookkeeping/" target="_blank">Upwork →</a></h4>
+                    <p>Large marketplace for bookkeeping jobs. Good for building portfolio and initial clients!</p>
+                    <div class="type">🌐 Best for: Getting started</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.linkedin.com/jobs/bookkeeper-jobs" target="_blank">LinkedIn →</a></h4>
+                    <p>Connect with CPAs (they refer bookkeepers!), small business owners. Direct outreach works!</p>
+                    <div class="type">🤝 Best for: CPA partnerships</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.belay.com/virtual-bookkeepers" target="_blank">Belay →</a></h4>
+                    <p>Virtual bookkeeping agency. They find clients, you do the work. Steady income, less marketing!</p>
+                    <div class="type">🏢 Best for: Steady work</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.facebook.com/groups" target="_blank">Facebook Groups →</a></h4>
+                    <p>Join groups for your niche (real estate investors, contractors, e-commerce sellers). Offer value, then services!</p>
+                    <div class="type">👥 Best for: Niche clients</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.bni.com" target="_blank">BNI Networking →</a></h4>
+                    <p>Local business networking groups. Build relationships with CPAs, lawyers, bankers who refer clients!</p>
+                    <div class="type">🤝 Best for: Referral network</div>
+                </div>
+            </div>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 CPAs Are Your Best Referral Source!</div>
+                <p>CPAs don't do bookkeeping—they REFER it. Build relationships with 3-5 local CPAs. One good CPA relationship can fill your practice!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📜</span> Get Certified (FREE!)</h2>
+            <div class="skills-box">
+                <h4>Training & Certifications</h4>
+                <div class="skills-list">
+                    <div class="skill-item"><span class="emoji">✅</span><span><a href="https://quickbooks.intuit.com/accountants/proadvisor/" target="_blank" style="color: #27ae60; text-decoration: none;">QuickBooks ProAdvisor</a> (FREE!)</span></div>
+                    <div class="skill-item"><span class="emoji">✅</span><span><a href="https://www.xero.com/us/partner-programs/advisors/" target="_blank" style="color: #27ae60; text-decoration: none;">Xero Advisor</a> (FREE!)</span></div>
+                    <div class="skill-item"><span class="emoji">📚</span><span><a href="https://bookkeeperlaunch.com/" target="_blank" style="color: #27ae60; text-decoration: none;">Bookkeeper Business Launch</a> (course)</span></div>
+                    <div class="skill-item"><span class="emoji">🎓</span><span>Community college courses</span></div>
+                    <div class="skill-item"><span class="emoji">⭐</span><span><a href="https://www.aipb.org/" target="_blank" style="color: #27ae60; text-decoration: none;">AIPB Certified Bookkeeper</a></span></div>
+                    <div class="skill-item"><span class="emoji">📊</span><span><a href="https://dext.com/" target="_blank" style="color: #27ae60; text-decoration: none;">Dext</a> / <a href="https://www.hubdoc.com/" target="_blank" style="color: #27ae60; text-decoration: none;">Hubdoc</a> (receipt capture)</span></div>
                 </div>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">📋</span> Your Bookkeeping Action Plan</h2>
+            <h2><span class="icon">📋</span> Your Action Plan</h2>
             
             <div class="step" data-step="1">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Step 1: Get QuickBooks ProAdvisor certified (FREE)</div>
-                    <div class="step-desc">Go to quickbooks.intuit.com/accountants - sign up for free training and take the certification exam. Takes 1-2 weeks of study.</div>
+                    <div class="step-title">Step 1: Get trained and certified</div>
+                    <div class="step-desc">Learn bookkeeping fundamentals. Get QuickBooks ProAdvisor certification—it's FREE and gets you listed in their directory!</div>
                 </div>
             </div>
             <div class="step" data-step="2">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Step 2: Master QuickBooks Online</div>
-                    <div class="step-desc">Practice with the sample company. Learn bank reconciliation, categorizing transactions, running reports. Watch YouTube tutorials!</div>
+                    <div class="step-title">Step 2: Choose your software stack</div>
+                    <div class="step-desc">Master QuickBooks Online (most popular) or Xero. Learn receipt capture tools like Dext. One platform first!</div>
                 </div>
             </div>
             <div class="step" data-step="3">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Step 3: Choose a niche (optional but recommended)</div>
-                    <div class="step-desc">Real estate, contractors, e-commerce, restaurants - specializing lets you charge more and work faster. Pick an industry you understand or want to learn.</div>
+                    <div class="step-title">Step 3: Define your ideal client niche</div>
+                    <div class="step-desc">Real estate? Contractors? E-commerce? Specializing lets you charge premium rates and market more effectively!</div>
                 </div>
             </div>
             <div class="step" data-step="4">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Step 4: Define your service packages</div>
-                    <div class="step-desc">Basic, standard, premium tiers. What's included? Monthly reconciliation, categorization, reports, payroll? Clear packages make selling easier.</div>
+                    <div class="step-title">Step 4: Set up on client platforms</div>
+                    <div class="step-desc">Complete QuickBooks ProAdvisor listing, create Upwork profile, optimize LinkedIn, join niche Facebook groups!</div>
                 </div>
             </div>
             <div class="step" data-step="5">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Step 5: Partner with CPAs</div>
-                    <div class="step-desc">CPAs focus on taxes and advisory - they REFER bookkeeping work! Reach out to local CPAs offering to handle their clients' monthly bookkeeping. This is GOLD!</div>
+                    <div class="step-title">Step 5: Find your first clients</div>
+                    <div class="step-desc">Network with CPAs (they refer bookkeepers!), reach out to local businesses, offer free consultations. First 3 clients are hardest!</div>
                 </div>
             </div>
             <div class="step" data-step="6">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Step 6: Find your first clients</div>
-                    <div class="step-desc">Local networking groups, LinkedIn outreach, Facebook groups for business owners, Upwork to start. Offer free consultations to demonstrate value.</div>
+                    <div class="step-title">Step 6: Deliver accurate, timely work</div>
+                    <div class="step-desc">Monthly close by the 15th, clean reconciliations, clear reports. Reliability builds trust and referrals!</div>
                 </div>
             </div>
             <div class="step" data-step="7">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Step 7: Deliver accurate, timely work</div>
-                    <div class="step-desc">Monthly close by the 15th, clean reconciliations, clear reports. Accuracy is EVERYTHING. Reliability builds trust and referrals!</div>
+                    <div class="step-title">Step 7: Build CPA relationships</div>
+                    <div class="step-desc">Connect with 3-5 local CPAs. Offer to handle their overflow or client referrals. One good CPA can fill your practice!</div>
                 </div>
             </div>
             <div class="step" data-step="8">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Step 8: Scale with systems</div>
-                    <div class="step-desc">Create SOPs and checklists. Add services (payroll, advisory). Raise rates annually. Eventually hire junior bookkeepers to handle more clients!</div>
+                    <div class="step-title">Step 8: Scale your practice</div>
+                    <div class="step-desc">Systematize processes with SOPs and checklists. Add payroll services. Hire junior help. Add CFO/advisory services!</div>
                 </div>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">📣</span> Finding Clients</h2>
-            <div class="find-grid">
-                <div class="find-card">
-                    <h4>🤝 CPA Partnerships</h4>
-                    <p>THE BEST source! CPAs need bookkeepers to refer clients to. Reach out offering to partner - they send clients, you do monthly work.</p>
-                </div>
-                <div class="find-card">
-                    <h4>🏢 Local Networking</h4>
-                    <p>BNI groups, Chamber of Commerce, local business events. Every business owner knows they need help with their books!</p>
-                </div>
-                <div class="find-card">
-                    <h4>💼 LinkedIn</h4>
-                    <p>Connect with business owners in your niche. Share helpful content. Direct outreach to those who might need help.</p>
-                </div>
-                <div class="find-card">
-                    <h4>👥 Facebook Groups</h4>
-                    <p>Groups for your niche (real estate investors, contractors, etc.). Be helpful first, then mention your services.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2><span class="icon">🎓</span> Bookkeeping Resources</h2>
+            <h2><span class="icon">🎓</span> Learn From These Creators</h2>
             <div class="influencer-grid">
-                <div class="influencer-card">
-                    <div class="influencer-avatar">📊</div>
-                    <h4>QuickBooks ProAdvisor</h4>
-                    <div class="platform">🌐 Website</div>
-                    <p>Free certification and training. Start here!</p>
-                    <a href="https://quickbooks.intuit.com/accountants" class="influencer-link" target="_blank">QuickBooks →</a>
-                </div>
                 <div class="influencer-card">
                     <div class="influencer-avatar">📺</div>
                     <h4>Bookkeeper Business Launch</h4>
                     <div class="platform">📺 YouTube</div>
-                    <p>Free content on starting a bookkeeping business.</p>
-                    <a href="https://youtube.com" class="influencer-link" target="_blank">YouTube →</a>
+                    <p>Ben Robinson's complete system for starting a bookkeeping business.</p>
+                    <a href="https://www.youtube.com/c/BookkeepersHQ" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Hector Garcia CPA</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>QuickBooks tutorials and bookkeeping best practices.</p>
+                    <a href="https://www.youtube.com/c/HectorGarciaCPA" class="influencer-link" target="_blank">YouTube →</a>
                 </div>
                 <div class="influencer-card">
                     <div class="influencer-avatar">💬</div>
                     <h4>r/Bookkeeping</h4>
                     <div class="platform">🌐 Reddit</div>
-                    <p>Community of bookkeepers sharing tips and advice.</p>
+                    <p>Bookkeeper community for questions, tips, and support.</p>
                     <a href="https://reddit.com/r/Bookkeeping" class="influencer-link" target="_blank">r/Bookkeeping →</a>
                 </div>
                 <div class="influencer-card">
-                    <div class="influencer-avatar">📚</div>
-                    <h4>Xero Advisor Certification</h4>
-                    <div class="platform">🌐 Website</div>
-                    <p>Free certification for Xero software.</p>
-                    <a href="https://www.xero.com/us/advisors" class="influencer-link" target="_blank">Xero →</a>
+                    <div class="influencer-avatar">✅</div>
+                    <h4>QuickBooks ProAdvisor</h4>
+                    <div class="platform">🌐 Certification</div>
+                    <p>FREE certification + directory listing. Essential starting point!</p>
+                    <a href="https://quickbooks.intuit.com/accountants/proadvisor/" class="influencer-link" target="_blank">Get Certified →</a>
                 </div>
             </div>
         </div>
@@ -330,45 +310,39 @@
                 <textarea id="notes" placeholder="Track your bookkeeping business!
 
 CERTIFICATIONS:
-☐ QuickBooks ProAdvisor (FREE) - completed: ____
-☐ Xero Advisor (FREE) - completed: ____
+☐ QuickBooks ProAdvisor (FREE!)
+☐ Xero Advisor (FREE!)
+☐ Other: ____
 
-SOFTWARE SKILLS:
-☐ QuickBooks Online (learning / proficient / expert)
-☐ Xero (learning / proficient / expert)
-☐ Bank reconciliation
-☐ Financial reports
+CLIENT PLATFORMS:
+☐ QuickBooks ProAdvisor directory
+☐ Upwork (profile: ____)
+☐ LinkedIn (optimized: ____)
+☐ Belay (applied: ____)
+☐ Facebook Groups: ____
 
 MY NICHE: ____
 
-SERVICE PACKAGES:
-Basic: $____/mo | Includes: ____
-Standard: $____/mo | Includes: ____
-Premium: $____/mo | Includes: ____
-Catch-up: $____/hr
+MY PRICING:
+Micro business: $____/mo
+Small business: $____/mo
+Growing business: $____/mo
+Catch-up work: $____/hr
+Payroll add-on: $____/mo
 
-CPA PARTNERS:
-CPA 1: ____ | Contact: ____ | Referrals: ____
-CPA 2: ____ | Contact: ____ | Referrals: ____
+CPA RELATIONSHIPS:
+1. ____ | Referrals: ____
+2. ____ | Referrals: ____
+3. ____ | Referrals: ____
 
-CLIENTS:
-Client 1: ____
-  Business type: ____
-  Package: ____ | Monthly: $____
-  Start date: ____
-
-Client 2: ____
-  Business type: ____
-  Package: ____ | Monthly: $____
-  Start date: ____
-
-Client 3: ____
-  Business type: ____
-  Package: ____ | Monthly: $____
-  Start date: ____
+ACTIVE CLIENTS:
+1. ____ | Niche: ____ | Monthly: $____
+2. ____ | Niche: ____ | Monthly: $____
+3. ____ | Niche: ____ | Monthly: $____
+4. ____ | Niche: ____ | Monthly: $____
+5. ____ | Niche: ____ | Monthly: $____
 
 MONTHLY RECURRING REVENUE: $____
-TOTAL CLIENTS: ____
 "></textarea>
             </div>
         </div>

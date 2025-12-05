@@ -1,60 +1,394 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SEO Services Business | ASAP Credit Repair Playbook</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{--primary:#063d86;--success:#10b981;--bg:#f8fafc;--text:#1e293b;--text-light:#64748b;--border:#e2e8f0}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}.header{background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff;padding:40px 20px 50px;text-align:center}.header h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:12px}.main-content{max-width:800px;margin:-30px auto 40px;padding:0 20px}.back-link{color:#fff;text-decoration:none;opacity:.8;display:block;margin-bottom:16px}.category-badge{display:inline-block;background:rgba(255,255,255,.2);padding:6px 16px;border-radius:20px;font-size:.85rem;margin-bottom:16px}.goal-card{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid var(--success);border-radius:16px;padding:24px;margin-bottom:24px}.goal-card h2{color:#065f46;margin-bottom:12px}.goal-card .earnings{background:#fff;padding:10px 18px;border-radius:10px;margin-top:14px;font-weight:600;color:#065f46;display:inline-block}.section-card{background:#fff;border-radius:16px;padding:28px;margin-bottom:24px;border:1px solid var(--border)}.section-card h2{color:var(--primary);margin-bottom:20px}.task-list{list-style:none}.task-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)}.task-checkbox{width:28px;height:28px;border:2px solid var(--border);border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}.task-checkbox.checked{background:var(--success);border-color:var(--success);color:#fff}.task-title{font-weight:600;margin-bottom:6px}.task-desc{color:var(--text-light);font-size:.95rem}.task-badge{font-size:.8rem;padding:4px 10px;border-radius:6px;background:var(--bg);margin-top:10px;display:inline-block;margin-right:8px}.details-box{background:#f8fafc;padding:14px;border-radius:8px;margin-top:12px;border-left:4px solid #22c55e}.details-box h4{color:#16a34a;margin-bottom:8px;font-size:.9rem}.details-box ul{margin-left:18px;font-size:.9rem}.details-box li{margin-bottom:6px}.pricing-table{width:100%;border-collapse:collapse;margin-top:12px}.pricing-table th,.pricing-table td{padding:10px;text-align:left;border-bottom:1px solid var(--border)}.pricing-table th{background:var(--bg);font-weight:600}textarea{width:100%;min-height:120px;padding:14px;border:2px solid var(--border);border-radius:10px;font-family:inherit;margin-top:10px}.help-section{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border:2px solid #7dd3fc;border-radius:16px;padding:20px;margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}.chat-btn{background:var(--primary);color:#fff;border:none;padding:12px 24px;border-radius:10px;font-weight:600;cursor:pointer}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Services Business - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #e67e22, #d35400); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #fdebd0, #f9e79f); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #9c640c; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.2em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #fdebd0; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #e67e22; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #e67e22; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+        .pricing-table th, .pricing-table td { padding: 12px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .pricing-table th { background: #e67e22; color: white; }
+        .pricing-table tr:hover { background: #f8f9fa; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .service-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; border-left: 4px solid #e67e22; }
+        .service-card .emoji { font-size: 2em; margin-bottom: 10px; }
+        .service-card h4 { color: #1a1a2e; font-size: 13px; margin-bottom: 5px; }
+        .service-card p { color: #666; font-size: 11px; }
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .platform-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #4caf50; }
+        .platform-card h4 { color: #1a1a2e; margin-bottom: 8px; }
+        .platform-card h4 a { color: #e67e22; text-decoration: none; }
+        .platform-card h4 a:hover { text-decoration: underline; }
+        .platform-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .platform-card .type { color: #2e7d32; font-weight: 600; font-size: 12px; margin-top: 8px; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .skills-box { background: #f8f9fa; border-radius: 15px; padding: 20px; margin: 15px 0; }
+        .skills-box h4 { color: #1a1a2e; margin-bottom: 15px; }
+        .skills-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+        .skill-item { display: flex; align-items: center; gap: 10px; padding: 10px; background: white; border-radius: 8px; }
+        .skill-item .emoji { font-size: 1.3em; }
+        .skill-item span { color: #666; font-size: 13px; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #e67e22, #d35400); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #e67e22; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #e67e22; text-decoration: none; font-weight: 600; }
+        .progress-tracker { background: linear-gradient(135deg, #e67e22, #d35400); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #e67e22; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #e67e22, #d35400); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+    </style>
 </head>
 <body>
-  <header class="header"><a href="index.html" class="back-link">← Back to All Playbooks</a><span class="category-badge">🔍 Digital Marketing</span><h1>SEO Services Business</h1><p style="opacity:.9;max-width:600px;margin:0 auto">Help businesses rank on Google! High-value skill, recurring revenue, work from anywhere.</p></header>
-  <main class="main-content">
-    <div class="goal-card"><h2>🎯 What You'll Achieve</h2><p>Start an SEO business helping businesses rank higher in Google. Monthly retainers mean predictable income!</p><div class="earnings">💰 Per client: $500-5,000/mo | 5 clients: $2,500-25,000/mo | Agency scale: $50,000-200,000+/mo</div></div>
-    
-    <div class="section-card"><h2>💵 SEO Service Pricing</h2>
-      <table class="pricing-table">
-        <tr><th>Service</th><th>Beginner Rate</th><th>Experienced Rate</th></tr>
-        <tr><td>Local SEO (small business)</td><td>$300-500/mo</td><td>$750-1,500/mo</td></tr>
-        <tr><td>National SEO</td><td>$750-1,500/mo</td><td>$2,000-5,000/mo</td></tr>
-        <tr><td>E-commerce SEO</td><td>$1,000-2,000/mo</td><td>$3,000-10,000/mo</td></tr>
-        <tr><td>SEO audit (one-time)</td><td>$300-750</td><td>$1,000-3,000</td></tr>
-        <tr><td>Keyword research</td><td>$150-300</td><td>$500-1,000</td></tr>
-        <tr><td>Link building (per link)</td><td>$100-200</td><td>$200-500+</td></tr>
-      </table>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Playbooks</a>
+        
+        <div class="header">
+            <h1>🔍 SEO Services Business</h1>
+            <p class="subtitle">Help businesses rank higher in Google with monthly retainers</p>
+            <div class="time-badge">💰 $300-10,000/mo per client • Monthly retainers • High demand</div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Start an SEO business helping businesses rank higher in Google. Monthly retainers mean predictable income! Every business wants to be found online—you help them get there. Start with local SEO for small businesses, then scale to larger clients. Build a 6-figure business with just 5-10 recurring clients!</p>
+            </div>
+            <div class="income-highlight">
+                <h3>$300-10,000/Month Per Client</h3>
+                <p>Local SEO: $300-1,500/mo • National: $750-5,000/mo • E-commerce: $1,000-10,000/mo</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💰</span> Pricing Guide</h2>
+            <table class="pricing-table">
+                <tr><th>Service</th><th>Beginner Rate</th><th>Experienced Rate</th></tr>
+                <tr><td>Local SEO (small business)</td><td>$300-500/mo</td><td>$750-1,500/mo</td></tr>
+                <tr><td>National SEO</td><td>$750-1,500/mo</td><td>$2,000-5,000/mo</td></tr>
+                <tr><td>E-commerce SEO</td><td>$1,000-2,000/mo</td><td>$3,000-10,000/mo</td></tr>
+                <tr><td>SEO audit (one-time)</td><td>$300-750</td><td>$1,000-3,000</td></tr>
+                <tr><td>Keyword research</td><td>$150-300</td><td>$500-1,000</td></tr>
+                <tr><td>Link building (per link)</td><td>$100-200</td><td>$200-500+</td></tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📦</span> SEO Services You Can Offer</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="emoji">📍</div>
+                    <h4>Local SEO</h4>
+                    <p>GMB, citations, local rankings</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">📝</div>
+                    <h4>On-Page SEO</h4>
+                    <p>Content, titles, meta tags</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🔧</div>
+                    <h4>Technical SEO</h4>
+                    <p>Speed, structure, crawling</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🔗</div>
+                    <h4>Link Building</h4>
+                    <p>Outreach, guest posts</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">✍️</div>
+                    <h4>Content Creation</h4>
+                    <p>Blog posts, pages</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">📊</div>
+                    <h4>Reporting</h4>
+                    <p>Monthly rankings, traffic</p>
+                </div>
+            </div>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Start with Local SEO!</div>
+                <p>Local SEO is easiest to learn and deliver results. Help local businesses rank in "near me" searches. Lower competition, faster results, happy clients!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🌐</span> Where to Find SEO Clients</h2>
+            <p style="color: #666; margin-bottom: 15px;">Multiple paths to find SEO clients:</p>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h4><a href="https://www.upwork.com/freelance-jobs/seo/" target="_blank">Upwork →</a></h4>
+                    <p>Large marketplace for SEO jobs. Good for building portfolio and case studies. Start here!</p>
+                    <div class="type">🌐 Best for: Getting started</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.fiverr.com/categories/online-marketing/seo-services" target="_blank">Fiverr →</a></h4>
+                    <p>Package SEO services as gigs. Good for audits, keyword research, specific tasks!</p>
+                    <div class="type">📦 Best for: One-time services</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.linkedin.com/jobs/seo-specialist-jobs" target="_blank">LinkedIn →</a></h4>
+                    <p>Direct outreach to business owners. Search for businesses on Google page 2-3 and reach out!</p>
+                    <div class="type">💼 Best for: Direct outreach</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://clutch.co/profile" target="_blank">Clutch →</a></h4>
+                    <p>B2B agency directory. Get listed, collect reviews. Premium leads find you!</p>
+                    <div class="type">⭐ Best for: Agency leads</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.thumbtack.com/pro" target="_blank">Thumbtack →</a></h4>
+                    <p>Get matched with local businesses looking for SEO help. Pay per lead!</p>
+                    <div class="type">🎯 Best for: Local businesses</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.google.com" target="_blank">Cold Outreach →</a></h4>
+                    <p>Search businesses ranking on page 2-3 for your target keywords. They're SO close! Email them!</p>
+                    <div class="type">📧 Best for: Targeted leads</div>
+                </div>
+            </div>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Page 2 Businesses Need YOU!</div>
+                <p>Search "[your city] + [service]" and find businesses on page 2-3. They're SO close to page 1! Cold email them with a free audit. They're the perfect clients!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🛠️</span> Essential SEO Tools</h2>
+            <div class="skills-box">
+                <h4>Tools You'll Need</h4>
+                <div class="skills-list">
+                    <div class="skill-item"><span class="emoji">🆓</span><span>Google Search Console (FREE!)</span></div>
+                    <div class="skill-item"><span class="emoji">🆓</span><span>Google Analytics (FREE!)</span></div>
+                    <div class="skill-item"><span class="emoji">🔍</span><span>Ahrefs or SEMrush ($99+/mo)</span></div>
+                    <div class="skill-item"><span class="emoji">🆓</span><span>Screaming Frog (FREE to 500 URLs)</span></div>
+                    <div class="skill-item"><span class="emoji">🆓</span><span>Ubersuggest (FREE tier)</span></div>
+                    <div class="skill-item"><span class="emoji">📊</span><span>Google Business Profile (local)</span></div>
+                </div>
+            </div>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Start with Free Tools!</div>
+                <p>Google Search Console + Google Analytics + Ubersuggest free tier = everything you need to start. Add Ahrefs/SEMrush when you have paying clients!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Learn SEO fundamentals</div>
+                    <div class="step-desc">Understand on-page, off-page, and technical SEO. Free resources: Google's SEO Guide, Moz Beginner's Guide, Ahrefs Academy!</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Get familiar with SEO tools</div>
+                    <div class="step-desc">Master Google Search Console and Analytics (both FREE!). Learn one paid tool (Ahrefs or SEMrush) when ready.</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Build your own rankings</div>
+                    <div class="step-desc">Rank your own site for "SEO services [your city]" - proof that you know what you're doing! This becomes your best case study.</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Define your services and packages</div>
+                    <div class="step-desc">Create clear packages: Local SEO, On-Page, Content, Link Building. Start with local SEO—easiest to deliver results!</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Set up on client platforms</div>
+                    <div class="step-desc">Create profiles on Upwork, Fiverr, LinkedIn, Clutch, Thumbtack. Start applying and doing outreach!</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Find your first clients</div>
+                    <div class="step-desc">Cold email businesses on Google page 2-3. Offer free SEO audits as lead magnets. Partner with web designers!</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Deliver results and report monthly</div>
+                    <div class="step-desc">SEO takes time—set expectations (3-6 months). Report monthly with rankings, traffic, progress. Results = referrals!</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Scale and specialize</div>
+                    <div class="step-desc">Build case studies from successes. Specialize in a niche (dentists, lawyers, restaurants). Raise prices as results grow!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎓</span> Learn From These Creators</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Ahrefs</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Excellent SEO tutorials and case studies from one of the best tools.</p>
+                    <a href="https://www.youtube.com/c/AhsrefsCom" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Neil Patel</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Digital marketing and SEO tips from industry veteran.</p>
+                    <a href="https://www.youtube.com/c/NeilPatel" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📚</div>
+                    <h4>Moz</h4>
+                    <div class="platform">🌐 Guide</div>
+                    <p>Beginner's Guide to SEO - the free industry standard resource.</p>
+                    <a href="https://moz.com/beginners-guide-to-seo" class="influencer-link" target="_blank">Moz Guide →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💬</div>
+                    <h4>r/SEO</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>SEO community for questions, updates, and strategy discussions.</p>
+                    <a href="https://reddit.com/r/SEO" class="influencer-link" target="_blank">r/SEO →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your SEO Business Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your SEO business!
+
+MY SEO SKILLS:
+☐ On-page SEO
+☐ Technical SEO
+☐ Local SEO
+☐ Link building
+☐ Content optimization
+☐ Keyword research
+
+TOOLS I USE:
+☐ Google Search Console
+☐ Google Analytics
+☐ Ahrefs / SEMrush
+☐ Screaming Frog
+☐ Ubersuggest
+
+CLIENT PLATFORMS:
+☐ Upwork (profile: ____)
+☐ Fiverr (gigs: ____)
+☐ LinkedIn (profile: ____)
+☐ Clutch (profile: ____)
+☐ Thumbtack (profile: ____)
+
+MY PRICING:
+Local SEO: $____/mo
+National SEO: $____/mo
+SEO Audit: $____
+Keyword Research: $____
+
+CASE STUDIES:
+1. ____ | Result: ____
+2. ____ | Result: ____
+
+ACTIVE CLIENTS:
+1. ____ | Service: ____ | Monthly: $____
+2. ____ | Service: ____ | Monthly: $____
+3. ____ | Service: ____ | Monthly: $____
+4. ____ | Service: ____ | Monthly: $____
+5. ____ | Service: ____ | Monthly: $____
+
+MONTHLY RECURRING REVENUE: $____
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
     </div>
 
-    <div class="section-card"><h2>📋 Step-by-Step Action Plan</h2>
-      <ul class="task-list">
-        <li class="task-item"><div class="task-checkbox" data-task="0"></div><div><div class="task-title">Step 1: Learn SEO fundamentals</div><div class="task-desc">Understand on-page, off-page, and technical SEO. Free resources are excellent - Google's own guides are a great start.</div><div class="details-box"><h4>📚 Learning Resources:</h4><ul><li>Google's SEO Starter Guide (free)</li><li>Moz Beginner's Guide to SEO (free)</li><li>Ahrefs Academy (free courses)</li><li>YouTube: Ahrefs, Neil Patel, Backlinko</li><li>Practice on your own website first</li></ul></div><span class="task-badge">📚 Free resources available</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="1"></div><div><div class="task-title">Step 2: Get familiar with SEO tools</div><div class="task-desc">Learn the industry tools - some are free to start. Ahrefs, SEMrush, Moz are the big ones.</div><div class="details-box"><h4>🛠️ Essential Tools:</h4><ul><li><strong>Google Search Console:</strong> Free, essential</li><li><strong>Google Analytics:</strong> Free, track results</li><li><strong>Ahrefs/SEMrush:</strong> $99-199/mo (paid)</li><li><strong>Screaming Frog:</strong> Free (500 URLs)</li><li><strong>Ubersuggest:</strong> Free tier available</li></ul></div><span class="task-badge">🆓 Start with free tools</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="2"></div><div><div class="task-title">Step 3: Build your own rankings</div><div class="task-desc">Rank your own site for "SEO services [your city]" - proof that you know what you're doing!</div><span class="task-badge">💡 Rank yourself first</span><span class="task-badge">📊 Show results</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="3"></div><div><div class="task-title">Step 4: Define your services</div><div class="task-desc">Create clear packages. Local SEO is easiest to start - help businesses rank in their city.</div><div class="details-box"><h4>📦 Service Packages:</h4><ul><li><strong>Local SEO:</strong> GMB, citations, reviews, local keywords</li><li><strong>On-page SEO:</strong> Content optimization, technical fixes</li><li><strong>Content creation:</strong> Blog posts, pages</li><li><strong>Link building:</strong> Outreach, guest posts</li><li><strong>Monthly reporting:</strong> Track and show progress</li></ul></div><span class="task-badge">🏪 Start with local SEO</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="4"></div><div><div class="task-title">Step 5: Find your first clients</div><div class="task-desc">Local businesses are perfect first clients. Cold email businesses ranking on page 2-3 - they're SO close!</div><div class="details-box"><h4>🎯 Finding Clients:</h4><ul><li>Cold email businesses on Google page 2-3</li><li>Local networking and referrals</li><li>LinkedIn outreach</li><li>Upwork (to build portfolio)</li><li>Partner with web designers</li><li>Free audits as lead magnets</li></ul></div><span class="task-badge">📧 Cold email works</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="5"></div><div><div class="task-title">Step 6: Deliver results and scale</div><div class="task-desc">SEO takes time - set expectations. Report monthly, show progress. Results = referrals = growth!</div><div class="details-box"><h4>🚀 Scaling Tips:</h4><ul><li>Build case studies from successes</li><li>Create processes for efficiency</li><li>Hire help for execution (link building, content)</li><li>Raise prices as you get results</li><li>Specialize in a niche (dentists, lawyers, etc.)</li></ul></div><span class="task-badge">📈 Results = referrals</span></div></li>
-      </ul>
-    </div>
-
-    <div class="section-card"><h2>📝 Your SEO Business Tracker</h2><textarea id="userNotes" placeholder="Track your SEO business:
-
-Tools: Google Search Console, Ubersuggest, Screaming Frog
-Own site ranking: Page 1 for 'SEO services [city]' ✓
-
-Current clients:
-1. Plumber - Local SEO - $600/mo
-2. Dentist - Local SEO - $800/mo
-3. E-commerce - Full SEO - $1,500/mo
-4. (proposal) Law firm - $1,200/mo
-
-Monthly recurring: $2,900
-One-time audits this month: $500
-Total: $3,400
-
-Goal: 8 clients = $6,000+/mo recurring"></textarea></div>
-    <div class="help-section"><span style="font-size:24px">💬</span><div style="flex:1"><strong>Need Help?</strong> Chat with a coach!</div><button class="chat-btn" onclick="location.href='https://asapcreditrepairusa.com/chat'">Start Chat</button></div>
-  </main>
-  <script>const K='pb_seo';function load(){const s=localStorage.getItem(K);if(s){const d=JSON.parse(s);document.querySelectorAll('.task-checkbox').forEach((b,i)=>{if(d.tasks&&d.tasks[i]){b.classList.add('checked');b.innerHTML='✓'}});if(d.notes)document.getElementById('userNotes').value=d.notes}}function save(){const t=[];document.querySelectorAll('.task-checkbox').forEach(b=>t.push(b.classList.contains('checked')));localStorage.setItem(K,JSON.stringify({tasks:t,notes:document.getElementById('userNotes').value}))}document.querySelectorAll('.task-checkbox').forEach(b=>b.onclick=function(){this.classList.toggle('checked');this.innerHTML=this.classList.contains('checked')?'✓':'';save()});document.getElementById('userNotes').oninput=save;load();</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-seo-services');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-seo-services', JSON.stringify({ steps, notes }));
+        }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>

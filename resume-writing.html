@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Writing Business - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #d6eaf8, #aed6f1); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #1a5276; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.2em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #d6eaf8; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #3498db; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #3498db; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+        .pricing-table th, .pricing-table td { padding: 12px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .pricing-table th { background: #3498db; color: white; }
+        .pricing-table tr:hover { background: #f8f9fa; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .service-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; border-left: 4px solid #3498db; }
+        .service-card .emoji { font-size: 2em; margin-bottom: 10px; }
+        .service-card h4 { color: #1a1a2e; font-size: 13px; margin-bottom: 5px; }
+        .service-card p { color: #666; font-size: 11px; }
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .platform-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #4caf50; }
+        .platform-card h4 { color: #1a1a2e; margin-bottom: 8px; }
+        .platform-card h4 a { color: #3498db; text-decoration: none; }
+        .platform-card h4 a:hover { text-decoration: underline; }
+        .platform-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .platform-card .type { color: #2e7d32; font-weight: 600; font-size: 12px; margin-top: 8px; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .skills-box { background: #f8f9fa; border-radius: 15px; padding: 20px; margin: 15px 0; }
+        .skills-box h4 { color: #1a1a2e; margin-bottom: 15px; }
+        .skills-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+        .skill-item { display: flex; align-items: center; gap: 10px; padding: 10px; background: white; border-radius: 8px; }
+        .skill-item .emoji { font-size: 1.3em; }
+        .skill-item span { color: #666; font-size: 13px; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #3498db, #2980b9); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #3498db; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #3498db; text-decoration: none; font-weight: 600; }
+        .progress-tracker { background: linear-gradient(135deg, #3498db, #2980b9); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #3498db; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Playbooks</a>
+        
+        <div class="header">
+            <h1>📝 Resume Writing Business</h1>
+            <p class="subtitle">Help job seekers land interviews with professional resumes</p>
+            <div class="time-badge">💰 $100-500+ per resume • Remote • High demand</div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Start a resume writing business helping job seekers stand out. Every day thousands of people need help with their resumes—and they'll pay well for a professional to do it. Write from anywhere, set your own hours. As you build reputation, charge $200-500+ per resume. Add LinkedIn profiles and cover letters for additional income!</p>
+            </div>
+            <div class="income-highlight">
+                <h3>$100-500+ Per Resume</h3>
+                <p>Entry-level: $75-150 • Professional: $150-300 • Executive: $300-500+ • Packages = more!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💰</span> Pricing Guide</h2>
+            <table class="pricing-table">
+                <tr><th>Service</th><th>Beginner Rate</th><th>Experienced Rate</th></tr>
+                <tr><td>Entry-level resume</td><td>$75-100</td><td>$100-150</td></tr>
+                <tr><td>Professional resume</td><td>$100-175</td><td>$175-300</td></tr>
+                <tr><td>Executive resume</td><td>$200-300</td><td>$300-500+</td></tr>
+                <tr><td>Cover letter</td><td>$50-75</td><td>$75-150</td></tr>
+                <tr><td>LinkedIn optimization</td><td>$75-125</td><td>$125-250</td></tr>
+                <tr><td>Full package (all 3)</td><td>$200-350</td><td>$350-700+</td></tr>
+            </table>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Bundle for Higher Revenue!</div>
+                <p>Offer packages: Resume + Cover Letter + LinkedIn. Clients save 10-15%, you earn more per client. Packages sell better than individual services!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Services You Can Offer</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="emoji">📄</div>
+                    <h4>Resume Writing</h4>
+                    <p>Core service, highest demand</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">✉️</div>
+                    <h4>Cover Letters</h4>
+                    <p>Easy add-on, quick to write</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">💼</div>
+                    <h4>LinkedIn Profile</h4>
+                    <p>High demand, recurring updates</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🎯</div>
+                    <h4>Career Coaching</h4>
+                    <p>Higher rates, hourly billing</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">📊</div>
+                    <h4>ATS Optimization</h4>
+                    <p>Beat applicant tracking</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🔄</div>
+                    <h4>Resume Refresh</h4>
+                    <p>Updates for existing clients</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🌐</span> Where to Find Resume Clients</h2>
+            <p style="color: #666; margin-bottom: 15px;">Multiple platforms to find clients who need resumes:</p>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h4><a href="https://www.fiverr.com/categories/writing-translation/resume-writing" target="_blank">Fiverr →</a></h4>
+                    <p>HUGE market for resume services. Create gig packages at different price points. Great for getting started!</p>
+                    <div class="type">📦 Best for: High volume</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.upwork.com/freelance-jobs/resume-writing/" target="_blank">Upwork →</a></h4>
+                    <p>Freelance marketplace with resume writing jobs posted daily. Build reviews, raise rates!</p>
+                    <div class="type">🌐 Best for: Getting started</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.linkedin.com/services/" target="_blank">LinkedIn Services →</a></h4>
+                    <p>Offer resume services directly on LinkedIn. Your target clients are already there job hunting!</p>
+                    <div class="type">💼 Best for: Professional clients</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.thumbtack.com/pro" target="_blank">Thumbtack →</a></h4>
+                    <p>Get matched with local job seekers looking for resume help. Pay per lead!</p>
+                    <div class="type">🎯 Best for: Local clients</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.flexjobs.com/freelance-jobs/resume-writer" target="_blank">FlexJobs →</a></h4>
+                    <p>Vetted remote job board with resume writing positions. Quality over quantity!</p>
+                    <div class="type">✅ Best for: Vetted jobs</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.facebook.com/groups" target="_blank">Facebook Groups →</a></h4>
+                    <p>Join job seeker groups, career changers, laid off workers groups. Offer value, then services!</p>
+                    <div class="type">👥 Best for: Direct clients</div>
+                </div>
+            </div>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Layoffs = Opportunity!</div>
+                <p>When big companies announce layoffs, those workers need resumes FAST. Join their LinkedIn communities, offer services. One layoff announcement can bring 10+ clients!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🛠️</span> Tools You'll Need</h2>
+            <div class="skills-box">
+                <h4>Essential Tools</h4>
+                <div class="skills-list">
+                    <div class="skill-item"><span class="emoji">📝</span><span>Google Docs / Microsoft Word</span></div>
+                    <div class="skill-item"><span class="emoji">🎨</span><span>Canva (visual resumes)</span></div>
+                    <div class="skill-item"><span class="emoji">🔍</span><span>Jobscan (ATS checker)</span></div>
+                    <div class="skill-item"><span class="emoji">📊</span><span>Resume templates</span></div>
+                    <div class="skill-item"><span class="emoji">💬</span><span>Zoom (client calls)</span></div>
+                    <div class="skill-item"><span class="emoji">📁</span><span>Google Drive (file sharing)</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Learn resume best practices</div>
+                    <div class="step-desc">Study ATS optimization, modern formats, industry standards. Read job postings to understand what employers want!</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Create sample resumes</div>
+                    <div class="step-desc">Build 5-10 sample resumes for different industries. These become your portfolio. Show before/after transformations!</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Define your services and pricing</div>
+                    <div class="step-desc">Create clear packages: Basic, Professional, Executive. Add cover letter and LinkedIn as upsells. Bundle for value!</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Set up on freelance platforms</div>
+                    <div class="step-desc">Create profiles on Fiverr, Upwork, LinkedIn Services, Thumbtack. Complete every section, add portfolio samples!</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Get your first clients</div>
+                    <div class="step-desc">Start with competitive pricing to build reviews. Offer friends/family discounted rates for testimonials. Apply to jobs on platforms daily!</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Develop your process</div>
+                    <div class="step-desc">Create intake questionnaire, standard call flow, revision process. Consistency = efficiency = more clients!</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Collect reviews and testimonials</div>
+                    <div class="step-desc">Ask every client for a review. Track interview success stories. Social proof sells more resumes!</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Raise rates and specialize</div>
+                    <div class="step-desc">After 10-20 clients, raise rates. Consider specializing (tech, executive, career changers). Specialists charge more!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎓</span> Learn From These Creators</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Jeff Su</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Resume tips and career advice from a tech recruiting perspective.</p>
+                    <a href="https://www.youtube.com/c/JeffSu" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Self Made Millennial</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Resume and career coaching tips for job seekers.</p>
+                    <a href="https://www.youtube.com/c/SelfMadeMillennial" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💬</div>
+                    <h4>r/resumes</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>See what job seekers struggle with. Great market research!</p>
+                    <a href="https://reddit.com/r/resumes" class="influencer-link" target="_blank">r/resumes →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🌐</div>
+                    <h4>NRWA</h4>
+                    <div class="platform">🌐 Association</div>
+                    <p>National Resume Writers' Association - certifications and resources.</p>
+                    <a href="https://www.thenrwa.org" class="influencer-link" target="_blank">NRWA →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Resume Business Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your resume writing business!
+
+PLATFORMS SIGNED UP:
+☐ Fiverr (gigs created: ____)
+☐ Upwork (profile: ____)
+☐ LinkedIn Services (active: ____)
+☐ Thumbtack (profile: ____)
+☐ FlexJobs (membership: ____)
+
+MY PRICING:
+Entry-level resume: $____
+Professional resume: $____
+Executive resume: $____
+Cover letter: $____
+LinkedIn profile: $____
+Full package: $____
+
+PORTFOLIO SAMPLES: ____ (goal: 5-10)
+
+INDUSTRIES I SPECIALIZE IN:
+1. ____
+2. ____
+3. ____
+
+CLIENTS COMPLETED:
+This week: ____
+This month: ____
+Total: ____
+
+REVIEWS:
+Fiverr: ____ reviews (____★)
+Upwork: ____ reviews (____★)
+
+SUCCESS STORIES:
+☐ Client got interview: ____
+☐ Client got job: ____
+
+MONTHLY REVENUE: $____
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-resume-writing');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-resume-writing', JSON.stringify({ steps, notes }));
+        }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
+</body>
+</html>

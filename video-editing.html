@@ -1,60 +1,393 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Video Editing Services | ASAP Credit Repair Playbook</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{--primary:#063d86;--success:#10b981;--bg:#f8fafc;--text:#1e293b;--text-light:#64748b;--border:#e2e8f0}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}.header{background:linear-gradient(135deg,#dc2626,#b91c1c);color:#fff;padding:40px 20px 50px;text-align:center}.header h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:12px}.main-content{max-width:800px;margin:-30px auto 40px;padding:0 20px}.back-link{color:#fff;text-decoration:none;opacity:.8;display:block;margin-bottom:16px}.category-badge{display:inline-block;background:rgba(255,255,255,.2);padding:6px 16px;border-radius:20px;font-size:.85rem;margin-bottom:16px}.goal-card{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid var(--success);border-radius:16px;padding:24px;margin-bottom:24px}.goal-card h2{color:#065f46;margin-bottom:12px}.goal-card .earnings{background:#fff;padding:10px 18px;border-radius:10px;margin-top:14px;font-weight:600;color:#065f46;display:inline-block}.section-card{background:#fff;border-radius:16px;padding:28px;margin-bottom:24px;border:1px solid var(--border)}.section-card h2{color:var(--primary);margin-bottom:20px}.task-list{list-style:none}.task-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)}.task-checkbox{width:28px;height:28px;border:2px solid var(--border);border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}.task-checkbox.checked{background:var(--success);border-color:var(--success);color:#fff}.task-title{font-weight:600;margin-bottom:6px}.task-desc{color:var(--text-light);font-size:.95rem}.task-badge{font-size:.8rem;padding:4px 10px;border-radius:6px;background:var(--bg);margin-top:10px;display:inline-block;margin-right:8px}.details-box{background:#f8fafc;padding:14px;border-radius:8px;margin-top:12px;border-left:4px solid #dc2626}.details-box h4{color:#b91c1c;margin-bottom:8px;font-size:.9rem}.details-box ul{margin-left:18px;font-size:.9rem}.details-box li{margin-bottom:6px}.pricing-table{width:100%;border-collapse:collapse;margin-top:12px}.pricing-table th,.pricing-table td{padding:10px;text-align:left;border-bottom:1px solid var(--border)}.pricing-table th{background:var(--bg);font-weight:600}textarea{width:100%;min-height:120px;padding:14px;border:2px solid var(--border);border-radius:10px;font-family:inherit;margin-top:10px}.help-section{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border:2px solid #7dd3fc;border-radius:16px;padding:20px;margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}.chat-btn{background:var(--primary);color:#fff;border:none;padding:12px 24px;border-radius:10px;font-weight:600;cursor:pointer}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Editing Services - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #fadbd8, #f5b7b1); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #922b21; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.2em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #fadbd8; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #e74c3c; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #e74c3c; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+        .pricing-table th, .pricing-table td { padding: 12px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .pricing-table th { background: #e74c3c; color: white; }
+        .pricing-table tr:hover { background: #f8f9fa; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .service-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; border-left: 4px solid #e74c3c; }
+        .service-card .emoji { font-size: 2em; margin-bottom: 10px; }
+        .service-card h4 { color: #1a1a2e; font-size: 13px; margin-bottom: 5px; }
+        .service-card p { color: #666; font-size: 11px; }
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .platform-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #4caf50; }
+        .platform-card h4 { color: #1a1a2e; margin-bottom: 8px; }
+        .platform-card h4 a { color: #e74c3c; text-decoration: none; }
+        .platform-card h4 a:hover { text-decoration: underline; }
+        .platform-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .platform-card .type { color: #2e7d32; font-weight: 600; font-size: 12px; margin-top: 8px; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .skills-box { background: #f8f9fa; border-radius: 15px; padding: 20px; margin: 15px 0; }
+        .skills-box h4 { color: #1a1a2e; margin-bottom: 15px; }
+        .skills-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+        .skill-item { display: flex; align-items: center; gap: 10px; padding: 10px; background: white; border-radius: 8px; }
+        .skill-item .emoji { font-size: 1.3em; }
+        .skill-item span { color: #666; font-size: 13px; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #e74c3c, #c0392b); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #e74c3c; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #e74c3c; text-decoration: none; font-weight: 600; }
+        .progress-tracker { background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #e74c3c; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+    </style>
 </head>
 <body>
-  <header class="header"><a href="index.html" class="back-link">← Back to All Playbooks</a><span class="category-badge">🎬 Creative Services</span><h1>Video Editing Services</h1><p style="opacity:.9;max-width:600px;margin:0 auto">Edit videos for YouTubers, businesses, and content creators! High demand, great pay, work from anywhere.</p></header>
-  <main class="main-content">
-    <div class="goal-card"><h2>🎯 What You'll Achieve</h2><p>Build a video editing business serving content creators and businesses. Recurring clients mean steady income!</p><div class="earnings">💰 Per video: $50-500+ | YouTube editor: $200-1,000/video | Retainer: $1,000-5,000/mo | Full-time: $5,000-15,000+/mo</div></div>
-    
-    <div class="section-card"><h2>💵 Service Pricing</h2>
-      <table class="pricing-table">
-        <tr><th>Video Type</th><th>Beginner Rate</th><th>Experienced Rate</th></tr>
-        <tr><td>Short form (Reels/TikTok)</td><td>$25-75</td><td>$75-200</td></tr>
-        <tr><td>YouTube video (10-20 min)</td><td>$100-250</td><td>$250-750</td></tr>
-        <tr><td>Long form (20+ min)</td><td>$200-400</td><td>$400-1,000+</td></tr>
-        <tr><td>Wedding highlight</td><td>$200-500</td><td>$500-1,500</td></tr>
-        <tr><td>Business promo</td><td>$300-800</td><td>$800-2,500</td></tr>
-        <tr><td>Course content</td><td>$100-300</td><td>$300-600</td></tr>
-      </table>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Playbooks</a>
+        
+        <div class="header">
+            <h1>🎬 Video Editing Services</h1>
+            <p class="subtitle">Serve content creators and businesses with recurring income</p>
+            <div class="time-badge">💰 $25-1,000+ per video • Recurring clients • Creative work</div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Build a video editing business serving content creators and businesses. Recurring clients mean steady income! YouTube, TikTok, Reels—everyone needs video editors. Learn one editing software (DaVinci Resolve is FREE!), find creators who need help, and build monthly retainer relationships!</p>
+            </div>
+            <div class="income-highlight">
+                <h3>$25-1,000+ Per Video</h3>
+                <p>Short form: $25-200 • YouTube: $100-750 • Business: $300-2,500 • Monthly retainers!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💰</span> Pricing Guide</h2>
+            <table class="pricing-table">
+                <tr><th>Video Type</th><th>Beginner Rate</th><th>Experienced Rate</th></tr>
+                <tr><td>Short form (Reels/TikTok)</td><td>$25-75</td><td>$75-200</td></tr>
+                <tr><td>YouTube video (10-20 min)</td><td>$100-250</td><td>$250-750</td></tr>
+                <tr><td>Long form (20+ min)</td><td>$200-400</td><td>$400-1,000+</td></tr>
+                <tr><td>Wedding highlight</td><td>$200-500</td><td>$500-1,500</td></tr>
+                <tr><td>Business promo</td><td>$300-800</td><td>$800-2,500</td></tr>
+                <tr><td>Course content</td><td>$100-300</td><td>$300-600</td></tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> Video Types to Specialize In</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="emoji">📱</div>
+                    <h4>Short Form</h4>
+                    <p>TikTok, Reels, Shorts</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">📺</div>
+                    <h4>YouTube</h4>
+                    <p>Huge market, recurring</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">💒</div>
+                    <h4>Weddings/Events</h4>
+                    <p>Higher per-project pay</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">💼</div>
+                    <h4>Business</h4>
+                    <p>Premium rates</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🎮</div>
+                    <h4>Gaming</h4>
+                    <p>Specific niche</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">📚</div>
+                    <h4>Courses</h4>
+                    <p>Educational content</p>
+                </div>
+            </div>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 YouTube = Best Recurring Income!</div>
+                <p>One YouTuber posting weekly = 4 videos/month = $400-3,000+/month from ONE client! Build relationships with creators for predictable income.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🌐</span> Where to Find Video Editing Clients</h2>
+            <p style="color: #666; margin-bottom: 15px;">Multiple paths to find video editing work:</p>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h4><a href="https://www.upwork.com/freelance-jobs/video-editing/" target="_blank">Upwork →</a></h4>
+                    <p>Large marketplace for video editing jobs. Build portfolio, get reviews, raise rates!</p>
+                    <div class="type">🌐 Best for: Getting started</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.fiverr.com/categories/video-animation/video-editing" target="_blank">Fiverr →</a></h4>
+                    <p>Package video services as gigs. Great for short form and specific video types!</p>
+                    <div class="type">📦 Best for: Packaged services</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://twitter.com/search?q=looking%20for%20video%20editor" target="_blank">Twitter/X →</a></h4>
+                    <p>Creators post "looking for editor" constantly. Search and respond! Direct relationships!</p>
+                    <div class="type">🐦 Best for: Creator connections</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.linkedin.com/jobs/video-editor-jobs" target="_blank">LinkedIn →</a></h4>
+                    <p>Search for video editor positions. Great for business and corporate work!</p>
+                    <div class="type">💼 Best for: Business clients</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://discord.com" target="_blank">Discord Servers →</a></h4>
+                    <p>Join creator Discord communities. Editors are always needed! Network directly with YouTubers.</p>
+                    <div class="type">💬 Best for: Creator community</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.youtube.com" target="_blank">DM YouTubers Directly →</a></h4>
+                    <p>Find creators posting inconsistently or with rough edits. DM offering help. Many need editors!</p>
+                    <div class="type">📧 Best for: Direct outreach</div>
+                </div>
+            </div>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 DM Creators Directly!</div>
+                <p>Find YouTubers with 10K-100K subs posting inconsistently. They need help! DM or email with a sample edit of THEIR content. This lands clients fast!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🛠️</span> Editing Software</h2>
+            <div class="skills-box">
+                <h4>Software Options</h4>
+                <div class="skills-list">
+                    <div class="skill-item"><span class="emoji">🆓</span><span><a href="https://www.blackmagicdesign.com/products/davinciresolve" target="_blank" style="color: #e74c3c; text-decoration: none;">DaVinci Resolve</a> (FREE, pro-grade!)</span></div>
+                    <div class="skill-item"><span class="emoji">🎬</span><span><a href="https://www.adobe.com/products/premiere.html" target="_blank" style="color: #e74c3c; text-decoration: none;">Adobe Premiere Pro</a> ($23/mo)</span></div>
+                    <div class="skill-item"><span class="emoji">🍎</span><span><a href="https://www.apple.com/final-cut-pro/" target="_blank" style="color: #e74c3c; text-decoration: none;">Final Cut Pro</a> ($300, Mac only)</span></div>
+                    <div class="skill-item"><span class="emoji">📱</span><span><a href="https://www.capcut.com/" target="_blank" style="color: #e74c3c; text-decoration: none;">CapCut</a> (FREE, great for short form)</span></div>
+                    <div class="skill-item"><span class="emoji">🎨</span><span><a href="https://www.adobe.com/products/aftereffects.html" target="_blank" style="color: #e74c3c; text-decoration: none;">After Effects</a> (motion graphics)</span></div>
+                    <div class="skill-item"><span class="emoji">🎵</span><span><a href="https://artlist.io/" target="_blank" style="color: #e74c3c; text-decoration: none;">Artlist</a> / <a href="https://www.epidemicsound.com/" target="_blank" style="color: #e74c3c; text-decoration: none;">Epidemic Sound</a> (music)</span></div>
+                </div>
+            </div>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Start with DaVinci Resolve—It's FREE!</div>
+                <p>DaVinci Resolve is 100% free and professional-grade. Hollywood films use it! No reason to pay for software when starting. Learn one tool well!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Learn video editing software</div>
+                    <div class="step-desc">Master one editing program. DaVinci Resolve is FREE and professional-grade! Learn cuts, transitions, color, audio.</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Specialize in a video type</div>
+                    <div class="step-desc">YouTube videos, short form, weddings, business? Pick a focus to stand out. YouTube = best recurring income!</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Build your portfolio</div>
+                    <div class="step-desc">Edit sample videos, do spec work, offer discounted first projects. Show before/after. 5-10 portfolio pieces!</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Set up on client platforms</div>
+                    <div class="step-desc">Create profiles on Upwork, Fiverr, LinkedIn. Join Discord servers. Follow creators on Twitter/X!</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Find your first clients</div>
+                    <div class="step-desc">DM YouTubers directly with sample edits of their content. Apply on platforms. Join creator communities!</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Deliver consistently</div>
+                    <div class="step-desc">Meet deadlines (NEVER miss!), match their style, communicate clearly. Reliability keeps clients!</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Build monthly retainers</div>
+                    <div class="step-desc">Offer monthly packages (4 videos/mo). One weekly YouTuber = predictable monthly income! Retainers = stability.</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Scale and raise rates</div>
+                    <div class="step-desc">Create editing templates for speed. Specialize in high-paying niches. Hire junior editors. Raise rates as demand grows!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎓</span> Learn From These Creators</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Peter McKinnon</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Editing tips, tutorials, and creative inspiration.</p>
+                    <a href="https://www.youtube.com/c/PeterMcKinnon" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Casey Faris</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>DaVinci Resolve tutorials from beginner to advanced.</p>
+                    <a href="https://www.youtube.com/c/CaseyFaris" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💬</div>
+                    <h4>r/VideoEditing</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Video editing community for questions, tips, and feedback.</p>
+                    <a href="https://reddit.com/r/VideoEditing" class="influencer-link" target="_blank">r/VideoEditing →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🆓</div>
+                    <h4>DaVinci Resolve</h4>
+                    <div class="platform">🌐 Software</div>
+                    <p>FREE professional editing software. Download and start learning!</p>
+                    <a href="https://www.blackmagicdesign.com/products/davinciresolve" class="influencer-link" target="_blank">Download Free →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Video Editing Business Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your video editing business!
+
+MY EDITING SOFTWARE:
+☐ DaVinci Resolve (FREE!)
+☐ Adobe Premiere Pro
+☐ Final Cut Pro
+☐ CapCut
+☐ After Effects
+
+MY SPECIALIZATION: ____
+
+CLIENT PLATFORMS:
+☐ Upwork (profile: ____)
+☐ Fiverr (gigs: ____)
+☐ LinkedIn (profile: ____)
+☐ Twitter/X (following creators: ____)
+☐ Discord servers: ____
+
+MY PRICING:
+Short form (Reels/TikTok): $____
+YouTube (10-20 min): $____
+Long form (20+ min): $____
+Business promo: $____
+Monthly package (4 videos): $____
+
+PORTFOLIO PIECES: ____ (goal: 5-10)
+
+ACTIVE CLIENTS:
+1. ____ | Type: ____ | Per video: $____
+2. ____ | Type: ____ | Per video: $____
+3. ____ | Type: ____ | Per video: $____
+
+RETAINER CLIENTS:
+1. ____ | Videos/mo: ____ | Monthly: $____
+2. ____ | Videos/mo: ____ | Monthly: $____
+
+REVIEWS:
+Upwork: ____ reviews (____★)
+Fiverr: ____ reviews (____★)
+
+MONTHLY INCOME: $____
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
     </div>
 
-    <div class="section-card"><h2>📋 Step-by-Step Action Plan</h2>
-      <ul class="task-list">
-        <li class="task-item"><div class="task-checkbox" data-task="0"></div><div><div class="task-title">Step 1: Learn video editing software</div><div class="task-desc">Master one editing program. DaVinci Resolve is free and professional-grade!</div><div class="details-box"><h4>🛠️ Editing Software:</h4><ul><li><strong>DaVinci Resolve:</strong> Free, professional grade</li><li><strong>Adobe Premiere Pro:</strong> $23/mo, industry standard</li><li><strong>Final Cut Pro:</strong> $300 one-time (Mac)</li><li><strong>CapCut:</strong> Free, great for short form</li><li>Learn: cuts, transitions, color, audio</li></ul></div><span class="task-badge">🆓 DaVinci Resolve free!</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="1"></div><div><div class="task-title">Step 2: Specialize in a video type</div><div class="task-desc">YouTube videos, short form, weddings, business? Pick a focus to stand out.</div><div class="details-box"><h4>🎯 Specialization Options:</h4><ul><li><strong>YouTube:</strong> Huge market, recurring work</li><li><strong>Short form:</strong> TikTok, Reels, Shorts</li><li><strong>Wedding/events:</strong> Higher per-project pay</li><li><strong>Business:</strong> Premium rates</li><li><strong>Gaming:</strong> Specific niche</li></ul></div><span class="task-badge">🎯 Specialize to stand out</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="2"></div><div><div class="task-title">Step 3: Build your portfolio</div><div class="task-desc">Edit sample videos, do spec work, offer discounted first projects. Show your style!</div><span class="task-badge">📁 5-10 portfolio pieces</span><span class="task-badge">🎬 Before/after samples</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="3"></div><div><div class="task-title">Step 4: Find clients</div><div class="task-desc">Reach out to YouTubers directly, use freelance platforms, post in creator communities.</div><div class="details-box"><h4>🎯 Finding Clients:</h4><ul><li>DM YouTubers/creators directly</li><li>Upwork, Fiverr (to start)</li><li>Twitter/X creator communities</li><li>Discord servers for creators</li><li>LinkedIn for business clients</li></ul></div><span class="task-badge">📧 DM creators directly</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="4"></div><div><div class="task-title">Step 5: Deliver consistently</div><div class="task-desc">Meet deadlines, match their style, communicate clearly. Reliability keeps clients!</div><span class="task-badge">⏰ Never miss deadlines</span><span class="task-badge">🎨 Match their style</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="5"></div><div><div class="task-title">Step 6: Scale with retainers</div><div class="task-desc">Monthly retainer clients = predictable income. One weekly YouTuber = 4 videos/month!</div><div class="details-box"><h4>🚀 Scaling Tips:</h4><ul><li>Offer monthly packages (4 videos/mo)</li><li>Create editing templates for speed</li><li>Hire junior editors for overflow</li><li>Specialize in high-paying niches</li><li>Raise rates as demand increases</li></ul></div><span class="task-badge">🔄 Retainers = stability</span></div></li>
-      </ul>
-    </div>
-
-    <div class="section-card"><h2>📝 Your Video Editing Tracker</h2><textarea id="userNotes" placeholder="Track your video editing business:
-
-Software: DaVinci Resolve, After Effects
-Specialization: YouTube long-form
-
-Current clients:
-1. Tech YouTuber - 4 videos/mo - $1,200/mo
-2. Fitness creator - 4 videos/mo - $1,000/mo
-3. Business channel - 2 videos/mo - $700/mo
-
-This month:
-- Retainer revenue: $2,900
-- One-off projects: $650
-- Total: $3,550
-
-Goal: 5 retainer clients = $5,000+/month"></textarea></div>
-    <div class="help-section"><span style="font-size:24px">💬</span><div style="flex:1"><strong>Need Help?</strong> Chat with a coach!</div><button class="chat-btn" onclick="location.href='https://asapcreditrepairusa.com/chat'">Start Chat</button></div>
-  </main>
-  <script>const K='pb_video_editing';function load(){const s=localStorage.getItem(K);if(s){const d=JSON.parse(s);document.querySelectorAll('.task-checkbox').forEach((b,i)=>{if(d.tasks&&d.tasks[i]){b.classList.add('checked');b.innerHTML='✓'}});if(d.notes)document.getElementById('userNotes').value=d.notes}}function save(){const t=[];document.querySelectorAll('.task-checkbox').forEach(b=>t.push(b.classList.contains('checked')));localStorage.setItem(K,JSON.stringify({tasks:t,notes:document.getElementById('userNotes').value}))}document.querySelectorAll('.task-checkbox').forEach(b=>b.onclick=function(){this.classList.toggle('checked');this.innerHTML=this.classList.contains('checked')?'✓':'';save()});document.getElementById('userNotes').oninput=save;load();</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-video-editing');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-video-editing', JSON.stringify({ steps, notes }));
+        }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>

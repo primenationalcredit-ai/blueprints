@@ -1,63 +1,386 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Data Entry Services | ASAP Credit Repair Playbook</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{--primary:#063d86;--success:#10b981;--bg:#f8fafc;--text:#1e293b;--text-light:#64748b;--border:#e2e8f0}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}.header{background:linear-gradient(135deg,#6366f1,#4f46e5);color:#fff;padding:40px 20px 50px;text-align:center}.header h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:12px}.main-content{max-width:800px;margin:-30px auto 40px;padding:0 20px}.back-link{color:#fff;text-decoration:none;opacity:.8;display:block;margin-bottom:16px}.category-badge{display:inline-block;background:rgba(255,255,255,.2);padding:6px 16px;border-radius:20px;font-size:.85rem;margin-bottom:16px}.goal-card{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid var(--success);border-radius:16px;padding:24px;margin-bottom:24px}.goal-card h2{color:#065f46;margin-bottom:12px}.goal-card .earnings{background:#fff;padding:10px 18px;border-radius:10px;margin-top:14px;font-weight:600;color:#065f46;display:inline-block}.section-card{background:#fff;border-radius:16px;padding:28px;margin-bottom:24px;border:1px solid var(--border)}.section-card h2{color:var(--primary);margin-bottom:20px}.task-list{list-style:none}.task-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)}.task-checkbox{width:28px;height:28px;border:2px solid var(--border);border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}.task-checkbox.checked{background:var(--success);border-color:var(--success);color:#fff}.task-title{font-weight:600;margin-bottom:6px}.task-desc{color:var(--text-light);font-size:.95rem}.task-badge{font-size:.8rem;padding:4px 10px;border-radius:6px;background:var(--bg);margin-top:10px;display:inline-block;margin-right:8px}.details-box{background:#f8fafc;padding:14px;border-radius:8px;margin-top:12px;border-left:4px solid #6366f1}.details-box h4{color:#4f46e5;margin-bottom:8px;font-size:.9rem}.details-box ul{margin-left:18px;font-size:.9rem}.details-box li{margin-bottom:6px}.pricing-table{width:100%;border-collapse:collapse;margin-top:12px}.pricing-table th,.pricing-table td{padding:10px;text-align:left;border-bottom:1px solid var(--border)}.pricing-table th{background:var(--bg);font-weight:600}textarea{width:100%;min-height:120px;padding:14px;border:2px solid var(--border);border-radius:10px;font-family:inherit;margin-top:10px}.help-section{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border:2px solid #7dd3fc;border-radius:16px;padding:20px;margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}.chat-btn{background:var(--primary);color:#fff;border:none;padding:12px 24px;border-radius:10px;font-weight:600;cursor:pointer}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Entry Services - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #9b59b6, #8e44ad); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #ebdef0, #d7bde2); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #6c3483; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.2em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #ebdef0; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #9b59b6; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #9b59b6; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+        .pricing-table th, .pricing-table td { padding: 12px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .pricing-table th { background: #9b59b6; color: white; }
+        .pricing-table tr:hover { background: #f8f9fa; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .service-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; border-left: 4px solid #9b59b6; }
+        .service-card .emoji { font-size: 2em; margin-bottom: 10px; }
+        .service-card h4 { color: #1a1a2e; font-size: 13px; margin-bottom: 5px; }
+        .service-card p { color: #666; font-size: 11px; }
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .platform-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #4caf50; }
+        .platform-card h4 { color: #1a1a2e; margin-bottom: 8px; }
+        .platform-card h4 a { color: #9b59b6; text-decoration: none; }
+        .platform-card h4 a:hover { text-decoration: underline; }
+        .platform-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .platform-card .type { color: #2e7d32; font-weight: 600; font-size: 12px; margin-top: 8px; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .skills-box { background: #f8f9fa; border-radius: 15px; padding: 20px; margin: 15px 0; }
+        .skills-box h4 { color: #1a1a2e; margin-bottom: 15px; }
+        .skills-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+        .skill-item { display: flex; align-items: center; gap: 10px; padding: 10px; background: white; border-radius: 8px; }
+        .skill-item .emoji { font-size: 1.3em; }
+        .skill-item span { color: #666; font-size: 13px; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #9b59b6, #8e44ad); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #9b59b6; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #9b59b6; text-decoration: none; font-weight: 600; }
+        .progress-tracker { background: linear-gradient(135deg, #9b59b6, #8e44ad); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #9b59b6; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #9b59b6, #8e44ad); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+    </style>
 </head>
 <body>
-  <header class="header"><a href="index.html" class="back-link">← Back to All Playbooks</a><span class="category-badge">💻 Virtual Services</span><h1>Data Entry Services</h1><p style="opacity:.9;max-width:600px;margin:0 auto">Turn typing speed into income! Enter data, manage spreadsheets, digitize records from home.</p></header>
-  <main class="main-content">
-    <div class="goal-card"><h2>🎯 What You'll Achieve</h2><p>Build a data entry business working remotely. Basic computer skills required, no degree needed. Flexible hours!</p><div class="earnings">💰 Hourly: $15-30+ | Per project: $50-500+ | Part-time: $1,000-2,500/mo | Full-time: $2,500-5,000+/mo</div></div>
-    
-    <div class="section-card"><h2>💵 Service Pricing</h2>
-      <table class="pricing-table">
-        <tr><th>Service Type</th><th>Rate</th><th>Notes</th></tr>
-        <tr><td>Basic data entry</td><td>$15-20/hr</td><td>Simple typing/copying</td></tr>
-        <tr><td>Spreadsheet work</td><td>$18-30/hr</td><td>Excel formatting, formulas</td></tr>
-        <tr><td>CRM data entry</td><td>$18-28/hr</td><td>Salesforce, HubSpot, etc.</td></tr>
-        <tr><td>Research + entry</td><td>$20-35/hr</td><td>Find and input data</td></tr>
-        <tr><td>Document digitization</td><td>$0.02-0.05/record</td><td>Per record pricing</td></tr>
-        <tr><td>Per keystroke</td><td>$0.01-0.03</td><td>High-volume projects</td></tr>
-      </table>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Playbooks</a>
+        
+        <div class="header">
+            <h1>⌨️ Data Entry Services</h1>
+            <p class="subtitle">Work remotely with basic computer skills - no degree needed</p>
+            <div class="time-badge">💰 $15-35/hr • Remote • Flexible hours</div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Build a data entry business working remotely. Basic computer skills required, no degree needed! Enter data, manage spreadsheets, update CRMs. Start at $15-20/hr and work up to $25-35/hr with specialized skills. Flexible hours, work from anywhere, and build long-term client relationships for steady income!</p>
+            </div>
+            <div class="income-highlight">
+                <h3>$15-35/Hour</h3>
+                <p>Basic entry: $15-20/hr • Spreadsheets: $18-30/hr • Research + entry: $20-35/hr</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💰</span> Pricing Guide</h2>
+            <table class="pricing-table">
+                <tr><th>Service Type</th><th>Rate</th><th>Notes</th></tr>
+                <tr><td>Basic data entry</td><td>$15-20/hr</td><td>Simple typing/copying</td></tr>
+                <tr><td>Spreadsheet work</td><td>$18-30/hr</td><td>Excel formatting, formulas</td></tr>
+                <tr><td>CRM data entry</td><td>$18-28/hr</td><td>Salesforce, HubSpot, etc.</td></tr>
+                <tr><td>Research + entry</td><td>$20-35/hr</td><td>Find and input data</td></tr>
+                <tr><td>Document digitization</td><td>$0.02-0.05/record</td><td>Per record pricing</td></tr>
+                <tr><td>Per keystroke</td><td>$0.01-0.03</td><td>High-volume projects</td></tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">⌨️</span> Types of Data Entry Work</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="emoji">📊</div>
+                    <h4>Spreadsheet Entry</h4>
+                    <p>Excel, Google Sheets</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">💼</div>
+                    <h4>CRM Updates</h4>
+                    <p>Salesforce, HubSpot</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🔍</div>
+                    <h4>Research + Entry</h4>
+                    <p>Find and input data</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">📝</div>
+                    <h4>Form Processing</h4>
+                    <p>Applications, surveys</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">📄</div>
+                    <h4>Document Digitization</h4>
+                    <p>Paper to digital</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🛒</div>
+                    <h4>E-commerce Listings</h4>
+                    <p>Product data entry</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🌐</span> Where to Find Data Entry Work</h2>
+            <p style="color: #666; margin-bottom: 15px;">Multiple platforms for data entry jobs:</p>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h4><a href="https://www.upwork.com/freelance-jobs/data-entry/" target="_blank">Upwork →</a></h4>
+                    <p>TONS of data entry jobs posted daily. Build reviews, raise rates. Great starting point!</p>
+                    <div class="type">🌐 Best for: Getting started</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.fiverr.com/categories/business/data-entry-services" target="_blank">Fiverr →</a></h4>
+                    <p>Create data entry gigs at different price points. Good for packaged services (X entries for $Y).</p>
+                    <div class="type">📦 Best for: Packaged work</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.flexjobs.com/remote-jobs/data-entry" target="_blank">FlexJobs →</a></h4>
+                    <p>Vetted remote job board (paid membership). Quality over quantity—no scams, real opportunities!</p>
+                    <div class="type">✅ Best for: Vetted jobs</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.belay.com/virtual-assistants" target="_blank">Belay →</a></h4>
+                    <p>VA company that includes data entry work. They find clients, you do the work!</p>
+                    <div class="type">🏢 Best for: Steady work</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.indeed.com/jobs?q=data+entry+remote" target="_blank">Indeed Remote →</a></h4>
+                    <p>Search for remote data entry positions. Filter by remote and entry-level!</p>
+                    <div class="type">💼 Best for: Job listings</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.clickworker.com" target="_blank">Clickworker →</a></h4>
+                    <p>Microtask platform including data entry. Quick tasks, quick pay. Good for filling gaps!</p>
+                    <div class="type">⚡ Best for: Quick tasks</div>
+                </div>
+            </div>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Learn Excel = Higher Rates!</div>
+                <p>Basic data entry pays $15-20/hr. But Excel skills (formulas, pivot tables, VLOOKUP) pay $25-35/hr. Free YouTube tutorials can double your rate!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">⌨️</span> Key Skills to Develop</h2>
+            <div class="skills-box">
+                <h4>Essential Skills</h4>
+                <div class="skills-list">
+                    <div class="skill-item"><span class="emoji">⌨️</span><span>Typing speed: 50+ WPM</span></div>
+                    <div class="skill-item"><span class="emoji">📊</span><span>Excel / Google Sheets</span></div>
+                    <div class="skill-item"><span class="emoji">👁️</span><span>Attention to detail</span></div>
+                    <div class="skill-item"><span class="emoji">🔢</span><span>10-key/numeric keypad</span></div>
+                    <div class="skill-item"><span class="emoji">💼</span><span>CRM basics (Salesforce, etc.)</span></div>
+                    <div class="skill-item"><span class="emoji">🌐</span><span>Google Workspace</span></div>
+                </div>
+            </div>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Practice Your Typing!</div>
+                <p>Use TypingTest.com and Keybr.com to improve speed. Goal: 50+ WPM with high accuracy. Faster typing = more money per hour!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Assess and improve your skills</div>
+                    <div class="step-desc">Test your typing speed (goal: 50+ WPM). Learn Excel basics. Practice accuracy—it matters more than speed!</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Set up your workspace</div>
+                    <div class="step-desc">Reliable computer, fast internet, comfortable setup. Consider dual monitors and ergonomic keyboard for efficiency!</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Learn common tools</div>
+                    <div class="step-desc">Master Excel, Google Sheets, common CRMs. The more tools you know, the more jobs you qualify for!</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Set up on freelance platforms</div>
+                    <div class="step-desc">Create profiles on Upwork, Fiverr, FlexJobs, Indeed. Complete every section. Start applying to data entry jobs!</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Apply consistently</div>
+                    <div class="step-desc">Apply to 5-10 jobs per day on platforms. Personalize proposals. Track your applications. Consistency wins!</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Deliver accurate, fast work</div>
+                    <div class="step-desc">Accuracy is MORE important than speed! Double-check everything. Meet deadlines. Quality builds reputation!</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Build long-term client relationships</div>
+                    <div class="step-desc">Recurring clients = stable income. Ask for ongoing work. Become their go-to data person!</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Level up your skills and rates</div>
+                    <div class="step-desc">Learn advanced Excel (VLOOKUP, pivot tables). Specialize in an industry. Raise rates as you gain experience!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎓</span> Learn From These Resources</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">⌨️</div>
+                    <h4>TypingTest.com</h4>
+                    <div class="platform">🌐 Tool</div>
+                    <p>Free typing speed tests. Track improvement over time!</p>
+                    <a href="https://www.typingtest.com" class="influencer-link" target="_blank">Test Your Speed →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📊</div>
+                    <h4>Excel Easy</h4>
+                    <div class="platform">🌐 Tutorial</div>
+                    <p>Free Excel tutorials from beginner to advanced.</p>
+                    <a href="https://www.excel-easy.com" class="influencer-link" target="_blank">Learn Excel →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💬</div>
+                    <h4>r/WorkOnline</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Community sharing remote work opportunities including data entry.</p>
+                    <a href="https://reddit.com/r/WorkOnline" class="influencer-link" target="_blank">r/WorkOnline →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🌐</div>
+                    <h4>Upwork</h4>
+                    <div class="platform">🌐 Platform</div>
+                    <p>Start applying for data entry jobs today!</p>
+                    <a href="https://www.upwork.com/freelance-jobs/data-entry/" class="influencer-link" target="_blank">Find Jobs →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Data Entry Business Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your data entry work!
+
+MY SKILLS:
+Typing speed: ____ WPM
+☐ Excel basics
+☐ Google Sheets
+☐ CRM (Salesforce, HubSpot)
+☐ 10-key proficiency
+
+PLATFORMS SIGNED UP:
+☐ Upwork (profile: ____)
+☐ Fiverr (gigs: ____)
+☐ FlexJobs (membership: ____)
+☐ Belay (applied: ____)
+☐ Indeed (alerts set: ____)
+☐ Clickworker (profile: ____)
+
+MY RATES:
+Basic data entry: $____/hr
+Spreadsheet work: $____/hr
+CRM entry: $____/hr
+Research + entry: $____/hr
+
+APPLICATIONS THIS WEEK: ____
+RESPONSES: ____
+JOBS WON: ____
+
+ACTIVE CLIENTS:
+1. ____ | Type: ____ | Rate: $____
+2. ____ | Type: ____ | Rate: $____
+3. ____ | Type: ____ | Rate: $____
+
+REVIEWS:
+Upwork: ____ reviews (____★)
+Fiverr: ____ reviews (____★)
+
+WEEKLY INCOME: $____
+MONTHLY INCOME: $____
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
     </div>
 
-    <div class="section-card"><h2>📋 Step-by-Step Action Plan</h2>
-      <ul class="task-list">
-        <li class="task-item"><div class="task-checkbox" data-task="0"></div><div><div class="task-title">Step 1: Assess and improve your skills</div><div class="task-desc">Typing speed 50+ WPM, Excel basics, attention to detail. Practice to get faster!</div><div class="details-box"><h4>⌨️ Key Skills:</h4><ul><li>Typing speed: 50+ WPM preferred</li><li>Excel/Google Sheets proficiency</li><li>Attention to detail (accuracy!)</li><li>10-key/numeric keypad speed</li><li>Practice: TypingTest.com, Keybr.com</li></ul></div><span class="task-badge">⌨️ Speed + accuracy</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="1"></div><div><div class="task-title">Step 2: Set up your workspace</div><div class="task-desc">Reliable computer, fast internet, comfortable setup. Efficiency matters for hourly work!</div><div class="details-box"><h4>💻 Workspace Needs:</h4><ul><li>Reliable computer</li><li>Fast, stable internet</li><li>Comfortable keyboard (consider ergonomic)</li><li>Dual monitors (optional but helpful)</li><li>Quiet work environment</li></ul></div><span class="task-badge">💻 Good setup</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="2"></div><div><div class="task-title">Step 3: Learn common tools</div><div class="task-desc">Excel, Google Sheets, common CRMs. The more tools you know, the more jobs you qualify for.</div><span class="task-badge">📊 Excel essential</span><span class="task-badge">☁️ Google Sheets</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="3"></div><div><div class="task-title">Step 4: Find data entry work</div><div class="task-desc">Freelance platforms, remote job boards, direct outreach to businesses.</div><div class="details-box"><h4>🔍 Where to Find Work:</h4><ul><li><strong>Upwork:</strong> Many data entry jobs</li><li><strong>Fiverr:</strong> Create service gigs</li><li><strong>FlexJobs:</strong> Vetted remote jobs ($)</li><li><strong>Indeed Remote:</strong> Job listings</li><li><strong>Belay, Time Etc:</strong> VA companies</li><li>Direct outreach to small businesses</li></ul></div><span class="task-badge">📱 Upwork good start</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="4"></div><div><div class="task-title">Step 5: Deliver accurate, fast work</div><div class="task-desc">Accuracy is more important than speed! Double-check everything. Meet deadlines.</div><span class="task-badge">✅ Accuracy first</span><span class="task-badge">⏰ Meet deadlines</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="5"></div><div><div class="task-title">Step 6: Build long-term client relationships</div><div class="task-desc">Recurring clients = stable income. Become their go-to data person!</div><div class="details-box"><h4>🚀 Growth Strategies:</h4><ul><li>Ask for ongoing work</li><li>Offer related services</li><li>Raise rates as you gain experience</li><li>Specialize in an industry</li><li>Learn advanced Excel (higher pay)</li></ul></div><span class="task-badge">🔄 Recurring clients</span></div></li>
-      </ul>
-    </div>
-
-    <div class="section-card"><h2>📝 Your Data Entry Tracker</h2><textarea id="userNotes" placeholder="Track your data entry business:
-
-Typing speed: 68 WPM
-Skills: Excel, Google Sheets, Salesforce
-Platforms: Upwork, direct clients
-
-Current clients:
-1. Marketing agency - 10 hrs/week @ $22 = $220
-2. Real estate office - 5 hrs/week @ $20 = $100
-3. Upwork project - $350 fixed price
-4. E-commerce store - 8 hrs/week @ $18 = $144
-
-This week: $464
-This month: ~$1,850
-
-Upwork profile: Top Rated, 98% success
-Reviews: 24 five-star
-
-Goal: 30 hrs/week @ $25 avg = $3,000+/month"></textarea></div>
-    <div class="help-section"><span style="font-size:24px">💬</span><div style="flex:1"><strong>Need Help?</strong> Chat with a coach!</div><button class="chat-btn" onclick="location.href='https://asapcreditrepairusa.com/chat'">Start Chat</button></div>
-  </main>
-  <script>const K='pb_data_entry';function load(){const s=localStorage.getItem(K);if(s){const d=JSON.parse(s);document.querySelectorAll('.task-checkbox').forEach((b,i)=>{if(d.tasks&&d.tasks[i]){b.classList.add('checked');b.innerHTML='✓'}});if(d.notes)document.getElementById('userNotes').value=d.notes}}function save(){const t=[];document.querySelectorAll('.task-checkbox').forEach(b=>t.push(b.classList.contains('checked')));localStorage.setItem(K,JSON.stringify({tasks:t,notes:document.getElementById('userNotes').value}))}document.querySelectorAll('.task-checkbox').forEach(b=>b.onclick=function(){this.classList.toggle('checked');this.innerHTML=this.classList.contains('checked')?'✓':'';save()});document.getElementById('userNotes').oninput=save;load();</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-data-entry');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-data-entry', JSON.stringify({ steps, notes }));
+        }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>
