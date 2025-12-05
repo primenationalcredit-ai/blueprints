@@ -1,53 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Online Coaching Business | ASAP Credit Repair Playbook</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>:root{--primary:#063d86;--success:#10b981;--bg:#f8fafc;--text:#1e293b;--text-light:#64748b;--border:#e2e8f0}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}.header{background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;padding:40px 20px 50px;text-align:center}.header h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:12px}.main-content{max-width:800px;margin:-30px auto 40px;padding:0 20px}.back-link{color:#fff;text-decoration:none;opacity:.8;display:block;margin-bottom:16px}.category-badge{display:inline-block;background:rgba(255,255,255,.2);padding:6px 16px;border-radius:20px;font-size:.85rem;margin-bottom:16px}.goal-card{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid var(--success);border-radius:16px;padding:24px;margin-bottom:24px}.goal-card h2{color:#065f46;margin-bottom:12px}.goal-card .earnings{background:#fff;padding:10px 18px;border-radius:10px;margin-top:14px;font-weight:600;color:#065f46;display:inline-block}.section-card{background:#fff;border-radius:16px;padding:28px;margin-bottom:24px;border:1px solid var(--border)}.section-card h2{color:var(--primary);margin-bottom:20px}.task-list{list-style:none}.task-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)}.task-checkbox{width:28px;height:28px;border:2px solid var(--border);border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}.task-checkbox.checked{background:var(--success);border-color:var(--success);color:#fff}.task-title{font-weight:600;margin-bottom:6px}.task-desc{color:var(--text-light);font-size:.95rem}.task-badge{font-size:.8rem;padding:4px 10px;border-radius:6px;background:var(--bg);margin-top:10px;display:inline-block;margin-right:8px}.details-box{background:#f8fafc;padding:14px;border-radius:8px;margin-top:12px;border-left:4px solid #f59e0b}.details-box h4{color:#d97706;margin-bottom:8px;font-size:.9rem}.details-box ul{margin-left:18px;font-size:.9rem}.details-box li{margin-bottom:6px}.pricing-table{width:100%;border-collapse:collapse;margin-top:12px}.pricing-table th,.pricing-table td{padding:10px;text-align:left;border-bottom:1px solid var(--border)}.pricing-table th{background:var(--bg);font-weight:600}textarea{width:100%;min-height:120px;padding:14px;border:2px solid var(--border);border-radius:10px;font-family:inherit;margin-top:10px}.help-section{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border:2px solid #7dd3fc;border-radius:16px;padding:20px;margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}.chat-btn{background:var(--primary);color:#fff;border:none;padding:12px 24px;border-radius:10px;font-weight:600;cursor:pointer}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Coaching Business - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #d6eaf8, #aed6f1); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #1a5276; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.2em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #d6eaf8; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #3498db; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #3498db; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+        .pricing-table th, .pricing-table td { padding: 12px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .pricing-table th { background: #3498db; color: white; }
+        .pricing-table tr:hover { background: #f8f9fa; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .service-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; border-left: 4px solid #3498db; }
+        .service-card .emoji { font-size: 2em; margin-bottom: 10px; }
+        .service-card h4 { color: #1a1a2e; font-size: 13px; margin-bottom: 5px; }
+        .service-card p { color: #666; font-size: 11px; }
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .platform-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #4caf50; }
+        .platform-card h4 { color: #1a1a2e; margin-bottom: 8px; }
+        .platform-card h4 a { color: #3498db; text-decoration: none; }
+        .platform-card h4 a:hover { text-decoration: underline; }
+        .platform-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .platform-card .type { color: #2e7d32; font-weight: 600; font-size: 12px; margin-top: 8px; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .skills-box { background: #f8f9fa; border-radius: 15px; padding: 20px; margin: 15px 0; }
+        .skills-box h4 { color: #1a1a2e; margin-bottom: 15px; }
+        .skills-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+        .skill-item { display: flex; align-items: center; gap: 10px; padding: 10px; background: white; border-radius: 8px; }
+        .skill-item .emoji { font-size: 1.3em; }
+        .skill-item span { color: #666; font-size: 13px; }
+        .skill-item a { color: #3498db; text-decoration: none; }
+        .skill-item a:hover { text-decoration: underline; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #3498db, #2980b9); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #3498db; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #3498db; text-decoration: none; font-weight: 600; }
+        .progress-tracker { background: linear-gradient(135deg, #3498db, #2980b9); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #3498db; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+    </style>
 </head>
 <body>
-  <header class="header"><a href="index.html" class="back-link">← Back to All Playbooks</a><span class="category-badge">💻 Digital Services</span><h1>Online Coaching Business</h1><p style="opacity:.9;max-width:600px;margin:0 auto">Coach clients worldwide via video! Fitness, business, skills - share your expertise.</p></header>
-  <main class="main-content">
-    <div class="goal-card"><h2>🎯 What You'll Achieve</h2><p>Start an online coaching business helping clients achieve their goals. Location-free income!</p><div class="earnings">💰 Per session: $100-500+ | Monthly package: $500-3,000+ | Group program: $200-1,000/person | Monthly: $5,000-30,000+</div></div>
-    <div class="section-card"><h2>💵 Online Coaching Pricing</h2>
-      <table class="pricing-table"><tr><th>Service</th><th>Price</th><th>Notes</th></tr><tr><td>Single session</td><td>$100-300</td><td>60-90 minutes</td></tr><tr><td>Monthly 1-on-1</td><td>$500-2,000</td><td>4 calls + support</td></tr><tr><td>3-month package</td><td>$1,500-5,000</td><td>Best value</td></tr><tr><td>Group coaching</td><td>$200-500/person</td><td>6-12 people</td></tr><tr><td>VIP intensive</td><td>$1,000-5,000</td><td>Full day/weekend</td></tr><tr><td>Membership</td><td>$50-200/month</td><td>Community + content</td></tr></table></div>
-    <div class="section-card"><h2>📋 Step-by-Step Action Plan</h2>
-      <ul class="task-list">
-        <li class="task-item"><div class="task-checkbox" data-task="0"></div><div><div class="task-title">Step 1: Define your coaching niche</div><div class="task-desc">What transformation can you help people achieve? Be specific!</div><div class="details-box"><h4>🎯 Profitable Niches:</h4><ul><li>Business/entrepreneurship coaching</li><li>Health and fitness coaching</li><li>Career and executive coaching</li><li>Relationship/dating coaching</li><li>Financial coaching</li><li>Specific skill coaching</li></ul></div><span class="task-badge">🎯 Specific niche</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="1"></div><div><div class="task-title">Step 2: Create your coaching framework</div><div class="task-desc">Develop a repeatable process that gets clients results!</div><div class="details-box"><h4>📋 Framework Elements:</h4><ul><li>Assessment/intake process</li><li>Clear milestones and goals</li><li>Weekly/monthly structure</li><li>Accountability systems</li><li>Resources and tools</li><li>Progress tracking</li></ul></div><span class="task-badge">📋 Proven process</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="2"></div><div><div class="task-title">Step 3: Set up your tech stack</div><div class="task-desc">Video calls, scheduling, payments. Keep it simple to start!</div><span class="task-badge">📹 Zoom or Google Meet</span><span class="task-badge">📅 Calendly booking</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="3"></div><div><div class="task-title">Step 4: Build your audience</div><div class="task-desc">Content marketing builds trust. Show your expertise!</div><div class="details-box"><h4>📣 Audience Building:</h4><ul><li>Instagram/LinkedIn content</li><li>YouTube educational videos</li><li>Podcast guesting</li><li>Free webinars/workshops</li><li>Lead magnet + email list</li><li>Testimonials and case studies</li></ul></div><span class="task-badge">📱 Content builds trust</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="4"></div><div><div class="task-title">Step 5: Sell through discovery calls</div><div class="task-desc">Free calls to qualify and enroll clients. Solve their problem!</div><span class="task-badge">📞 Discovery calls</span><span class="task-badge">🎯 Solve their pain</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="5"></div><div><div class="task-title">Step 6: Scale beyond 1-on-1</div><div class="task-desc">Group programs and courses leverage your time!</div><div class="details-box"><h4>🚀 Scaling Options:</h4><ul><li>Group coaching programs</li><li>Online courses</li><li>Membership community</li><li>Certify other coaches</li><li>Corporate contracts</li></ul></div><span class="task-badge">👥 Group programs</span></div></li>
-      </ul></div>
-    <div class="section-card"><h2>📝 Your Online Coaching Tracker</h2><textarea id="userNotes" placeholder="Track your online coaching business:
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Playbooks</a>
+        
+        <div class="header">
+            <h1>🎯 Online Coaching Business</h1>
+            <p class="subtitle">Coach clients worldwide via video! Share your expertise for premium rates</p>
+            <div class="time-badge">💰 $100-500+ per session • Recurring clients • Location-free!</div>
+        </div>
 
-Niche: Business coaching for freelancers
-Framework: 12-week Freedom Freelancer program
-Platforms: Zoom, Calendly, Stripe
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Start an online coaching business helping clients achieve their goals. Fitness, business, career, relationships—if you have expertise, people will pay for your guidance! Build monthly recurring income with 1-on-1 clients, then scale with group programs and courses for $5,000-30,000+/month!</p>
+            </div>
+            <div class="income-highlight">
+                <h3>$100-500+ Per Session</h3>
+                <p>Monthly package: $500-2,000 • Group program: $200-500/person • VIP intensive: $1,000-5,000</p>
+            </div>
+        </div>
 
-Current clients:
-- 1-on-1 clients: 6 @ $800/mo = $4,800
-- Group program: 8 @ $400/mo = $3,200
+        <div class="card">
+            <h2><span class="icon">💰</span> Pricing Guide</h2>
+            <table class="pricing-table">
+                <tr><th>Service Type</th><th>Price</th><th>Notes</th></tr>
+                <tr><td>Single session (60-90 min)</td><td>$100-300</td><td>Discovery or one-off</td></tr>
+                <tr><td>Monthly 1-on-1 (4 calls)</td><td>$500-2,000</td><td>+ messaging support</td></tr>
+                <tr><td>3-month package</td><td>$1,500-5,000</td><td>Best value for clients</td></tr>
+                <tr><td>Group coaching (6-12 people)</td><td>$200-500/person</td><td>Leverage your time</td></tr>
+                <tr><td>VIP intensive (full day)</td><td>$1,000-5,000</td><td>Deep dive transformation</td></tr>
+                <tr><td>Membership community</td><td>$50-200/month</td><td>Recurring, scalable</td></tr>
+            </table>
+        </div>
 
-This month:
-- Coaching revenue: $8,000
-- Course sales (2): $594
-- Total: $8,594
+        <div class="card">
+            <h2><span class="icon">🎯</span> Profitable Coaching Niches</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="emoji">💼</div>
+                    <h4>Business Coaching</h4>
+                    <p>Entrepreneurs, startups</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">💪</div>
+                    <h4>Health & Fitness</h4>
+                    <p>Weight loss, strength</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">📈</div>
+                    <h4>Career Coaching</h4>
+                    <p>Job search, advancement</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">💕</div>
+                    <h4>Relationship</h4>
+                    <p>Dating, marriage</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">💰</div>
+                    <h4>Financial Coaching</h4>
+                    <p>Budgeting, wealth</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🧠</div>
+                    <h4>Mindset/Life</h4>
+                    <p>Productivity, habits</p>
+                </div>
+            </div>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Niche Down for Premium Rates!</div>
+                <p>"Business coach" earns $100/hr. "Business coach for female founders scaling to $1M" earns $500+/hr. The more specific, the more you can charge!</p>
+            </div>
+        </div>
 
-Discovery calls: 12
-Close rate: 50%
-Client results: 85% hit goals
+        <div class="card">
+            <h2><span class="icon">🛠️</span> Your Tech Stack</h2>
+            <div class="skills-box">
+                <h4>Essential Tools (Most are FREE!)</h4>
+                <div class="skills-list">
+                    <div class="skill-item"><span class="emoji">📹</span><span><a href="https://zoom.us" target="_blank">Zoom</a> (FREE tier) - Video calls</span></div>
+                    <div class="skill-item"><span class="emoji">📅</span><span><a href="https://calendly.com" target="_blank">Calendly</a> (FREE tier) - Booking</span></div>
+                    <div class="skill-item"><span class="emoji">💳</span><span><a href="https://stripe.com" target="_blank">Stripe</a> - Accept payments</span></div>
+                    <div class="skill-item"><span class="emoji">📧</span><span><a href="https://convertkit.com" target="_blank">ConvertKit</a> - Email marketing</span></div>
+                    <div class="skill-item"><span class="emoji">💬</span><span><a href="https://slack.com" target="_blank">Slack</a> or <a href="https://voxer.com" target="_blank">Voxer</a> - Client messaging</span></div>
+                    <div class="skill-item"><span class="emoji">📝</span><span><a href="https://notion.so" target="_blank">Notion</a> (FREE) - Client resources</span></div>
+                </div>
+            </div>
+        </div>
 
-Instagram: 8,500 followers
-Email list: 2,400 subscribers
-Avg email open rate: 42%
+        <div class="card">
+            <h2><span class="icon">🌐</span> Where to Find Clients</h2>
+            <p style="color: #666; margin-bottom: 15px;">Build your audience and attract coaching clients:</p>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h4><a href="https://www.linkedin.com" target="_blank">LinkedIn →</a></h4>
+                    <p>Post content, connect with ideal clients, DM conversations. Best for B2B coaching (business, career, executive)!</p>
+                    <div class="type">💼 Best for: B2B coaching</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.instagram.com" target="_blank">Instagram →</a></h4>
+                    <p>Build personal brand with Reels, Stories, and posts. Great for health, fitness, lifestyle coaching!</p>
+                    <div class="type">📱 Best for: Health/lifestyle</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.youtube.com" target="_blank">YouTube →</a></h4>
+                    <p>Long-form educational content builds deep trust. Viewers become clients who already know and trust you!</p>
+                    <div class="type">📺 Best for: Trust building</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.facebook.com/groups" target="_blank">Facebook Groups →</a></h4>
+                    <p>Join groups where your ideal clients hang out. Provide value, build relationships, offer coaching!</p>
+                    <div class="type">👥 Best for: Community</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.clarity.fm" target="_blank">Clarity.fm →</a></h4>
+                    <p>Marketplace for business advice calls. Get paid per minute. Great for building credibility!</p>
+                    <div class="type">💡 Best for: Business coaching</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.coach.me" target="_blank">Coach.me →</a></h4>
+                    <p>Coaching marketplace. Clients find you. Build reviews and raise rates over time!</p>
+                    <div class="type">🎯 Best for: Getting started</div>
+                </div>
+            </div>
+        </div>
 
-Goal: 10 1-on-1 + 20 group = $15,000+/month"></textarea></div>
-    <div class="help-section"><span style="font-size:24px">💬</span><div style="flex:1"><strong>Need Help?</strong> Chat with a coach!</div><button class="chat-btn" onclick="location.href='https://asapcreditrepairusa.com/chat'">Start Chat</button></div>
-  </main>
-  <script>const K='pb_onlinecoach';function load(){const s=localStorage.getItem(K);if(s){const d=JSON.parse(s);document.querySelectorAll('.task-checkbox').forEach((b,i)=>{if(d.tasks&&d.tasks[i]){b.classList.add('checked');b.innerHTML='✓'}});if(d.notes)document.getElementById('userNotes').value=d.notes}}function save(){const t=[];document.querySelectorAll('.task-checkbox').forEach(b=>t.push(b.classList.contains('checked')));localStorage.setItem(K,JSON.stringify({tasks:t,notes:document.getElementById('userNotes').value}))}document.querySelectorAll('.task-checkbox').forEach(b=>b.onclick=function(){this.classList.toggle('checked');this.innerHTML=this.classList.contains('checked')?'✓':'';save()});document.getElementById('userNotes').oninput=save;load();</script>
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Define your coaching niche</div>
+                    <div class="step-desc">What transformation can you help people achieve? Be specific! "Career coach for tech professionals transitioning to management" beats "career coach."</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Create your coaching framework</div>
+                    <div class="step-desc">Develop a repeatable process that gets clients results. Assessment → goals → weekly structure → accountability → progress tracking.</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Set up your tech stack</div>
+                    <div class="step-desc">Zoom for calls, Calendly for booking, Stripe for payments. Keep it simple! Add tools as you grow.</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Build your audience with content</div>
+                    <div class="step-desc">Pick ONE platform. Share tips, wins, frameworks. Content builds trust and attracts ideal clients who already believe in your approach!</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Offer free discovery calls</div>
+                    <div class="step-desc">30-minute calls to understand their problem, share your approach, and enroll them. Discovery calls convert warm leads to paying clients!</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Deliver transformational results</div>
+                    <div class="step-desc">Focus on client outcomes, not just calls. Document their wins! Great results = testimonials = more clients.</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Collect testimonials and case studies</div>
+                    <div class="step-desc">Every client success is marketing. Get video testimonials, before/after stories. Social proof sells!</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Scale beyond 1-on-1</div>
+                    <div class="step-desc">Group coaching leverages your time. 10 people at $300 = $3,000 for one call! Eventually: courses, memberships, certifications.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎓</span> Learn From These Coaches</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Tony Robbins</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>The godfather of coaching. Study his frameworks and energy.</p>
+                    <a href="https://www.youtube.com/user/TonyRobbinsLive" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Marie Forleo</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Built empire from coaching. MarieTV is a masterclass in content marketing.</p>
+                    <a href="https://www.youtube.com/user/maraborquez" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🎙️</div>
+                    <h4>Rich Litvin</h4>
+                    <div class="platform">🎙️ Podcast</div>
+                    <p>High-ticket coaching expert. Prosperous Coach methodology.</p>
+                    <a href="https://richlitvin.com/podcast" class="influencer-link" target="_blank">Podcast →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📚</div>
+                    <h4>ICF (Certification)</h4>
+                    <div class="platform">🌐 Organization</div>
+                    <p>International Coaching Federation. Gold standard certification.</p>
+                    <a href="https://coachingfederation.org" class="influencer-link" target="_blank">ICF →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Coaching Business Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your coaching business!
+
+NICHE:
+Who I help: ____
+Transformation I provide: ____
+Why I'm qualified: ____
+
+PACKAGES:
+Single session: $____
+Monthly 1-on-1: $____
+3-month package: $____
+Group program: $____/person
+
+TECH STACK:
+☐ Zoom (video calls)
+☐ Calendly (booking)
+☐ Stripe (payments)
+☐ Email tool: ____
+☐ Client portal: ____
+
+CONTENT PLATFORM:
+Primary: ____
+Posting frequency: ____
+Content pillars: ____
+
+DISCOVERY CALLS THIS WEEK: ____
+CONVERSION RATE: ____%
+
+ACTIVE CLIENTS:
+1. ____ | Package: ____ | Started: ____
+2. ____ | Package: ____ | Started: ____
+3. ____ | Package: ____ | Started: ____
+4. ____ | Package: ____ | Started: ____
+5. ____ | Package: ____ | Started: ____
+
+TESTIMONIALS COLLECTED: ____
+
+MONTHLY RECURRING REVENUE: $____
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-online-coaching');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-online-coaching', JSON.stringify({ steps, notes }));
+        }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>

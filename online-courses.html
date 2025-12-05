@@ -1,68 +1,387 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Online Course Business | ASAP Credit Repair Playbook</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{--primary:#063d86;--success:#10b981;--bg:#f8fafc;--text:#1e293b;--text-light:#64748b;--border:#e2e8f0}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}.header{background:linear-gradient(135deg,#6366f1,#4f46e5);color:#fff;padding:40px 20px 50px;text-align:center}.header h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:12px}.main-content{max-width:800px;margin:-30px auto 40px;padding:0 20px}.back-link{color:#fff;text-decoration:none;opacity:.8;display:block;margin-bottom:16px}.category-badge{display:inline-block;background:rgba(255,255,255,.2);padding:6px 16px;border-radius:20px;font-size:.85rem;margin-bottom:16px}.goal-card{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid var(--success);border-radius:16px;padding:24px;margin-bottom:24px}.goal-card h2{color:#065f46;margin-bottom:12px}.goal-card .earnings{background:#fff;padding:10px 18px;border-radius:10px;margin-top:14px;font-weight:600;color:#065f46;display:inline-block}.section-card{background:#fff;border-radius:16px;padding:28px;margin-bottom:24px;border:1px solid var(--border)}.section-card h2{color:var(--primary);margin-bottom:20px}.task-list{list-style:none}.task-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)}.task-checkbox{width:28px;height:28px;border:2px solid var(--border);border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}.task-checkbox.checked{background:var(--success);border-color:var(--success);color:#fff}.task-title{font-weight:600;margin-bottom:6px}.task-desc{color:var(--text-light);font-size:.95rem}.task-badge{font-size:.8rem;padding:4px 10px;border-radius:6px;background:var(--bg);margin-top:10px;display:inline-block;margin-right:8px}.details-box{background:#f8fafc;padding:14px;border-radius:8px;margin-top:12px;border-left:4px solid #6366f1}.details-box h4{color:#4f46e5;margin-bottom:8px;font-size:.9rem}.details-box ul{margin-left:18px;font-size:.9rem}.details-box li{margin-bottom:6px}.pricing-table{width:100%;border-collapse:collapse;margin-top:12px}.pricing-table th,.pricing-table td{padding:10px;text-align:left;border-bottom:1px solid var(--border)}.pricing-table th{background:var(--bg);font-weight:600}textarea{width:100%;min-height:120px;padding:14px;border:2px solid var(--border);border-radius:10px;font-family:inherit;margin-top:10px}.help-section{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border:2px solid #7dd3fc;border-radius:16px;padding:20px;margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}.chat-btn{background:var(--primary);color:#fff;border:none;padding:12px 24px;border-radius:10px;font-weight:600;cursor:pointer}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Course Business - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #fadbd8, #f5b7b1); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #922b21; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.2em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #fadbd8; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #e74c3c; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #e74c3c; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+        .pricing-table th, .pricing-table td { padding: 12px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .pricing-table th { background: #e74c3c; color: white; }
+        .pricing-table tr:hover { background: #f8f9fa; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .service-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; border-left: 4px solid #e74c3c; }
+        .service-card .emoji { font-size: 2em; margin-bottom: 10px; }
+        .service-card h4 { color: #1a1a2e; font-size: 13px; margin-bottom: 5px; }
+        .service-card p { color: #666; font-size: 11px; }
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .platform-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #4caf50; }
+        .platform-card h4 { color: #1a1a2e; margin-bottom: 8px; }
+        .platform-card h4 a { color: #e74c3c; text-decoration: none; }
+        .platform-card h4 a:hover { text-decoration: underline; }
+        .platform-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .platform-card .type { color: #2e7d32; font-weight: 600; font-size: 12px; margin-top: 8px; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .skills-box { background: #f8f9fa; border-radius: 15px; padding: 20px; margin: 15px 0; }
+        .skills-box h4 { color: #1a1a2e; margin-bottom: 15px; }
+        .skills-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+        .skill-item { display: flex; align-items: center; gap: 10px; padding: 10px; background: white; border-radius: 8px; }
+        .skill-item .emoji { font-size: 1.3em; }
+        .skill-item span { color: #666; font-size: 13px; }
+        .skill-item a { color: #e74c3c; text-decoration: none; }
+        .skill-item a:hover { text-decoration: underline; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #e74c3c, #c0392b); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #e74c3c; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #e74c3c; text-decoration: none; font-weight: 600; }
+        .progress-tracker { background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #e74c3c; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+    </style>
 </head>
 <body>
-  <header class="header"><a href="index.html" class="back-link">← Back to All Playbooks</a><span class="category-badge">🎓 Digital Products</span><h1>Online Course Business</h1><p style="opacity:.9;max-width:600px;margin:0 auto">Package your expertise into courses! Create once, sell forever - true passive income potential.</p></header>
-  <main class="main-content">
-    <div class="goal-card"><h2>🎯 What You'll Achieve</h2><p>Create and sell online courses teaching what you know. After initial creation, it's mostly passive income!</p><div class="earnings">💰 Mini-course: $47-197 | Flagship course: $297-2,000+ | Monthly: $1,000-50,000+ | Top creators: $100,000+/mo</div></div>
-    
-    <div class="section-card"><h2>💵 Course Pricing Strategy</h2>
-      <table class="pricing-table">
-        <tr><th>Course Type</th><th>Price Range</th><th>Content Length</th></tr>
-        <tr><td>Mini-course (lead magnet)</td><td>Free - $47</td><td>30 min - 2 hours</td></tr>
-        <tr><td>Starter course</td><td>$47-197</td><td>2-5 hours</td></tr>
-        <tr><td>Comprehensive course</td><td>$197-497</td><td>5-15 hours</td></tr>
-        <tr><td>Flagship/signature course</td><td>$497-2,000</td><td>10-30+ hours</td></tr>
-        <tr><td>Cohort-based (live)</td><td>$500-5,000</td><td>4-12 weeks</td></tr>
-        <tr><td>Membership/subscription</td><td>$19-99/month</td><td>Ongoing</td></tr>
-      </table>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Playbooks</a>
+        
+        <div class="header">
+            <h1>🎓 Online Course Business</h1>
+            <p class="subtitle">Package your expertise into courses! Create once, sell forever</p>
+            <div class="time-badge">💰 $47-2,000+ per course • Passive income • Scalable!</div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Create and sell online courses teaching what you know. Skills, hobbies, professional expertise—all work! After the initial creation effort, it's mostly passive income. One great course can generate $1,000-50,000+/month. Top creators earn $100,000+/month!</p>
+            </div>
+            <div class="income-highlight">
+                <h3>$47-2,000+ Per Course Sale</h3>
+                <p>Mini-course: $47-197 • Flagship course: $297-2,000 • Cohort-based: $500-5,000</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💰</span> Pricing Strategy</h2>
+            <table class="pricing-table">
+                <tr><th>Course Type</th><th>Price Range</th><th>Content Length</th></tr>
+                <tr><td>Mini-course (lead magnet)</td><td>Free - $47</td><td>30 min - 2 hours</td></tr>
+                <tr><td>Starter course</td><td>$47-197</td><td>2-5 hours</td></tr>
+                <tr><td>Comprehensive course</td><td>$197-497</td><td>5-15 hours</td></tr>
+                <tr><td>Flagship/signature course</td><td>$497-2,000</td><td>10-30+ hours</td></tr>
+                <tr><td>Cohort-based (live)</td><td>$500-5,000</td><td>4-12 weeks</td></tr>
+                <tr><td>Membership/subscription</td><td>$19-99/month</td><td>Ongoing content</td></tr>
+            </table>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Price Based on Transformation, Not Length!</div>
+                <p>A 2-hour course that helps someone land a $100K job is worth $2,000. A 20-hour hobby course might only be worth $47. What outcome are you providing?</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> Profitable Course Topics</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="emoji">💻</div>
+                    <h4>Professional Skills</h4>
+                    <p>Coding, design, marketing</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">💼</div>
+                    <h4>Business Skills</h4>
+                    <p>Sales, management, finance</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🎨</div>
+                    <h4>Creative Skills</h4>
+                    <p>Photography, writing, music</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🧠</div>
+                    <h4>Personal Development</h4>
+                    <p>Productivity, mindset</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🎸</div>
+                    <h4>Hobbies</h4>
+                    <p>Cooking, crafts, fitness</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">📊</div>
+                    <h4>Software Training</h4>
+                    <p>Excel, Figma, tools</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🛠️</span> Creation Tools</h2>
+            <div class="skills-box">
+                <h4>Everything You Need to Create</h4>
+                <div class="skills-list">
+                    <div class="skill-item"><span class="emoji">📹</span><span><a href="https://www.loom.com" target="_blank">Loom</a> (FREE) - Screen recording</span></div>
+                    <div class="skill-item"><span class="emoji">🎬</span><span><a href="https://www.blackmagicdesign.com/products/davinciresolve" target="_blank">DaVinci Resolve</a> (FREE) - Editing</span></div>
+                    <div class="skill-item"><span class="emoji">🎙️</span><span><a href="https://www.amazon.com/s?k=blue+yeti" target="_blank">Blue Yeti Mic</a> ($130)</span></div>
+                    <div class="skill-item"><span class="emoji">📊</span><span><a href="https://www.canva.com" target="_blank">Canva</a> (FREE) - Slides & graphics</span></div>
+                    <div class="skill-item"><span class="emoji">📄</span><span><a href="https://docs.google.com" target="_blank">Google Docs</a> - Worksheets</span></div>
+                    <div class="skill-item"><span class="emoji">📱</span><span>Your phone/webcam works!</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🌐</span> Course Hosting Platforms</h2>
+            <p style="color: #666; margin-bottom: 15px;">Host and sell your courses on these platforms:</p>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h4><a href="https://teachable.com" target="_blank">Teachable →</a></h4>
+                    <p>Most popular course platform. $39-119/mo. Great features, easy to use. You own your audience!</p>
+                    <div class="type">⭐ Best for: Most creators</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.thinkific.com" target="_blank">Thinkific →</a></h4>
+                    <p>Free tier available! Good starter option. Upgrade as you grow. Similar to Teachable.</p>
+                    <div class="type">🆓 Best for: Getting started</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://kajabi.com" target="_blank">Kajabi →</a></h4>
+                    <p>All-in-one: courses, email, website. $149+/mo. Premium but powerful for serious creators.</p>
+                    <div class="type">🚀 Best for: All-in-one</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://gumroad.com" target="_blank">Gumroad →</a></h4>
+                    <p>Simple selling. 10% fee per sale, no monthly. Great for digital products and simple courses!</p>
+                    <div class="type">💰 Best for: Simple sales</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.udemy.com" target="_blank">Udemy →</a></h4>
+                    <p>Marketplace with built-in audience. They take 50%+ but bring customers. Good for exposure!</p>
+                    <div class="type">👥 Best for: Exposure</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.skool.com" target="_blank">Skool →</a></h4>
+                    <p>Community + courses combined. $99/mo. Great for cohort-based and community courses!</p>
+                    <div class="type">👥 Best for: Community</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Choose your course topic</div>
+                    <div class="step-desc">What do you know that others want to learn? Validate: Are people already paying to learn this? Check existing courses in your niche!</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Validate before creating</div>
+                    <div class="step-desc">Don't build a course nobody wants! Pre-sell it, survey your audience, or create a mini-course first to gauge interest.</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Outline your curriculum</div>
+                    <div class="step-desc">Map the transformation: Where are students now? Where will they be after? Break into modules and lessons. Focus on outcomes!</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Record your course content</div>
+                    <div class="step-desc">Use Loom for screen recording, your phone for talking head. Done is better than perfect! You can improve later.</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Choose your platform and upload</div>
+                    <div class="step-desc">Start with Thinkific (free) or Gumroad (simple). Upload videos, create sales page. Launch!</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Launch and market your course</div>
+                    <div class="step-desc">Email list, social media, webinars, affiliates. Launch with energy! Then build evergreen funnel for ongoing sales.</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Collect feedback and testimonials</div>
+                    <div class="step-desc">Get student results and testimonials. Update content based on feedback. Student success = more sales!</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Build your course ladder</div>
+                    <div class="step-desc">Free → Low-ticket → High-ticket. Add more courses, upsells, coaching. One customer can buy multiple products!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎓</span> Learn From These Course Creators</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Pat Flynn</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Course creation expert. Smart Passive Income teaches the whole funnel.</p>
+                    <a href="https://www.youtube.com/c/SmartPassiveIncome" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Amy Porterfield</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Digital course expert. Her launches are legendary. Study her webinar strategy.</p>
+                    <a href="https://www.youtube.com/c/AmyPorterfield" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Ali Abdaal</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Makes $4M+/year from courses. Proof of what's possible with great content.</p>
+                    <a href="https://www.youtube.com/c/aliabdaal" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🎙️</div>
+                    <h4>Course Creators HQ</h4>
+                    <div class="platform">🎙️ Podcast</div>
+                    <p>Tactical advice for course creators. Covers platforms, pricing, launches.</p>
+                    <a href="https://www.coursecreatorshq.com/podcast" class="influencer-link" target="_blank">Podcast →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Course Business Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your course business!
+
+COURSE IDEA:
+Topic: ____
+Target student: ____
+Transformation provided: ____
+Price point: $____
+
+VALIDATION:
+☐ Checked competitor courses
+☐ Surveyed potential students
+☐ Pre-sold/waitlist signups: ____
+
+CURRICULUM:
+Module 1: ____
+Module 2: ____
+Module 3: ____
+Module 4: ____
+Module 5: ____
+Total videos: ____
+Total length: ____ hours
+
+CREATION PROGRESS:
+Videos recorded: ____ / ____
+Videos edited: ____ / ____
+Worksheets created: ____ / ____
+
+PLATFORM: ____
+Sales page: ☐ Complete
+
+LAUNCH PLAN:
+Email list size: ____
+Launch date: ____
+Launch goal: $____
+
+SALES:
+Students enrolled: ____
+Revenue: $____
+Testimonials: ____
+
+MONTHLY PASSIVE INCOME: $____
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
     </div>
 
-    <div class="section-card"><h2>📋 Step-by-Step Action Plan</h2>
-      <ul class="task-list">
-        <li class="task-item"><div class="task-checkbox" data-task="0"></div><div><div class="task-title">Step 1: Choose your course topic</div><div class="task-desc">What do you know that others want to learn? Skills, hobbies, professional expertise - all work!</div><div class="details-box"><h4>🎯 Profitable Topics:</h4><ul><li>Professional skills (coding, design, marketing)</li><li>Business skills (sales, management, finance)</li><li>Creative skills (photography, writing, music)</li><li>Personal development (productivity, mindset)</li><li>Hobbies (cooking, crafts, fitness)</li><li>Validate: Are people already paying to learn this?</li></ul></div><span class="task-badge">🎯 Teach what you know</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="1"></div><div><div class="task-title">Step 2: Validate before creating</div><div class="task-desc">Don't build a course nobody wants! Pre-sell, survey your audience, or create a mini-course first.</div><div class="details-box"><h4>✅ Validation Methods:</h4><ul><li>Pre-sell course before creating</li><li>Survey potential students</li><li>Create free mini-course, gauge interest</li><li>Check competitor courses selling</li><li>Build audience first (email list)</li></ul></div><span class="task-badge">✅ Validate first!</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="2"></div><div><div class="task-title">Step 3: Plan and create your course</div><div class="task-desc">Outline modules, record videos, create worksheets. Focus on transformation, not just information!</div><div class="details-box"><h4>🎬 Creation Tools:</h4><ul><li>Screen recording: Loom (free), Camtasia</li><li>Camera: Your phone or webcam works!</li><li>Microphone: Blue Yeti, Rode ($50-150)</li><li>Editing: DaVinci Resolve (free)</li><li>Slides: Canva, Google Slides</li><li>Worksheets: Canva, Google Docs</li></ul></div><span class="task-badge">🎬 Simple setup works</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="3"></div><div><div class="task-title">Step 4: Choose your platform</div><div class="task-desc">Host your course on a platform. Some take a cut, others charge monthly fee.</div><div class="details-box"><h4>💻 Platform Options:</h4><ul><li><strong>Teachable:</strong> $39-119/mo, popular</li><li><strong>Thinkific:</strong> Free-$99/mo, good starter</li><li><strong>Kajabi:</strong> $149+/mo, all-in-one</li><li><strong>Gumroad:</strong> 10% fee, simple</li><li><strong>Udemy:</strong> Marketplace, they take 50%+</li><li><strong>Skool:</strong> $99/mo, community focused</li></ul></div><span class="task-badge">💻 Teachable popular</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="4"></div><div><div class="task-title">Step 5: Launch and market</div><div class="task-desc">Email list, social media, webinars, affiliates. Launch with energy, then build evergreen funnel.</div><span class="task-badge">📧 Email list is key</span><span class="task-badge">🎯 Launch hard</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="5"></div><div><div class="task-title">Step 6: Collect feedback and iterate</div><div class="task-desc">Get testimonials, improve content, add bonuses. Student success = more sales!</div><div class="details-box"><h4>🚀 Growth Strategies:</h4><ul><li>Collect student testimonials</li><li>Add bonuses and updates</li><li>Create course ladder (low → high ticket)</li><li>Launch affiliate program</li><li>Webinar funnel for evergreen sales</li></ul></div><span class="task-badge">⭐ Testimonials sell</span></div></li>
-      </ul>
-    </div>
-
-    <div class="section-card"><h2>📝 Your Online Course Tracker</h2><textarea id="userNotes" placeholder="Track your online course business:
-
-Course: "Complete Guide to Food Photography"
-Platform: Teachable ($39/mo)
-Price: $197
-
-Content:
-- 6 modules, 42 lessons
-- 8 hours of video
-- 15 downloadable resources
-- Private community access
-
-Email list: 2,400 subscribers
-Conversion rate: 2.3%
-
-This month:
-- Sales: 18 x $197 = $3,546
-- Refunds: 1
-- Net: $3,349
-
-Total students: 234
-Average rating: 4.8/5
-
-Goal: 50 sales/month = $10,000"></textarea></div>
-    <div class="help-section"><span style="font-size:24px">💬</span><div style="flex:1"><strong>Need Help?</strong> Chat with a coach!</div><button class="chat-btn" onclick="location.href='https://asapcreditrepairusa.com/chat'">Start Chat</button></div>
-  </main>
-  <script>const K='pb_online_courses';function load(){const s=localStorage.getItem(K);if(s){const d=JSON.parse(s);document.querySelectorAll('.task-checkbox').forEach((b,i)=>{if(d.tasks&&d.tasks[i]){b.classList.add('checked');b.innerHTML='✓'}});if(d.notes)document.getElementById('userNotes').value=d.notes}}function save(){const t=[];document.querySelectorAll('.task-checkbox').forEach(b=>t.push(b.classList.contains('checked')));localStorage.setItem(K,JSON.stringify({tasks:t,notes:document.getElementById('userNotes').value}))}document.querySelectorAll('.task-checkbox').forEach(b=>b.onclick=function(){this.classList.toggle('checked');this.innerHTML=this.classList.contains('checked')?'✓':'';save()});document.getElementById('userNotes').oninput=save;load();</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-online-courses');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-online-courses', JSON.stringify({ steps, notes }));
+        }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>

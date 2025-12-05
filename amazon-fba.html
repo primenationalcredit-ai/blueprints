@@ -1,49 +1,386 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amazon FBA Business | ASAP Credit Repair Playbook</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>:root{--primary:#063d86;--success:#10b981;--bg:#f8fafc;--text:#1e293b;--text-light:#64748b;--border:#e2e8f0}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}.header{background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;padding:40px 20px 50px;text-align:center}.header h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:12px}.main-content{max-width:800px;margin:-30px auto 40px;padding:0 20px}.back-link{color:#fff;text-decoration:none;opacity:.8;display:block;margin-bottom:16px}.category-badge{display:inline-block;background:rgba(255,255,255,.2);padding:6px 16px;border-radius:20px;font-size:.85rem;margin-bottom:16px}.goal-card{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid var(--success);border-radius:16px;padding:24px;margin-bottom:24px}.goal-card h2{color:#065f46;margin-bottom:12px}.goal-card .earnings{background:#fff;padding:10px 18px;border-radius:10px;margin-top:14px;font-weight:600;color:#065f46;display:inline-block}.section-card{background:#fff;border-radius:16px;padding:28px;margin-bottom:24px;border:1px solid var(--border)}.section-card h2{color:var(--primary);margin-bottom:20px}.task-list{list-style:none}.task-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)}.task-checkbox{width:28px;height:28px;border:2px solid var(--border);border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}.task-checkbox.checked{background:var(--success);border-color:var(--success);color:#fff}.task-title{font-weight:600;margin-bottom:6px}.task-desc{color:var(--text-light);font-size:.95rem}.task-badge{font-size:.8rem;padding:4px 10px;border-radius:6px;background:var(--bg);margin-top:10px;display:inline-block;margin-right:8px}.details-box{background:#f8fafc;padding:14px;border-radius:8px;margin-top:12px;border-left:4px solid #f59e0b}.details-box h4{color:#d97706;margin-bottom:8px;font-size:.9rem}.details-box ul{margin-left:18px;font-size:.9rem}.details-box li{margin-bottom:6px}.pricing-table{width:100%;border-collapse:collapse;margin-top:12px}.pricing-table th,.pricing-table td{padding:10px;text-align:left;border-bottom:1px solid var(--border)}.pricing-table th{background:var(--bg);font-weight:600}textarea{width:100%;min-height:120px;padding:14px;border:2px solid var(--border);border-radius:10px;font-family:inherit;margin-top:10px}.help-section{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border:2px solid #7dd3fc;border-radius:16px;padding:20px;margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}.chat-btn{background:var(--primary);color:#fff;border:none;padding:12px 24px;border-radius:10px;font-weight:600;cursor:pointer}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon FBA Business - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #ff9900, #ff6600); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #fff3e0, #ffe0b2); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #e65100; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.2em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #fff3e0; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #ff9900; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #ff9900; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+        .pricing-table th, .pricing-table td { padding: 12px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .pricing-table th { background: #ff9900; color: white; }
+        .pricing-table tr:hover { background: #f8f9fa; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .service-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; border-left: 4px solid #ff9900; }
+        .service-card .emoji { font-size: 2em; margin-bottom: 10px; }
+        .service-card h4 { color: #1a1a2e; font-size: 13px; margin-bottom: 5px; }
+        .service-card p { color: #666; font-size: 11px; }
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .platform-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #4caf50; }
+        .platform-card h4 { color: #1a1a2e; margin-bottom: 8px; }
+        .platform-card h4 a { color: #ff9900; text-decoration: none; }
+        .platform-card h4 a:hover { text-decoration: underline; }
+        .platform-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .platform-card .type { color: #2e7d32; font-weight: 600; font-size: 12px; margin-top: 8px; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .skills-box { background: #f8f9fa; border-radius: 15px; padding: 20px; margin: 15px 0; }
+        .skills-box h4 { color: #1a1a2e; margin-bottom: 15px; }
+        .skills-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+        .skill-item { display: flex; align-items: center; gap: 10px; padding: 10px; background: white; border-radius: 8px; }
+        .skill-item .emoji { font-size: 1.3em; }
+        .skill-item span { color: #666; font-size: 13px; }
+        .skill-item a { color: #ff9900; text-decoration: none; }
+        .skill-item a:hover { text-decoration: underline; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #ff9900, #ff6600); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #ff9900; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #ff9900; text-decoration: none; font-weight: 600; }
+        .progress-tracker { background: linear-gradient(135deg, #ff9900, #ff6600); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #ff9900; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #ff9900, #ff6600); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+    </style>
 </head>
 <body>
-  <header class="header"><a href="index.html" class="back-link">← Back to All Playbooks</a><span class="category-badge">📦 E-Commerce</span><h1>Amazon FBA Business</h1><p style="opacity:.9;max-width:600px;margin:0 auto">Sell products on Amazon! FBA handles storage, shipping, and customer service for you.</p></header>
-  <main class="main-content">
-    <div class="goal-card"><h2>🎯 What You'll Achieve</h2><p>Start an Amazon FBA business selling products. Amazon handles fulfillment while you focus on sourcing and growth!</p><div class="earnings">💰 Part-time: $1,000-5,000/mo | Full-time: $5,000-20,000/mo | Scaled: $50,000+/mo</div></div>
-    <div class="section-card"><h2>💵 FBA Business Models</h2>
-      <table class="pricing-table"><tr><th>Model</th><th>Startup Cost</th><th>Potential</th></tr><tr><td>Retail Arbitrage</td><td>$500-2,000</td><td>$1,000-5,000/mo</td></tr><tr><td>Online Arbitrage</td><td>$1,000-3,000</td><td>$2,000-10,000/mo</td></tr><tr><td>Wholesale</td><td>$2,000-10,000</td><td>$5,000-30,000/mo</td></tr><tr><td>Private Label</td><td>$3,000-15,000</td><td>$10,000-100,000+/mo</td></tr></table>
-      <p style="font-size:.85rem;color:var(--text-light);margin-top:10px">Target 30%+ ROI on products; FBA fees typically 30-40% of sale price</p></div>
-    <div class="section-card"><h2>📋 Step-by-Step Action Plan</h2>
-      <ul class="task-list">
-        <li class="task-item"><div class="task-checkbox" data-task="0"></div><div><div class="task-title">Step 1: Set up Amazon Seller account</div><div class="task-desc">Professional account ($39.99/mo) required for serious selling. Learn Seller Central!</div><div class="details-box"><h4>📋 Account Setup:</h4><ul><li>Professional seller account</li><li>Business bank account</li><li>Tax information (EIN recommended)</li><li>Learn Seller Central dashboard</li><li>Understand FBA fee structure</li><li>Download Amazon Seller app</li></ul></div><span class="task-badge">📋 Pro account $39.99/mo</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="1"></div><div><div class="task-title">Step 2: Choose your sourcing model</div><div class="task-desc">Retail arbitrage, wholesale, or private label. Start with arbitrage to learn!</div><div class="details-box"><h4>📦 Sourcing Models:</h4><ul><li><strong>Retail Arbitrage:</strong> Buy clearance, sell higher</li><li><strong>Online Arbitrage:</strong> Buy online deals</li><li><strong>Wholesale:</strong> Buy from brands/distributors</li><li><strong>Private Label:</strong> Your own branded products</li><li>Start with arbitrage to learn</li><li>Graduate to wholesale/PL for scale</li></ul></div><span class="task-badge">🛒 Start with arbitrage</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="2"></div><div><div class="task-title">Step 3: Learn product research</div><div class="task-desc">Find profitable products using data tools. Research before buying!</div><span class="task-badge">📊 Use research tools</span><span class="task-badge">📱 Amazon Seller app</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="3"></div><div><div class="task-title">Step 4: Source and send inventory to Amazon</div><div class="task-desc">Prep products properly, create shipments, send to FBA warehouses.</div><div class="details-box"><h4>📦 FBA Process:</h4><ul><li>Source profitable products</li><li>Check product restrictions</li><li>Prep and label properly</li><li>Create shipment in Seller Central</li><li>Ship to Amazon warehouse</li><li>Amazon stores and ships for you</li></ul></div><span class="task-badge">📦 Prep properly</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="4"></div><div><div class="task-title">Step 5: Optimize listings and pricing</div><div class="task-desc">Win the Buy Box, competitive pricing, inventory management.</div><span class="task-badge">🏆 Win Buy Box</span><span class="task-badge">💰 Competitive pricing</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="5"></div><div><div class="task-title">Step 6: Scale to wholesale or private label</div><div class="task-desc">More capital, bigger margins. Build relationships with brands and manufacturers.</div><div class="details-box"><h4>🚀 Scaling Strategies:</h4><ul><li>Move to wholesale accounts</li><li>Launch private label products</li><li>Use prep centers for efficiency</li><li>Expand to multiple products/niches</li><li>Consider Amazon advertising (PPC)</li></ul></div><span class="task-badge">📈 Scale to wholesale</span></div></li>
-      </ul></div>
-    <div class="section-card"><h2>📝 Your Amazon FBA Tracker</h2><textarea id="userNotes" placeholder="Track your Amazon FBA business:
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Playbooks</a>
+        
+        <div class="header">
+            <h1>📦 Amazon FBA Business</h1>
+            <p class="subtitle">Sell on Amazon! FBA handles storage, shipping & customer service</p>
+            <div class="time-badge">💰 30%+ ROI • Amazon fulfills • Massive marketplace!</div>
+        </div>
 
-Model: Retail/Online Arbitrage
-Categories: Toys, Home, Beauty
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Start an Amazon FBA (Fulfillment by Amazon) business. You find products, send them to Amazon's warehouse, and they handle storage, shipping, and customer service! Access Amazon's 300M+ customers. Part-time: $1,000-5,000/mo. Full-time: $5,000-20,000/mo. Scaled: $50,000+/mo!</p>
+            </div>
+            <div class="income-highlight">
+                <h3>Target 30%+ ROI</h3>
+                <p>FBA fees: ~30-40% of sale • You keep the profit • Amazon handles fulfillment!</p>
+            </div>
+        </div>
 
-This month:
-- Revenue: $8,500
-- Amazon fees (~35%): $2,975
-- Cost of goods: $4,250
-- Other expenses: $300
+        <div class="card">
+            <h2><span class="icon">💰</span> FBA Business Models</h2>
+            <table class="pricing-table">
+                <tr><th>Model</th><th>Startup Cost</th><th>Monthly Potential</th></tr>
+                <tr><td>Retail Arbitrage</td><td>$500-2,000</td><td>$1,000-5,000</td></tr>
+                <tr><td>Online Arbitrage</td><td>$1,000-3,000</td><td>$2,000-10,000</td></tr>
+                <tr><td>Wholesale</td><td>$2,000-10,000</td><td>$5,000-30,000</td></tr>
+                <tr><td>Private Label</td><td>$3,000-15,000</td><td>$10,000-100,000+</td></tr>
+            </table>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Start with Arbitrage, Graduate to Wholesale/Private Label!</div>
+                <p>Retail arbitrage teaches you Amazon's systems with low risk. Once profitable, move to wholesale for scale or private label for brand-building!</p>
+            </div>
+        </div>
 
-Net profit: $975 (11.5% margin)
+        <div class="card">
+            <h2><span class="icon">🎯</span> Business Models Explained</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="emoji">🏪</div>
+                    <h4>Retail Arbitrage</h4>
+                    <p>Buy clearance at stores, sell higher on Amazon</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">💻</div>
+                    <h4>Online Arbitrage</h4>
+                    <p>Buy deals online, resell on Amazon</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">📦</div>
+                    <h4>Wholesale</h4>
+                    <p>Buy from brands/distributors at wholesale</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🏷️</div>
+                    <h4>Private Label</h4>
+                    <p>Create your own branded products</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">📚</div>
+                    <h4>Books</h4>
+                    <p>Textbooks, used books arbitrage</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🛠️</div>
+                    <h4>Bundling</h4>
+                    <p>Combine products for unique listings</p>
+                </div>
+            </div>
+        </div>
 
-Active SKUs: 145
-Inventory value: $6,200
-Best sellers: 12 products
-IPI Score: 450
+        <div class="card">
+            <h2><span class="icon">🛠️</span> Essential FBA Tools</h2>
+            <div class="skills-box">
+                <h4>Research & Scanning Tools</h4>
+                <div class="skills-list">
+                    <div class="skill-item"><span class="emoji">📱</span><span><a href="https://sellerapp.com/amazon-seller-app" target="_blank">Amazon Seller App</a> (FREE) - Scan products</span></div>
+                    <div class="skill-item"><span class="emoji">🔍</span><span><a href="https://www.junglescout.com" target="_blank">Jungle Scout</a> - Product research</span></div>
+                    <div class="skill-item"><span class="emoji">📊</span><span><a href="https://www.helium10.com" target="_blank">Helium 10</a> - Research suite</span></div>
+                    <div class="skill-item"><span class="emoji">💰</span><span><a href="https://www.keepa.com" target="_blank">Keepa</a> - Price history tracking</span></div>
+                    <div class="skill-item"><span class="emoji">📱</span><span><a href="https://scoutiq.co" target="_blank">ScoutIQ</a> - Book scanning</span></div>
+                    <div class="skill-item"><span class="emoji">📦</span><span><a href="https://www.inventorylab.com" target="_blank">InventoryLab</a> - Listing & accounting</span></div>
+                </div>
+            </div>
+        </div>
 
-Goal: $15,000 revenue = $2,000+ profit/mo"></textarea></div>
-    <div class="help-section"><span style="font-size:24px">💬</span><div style="flex:1"><strong>Need Help?</strong> Chat with a coach!</div><button class="chat-btn" onclick="location.href='https://asapcreditrepairusa.com/chat'">Start Chat</button></div>
-  </main>
-  <script>const K='pb_amazon_fba';function load(){const s=localStorage.getItem(K);if(s){const d=JSON.parse(s);document.querySelectorAll('.task-checkbox').forEach((b,i)=>{if(d.tasks&&d.tasks[i]){b.classList.add('checked');b.innerHTML='✓'}});if(d.notes)document.getElementById('userNotes').value=d.notes}}function save(){const t=[];document.querySelectorAll('.task-checkbox').forEach(b=>t.push(b.classList.contains('checked')));localStorage.setItem(K,JSON.stringify({tasks:t,notes:document.getElementById('userNotes').value}))}document.querySelectorAll('.task-checkbox').forEach(b=>b.onclick=function(){this.classList.toggle('checked');this.innerHTML=this.classList.contains('checked')?'✓':'';save()});document.getElementById('userNotes').oninput=save;load();</script>
+        <div class="card">
+            <h2><span class="icon">🌐</span> Product Sourcing</h2>
+            <p style="color: #666; margin-bottom: 15px;">Where to find products to sell on Amazon:</p>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h4><a href="https://sellercentral.amazon.com" target="_blank">Amazon Seller Central →</a></h4>
+                    <p>Your FBA command center! List products, create shipments, track sales, manage inventory. Professional account $39.99/mo.</p>
+                    <div class="type">🏠 Best for: Everything FBA</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.walmart.com" target="_blank">Walmart (Retail Arbitrage) →</a></h4>
+                    <p>Clearance sections are gold! Use Amazon Seller app to scan barcodes. Look for yellow clearance tags!</p>
+                    <div class="type">🏪 Best for: Retail arbitrage</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.alibaba.com" target="_blank">Alibaba →</a></h4>
+                    <p>Source private label products directly from manufacturers. Negotiate pricing, get samples, create your brand!</p>
+                    <div class="type">🏭 Best for: Private label</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.wholesalecentral.com" target="_blank">Wholesale Central →</a></h4>
+                    <p>Directory of wholesale suppliers. Find brands to buy from at wholesale prices!</p>
+                    <div class="type">📦 Best for: Wholesale sourcing</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.bulkbookstore.com" target="_blank">Bulk Book Store →</a></h4>
+                    <p>Buy books in bulk for resale. Great for textbook arbitrage and book bundling!</p>
+                    <div class="type">📚 Best for: Book selling</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://tacticalarbitage.com" target="_blank">Tactical Arbitrage →</a></h4>
+                    <p>Software that scans thousands of online stores for arbitrage opportunities. Finds deals while you sleep!</p>
+                    <div class="type">🤖 Best for: Online arbitrage</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Set up Amazon Seller account</div>
+                    <div class="step-desc">Professional account ($39.99/mo) required for serious selling. Set up business bank account, get EIN, learn Seller Central dashboard!</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Download Amazon Seller app</div>
+                    <div class="step-desc">Scan product barcodes anywhere! Check if product is profitable before buying. Shows sales rank, fees, profit potential.</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Start with retail arbitrage</div>
+                    <div class="step-desc">Go to Walmart, Target, clearance sections. Scan everything! Look for 30%+ ROI. Learn what sells before investing big in wholesale.</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Learn product research</div>
+                    <div class="step-desc">Use Keepa for price history, Jungle Scout for demand. Understand sales rank (lower = faster sales). Avoid restricted categories!</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Prep and ship to Amazon</div>
+                    <div class="step-desc">Prep products properly (labels, poly bags if needed). Create shipment in Seller Central. Ship to Amazon warehouse. They handle the rest!</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Win the Buy Box</div>
+                    <div class="step-desc">Competitive pricing, good metrics, Prime shipping (FBA gets this!). The Buy Box is where 90% of sales happen. Price to win!</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Manage inventory and reorder</div>
+                    <div class="step-desc">Track what sells, restock winners. Don't run out of inventory! Use inventory management tools as you scale.</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Scale to wholesale or private label</div>
+                    <div class="step-desc">Open wholesale accounts with brands/distributors. Or launch private label products on Alibaba. Build relationships, scale bigger!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎓</span> Learn From These FBA Sellers</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Raiken Profit</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Retail arbitrage expert. Shows real sourcing trips and finds!</p>
+                    <a href="https://www.youtube.com/c/RaikenProfit" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Wholesale Ted</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Amazon selling strategies, honest advice for beginners.</p>
+                    <a href="https://www.youtube.com/c/WholesaleTed" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Kevin David</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>FBA tutorials and private label strategies.</p>
+                    <a href="https://www.youtube.com/c/KevinDavid" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💬</div>
+                    <h4>r/FulfillmentByAmazon</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Active FBA seller community with real advice.</p>
+                    <a href="https://reddit.com/r/FulfillmentByAmazon" class="influencer-link" target="_blank">Reddit →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Amazon FBA Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your Amazon FBA business!
+
+ACCOUNT SETUP:
+☐ Amazon Seller account (Professional)
+☐ Business bank account
+☐ EIN: ____
+☐ Amazon Seller app downloaded
+
+BUSINESS MODEL:
+☐ Retail Arbitrage
+☐ Online Arbitrage
+☐ Wholesale
+☐ Private Label
+
+SOURCING:
+Stores to visit: ____
+Wholesale accounts: ____
+Alibaba suppliers: ____
+
+CURRENT INVENTORY:
+Products listed: ____
+Units in FBA: ____
+Total inventory value: $____
+
+TOP SELLERS:
+1. ____ | Sales/mo: ____ | Profit: $____
+2. ____ | Sales/mo: ____ | Profit: $____
+3. ____ | Sales/mo: ____ | Profit: $____
+
+METRICS:
+Sales this month: $____
+FBA fees: $____
+Product costs: $____
+Net profit: $____
+ROI: ____%
+
+ACCOUNT HEALTH:
+Order defect rate: ____%
+Late shipment rate: ____%
+Feedback: ____% positive
+
+MONTHLY PROFIT: $____
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-amazon-fba');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-amazon-fba', JSON.stringify({ steps, notes }));
+        }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>
