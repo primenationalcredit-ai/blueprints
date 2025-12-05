@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become a Referee or Umpire - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #2c3e50, #34495e); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #ecf0f1, #d5dbdb); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #2c3e50; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.2em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #ecf0f1; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #2c3e50; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #2c3e50; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+        .pricing-table th, .pricing-table td { padding: 12px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .pricing-table th { background: #2c3e50; color: white; }
+        .pricing-table tr:hover { background: #f8f9fa; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .service-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; border-left: 4px solid #2c3e50; }
+        .service-card .emoji { font-size: 2em; margin-bottom: 10px; }
+        .service-card h4 { color: #1a1a2e; font-size: 13px; margin-bottom: 5px; }
+        .service-card p { color: #666; font-size: 11px; }
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .platform-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #4caf50; }
+        .platform-card h4 { color: #1a1a2e; margin-bottom: 8px; }
+        .platform-card h4 a { color: #2c3e50; text-decoration: none; }
+        .platform-card h4 a:hover { text-decoration: underline; }
+        .platform-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .platform-card .type { color: #2e7d32; font-weight: 600; font-size: 12px; margin-top: 8px; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .skills-box { background: #f8f9fa; border-radius: 15px; padding: 20px; margin: 15px 0; }
+        .skills-box h4 { color: #1a1a2e; margin-bottom: 15px; }
+        .skills-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+        .skill-item { display: flex; align-items: center; gap: 10px; padding: 10px; background: white; border-radius: 8px; }
+        .skill-item .emoji { font-size: 1.3em; }
+        .skill-item span { color: #666; font-size: 13px; }
+        .skill-item a { color: #2c3e50; text-decoration: none; }
+        .skill-item a:hover { text-decoration: underline; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #2c3e50, #34495e); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #2c3e50; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #2c3e50; text-decoration: none; font-weight: 600; }
+        .progress-tracker { background: linear-gradient(135deg, #2c3e50, #34495e); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #2c3e50; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #2c3e50, #34495e); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Playbooks</a>
+        
+        <div class="header">
+            <h1>🏈 Become a Referee or Umpire</h1>
+            <p class="subtitle">Officiate sports games for great side income! Stay active, stay in the game</p>
+            <div class="time-badge">💰 $25-75/game • Weekends/evenings • Exercise + income!</div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Become a certified sports official and get paid to referee or umpire games. Youth leagues, high school, recreational leagues—there's a HUGE shortage of officials! Work evenings and weekends, stay active, and earn $25-75+ per game. Work 10 games/week = $250-750/week = $1,000-3,000+/month extra!</p>
+            </div>
+            <div class="income-highlight">
+                <h3>$25-75+ Per Game</h3>
+                <p>Youth rec: $25-40 • Middle school: $35-50 • High school: $50-100+ • College: $100-300+</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💰</span> Pay by Sport & Level</h2>
+            <table class="pricing-table">
+                <tr><th>Sport/Level</th><th>Per Game</th><th>Season Potential</th></tr>
+                <tr><td>Youth rec leagues</td><td>$25-40</td><td>$500-1,500</td></tr>
+                <tr><td>Middle school</td><td>$35-50</td><td>$700-2,000</td></tr>
+                <tr><td>High school varsity</td><td>$50-100+</td><td>$1,500-5,000</td></tr>
+                <tr><td>Adult rec leagues</td><td>$30-60</td><td>$600-2,000</td></tr>
+                <tr><td>Travel/club teams</td><td>$40-75</td><td>$1,000-3,000</td></tr>
+                <tr><td>College (D2/D3)</td><td>$100-200</td><td>$3,000-10,000</td></tr>
+                <tr><td>College (D1)</td><td>$200-400+</td><td>$10,000-30,000+</td></tr>
+            </table>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 There's a Massive Official Shortage!</div>
+                <p>Youth and high school sports are DESPERATE for referees. Many games get cancelled due to lack of officials. This means high demand, good pay, and lots of work available!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">⚽</span> Sports You Can Officiate</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="emoji">🏈</div>
+                    <h4>Football</h4>
+                    <p>Highest pay, fall season</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🏀</div>
+                    <h4>Basketball</h4>
+                    <p>Year-round, indoor</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">⚽</div>
+                    <h4>Soccer</h4>
+                    <p>Huge demand, easy start</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">⚾</div>
+                    <h4>Baseball/Softball</h4>
+                    <p>Spring/summer, umpire</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🏐</div>
+                    <h4>Volleyball</h4>
+                    <p>Fall season, indoor</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🏒</div>
+                    <h4>Hockey</h4>
+                    <p>Winter, premium pay</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📜</span> How to Get Certified</h2>
+            <p style="color: #666; margin-bottom: 15px;">Each sport has its own certification path:</p>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h4><a href="https://www.nfhs.org/resources/officials/" target="_blank">NFHS Officials →</a></h4>
+                    <p>National Federation of State High School Associations. Certification for high school officiating in ALL sports. Online courses + state requirements!</p>
+                    <div class="type">🏫 Best for: High school</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.ussoccer.com/referee-program" target="_blank">US Soccer Referee →</a></h4>
+                    <p>Official USSF referee certification. Start as Grade 8 (entry level), work up to FIFA level. Grassroots to professional pathway!</p>
+                    <div class="type">⚽ Best for: Soccer</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.usab.com/officials" target="_blank">USA Basketball Officials →</a></h4>
+                    <p>Basketball officiating certification. Youth to college pathway. Great earning potential year-round!</p>
+                    <div class="type">🏀 Best for: Basketball</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.littleleague.org/university/umpire-development/" target="_blank">Little League Umpire →</a></h4>
+                    <p>Start umpiring youth baseball/softball. Free training through local leagues. Great entry point!</p>
+                    <div class="type">⚾ Best for: Baseball start</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.usafootball.com/officials" target="_blank">USA Football Officials →</a></h4>
+                    <p>Football officiating resources. Highest pay per game! Fall season focus, lucrative side income.</p>
+                    <div class="type">🏈 Best for: Football</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.arbitersports.com" target="_blank">ArbiterSports →</a></h4>
+                    <p>Game assignment and scheduling platform. Most leagues use this to assign officials to games!</p>
+                    <div class="type">📅 Best for: Getting assigned</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🛠️</span> What You'll Need</h2>
+            <div class="skills-box">
+                <h4>Equipment & Requirements</h4>
+                <div class="skills-list">
+                    <div class="skill-item"><span class="emoji">👕</span><span>Official uniform ($50-150)</span></div>
+                    <div class="skill-item"><span class="emoji">🎐</span><span>Whistle (Fox 40 is standard)</span></div>
+                    <div class="skill-item"><span class="emoji">🚩</span><span>Flags/cards for your sport</span></div>
+                    <div class="skill-item"><span class="emoji">📋</span><span>Certification class ($50-150)</span></div>
+                    <div class="skill-item"><span class="emoji">🏃</span><span>Physical fitness (you'll run!)</span></div>
+                    <div class="skill-item"><span class="emoji">🧠</span><span>Rules knowledge (study!)</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Choose your sport</div>
+                    <div class="step-desc">Pick a sport you know well. Soccer is easiest to start. Football pays the most. Basketball has year-round demand. Start with ONE sport!</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Complete certification</div>
+                    <div class="step-desc">Take the NFHS online course for your sport. Then complete your state's requirements (usually a clinic + test). Cost: $50-150 typically.</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Get your equipment</div>
+                    <div class="step-desc">Buy the official uniform for your sport, whistle, flags/cards. Check with your local association—sometimes they provide equipment to new officials!</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Join your local officials association</div>
+                    <div class="step-desc">Find your local officials chapter. They assign games, provide mentoring, and help you improve. This is essential for getting work!</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Start with youth/rec games</div>
+                    <div class="step-desc">Take lower-level games first to build experience. Youth rec leagues are forgiving. Get comfortable before moving to competitive levels!</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Study the rules constantly</div>
+                    <div class="step-desc">Know the rulebook inside and out. Watch games at higher levels. Get feedback from experienced officials. Never stop learning!</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Move up to higher levels</div>
+                    <div class="step-desc">As you improve, take middle school, then JV, then varsity games. Each level pays more! Aim for varsity within 2-3 years.</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Add playoffs and tournaments</div>
+                    <div class="step-desc">Playoff and tournament games pay extra! State tournaments, travel tournaments. Build reputation for the best assignments.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎓</span> Resources for Officials</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🏫</div>
+                    <h4>NFHS Learn</h4>
+                    <div class="platform">🌐 Training</div>
+                    <p>Official high school sports officiating courses. Required for most states!</p>
+                    <a href="https://nfhslearn.com" class="influencer-link" target="_blank">NFHS →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📅</div>
+                    <h4>ArbiterSports</h4>
+                    <div class="platform">🌐 Platform</div>
+                    <p>Game scheduling and assignment. Create your profile to get games!</p>
+                    <a href="https://www.arbitersports.com" class="influencer-link" target="_blank">Arbiter →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Ref School</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Free training videos for basketball officials. Great for learning!</p>
+                    <a href="https://www.youtube.com/results?search_query=basketball+referee+training" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💬</div>
+                    <h4>r/Referees</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Community of sports officials sharing advice and experiences.</p>
+                    <a href="https://reddit.com/r/Referees" class="influencer-link" target="_blank">Reddit →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Referee/Umpire Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your officiating journey!
+
+SPORT(S): ____
+
+CERTIFICATION:
+☐ NFHS course completed (date: ____)
+☐ State certification (date: ____)
+☐ Background check
+Certification #: ____
+
+EQUIPMENT:
+☐ Uniform
+☐ Whistle
+☐ Flags/cards
+☐ Shoes
+Cost: $____
+
+LOCAL ASSOCIATION:
+Name: ____
+Assignor contact: ____
+ArbiterSports profile: ☐ Created
+
+CURRENT LEVEL:
+☐ Youth rec
+☐ Middle school
+☐ JV
+☐ Varsity
+☐ Travel/club
+
+GAMES THIS WEEK: ____
+GAMES THIS SEASON: ____
+
+PAY RATES:
+Youth rec: $____/game
+Middle school: $____/game
+High school: $____/game
+
+EARNINGS:
+This week: $____
+This month: $____
+This season: $____
+
+GOALS:
+Next level target: ____
+Target date: ____
+
+NOTES/LEARNINGS:
+____
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-become-referee-umpire');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-become-referee-umpire', JSON.stringify({ steps, notes }));
+        }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
+</body>
+</html>
