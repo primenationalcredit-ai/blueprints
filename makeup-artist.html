@@ -1,66 +1,413 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Makeup Artist Business | ASAP Credit Repair Playbook</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{--primary:#063d86;--success:#10b981;--bg:#f8fafc;--text:#1e293b;--text-light:#64748b;--border:#e2e8f0}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}.header{background:linear-gradient(135deg,#ec4899,#db2777);color:#fff;padding:40px 20px 50px;text-align:center}.header h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:12px}.main-content{max-width:800px;margin:-30px auto 40px;padding:0 20px}.back-link{color:#fff;text-decoration:none;opacity:.8;display:block;margin-bottom:16px}.category-badge{display:inline-block;background:rgba(255,255,255,.2);padding:6px 16px;border-radius:20px;font-size:.85rem;margin-bottom:16px}.goal-card{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid var(--success);border-radius:16px;padding:24px;margin-bottom:24px}.goal-card h2{color:#065f46;margin-bottom:12px}.goal-card .earnings{background:#fff;padding:10px 18px;border-radius:10px;margin-top:14px;font-weight:600;color:#065f46;display:inline-block}.section-card{background:#fff;border-radius:16px;padding:28px;margin-bottom:24px;border:1px solid var(--border)}.section-card h2{color:var(--primary);margin-bottom:20px}.task-list{list-style:none}.task-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)}.task-checkbox{width:28px;height:28px;border:2px solid var(--border);border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}.task-checkbox.checked{background:var(--success);border-color:var(--success);color:#fff}.task-title{font-weight:600;margin-bottom:6px}.task-desc{color:var(--text-light);font-size:.95rem}.task-badge{font-size:.8rem;padding:4px 10px;border-radius:6px;background:var(--bg);margin-top:10px;display:inline-block;margin-right:8px}.details-box{background:#f8fafc;padding:14px;border-radius:8px;margin-top:12px;border-left:4px solid #ec4899}.details-box h4{color:#db2777;margin-bottom:8px;font-size:.9rem}.details-box ul{margin-left:18px;font-size:.9rem}.details-box li{margin-bottom:6px}.pricing-table{width:100%;border-collapse:collapse;margin-top:12px}.pricing-table th,.pricing-table td{padding:10px;text-align:left;border-bottom:1px solid var(--border)}.pricing-table th{background:var(--bg);font-weight:600}textarea{width:100%;min-height:120px;padding:14px;border:2px solid var(--border);border-radius:10px;font-family:inherit;margin-top:10px}.help-section{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border:2px solid #7dd3fc;border-radius:16px;padding:20px;margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}.chat-btn{background:var(--primary);color:#fff;border:none;padding:12px 24px;border-radius:10px;font-weight:600;cursor:pointer}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makeup Artist Side Gig - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #d81b60, #ad1457); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #fce4ec, #f8bbd9); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #880e4f; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.2em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #fce4ec; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #d81b60; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #d81b60; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+        .pricing-table th, .pricing-table td { padding: 12px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .pricing-table th { background: #d81b60; color: white; }
+        .pricing-table tr:hover { background: #f8f9fa; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .service-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; border-left: 4px solid #d81b60; }
+        .service-card .emoji { font-size: 2em; margin-bottom: 10px; }
+        .service-card h4 { color: #1a1a2e; font-size: 13px; margin-bottom: 5px; }
+        .service-card p { color: #666; font-size: 11px; }
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .platform-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #4caf50; }
+        .platform-card h4 { color: #1a1a2e; margin-bottom: 8px; }
+        .platform-card h4 a { color: #ad1457; text-decoration: none; }
+        .platform-card h4 a:hover { text-decoration: underline; }
+        .platform-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .platform-card .type { color: #2e7d32; font-weight: 600; font-size: 12px; margin-top: 8px; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .skills-box { background: #f8f9fa; border-radius: 15px; padding: 20px; margin: 15px 0; }
+        .skills-box h4 { color: #1a1a2e; margin-bottom: 15px; }
+        .skills-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+        .skill-item { display: flex; align-items: center; gap: 10px; padding: 10px; background: white; border-radius: 8px; }
+        .skill-item .emoji { font-size: 1.3em; }
+        .skill-item span { color: #666; font-size: 13px; }
+        .skill-item a { color: #ad1457; text-decoration: none; }
+        .skill-item a:hover { text-decoration: underline; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #d81b60, #ad1457); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #ad1457; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #ad1457; text-decoration: none; font-weight: 600; }
+        .progress-tracker { background: linear-gradient(135deg, #d81b60, #ad1457); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #d81b60; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #d81b60, #ad1457); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+    </style>
 </head>
 <body>
-  <header class="header"><a href="index.html" class="back-link">← Back to All Playbooks</a><span class="category-badge">💄 Beauty Services</span><h1>Makeup Artist Business</h1><p style="opacity:.9;max-width:600px;margin:0 auto">Create beautiful looks for weddings and events! High demand for talented makeup artists.</p></header>
-  <main class="main-content">
-    <div class="goal-card"><h2>🎯 What You'll Achieve</h2><p>Start a makeup artist business serving brides, events, and photoshoots. Creative work, premium pricing, flexible schedule!</p><div class="earnings">💰 Per client: $75-300+ | Bridal: $150-500+ | Wedding day (5 faces): $500-1,500+ | Monthly: $2,000-10,000+</div></div>
-    
-    <div class="section-card"><h2>💵 Service Pricing</h2>
-      <table class="pricing-table">
-        <tr><th>Service</th><th>Price Range</th><th>Notes</th></tr>
-        <tr><td>Event/special occasion</td><td>$75-150</td><td>Per application</td></tr>
-        <tr><td>Bridal makeup</td><td>$150-400+</td><td>Premium service</td></tr>
-        <tr><td>Bridal trial</td><td>$75-150</td><td>Required before wedding</td></tr>
-        <tr><td>Bridesmaid/MOB</td><td>$75-125</td><td>Per person</td></tr>
-        <tr><td>Photoshoot makeup</td><td>$100-250</td><td>Editorial/commercial</td></tr>
-        <tr><td>Makeup lesson</td><td>$100-200</td><td>1-2 hours teaching</td></tr>
-      </table>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Playbooks</a>
+        
+        <div class="header">
+            <h1>💄 Makeup Artist Side Gig</h1>
+            <p class="subtitle">Create beautiful looks for weddings, events & photoshoots!</p>
+            <div class="time-badge">💰 $75-500+ per client • Weekends • Make people feel beautiful!</div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Turn your makeup skills into weekend income! Bridal makeup pays $150-500 per bride, plus bridesmaids and mothers. One wedding morning with 5 faces = $500-1,500. Work 2-4 weddings/month during peak season = $2,000-6,000+ extra income. Top MUAs are booked months in advance!</p>
+            </div>
+            <div class="income-highlight">
+                <h3>$75-500+ Per Client</h3>
+                <p>Event makeup: $75-150 • Bridal: $150-500 • Wedding party (5): $500-1,500+</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💰</span> Pricing Guide</h2>
+            <table class="pricing-table">
+                <tr><th>Service</th><th>Price Range</th><th>Notes</th></tr>
+                <tr><td>Event/special occasion</td><td>$75-150</td><td>Per application</td></tr>
+                <tr><td>Bridal makeup</td><td>$150-400+</td><td>Premium service</td></tr>
+                <tr><td>Bridal trial</td><td>$75-150</td><td>Required before wedding</td></tr>
+                <tr><td>Bridesmaid/MOB</td><td>$75-125</td><td>Per person</td></tr>
+                <tr><td>Photoshoot</td><td>$100-250</td><td>Editorial/commercial</td></tr>
+                <tr><td>Makeup lesson</td><td>$100-200</td><td>1-2 hours teaching</td></tr>
+            </table>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Bundle for Bigger Paydays!</div>
+                <p>Bride ($300) + Trial ($100) + 4 Bridesmaids ($400) + Mom ($100) = $900 from ONE wedding! Always offer package pricing for wedding parties.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">👰</span> Service Types</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="emoji">👰</div>
+                    <h4>Bridal</h4>
+                    <p>Highest paying!</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🎀</div>
+                    <h4>Bridesmaids</h4>
+                    <p>Add-on to bridal</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🎓</div>
+                    <h4>Prom/Events</h4>
+                    <p>Seasonal demand</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">📸</div>
+                    <h4>Photoshoots</h4>
+                    <p>Editorial work</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">📚</div>
+                    <h4>Makeup Lessons</h4>
+                    <p>Teach your skills</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🎬</div>
+                    <h4>Film/TV</h4>
+                    <p>Growth opportunity</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🧰</span> Building Your Kit</h2>
+            <p style="color: #666; margin-bottom: 15px;">Professional kit investment: $500-2,000+</p>
+            <div class="skills-box">
+                <h4>Kit Essentials</h4>
+                <div class="skills-list">
+                    <div class="skill-item"><span class="emoji">🎨</span><span>Foundation range (all skin tones!)</span></div>
+                    <div class="skill-item"><span class="emoji">🖌️</span><span>Quality brushes (variety of sizes)</span></div>
+                    <div class="skill-item"><span class="emoji">👁️</span><span>Eyeshadow palettes (variety)</span></div>
+                    <div class="skill-item"><span class="emoji">💋</span><span>Lip products range</span></div>
+                    <div class="skill-item"><span class="emoji">✨</span><span>Setting sprays & primers</span></div>
+                    <div class="skill-item"><span class="emoji">🧴</span><span>Sanitation supplies (critical!)</span></div>
+                </div>
+            </div>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h4><a href="https://www.sephora.com" target="_blank">Sephora Pro →</a></h4>
+                    <p>Pro discount program for working MUAs. Quality products, wide range!</p>
+                    <div class="type">💄 Pro discount available</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.maccosmetics.com/pro" target="_blank">MAC Pro →</a></h4>
+                    <p>Industry standard. Pro membership gets 40% off. Foundation range for all skin tones!</p>
+                    <div class="type">💄 40% pro discount</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.morphe.com" target="_blank">Morphe →</a></h4>
+                    <p>Affordable quality brushes and palettes. Great for building kit on budget!</p>
+                    <div class="type">💄 Budget-friendly</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://caborepro.com" target="_blank">Camera Ready Cosmetics →</a></h4>
+                    <p>Professional-only retailer. Ben Nye, RCMA, pro brands. Industry favorite!</p>
+                    <div class="type">💄 Pro-only brands</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🌐</span> Where to Find Clients</h2>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h4><a href="https://www.instagram.com" target="_blank">Instagram →</a></h4>
+                    <p>ESSENTIAL for MUAs! Post before/afters, close-ups, behind-the-scenes. Tag venues, photographers. Your portfolio lives here!</p>
+                    <div class="type">📸 Best for: Portfolio</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.theknot.com/vendors" target="_blank">The Knot →</a></h4>
+                    <p>List your makeup services! Brides actively searching. Build reviews for visibility!</p>
+                    <div class="type">💒 Best for: Brides</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.weddingwire.com/vendors" target="_blank">WeddingWire →</a></h4>
+                    <p>Another major wedding platform. Free listing available. Reviews matter!</p>
+                    <div class="type">💒 Best for: Brides</div>
+                </div>
+                <div class="platform-card">
+                    <h4>Photographers</h4>
+                    <p>Partner with wedding photographers! They recommend MUAs to clients. Mutual referrals = steady work.</p>
+                    <div class="type">📸 Best for: Referrals</div>
+                </div>
+                <div class="platform-card">
+                    <h4>Wedding Planners</h4>
+                    <p>Build relationships with planners. They coordinate vendor teams! One planner = multiple weddings.</p>
+                    <div class="type">🤝 Best for: Referrals</div>
+                </div>
+                <div class="platform-card">
+                    <h4>Bridal Shows</h4>
+                    <p>Attend or booth at bridal expos. Meet engaged couples directly! Offer live demos!</p>
+                    <div class="type">💍 Best for: Direct booking</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Build your makeup skills</div>
+                    <div class="step-desc">Practice on friends and family. Master bridal, glam, and natural looks. Learn all skin tones and types. YouTube has amazing free tutorials!</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Invest in professional products</div>
+                    <div class="step-desc">Build a kit with foundations for all skin tones, quality brushes, variety of products. Apply for pro accounts (MAC, Sephora) for discounts. Start: $500-1,000.</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Build your portfolio</div>
+                    <div class="step-desc">Do friends/models at a discount or free to build photos. Hire a photographer for some professional shots. You need 15-20 quality images before marketing.</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Set up Instagram</div>
+                    <div class="step-desc">Create a business Instagram. Post consistently—before/afters, close-ups, BTS. Use local hashtags. Tag venues and photographers. This IS your portfolio!</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Create service packages</div>
+                    <div class="step-desc">Bridal package (trial + wedding day), bridal party rates, event pricing. Have a clear menu ready to send inquiries!</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: List on wedding platforms</div>
+                    <div class="step-desc">Create profiles on The Knot and WeddingWire. Free listings available! Collect reviews from every client—reviews drive bookings.</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Build vendor relationships</div>
+                    <div class="step-desc">Connect with photographers, planners, and venues. Offer to do styled shoots together. Mutual referrals are gold! One good photographer = 5-10 referrals/year.</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Raise rates with demand</div>
+                    <div class="step-desc">As you get booked up, raise your prices. Top MUAs are booked 6-12 months out! Add services (hair partnerships, makeup lessons) for more revenue.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎓</span> Resources</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Wayne Goss</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Master MUA with incredible technique tutorials. Learn the fundamentals!</p>
+                    <a href="https://www.youtube.com/@WayneGoss" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Lisa Eldridge</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Celebrity MUA with elegant, classic techniques. Beautiful tutorials!</p>
+                    <a href="https://www.youtube.com/@lisaeldridge" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💬</div>
+                    <h4>r/MakeupAddiction</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Makeup community with tips, product reviews, technique advice!</p>
+                    <a href="https://reddit.com/r/MakeupAddiction" class="influencer-link" target="_blank">Reddit →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💄</div>
+                    <h4>MUA FB Groups</h4>
+                    <div class="platform">👥 Community</div>
+                    <p>Connect with other MUAs for business tips, pricing advice, support!</p>
+                    <a href="https://www.facebook.com/search/groups/?q=makeup%20artist%20business" class="influencer-link" target="_blank">Facebook →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Makeup Artist Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your makeup artist side gig!
+
+KIT INVENTORY:
+☐ Foundation range (# of shades: ____)
+☐ Brush set
+☐ Eyeshadow palettes
+☐ Lip products
+☐ Setting sprays/primers
+☐ Sanitation supplies
+
+PRO ACCOUNTS:
+☐ MAC Pro
+☐ Sephora Pro
+☐ Other: ____
+
+PRICING:
+Event makeup: $____
+Bridal: $____
+Bridal trial: $____
+Bridesmaid/MOB: $____
+Makeup lesson: $____
+
+MARKETING:
+☐ Instagram: @____
+☐ The Knot listing
+☐ WeddingWire listing
+☐ Website: ____
+
+VENDOR PARTNERS:
+Photographers:
+1. ____
+2. ____
+
+Planners:
+1. ____
+2. ____
+
+WEDDINGS COMPLETED: ____
+REVIEWS: ____
+
+UPCOMING BOOKINGS:
+1. Date: ____ | Type: ____ | Price: $____
+2. Date: ____ | Type: ____ | Price: $____
+
+THIS MONTH REVENUE: $____
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
     </div>
 
-    <div class="section-card"><h2>📋 Step-by-Step Action Plan</h2>
-      <ul class="task-list">
-        <li class="task-item"><div class="task-checkbox" data-task="0"></div><div><div class="task-title">Step 1: Build your makeup skills</div><div class="task-desc">Practice constantly, take courses, master different skin types and tones.</div><div class="details-box"><h4>💄 Skill Building:</h4><ul><li>Practice on friends and family</li><li>Take professional MUA courses</li><li>Learn all skin types and tones</li><li>Master bridal, editorial, and glam looks</li><li>YouTube: Wayne Goss, Lisa Eldridge</li><li>Understand color theory and face shapes</li></ul></div><span class="task-badge">💄 Practice constantly</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="1"></div><div><div class="task-title">Step 2: Build a professional kit</div><div class="task-desc">Quality products for all skin types and tones. Invest in the best!</div><div class="details-box"><h4>🧰 Kit Essentials:</h4><ul><li>Foundation range (all skin tones)</li><li>Quality brushes and tools</li><li>Eyeshadow palettes (variety)</li><li>Lip products range</li><li>Setting sprays and primers</li><li>Sanitation supplies (critical!)</li></ul></div><span class="task-badge">🧰 Quality products</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="2"></div><div><div class="task-title">Step 3: Build your portfolio</div><div class="task-desc">Professional photos of your work are essential. Quality over quantity!</div><span class="task-badge">📸 Professional photos</span><span class="task-badge">👰 Bridal shots key</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="3"></div><div><div class="task-title">Step 4: Market to your target clients</div><div class="task-desc">Brides and wedding vendors are your best clients. Build those relationships!</div><div class="details-box"><h4>📣 Marketing Channels:</h4><ul><li>Instagram (essential for MUAs)</li><li>The Knot and WeddingWire</li><li>Partner with photographers</li><li>Wedding planner relationships</li><li>Bridal shows and events</li><li>Google Business Profile</li></ul></div><span class="task-badge">📱 Instagram essential</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="4"></div><div><div class="task-title">Step 5: Deliver flawless experiences</div><div class="task-desc">Calm, professional, on-time. Brides remember the experience as much as the look!</div><span class="task-badge">😌 Calm presence</span><span class="task-badge">⏰ Always on time</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="5"></div><div><div class="task-title">Step 6: Grow and scale your business</div><div class="task-desc">Raise rates, build team, add services. Top MUAs are booked months ahead!</div><div class="details-box"><h4>🚀 Growth Options:</h4><ul><li>Raise rates as demand grows</li><li>Build a team of artists</li><li>Add hair services or partner</li><li>Makeup lessons/workshops</li><li>Editorial and commercial work</li></ul></div><span class="task-badge">💰 Raise rates with demand</span></div></li>
-      </ul>
-    </div>
-
-    <div class="section-card"><h2>📝 Your Makeup Artist Tracker</h2><textarea id="userNotes" placeholder="Track your makeup artist business:
-
-Specialty: Bridal, special events
-Kit investment: $2,500+
-Training: Cosmetology license ✓
-
-This month:
-- Weddings (3): bride + bridesmaids = $1,850
-- Special events (6): $600
-- Bridal trials (4): $400
-- Photoshoot: $175
-
-Monthly revenue: $3,025
-Product replenishment: ~$150
-Travel costs: ~$100
-Net: $2,775
-
-Instagram followers: 4,200
-Weddings booked ahead: 12
-Avg booking lead time: 6 months
-
-Goal: 2 weddings/weekend = $6,000+/month"></textarea></div>
-    <div class="help-section"><span style="font-size:24px">💬</span><div style="flex:1"><strong>Need Help?</strong> Chat with a coach!</div><button class="chat-btn" onclick="location.href='https://asapcreditrepairusa.com/chat'">Start Chat</button></div>
-  </main>
-  <script>const K='pb_makeup_artist';function load(){const s=localStorage.getItem(K);if(s){const d=JSON.parse(s);document.querySelectorAll('.task-checkbox').forEach((b,i)=>{if(d.tasks&&d.tasks[i]){b.classList.add('checked');b.innerHTML='✓'}});if(d.notes)document.getElementById('userNotes').value=d.notes}}function save(){const t=[];document.querySelectorAll('.task-checkbox').forEach(b=>t.push(b.classList.contains('checked')));localStorage.setItem(K,JSON.stringify({tasks:t,notes:document.getElementById('userNotes').value}))}document.querySelectorAll('.task-checkbox').forEach(b=>b.onclick=function(){this.classList.toggle('checked');this.innerHTML=this.classList.contains('checked')?'✓':'';save()});document.getElementById('userNotes').oninput=save;load();</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-makeup-artist');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-makeup-artist', JSON.stringify({ steps, notes }));
+        }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>
