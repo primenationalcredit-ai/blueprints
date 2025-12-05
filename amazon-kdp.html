@@ -1,201 +1,407 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sell Low-Content Books on Amazon KDP | ASAP Credit Repair Playbook</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root { --primary: #063d86; --primary-light: #0a4fa8; --primary-dark: #042a5c; --accent: #00c9a7; --success: #10b981; --warning: #f59e0b; --bg: #f8fafc; --text: #1e293b; --text-light: #64748b; --border: #e2e8f0; }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 17px; }
-    .header { background: linear-gradient(135deg, #f97316 0%, #c2410c 100%); color: white; padding: 40px 20px 50px; text-align: center; }
-    .header-content { max-width: 800px; margin: 0 auto; }
-    .back-link { display: inline-flex; align-items: center; gap: 8px; color: white; text-decoration: none; opacity: 0.8; font-size: 0.9rem; margin-bottom: 16px; }
-    .category-badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; margin-bottom: 16px; }
-    .header h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 12px; }
-    .header-subtitle { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
-    .main-content { max-width: 800px; margin: -30px auto 40px; padding: 0 20px; }
-    .progress-section { position: sticky; top: 0; background: white; padding: 16px 20px; margin: 0 -20px 20px; border-bottom: 1px solid var(--border); z-index: 100; display: flex; align-items: center; gap: 16px; }
-    .progress-bar { flex: 1; height: 10px; background: var(--border); border-radius: 5px; overflow: hidden; }
-    .progress-fill { height: 100%; background: linear-gradient(90deg, #f97316, #fdba74); border-radius: 5px; transition: width 0.3s; width: 0%; }
-    .progress-text { font-weight: 600; color: var(--text); min-width: 50px; }
-    .goal-card { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border: 2px solid var(--success); border-radius: 16px; padding: 24px 28px; margin-bottom: 30px; }
-    .goal-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; color: #065f46; margin-bottom: 12px; }
-    .goal-card p { color: #047857; font-size: 1.05rem; }
-    .goal-card .earnings { background: white; display: inline-block; padding: 10px 18px; border-radius: 10px; margin-top: 14px; font-weight: 600; color: #065f46; font-size: 1.1rem; }
-    .section-card { background: white; border-radius: 16px; padding: 28px; margin-bottom: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid var(--border); }
-    .section-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; color: var(--primary); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
-    .section-card h2 .icon { width: 40px; height: 40px; background: linear-gradient(135deg, #f97316, #fdba74); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; }
-    .task-list { list-style: none; }
-    .task-item { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border); }
-    .task-item:last-child { border-bottom: none; }
-    .task-checkbox { flex-shrink: 0; width: 28px; height: 28px; border: 2px solid var(--border); border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; margin-top: 2px; font-weight: bold; }
-    .task-checkbox:hover { border-color: var(--primary); }
-    .task-checkbox.checked { background: var(--success); border-color: var(--success); color: white; }
-    .task-content { flex: 1; }
-    .task-title { font-weight: 600; font-size: 1.1rem; margin-bottom: 8px; color: var(--text); }
-    .task-desc { color: var(--text-light); font-size: 0.95rem; line-height: 1.6; }
-    .task-meta { display: flex; gap: 12px; margin-top: 10px; flex-wrap: wrap; }
-    .task-badge { font-size: 0.8rem; padding: 4px 10px; border-radius: 6px; background: var(--bg); color: var(--text-light); }
-    .task-badge.easy { background: #dcfce7; color: #166534; }
-    .details-box { background: #f8fafc; border-radius: 10px; padding: 16px; margin-top: 12px; border-left: 4px solid #f97316; }
-    .details-box h4 { font-size: 0.9rem; color: #c2410c; margin-bottom: 10px; }
-    .details-box ul { margin-left: 18px; color: var(--text); font-size: 0.9rem; }
-    .details-box li { margin-bottom: 8px; line-height: 1.5; }
-    .book-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; margin-top: 16px; }
-    .book-card { background: var(--bg); border-radius: 10px; padding: 12px; text-align: center; }
-    .book-card h4 { font-size: 0.85rem; color: #c2410c; margin-bottom: 4px; }
-    .book-card .royalty { font-size: 0.9rem; font-weight: 600; color: var(--success); }
-    .section-card textarea { width: 100%; min-height: 150px; padding: 16px 18px; border: 2px solid var(--border); border-radius: 12px; font-family: inherit; font-size: 1rem; resize: vertical; box-sizing: border-box; display: block; line-height: 1.6; }
-    .section-card textarea:focus { outline: none; border-color: var(--primary); }
-    .help-section { background: linear-gradient(135deg, #f0f9ff, #e0f2fe); border: 2px solid #7dd3fc; border-radius: 16px; padding: 24px 28px; margin-top: 30px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
-    .help-icon { width: 56px; height: 56px; background: white; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; }
-    .help-content { flex: 1; min-width: 200px; }
-    .help-content h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; margin-bottom: 4px; }
-    .help-content p { color: var(--text-light); font-size: 0.95rem; }
-    .chat-btn { background: var(--primary); color: white; border: none; padding: 14px 28px; border-radius: 12px; font-family: inherit; font-size: 1rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: all 0.2s; }
-    .chat-btn:hover { background: var(--primary-light); transform: translateY(-2px); }
-    @media (max-width: 600px) { .header { padding: 30px 20px 40px; } .section-card { padding: 20px; } .help-section { flex-direction: column; text-align: center; } }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon KDP Low-Content Books - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #1565c0; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #e3f2fd; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .type-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .type-card { background: #f8f9fa; border-radius: 15px; padding: 15px; text-align: center; border-left: 5px solid #667eea; }
+        .type-card .emoji { font-size: 2em; margin-bottom: 8px; }
+        .type-card h4 { color: #1a1a2e; font-size: 14px; margin-bottom: 5px; }
+        .type-card .pay { color: #4caf50; font-weight: 600; font-size: 12px; }
+        .niche-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .niche-card { background: #f8f9fa; border-radius: 15px; padding: 15px; border-left: 5px solid #4caf50; }
+        .niche-card h4 { color: #1a1a2e; font-size: 14px; margin-bottom: 5px; }
+        .niche-card p { color: #666; font-size: 12px; }
+        .tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .tool-card { background: #f8f9fa; border-radius: 15px; padding: 15px; border-left: 5px solid #2196f3; }
+        .tool-card h4 { color: #1a1a2e; font-size: 14px; margin-bottom: 5px; }
+        .tool-card .cost { color: #4caf50; font-weight: 600; font-size: 13px; margin-bottom: 5px; }
+        .tool-card p { color: #666; font-size: 12px; }
+        .find-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; font-size: 13px; }
+        .find-link:hover { text-decoration: underline; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 15px; overflow: hidden; font-size: 14px; }
+        .pricing-table th, .pricing-table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .pricing-table th { background: #667eea; color: white; font-weight: 600; }
+        .pricing-table tr:hover { background: #f5f5f5; }
+        .pricing-table .rate { color: #4caf50; font-weight: 600; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #667eea; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; }
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #667eea; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+    </style>
 </head>
 <body>
-  <header class="header">
-    <div class="header-content">
-      <a href="index.html" class="back-link">← Back to All Playbooks</a>
-      <span class="category-badge">📚 Passive Income</span>
-      <h1>Amazon KDP Low-Content Books</h1>
-      <p class="header-subtitle">Publish journals, planners, and notebooks on Amazon! No writing required - just design and publish. True passive income!</p>
-    </div>
-  </header>
+    <div class="container">
+        <a href="income-playbooks.html" class="back-link">← Back to Income Playbooks</a>
+        
+        <div class="header">
+            <h1>📚 Amazon KDP Low-Content Books</h1>
+            <p class="subtitle">Publish journals, planners & notebooks - true passive income!</p>
+            <div class="time-badge">⏱️ $0-50 startup • Earn $200-5,000+/month passive</div>
+        </div>
 
-  <main class="main-content">
-    <div class="progress-section">
-      <span style="font-size: 0.9rem; color: var(--text-light);">Your Progress:</span>
-      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
-      <span class="progress-text" id="progressText">0%</span>
-    </div>
-
-    <div class="goal-card">
-      <h2>🎯 What You'll Achieve</h2>
-      <p>You'll publish low-content books (journals, planners, notebooks) that sell passively on Amazon. Create once, earn royalties forever!</p>
-      <div class="earnings">💰 Per book: $1-5 royalty | 50 books: $200-500/month | 200+ books: $1,000-5,000+/month passive</div>
-    </div>
-
-    <div class="section-card">
-      <h2><span class="icon">📓</span> Popular Low-Content Book Types</h2>
-      <div class="book-grid">
-        <div class="book-card"><h4>📓 Lined Journals</h4><div class="royalty">$1-3 each</div></div>
-        <div class="book-card"><h4>📅 Planners</h4><div class="royalty">$2-5 each</div></div>
-        <div class="book-card"><h4>📝 Log Books</h4><div class="royalty">$1-4 each</div></div>
-        <div class="book-card"><h4>🎨 Coloring Books</h4><div class="royalty">$2-4 each</div></div>
-        <div class="book-card"><h4>✏️ Composition Books</h4><div class="royalty">$1-2 each</div></div>
-        <div class="book-card"><h4>📊 Trackers</h4><div class="royalty">$2-4 each</div></div>
-        <div class="book-card"><h4>🧩 Activity Books</h4><div class="royalty">$2-5 each</div></div>
-        <div class="book-card"><h4>📖 Guest Books</h4><div class="royalty">$2-4 each</div></div>
-      </div>
-    </div>
-
-    <div class="section-card">
-      <h2><span class="icon">📋</span> Step-by-Step: Start KDP Publishing</h2>
-      <ul class="task-list">
-        <li class="task-item">
-          <div class="task-checkbox" data-task="0"></div>
-          <div class="task-content">
-            <div class="task-title">Step 1: Create free KDP account</div>
-            <div class="task-desc">Go to kdp.amazon.com and sign up. It's completely free! You'll need tax info for royalty payments.</div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 15 minutes</span>
-              <span class="task-badge easy">Free to join</span>
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Publish low-content books (journals, planners, notebooks) on Amazon that sell passively! No writing required - just design and publish. Create once, earn royalties forever. Build a catalog of 50-200+ books for serious passive income. One viral book can earn $500-2,000/month on its own!</p>
             </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="1"></div>
-          <div class="task-content">
-            <div class="task-title">Step 2: Research profitable niches</div>
-            <div class="task-desc">Look for niches with demand but not oversaturated. Niche down! "Prayer journal for nurses" beats "journal".</div>
-            <div class="details-box">
-              <h4>Hot niches to explore:</h4>
-              <ul>
-                <li>Profession-specific (nurses, teachers, truckers)</li>
-                <li>Hobby-based (gardening logs, fishing journals)</li>
-                <li>Life events (wedding planners, baby logs)</li>
-                <li>Health/wellness (fitness trackers, food diaries)</li>
-                <li>Religious/spiritual (gratitude journals, prayer logs)</li>
-              </ul>
+            <div class="income-highlight">
+                <h3>$200-5,000+/Month Passive</h3>
+                <p>Per book: $1-5 royalty • 50 books: $200-500/mo • 200+ books: $1,000-5,000+/month!</p>
             </div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 2-3 hours</span>
-              <span class="task-badge easy">Niche = success</span>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📓</span> Popular Low-Content Book Types</h2>
+            <div class="type-grid">
+                <div class="type-card">
+                    <div class="emoji">📓</div>
+                    <h4>Lined Journals</h4>
+                    <div class="pay">$1-3 royalty</div>
+                </div>
+                <div class="type-card">
+                    <div class="emoji">📅</div>
+                    <h4>Planners</h4>
+                    <div class="pay">$2-5 royalty</div>
+                </div>
+                <div class="type-card">
+                    <div class="emoji">📝</div>
+                    <h4>Log Books</h4>
+                    <div class="pay">$1-4 royalty</div>
+                </div>
+                <div class="type-card">
+                    <div class="emoji">🎨</div>
+                    <h4>Coloring Books</h4>
+                    <div class="pay">$2-4 royalty</div>
+                </div>
+                <div class="type-card">
+                    <div class="emoji">✏️</div>
+                    <h4>Composition Books</h4>
+                    <div class="pay">$1-2 royalty</div>
+                </div>
+                <div class="type-card">
+                    <div class="emoji">📊</div>
+                    <h4>Trackers</h4>
+                    <div class="pay">$2-4 royalty</div>
+                </div>
+                <div class="type-card">
+                    <div class="emoji">🧩</div>
+                    <h4>Activity Books</h4>
+                    <div class="pay">$2-5 royalty</div>
+                </div>
+                <div class="type-card">
+                    <div class="emoji">📖</div>
+                    <h4>Guest Books</h4>
+                    <div class="pay">$2-4 royalty</div>
+                </div>
             </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="2"></div>
-          <div class="task-content">
-            <div class="task-title">Step 3: Design your interior pages</div>
-            <div class="task-desc">Use Canva (free) or Book Bolt ($10/mo). Create lined pages, prompts, trackers - whatever fits your book type.</div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 1-3 hours per book</span>
-              <span class="task-badge easy">Canva is free</span>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> Hot Niches to Target</h2>
+            <div class="niche-grid">
+                <div class="niche-card">
+                    <h4>👩‍⚕️ Profession-Specific</h4>
+                    <p>Nurses, teachers, truckers, real estate agents, therapists. "Prayer Journal for Nurses" beats "Journal"!</p>
+                </div>
+                <div class="niche-card">
+                    <h4>🎣 Hobby-Based</h4>
+                    <p>Fishing logs, gardening journals, camping planners, bird watching trackers, golf scorecards.</p>
+                </div>
+                <div class="niche-card">
+                    <h4>💒 Life Events</h4>
+                    <p>Wedding planners, baby logs, retirement journals, moving checklists, grief journals.</p>
+                </div>
+                <div class="niche-card">
+                    <h4>💪 Health/Wellness</h4>
+                    <p>Fitness trackers, food diaries, weight loss journals, mental health logs, medication trackers.</p>
+                </div>
+                <div class="niche-card">
+                    <h4>🙏 Religious/Spiritual</h4>
+                    <p>Prayer journals, Bible study notebooks, gratitude journals, devotional planners.</p>
+                </div>
+                <div class="niche-card">
+                    <h4>🎓 Education</h4>
+                    <p>Homeschool planners, student notebooks, grade trackers, lesson plan books.</p>
+                </div>
             </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="3"></div>
-          <div class="task-content">
-            <div class="task-title">Step 4: Create eye-catching cover</div>
-            <div class="task-desc">Cover sells the book! Use Canva templates or Book Bolt. KDP has a free cover creator too. Make it pop!</div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 30-60 minutes</span>
-              <span class="task-badge easy">Covers sell books</span>
+            
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 The Niche-Down Strategy</div>
+                <p><strong>"Journal" = millions of competitors. "Blood Pressure Log Book for Seniors with Large Print" = way less competition!</strong> The more specific your niche, the easier to rank. Target underserved audiences!</p>
             </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="4"></div>
-          <div class="task-content">
-            <div class="task-title">Step 5: Upload, optimize, and publish!</div>
-            <div class="task-desc">Upload to KDP, write keyword-rich title and description, set price ($6.99-$12.99 typical), publish! Live in 24-72 hours.</div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 30 minutes</span>
-              <span class="task-badge easy">Keywords matter!</span>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💵</span> KDP Royalty Structure</h2>
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Book Type</th>
+                        <th>Typical Price</th>
+                        <th>Your Royalty</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Simple lined journal (100 pages)</td><td>$5.99-7.99</td><td class="rate">$1.50-2.50</td></tr>
+                    <tr><td>Planner/Organizer (150+ pages)</td><td>$8.99-12.99</td><td class="rate">$2.50-4.50</td></tr>
+                    <tr><td>Coloring book</td><td>$6.99-9.99</td><td class="rate">$2.00-3.50</td></tr>
+                    <tr><td>Activity book</td><td>$7.99-11.99</td><td class="rate">$2.50-4.00</td></tr>
+                    <tr><td>Log book/Tracker</td><td>$5.99-8.99</td><td class="rate">$1.50-3.00</td></tr>
+                    <tr><td>Guest book</td><td>$7.99-10.99</td><td class="rate">$2.50-4.00</td></tr>
+                </tbody>
+            </table>
+            <p style="color: #666; font-size: 13px; margin-top: 10px;">*Royalty = 60% of list price minus printing costs. Printing costs vary by page count and trim size.</p>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🛠️</span> Tools You'll Need</h2>
+            <div class="tool-grid">
+                <div class="tool-card">
+                    <h4>📚 Amazon KDP</h4>
+                    <div class="cost">FREE</div>
+                    <p>Your publishing platform. Create account, upload books, collect royalties!</p>
+                    <a href="https://kdp.amazon.com" class="find-link" target="_blank">Sign Up Free →</a>
+                </div>
+                <div class="tool-card">
+                    <h4>🎨 Canva</h4>
+                    <div class="cost">FREE</div>
+                    <p>Design covers and interior pages. Tons of templates. Perfect for beginners!</p>
+                    <a href="https://www.canva.com" class="find-link" target="_blank">Use Canva →</a>
+                </div>
+                <div class="tool-card">
+                    <h4>📖 Book Bolt</h4>
+                    <div class="cost">$10/month</div>
+                    <p>All-in-one KDP tool: research, interior design, cover creator, keyword research!</p>
+                    <a href="https://bookbolt.io" class="find-link" target="_blank">Try Book Bolt →</a>
+                </div>
+                <div class="tool-card">
+                    <h4>🔍 Publisher Rocket</h4>
+                    <div class="cost">$97 one-time</div>
+                    <p>Advanced keyword and category research. Find profitable niches fast!</p>
+                    <a href="https://publisherrocket.com" class="find-link" target="_blank">Get Publisher Rocket →</a>
+                </div>
             </div>
-          </div>
-        </li>
-      </ul>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your KDP Publishing Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Create free KDP account</div>
+                    <div class="step-desc">Go to kdp.amazon.com and sign up - completely FREE! You'll need tax info (W-9 for US) for royalty payments. Takes about 15 minutes.</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Research profitable niches</div>
+                    <div class="step-desc">Look for niches with demand but not oversaturated. Use Amazon search, Book Bolt, or Publisher Rocket. "Prayer journal for nurses" beats "journal"!</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Design your interior pages</div>
+                    <div class="step-desc">Use Canva (free) or Book Bolt ($10/mo). Create lined pages, prompts, trackers - whatever fits your book type. Download as PDF. 1-3 hours per book.</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Create eye-catching cover</div>
+                    <div class="step-desc">Cover sells the book! Use Canva templates, Book Bolt, or KDP's free cover creator. Make it pop at thumbnail size. 30-60 minutes per cover.</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Upload and optimize listing</div>
+                    <div class="step-desc">Upload to KDP, write keyword-rich title and description, choose 7 keywords, select categories carefully. Price typically $6.99-$12.99.</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Publish and wait for approval</div>
+                    <div class="step-desc">Hit publish! Book goes live in 24-72 hours. No approval needed for most low-content books. Start your next book while waiting!</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Scale your catalog</div>
+                    <div class="step-desc">One book = lottery ticket. 50+ books = real income. Create variations, explore new niches. Aim for 5-10 new books per month!</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Run Amazon ads (optional)</div>
+                    <div class="step-desc">Amazon Ads can boost visibility. Start with $5/day, target your keywords. Let winners run, kill losers fast. Ads amplify good books!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎓</span> Learn From the Pros</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📚</div>
+                    <h4>Sean Dollwet</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>KDP low-content publishing strategies, niche research, scaling tactics!</p>
+                    <a href="https://www.youtube.com/@SeanDollwet" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📖</div>
+                    <h4>Paul Marles</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Book Bolt tutorials, KDP strategies, cover design tips!</p>
+                    <a href="https://www.youtube.com/@PaulMarles" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💬</div>
+                    <h4>r/KDP</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Active KDP community sharing strategies, income reports, tips!</p>
+                    <a href="https://www.reddit.com/r/KDP/" class="influencer-link" target="_blank">r/KDP →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🎓</div>
+                    <h4>KDP University</h4>
+                    <div class="platform">🌐 Amazon</div>
+                    <p>Official Amazon KDP tutorials and guides. Start here!</p>
+                    <a href="https://kdp.amazon.com/en_US/help/topic/G200635650" class="influencer-link" target="_blank">KDP Help →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your KDP Publishing Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your KDP publishing business!
+
+ACCOUNTS & TOOLS:
+☐ KDP account created
+☐ Tax info submitted
+☐ Canva account
+☐ Book Bolt ($10/mo)
+☐ Publisher Rocket ($97)
+
+NICHES I'M TARGETING:
+1. ____
+2. ____
+3. ____
+4. ____
+5. ____
+
+BOOKS PUBLISHED:
+1. Title: ____ | Niche: ____ | Price: $____ | Monthly sales: ____
+2. Title: ____ | Niche: ____ | Price: $____ | Monthly sales: ____
+3. Title: ____ | Niche: ____ | Price: $____ | Monthly sales: ____
+4. Title: ____ | Niche: ____ | Price: $____ | Monthly sales: ____
+5. Title: ____ | Niche: ____ | Price: $____ | Monthly sales: ____
+
+TOP PERFORMERS:
+Best seller: ____ | Monthly: $____
+Second best: ____ | Monthly: $____
+
+PUBLISHING GOALS:
+Books this month: ____
+Total catalog size: ____
+Monthly royalty goal: $____
+
+THIS MONTH:
+Books published: ____
+Total royalties: $____
+Best performing niche: ____
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
     </div>
 
-    <div class="section-card">
-      <h2><span class="icon">📝</span> Your Notes</h2>
-      <textarea id="userNotes" placeholder="Example: Created KDP account! Research: going for 'fitness tracker for women over 40' niche - good demand, moderate competition. Made first journal interior in Canva (2 hours). Cover looks great! Published first 3 books this week. One sale already! Goal: 10 books this month, 50 by end of quarter."></textarea>
-    </div>
-
-    <div class="help-section">
-      <div class="help-icon">💬</div>
-      <div class="help-content">
-        <h3>Need Help?</h3>
-        <p>Have questions about KDP publishing? Chat with an ASAP Financial coach!</p>
-      </div>
-      <button class="chat-btn" onclick="openChat()">
-        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
-        Start Chat
-      </button>
-    </div>
-  </main>
-
-  <script>
-    const STORAGE_KEY = 'playbook_amazon-kdp';
-    function loadState() { const saved = localStorage.getItem(STORAGE_KEY); if (saved) { const state = JSON.parse(saved); document.querySelectorAll('.task-checkbox').forEach((box, i) => { if (state.tasks && state.tasks[i]) { box.classList.add('checked'); box.innerHTML = '✓'; } }); if (state.notes) document.getElementById('userNotes').value = state.notes; updateProgress(); } }
-    function saveState() { const tasks = []; document.querySelectorAll('.task-checkbox').forEach(box => { tasks.push(box.classList.contains('checked')); }); localStorage.setItem(STORAGE_KEY, JSON.stringify({ tasks, notes: document.getElementById('userNotes').value })); }
-    function updateProgress() { const boxes = document.querySelectorAll('.task-checkbox'); const checked = document.querySelectorAll('.task-checkbox.checked').length; const percent = Math.round((checked / boxes.length) * 100); document.getElementById('progressFill').style.width = percent + '%'; document.getElementById('progressText').textContent = percent + '%'; }
-    document.querySelectorAll('.task-checkbox').forEach(box => { box.addEventListener('click', function() { this.classList.toggle('checked'); this.innerHTML = this.classList.contains('checked') ? '✓' : ''; updateProgress(); saveState(); }); });
-    document.getElementById('userNotes').addEventListener('input', saveState);
-    function openChat() { window.location.href = 'https://asapcreditrepairusa.com/chat'; }
-    loadState();
-  </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-amazon-kdp');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-amazon-kdp', JSON.stringify({ steps, notes }));
+        }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>
