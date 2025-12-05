@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drone Services Side Gig - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; font-weight: 500; }
+        .back-link:hover { opacity: 1; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { font-size: 2.5em; color: #1a1a2e; margin-bottom: 10px; }
+        .header .subtitle { font-size: 1.2em; color: #666; margin-bottom: 20px; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 10px 25px; border-radius: 20px; font-size: 0.95em; font-weight: 500; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #1565c0; font-size: 1.1em; }
+        .savings-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 25px; text-align: center; }
+        .savings-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .savings-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .service-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; border-left: 5px solid #2196f3; transition: all 0.3s; }
+        .service-card:hover { transform: translateY(-3px); box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .service-card .service-icon { font-size: 2em; margin-bottom: 10px; }
+        .service-card h4 { color: #1a1a2e; margin-bottom: 5px; font-size: 0.95em; }
+        .service-card .price { color: #4caf50; font-weight: 700; font-size: 0.9em; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .pricing-table th { background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px; text-align: left; }
+        .pricing-table td { padding: 15px; border-bottom: 1px solid #eee; }
+        .pricing-table tr:hover { background: #f8f9fa; }
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .platform-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; border-left: 5px solid #4caf50; transition: all 0.3s; }
+        .platform-card:hover { transform: translateY(-3px); box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .platform-card h4 { color: #1a1a2e; margin-bottom: 8px; }
+        .platform-card p { color: #666; font-size: 0.9em; margin-bottom: 10px; }
+        .platform-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; transition: all 0.3s; }
+        .step:hover { background: #e3f2fd; }
+        .step-checkbox { width: 30px; height: 30px; min-width: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 700; color: #1a1a2e; margin-bottom: 8px; font-size: 1.1em; }
+        .step-desc { color: #666; font-size: 0.95em; line-height: 1.6; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #5d4e37; }
+        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .warning-box .warning-title { font-weight: 700; color: #c62828; margin-bottom: 10px; }
+        .warning-box p { color: #5d3a3a; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #2196f3, #64b5f6); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #667eea; font-size: 0.9em; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 0.9em; margin-bottom: 15px; }
+        .influencer-link { display: inline-block; color: #667eea; text-decoration: none; font-weight: 600; padding: 8px 20px; border: 2px solid #667eea; border-radius: 20px; transition: all 0.3s; }
+        .influencer-link:hover { background: #667eea; color: white; }
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .notes-section textarea { width: 100%; min-height: 300px; padding: 20px; border: 2px solid #e0e0e0; border-radius: 15px; font-family: 'Segoe UI', monospace; font-size: 0.95em; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #667eea; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; }
+        @media (max-width: 600px) { .header h1 { font-size: 1.8em; } .savings-highlight h3 { font-size: 2em; } .step { flex-direction: column; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="income-playbooks.html" class="back-link">← Back to Income Playbooks</a>
+        
+        <div class="header">
+            <h1>🚁 Drone Services Side Gig</h1>
+            <p class="subtitle">Beyond photography—inspections, mapping, surveying, and industrial services pay premium rates!</p>
+            <div class="time-badge">⏱️ $1,500-3,000 startup • $300-2,000 per job • High-value contracts</div>
+        </div>
+        
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Build a drone services business beyond just photography! Inspections, mapping, surveying, and industrial applications pay significantly more than real estate work. A single roof inspection pays $300-500, infrastructure inspections $500-2,000+, and agricultural mapping contracts can be $5,000-20,000 per season. These services often lead to recurring contracts!</p>
+            </div>
+            <div class="savings-highlight">
+                <h3>$2,000-8,000+/Month</h3>
+                <p>Inspections: $300-500 each • Mapping: $500-2,000 • Agricultural: $5,000-20,000/season • Industrial: $1,000-5,000/project</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2><span class="icon">🔧</span> Commercial Drone Services</h2>
+            <p style="color: #666; margin-bottom: 15px;">Higher-value services beyond photography—less competition, more money!</p>
+            <div class="services-grid">
+                <div class="service-card"><div class="service-icon">🏠</div><h4>Roof Inspections</h4><div class="price">$200-500/property</div></div>
+                <div class="service-card"><div class="service-icon">🗺️</div><h4>Aerial Mapping</h4><div class="price">$500-2,000/project</div></div>
+                <div class="service-card"><div class="service-icon">🏗️</div><h4>Construction Progress</h4><div class="price">$300-800/visit</div></div>
+                <div class="service-card"><div class="service-icon">🌾</div><h4>Agricultural Surveys</h4><div class="price">$10-30/acre</div></div>
+                <div class="service-card"><div class="service-icon">⚡</div><h4>Power Line Inspection</h4><div class="price">$500-1,500/mile</div></div>
+                <div class="service-card"><div class="service-icon">📡</div><h4>Cell Tower Inspection</h4><div class="price">$500-1,500/tower</div></div>
+                <div class="service-card"><div class="service-icon">🌉</div><h4>Infrastructure</h4><div class="price">$800-3,000/project</div></div>
+                <div class="service-card"><div class="service-icon">☀️</div><h4>Solar Panel Inspection</h4><div class="price">$300-1,000/site</div></div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2><span class="icon">💵</span> Drone Services Pricing Guide</h2>
+            <table class="pricing-table">
+                <tr><th>Service Type</th><th>Deliverables</th><th>Price Range</th></tr>
+                <tr><td>Roof Inspection (Residential)</td><td>HD photos, thermal (optional), report</td><td>$200-400</td></tr>
+                <tr><td>Roof Inspection (Commercial)</td><td>Comprehensive imagery, detailed report</td><td>$500-1,500</td></tr>
+                <tr><td>Orthomosaic Mapping</td><td>Stitched aerial map, GeoTIFF files</td><td>$500-2,000</td></tr>
+                <tr><td>3D Modeling/Surveying</td><td>Point cloud, 3D model, measurements</td><td>$800-3,000</td></tr>
+                <tr><td>Agricultural Survey</td><td>NDVI maps, crop health analysis</td><td>$10-30/acre</td></tr>
+                <tr><td>Construction Progress</td><td>Monthly photos, video, mapping</td><td>$500-1,500/month</td></tr>
+                <tr><td>Infrastructure Inspection</td><td>Detailed imagery, defect identification</td><td>$1,000-5,000</td></tr>
+            </table>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Recurring Contracts Are Gold</div>
+                <p><strong>Target clients who need regular service.</strong> Construction companies need monthly progress shots. Farmers need seasonal surveys. One recurring contract at $500/month = $6,000/year guaranteed!</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2><span class="icon">📣</span> Finding Commercial Drone Clients</h2>
+            <p style="color: #666; margin-bottom: 20px;">B2B clients pay more and come back for recurring work!</p>
+            <div class="platform-grid">
+                <div class="platform-card"><h4>🏠 Roofing Companies</h4><p>Roofers need inspection photos for estimates and insurance claims. Approach local roofing contractors directly!</p><a href="#" onclick="return false;">Direct Outreach</a></div>
+                <div class="platform-card"><h4>🏗️ Construction Firms</h4><p>Progress documentation, site surveys, safety monitoring. Contact project managers at construction companies!</p><a href="#" onclick="return false;">Direct Outreach</a></div>
+                <div class="platform-card"><h4>🌾 Farmers & Ag Coops</h4><p>Crop health monitoring, irrigation planning. Contact local agricultural cooperatives and large farms!</p><a href="#" onclick="return false;">Ag Networks</a></div>
+                <div class="platform-card"><h4>📌 DroneBase</h4><p>Marketplace for commercial drone jobs. Inspections, mapping, real estate. Good for building experience!</p><a href="https://www.dronebase.com" target="_blank">Join DroneBase →</a></div>
+                <div class="platform-card"><h4>🔍 Google Business</h4><p>Rank for "drone inspection near me" and similar searches. Essential for local commercial clients!</p><a href="https://business.google.com" target="_blank">Create Profile →</a></div>
+                <div class="platform-card"><h4>🤝 Insurance Adjusters</h4><p>Insurance companies need roof damage documentation. Build relationships with claims adjusters!</p><a href="#" onclick="return false;">Insurance Networks</a></div>
+            </div>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 The Niche Strategy</div>
+                <p><strong>Specialize in ONE industry first.</strong> Become "the roof inspection drone guy" or "the construction progress specialist" in your area. Specialists get referrals. Generalists compete on price!</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Drone Services Action Plan</h2>
+            
+            <div class="step" data-step="1"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 1: Get FAA Part 107 Certified</div><div class="step-desc">Required for ALL commercial drone operations. Study 10-20 hours using Pilot Institute or FAA materials. Pass the $175 knowledge test. This is your foundation—without it, you can't legally charge for drone work!</div></div></div>
+            
+            <div class="step" data-step="2"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 2: Invest in Professional Equipment</div><div class="step-desc">For inspection work, consider DJI Mavic 3 or Air 3 with good cameras. For mapping, you'll need software like DroneDeploy or Pix4D. Thermal cameras (DJI Mavic 3T) unlock roof and solar inspections. Budget $1,500-4,000 for a professional setup.</div></div></div>
+            
+            <div class="step" data-step="3"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 3: Get Commercial Drone Insurance</div><div class="step-desc">B2B clients require proof of insurance. Get $1M liability minimum. Annual policies run $500-1,500/year. SkyWatch and Verifly offer flexible options. Hull coverage protects your equipment. This is non-negotiable for commercial work!</div></div></div>
+            
+            <div class="step" data-step="4"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 4: Learn Specialized Software</div><div class="step-desc">Mapping requires DroneDeploy, Pix4D, or similar for orthomosaics and 3D models. Inspection reports need professional formatting. Learn to process and deliver data clients actually need—raw footage isn't enough for commercial clients!</div></div></div>
+            
+            <div class="step" data-step="5"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 5: Choose Your Niche and Build Portfolio</div><div class="step-desc">Pick 1-2 industries to focus on: roofing, construction, agriculture, or infrastructure. Do free or discounted jobs to build samples. Create professional case studies showing your deliverables. You need proof you can deliver value!</div></div></div>
+            
+            <div class="step" data-step="6"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 6: Land Your First Commercial Clients</div><div class="step-desc">Direct outreach works best for B2B. Call roofing companies, email construction project managers, visit agricultural co-ops. Offer a discounted pilot project to prove your value. One happy client leads to referrals in their industry!</div></div></div>
+            
+            <div class="step" data-step="7"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 7: Create Professional Deliverables</div><div class="step-desc">Commercial clients expect professional reports, not just photos. Create branded inspection reports, mapping deliverables with measurements, and clear documentation. Your reports should look like they came from a professional firm!</div></div></div>
+            
+            <div class="step" data-step="8"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 8: Scale with Recurring Contracts</div><div class="step-desc">Convert one-time clients into recurring accounts. Offer monthly construction progress packages. Propose seasonal agricultural monitoring. Recurring revenue provides stability—aim for 3-5 recurring contracts as your foundation!</div></div></div>
+        </div>
+        
+        <div class="card">
+            <h2><span class="icon">💡</span> Pro Tips for Success</h2>
+            <div class="pro-tip"><div class="pro-tip-title">💡 Thermal = Premium Pricing</div><p><strong>A thermal camera unlocks roof, solar, and electrical inspections.</strong> DJI Mavic 3T or similar adds $1,500-3,000 to your setup but lets you charge 2-3x more. Thermal finds problems invisible to regular cameras!</p></div>
+            <div class="pro-tip"><div class="pro-tip-title">💡 Certifications Add Credibility</div><p><strong>Industry certifications differentiate you.</strong> Thermography certification (Level 1) costs $1,500-2,500 but lets you do professional thermal reports. AUVSI TOP certification shows professionalism. Clients pay more for certified pilots!</p></div>
+            <div class="warning-box"><div class="warning-title">⚠️ Know Your Airspace Limits</div><p><strong>Commercial jobs often require LAANC authorization or waivers.</strong> Use Aloft or B4UFLY apps before every job. Some locations near airports may be impossible without planning. Check airspace BEFORE committing to a job!</p></div>
+        </div>
+        
+        <div class="card">
+            <h2><span class="icon">🎓</span> Learn From These Creators</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card"><div class="influencer-avatar">🚁</div><h4>Pilot Institute</h4><div class="platform">📺 YouTube / Website</div><p>Part 107 prep, regulations, and commercial drone business guidance. The go-to resource for certification!</p><a href="https://www.youtube.com/c/PilotInstitute" class="influencer-link" target="_blank">YouTube →</a></div>
+                <div class="influencer-card"><div class="influencer-avatar">🗺️</div><h4>DroneDeploy</h4><div class="platform">🌐 Website / YouTube</div><p>Mapping and surveying tutorials. Learn to create professional orthomosaics and 3D models!</p><a href="https://www.youtube.com/@DroneDeploy" class="influencer-link" target="_blank">YouTube →</a></div>
+                <div class="influencer-card"><div class="influencer-avatar">💬</div><h4>r/Part107</h4><div class="platform">🌐 Reddit</div><p>Community of commercial drone pilots discussing regulations, business, and equipment!</p><a href="https://www.reddit.com/r/Part107/" class="influencer-link" target="_blank">Reddit →</a></div>
+                <div class="influencer-card"><div class="influencer-avatar">📊</div><h4>Drone U</h4><div class="platform">🎙️ Podcast / Website</div><p>Commercial drone business podcast. Marketing, pricing, and growing your drone company!</p><a href="https://www.thedroneu.com" class="influencer-link" target="_blank">Drone U →</a></div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div style="font-size: 1.2em; margin-bottom: 15px;"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Drone Services Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your drone services business!
+
+CERTIFICATIONS:
+☐ Part 107 (Date: ____)
+☐ Thermography Level 1: ____
+☐ Other: ____
+
+EQUIPMENT:
+Drone: ____
+Thermal camera: ____
+Mapping software: ____
+Insurance provider: ____
+
+MY NICHE FOCUS:
+Primary: ____
+Secondary: ____
+
+CLIENT LIST:
+Company 1: ____ | Contact: ____ | Service: ____
+Company 2: ____ | Contact: ____ | Service: ____
+Company 3: ____ | Contact: ____ | Service: ____
+
+RECURRING CONTRACTS:
+1. ____ @ $____/month
+2. ____ @ $____/month
+
+MONTHLY TRACKER:
+Month: ____
+Jobs completed: ____
+Revenue: $____
+Expenses: $____
+Net: $____"></textarea>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p style="opacity: 0.9; margin-bottom: 20px;">Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-drone-services');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => { if (checked) { const cb = document.querySelectorAll('.step-checkbox')[index]; if (cb) cb.classList.add('checked'); }});
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function updateProgress() { const t = document.querySelectorAll('.step-checkbox').length; const c = document.querySelectorAll('.step-checkbox.checked').length; document.getElementById('completed').textContent = c; document.getElementById('progressFill').style.width = (c/t*100)+'%'; }
+        function saveProgress() { const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked')); const notes = document.getElementById('notes').value; localStorage.setItem('playbook-drone-services', JSON.stringify({steps, notes})); }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
+</body>
+</html>
