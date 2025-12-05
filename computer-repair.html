@@ -1,57 +1,427 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Computer Repair Business | ASAP Credit Repair Playbook</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>:root{--primary:#063d86;--success:#10b981;--bg:#f8fafc;--text:#1e293b;--text-light:#64748b;--border:#e2e8f0}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}.header{background:linear-gradient(135deg,#3b82f6,#1d4ed8);color:#fff;padding:40px 20px 50px;text-align:center}.header h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:12px}.main-content{max-width:800px;margin:-30px auto 40px;padding:0 20px}.back-link{color:#fff;text-decoration:none;opacity:.8;display:block;margin-bottom:16px}.category-badge{display:inline-block;background:rgba(255,255,255,.2);padding:6px 16px;border-radius:20px;font-size:.85rem;margin-bottom:16px}.goal-card{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid var(--success);border-radius:16px;padding:24px;margin-bottom:24px}.goal-card h2{color:#065f46;margin-bottom:12px}.goal-card .earnings{background:#fff;padding:10px 18px;border-radius:10px;margin-top:14px;font-weight:600;color:#065f46;display:inline-block}.section-card{background:#fff;border-radius:16px;padding:28px;margin-bottom:24px;border:1px solid var(--border)}.section-card h2{color:var(--primary);margin-bottom:20px}.task-list{list-style:none}.task-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)}.task-checkbox{width:28px;height:28px;border:2px solid var(--border);border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}.task-checkbox.checked{background:var(--success);border-color:var(--success);color:#fff}.task-title{font-weight:600;margin-bottom:6px}.task-desc{color:var(--text-light);font-size:.95rem}.task-badge{font-size:.8rem;padding:4px 10px;border-radius:6px;background:var(--bg);margin-top:10px;display:inline-block;margin-right:8px}.details-box{background:#f8fafc;padding:14px;border-radius:8px;margin-top:12px;border-left:4px solid #3b82f6}.details-box h4{color:#1d4ed8;margin-bottom:8px;font-size:.9rem}.details-box ul{margin-left:18px;font-size:.9rem}.details-box li{margin-bottom:6px}.pricing-table{width:100%;border-collapse:collapse;margin-top:12px}.pricing-table th,.pricing-table td{padding:10px;text-align:left;border-bottom:1px solid var(--border)}.pricing-table th{background:var(--bg);font-weight:600}textarea{width:100%;min-height:120px;padding:14px;border:2px solid var(--border);border-radius:10px;font-family:inherit;margin-top:10px}.help-section{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border:2px solid #7dd3fc;border-radius:16px;padding:20px;margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}.chat-btn{background:var(--primary);color:#fff;border:none;padding:12px 24px;border-radius:10px;font-weight:600;cursor:pointer}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Repair Services - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #1565c0; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #e3f2fd; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 15px; overflow: hidden; font-size: 14px; }
+        .pricing-table th, .pricing-table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .pricing-table th { background: #667eea; color: white; font-weight: 600; }
+        .pricing-table tr:hover { background: #f5f5f5; }
+        .pricing-table .rate { color: #4caf50; font-weight: 600; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .service-card { background: #f8f9fa; border-radius: 15px; padding: 15px; text-align: center; border-left: 5px solid #667eea; }
+        .service-card .emoji { font-size: 2em; margin-bottom: 8px; }
+        .service-card h4 { color: #1a1a2e; font-size: 14px; margin-bottom: 5px; }
+        .service-card .pay { color: #4caf50; font-weight: 600; font-size: 12px; }
+        .tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .tool-card { background: #f8f9fa; border-radius: 15px; padding: 15px; border-left: 5px solid #2196f3; }
+        .tool-card h4 { color: #1a1a2e; font-size: 14px; margin-bottom: 5px; }
+        .tool-card .cost { color: #4caf50; font-weight: 600; font-size: 13px; margin-bottom: 5px; }
+        .tool-card p { color: #666; font-size: 12px; }
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .platform-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #667eea; }
+        .platform-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .platform-card .detail { color: #667eea; font-size: 12px; margin-bottom: 8px; }
+        .platform-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .platform-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; font-size: 13px; }
+        .platform-link:hover { text-decoration: underline; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #667eea; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; }
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #667eea; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+    </style>
 </head>
 <body>
-  <header class="header"><a href="index.html" class="back-link">← Back to All Playbooks</a><span class="category-badge">💻 Tech Services</span><h1>Computer Repair Business</h1><p style="opacity:.9;max-width:600px;margin:0 auto">Fix computers and help with tech! Home visits or shop-based service.</p></header>
-  <main class="main-content">
-    <div class="goal-card"><h2>🎯 What You'll Achieve</h2><p>Start a computer repair business helping people with tech problems. Always in demand!</p><div class="earnings">💰 Per repair: $75-250+ | Per hour: $50-100+ | Monthly: $4,000-12,000+</div></div>
-    <div class="section-card"><h2>💵 Computer Repair Pricing</h2>
-      <table class="pricing-table"><tr><th>Service</th><th>Price</th><th>Time</th></tr><tr><td>Diagnostic fee</td><td>$50-75</td><td>Applied to repair</td></tr><tr><td>Virus/malware removal</td><td>$100-175</td><td>1-2 hours</td></tr><tr><td>OS reinstall</td><td>$100-150</td><td>1-2 hours</td></tr><tr><td>Data recovery</td><td>$150-500+</td><td>Varies</td></tr><tr><td>Hardware repair</td><td>$100-300+</td><td>Plus parts</td></tr><tr><td>Hourly rate</td><td>$50-100</td><td>General support</td></tr></table></div>
-    <div class="section-card"><h2>📋 Step-by-Step Action Plan</h2>
-      <ul class="task-list">
-        <li class="task-item"><div class="task-checkbox" data-task="0"></div><div><div class="task-title">Step 1: Build your tech skills</div><div class="task-desc">Hardware, software, networking, troubleshooting. Certifications help!</div><div class="details-box"><h4>💻 Key Skills:</h4><ul><li>Windows and Mac troubleshooting</li><li>Hardware diagnosis and repair</li><li>Virus/malware removal</li><li>Data backup and recovery</li><li>Network setup</li><li>CompTIA A+ certification helpful</li></ul></div><span class="task-badge">📜 CompTIA A+ helpful</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="1"></div><div><div class="task-title">Step 2: Get tools and software</div><div class="task-desc">Screwdrivers, diagnostic software, bootable USB drives, spare parts.</div><div class="details-box"><h4>🧰 Essential Tools:</h4><ul><li>Precision screwdriver set</li><li>Anti-static equipment</li><li>Bootable USB toolkit</li><li>Diagnostic software</li><li>Spare cables and adapters</li><li>Parts supplier accounts</li></ul></div><span class="task-badge">🧰 Toolkit essential</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="2"></div><div><div class="task-title">Step 3: Choose your business model</div><div class="task-desc">Mobile/on-site, home-based shop, or storefront. Start mobile!</div><span class="task-badge">🚗 Mobile = low overhead</span><span class="task-badge">🏠 Home shop works too</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="3"></div><div><div class="task-title">Step 4: Get customers</div><div class="task-desc">Seniors and small businesses need help! Local marketing works best.</div><div class="details-box"><h4>📣 Finding Clients:</h4><ul><li>Google Business Profile</li><li>Nextdoor (seniors love it)</li><li>Facebook local groups</li><li>Small business outreach</li><li>Thumbtack</li><li>Referral program</li></ul></div><span class="task-badge">👴 Seniors need help</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="4"></div><div><div class="task-title">Step 5: Provide excellent service</div><div class="task-desc">Explain in plain language, be patient, follow up!</div><span class="task-badge">🗣️ Explain simply</span><span class="task-badge">📞 Follow up</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="5"></div><div><div class="task-title">Step 6: Expand your services</div><div class="task-desc">Managed services, small business IT, recurring contracts.</div><div class="details-box"><h4>🚀 Growth Options:</h4><ul><li>Managed IT services (MSP)</li><li>Small business contracts</li><li>Remote support services</li><li>Computer sales</li><li>Smart home setup</li></ul></div><span class="task-badge">🏢 Business contracts = recurring</span></div></li>
-      </ul></div>
-    <div class="section-card"><h2>📝 Your Computer Repair Tracker</h2><textarea id="userNotes" placeholder="Track your computer repair business:
+    <div class="container">
+        <a href="income-playbooks.html" class="back-link">← Back to Income Playbooks</a>
+        
+        <div class="header">
+            <h1>💻 Computer Repair Services</h1>
+            <p class="subtitle">Fix computers and help people with tech - mobile or home-based!</p>
+            <div class="time-badge">⏱️ $200-500 startup • Earn $4,000-12,000+/month</div>
+        </div>
 
-Certifications: CompTIA A+ ✓
-Model: Mobile/on-site service
-Tools: Complete toolkit ✓
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Start offering computer repair services helping people with tech problems! Virus removal, slow computers, data recovery, hardware repairs, software help. Always in demand - especially from seniors and small businesses who need patient, trustworthy tech help. Mobile service (you go to them) or home-based. Turn your tech skills into steady income!</p>
+            </div>
+            <div class="income-highlight">
+                <h3>$4,000-12,000+/Month</h3>
+                <p>Per repair: $75-250+ • Hourly: $50-100+ • 3-5 jobs/day = $300-750/day potential!</p>
+            </div>
+        </div>
 
-This week:
-- Virus removal (5): $625
-- Hardware repairs (3): $480
-- Data recovery (1): $250
-- Hourly support (8 hrs): $560
-- New computer setup (2): $200
+        <div class="card">
+            <h2><span class="icon">🔧</span> Common Services</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="emoji">🦠</div>
+                    <h4>Virus Removal</h4>
+                    <div class="pay">$100-175</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🐌</div>
+                    <h4>Speed Optimization</h4>
+                    <div class="pay">$75-150</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">💾</div>
+                    <h4>Data Recovery</h4>
+                    <div class="pay">$150-500+</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🔧</div>
+                    <h4>Hardware Repair</h4>
+                    <div class="pay">$100-300+</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">💿</div>
+                    <h4>OS Reinstall</h4>
+                    <div class="pay">$100-150</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">📶</div>
+                    <h4>Network Setup</h4>
+                    <div class="pay">$75-200</div>
+                </div>
+            </div>
+        </div>
 
-Weekly revenue: $2,115
-Parts cost: ~$180
-Fuel: ~$50
-Net: $1,885
+        <div class="card">
+            <h2><span class="icon">💵</span> Service Pricing</h2>
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Price</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Diagnostic fee</td><td class="rate">$50-75</td><td>Applied to repair</td></tr>
+                    <tr><td>Virus/malware removal</td><td class="rate">$100-175</td><td>1-2 hours</td></tr>
+                    <tr><td>Speed tune-up/cleanup</td><td class="rate">$75-125</td><td>1-2 hours</td></tr>
+                    <tr><td>OS reinstall (Windows/Mac)</td><td class="rate">$100-150</td><td>1-2 hours</td></tr>
+                    <tr><td>Data backup/transfer</td><td class="rate">$75-150</td><td>1-3 hours</td></tr>
+                    <tr><td>Data recovery</td><td class="rate">$150-500+</td><td>Varies</td></tr>
+                    <tr><td>Hardware repair/upgrade</td><td class="rate">$100-300+</td><td>+ parts</td></tr>
+                    <tr><td>Network/WiFi setup</td><td class="rate">$75-200</td><td>1-2 hours</td></tr>
+                    <tr><td>Hourly rate (general)</td><td class="rate">$50-100/hr</td><td>Minimum 1hr</td></tr>
+                </tbody>
+            </table>
+            
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 The Senior Market</div>
+                <p><strong>Seniors are your best clients!</strong> They need patient help, pay well, refer friends, and become loyal repeat customers. They're often afraid to ask family for help. Be their trusted tech person - they'll call you for everything!</p>
+            </div>
+        </div>
 
-Monthly projection: $7,540
+        <div class="card">
+            <h2><span class="icon">🧰</span> Essential Tools</h2>
+            <div class="tool-grid">
+                <div class="tool-card">
+                    <h4>🔧 Precision Screwdriver Set</h4>
+                    <div class="cost">$20-50</div>
+                    <p>iFixit or similar kit. All the bits for laptops, phones, tablets. Essential!</p>
+                </div>
+                <div class="tool-card">
+                    <h4>⚡ Anti-Static Equipment</h4>
+                    <div class="cost">$10-30</div>
+                    <p>Wrist strap and mat. Prevent damage from static electricity. Professional!</p>
+                </div>
+                <div class="tool-card">
+                    <h4>💿 Bootable USB Toolkit</h4>
+                    <div class="cost">$15-30</div>
+                    <p>USB drives with Windows installer, Linux live OS, diagnostic tools. DIY!</p>
+                </div>
+                <div class="tool-card">
+                    <h4>🔍 Diagnostic Software</h4>
+                    <div class="cost">FREE-$100</div>
+                    <p>Malwarebytes, CrystalDiskInfo, HWiNFO, MemTest86. Many are free!</p>
+                </div>
+                <div class="tool-card">
+                    <h4>🔌 Cables & Adapters</h4>
+                    <div class="cost">$30-50</div>
+                    <p>USB cables, SATA cables, adapters for data transfer. Stock up!</p>
+                </div>
+                <div class="tool-card">
+                    <h4>💼 Tool Bag/Case</h4>
+                    <div class="cost">$30-60</div>
+                    <p>Organized portable toolkit. Look professional on house calls!</p>
+                </div>
+            </div>
+        </div>
 
-Google reviews: 4.9 (62 reviews)
-Avg job: 1.5 hours
-Jobs/day: 3-4
-Repeat customers: 65%
+        <div class="card">
+            <h2><span class="icon">📣</span> Where to Find Clients</h2>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h4>📍 Google Business</h4>
+                    <div class="detail">FREE • Essential</div>
+                    <p>"Computer repair near me" searches. Get reviews, show up locally. This is how people find you!</p>
+                    <a href="https://business.google.com" class="platform-link" target="_blank">Create Profile →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>🏘️ Nextdoor</h4>
+                    <div class="detail">FREE • Seniors love it!</div>
+                    <p>Perfect for reaching seniors and neighbors. They want local, trustworthy help. Gold mine!</p>
+                    <a href="https://nextdoor.com" class="platform-link" target="_blank">Join Nextdoor →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>📘 Facebook Groups</h4>
+                    <div class="detail">FREE • Local community</div>
+                    <p>Join local community groups, senior groups, small business groups. Offer helpful advice!</p>
+                    <a href="https://www.facebook.com/groups" class="platform-link" target="_blank">Find Groups →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>🤝 Thumbtack</h4>
+                    <div class="detail">Pay per lead</div>
+                    <p>Get matched with people looking for computer repair. Respond fast, win jobs!</p>
+                    <a href="https://www.thumbtack.com/pro" class="platform-link" target="_blank">Join Thumbtack →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>🏢 Small Businesses</h4>
+                    <div class="detail">Direct outreach</div>
+                    <p>Local shops, offices, restaurants need IT help. Offer monthly support contracts!</p>
+                </div>
+                <div class="platform-card">
+                    <h4>👥 Word of Mouth</h4>
+                    <div class="detail">Best source!</div>
+                    <p>Every happy client tells friends. Seniors especially refer each other. Exceed expectations!</p>
+                </div>
+            </div>
+        </div>
 
-Small business clients: 4 (monthly contracts)
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Computer Repair Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Build your tech skills</div>
+                    <div class="step-desc">Master Windows and Mac troubleshooting, hardware diagnosis, virus removal, data backup/recovery, network setup. CompTIA A+ certification is helpful but not required. YouTube and hands-on practice!</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Assemble your toolkit</div>
+                    <div class="step-desc">Precision screwdrivers, anti-static equipment, bootable USB drives with tools, diagnostic software, spare cables and adapters. Professional toolkit = professional image!</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Choose your service model</div>
+                    <div class="step-desc">Mobile (go to clients - low overhead, convenient for them), home-based (they bring to you), or both. Mobile is great for seniors! Start mobile with minimal investment.</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Set your pricing</div>
+                    <div class="step-desc">Research local competitors. Charge diagnostic fee ($50-75) that applies to repair. Flat rates for common services, hourly for complex work. Don't undercharge!</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Set up online presence</div>
+                    <div class="step-desc">Google Business Profile (essential!), Nextdoor, Facebook. Collect reviews from every happy customer. Reviews are everything for local services!</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Get your first clients</div>
+                    <div class="step-desc">Friends, family, neighbors first. Post on Nextdoor. Join Thumbtack. Every job well done = referrals. Seniors refer friends constantly!</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Provide excellent service</div>
+                    <div class="step-desc">Explain in plain language (no tech jargon!), be patient, follow up after repairs. Leave business cards. Ask for reviews. Exceed expectations!</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Expand to business clients</div>
+                    <div class="step-desc">Offer small business IT support - monthly contracts ($200-500/mo for basic support). Managed services = recurring income. One business contract = steady monthly check!</div>
+                </div>
+            </div>
+        </div>
 
-Goal: 10 business contracts = $10,000+/month"></textarea></div>
-    <div class="help-section"><span style="font-size:24px">💬</span><div style="flex:1"><strong>Need Help?</strong> Chat with a coach!</div><button class="chat-btn" onclick="location.href='https://asapcreditrepairusa.com/chat'">Start Chat</button></div>
-  </main>
-  <script>const K='pb_computer';function load(){const s=localStorage.getItem(K);if(s){const d=JSON.parse(s);document.querySelectorAll('.task-checkbox').forEach((b,i)=>{if(d.tasks&&d.tasks[i]){b.classList.add('checked');b.innerHTML='✓'}});if(d.notes)document.getElementById('userNotes').value=d.notes}}function save(){const t=[];document.querySelectorAll('.task-checkbox').forEach(b=>t.push(b.classList.contains('checked')));localStorage.setItem(K,JSON.stringify({tasks:t,notes:document.getElementById('userNotes').value}))}document.querySelectorAll('.task-checkbox').forEach(b=>b.onclick=function(){this.classList.toggle('checked');this.innerHTML=this.classList.contains('checked')?'✓':'';save()});document.getElementById('userNotes').oninput=save;load();</script>
+        <div class="card">
+            <h2><span class="icon">🎓</span> Learn From the Pros</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🏆</div>
+                    <h4>CompTIA A+</h4>
+                    <div class="platform">🌐 Certification</div>
+                    <p>Industry-standard IT certification. Proves your skills to clients!</p>
+                    <a href="https://www.comptia.org/certifications/a" class="influencer-link" target="_blank">CompTIA →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Professor Messer</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Free CompTIA A+ training videos. Excellent for learning!</p>
+                    <a href="https://www.youtube.com/@professormesser" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🔧</div>
+                    <h4>iFixit</h4>
+                    <div class="platform">🌐 Repair Guides</div>
+                    <p>Free repair guides for every device. Tools and parts too!</p>
+                    <a href="https://www.ifixit.com" class="influencer-link" target="_blank">iFixit →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💬</div>
+                    <h4>r/techsupport</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Active community for troubleshooting advice and tips!</p>
+                    <a href="https://www.reddit.com/r/techsupport/" class="influencer-link" target="_blank">Reddit →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Computer Repair Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your computer repair services!
+
+SKILLS & CERTIFICATIONS:
+☐ Windows troubleshooting
+☐ Mac troubleshooting
+☐ Hardware repair
+☐ Virus/malware removal
+☐ Data recovery
+☐ Network setup
+☐ CompTIA A+ (optional)
+
+TOOLKIT:
+☐ Precision screwdriver set
+☐ Anti-static wrist strap
+☐ Bootable USB toolkit
+☐ Diagnostic software
+☐ Spare cables/adapters
+☐ Tool bag
+Total invested: $____
+
+PRICING:
+Diagnostic fee: $____
+Virus removal: $____
+OS reinstall: $____
+Data recovery: $____
+Hardware repair: $____ + parts
+Hourly rate: $____
+
+ONLINE PRESENCE:
+☐ Google Business profile
+☐ Nextdoor
+☐ Facebook page
+☐ Thumbtack
+Reviews collected: ____
+
+JOBS COMPLETED:
+1. Client: ____ | Service: ____ | Price: $____ | Date: ____
+2. Client: ____ | Service: ____ | Price: $____ | Date: ____
+3. Client: ____ | Service: ____ | Price: $____ | Date: ____
+4. Client: ____ | Service: ____ | Price: $____ | Date: ____
+5. Client: ____ | Service: ____ | Price: $____ | Date: ____
+
+THIS MONTH:
+Jobs completed: ____
+Total revenue: $____
+Repeat customers: ____
+Referrals received: ____
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-computer-repair');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-computer-repair', JSON.stringify({ steps, notes }));
+        }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>

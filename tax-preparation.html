@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Preparation Services - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #1565c0; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #e3f2fd; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 15px; overflow: hidden; font-size: 14px; }
+        .pricing-table th, .pricing-table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .pricing-table th { background: #667eea; color: white; font-weight: 600; }
+        .pricing-table tr:hover { background: #f5f5f5; }
+        .pricing-table .rate { color: #4caf50; font-weight: 600; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .service-card { background: #f8f9fa; border-radius: 15px; padding: 15px; text-align: center; border-left: 5px solid #667eea; }
+        .service-card .emoji { font-size: 2em; margin-bottom: 8px; }
+        .service-card h4 { color: #1a1a2e; font-size: 14px; margin-bottom: 5px; }
+        .service-card .pay { color: #4caf50; font-weight: 600; font-size: 12px; }
+        .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .cert-card { background: #f8f9fa; border-radius: 15px; padding: 15px; border-left: 5px solid #4caf50; }
+        .cert-card h4 { color: #1a1a2e; font-size: 14px; margin-bottom: 5px; }
+        .cert-card .cost { color: #4caf50; font-weight: 600; font-size: 13px; margin-bottom: 5px; }
+        .cert-card p { color: #666; font-size: 12px; }
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .platform-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #667eea; }
+        .platform-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .platform-card .detail { color: #667eea; font-size: 12px; margin-bottom: 8px; }
+        .platform-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .platform-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; font-size: 13px; }
+        .platform-link:hover { text-decoration: underline; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .warning-box-title { font-weight: 700; color: #c62828; margin-bottom: 10px; }
+        .warning-box p { color: #666; margin: 8px 0; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #667eea; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; }
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #667eea; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="income-playbooks.html" class="back-link">← Back to Income Playbooks</a>
+        
+        <div class="header">
+            <h1>📊 Tax Preparation Services</h1>
+            <p class="subtitle">Prepare tax returns and earn $50-500+ per return during tax season!</p>
+            <div class="time-badge">⏱️ $200-500 startup • Earn $5,000-30,000+ per season</div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Become a tax preparer and earn serious money during tax season (January-April)! Prepare individual and small business tax returns, earning $50-500+ per return. This is a seasonal side gig with intense earning potential - many preparers make $5,000-30,000+ in just 4 months! No degree required, just training and an IRS PTIN. Help people get their refunds while building recurring annual clients!</p>
+            </div>
+            <div class="income-highlight">
+                <h3>$5,000-30,000+/Season</h3>
+                <p>Simple returns: $50-150 • Complex returns: $200-500+ • 100 returns = $10,000-30,000!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Return Types & Fees</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="emoji">📝</div>
+                    <h4>Simple 1040</h4>
+                    <div class="pay">$50-100</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🏠</div>
+                    <h4>Itemized/Homeowner</h4>
+                    <div class="pay">$150-250</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">💼</div>
+                    <h4>Self-Employed</h4>
+                    <div class="pay">$200-400</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🏢</div>
+                    <h4>Small Business</h4>
+                    <div class="pay">$300-600+</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🏘️</div>
+                    <h4>Rental Property</h4>
+                    <div class="pay">$250-400</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">📈</div>
+                    <h4>Investments</h4>
+                    <div class="pay">$200-350</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💵</span> Pricing Guide</h2>
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Return Type</th>
+                        <th>Complexity</th>
+                        <th>Typical Fee</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Simple 1040 (W-2 only)</td><td>Basic</td><td class="rate">$50-100</td></tr>
+                    <tr><td>1040 with itemized deductions</td><td>Moderate</td><td class="rate">$150-250</td></tr>
+                    <tr><td>Self-employed (Schedule C)</td><td>Complex</td><td class="rate">$200-400</td></tr>
+                    <tr><td>Rental property (Schedule E)</td><td>Complex</td><td class="rate">$250-400</td></tr>
+                    <tr><td>Investment income (Schedule D)</td><td>Moderate-Complex</td><td class="rate">$200-350</td></tr>
+                    <tr><td>Small business (LLC/S-Corp)</td><td>Complex</td><td class="rate">$300-600+</td></tr>
+                    <tr><td>State return (add-on)</td><td>Per state</td><td class="rate">$40-75</td></tr>
+                    <tr><td>Amended return</td><td>Varies</td><td class="rate">$100-250</td></tr>
+                </tbody>
+            </table>
+            
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 The Tax Season Math</div>
+                <p><strong>10 returns/week × 15 weeks × $150 avg = $22,500 in one tax season!</strong> Many preparers do this part-time evenings and weekends. Clients return year after year - build 100+ recurring annual clients!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📜</span> Requirements & Credentials</h2>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <h4>🔢 IRS PTIN</h4>
+                    <div class="cost">FREE (renew annually)</div>
+                    <p>Preparer Tax Identification Number. Required to prepare returns for pay. Get at IRS.gov!</p>
+                </div>
+                <div class="cert-card">
+                    <h4>📚 Tax Preparation Course</h4>
+                    <div class="cost">$100-500</div>
+                    <p>H&R Block, Jackson Hewitt, or online courses. Learn tax law and software. Essential!</p>
+                </div>
+                <div class="cert-card">
+                    <h4>💻 Tax Software</h4>
+                    <div class="cost">$200-1,000/season</div>
+                    <p>Professional software: Drake, ProConnect, TaxSlayer Pro. Per-return or unlimited plans.</p>
+                </div>
+                <div class="cert-card">
+                    <h4>🛡️ E&O Insurance</h4>
+                    <div class="cost">$200-500/year</div>
+                    <p>Errors & Omissions insurance. Protects you if a return has errors. Highly recommended!</p>
+                </div>
+                <div class="cert-card">
+                    <h4>📋 EFIN (Optional)</h4>
+                    <div class="cost">FREE</div>
+                    <p>Electronic Filing Identification Number. Required to e-file directly with IRS. Apply at IRS.gov.</p>
+                </div>
+                <div class="cert-card">
+                    <h4>🏆 EA Credential (Advanced)</h4>
+                    <div class="cost">$500-1,000+</div>
+                    <p>Enrolled Agent - highest IRS credential. Pass 3-part exam. Can represent clients before IRS!</p>
+                </div>
+            </div>
+            
+            <div class="warning-box">
+                <div class="warning-box-title">⚠️ IRS Requirements</div>
+                <p>All paid tax preparers MUST have a PTIN. You must complete Annual Filing Season Program (AFSP) for enhanced credentials. Stay current on tax law changes each year!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📣</span> Where to Find Clients</h2>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h4>👥 Friends & Family</h4>
+                    <div class="detail">Start here!</div>
+                    <p>Your first clients! Offer discounted rates to build experience and testimonials. They'll refer others!</p>
+                </div>
+                <div class="platform-card">
+                    <h4>🏘️ Nextdoor</h4>
+                    <div class="detail">FREE • Local reach</div>
+                    <p>Post your services in January. Neighbors want local, trustworthy preparers!</p>
+                    <a href="https://nextdoor.com" class="platform-link" target="_blank">Join Nextdoor →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>📘 Facebook Groups</h4>
+                    <div class="detail">FREE • Community</div>
+                    <p>Local community groups, small business groups. Offer value, get clients!</p>
+                    <a href="https://www.facebook.com/groups" class="platform-link" target="_blank">Find Groups →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>📍 Google Business</h4>
+                    <div class="detail">FREE • Local search</div>
+                    <p>"Tax preparer near me" searches peak Jan-April. Get reviews, show up locally!</p>
+                    <a href="https://business.google.com" class="platform-link" target="_blank">Create Profile →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>🏢 Small Business Outreach</h4>
+                    <div class="detail">Direct marketing</div>
+                    <p>Local shops, freelancers, gig workers need help! Offer bookkeeping + tax packages.</p>
+                </div>
+                <div class="platform-card">
+                    <h4>🏦 Tax Prep Franchises</h4>
+                    <div class="detail">Employment option</div>
+                    <p>H&R Block, Jackson Hewitt, Liberty Tax hire seasonal preparers. Great way to start!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Tax Prep Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Get your IRS PTIN</div>
+                    <div class="step-desc">Apply at IRS.gov for your Preparer Tax Identification Number. It's FREE and required for anyone who prepares returns for compensation. Renew annually before tax season!</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Complete tax preparation training</div>
+                    <div class="step-desc">Take a comprehensive course: H&R Block Income Tax Course, Jackson Hewitt training, or online programs like Surgent or Gleim. Learn tax law, forms, and software. Usually 60-80 hours.</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Choose your tax software</div>
+                    <div class="step-desc">Professional software options: Drake Tax, Intuit ProConnect, TaxSlayer Pro, TaxAct Professional. Compare pricing (per-return vs. unlimited). Many offer free trials!</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Get your EFIN (if e-filing directly)</div>
+                    <div class="step-desc">Apply for Electronic Filing Identification Number at IRS.gov if you want to e-file returns directly. Takes 45+ days to process - apply early! Or work under someone else's EFIN initially.</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Set up your practice</div>
+                    <div class="step-desc">Get E&O insurance ($200-500/year). Set your pricing. Create intake forms. Decide: home office, client visits, or virtual? Secure document storage is essential!</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Market your services</div>
+                    <div class="step-desc">Start marketing in December/January! Nextdoor, Facebook, Google Business. Tell everyone you know. Offer early-bird discounts. Flyers at local businesses!</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Prepare returns and build clientele</div>
+                    <div class="step-desc">Start with simple returns, work up to complex. Double-check everything! Maximize refunds legally. Happy clients refer friends and return next year!</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Expand services year-round</div>
+                    <div class="step-desc">Add bookkeeping, payroll, quarterly estimates, tax planning. Become an Enrolled Agent for advanced credentials. Build year-round income beyond tax season!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎓</span> Learn From the Pros</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🏢</div>
+                    <h4>H&R Block Tax Course</h4>
+                    <div class="platform">🌐 Training</div>
+                    <p>Industry-standard training. Can lead to seasonal employment too!</p>
+                    <a href="https://www.hrblock.com/tax-courses" class="influencer-link" target="_blank">H&R Block →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📜</div>
+                    <h4>IRS PTIN System</h4>
+                    <div class="platform">🌐 IRS.gov</div>
+                    <p>Official PTIN registration and renewal. Required for all paid preparers!</p>
+                    <a href="https://www.irs.gov/tax-professionals/ptin-requirements-for-tax-return-preparers" class="influencer-link" target="_blank">IRS PTIN →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Tax Prep Tips</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Tax preparers sharing tips, software tutorials, practice building advice!</p>
+                    <a href="https://www.youtube.com/results?search_query=start+tax+preparation+business" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🏆</div>
+                    <h4>NATP</h4>
+                    <div class="platform">🌐 Association</div>
+                    <p>National Association of Tax Professionals. Resources, CE, community!</p>
+                    <a href="https://www.natptax.com" class="influencer-link" target="_blank">NATP →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Tax Prep Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your tax prep journey!
+
+CREDENTIALS:
+☐ PTIN #: ____
+☐ PTIN Expiration: ____
+☐ EFIN #: ____
+☐ Training completed: ____
+☐ E&O Insurance: $____
+
+TAX SOFTWARE:
+Software: ____
+Cost: $____
+Plan type: Per-return / Unlimited
+
+PRICING:
+Simple 1040: $____
+Itemized: $____
+Self-employed: $____
+Small business: $____
+State return add-on: $____
+
+MARKETING:
+☐ Google Business profile
+☐ Nextdoor post
+☐ Facebook presence
+☐ Business cards
+☐ Flyers distributed
+
+CLIENTS THIS SEASON:
+1. Name: ____ | Type: ____ | Fee: $____ | Date: ____
+2. Name: ____ | Type: ____ | Fee: $____ | Date: ____
+3. Name: ____ | Type: ____ | Fee: $____ | Date: ____
+4. Name: ____ | Type: ____ | Fee: $____ | Date: ____
+5. Name: ____ | Type: ____ | Fee: $____ | Date: ____
+
+SEASON TOTALS:
+Returns prepared: ____
+Total revenue: $____
+Average per return: $____
+Referrals received: ____
+Returning clients: ____
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-tax-preparation');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-tax-preparation', JSON.stringify({ steps, notes }));
+        }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
+</body>
+</html>

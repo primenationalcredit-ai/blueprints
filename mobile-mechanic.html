@@ -1,30 +1,434 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mobile Mechanic Business | ASAP Credit Repair Playbook</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>:root{--primary:#063d86;--success:#10b981;--bg:#f8fafc;--text:#1e293b;--text-light:#64748b;--border:#e2e8f0}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}.header{background:linear-gradient(135deg,#dc2626,#b91c1c);color:#fff;padding:40px 20px 50px;text-align:center}.header h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:12px}.main-content{max-width:800px;margin:-30px auto 40px;padding:0 20px}.back-link{color:#fff;text-decoration:none;opacity:.8;display:block;margin-bottom:16px}.category-badge{display:inline-block;background:rgba(255,255,255,.2);padding:6px 16px;border-radius:20px;font-size:.85rem;margin-bottom:16px}.goal-card{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid var(--success);border-radius:16px;padding:24px;margin-bottom:24px}.goal-card h2{color:#065f46;margin-bottom:12px}.goal-card .earnings{background:#fff;padding:10px 18px;border-radius:10px;margin-top:14px;font-weight:600;color:#065f46;display:inline-block}.section-card{background:#fff;border-radius:16px;padding:28px;margin-bottom:24px;border:1px solid var(--border)}.section-card h2{color:var(--primary);margin-bottom:20px}.task-list{list-style:none}.task-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)}.task-checkbox{width:28px;height:28px;border:2px solid var(--border);border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}.task-checkbox.checked{background:var(--success);border-color:var(--success);color:#fff}.task-title{font-weight:600;margin-bottom:6px}.task-desc{color:var(--text-light);font-size:.95rem}.task-badge{font-size:.8rem;padding:4px 10px;border-radius:6px;background:var(--bg);margin-top:10px;display:inline-block;margin-right:8px}.details-box{background:#f8fafc;padding:14px;border-radius:8px;margin-top:12px;border-left:4px solid #dc2626}.details-box h4{color:#b91c1c;margin-bottom:8px;font-size:.9rem}.details-box ul{margin-left:18px;font-size:.9rem}.details-box li{margin-bottom:6px}.pricing-table{width:100%;border-collapse:collapse;margin-top:12px}.pricing-table th,.pricing-table td{padding:10px;text-align:left;border-bottom:1px solid var(--border)}.pricing-table th{background:var(--bg);font-weight:600}textarea{width:100%;min-height:120px;padding:14px;border:2px solid var(--border);border-radius:10px;font-family:inherit;margin-top:10px}.help-section{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border:2px solid #7dd3fc;border-radius:16px;padding:20px;margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}.chat-btn{background:var(--primary);color:#fff;border:none;padding:12px 24px;border-radius:10px;font-weight:600;cursor:pointer}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Mechanic Services - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #1565c0; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #e3f2fd; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 15px; overflow: hidden; font-size: 14px; }
+        .pricing-table th, .pricing-table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .pricing-table th { background: #667eea; color: white; font-weight: 600; }
+        .pricing-table tr:hover { background: #f5f5f5; }
+        .pricing-table .rate { color: #4caf50; font-weight: 600; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .service-card { background: #f8f9fa; border-radius: 15px; padding: 15px; text-align: center; border-left: 5px solid #667eea; }
+        .service-card .emoji { font-size: 2em; margin-bottom: 8px; }
+        .service-card h4 { color: #1a1a2e; font-size: 14px; margin-bottom: 5px; }
+        .service-card .pay { color: #4caf50; font-weight: 600; font-size: 12px; }
+        .tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .tool-card { background: #f8f9fa; border-radius: 15px; padding: 15px; border-left: 5px solid #2196f3; }
+        .tool-card h4 { color: #1a1a2e; font-size: 14px; margin-bottom: 5px; }
+        .tool-card .cost { color: #4caf50; font-weight: 600; font-size: 13px; margin-bottom: 5px; }
+        .tool-card p { color: #666; font-size: 12px; }
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .platform-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #667eea; }
+        .platform-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .platform-card .detail { color: #667eea; font-size: 12px; margin-bottom: 8px; }
+        .platform-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .platform-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; font-size: 13px; }
+        .platform-link:hover { text-decoration: underline; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #667eea; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; }
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #667eea; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+    </style>
 </head>
 <body>
-  <header class="header"><a href="index.html" class="back-link">← Back to All Playbooks</a><span class="category-badge">🔧 Auto Services</span><h1>Mobile Mechanic Business</h1><p style="opacity:.9;max-width:600px;margin:0 auto">Fix cars where they are! Convenience customers pay premium for.</p></header>
-  <main class="main-content">
-    <div class="goal-card"><h2>🎯 What You'll Achieve</h2><p>Start a mobile mechanic business doing repairs at customers' locations!</p><div class="earnings">💰 Per job: $100-500+ | Per day: $400-1,200+ | Monthly: $6,000-15,000+</div></div>
-    <div class="section-card"><h2>💵 Mobile Mechanic Pricing</h2>
-      <table class="pricing-table"><tr><th>Service</th><th>Price</th><th>Notes</th></tr><tr><td>Diagnostic fee</td><td>$50-100</td><td>Applied to repair</td></tr><tr><td>Oil change</td><td>$75-125</td><td>Parts included</td></tr><tr><td>Brake pads</td><td>$150-300</td><td>Per axle + parts</td></tr><tr><td>Battery replacement</td><td>$100-200</td><td>Parts included</td></tr><tr><td>Starter/alternator</td><td>$200-500</td><td>Plus parts</td></tr><tr><td>Mobile service fee</td><td>$25-50</td><td>Convenience charge</td></tr></table></div>
-    <div class="section-card"><h2>📋 Step-by-Step Action Plan</h2>
-      <ul class="task-list">
-        <li class="task-item"><div class="task-checkbox" data-task="0"></div><div><div class="task-title">Step 1: Build mechanic skills</div><div class="task-desc">ASE certification helpful. Focus on common repairs that can be done mobile.</div><div class="details-box"><h4>🔧 Mobile-Friendly Repairs:</h4><ul><li>Oil changes</li><li>Brake pads and rotors</li><li>Battery replacement</li><li>Starter and alternator</li><li>Belt replacements</li><li>Basic diagnostics</li></ul></div><span class="task-badge">📜 ASE certification helpful</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="1"></div><div><div class="task-title">Step 2: Get tools and vehicle</div><div class="task-desc">Van or truck with tools, diagnostic equipment, parts inventory.</div><span class="task-badge">🚐 Service van/truck</span><span class="task-badge">🧰 Complete tools</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="2"></div><div><div class="task-title">Step 3: Get licensed and insured</div><div class="task-desc">Business license, liability insurance, check local requirements.</div><span class="task-badge">📋 Business license</span><span class="task-badge">🛡️ Liability insurance</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="3"></div><div><div class="task-title">Step 4: Get customers</div><div class="task-desc">Convenience is your selling point! Target busy professionals.</div><div class="details-box"><h4>📣 Marketing:</h4><ul><li>Google Business Profile</li><li>Nextdoor</li><li>Facebook local groups</li><li>YourMechanic, Wrench platforms</li><li>Office park flyers</li><li>Fleet accounts</li></ul></div><span class="task-badge">💼 Busy professionals</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="4"></div><div><div class="task-title">Step 5: Deliver convenient, quality repairs</div><div class="task-desc">Save them time, do quality work, clean up after yourself.</div><span class="task-badge">⏰ Save them time</span><span class="task-badge">✨ Quality work</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="5"></div><div><div class="task-title">Step 6: Scale your mobile mechanic business</div><div class="task-desc">Fleet accounts, hire mechanics, expand services.</div><div class="details-box"><h4>🚀 Growth:</h4><ul><li>Fleet maintenance contracts</li><li>Dealership overflow work</li><li>Hire additional mechanics</li><li>Mobile oil change route</li></ul></div><span class="task-badge">🚗 Fleet accounts</span></div></li>
-      </ul></div>
-    <div class="section-card"><h2>📝 Your Mobile Mechanic Tracker</h2><textarea id="userNotes" placeholder="Track your mobile mechanic business here..."></textarea></div>
-    <div class="help-section"><span style="font-size:24px">💬</span><div style="flex:1"><strong>Need Help?</strong> Chat with a coach!</div><button class="chat-btn" onclick="location.href='https://asapcreditrepairusa.com/chat'">Start Chat</button></div>
-  </main>
-  <script>const K='pb_mechanic';function load(){const s=localStorage.getItem(K);if(s){const d=JSON.parse(s);document.querySelectorAll('.task-checkbox').forEach((b,i)=>{if(d.tasks&&d.tasks[i]){b.classList.add('checked');b.innerHTML='✓'}});if(d.notes)document.getElementById('userNotes').value=d.notes}}function save(){const t=[];document.querySelectorAll('.task-checkbox').forEach(b=>t.push(b.classList.contains('checked')));localStorage.setItem(K,JSON.stringify({tasks:t,notes:document.getElementById('userNotes').value}))}document.querySelectorAll('.task-checkbox').forEach(b=>b.onclick=function(){this.classList.toggle('checked');this.innerHTML=this.classList.contains('checked')?'✓':'';save()});document.getElementById('userNotes').oninput=save;load();</script>
+    <div class="container">
+        <a href="income-playbooks.html" class="back-link">← Back to Income Playbooks</a>
+        
+        <div class="header">
+            <h1>🔧 Mobile Mechanic Services</h1>
+            <p class="subtitle">Fix cars where they are - convenience customers pay premium for!</p>
+            <div class="time-badge">⏱️ $1,000-5,000 startup • Earn $6,000-15,000+/month</div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Start offering mobile mechanic services doing repairs at customers' homes, workplaces, or wherever their car is! People LOVE the convenience of not going to a shop. Oil changes, brake jobs, batteries, starters - common repairs you can do on-site. Charge premium prices for convenience. Busy professionals, parents, seniors all need this service!</p>
+            </div>
+            <div class="income-highlight">
+                <h3>$6,000-15,000+/Month</h3>
+                <p>Per job: $100-500+ • Per day: $400-1,200+ • 3-5 jobs/day = serious income!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🚗</span> Mobile-Friendly Services</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="emoji">🛢️</div>
+                    <h4>Oil Change</h4>
+                    <div class="pay">$75-125</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🛑</div>
+                    <h4>Brake Pads</h4>
+                    <div class="pay">$150-300/axle</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🔋</div>
+                    <h4>Battery Replace</h4>
+                    <div class="pay">$100-200</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">⚡</div>
+                    <h4>Starter/Alternator</h4>
+                    <div class="pay">$200-500</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🔗</div>
+                    <h4>Belt Replacement</h4>
+                    <div class="pay">$100-250</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🔍</div>
+                    <h4>Diagnostics</h4>
+                    <div class="pay">$50-100</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💵</span> Service Pricing</h2>
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Price</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Diagnostic fee</td><td class="rate">$50-100</td><td>Applied to repair</td></tr>
+                    <tr><td>Oil change (conventional)</td><td class="rate">$75-100</td><td>Parts included</td></tr>
+                    <tr><td>Oil change (synthetic)</td><td class="rate">$100-150</td><td>Parts included</td></tr>
+                    <tr><td>Brake pads (per axle)</td><td class="rate">$150-250</td><td>+ parts</td></tr>
+                    <tr><td>Brake pads + rotors</td><td class="rate">$250-400</td><td>+ parts</td></tr>
+                    <tr><td>Battery replacement</td><td class="rate">$100-200</td><td>Parts included</td></tr>
+                    <tr><td>Starter replacement</td><td class="rate">$200-400</td><td>+ parts</td></tr>
+                    <tr><td>Alternator replacement</td><td class="rate">$200-500</td><td>+ parts</td></tr>
+                    <tr><td>Serpentine belt</td><td class="rate">$100-200</td><td>+ parts</td></tr>
+                    <tr><td>Mobile service fee</td><td class="rate">$25-50</td><td>Convenience charge</td></tr>
+                </tbody>
+            </table>
+            
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 The Convenience Premium</div>
+                <p><strong>Charge more than shops - and people will pay!</strong> They save time, don't need a ride, can work while you fix their car. Mobile mechanics typically charge 15-25% more than shops. Your convenience fee is justified!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🧰</span> Essential Equipment</h2>
+            <div class="tool-grid">
+                <div class="tool-card">
+                    <h4>🚐 Service Vehicle</h4>
+                    <div class="cost">$3,000-15,000</div>
+                    <p>Van or truck to carry tools and parts. Used is fine! Must be reliable.</p>
+                </div>
+                <div class="tool-card">
+                    <h4>🔧 Complete Tool Set</h4>
+                    <div class="cost">$500-2,000</div>
+                    <p>Socket sets, wrenches, screwdrivers, specialty tools. Quality matters!</p>
+                </div>
+                <div class="tool-card">
+                    <h4>🔌 OBD2 Scanner</h4>
+                    <div class="cost">$100-500</div>
+                    <p>Read diagnostic codes. Essential for modern vehicles. Bluetooth options available.</p>
+                </div>
+                <div class="tool-card">
+                    <h4>⬆️ Floor Jack & Stands</h4>
+                    <div class="cost">$100-300</div>
+                    <p>Quality hydraulic jack, sturdy jack stands. Never work under just a jack!</p>
+                </div>
+                <div class="tool-card">
+                    <h4>🔦 Work Light</h4>
+                    <div class="cost">$30-100</div>
+                    <p>Rechargeable LED work lights. Essential for seeing what you're doing!</p>
+                </div>
+                <div class="tool-card">
+                    <h4>🧯 Oil Drain Pan/Container</h4>
+                    <div class="cost">$20-50</div>
+                    <p>Catch and transport used oil properly. Environmental responsibility!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📣</span> Where to Find Clients</h2>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h4>📍 Google Business</h4>
+                    <div class="detail">FREE • Essential</div>
+                    <p>"Mobile mechanic near me" searches. Reviews are crucial. Show up when people need you!</p>
+                    <a href="https://business.google.com" class="platform-link" target="_blank">Create Profile →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>🏘️ Nextdoor</h4>
+                    <div class="detail">FREE • Local focus</div>
+                    <p>Perfect for neighborhood reach. People want local, trusted mechanics!</p>
+                    <a href="https://nextdoor.com" class="platform-link" target="_blank">Join Nextdoor →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>🔧 YourMechanic</h4>
+                    <div class="detail">Platform • Commission</div>
+                    <p>Major mobile mechanic platform. They send jobs to you. Good for starting out!</p>
+                    <a href="https://www.yourmechanic.com/become-a-mechanic" class="platform-link" target="_blank">Apply →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>🚗 Wrench</h4>
+                    <div class="detail">Platform • Commission</div>
+                    <p>Another mobile mechanic platform. Jobs sent to your phone. Flexible!</p>
+                    <a href="https://www.wrench.com/become-a-mechanic" class="platform-link" target="_blank">Apply →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>🏢 Office Parks</h4>
+                    <div class="detail">Direct marketing</div>
+                    <p>Busy professionals love mobile service! Flyers in office parking lots. Fix cars while they work!</p>
+                </div>
+                <div class="platform-card">
+                    <h4>🚚 Fleet Accounts</h4>
+                    <div class="detail">Recurring contracts</div>
+                    <p>Small businesses with vehicles need maintenance. Monthly contracts = steady income!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Mobile Mechanic Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Build your mechanic skills</div>
+                    <div class="step-desc">Focus on mobile-friendly repairs: oil changes, brakes, batteries, starters, alternators, belts. ASE certification helpful but not required. YouTube tutorials, hands-on practice!</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Get your service vehicle</div>
+                    <div class="step-desc">Van or pickup truck to carry tools and parts. Used is fine - just needs to be reliable! Organize it for efficiency. Professional lettering optional but helps!</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Build your tool collection</div>
+                    <div class="step-desc">Quality socket sets, wrenches, OBD2 scanner, floor jack and stands, work lights. Start with essentials, add specialty tools as needed. Buy quality - it lasts!</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Get licensed and insured</div>
+                    <div class="step-desc">Business license from your city/county. Liability insurance is essential ($300-600/year). Some areas require mechanic registration. Check local requirements!</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Set up parts supply</div>
+                    <div class="step-desc">Accounts with AutoZone, O'Reilly, NAPA for parts. Stock common items (oil, filters, batteries). Order specialty parts as needed. Wholesale pricing saves money!</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Market your services</div>
+                    <div class="step-desc">Google Business Profile (essential!), Nextdoor, Facebook. Join YourMechanic or Wrench for jobs. Flyers at office parks, apartments. Network!</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Deliver quality, convenient service</div>
+                    <div class="step-desc">Arrive on time, do quality work, clean up completely. Convenience is your selling point! Leave the area cleaner than you found it. Exceed expectations!</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Scale with fleet accounts</div>
+                    <div class="step-desc">Target small businesses with vehicle fleets - delivery services, contractors, real estate agents. Monthly maintenance contracts = recurring income. One fleet = steady monthly check!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎓</span> Learn From the Pros</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🏆</div>
+                    <h4>ASE Certification</h4>
+                    <div class="platform">🌐 Certification</div>
+                    <p>Automotive Service Excellence certification. Proves your skills professionally!</p>
+                    <a href="https://www.ase.com" class="influencer-link" target="_blank">ASE →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>ChrisFix</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Excellent DIY auto repair tutorials. Learn techniques visually!</p>
+                    <a href="https://www.youtube.com/@ChrisFix" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Scotty Kilmer</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Mechanic with 50+ years experience sharing tips and tricks!</p>
+                    <a href="https://www.youtube.com/@scottykilmer" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💬</div>
+                    <h4>r/MechanicAdvice</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Active community for repair advice and troubleshooting!</p>
+                    <a href="https://www.reddit.com/r/MechanicAdvice/" class="influencer-link" target="_blank">Reddit →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Mobile Mechanic Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your mobile mechanic services!
+
+EQUIPMENT:
+☐ Service vehicle: ____
+☐ Tool set complete
+☐ OBD2 scanner
+☐ Floor jack & stands
+☐ Work lights
+☐ Oil drain containers
+Total invested: $____
+
+LICENSING:
+☐ Business license
+☐ Liability insurance: $____
+☐ ASE certification (optional)
+
+PARTS SUPPLIERS:
+☐ AutoZone account
+☐ O'Reilly account
+☐ NAPA account
+
+PRICING:
+Mobile service fee: $____
+Oil change (conventional): $____
+Oil change (synthetic): $____
+Brake pads (per axle): $____ + parts
+Battery replacement: $____
+Diagnostic fee: $____
+
+ONLINE PRESENCE:
+☐ Google Business profile
+☐ Nextdoor
+☐ YourMechanic profile
+☐ Wrench profile
+☐ Facebook page
+Reviews collected: ____
+
+JOBS COMPLETED:
+1. Client: ____ | Service: ____ | Price: $____ | Date: ____
+2. Client: ____ | Service: ____ | Price: $____ | Date: ____
+3. Client: ____ | Service: ____ | Price: $____ | Date: ____
+4. Client: ____ | Service: ____ | Price: $____ | Date: ____
+5. Client: ____ | Service: ____ | Price: $____ | Date: ____
+
+FLEET ACCOUNTS:
+1. Company: ____ | Vehicles: ____ | Monthly: $____
+2. Company: ____ | Vehicles: ____ | Monthly: $____
+
+THIS MONTH:
+Jobs completed: ____
+Total revenue: $____
+Parts costs: $____
+Net profit: $____
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-mobile-mechanic');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-mobile-mechanic', JSON.stringify({ steps, notes }));
+        }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>
