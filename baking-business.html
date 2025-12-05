@@ -1,67 +1,437 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home Baking Business | ASAP Credit Repair Playbook</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{--primary:#063d86;--success:#10b981;--bg:#f8fafc;--text:#1e293b;--text-light:#64748b;--border:#e2e8f0}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}.header{background:linear-gradient(135deg,#f472b6,#ec4899);color:#fff;padding:40px 20px 50px;text-align:center}.header h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:12px}.main-content{max-width:800px;margin:-30px auto 40px;padding:0 20px}.back-link{color:#fff;text-decoration:none;opacity:.8;display:block;margin-bottom:16px}.category-badge{display:inline-block;background:rgba(255,255,255,.2);padding:6px 16px;border-radius:20px;font-size:.85rem;margin-bottom:16px}.goal-card{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid var(--success);border-radius:16px;padding:24px;margin-bottom:24px}.goal-card h2{color:#065f46;margin-bottom:12px}.goal-card .earnings{background:#fff;padding:10px 18px;border-radius:10px;margin-top:14px;font-weight:600;color:#065f46;display:inline-block}.section-card{background:#fff;border-radius:16px;padding:28px;margin-bottom:24px;border:1px solid var(--border)}.section-card h2{color:var(--primary);margin-bottom:20px}.task-list{list-style:none}.task-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)}.task-checkbox{width:28px;height:28px;border:2px solid var(--border);border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}.task-checkbox.checked{background:var(--success);border-color:var(--success);color:#fff}.task-title{font-weight:600;margin-bottom:6px}.task-desc{color:var(--text-light);font-size:.95rem}.task-badge{font-size:.8rem;padding:4px 10px;border-radius:6px;background:var(--bg);margin-top:10px;display:inline-block;margin-right:8px}.details-box{background:#f8fafc;padding:14px;border-radius:8px;margin-top:12px;border-left:4px solid #f472b6}.details-box h4{color:#ec4899;margin-bottom:8px;font-size:.9rem}.details-box ul{margin-left:18px;font-size:.9rem}.details-box li{margin-bottom:6px}.pricing-table{width:100%;border-collapse:collapse;margin-top:12px}.pricing-table th,.pricing-table td{padding:10px;text-align:left;border-bottom:1px solid var(--border)}.pricing-table th{background:var(--bg);font-weight:600}textarea{width:100%;min-height:120px;padding:14px;border:2px solid var(--border);border-radius:10px;font-family:inherit;margin-top:10px}.help-section{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border:2px solid #7dd3fc;border-radius:16px;padding:20px;margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}.chat-btn{background:var(--primary);color:#fff;border:none;padding:12px 24px;border-radius:10px;font-weight:600;cursor:pointer}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Baking - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #1565c0; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #e3f2fd; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 15px; overflow: hidden; font-size: 14px; }
+        .pricing-table th, .pricing-table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .pricing-table th { background: #667eea; color: white; font-weight: 600; }
+        .pricing-table tr:hover { background: #f5f5f5; }
+        .pricing-table .rate { color: #4caf50; font-weight: 600; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .product-card { background: #f8f9fa; border-radius: 15px; padding: 15px; text-align: center; border-left: 5px solid #667eea; }
+        .product-card .emoji { font-size: 2em; margin-bottom: 8px; }
+        .product-card h4 { color: #1a1a2e; font-size: 14px; margin-bottom: 5px; }
+        .product-card .pay { color: #4caf50; font-weight: 600; font-size: 12px; }
+        .equipment-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .equipment-card { background: #f8f9fa; border-radius: 15px; padding: 15px; border-left: 5px solid #2196f3; }
+        .equipment-card h4 { color: #1a1a2e; font-size: 14px; margin-bottom: 5px; }
+        .equipment-card .cost { color: #4caf50; font-weight: 600; font-size: 13px; margin-bottom: 5px; }
+        .equipment-card p { color: #666; font-size: 12px; }
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .platform-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #667eea; }
+        .platform-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .platform-card .detail { color: #667eea; font-size: 12px; margin-bottom: 8px; }
+        .platform-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .platform-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; font-size: 13px; }
+        .platform-link:hover { text-decoration: underline; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .warning-box-title { font-weight: 700; color: #c62828; margin-bottom: 10px; }
+        .warning-box p { color: #666; margin: 8px 0; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #667eea; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; }
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #667eea; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+    </style>
 </head>
 <body>
-  <header class="header"><a href="index.html" class="back-link">← Back to All Playbooks</a><span class="category-badge">🧁 Food Business</span><h1>Home Baking Business</h1><p style="opacity:.9;max-width:600px;margin:0 auto">Turn your baking passion into profit! Custom cakes, cookies, and treats for birthdays, weddings, and events.</p></header>
-  <main class="main-content">
-    <div class="goal-card"><h2>🎯 What You'll Achieve</h2><p>Start a home baking business creating custom treats. Work from home, set your own schedule, build loyal customers!</p><div class="earnings">💰 Cookies (dozen): $25-50 | Cupcakes (dozen): $35-60 | Custom cakes: $75-500+ | Monthly: $1,500-8,000+</div></div>
-    
-    <div class="section-card"><h2>💵 Product Pricing</h2>
-      <table class="pricing-table">
-        <tr><th>Product</th><th>Price Range</th><th>Notes</th></tr>
-        <tr><td>Decorated cookies (dozen)</td><td>$36-60</td><td>$3-5 per cookie</td></tr>
-        <tr><td>Cupcakes (dozen)</td><td>$36-60</td><td>Basic to decorated</td></tr>
-        <tr><td>6" cake (serves 8-10)</td><td>$50-85</td><td>Single tier</td></tr>
-        <tr><td>8" cake (serves 15-20)</td><td>$75-125</td><td>Birthday standard</td></tr>
-        <tr><td>Tiered wedding cake</td><td>$300-800+</td><td>Per tier pricing</td></tr>
-        <tr><td>Cake pops (dozen)</td><td>$30-48</td><td>$2.50-4 each</td></tr>
-      </table>
-      <p style="font-size:.85rem;color:var(--text-light);margin-top:10px">Complex designs, fondant, and sculpted elements add to price</p>
+    <div class="container">
+        <a href="income-playbooks.html" class="back-link">← Back to Income Playbooks</a>
+        
+        <div class="header">
+            <h1>🧁 Home Baking</h1>
+            <p class="subtitle">Turn your baking passion into profit - cookies, cakes & custom treats!</p>
+            <div class="time-badge">⏱️ $200-500 startup • Earn $1,500-8,000+/month</div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Start a home baking business creating custom treats for birthdays, weddings, holidays, and events! Work from your home kitchen under cottage food laws (most states). Decorated cookies, custom cakes, cupcakes, and specialty items. Set your own schedule, build loyal customers, and turn your baking passion into real income!</p>
+            </div>
+            <div class="income-highlight">
+                <h3>$1,500-8,000+/Month</h3>
+                <p>Cookies: $3-5 each • Cupcakes: $3-5 each • Custom cakes: $75-500+ • Build to $2,000-8,000+/month!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🍰</span> Popular Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="emoji">🍪</div>
+                    <h4>Decorated Cookies</h4>
+                    <div class="pay">$36-60/dozen</div>
+                </div>
+                <div class="product-card">
+                    <div class="emoji">🧁</div>
+                    <h4>Cupcakes</h4>
+                    <div class="pay">$36-60/dozen</div>
+                </div>
+                <div class="product-card">
+                    <div class="emoji">🎂</div>
+                    <h4>Birthday Cakes</h4>
+                    <div class="pay">$75-200+</div>
+                </div>
+                <div class="product-card">
+                    <div class="emoji">💒</div>
+                    <h4>Wedding Cakes</h4>
+                    <div class="pay">$300-800+</div>
+                </div>
+                <div class="product-card">
+                    <div class="emoji">🍫</div>
+                    <h4>Brownies/Bars</h4>
+                    <div class="pay">$24-36/dozen</div>
+                </div>
+                <div class="product-card">
+                    <div class="emoji">🍡</div>
+                    <h4>Cake Pops</h4>
+                    <div class="pay">$30-48/dozen</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💵</span> Product Pricing</h2>
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price Range</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Decorated cookies (dozen)</td><td class="rate">$36-60</td><td>$3-5 per cookie</td></tr>
+                    <tr><td>Simple cookies (dozen)</td><td class="rate">$18-30</td><td>Less decoration</td></tr>
+                    <tr><td>Cupcakes (dozen)</td><td class="rate">$36-60</td><td>Basic to decorated</td></tr>
+                    <tr><td>6" cake (serves 8-10)</td><td class="rate">$50-85</td><td>Single tier</td></tr>
+                    <tr><td>8" cake (serves 15-20)</td><td class="rate">$75-125</td><td>Standard birthday</td></tr>
+                    <tr><td>10" cake (serves 25-35)</td><td class="rate">$100-175</td><td>Larger parties</td></tr>
+                    <tr><td>Tiered cake (2-3 tiers)</td><td class="rate">$200-500+</td><td>Weddings, special events</td></tr>
+                    <tr><td>Cake pops (dozen)</td><td class="rate">$30-48</td><td>$2.50-4 each</td></tr>
+                    <tr><td>Brownies/bars (dozen)</td><td class="rate">$24-36</td><td>$2-3 each</td></tr>
+                </tbody>
+            </table>
+            
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 The Profit Formula</div>
+                <p><strong>Rule of 3x:</strong> Your selling price should be at least 3x your ingredient cost. Decorated cookie costs $0.75 to make? Sell for $3-5 minimum. Factor in your TIME - that's where the real value is!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">⚖️</span> Cottage Food Laws</h2>
+            <div class="warning-box">
+                <div class="warning-box-title">⚠️ Check Your State's Laws First!</div>
+                <p><strong>Cottage food laws allow home baking with restrictions.</strong> Most states allow baked goods, candies, jams. Often has annual sales limits ($25K-75K). May require food handler's permit. Some items restricted (cream fillings, cheesecake). Labeling requirements vary.</p>
+                <p><strong>Search: "[Your State] cottage food laws"</strong> to find your specific requirements!</p>
+            </div>
+            <a href="https://foodsafety.wisc.edu/assets/pdf_Files/Cottage-Food-Laws-by-State.pdf" class="platform-link" target="_blank">View Cottage Food Laws by State →</a>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🧰</span> Equipment Needed</h2>
+            <div class="equipment-grid">
+                <div class="equipment-card">
+                    <h4>🎛️ Stand Mixer</h4>
+                    <div class="cost">$200-400</div>
+                    <p>KitchenAid or similar. Essential for volume baking! Get the 5-6 quart size.</p>
+                </div>
+                <div class="equipment-card">
+                    <h4>🌡️ Oven Thermometer</h4>
+                    <div class="cost">$10-20</div>
+                    <p>Home ovens are often inaccurate! This is essential for consistent results.</p>
+                </div>
+                <div class="equipment-card">
+                    <h4>⚖️ Kitchen Scale</h4>
+                    <div class="cost">$20-40</div>
+                    <p>Weighing ingredients = consistency. Essential for professional results!</p>
+                </div>
+                <div class="equipment-card">
+                    <h4>🥧 Quality Pans</h4>
+                    <div class="cost">$50-150</div>
+                    <p>Round cake pans (6", 8", 10"), sheet pans, muffin tins. Quality matters!</p>
+                </div>
+                <div class="equipment-card">
+                    <h4>🎨 Decorating Tools</h4>
+                    <div class="cost">$50-100</div>
+                    <p>Piping tips, bags, turntable, offset spatulas, food coloring.</p>
+                </div>
+                <div class="equipment-card">
+                    <h4>📦 Packaging</h4>
+                    <div class="cost">$50-100</div>
+                    <p>Boxes, bags, labels, ribbon. Professional packaging elevates your brand!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📣</span> Where to Find Customers</h2>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h4>📸 Instagram</h4>
+                    <div class="detail">FREE • Essential for bakers</div>
+                    <p>Beautiful photos sell baked goods! Post your creations, use local hashtags, Reels of decorating are popular!</p>
+                    <a href="https://www.instagram.com" class="platform-link" target="_blank">Create Account →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>📘 Facebook</h4>
+                    <div class="detail">FREE • Local community</div>
+                    <p>Create a page, join local groups, mom groups. Post seasonal offerings. Facebook Marketplace for reach!</p>
+                    <a href="https://www.facebook.com" class="platform-link" target="_blank">Create Page →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>🏘️ Nextdoor</h4>
+                    <div class="detail">FREE • Neighborhood</div>
+                    <p>Neighbors love supporting local bakers! Post seasonal specials, holiday treats.</p>
+                    <a href="https://nextdoor.com" class="platform-link" target="_blank">Join Nextdoor →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>🧑‍🌾 Farmers Markets</h4>
+                    <div class="detail">$20-50/booth</div>
+                    <p>Great exposure! Meet customers face-to-face, build following, test new products.</p>
+                </div>
+                <div class="platform-card">
+                    <h4>👰 Event Planners</h4>
+                    <div class="detail">Partnership referrals</div>
+                    <p>Connect with local planners for birthday parties, showers, weddings. Steady referrals!</p>
+                </div>
+                <div class="platform-card">
+                    <h4>👥 Word of Mouth</h4>
+                    <div class="detail">FREE • Best source!</div>
+                    <p>Happy customers tell friends! Offer samples to neighbors, ask for referrals. This builds businesses!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Baking Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Check your state's cottage food laws</div>
+                    <div class="step-desc">Google "[Your State] cottage food laws." Know what you can legally sell, annual limits, labeling requirements, and any permits needed. Some items may be restricted!</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Perfect your signature items</div>
+                    <div class="step-desc">Master a few items before expanding. Decorated cookies, custom cakes, cupcakes - pick your specialty. Consistency builds reputation! Test recipes on family first.</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Set up your home bakery</div>
+                    <div class="step-desc">Quality equipment (stand mixer essential!), organized supplies, professional packaging. Create efficient workflow. Stock up on commonly used ingredients.</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Price for profit</div>
+                    <div class="step-desc">Calculate ingredient costs. Use 3x markup minimum. Factor in your time! Create clear pricing menu. Don't undervalue your work - quality costs money!</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Build your brand and presence</div>
+                    <div class="step-desc">Instagram is essential! Take beautiful photos of everything. Create Facebook page. Name your bakery. Design simple logo and labels. Professional packaging!</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Get your first orders</div>
+                    <div class="step-desc">Friends and family first! Offer samples to neighbors. Post on Nextdoor, local Facebook groups. Farmers market booth for exposure. Every happy customer = referrals!</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Deliver beautiful, delicious products</div>
+                    <div class="step-desc">Taste AND presentation matter! Professional packaging elevates your brand. Deliver on time. Include business cards. Exceed expectations every time!</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Scale your baking</div>
+                    <div class="step-desc">Raise prices as demand grows. Add seasonal items (holiday cookies!). Wedding cakes = premium pricing. Consider commercial kitchen for higher volume. Subscription cookie clubs!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎓</span> Learn From the Pros</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🍪</div>
+                    <h4>Sugar Cookie Marketing</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Cookie business tips, pricing, marketing for home bakers!</p>
+                    <a href="https://www.youtube.com/results?search_query=cookie+business+tips" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🎂</div>
+                    <h4>Preppy Kitchen</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>John Kanell's excellent baking tutorials. Level up your skills!</p>
+                    <a href="https://www.youtube.com/@PreppyKitchen" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💬</div>
+                    <h4>r/Baking</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Active community for tips, troubleshooting, inspiration!</p>
+                    <a href="https://www.reddit.com/r/Baking/" class="influencer-link" target="_blank">r/Baking →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📘</div>
+                    <h4>Cottage Food Community</h4>
+                    <div class="platform">📘 Facebook</div>
+                    <p>Facebook groups for cottage food bakers. Business tips, state-specific advice!</p>
+                    <a href="https://www.facebook.com/groups" class="influencer-link" target="_blank">Find Groups →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Baking Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your baking side gig!
+
+LEGAL SETUP:
+☐ State cottage food laws researched
+☐ Annual sales limit: $____
+☐ Food handler's permit (if needed)
+☐ Labeling requirements understood
+☐ Restricted items noted: ____
+
+SIGNATURE PRODUCTS:
+1. ____ | Cost: $____ | Price: $____
+2. ____ | Cost: $____ | Price: $____
+3. ____ | Cost: $____ | Price: $____
+4. ____ | Cost: $____ | Price: $____
+5. ____ | Cost: $____ | Price: $____
+
+EQUIPMENT:
+☐ Stand mixer: ____
+☐ Oven thermometer
+☐ Kitchen scale
+☐ Cake pans: ____
+☐ Decorating tools
+☐ Packaging supplies
+Total invested: $____
+
+BRAND:
+Business name: ____
+☐ Instagram: @____
+☐ Facebook page
+☐ Logo designed
+☐ Labels/packaging ready
+
+ORDERS:
+1. Client: ____ | Items: ____ | Total: $____ | Date: ____
+2. Client: ____ | Items: ____ | Total: $____ | Date: ____
+3. Client: ____ | Items: ____ | Total: $____ | Date: ____
+4. Client: ____ | Items: ____ | Total: $____ | Date: ____
+5. Client: ____ | Items: ____ | Total: $____ | Date: ____
+
+THIS MONTH:
+Orders completed: ____
+Total revenue: $____
+Ingredient costs: $____
+Profit: $____
+New followers: ____
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
     </div>
 
-    <div class="section-card"><h2>📋 Step-by-Step Action Plan</h2>
-      <ul class="task-list">
-        <li class="task-item"><div class="task-checkbox" data-task="0"></div><div><div class="task-title">Step 1: Check your state's cottage food laws</div><div class="task-desc">Most states allow home baking with some restrictions. Know what you can legally sell!</div><div class="details-box"><h4>📋 Cottage Food Basics:</h4><ul><li>Check your state's cottage food laws</li><li>Usually allows baked goods, candies, jams</li><li>Often has annual sales limits ($25K-75K)</li><li>May require food handler's permit</li><li>Labeling requirements vary</li><li>Some items (cream fillings) may be restricted</li></ul></div><span class="task-badge">⚖️ Check state laws</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="1"></div><div><div class="task-title">Step 2: Perfect your signature items</div><div class="task-desc">Master a few items before expanding. Consistency is key to building reputation!</div><div class="details-box"><h4>🧁 Popular Products:</h4><ul><li>Decorated sugar cookies</li><li>Custom birthday cakes</li><li>Cupcakes (various flavors)</li><li>Brownies and bars</li><li>Specialty items (macarons, cake pops)</li><li>Seasonal treats (holiday cookies)</li></ul></div><span class="task-badge">⭐ Master your specialty</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="2"></div><div><div class="task-title">Step 3: Set up your home bakery</div><div class="task-desc">Organize your kitchen, get essential equipment, establish workflow.</div><span class="task-badge">🍳 Quality equipment</span><span class="task-badge">📦 Packaging supplies</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="3"></div><div><div class="task-title">Step 4: Build your brand and find customers</div><div class="task-desc">Instagram is essential for bakers! Before photos sell your work.</div><div class="details-box"><h4>📱 Marketing Your Bakery:</h4><ul><li>Instagram (essential! beautiful photos)</li><li>Facebook local groups</li><li>Word of mouth from happy customers</li><li>Farmers markets (great exposure)</li><li>Partner with event planners</li><li>Offer samples to local businesses</li></ul></div><span class="task-badge">📸 Instagram essential</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="4"></div><div><div class="task-title">Step 5: Deliver beautiful, delicious products</div><div class="task-desc">Taste AND presentation matter! Professional packaging elevates your brand.</div><span class="task-badge">😋 Taste is #1</span><span class="task-badge">📦 Beautiful packaging</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="5"></div><div><div class="task-title">Step 6: Grow your baking business</div><div class="task-desc">Raise prices as demand grows, add products, consider commercial kitchen for scaling.</div><div class="details-box"><h4>🚀 Growth Strategies:</h4><ul><li>Raise prices as you book out</li><li>Add seasonal/holiday items</li><li>Wedding cake market (premium pricing)</li><li>Subscription cookie clubs</li><li>Commercial kitchen for higher volume</li></ul></div><span class="task-badge">💰 Raise prices with demand</span></div></li>
-      </ul>
-    </div>
-
-    <div class="section-card"><h2>📝 Your Baking Business Tracker</h2><textarea id="userNotes" placeholder="Track your baking business:
-
-Cottage food permit: ✓
-Food handler's cert: ✓
-Specialty: Custom decorated cookies, birthday cakes
-
-This month's orders:
-- Birthday cakes (6): $520
-- Cookie orders (12 dozen): $480  
-- Cupcakes (8 dozen): $320
-- Wedding cake deposit: $200
-- Holiday cookie pre-orders: $360
-
-Monthly revenue: $1,880
-Ingredients cost (~30%): $564
-Packaging: $95
-Net profit: $1,221
-
-Instagram followers: 2,340
-Orders booked ahead: 3 weeks
-
-Goal: Book 4 weeks ahead = $3,000+/month"></textarea></div>
-    <div class="help-section"><span style="font-size:24px">💬</span><div style="flex:1"><strong>Need Help?</strong> Chat with a coach!</div><button class="chat-btn" onclick="location.href='https://asapcreditrepairusa.com/chat'">Start Chat</button></div>
-  </main>
-  <script>const K='pb_baking';function load(){const s=localStorage.getItem(K);if(s){const d=JSON.parse(s);document.querySelectorAll('.task-checkbox').forEach((b,i)=>{if(d.tasks&&d.tasks[i]){b.classList.add('checked');b.innerHTML='✓'}});if(d.notes)document.getElementById('userNotes').value=d.notes}}function save(){const t=[];document.querySelectorAll('.task-checkbox').forEach(b=>t.push(b.classList.contains('checked')));localStorage.setItem(K,JSON.stringify({tasks:t,notes:document.getElementById('userNotes').value}))}document.querySelectorAll('.task-checkbox').forEach(b=>b.onclick=function(){this.classList.toggle('checked');this.innerHTML=this.classList.contains('checked')?'✓':'';save()});document.getElementById('userNotes').oninput=save;load();</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-baking-business');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-baking-business', JSON.stringify({ steps, notes }));
+        }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>
