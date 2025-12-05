@@ -1,67 +1,386 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Soap Making Business | ASAP Credit Repair Playbook</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{--primary:#063d86;--success:#10b981;--bg:#f8fafc;--text:#1e293b;--text-light:#64748b;--border:#e2e8f0}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}.header{background:linear-gradient(135deg,#84cc16,#65a30d);color:#fff;padding:40px 20px 50px;text-align:center}.header h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:12px}.main-content{max-width:800px;margin:-30px auto 40px;padding:0 20px}.back-link{color:#fff;text-decoration:none;opacity:.8;display:block;margin-bottom:16px}.category-badge{display:inline-block;background:rgba(255,255,255,.2);padding:6px 16px;border-radius:20px;font-size:.85rem;margin-bottom:16px}.goal-card{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid var(--success);border-radius:16px;padding:24px;margin-bottom:24px}.goal-card h2{color:#065f46;margin-bottom:12px}.goal-card .earnings{background:#fff;padding:10px 18px;border-radius:10px;margin-top:14px;font-weight:600;color:#065f46;display:inline-block}.section-card{background:#fff;border-radius:16px;padding:28px;margin-bottom:24px;border:1px solid var(--border)}.section-card h2{color:var(--primary);margin-bottom:20px}.task-list{list-style:none}.task-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)}.task-checkbox{width:28px;height:28px;border:2px solid var(--border);border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}.task-checkbox.checked{background:var(--success);border-color:var(--success);color:#fff}.task-title{font-weight:600;margin-bottom:6px}.task-desc{color:var(--text-light);font-size:.95rem}.task-badge{font-size:.8rem;padding:4px 10px;border-radius:6px;background:var(--bg);margin-top:10px;display:inline-block;margin-right:8px}.details-box{background:#f8fafc;padding:14px;border-radius:8px;margin-top:12px;border-left:4px solid #84cc16}.details-box h4{color:#65a30d;margin-bottom:8px;font-size:.9rem}.details-box ul{margin-left:18px;font-size:.9rem}.details-box li{margin-bottom:6px}.pricing-table{width:100%;border-collapse:collapse;margin-top:12px}.pricing-table th,.pricing-table td{padding:10px;text-align:left;border-bottom:1px solid var(--border)}.pricing-table th{background:var(--bg);font-weight:600}textarea{width:100%;min-height:120px;padding:14px;border:2px solid var(--border);border-radius:10px;font-family:inherit;margin-top:10px}.help-section{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border:2px solid #7dd3fc;border-radius:16px;padding:20px;margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}.chat-btn{background:var(--primary);color:#fff;border:none;padding:12px 24px;border-radius:10px;font-weight:600;cursor:pointer}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soap Making Business - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #e8b4bc, #d4a5ad); color: #5d4e52; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #fce4ec, #f8bbd9); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #880e4f; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.2em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #fce4ec; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #e8b4bc; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #e8b4bc; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+        .pricing-table th, .pricing-table td { padding: 12px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .pricing-table th { background: #e8b4bc; color: #5d4e52; }
+        .pricing-table tr:hover { background: #f8f9fa; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .service-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; border-left: 4px solid #e8b4bc; }
+        .service-card .emoji { font-size: 2em; margin-bottom: 10px; }
+        .service-card h4 { color: #1a1a2e; font-size: 13px; margin-bottom: 5px; }
+        .service-card p { color: #666; font-size: 11px; }
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .platform-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #4caf50; }
+        .platform-card h4 { color: #1a1a2e; margin-bottom: 8px; }
+        .platform-card h4 a { color: #c2185b; text-decoration: none; }
+        .platform-card h4 a:hover { text-decoration: underline; }
+        .platform-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .platform-card .type { color: #2e7d32; font-weight: 600; font-size: 12px; margin-top: 8px; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .skills-box { background: #f8f9fa; border-radius: 15px; padding: 20px; margin: 15px 0; }
+        .skills-box h4 { color: #1a1a2e; margin-bottom: 15px; }
+        .skills-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+        .skill-item { display: flex; align-items: center; gap: 10px; padding: 10px; background: white; border-radius: 8px; }
+        .skill-item .emoji { font-size: 1.3em; }
+        .skill-item span { color: #666; font-size: 13px; }
+        .skill-item a { color: #c2185b; text-decoration: none; }
+        .skill-item a:hover { text-decoration: underline; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #e8b4bc, #d4a5ad); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #c2185b; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #c2185b; text-decoration: none; font-weight: 600; }
+        .progress-tracker { background: linear-gradient(135deg, #e8b4bc, #d4a5ad); color: #5d4e52; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.5); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #e8b4bc; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #e8b4bc, #d4a5ad); color: #5d4e52; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+    </style>
 </head>
 <body>
-  <header class="header"><a href="index.html" class="back-link">← Back to All Playbooks</a><span class="category-badge">🧼 Handmade Products</span><h1>Soap Making Business</h1><p style="opacity:.9;max-width:600px;margin:0 auto">Create beautiful handmade soaps! Natural skincare is booming - farmers markets, Etsy, and local shops.</p></header>
-  <main class="main-content">
-    <div class="goal-card"><h2>🎯 What You'll Achieve</h2><p>Start a soap making business creating artisan soaps. Great margins, creative work, multiple sales channels!</p><div class="earnings">💰 Cost per bar: $1-2 | Sell price: $6-12 | Margin: 400-600% | Monthly: $1,000-8,000+</div></div>
-    
-    <div class="section-card"><h2>💵 Product Pricing</h2>
-      <table class="pricing-table">
-        <tr><th>Product</th><th>Your Cost</th><th>Retail Price</th></tr>
-        <tr><td>Bar soap (4-5 oz)</td><td>$1-2</td><td>$6-10</td></tr>
-        <tr><td>Specialty/luxury bar</td><td>$2-3</td><td>$10-15</td></tr>
-        <tr><td>Soap gift set (3 bars)</td><td>$4-6</td><td>$22-32</td></tr>
-        <tr><td>Shampoo bar</td><td>$1.50-2.50</td><td>$8-14</td></tr>
-        <tr><td>Lotion bars</td><td>$1.50-2.50</td><td>$8-12</td></tr>
-        <tr><td>Wholesale (per bar)</td><td>$1-2</td><td>$3-5</td></tr>
-      </table>
-      <p style="font-size:.85rem;color:var(--text-light);margin-top:10px">Wholesale typically 50% of retail price</p>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Playbooks</a>
+        
+        <div class="header">
+            <h1>🧼 Soap Making Business</h1>
+            <p class="subtitle">Create beautiful handmade soaps! Natural skincare is booming</p>
+            <div class="time-badge">💰 400-600% margins • Farmers markets, Etsy, boutiques!</div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Start a soap making business creating artisan handmade soaps. Natural skincare is a $12+ billion industry! With costs of $1-2 per bar and selling for $6-12, you're looking at 400-600% margins. Sell at farmers markets, on Etsy, to local boutiques, or your own website. Make 100 bars/week @ $8 average = $3,200/month!</p>
+            </div>
+            <div class="income-highlight">
+                <h3>$1-2 Cost → $6-12 Retail</h3>
+                <p>400-600% margins • Bar soap, specialty bars, gift sets, shampoo bars, lotion bars</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💰</span> Product Pricing Guide</h2>
+            <table class="pricing-table">
+                <tr><th>Product</th><th>Your Cost</th><th>Retail Price</th><th>Profit</th></tr>
+                <tr><td>Bar soap (4-5 oz)</td><td>$1-2</td><td>$6-10</td><td>$4-9</td></tr>
+                <tr><td>Specialty/luxury bar</td><td>$2-3</td><td>$10-15</td><td>$7-13</td></tr>
+                <tr><td>Soap gift set (3 bars)</td><td>$4-6</td><td>$22-32</td><td>$16-28</td></tr>
+                <tr><td>Shampoo bar</td><td>$1.50-2.50</td><td>$8-14</td><td>$5.50-12.50</td></tr>
+                <tr><td>Lotion bars</td><td>$1.50-2.50</td><td>$8-12</td><td>$5.50-10.50</td></tr>
+                <tr><td>Wholesale (per bar)</td><td>$1-2</td><td>$3-5</td><td>$1-4</td></tr>
+            </table>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Gift Sets = Higher Margins!</div>
+                <p>Bundle 3 bars that cost you $5 total and sell for $28. That's $23 profit per gift set! Gift sets also make great holiday and wedding favor products.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🧪</span> Soap Making Methods</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="emoji">🔥</div>
+                    <h4>Melt & Pour</h4>
+                    <p>Easiest, no lye handling</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">❄️</div>
+                    <h4>Cold Process</h4>
+                    <p>Most customizable</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">♨️</div>
+                    <h4>Hot Process</h4>
+                    <p>Faster cure time</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🌿</div>
+                    <h4>Natural Soaps</h4>
+                    <p>Essential oils only</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🎨</div>
+                    <h4>Artisan Designs</h4>
+                    <p>Swirls, embeds, layers</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">💆</div>
+                    <h4>Specialty Bars</h4>
+                    <p>Shampoo, shaving, facial</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🛒</span> Ingredient Suppliers</h2>
+            <p style="color: #666; margin-bottom: 15px;">Quality ingredients at wholesale prices:</p>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h4><a href="https://www.brambleberry.com" target="_blank">Bramble Berry →</a></h4>
+                    <p>Best for beginners! Great tutorials, quality supplies, everything you need. Fragrance oils, molds, colorants, base oils.</p>
+                    <div class="type">⭐ Best for: Getting started</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.wholesalesuppliesplus.com" target="_blank">Wholesale Supplies Plus →</a></h4>
+                    <p>Huge selection of soap making supplies. Competitive bulk pricing. Great for scaling up your business!</p>
+                    <div class="type">📦 Best for: Bulk orders</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.bulkapothecary.com" target="_blank">Bulk Apothecary →</a></h4>
+                    <p>Excellent prices on carrier oils, essential oils, and butters. Great for natural soap makers!</p>
+                    <div class="type">🌿 Best for: Natural ingredients</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.naturesgardencandles.com" target="_blank">Nature's Garden →</a></h4>
+                    <p>Huge fragrance oil selection! Also carries soap bases, colorants, and packaging. Competitive pricing.</p>
+                    <div class="type">👃 Best for: Fragrance oils</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.essentialdepot.com" target="_blank">Essential Depot →</a></h4>
+                    <p>Quality lye (sodium hydroxide) supplier. Also carries oils and butters. Food-grade lye for soap making.</p>
+                    <div class="type">⚗️ Best for: Lye & chemicals</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.amazon.com/s?k=soap+making+supplies" target="_blank">Amazon →</a></h4>
+                    <p>Great for small quantities, molds, and tools. Fast shipping. Compare prices with specialty suppliers!</p>
+                    <div class="type">🚀 Best for: Quick orders</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🛍️</span> Where to Sell Your Soap</h2>
+            <div class="skills-box">
+                <h4>Sales Channels (Use Multiple!)</h4>
+                <div class="skills-list">
+                    <div class="skill-item"><span class="emoji">🏪</span><span><a href="https://www.etsy.com" target="_blank">Etsy</a> - Built-in handmade audience</span></div>
+                    <div class="skill-item"><span class="emoji">🥕</span><span>Farmers Markets - Test products, get feedback</span></div>
+                    <div class="skill-item"><span class="emoji">🎄</span><span>Craft Fairs - Holiday markets = big sales</span></div>
+                    <div class="skill-item"><span class="emoji">🏬</span><span>Local Boutiques - Wholesale accounts</span></div>
+                    <div class="skill-item"><span class="emoji">🌐</span><span><a href="https://www.shopify.com" target="_blank">Shopify</a> - Your own branded store</span></div>
+                    <div class="skill-item"><span class="emoji">📱</span><span><a href="https://www.instagram.com" target="_blank">Instagram</a> - Visual selling, DM orders</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Learn soap making safely</div>
+                    <div class="step-desc">Start with melt & pour (no lye handling). Watch YouTube tutorials from Royalty Soaps and Bramble Berry. If doing cold process, learn proper lye safety—goggles, gloves, ventilation!</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Source quality ingredients</div>
+                    <div class="step-desc">Order from Bramble Berry or Wholesale Supplies Plus. Get base oils (olive, coconut, palm), lye, fragrances, and colorants. Buy in bulk as you scale for better margins!</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Develop signature recipes</div>
+                    <div class="step-desc">Create 3-5 signature scent combinations and designs. Lavender, citrus, and "clean" scents are bestsellers. Test on friends and family for feedback!</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Brand and package professionally</div>
+                    <div class="step-desc">Beautiful packaging sells soap! Create a logo with Canva, design labels (ingredients required by law!), and develop your brand story (natural, handmade, local).</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Start selling at farmers markets</div>
+                    <div class="step-desc">Farmers markets are perfect for testing! Get direct customer feedback, refine your products, build a following. Booth fees: $25-75/day typically.</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Open your Etsy shop</div>
+                    <div class="step-desc">Etsy has built-in traffic looking for handmade soap! Great photos are essential. Optimize titles and tags for search. Offer gift sets!</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Approach local boutiques</div>
+                    <div class="step-desc">Pitch wholesale accounts to local gift shops, boutiques, and spas. Wholesale = 50% of retail. Consistent orders, less work per sale!</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Scale your soap business</div>
+                    <div class="step-desc">Larger batch production, more wholesale accounts, expand product line (lotions, scrubs). Consider subscription boxes or private label for other brands!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎓</span> Learn From These Resources</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Royalty Soaps</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Katie's detailed soap making tutorials. Beautiful designs, helpful tips for beginners!</p>
+                    <a href="https://www.youtube.com/c/RoyaltySoaps" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Bramble Berry</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Official tutorials from the supplier. Great beginner-friendly content!</p>
+                    <a href="https://www.youtube.com/user/BrambleBerryInc" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💬</div>
+                    <h4>r/soapmaking</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Active community of soap makers. Ask questions, share your work, get feedback!</p>
+                    <a href="https://reddit.com/r/soapmaking" class="influencer-link" target="_blank">Reddit →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🧮</div>
+                    <h4>SoapCalc</h4>
+                    <div class="platform">🌐 Tool</div>
+                    <p>Free lye calculator! Essential for creating your own cold process recipes safely.</p>
+                    <a href="http://soapcalc.net" class="influencer-link" target="_blank">SoapCalc →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Soap Business Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your soap making business!
+
+SOAP MAKING METHOD:
+☐ Melt & Pour
+☐ Cold Process
+☐ Hot Process
+
+SIGNATURE PRODUCTS:
+1. ____ | Scent: ____ | Price: $____
+2. ____ | Scent: ____ | Price: $____
+3. ____ | Scent: ____ | Price: $____
+4. ____ | Scent: ____ | Price: $____
+5. ____ | Scent: ____ | Price: $____
+
+SUPPLIERS:
+Primary: ____
+Backup: ____
+Last order: $____
+
+COST PER BAR: $____
+RETAIL PRICE: $____
+PROFIT PER BAR: $____
+
+SALES CHANNELS:
+☐ Farmers market: ____
+☐ Etsy shop: ____
+☐ Craft fairs
+☐ Local boutiques: ____
+☐ Own website: ____
+
+WHOLESALE ACCOUNTS:
+1. ____ | Monthly order: $____
+2. ____ | Monthly order: $____
+3. ____ | Monthly order: $____
+
+BARS MADE THIS MONTH: ____
+BARS SOLD THIS MONTH: ____
+
+MONTHLY REVENUE: $____
+MONTHLY PROFIT: $____
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
     </div>
 
-    <div class="section-card"><h2>📋 Step-by-Step Action Plan</h2>
-      <ul class="task-list">
-        <li class="task-item"><div class="task-checkbox" data-task="0"></div><div><div class="task-title">Step 1: Learn soap making safely</div><div class="task-desc">Cold process soap uses lye - learn proper safety! Melt and pour is easier to start.</div><div class="details-box"><h4>🧪 Soap Making Methods:</h4><ul><li><strong>Melt and pour:</strong> Easiest, no lye handling</li><li><strong>Cold process:</strong> Most customizable, uses lye</li><li><strong>Hot process:</strong> Faster cure time</li><li>Start with melt and pour to learn</li><li>Take a class or online course</li><li>YouTube: Royalty Soaps, Bramble Berry</li></ul></div><span class="task-badge">⚠️ Safety first with lye</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="1"></div><div><div class="task-title">Step 2: Source quality ingredients</div><div class="task-desc">Oils, lye, fragrances, colorants. Buy in bulk for better margins!</div><div class="details-box"><h4>🛒 Supply Sources:</h4><ul><li>Bramble Berry (great for beginners)</li><li>Wholesale Supplies Plus</li><li>Bulk Apothecary</li><li>Essential oils and fragrance oils</li><li>Natural colorants (clays, botanicals)</li><li>Buy in bulk as you scale</li></ul></div><span class="task-badge">🛒 Bulk = better margins</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="2"></div><div><div class="task-title">Step 3: Develop signature recipes</div><div class="task-desc">Create unique scent combinations and designs. Your signature products define your brand!</div><span class="task-badge">🎨 Unique designs</span><span class="task-badge">👃 Signature scents</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="3"></div><div><div class="task-title">Step 4: Brand and package professionally</div><div class="task-desc">Beautiful packaging sells soap! Labels, wrapping, brand story all matter.</div><div class="details-box"><h4>📦 Branding Elements:</h4><ul><li>Logo and brand identity</li><li>Professional labels (ingredients required)</li><li>Nice packaging/wrapping</li><li>Product photography</li><li>Brand story (natural, handmade, local)</li></ul></div><span class="task-badge">📦 Packaging matters</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="4"></div><div><div class="task-title">Step 5: Sell through multiple channels</div><div class="task-desc">Farmers markets, Etsy, local boutiques, your own website. Diversify!</div><div class="details-box"><h4>🛍️ Sales Channels:</h4><ul><li>Farmers markets (great for starting)</li><li>Etsy (built-in traffic)</li><li>Local boutiques (wholesale)</li><li>Gift shops</li><li>Own website (Shopify)</li><li>Craft fairs and holiday markets</li></ul></div><span class="task-badge">🏪 Multiple channels</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="5"></div><div><div class="task-title">Step 6: Scale your soap business</div><div class="task-desc">Larger batches, wholesale accounts, expand product line. Batch production saves time!</div><div class="details-box"><h4>🚀 Growth Strategies:</h4><ul><li>Larger batch production</li><li>Wholesale to retailers</li><li>Subscription boxes</li><li>Private label for other brands</li><li>Add related products (lotions, scrubs)</li></ul></div><span class="task-badge">📈 Batch for efficiency</span></div></li>
-      </ul>
-    </div>
-
-    <div class="section-card"><h2>📝 Your Soap Business Tracker</h2><textarea id="userNotes" placeholder="Track your soap making business:
-
-Method: Cold process
-Signature scents: Lavender Oat, Honey Almond, 
-  Eucalyptus Mint, Charcoal Tea Tree
-
-This month:
-- Farmers market (4 weekends): $840
-- Etsy sales (28 bars): $224
-- Wholesale order (50 bars): $200
-- Gift sets (8): $180
-
-Monthly revenue: $1,444
-Supplies (~25%): $360
-Market fees: $100
-Net: $984
-
-Bars made this month: 150
-Cure time: 4-6 weeks
-Wholesale accounts: 2 boutiques
-
-Goal: 300 bars/month = $2,500+"></textarea></div>
-    <div class="help-section"><span style="font-size:24px">💬</span><div style="flex:1"><strong>Need Help?</strong> Chat with a coach!</div><button class="chat-btn" onclick="location.href='https://asapcreditrepairusa.com/chat'">Start Chat</button></div>
-  </main>
-  <script>const K='pb_soap';function load(){const s=localStorage.getItem(K);if(s){const d=JSON.parse(s);document.querySelectorAll('.task-checkbox').forEach((b,i)=>{if(d.tasks&&d.tasks[i]){b.classList.add('checked');b.innerHTML='✓'}});if(d.notes)document.getElementById('userNotes').value=d.notes}}function save(){const t=[];document.querySelectorAll('.task-checkbox').forEach(b=>t.push(b.classList.contains('checked')));localStorage.setItem(K,JSON.stringify({tasks:t,notes:document.getElementById('userNotes').value}))}document.querySelectorAll('.task-checkbox').forEach(b=>b.onclick=function(){this.classList.toggle('checked');this.innerHTML=this.classList.contains('checked')?'✓':'';save()});document.getElementById('userNotes').oninput=save;load();</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-soap-making');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-soap-making', JSON.stringify({ steps, notes }));
+        }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>

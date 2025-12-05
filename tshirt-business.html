@@ -1,66 +1,406 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>T-Shirt Business (Print on Demand) | ASAP Credit Repair Playbook</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{--primary:#063d86;--success:#10b981;--bg:#f8fafc;--text:#1e293b;--text-light:#64748b;--border:#e2e8f0}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}.header{background:linear-gradient(135deg,#f43f5e,#e11d48);color:#fff;padding:40px 20px 50px;text-align:center}.header h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:12px}.main-content{max-width:800px;margin:-30px auto 40px;padding:0 20px}.back-link{color:#fff;text-decoration:none;opacity:.8;display:block;margin-bottom:16px}.category-badge{display:inline-block;background:rgba(255,255,255,.2);padding:6px 16px;border-radius:20px;font-size:.85rem;margin-bottom:16px}.goal-card{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid var(--success);border-radius:16px;padding:24px;margin-bottom:24px}.goal-card h2{color:#065f46;margin-bottom:12px}.goal-card .earnings{background:#fff;padding:10px 18px;border-radius:10px;margin-top:14px;font-weight:600;color:#065f46;display:inline-block}.section-card{background:#fff;border-radius:16px;padding:28px;margin-bottom:24px;border:1px solid var(--border)}.section-card h2{color:var(--primary);margin-bottom:20px}.task-list{list-style:none}.task-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)}.task-checkbox{width:28px;height:28px;border:2px solid var(--border);border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}.task-checkbox.checked{background:var(--success);border-color:var(--success);color:#fff}.task-title{font-weight:600;margin-bottom:6px}.task-desc{color:var(--text-light);font-size:.95rem}.task-badge{font-size:.8rem;padding:4px 10px;border-radius:6px;background:var(--bg);margin-top:10px;display:inline-block;margin-right:8px}.details-box{background:#f8fafc;padding:14px;border-radius:8px;margin-top:12px;border-left:4px solid #f43f5e}.details-box h4{color:#e11d48;margin-bottom:8px;font-size:.9rem}.details-box ul{margin-left:18px;font-size:.9rem}.details-box li{margin-bottom:6px}.pricing-table{width:100%;border-collapse:collapse;margin-top:12px}.pricing-table th,.pricing-table td{padding:10px;text-align:left;border-bottom:1px solid var(--border)}.pricing-table th{background:var(--bg);font-weight:600}textarea{width:100%;min-height:120px;padding:14px;border:2px solid var(--border);border-radius:10px;font-family:inherit;margin-top:10px}.help-section{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border:2px solid #7dd3fc;border-radius:16px;padding:20px;margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}.chat-btn{background:var(--primary);color:#fff;border:none;padding:12px 24px;border-radius:10px;font-weight:600;cursor:pointer}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-Shirt Business (Print on Demand) - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #ff9800, #f57c00); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #fff3e0, #ffe0b2); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #e65100; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.2em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #fff3e0; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #ff9800; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #ff9800; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+        .pricing-table th, .pricing-table td { padding: 12px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .pricing-table th { background: #ff9800; color: white; }
+        .pricing-table tr:hover { background: #f8f9fa; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .service-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; border-left: 4px solid #ff9800; }
+        .service-card .emoji { font-size: 2em; margin-bottom: 10px; }
+        .service-card h4 { color: #1a1a2e; font-size: 13px; margin-bottom: 5px; }
+        .service-card p { color: #666; font-size: 11px; }
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .platform-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #4caf50; }
+        .platform-card h4 { color: #1a1a2e; margin-bottom: 8px; }
+        .platform-card h4 a { color: #f57c00; text-decoration: none; }
+        .platform-card h4 a:hover { text-decoration: underline; }
+        .platform-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .platform-card .type { color: #2e7d32; font-weight: 600; font-size: 12px; margin-top: 8px; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .skills-box { background: #f8f9fa; border-radius: 15px; padding: 20px; margin: 15px 0; }
+        .skills-box h4 { color: #1a1a2e; margin-bottom: 15px; }
+        .skills-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+        .skill-item { display: flex; align-items: center; gap: 10px; padding: 10px; background: white; border-radius: 8px; }
+        .skill-item .emoji { font-size: 1.3em; }
+        .skill-item span { color: #666; font-size: 13px; }
+        .skill-item a { color: #f57c00; text-decoration: none; }
+        .skill-item a:hover { text-decoration: underline; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #ff9800, #f57c00); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #f57c00; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #f57c00; text-decoration: none; font-weight: 600; }
+        .progress-tracker { background: linear-gradient(135deg, #ff9800, #f57c00); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #ff9800; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #ff9800, #f57c00); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+    </style>
 </head>
 <body>
-  <header class="header"><a href="index.html" class="back-link">← Back to All Playbooks</a><span class="category-badge">👕 E-Commerce</span><h1>T-Shirt Business (Print on Demand)</h1><p style="opacity:.9;max-width:600px;margin:0 auto">Design t-shirts, sell online, never touch inventory! Print on demand handles fulfillment for you.</p></header>
-  <main class="main-content">
-    <div class="goal-card"><h2>🎯 What You'll Achieve</h2><p>Start a print-on-demand t-shirt business with zero inventory. Design once, sell forever!</p><div class="earnings">💰 Profit per shirt: $5-15 | 100 sales/mo: $500-1,500 | 500 sales/mo: $2,500-7,500 | Scaled: $10,000+/mo</div></div>
-    
-    <div class="section-card"><h2>💵 Profit Margins</h2>
-      <table class="pricing-table">
-        <tr><th>Product</th><th>Base Cost</th><th>Sell Price</th><th>Your Profit</th></tr>
-        <tr><td>Basic t-shirt</td><td>$8-12</td><td>$22-30</td><td>$10-18</td></tr>
-        <tr><td>Premium t-shirt</td><td>$12-16</td><td>$28-35</td><td>$12-19</td></tr>
-        <tr><td>Hoodie</td><td>$20-28</td><td>$40-55</td><td>$15-27</td></tr>
-        <tr><td>Tank top</td><td>$8-12</td><td>$20-28</td><td>$8-16</td></tr>
-        <tr><td>Mug</td><td>$5-8</td><td>$15-20</td><td>$7-12</td></tr>
-        <tr><td>Poster</td><td>$8-15</td><td>$20-35</td><td>$10-20</td></tr>
-      </table>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Playbooks</a>
+        
+        <div class="header">
+            <h1>👕 T-Shirt Business (Print on Demand)</h1>
+            <p class="subtitle">Design shirts, sell online, never touch inventory! POD handles everything</p>
+            <div class="time-badge">💰 $5-15 profit/shirt • Zero inventory • Design once, sell forever!</div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Start a print-on-demand t-shirt business with ZERO inventory! You design, customers order, POD company prints and ships directly. Never touch a product! 100 sales/month @ $10 profit = $1,000/month. Top sellers have hundreds of designs earning $5,000-50,000+/month. Design once, sell forever!</p>
+            </div>
+            <div class="income-highlight">
+                <h3>$5-15 Profit Per Shirt</h3>
+                <p>100 sales/mo: $500-1,500 • 500 sales/mo: $2,500-7,500 • Scaled: $10,000+/month</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💰</span> Profit Margins</h2>
+            <table class="pricing-table">
+                <tr><th>Product</th><th>Base Cost</th><th>Sell Price</th><th>Your Profit</th></tr>
+                <tr><td>Basic t-shirt</td><td>$8-12</td><td>$22-30</td><td>$10-18</td></tr>
+                <tr><td>Premium t-shirt</td><td>$12-16</td><td>$28-35</td><td>$12-19</td></tr>
+                <tr><td>Hoodie</td><td>$20-28</td><td>$40-55</td><td>$15-27</td></tr>
+                <tr><td>Tank top</td><td>$8-12</td><td>$20-28</td><td>$8-16</td></tr>
+                <tr><td>Mug</td><td>$5-8</td><td>$15-20</td><td>$7-12</td></tr>
+                <tr><td>Poster</td><td>$8-15</td><td>$20-35</td><td>$10-20</td></tr>
+            </table>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Volume is Key!</div>
+                <p>Each design is a lottery ticket. More designs = more chances to win. Top sellers have 200-500+ designs. Upload consistently—aim for 5-10 new designs per week!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> Profitable Niches</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="emoji">🎣</div>
+                    <h4>Hobbies</h4>
+                    <p>Fishing, hiking, gaming</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">👩‍⚕️</div>
+                    <h4>Professions</h4>
+                    <p>Nurses, teachers, welders</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🐕</div>
+                    <h4>Pet Lovers</h4>
+                    <p>Dog breeds, cat lovers</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">💪</div>
+                    <h4>Fitness</h4>
+                    <p>Gym culture, motivation</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">😂</div>
+                    <h4>Funny Sayings</h4>
+                    <p>Humor for specific groups</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🏠</div>
+                    <h4>Local Pride</h4>
+                    <p>Cities, states, regions</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🖨️</span> Print on Demand Platforms</h2>
+            <p style="color: #666; margin-bottom: 15px;">They print and ship—you just design!</p>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h4><a href="https://www.printful.com" target="_blank">Printful →</a></h4>
+                    <p>Highest quality prints! Premium positioning. Integrates with Shopify, Etsy, WooCommerce. Higher base cost but excellent quality.</p>
+                    <div class="type">⭐ Best for: Quality-focused</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.printify.com" target="_blank">Printify →</a></h4>
+                    <p>Multiple print providers = competitive pricing. Compare quality and costs. Great for testing different products!</p>
+                    <div class="type">💰 Best for: Best prices</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.gooten.com" target="_blank">Gooten →</a></h4>
+                    <p>Good international shipping network. Competitive pricing. Great product selection including home goods!</p>
+                    <div class="type">🌍 Best for: International</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://merch.amazon.com" target="_blank">Merch by Amazon →</a></h4>
+                    <p>Amazon's built-in traffic! No upfront costs. They handle everything. Invite-only but worth applying!</p>
+                    <div class="type">🚀 Best for: Passive income</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.redbubble.com" target="_blank">Redbubble →</a></h4>
+                    <p>Marketplace with built-in traffic. Upload designs, they handle everything. Good for artists!</p>
+                    <div class="type">🎨 Best for: Artists</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.teepublic.com" target="_blank">TeePublic →</a></h4>
+                    <p>Another marketplace option. Built-in audience. Simple upload process. Good for testing designs!</p>
+                    <div class="type">📊 Best for: Testing</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🛍️</span> Where to Sell</h2>
+            <div class="skills-box">
+                <h4>Sales Channels (Connect POD to These!)</h4>
+                <div class="skills-list">
+                    <div class="skill-item"><span class="emoji">🏪</span><span><a href="https://www.etsy.com" target="_blank">Etsy</a> - Easiest to start, built-in traffic</span></div>
+                    <div class="skill-item"><span class="emoji">🛒</span><span><a href="https://www.shopify.com" target="_blank">Shopify</a> - Your own branded store</span></div>
+                    <div class="skill-item"><span class="emoji">📌</span><span><a href="https://www.pinterest.com" target="_blank">Pinterest</a> - Great for visual niches</span></div>
+                    <div class="skill-item"><span class="emoji">📱</span><span><a href="https://www.instagram.com" target="_blank">Instagram</a> - Lifestyle niches</span></div>
+                    <div class="skill-item"><span class="emoji">🎵</span><span><a href="https://www.tiktok.com" target="_blank">TikTok</a> - Quick growth potential</span></div>
+                    <div class="skill-item"><span class="emoji">📧</span><span>Email List - Highest conversion!</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎨</span> Design Tools</h2>
+            <div class="skills-box">
+                <h4>Create Your Designs</h4>
+                <div class="skills-list">
+                    <div class="skill-item"><span class="emoji">🎨</span><span><a href="https://www.canva.com" target="_blank">Canva</a> - FREE, easy to use!</span></div>
+                    <div class="skill-item"><span class="emoji">✏️</span><span><a href="https://www.adobe.com/products/illustrator.html" target="_blank">Adobe Illustrator</a> - Professional</span></div>
+                    <div class="skill-item"><span class="emoji">👥</span><span><a href="https://www.fiverr.com/categories/graphics-design/t-shirts-merchandise" target="_blank">Fiverr Designers</a> - $5-50/design</span></div>
+                    <div class="skill-item"><span class="emoji">🔤</span><span><a href="https://www.creativefabrica.com" target="_blank">Creative Fabrica</a> - Fonts & graphics</span></div>
+                    <div class="skill-item"><span class="emoji">📝</span><span>Simple text designs often sell best!</span></div>
+                    <div class="skill-item"><span class="emoji">🔍</span><span>Research bestsellers for inspiration</span></div>
+                </div>
+            </div>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Simple Wins!</div>
+                <p>Text-based designs often outperform complex graphics. "Best Dad Ever" type shirts sell millions. Don't overcomplicate—test simple ideas first!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Choose your niche</div>
+                    <div class="step-desc">Specific niches sell better than generic! Target passionate communities: hobbies (fishing, hiking), professions (nurses, teachers), pet lovers (specific breeds). The more specific, the better!</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Research bestsellers</div>
+                    <div class="step-desc">Study what's selling! Check Etsy bestsellers, Amazon Merch listings, Pinterest trends. Don't copy—get inspired. Understand what resonates with your niche.</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Create your first designs</div>
+                    <div class="step-desc">Use Canva (free!) or hire on Fiverr ($5-50/design). Start with 10-20 designs. Simple text designs often sell best! Focus on your niche's inside jokes and interests.</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Choose your POD platform</div>
+                    <div class="step-desc">Printful for quality, Printify for price competition. Order samples first to check quality! Connect to your sales channel (Etsy, Shopify, etc.).</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Set up your store</div>
+                    <div class="step-desc">Etsy is easiest to start—built-in traffic! Optimize titles with keywords people search. Good mockups are essential. Start with 20+ listings minimum.</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Market your designs</div>
+                    <div class="step-desc">Pinterest works great for visual products. Etsy SEO for organic traffic. Test Facebook/Instagram ads with small budgets. Build email list of buyers!</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Analyze and double down</div>
+                    <div class="step-desc">Track what sells! Double down on winning designs—create variations. Cut losers. Data tells you what works. Let the market guide your next designs.</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Scale with more designs</div>
+                    <div class="step-desc">More designs = more chances to sell. Top sellers have 200-500+ designs. Upload consistently (5-10/week). Expand to more products and niches!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎓</span> Learn From These Resources</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Detour Shirts</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Print on demand strategies, niche research, design tips. Great for POD beginners!</p>
+                    <a href="https://www.youtube.com/c/DetourShirts" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Cassiy Johnson</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Etsy POD strategies, shop optimization, success stories!</p>
+                    <a href="https://www.youtube.com/c/CassiyJohnson" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💬</div>
+                    <h4>r/AmazonMerch</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Merch by Amazon community. Strategies, trends, troubleshooting!</p>
+                    <a href="https://reddit.com/r/AmazonMerch" class="influencer-link" target="_blank">Reddit →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🔍</div>
+                    <h4>Merch Informer</h4>
+                    <div class="platform">🌐 Tool</div>
+                    <p>Research tool for finding profitable niches and keywords!</p>
+                    <a href="https://merchinformer.com" class="influencer-link" target="_blank">Tool →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your T-Shirt Business Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your print on demand business!
+
+NICHES:
+1. ____
+2. ____
+3. ____
+
+POD PLATFORM: ____
+SELLING ON: ____
+
+DESIGN STATS:
+Total designs: ____
+Designs this month: ____
+Bestselling design: ____
+
+SALES CHANNELS:
+☐ Etsy: ____
+☐ Shopify: ____
+☐ Amazon Merch: ____
+☐ Redbubble: ____
+
+BESTSELLERS:
+1. ____ | Sales: ____ | Profit: $____
+2. ____ | Sales: ____ | Profit: $____
+3. ____ | Sales: ____ | Profit: $____
+
+MARKETING:
+☐ Pinterest
+☐ Instagram
+☐ Facebook Ads
+☐ Etsy SEO
+
+Email list size: ____
+
+THIS MONTH:
+Designs uploaded: ____
+Total sales: ____
+Revenue: $____
+Profit: $____
+
+GOAL: ____ designs by ____
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
     </div>
 
-    <div class="section-card"><h2>📋 Step-by-Step Action Plan</h2>
-      <ul class="task-list">
-        <li class="task-item"><div class="task-checkbox" data-task="0"></div><div><div class="task-title">Step 1: Choose your niche</div><div class="task-desc">Specific niches sell better than generic designs. Target passionate communities!</div><div class="details-box"><h4>🎯 Profitable Niches:</h4><ul><li>Hobbies (fishing, hiking, gaming)</li><li>Professions (nurses, teachers, welders)</li><li>Pet lovers (dog breeds, cat lovers)</li><li>Fitness and gym culture</li><li>Funny sayings for specific groups</li><li>Local pride (cities, states)</li></ul></div><span class="task-badge">🎯 Niche down</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="1"></div><div><div class="task-title">Step 2: Create designs</div><div class="task-desc">Simple designs often sell best. Use Canva, Photoshop, or hire designers on Fiverr.</div><div class="details-box"><h4>🎨 Design Tips:</h4><ul><li>Canva (free, easy to use)</li><li>Adobe Illustrator (professional)</li><li>Fiverr designers ($5-50/design)</li><li>Creative Fabrica for fonts/graphics</li><li>Simple text designs sell well</li><li>Research bestsellers for inspiration</li></ul></div><span class="task-badge">🎨 Simple often wins</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="2"></div><div><div class="task-title">Step 3: Choose your POD platform</div><div class="task-desc">Printful, Printify, and others print and ship for you. Compare quality and prices.</div><div class="details-box"><h4>🖨️ POD Platforms:</h4><ul><li><strong>Printful:</strong> High quality, higher price</li><li><strong>Printify:</strong> Multiple printers, competitive</li><li><strong>Gooten:</strong> Good international shipping</li><li><strong>Merch by Amazon:</strong> Built-in traffic</li><li>Order samples to check quality!</li></ul></div><span class="task-badge">🖨️ Test quality first</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="3"></div><div><div class="task-title">Step 4: Set up your store</div><div class="task-desc">Etsy is easiest to start. Shopify for your own brand. Amazon Merch for passive.</div><span class="task-badge">🛍️ Etsy easiest start</span><span class="task-badge">🏪 Shopify for brand</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="4"></div><div><div class="task-title">Step 5: Market your designs</div><div class="task-desc">Pinterest, Instagram, Facebook ads, or Etsy SEO. Test what works for your niche.</div><span class="task-badge">📱 Pinterest works well</span><span class="task-badge">🔍 Etsy SEO</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="5"></div><div><div class="task-title">Step 6: Scale with more designs</div><div class="task-desc">More designs = more chances to sell. Top sellers have hundreds of designs.</div><div class="details-box"><h4>🚀 Scaling Tips:</h4><ul><li>Upload consistently (5-10/week)</li><li>Double down on what sells</li><li>Expand to more products</li><li>Test new niches</li><li>Build email list of buyers</li></ul></div><span class="task-badge">📈 Volume matters</span></div></li>
-      </ul>
-    </div>
-
-    <div class="section-card"><h2>📝 Your T-Shirt Business Tracker</h2><textarea id="userNotes" placeholder="Track your t-shirt business:
-
-Niche: Dog lovers (specific breeds)
-Platform: Etsy + Printify
-Store: Launched 3 months ago
-
-Designs uploaded: 85
-This month:
-- Sales: 67 items
-- Revenue: $1,742
-- POD costs: $871
-- Etsy fees: $175
-- Net profit: $696
-
-Best sellers:
-- German Shepherd Dad - 12 sales
-- Golden Retriever Mom - 9 sales
-- Funny dog sayings - 8 sales
-
-Avg profit per sale: $10.40
-
-Goal: 150 designs, 200 sales/mo = $2,000+ profit"></textarea></div>
-    <div class="help-section"><span style="font-size:24px">💬</span><div style="flex:1"><strong>Need Help?</strong> Chat with a coach!</div><button class="chat-btn" onclick="location.href='https://asapcreditrepairusa.com/chat'">Start Chat</button></div>
-  </main>
-  <script>const K='pb_tshirt';function load(){const s=localStorage.getItem(K);if(s){const d=JSON.parse(s);document.querySelectorAll('.task-checkbox').forEach((b,i)=>{if(d.tasks&&d.tasks[i]){b.classList.add('checked');b.innerHTML='✓'}});if(d.notes)document.getElementById('userNotes').value=d.notes}}function save(){const t=[];document.querySelectorAll('.task-checkbox').forEach(b=>t.push(b.classList.contains('checked')));localStorage.setItem(K,JSON.stringify({tasks:t,notes:document.getElementById('userNotes').value}))}document.querySelectorAll('.task-checkbox').forEach(b=>b.onclick=function(){this.classList.toggle('checked');this.innerHTML=this.classList.contains('checked')?'✓':'';save()});document.getElementById('userNotes').oninput=save;load();</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-tshirt-business');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-tshirt-business', JSON.stringify({ steps, notes }));
+        }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>
