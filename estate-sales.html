@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estate Sale Flipping - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #1565c0; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #e3f2fd; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; margin: 20px 0; }
+        .service-card { background: #f8f9fa; border-radius: 15px; padding: 15px; text-align: center; border-left: 5px solid #667eea; }
+        .service-card .emoji { font-size: 2em; margin-bottom: 8px; }
+        .service-card h4 { color: #1a1a2e; font-size: 14px; margin-bottom: 5px; }
+        .service-card .pay { color: #4caf50; font-weight: 600; font-size: 12px; }
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .platform-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #667eea; }
+        .platform-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .platform-card .detail { color: #667eea; font-size: 12px; margin-bottom: 8px; }
+        .platform-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .platform-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; font-size: 13px; }
+        .platform-link:hover { text-decoration: underline; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .tip-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .tip-card { background: #f8f9fa; border-radius: 15px; padding: 15px; border-left: 5px solid #4caf50; }
+        .tip-card h4 { color: #1a1a2e; font-size: 14px; margin-bottom: 8px; }
+        .tip-card p { color: #666; font-size: 13px; line-height: 1.4; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #667eea; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; }
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #667eea; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="income-playbooks.html" class="back-link">← Back to Income Playbooks</a>
+        
+        <div class="header">
+            <h1>🏠 Estate Sale Flipping</h1>
+            <p class="subtitle">Find hidden treasures at estate sales and flip for profit!</p>
+            <div class="time-badge">⏱️ Low startup • Part-time: $500-2,000/mo • Serious: $3,000-8,000+/mo</div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Learn to find valuable items at estate sales and flip them for profit! Estate sales are liquidating entire households - furniture, vintage items, collectibles, tools, and hidden gems. Learn what to look for, how to price, and where to sell. Many full-time flippers started at estate sales. Find a $5 item, sell it for $50-500+! This is treasure hunting that pays.</p>
+            </div>
+            <div class="income-highlight">
+                <h3>$500-8,000+/Month</h3>
+                <p>Casual: $500-1,000/mo • Part-time: $1,500-3,000/mo • Full-time: $5,000-8,000+/mo</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💎</span> What to Look For</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="emoji">🪑</div>
+                    <h4>Mid-Century Furniture</h4>
+                    <div class="pay">$50-500+ profit</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🎨</div>
+                    <h4>Vintage Art/Prints</h4>
+                    <div class="pay">$20-200+ profit</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🔧</div>
+                    <h4>Quality Tools</h4>
+                    <div class="pay">$10-100+ profit</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🎮</div>
+                    <h4>Vintage Games/Toys</h4>
+                    <div class="pay">$20-300+ profit</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">📷</div>
+                    <h4>Cameras/Electronics</h4>
+                    <div class="pay">$25-200+ profit</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">💍</div>
+                    <h4>Jewelry</h4>
+                    <div class="pay">$10-500+ profit</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🍽️</div>
+                    <h4>Pyrex/Vintage Kitchen</h4>
+                    <div class="pay">$15-150+ profit</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">📚</div>
+                    <h4>Books/Textbooks</h4>
+                    <div class="pay">$5-100+ profit</div>
+                </div>
+            </div>
+            
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 The Last Day Secret</div>
+                <p><strong>Go on the last day for 50-75% off!</strong> Estate sales often have huge discounts on the final day. Furniture and larger items are often "make an offer" - everything must go! This is when you can score the best deals.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🔍</span> Where to Find Estate Sales</h2>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h4>🌐 EstateSales.NET</h4>
+                    <div class="detail">FREE • Most popular</div>
+                    <p>The #1 estate sale listing site! Search by zip code, see photos, get dates and details. Must-bookmark!</p>
+                    <a href="https://www.estatesales.net" class="platform-link" target="_blank">EstateSales.NET →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>🏷️ EstateSales.org</h4>
+                    <div class="detail">FREE • Good coverage</div>
+                    <p>Another major listing site. Some sales listed here that aren't on .NET. Check both!</p>
+                    <a href="https://www.estatesales.org" class="platform-link" target="_blank">EstateSales.org →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>📘 Facebook Groups</h4>
+                    <div class="detail">FREE • Local sales</div>
+                    <p>Search "[Your City] Estate Sales" on Facebook. Many local companies post here first!</p>
+                    <a href="https://www.facebook.com/groups" class="platform-link" target="_blank">Find Groups →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>📋 Craigslist</h4>
+                    <div class="detail">FREE • Garage sales section</div>
+                    <p>Check "garage sales" section - many estate sales listed here too. Filter by date.</p>
+                    <a href="https://craigslist.org" class="platform-link" target="_blank">Craigslist →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> Estate Sale Strategy Tips</h2>
+            <div class="tip-grid">
+                <div class="tip-card">
+                    <h4>📸 Preview Photos First</h4>
+                    <p>Study listing photos before going. Spot valuables, plan your priorities. Don't waste time on bad sales!</p>
+                </div>
+                <div class="tip-card">
+                    <h4>🕐 Arrive Early (or Late)</h4>
+                    <p>Day 1 = best selection but highest prices. Last day = 50-75% off but picked over. Know your strategy!</p>
+                </div>
+                <div class="tip-card">
+                    <h4>📱 Use Your Phone</h4>
+                    <p>Look up items on eBay "sold listings" before buying. Know what things actually sell for!</p>
+                </div>
+                <div class="tip-card">
+                    <h4>💬 Ask for Deals</h4>
+                    <p>"Would you take $X for this?" or "Can I bundle these?" Always negotiate, especially day 2-3!</p>
+                </div>
+                <div class="tip-card">
+                    <h4>💵 Bring Cash</h4>
+                    <p>Many estate sales are cash-only or give cash discounts. Small bills help with negotiating!</p>
+                </div>
+                <div class="tip-card">
+                    <h4>🚗 Have Transport Ready</h4>
+                    <p>Big furniture finds need pickup. Have truck/van access or delivery service contact ready.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🛒</span> Where to Sell Your Finds</h2>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h4>📘 Facebook Marketplace</h4>
+                    <div class="detail">FREE • Best for furniture</div>
+                    <p>Best for furniture and large items. Local pickup, no shipping hassle. Fast sales!</p>
+                    <a href="https://www.facebook.com/marketplace" class="platform-link" target="_blank">Marketplace →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>🏷️ eBay</h4>
+                    <div class="detail">Fees apply • Best prices</div>
+                    <p>Best for collectibles, vintage, rare items. Reach buyers nationwide. Highest prices!</p>
+                    <a href="https://www.ebay.com" class="platform-link" target="_blank">eBay →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>Ⓜ️ Mercari</h4>
+                    <div class="detail">Commission • Easy shipping</div>
+                    <p>Great for smaller items. Simple listing, prepaid shipping labels. Growing platform!</p>
+                    <a href="https://www.mercari.com" class="platform-link" target="_blank">Mercari →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>🛋️ Chairish/1stDibs</h4>
+                    <div class="detail">Commission • High-end</div>
+                    <p>For quality furniture and decor. Higher prices, discerning buyers. Worth it for good pieces!</p>
+                    <a href="https://www.chairish.com/sell" class="platform-link" target="_blank">Chairish →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>👗 Poshmark</h4>
+                    <div class="detail">Commission • Fashion</div>
+                    <p>Best for vintage clothing, designer items, accessories. They handle shipping!</p>
+                    <a href="https://poshmark.com" class="platform-link" target="_blank">Poshmark →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>🏪 Local Antique Malls</h4>
+                    <div class="detail">Booth rental • Passive</div>
+                    <p>Rent a booth, stock it, let them sell for you! Monthly rent but passive income.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Estate Sale Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Sign up for estate sale alerts</div>
+                    <div class="step-desc">Create accounts on EstateSales.NET and EstateSales.org. Set up email alerts for your area. Join local Facebook estate sale groups. Never miss a good sale!</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Learn what sells</div>
+                    <div class="step-desc">Browse eBay "sold listings" to see what vintage/antique items actually sell for. Learn to spot mid-century modern, Pyrex patterns, valuable brands. Knowledge = profit!</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Preview photos and plan</div>
+                    <div class="step-desc">Before each sale, study the listing photos. Identify potential treasures. Make a list of what to look for. Don't waste time on sales with nothing valuable!</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Hit your first estate sales</div>
+                    <div class="step-desc">Bring cash (small bills!), phone for research, and bags/boxes. Arrive with a game plan. Check prices on phone before buying. Start with smaller purchases to learn!</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Set up selling accounts</div>
+                    <div class="step-desc">Create accounts on eBay, Facebook Marketplace, Mercari. Take good photos of your finds. List items at prices based on "sold" comparables.</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: List and sell your finds</div>
+                    <div class="step-desc">Photo everything well (natural light, clean background). Write detailed descriptions. Price competitively. Cross-post on multiple platforms for faster sales!</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Track your profits</div>
+                    <div class="step-desc">Record what you paid, what you sold for, and net profit. Learn which categories are most profitable for you. Double down on winners!</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Scale and specialize</div>
+                    <div class="step-desc">Reinvest profits into more inventory. Consider specializing (furniture, vintage toys, mid-century, etc.). Build reputation and consistent sales. Grow your flipping business!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎓</span> Learn From the Pros</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Flea Market Flipper</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Rob and Melissa flip furniture and finds. Estate sale hauls and tips!</p>
+                    <a href="https://www.youtube.com/@FleaMarketFlipper" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Haul Videos</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Search "estate sale haul" - see what other flippers find and what sells!</p>
+                    <a href="https://www.youtube.com/results?search_query=estate+sale+haul+flip" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💬</div>
+                    <h4>r/Flipping</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Active community sharing finds, tips, and questions. Great for learning!</p>
+                    <a href="https://www.reddit.com/r/Flipping/" class="influencer-link" target="_blank">Reddit →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💬</div>
+                    <h4>r/ThriftStoreHauls</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>See amazing finds - learn what to look for. Inspiration for your hunts!</p>
+                    <a href="https://www.reddit.com/r/ThriftStoreHauls/" class="influencer-link" target="_blank">Reddit →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Estate Sale Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your estate sale flipping!
+
+ACCOUNTS SET UP:
+☐ EstateSales.NET (alerts on)
+☐ EstateSales.org
+☐ Local Facebook groups joined
+☐ eBay seller account
+☐ Mercari account
+
+UPCOMING SALES:
+1. Date: ____ | Location: ____ | Notes: ____
+2. Date: ____ | Location: ____ | Notes: ____
+3. Date: ____ | Location: ____ | Notes: ____
+
+PURCHASES:
+Date: ____ | Sale: ____ | Item: ____ | Paid: $____
+Date: ____ | Sale: ____ | Item: ____ | Paid: $____
+Date: ____ | Sale: ____ | Item: ____ | Paid: $____
+Date: ____ | Sale: ____ | Item: ____ | Paid: $____
+Date: ____ | Sale: ____ | Item: ____ | Paid: $____
+
+BEST FLIPS:
+1. Item: ____ | Paid: $____ | Sold: $____ | Profit: $____ | Platform: ____
+2. Item: ____ | Paid: $____ | Sold: $____ | Profit: $____ | Platform: ____
+3. Item: ____ | Paid: $____ | Sold: $____ | Profit: $____ | Platform: ____
+
+CATEGORIES THAT WORK FOR ME:
+1. ____
+2. ____
+3. ____
+
+MONTHLY TOTALS:
+Sales attended: ____
+Items bought: ____
+Spent sourcing: $____
+Items sold: ____
+Revenue: $____
+Net profit: $____
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-estate-sales');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-estate-sales', JSON.stringify({ steps, notes }));
+        }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
+</body>
+</html>

@@ -1,58 +1,418 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scrap Metal Recycling | ASAP Credit Repair Playbook</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{--primary:#063d86;--success:#10b981;--bg:#f8fafc;--text:#1e293b;--text-light:#64748b;--border:#e2e8f0}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}.header{background:linear-gradient(135deg,#6b7280,#4b5563);color:#fff;padding:40px 20px 50px;text-align:center}.header h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:12px}.main-content{max-width:800px;margin:-30px auto 40px;padding:0 20px}.back-link{color:#fff;text-decoration:none;opacity:.8;display:block;margin-bottom:16px}.category-badge{display:inline-block;background:rgba(255,255,255,.2);padding:6px 16px;border-radius:20px;font-size:.85rem;margin-bottom:16px}.goal-card{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid var(--success);border-radius:16px;padding:24px;margin-bottom:24px}.goal-card h2{color:#065f46;margin-bottom:12px}.goal-card .earnings{background:#fff;padding:10px 18px;border-radius:10px;margin-top:14px;font-weight:600;color:#065f46;display:inline-block}.section-card{background:#fff;border-radius:16px;padding:28px;margin-bottom:24px;border:1px solid var(--border)}.section-card h2{color:var(--primary);margin-bottom:20px}.task-list{list-style:none}.task-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)}.task-checkbox{width:28px;height:28px;border:2px solid var(--border);border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}.task-checkbox.checked{background:var(--success);border-color:var(--success);color:#fff}.task-title{font-weight:600;margin-bottom:6px}.task-desc{color:var(--text-light);font-size:.95rem}.task-badge{font-size:.8rem;padding:4px 10px;border-radius:6px;background:var(--bg);margin-top:10px;display:inline-block;margin-right:8px}.details-box{background:#f8fafc;padding:14px;border-radius:8px;margin-top:12px;border-left:4px solid #6b7280}.details-box h4{color:#4b5563;margin-bottom:8px;font-size:.9rem}.details-box ul{margin-left:18px;font-size:.9rem}.details-box li{margin-bottom:6px}.pricing-table{width:100%;border-collapse:collapse;margin-top:12px}.pricing-table th,.pricing-table td{padding:10px;text-align:left;border-bottom:1px solid var(--border)}.pricing-table th{background:var(--bg);font-weight:600}textarea{width:100%;min-height:120px;padding:14px;border:2px solid var(--border);border-radius:10px;font-family:inherit;margin-top:10px}.help-section{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border:2px solid #7dd3fc;border-radius:16px;padding:20px;margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}.chat-btn{background:var(--primary);color:#fff;border:none;padding:12px 24px;border-radius:10px;font-weight:600;cursor:pointer}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrap Metal Recycling - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #1565c0; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #e3f2fd; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 15px; overflow: hidden; font-size: 14px; }
+        .pricing-table th, .pricing-table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .pricing-table th { background: #667eea; color: white; font-weight: 600; }
+        .pricing-table tr:hover { background: #f5f5f5; }
+        .pricing-table .rate { color: #4caf50; font-weight: 600; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; margin: 20px 0; }
+        .service-card { background: #f8f9fa; border-radius: 15px; padding: 15px; text-align: center; border-left: 5px solid #667eea; }
+        .service-card .emoji { font-size: 2em; margin-bottom: 8px; }
+        .service-card h4 { color: #1a1a2e; font-size: 14px; margin-bottom: 5px; }
+        .service-card .pay { color: #4caf50; font-weight: 600; font-size: 12px; }
+        .source-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .source-card { background: #f8f9fa; border-radius: 15px; padding: 15px; border-left: 5px solid #4caf50; }
+        .source-card h4 { color: #1a1a2e; font-size: 14px; margin-bottom: 8px; }
+        .source-card p { color: #666; font-size: 13px; line-height: 1.4; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #667eea; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; }
+        .id-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .id-card { background: #f8f9fa; border-radius: 15px; padding: 15px; border-left: 5px solid #2196f3; }
+        .id-card h4 { color: #1a1a2e; font-size: 14px; margin-bottom: 5px; }
+        .id-card .color { color: #667eea; font-size: 12px; margin-bottom: 5px; }
+        .id-card p { color: #666; font-size: 12px; }
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #667eea; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+    </style>
 </head>
 <body>
-  <header class="header"><a href="index.html" class="back-link">← Back to All Playbooks</a><span class="category-badge">♻️ Side Hustle</span><h1>Scrap Metal Recycling</h1><p style="opacity:.9;max-width:600px;margin:0 auto">Turn trash into cash! Collect and sell scrap metal - free to find, pays well at recycling yards.</p></header>
-  <main class="main-content">
-    <div class="goal-card"><h2>🎯 What You'll Achieve</h2><p>Start collecting scrap metal for extra income. Find free metal, sort it properly, and sell to recyclers for cash!</p><div class="earnings">💰 Casual: $50-200/month | Regular runs: $300-800/month | Serious scrapping: $1,500-4,000+/month</div></div>
-    
-    <div class="section-card"><h2>💵 Scrap Metal Prices (per pound)</h2>
-      <table class="pricing-table">
-        <tr><th>Metal Type</th><th>Price/lb</th><th>Where to Find</th></tr>
-        <tr><td>Copper (bare bright)</td><td>$3.00-4.00</td><td>Wire, pipes, motors</td></tr>
-        <tr><td>Copper (insulated wire)</td><td>$1.00-2.00</td><td>Extension cords, electronics</td></tr>
-        <tr><td>Brass</td><td>$1.50-2.50</td><td>Faucets, keys, fittings</td></tr>
-        <tr><td>Aluminum cans</td><td>$0.30-0.60</td><td>Beverage cans</td></tr>
-        <tr><td>Aluminum sheet</td><td>$0.40-0.80</td><td>Siding, cookware</td></tr>
-        <tr><td>Steel/iron</td><td>$0.05-0.15</td><td>Appliances, cars</td></tr>
-        <tr><td>Stainless steel</td><td>$0.30-0.50</td><td>Sinks, grills</td></tr>
-      </table>
+    <div class="container">
+        <a href="income-playbooks.html" class="back-link">← Back to Income Playbooks</a>
+        
+        <div class="header">
+            <h1>♻️ Scrap Metal Recycling</h1>
+            <p class="subtitle">Turn trash into cash - free metal pays well at recycling yards!</p>
+            <div class="time-badge">⏱️ FREE to start • Casual: $50-200/mo • Serious: $1,500-4,000+/mo</div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Start collecting scrap metal for extra income! Copper, brass, aluminum, steel - it's everywhere and it's FREE. Learn to identify valuable metals, find free sources, and sell to recycling yards for cash. Copper is king - a single AC unit has $20-50 in copper! People throw away valuable metal every day. Turn trash day into pay day!</p>
+            </div>
+            <div class="income-highlight">
+                <h3>$50-4,000+/Month</h3>
+                <p>Casual pickups: $50-200/mo • Regular runs: $300-800/mo • Serious scrapping: $1,500-4,000+/mo</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🥇</span> Metal Values (Highest → Lowest)</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="emoji">🥇</div>
+                    <h4>Copper (Bare Bright)</h4>
+                    <div class="pay">$3.00-4.00/lb</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🔌</div>
+                    <h4>Copper Wire (Insulated)</h4>
+                    <div class="pay">$1.00-2.00/lb</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🚿</div>
+                    <h4>Brass</h4>
+                    <div class="pay">$1.50-2.50/lb</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🥫</div>
+                    <h4>Aluminum Cans</h4>
+                    <div class="pay">$0.30-0.60/lb</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🪟</div>
+                    <h4>Aluminum Sheet</h4>
+                    <div class="pay">$0.40-0.80/lb</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🍳</div>
+                    <h4>Stainless Steel</h4>
+                    <div class="pay">$0.30-0.50/lb</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🔩</div>
+                    <h4>Steel/Iron</h4>
+                    <div class="pay">$0.05-0.15/lb</div>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🔋</div>
+                    <h4>Lead (Batteries)</h4>
+                    <div class="pay">$0.30-0.50/lb</div>
+                </div>
+            </div>
+            
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Copper is KING!</div>
+                <p><strong>Focus on copper - it's worth 20-40x more than steel!</strong> One air conditioner unit = $20-50 in copper. One water heater = $5-15 copper. Extension cords, wire, pipes, motors - all have copper inside. Strip insulation off wire for 2-3x more per pound!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💵</span> Scrap Metal Prices</h2>
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Metal Type</th>
+                        <th>Price/lb</th>
+                        <th>Where to Find</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Copper #1 (bare bright)</td><td class="rate">$3.00-4.00</td><td>Clean wire, pipes (no insulation)</td></tr>
+                    <tr><td>Copper #2</td><td class="rate">$2.50-3.50</td><td>Wire with some oxidation, painted pipes</td></tr>
+                    <tr><td>Insulated copper wire</td><td class="rate">$1.00-2.00</td><td>Extension cords, appliance wires</td></tr>
+                    <tr><td>Brass (yellow)</td><td class="rate">$1.50-2.50</td><td>Faucets, keys, fittings, valves</td></tr>
+                    <tr><td>Aluminum cans</td><td class="rate">$0.30-0.60</td><td>Beverage cans (crushed = more per load)</td></tr>
+                    <tr><td>Aluminum sheet/cast</td><td class="rate">$0.40-0.80</td><td>Siding, cookware, lawn chairs</td></tr>
+                    <tr><td>Stainless steel</td><td class="rate">$0.30-0.50</td><td>Sinks, grills, appliances</td></tr>
+                    <tr><td>Steel/iron</td><td class="rate">$0.05-0.15</td><td>Appliances, car parts, bed frames</td></tr>
+                    <tr><td>Electric motors</td><td class="rate">$0.20-0.40</td><td>Appliances, tools (copper inside!)</td></tr>
+                </tbody>
+            </table>
+            <p style="text-align: center; margin-top: 10px; color: #666; font-size: 13px;">*Prices vary by location and market. Call local yards for current rates!</p>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🔍</span> How to Identify Metals</h2>
+            <div class="id-grid">
+                <div class="id-card">
+                    <h4>🧲 The Magnet Test</h4>
+                    <div class="color">Essential tool!</div>
+                    <p>Steel sticks to magnet. Aluminum, copper, brass DON'T stick. Non-magnetic = more valuable!</p>
+                </div>
+                <div class="id-card">
+                    <h4>🟠 Copper</h4>
+                    <div class="color">Reddish/orange color</div>
+                    <p>Heavy, soft, bends easily. Turns green when oxidized. MOST valuable common metal!</p>
+                </div>
+                <div class="id-card">
+                    <h4>🟡 Brass</h4>
+                    <div class="color">Yellow/gold color</div>
+                    <p>Heavy like copper but yellow. Faucets, door hardware, valves, keys, plumbing fittings.</p>
+                </div>
+                <div class="id-card">
+                    <h4>⚪ Aluminum</h4>
+                    <div class="color">Silver, very light weight</div>
+                    <p>Extremely lightweight - that's the giveaway. Cans, siding, storm doors, lawn furniture.</p>
+                </div>
+                <div class="id-card">
+                    <h4>✨ Stainless Steel</h4>
+                    <div class="color">Shiny silver, non-magnetic</div>
+                    <p>Doesn't rust, non-magnetic (usually), heavy. Sinks, appliances, grills, pots.</p>
+                </div>
+                <div class="id-card">
+                    <h4>⬛ Steel/Iron</h4>
+                    <div class="color">Gray, rusts, magnetic</div>
+                    <p>Sticks to magnet! Heavy, rusts. Appliances, car parts, bed frames. Low value but heavy = adds up!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📍</span> Where to Find FREE Scrap</h2>
+            <div class="source-grid">
+                <div class="source-card">
+                    <h4>🗑️ Bulk Trash Pickup Days</h4>
+                    <p>GOLD MINE! People put out appliances, AC units, grills, furniture. Drive neighborhoods day before pickup!</p>
+                </div>
+                <div class="source-card">
+                    <h4>📘 Facebook "Free" Section</h4>
+                    <p>Search Marketplace for "free scrap" "free metal" "free appliances". People want stuff gone!</p>
+                </div>
+                <div class="source-card">
+                    <h4">🏗️ Construction Sites</h4>
+                    <p>ASK FIRST! Contractors often happy to have scrap hauled away. Copper wire, pipes, steel.</p>
+                </div>
+                <div class="source-card">
+                    <h4>❄️ HVAC Companies</h4>
+                    <p>Replace AC units constantly. Ask if you can take old units - full of copper!</p>
+                </div>
+                <div class="source-card">
+                    <h4>🔌 Appliance Stores</h4>
+                    <p>Deliver new, haul old. Ask if you can take their old appliance hauls.</p>
+                </div>
+                <div class="source-card">
+                    <h4">🏠 Neighbors/Nextdoor</h4>
+                    <p>Post "I haul away scrap metal FREE!" People will call YOU. Free pickup = free metal!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Scrap Metal Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Learn to identify metals</div>
+                    <div class="step-desc">Get a magnet (essential tool!). Learn what copper, brass, aluminum, stainless, and steel look like. Non-magnetic metals = more valuable. Copper is king!</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Find local scrap yards</div>
+                    <div class="step-desc">Google "scrap metal recycler near me" or use iScrapApp. Call multiple yards - prices vary 10-20%! Ask about requirements (ID, sorted, minimum weights).</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Start collecting from easy sources</div>
+                    <div class="step-desc">Check your own garage/basement first. Then hit bulk trash days, post on Nextdoor offering free pickups, search Facebook Free section. Start building your pile!</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Set up sorting/storage</div>
+                    <div class="step-desc">Separate by metal type - mixed loads pay LESS! Have bins/areas for copper, brass, aluminum, steel. Clean copper pays more than dirty. Strip wire if you have time.</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Make your first scrap run</div>
+                    <div class="step-desc">Accumulate a decent load before going (gas costs add up!). Keep metals separated. Bring ID. Get paid cash on the spot!</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Build your reputation</div>
+                    <div class="step-desc">Let neighbors know you take metal for free. Post on Nextdoor. Tell contractors you'll haul their scrap. Become "the scrap person" - people will call YOU!</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Focus on high-value items</div>
+                    <div class="step-desc">Prioritize copper sources: AC units, water heaters, wire, appliances with motors. One AC unit = $20-50. More valuable per trip than steel!</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Scale with partnerships</div>
+                    <div class="step-desc">Partner with HVAC companies, plumbers, contractors, appliance repair shops. They generate scrap constantly. Regular free pickups = steady supply!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎓</span> Learn From the Pros</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📱</div>
+                    <h4>iScrap App</h4>
+                    <div class="platform">🌐 App/Website</div>
+                    <p>Find scrap yards, current prices, and scrap metal info. Essential tool!</p>
+                    <a href="https://iscrapapp.com" class="influencer-link" target="_blank">iScrapApp →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Scrapping Videos</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Search "scrap metal tips" - tons of tutorials on finding, sorting, maximizing value!</p>
+                    <a href="https://www.youtube.com/results?search_query=scrap+metal+recycling+tips" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💬</div>
+                    <h4>r/ScrapMetal</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Active community sharing hauls, tips, and questions!</p>
+                    <a href="https://www.reddit.com/r/ScrapMetal/" class="influencer-link" target="_blank">Reddit →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📰</div>
+                    <h4>ScrapMonster</h4>
+                    <div class="platform">🌐 Website</div>
+                    <p>Scrap metal news and prices. Stay informed on market trends!</p>
+                    <a href="https://www.scrapmonster.com" class="influencer-link" target="_blank">ScrapMonster →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Scrap Metal Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your scrap metal side gig!
+
+SCRAP YARDS:
+1. Name: ____ | Phone: ____ | Best for: ____
+2. Name: ____ | Phone: ____ | Best for: ____
+3. Name: ____ | Phone: ____ | Best for: ____
+
+CURRENT PRICES (update weekly):
+Copper #1: $____/lb
+Copper #2: $____/lb
+Insulated wire: $____/lb
+Brass: $____/lb
+Aluminum: $____/lb
+Steel: $____/lb
+
+FREE SOURCES:
+☐ Bulk trash days: ____
+☐ Nextdoor post made
+☐ Facebook Free monitoring
+☐ HVAC company: ____
+☐ Contractor contact: ____
+
+MY INVENTORY:
+Copper: ____ lbs
+Brass: ____ lbs
+Aluminum: ____ lbs
+Steel: ____ lbs
+Other: ____
+
+SCRAP RUNS:
+Date: ____ | Copper: ____lbs | Brass: ____lbs | Al: ____lbs | Steel: ____lbs | Total: $____
+Date: ____ | Copper: ____lbs | Brass: ____lbs | Al: ____lbs | Steel: ____lbs | Total: $____
+Date: ____ | Copper: ____lbs | Brass: ____lbs | Al: ____lbs | Steel: ____lbs | Total: $____
+
+BEST FINDS:
+1. Item: ____ | Metal: ____ | Weight: ____lbs | Paid: $____
+2. Item: ____ | Metal: ____ | Weight: ____lbs | Paid: $____
+3. Item: ____ | Metal: ____ | Weight: ____lbs | Paid: $____
+
+MONTHLY TOTAL: $____
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
     </div>
 
-    <div class="section-card"><h2>📋 Step-by-Step Action Plan</h2>
-      <ul class="task-list">
-        <li class="task-item"><div class="task-checkbox" data-task="0"></div><div><div class="task-title">Step 1: Learn to identify metals</div><div class="task-desc">Copper is king! Learn what different metals look like and which are worth most.</div><div class="details-box"><h4>🔍 Metal Identification:</h4><ul><li><strong>Copper:</strong> Reddish/orange, very valuable</li><li><strong>Brass:</strong> Yellow/gold, heavy</li><li><strong>Aluminum:</strong> Lightweight, silver</li><li><strong>Stainless:</strong> Non-magnetic, shiny</li><li><strong>Steel:</strong> Magnetic, heavy</li><li>Use a magnet! Steel sticks, aluminum doesn't</li></ul></div><span class="task-badge">🧲 Magnet test!</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="1"></div><div><div class="task-title">Step 2: Find local scrap yards</div><div class="task-desc">Call around for prices - they vary! Build relationships for better rates.</div><div class="details-box"><h4>📍 Finding Yards:</h4><ul><li>Google "scrap metal recycler near me"</li><li>iScrapApp shows yards and prices</li><li>Call multiple yards to compare</li><li>Ask requirements (ID, sorted, etc.)</li></ul></div><span class="task-badge">📞 Compare prices</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="2"></div><div><div class="task-title">Step 3: Start collecting</div><div class="task-desc">Free sources everywhere! Trash days, Facebook free groups, construction sites (ask first!).</div><div class="details-box"><h4>♻️ Where to Find:</h4><ul><li>Bulk trash pickup days</li><li>Facebook Marketplace (Free)</li><li>Construction sites (ASK first!)</li><li>Appliance stores (old units)</li><li>HVAC companies (copper pipes)</li></ul></div><span class="task-badge">🆓 Free = pure profit</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="3"></div><div><div class="task-title">Step 4: Sort and store properly</div><div class="task-desc">Separate by type! Mixed loads pay less. Clean copper pays more than dirty.</div><span class="task-badge">📦 Sort = more $$$</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="4"></div><div><div class="task-title">Step 5: Make regular runs</div><div class="task-desc">Accumulate a decent load before going. Gas costs add up - batch your trips!</div><span class="task-badge">⛽ Batch trips</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="5"></div><div><div class="task-title">Step 6: Scale up</div><div class="task-desc">Get known as "the scrap person." People will call YOU to haul away their metal - for free!</div><div class="details-box"><h4>🚀 Scaling Tips:</h4><ul><li>Let neighbors know you take metal</li><li>Post on Nextdoor offering free pickup</li><li>Partner with contractors/plumbers</li><li>Focus on copper - highest value</li></ul></div><span class="task-badge">📈 Build reputation</span></div></li>
-      </ul>
-    </div>
-
-    <div class="section-card"><h2>📝 Your Scrap Tracker</h2><textarea id="userNotes" placeholder="Track your scrapping:
-
-Scrap yard: ABC Metals (best copper price)
-
-This month hauls:
-- Copper wire: 15 lbs = $45
-- Brass fittings: 8 lbs = $16
-- Aluminum: 40 lbs = $20
-- Steel (appliances): 200 lbs = $20
-
-Total: $101
-Gas: $15
-Net profit: $86"></textarea></div>
-    <div class="help-section"><span style="font-size:24px">💬</span><div style="flex:1"><strong>Need Help?</strong> Chat with a coach!</div><button class="chat-btn" onclick="location.href='https://asapcreditrepairusa.com/chat'">Start Chat</button></div>
-  </main>
-  <script>const K='pb_scrap_metal';function load(){const s=localStorage.getItem(K);if(s){const d=JSON.parse(s);document.querySelectorAll('.task-checkbox').forEach((b,i)=>{if(d.tasks&&d.tasks[i]){b.classList.add('checked');b.innerHTML='✓'}});if(d.notes)document.getElementById('userNotes').value=d.notes}}function save(){const t=[];document.querySelectorAll('.task-checkbox').forEach(b=>t.push(b.classList.contains('checked')));localStorage.setItem(K,JSON.stringify({tasks:t,notes:document.getElementById('userNotes').value}))}document.querySelectorAll('.task-checkbox').forEach(b=>b.onclick=function(){this.classList.toggle('checked');this.innerHTML=this.classList.contains('checked')?'✓':'';save()});document.getElementById('userNotes').oninput=save;load();</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-scrap-metal-recycling');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-scrap-metal-recycling', JSON.stringify({ steps, notes }));
+        }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>
