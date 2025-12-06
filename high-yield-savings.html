@@ -1,202 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Switch to High-Yield Savings Account | ASAP Credit Repair Playbook</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root { --primary: #063d86; --primary-light: #0a4fa8; --primary-dark: #042a5c; --accent: #00c9a7; --success: #10b981; --warning: #f59e0b; --bg: #f8fafc; --text: #1e293b; --text-light: #64748b; --border: #e2e8f0; }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 17px; }
-    .header { background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 40px 20px 50px; text-align: center; }
-    .header-content { max-width: 800px; margin: 0 auto; }
-    .back-link { display: inline-flex; align-items: center; gap: 8px; color: white; text-decoration: none; opacity: 0.8; font-size: 0.9rem; margin-bottom: 16px; }
-    .category-badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; margin-bottom: 16px; }
-    .header h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 12px; }
-    .header-subtitle { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
-    .main-content { max-width: 800px; margin: -30px auto 40px; padding: 0 20px; }
-    .progress-section { position: sticky; top: 0; background: white; padding: 16px 20px; margin: 0 -20px 20px; border-bottom: 1px solid var(--border); z-index: 100; display: flex; align-items: center; gap: 16px; }
-    .progress-bar { flex: 1; height: 10px; background: var(--border); border-radius: 5px; overflow: hidden; }
-    .progress-fill { height: 100%; background: linear-gradient(90deg, #10b981, #6ee7b7); border-radius: 5px; transition: width 0.3s; width: 0%; }
-    .progress-text { font-weight: 600; color: var(--text); min-width: 50px; }
-    .goal-card { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border: 2px solid var(--success); border-radius: 16px; padding: 24px 28px; margin-bottom: 30px; }
-    .goal-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; color: #065f46; margin-bottom: 12px; }
-    .goal-card p { color: #047857; font-size: 1.05rem; }
-    .goal-card .earnings { background: white; display: inline-block; padding: 10px 18px; border-radius: 10px; margin-top: 14px; font-weight: 600; color: #065f46; font-size: 1.1rem; }
-    .section-card { background: white; border-radius: 16px; padding: 28px; margin-bottom: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid var(--border); }
-    .section-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; color: var(--primary); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
-    .section-card h2 .icon { width: 40px; height: 40px; background: linear-gradient(135deg, #10b981, #6ee7b7); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; }
-    .task-list { list-style: none; }
-    .task-item { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border); }
-    .task-item:last-child { border-bottom: none; }
-    .task-checkbox { flex-shrink: 0; width: 28px; height: 28px; border: 2px solid var(--border); border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; margin-top: 2px; font-weight: bold; }
-    .task-checkbox:hover { border-color: var(--primary); }
-    .task-checkbox.checked { background: var(--success); border-color: var(--success); color: white; }
-    .task-content { flex: 1; }
-    .task-title { font-weight: 600; font-size: 1.1rem; margin-bottom: 8px; color: var(--text); }
-    .task-desc { color: var(--text-light); font-size: 0.95rem; line-height: 1.6; }
-    .task-meta { display: flex; gap: 12px; margin-top: 10px; flex-wrap: wrap; }
-    .task-badge { font-size: 0.8rem; padding: 4px 10px; border-radius: 6px; background: var(--bg); color: var(--text-light); }
-    .task-badge.easy { background: #dcfce7; color: #166534; }
-    .details-box { background: #f8fafc; border-radius: 10px; padding: 16px; margin-top: 12px; border-left: 4px solid #10b981; }
-    .details-box h4 { font-size: 0.9rem; color: #059669; margin-bottom: 10px; }
-    .details-box ul { margin-left: 18px; color: var(--text); font-size: 0.9rem; }
-    .details-box li { margin-bottom: 8px; line-height: 1.5; }
-    .comparison-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 0.9rem; }
-    .comparison-table th, .comparison-table td { padding: 12px; text-align: left; border-bottom: 1px solid var(--border); }
-    .comparison-table th { background: var(--bg); font-weight: 600; color: #059669; }
-    .comparison-table .highlight { background: #ecfdf5; font-weight: 600; color: #059669; }
-    .section-card textarea { width: 100%; min-height: 150px; padding: 16px 18px; border: 2px solid var(--border); border-radius: 12px; font-family: inherit; font-size: 1rem; resize: vertical; box-sizing: border-box; display: block; line-height: 1.6; }
-    .section-card textarea:focus { outline: none; border-color: var(--primary); }
-    .help-section { background: linear-gradient(135deg, #f0f9ff, #e0f2fe); border: 2px solid #7dd3fc; border-radius: 16px; padding: 24px 28px; margin-top: 30px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
-    .help-icon { width: 56px; height: 56px; background: white; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; }
-    .help-content { flex: 1; min-width: 200px; }
-    .help-content h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; margin-bottom: 4px; }
-    .help-content p { color: var(--text-light); font-size: 0.95rem; }
-    .chat-btn { background: var(--primary); color: white; border: none; padding: 14px 28px; border-radius: 12px; font-family: inherit; font-size: 1rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: all 0.2s; }
-    .chat-btn:hover { background: var(--primary-light); transform: translateY(-2px); }
-    @media (max-width: 600px) { .header { padding: 30px 20px 40px; } .section-card { padding: 20px; } .help-section { flex-direction: column; text-align: center; } }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High-Yield Savings - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #1565c0; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #e3f2fd; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 15px; overflow: hidden; font-size: 14px; }
+        .pricing-table th, .pricing-table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .pricing-table th { background: #667eea; color: white; font-weight: 600; }
+        .pricing-table tr:hover { background: #f5f5f5; }
+        .pricing-table .rate { color: #4caf50; font-weight: 600; }
+        .pricing-table .bad { color: #f44336; font-weight: 600; }
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .platform-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #4caf50; }
+        .platform-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .platform-card .detail { color: #667eea; font-size: 12px; margin-bottom: 8px; }
+        .platform-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .platform-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; font-size: 13px; }
+        .platform-link:hover { text-decoration: underline; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .info-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-left: 4px solid #4caf50; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .info-box-title { font-weight: 700; color: #2e7d32; margin-bottom: 10px; }
+        .info-box p { color: #666; margin: 8px 0; }
+        .compare-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-radius: 15px; padding: 25px; margin: 20px 0; text-align: center; }
+        .compare-box h3 { color: #c62828; margin-bottom: 15px; }
+        .compare-row { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; }
+        .compare-item { text-align: center; }
+        .compare-item .label { color: #666; font-size: 14px; margin-bottom: 5px; }
+        .compare-item .value { font-size: 2em; font-weight: 700; }
+        .compare-item .value.bad { color: #c62828; }
+        .compare-item .value.good { color: #2e7d32; }
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #667eea; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+    </style>
 </head>
 <body>
-  <header class="header">
-    <div class="header-content">
-      <a href="index.html" class="back-link">← Back to All Playbooks</a>
-      <span class="category-badge">💰 Passive Savings</span>
-      <h1>Switch to High-Yield Savings</h1>
-      <p class="header-subtitle">Your big bank pays 0.01% interest. High-yield accounts pay 4-5%+! Same FDIC insurance, 400x more interest. It's free money!</p>
-    </div>
-  </header>
+    <div class="container">
+        <a href="income-playbooks.html" class="back-link">← Back to Income Playbooks</a>
+        
+        <div class="header">
+            <h1>🏦 High-Yield Savings</h1>
+            <p class="subtitle">Earn 400x more on your savings - same FDIC insurance, zero extra risk!</p>
+            <div class="time-badge">⏱️ 15 min switch • 4-5%+ APY • FDIC insured • Free money!</div>
+        </div>
 
-  <main class="main-content">
-    <div class="progress-section">
-      <span style="font-size: 0.9rem; color: var(--text-light);">Your Progress:</span>
-      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
-      <span class="progress-text" id="progressText">0%</span>
-    </div>
-
-    <div class="goal-card">
-      <h2>🎯 What You'll Achieve</h2>
-      <p>You'll move your emergency fund to a high-yield savings account and earn 400x more interest automatically. Same safety, way more money!</p>
-      <div class="earnings">💰 $5,000 savings: ~$250/year | $10,000: ~$500/year | $25,000: ~$1,250/year (vs $1-5 at big banks!)</div>
-    </div>
-
-    <div class="section-card">
-      <h2><span class="icon">📊</span> The Difference Is HUGE</h2>
-      <table class="comparison-table">
-        <thead><tr><th>Savings Amount</th><th>Big Bank (0.01%)</th><th>High-Yield (5%)</th><th>You're Missing</th></tr></thead>
-        <tbody>
-          <tr><td>$1,000</td><td>$0.10/year</td><td class="highlight">$50/year</td><td>$49.90</td></tr>
-          <tr><td>$5,000</td><td>$0.50/year</td><td class="highlight">$250/year</td><td>$249.50</td></tr>
-          <tr><td>$10,000</td><td>$1/year</td><td class="highlight">$500/year</td><td>$499</td></tr>
-          <tr><td>$25,000</td><td>$2.50/year</td><td class="highlight">$1,250/year</td><td>$1,247.50</td></tr>
-          <tr><td>$50,000</td><td>$5/year</td><td class="highlight">$2,500/year</td><td>$2,495</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="section-card">
-      <h2><span class="icon">📋</span> Step-by-Step: Switch to High-Yield</h2>
-      <ul class="task-list">
-        <li class="task-item">
-          <div class="task-checkbox" data-task="0"></div>
-          <div class="task-content">
-            <div class="task-title">Step 1: Compare top high-yield savings accounts</div>
-            <div class="task-desc">Look for highest APY, no fees, no minimums, FDIC insured. Rates change - check current rates!</div>
-            <div class="details-box">
-              <h4>Popular high-yield options (check current rates):</h4>
-              <ul>
-                <li><strong>Marcus by Goldman Sachs</strong> - No fees, no minimum</li>
-                <li><strong>Ally Bank</strong> - Great app, no minimums</li>
-                <li><strong>American Express</strong> - Competitive rates</li>
-                <li><strong>Discover</strong> - No fees, ATM card option</li>
-                <li><strong>Capital One 360</strong> - Good mobile app</li>
-                <li><strong>Wealthfront Cash</strong> - Often highest rates</li>
-              </ul>
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Your big bank pays you 0.01-0.05% interest on savings - that's nearly NOTHING! High-yield savings accounts from online banks pay 4-5%+ APY. Same FDIC insurance (your money is just as safe), but you earn 400x more! This is literally free money you're leaving on the table. Switch takes 15 minutes and could earn you hundreds or thousands per year!</p>
             </div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 15 minutes</span>
-              <span class="task-badge easy">Compare rates</span>
+            <div class="income-highlight">
+                <h3>Earn 400x More Interest</h3>
+                <p>$10,000 at big bank: ~$1/year • $10,000 at 5% HYSA: ~$500/year • You're missing $499!</p>
             </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="1"></div>
-          <div class="task-content">
-            <div class="task-title">Step 2: Open your new account</div>
-            <div class="task-desc">Takes 10 minutes online. You'll need SSN, ID, and a small initial deposit (often $0-$100).</div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 10 minutes</span>
-              <span class="task-badge easy">All online</span>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">😱</span> The Difference Is HUGE</h2>
+            <div class="compare-box">
+                <h3>You're Losing Money Every Day!</h3>
+                <div class="compare-row">
+                    <div class="compare-item">
+                        <div class="label">Big Bank (0.01%)</div>
+                        <div class="value bad">$1/year</div>
+                    </div>
+                    <div class="compare-item">
+                        <div class="label">High-Yield (5%)</div>
+                        <div class="value good">$500/year</div>
+                    </div>
+                    <div class="compare-item">
+                        <div class="label">You're Missing</div>
+                        <div class="value good">$499!</div>
+                    </div>
+                </div>
+                <p style="margin-top: 15px; color: #666;">*Based on $10,000 savings. Same FDIC insurance!</p>
             </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="2"></div>
-          <div class="task-content">
-            <div class="task-title">Step 3: Link your checking account</div>
-            <div class="task-desc">Connect your main checking for easy transfers. Usually takes 1-3 days to verify with micro-deposits.</div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 5 minutes + wait</span>
-              <span class="task-badge easy">Quick setup</span>
+            
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Your Savings</th>
+                        <th>Big Bank (0.01%)</th>
+                        <th>High-Yield (5%)</th>
+                        <th>You're Missing</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>$1,000</td><td class="bad">$0.10/year</td><td class="rate">$50/year</td><td class="rate">$49.90</td></tr>
+                    <tr><td>$5,000</td><td class="bad">$0.50/year</td><td class="rate">$250/year</td><td class="rate">$249.50</td></tr>
+                    <tr><td>$10,000</td><td class="bad">$1/year</td><td class="rate">$500/year</td><td class="rate">$499</td></tr>
+                    <tr><td>$25,000</td><td class="bad">$2.50/year</td><td class="rate">$1,250/year</td><td class="rate">$1,247.50</td></tr>
+                    <tr><td>$50,000</td><td class="bad">$5/year</td><td class="rate">$2,500/year</td><td class="rate">$2,495</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🏦</span> Top High-Yield Savings Accounts</h2>
+            <p style="color: #666; margin-bottom: 15px;">*Rates change - always check current rates before opening!</p>
+            
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h4">💰 Marcus by Goldman Sachs</h4>
+                    <div class="detail">No fees • No minimum • FDIC insured</div>
+                    <p>Top-tier bank. Consistently competitive rates. Great reputation. Easy to use.</p>
+                    <a href="https://www.marcus.com" class="platform-link" target="_blank">Marcus →</a>
+                </div>
+                <div class="platform-card">
+                    <h4">🏧 Ally Bank</h4>
+                    <div class="detail">No fees • No minimum • Great app</div>
+                    <p>Excellent all-around online bank. Great mobile app. Also offers checking, CDs, investing.</p>
+                    <a href="https://www.ally.com" class="platform-link" target="_blank">Ally Bank →</a>
+                </div>
+                <div class="platform-card">
+                    <h4">💳 American Express</h4>
+                    <div class="detail">No fees • No minimum • Trusted brand</div>
+                    <p>Major financial brand. Competitive rates. Simple, straightforward account.</p>
+                    <a href="https://www.americanexpress.com/personalsavings" class="platform-link" target="_blank">Amex Savings →</a>
+                </div>
+                <div class="platform-card">
+                    <h4">🔍 Discover</h4>
+                    <div class="detail">No fees • ATM card available</div>
+                    <p>Online bank with ATM access option. Good rates. Trusted credit card company.</p>
+                    <a href="https://www.discover.com/online-banking/savings-account/" class="platform-link" target="_blank">Discover →</a>
+                </div>
+                <div class="platform-card">
+                    <h4">☕ Capital One 360</h4>
+                    <div class="detail">No fees • Good mobile app</div>
+                    <p>Easy to use app. Linked to Capital One checking if you have it. Solid rates.</p>
+                    <a href="https://www.capitalone.com/bank/savings-accounts/online-performance-savings-account/" class="platform-link" target="_blank">Capital One →</a>
+                </div>
+                <div class="platform-card">
+                    <h4">📈 Wealthfront Cash</h4>
+                    <div class="detail">Often highest rates</div>
+                    <p>Tech-forward platform. Often has very competitive rates. Also offers investing.</p>
+                    <a href="https://www.wealthfront.com/cash" class="platform-link" target="_blank">Wealthfront →</a>
+                </div>
             </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="3"></div>
-          <div class="task-content">
-            <div class="task-title">Step 4: Transfer your savings</div>
-            <div class="task-desc">Move your emergency fund/savings to the new account. Keep a small buffer in checking if needed.</div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 5 minutes</span>
-              <span class="task-badge easy">Start earning!</span>
+            
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Compare Current Rates</div>
+                <p><strong>Rates change frequently!</strong> Before opening, check sites like Bankrate.com or NerdWallet to see current rates. Don't chase the absolute highest rate - a difference of 0.1% on $10,000 is only $10/year. Pick a reputable bank you'll stick with!</p>
             </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="4"></div>
-          <div class="task-content">
-            <div class="task-title">Step 5: Set up automatic transfers</div>
-            <div class="task-desc">Automate savings from each paycheck. Even $50/month adds up fast with 5% interest!</div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 5 minutes</span>
-              <span class="task-badge easy">Set and forget</span>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">✅</span> Why High-Yield Savings Is Safe</h2>
+            <div class="info-box">
+                <div class="info-box-title">✅ FDIC Insured - Just Like Your Big Bank!</div>
+                <p>• <strong>FDIC insured up to $250,000</strong> - same protection as Chase, Wells Fargo, etc.</p>
+                <p>• Your money is guaranteed by the federal government</p>
+                <p>• Online banks are just as regulated as physical banks</p>
+                <p>• Many are backed by major financial institutions</p>
+                <p>• Marcus = Goldman Sachs, Discover = major bank, etc.</p>
             </div>
-          </div>
-        </li>
-      </ul>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your High-Yield Savings Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Check your current interest rate</div>
+                    <div class="step-desc">Log into your current bank and find your savings APY. It's probably 0.01-0.05%. Calculate how much you're missing out on!</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Compare high-yield savings accounts</div>
+                    <div class="step-desc">Check current rates at Marcus, Ally, Amex, Discover, etc. Look for: highest APY, no fees, no minimums, FDIC insured. Use Bankrate.com to compare.</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Open your new account (10 minutes!)</div>
+                    <div class="step-desc">Apply online. You'll need: SSN, ID, email, and a small initial deposit (often $0-100). Most accounts are approved instantly!</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Link your checking account</div>
+                    <div class="step-desc">Connect your main checking account for easy transfers. Usually takes 1-3 days to verify with micro-deposits.</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Transfer your savings</div>
+                    <div class="step-desc">Move your emergency fund/savings to the new high-yield account. Keep a small buffer in your old account if needed. Start earning more immediately!</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Set up automatic transfers</div>
+                    <div class="step-desc">Automate savings from each paycheck. Even $50-100/month grows fast at 5%! Pay yourself first - automate it!</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Download the app</div>
+                    <div class="step-desc">Get the mobile app for easy access. Check your balance and watch your interest grow! Most apps are excellent.</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Enjoy free money!</div>
+                    <div class="step-desc">Watch your interest compound monthly. You're now earning 400x more on your savings for doing almost nothing. This is the easiest financial win!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your High-Yield Savings Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your high-yield savings!
+
+CURRENT SITUATION:
+Old bank: ____
+Old APY: ____%
+Current savings: $____
+Interest earned per year at old rate: $____
+
+NEW HIGH-YIELD ACCOUNT:
+Bank: ____
+APY: ____%
+Account opened: ☐
+Date: ____
+
+TRANSFER STATUS:
+☐ Checking account linked
+☐ Initial deposit made
+☐ Savings transferred
+Amount transferred: $____
+
+AUTOMATIC SAVINGS:
+☐ Auto-transfer set up
+Amount: $____/month
+Day of month: ____
+
+INTEREST EARNED:
+Month: ____ | Interest: $____
+Month: ____ | Interest: $____
+Month: ____ | Interest: $____
+Month: ____ | Interest: $____
+Month: ____ | Interest: $____
+Month: ____ | Interest: $____
+
+TOTAL INTEREST EARNED: $____
+
+SAVINGS GOALS:
+☐ $1,000 emergency fund
+☐ $5,000 emergency fund
+☐ $10,000 emergency fund
+☐ 3 months expenses: $____
+☐ 6 months expenses: $____
+
+NOTES:
+____
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
     </div>
 
-    <div class="section-card">
-      <h2><span class="icon">📝</span> Your Notes</h2>
-      <textarea id="userNotes" placeholder="Example: Compared rates - Marcus and Ally both at 4.5% APY. Opened Marcus account (10 min, no minimum). Transferred $8,000 from Chase savings (was earning literally $0.80/year!). Now earning ~$360/year on same money. Set up $200/month auto-transfer from checking. Free money!"></textarea>
-    </div>
-
-    <div class="help-section">
-      <div class="help-icon">💬</div>
-      <div class="help-content">
-        <h3>Need Help?</h3>
-        <p>Have questions about high-yield savings? Chat with an ASAP Financial coach!</p>
-      </div>
-      <button class="chat-btn" onclick="openChat()">
-        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
-        Start Chat
-      </button>
-    </div>
-  </main>
-
-  <script>
-    const STORAGE_KEY = 'playbook_high-yield-savings';
-    function loadState() { const saved = localStorage.getItem(STORAGE_KEY); if (saved) { const state = JSON.parse(saved); document.querySelectorAll('.task-checkbox').forEach((box, i) => { if (state.tasks && state.tasks[i]) { box.classList.add('checked'); box.innerHTML = '✓'; } }); if (state.notes) document.getElementById('userNotes').value = state.notes; updateProgress(); } }
-    function saveState() { const tasks = []; document.querySelectorAll('.task-checkbox').forEach(box => { tasks.push(box.classList.contains('checked')); }); localStorage.setItem(STORAGE_KEY, JSON.stringify({ tasks, notes: document.getElementById('userNotes').value })); }
-    function updateProgress() { const boxes = document.querySelectorAll('.task-checkbox'); const checked = document.querySelectorAll('.task-checkbox.checked').length; const percent = Math.round((checked / boxes.length) * 100); document.getElementById('progressFill').style.width = percent + '%'; document.getElementById('progressText').textContent = percent + '%'; }
-    document.querySelectorAll('.task-checkbox').forEach(box => { box.addEventListener('click', function() { this.classList.toggle('checked'); this.innerHTML = this.classList.contains('checked') ? '✓' : ''; updateProgress(); saveState(); }); });
-    document.getElementById('userNotes').addEventListener('input', saveState);
-    function openChat() { window.location.href = 'https://asapcreditrepairusa.com/chat'; }
-    loadState();
-  </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-high-yield-savings');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-high-yield-savings', JSON.stringify({ steps, notes }));
+        }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>

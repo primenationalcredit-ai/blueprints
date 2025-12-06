@@ -15,59 +15,51 @@
         .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
         .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
         .card h2 .icon { font-size: 1.5em; }
-        .achieve-box { background: linear-gradient(135deg, #f3e5f5, #e1bee7); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
-        .achieve-box p { color: #7b1fa2; font-size: 1.1em; line-height: 1.6; }
+        .achieve-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #1565c0; font-size: 1.1em; line-height: 1.6; }
         .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
-        .income-highlight h3 { font-size: 2.2em; margin-bottom: 10px; }
+        .income-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
         .income-highlight p { font-size: 1.1em; opacity: 0.95; }
         .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
-        .step:hover { background: #f3e5f5; }
+        .step:hover { background: #e3f2fd; }
         .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
         .step-checkbox.checked { background: #667eea; color: white; }
         .step-content { flex: 1; }
         .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
         .step-desc { color: #666; line-height: 1.5; }
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
-        .product-card { border-radius: 15px; padding: 15px; text-align: center; }
-        .product-card.templates { background: linear-gradient(135deg, #e3f2fd, #bbdefb); }
-        .product-card.ebooks { background: linear-gradient(135deg, #fff3e0, #ffe0b2); }
-        .product-card.courses { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); }
-        .product-card.presets { background: linear-gradient(135deg, #fce4ec, #f8bbd9); }
-        .product-card.printables { background: linear-gradient(135deg, #f3e5f5, #e1bee7); }
-        .product-card.graphics { background: linear-gradient(135deg, #e0f2f1, #b2dfdb); }
-        .product-card .emoji { font-size: 2em; margin-bottom: 5px; }
-        .product-card h4 { color: #1a1a2e; font-size: 12px; margin-bottom: 3px; }
-        .product-card .price { color: #4caf50; font-weight: 600; font-size: 11px; }
         .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 15px; overflow: hidden; font-size: 14px; }
         .pricing-table th, .pricing-table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #e0e0e0; }
         .pricing-table th { background: #667eea; color: white; font-weight: 600; }
         .pricing-table tr:hover { background: #f5f5f5; }
         .pricing-table .rate { color: #4caf50; font-weight: 600; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .product-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; border-top: 5px solid #667eea; }
+        .product-card .emoji { font-size: 2.5em; margin-bottom: 10px; }
+        .product-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .product-card .price { color: #4caf50; font-weight: 600; }
         .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
-        .platform-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #667eea; }
+        .platform-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #4caf50; }
         .platform-card h4 { color: #1a1a2e; margin-bottom: 5px; }
-        .platform-card .feature { color: #4caf50; font-weight: 600; font-size: 13px; margin-bottom: 5px; }
-        .platform-card p { color: #666; font-size: 12px; }
-        .platform-card a { color: #667eea; text-decoration: none; font-weight: 600; font-size: 13px; }
+        .platform-card .detail { color: #667eea; font-size: 12px; margin-bottom: 8px; }
+        .platform-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .platform-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; font-size: 13px; }
+        .platform-link:hover { text-decoration: underline; }
+        .tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .tool-card { background: #f8f9fa; border-radius: 15px; padding: 15px; text-align: center; }
+        .tool-card h4 { color: #1a1a2e; margin-bottom: 5px; font-size: 14px; }
+        .tool-card .price { color: #667eea; font-size: 12px; margin-bottom: 5px; }
+        .tool-card p { color: #666; font-size: 12px; }
         .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
         .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
         .pro-tip p { color: #666; margin: 8px 0; }
-        .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 20px 0; }
-        .tool-card { background: #f8f9fa; border-radius: 12px; padding: 15px; text-align: center; }
-        .tool-card h4 { color: #1a1a2e; font-size: 13px; margin-bottom: 3px; }
-        .tool-card .price { color: #4caf50; font-size: 11px; }
-        .tool-card p { color: #666; font-size: 10px; }
-        .market-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
-        .market-card { background: #e8f5e9; border-radius: 12px; padding: 15px; }
-        .market-card h4 { color: #2e7d32; font-size: 13px; margin-bottom: 5px; }
-        .market-card p { color: #666; font-size: 12px; }
-        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
-        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
-        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .info-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-left: 4px solid #4caf50; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .info-box-title { font-weight: 700; color: #2e7d32; margin-bottom: 10px; }
+        .info-box p { color: #666; margin: 8px 0; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; }
         .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
         .influencer-card .platform { color: #667eea; font-size: 14px; margin-bottom: 10px; }
-        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-card p { color: #666; font-size: 13px; }
         .influencer-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; }
         .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
         .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
@@ -87,13 +79,13 @@
         <div class="header">
             <h1>📦 Sell Digital Products</h1>
             <p class="subtitle">Create once, sell forever - true passive income!</p>
-            <div class="time-badge">⏱️ 5-20 hours to create • Sell for $5-500+ • No inventory!</div>
+            <div class="time-badge">⏱️ 5-20 hours to create • $5-500+ per sale • No inventory!</div>
         </div>
 
         <div class="card">
             <h2><span class="icon">🎯</span> What You'll Achieve</h2>
             <div class="achieve-box">
-                <p>Build passive income by creating digital products people want. No shipping, no inventory, pure profit after creation! Create once and sell unlimited copies. Templates, ebooks, courses, presets - pick based on your skills. No skills? Printables and templates are beginner-friendly!</p>
+                <p>Build passive income by creating digital products people want. No shipping, no inventory, 80-95% profit margins! Create once and sell unlimited copies. Templates, ebooks, courses, presets, printables - pick based on your skills. No special skills? Printables and templates are beginner-friendly! Make your first sale, then scale. Some creators earn $1,000-$10,000+/month from digital products!</p>
             </div>
             <div class="income-highlight">
                 <h3>Create Once, Sell Forever</h3>
@@ -104,34 +96,34 @@
         <div class="card">
             <h2><span class="icon">📦</span> Types of Digital Products</h2>
             <div class="product-grid">
-                <div class="product-card templates">
+                <div class="product-card">
                     <div class="emoji">📊</div>
                     <h4>Templates</h4>
                     <div class="price">$10-50</div>
                 </div>
-                <div class="product-card ebooks">
+                <div class="product-card">
                     <div class="emoji">📚</div>
                     <h4>Ebooks/Guides</h4>
                     <div class="price">$10-50</div>
                 </div>
-                <div class="product-card courses">
+                <div class="product-card">
                     <div class="emoji">🎓</div>
                     <h4>Online Courses</h4>
                     <div class="price">$50-500+</div>
                 </div>
-                <div class="product-card presets">
+                <div class="product-card">
                     <div class="emoji">📷</div>
                     <h4>Photo Presets</h4>
                     <div class="price">$15-50</div>
                 </div>
-                <div class="product-card printables">
+                <div class="product-card">
                     <div class="emoji">🖨️</div>
                     <h4>Printables</h4>
                     <div class="price">$3-15</div>
                 </div>
-                <div class="product-card graphics">
+                <div class="product-card">
                     <div class="emoji">🎨</div>
-                    <h4>Graphics/Icons</h4>
+                    <h4">Graphics/Icons</h4>
                     <div class="price">$10-100</div>
                 </div>
             </div>
@@ -145,52 +137,58 @@
                         <th>Product Type</th>
                         <th>Price Range</th>
                         <th>Time to Create</th>
+                        <th>Skill Level</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td>Notion templates</td><td class="rate">$10-50</td><td>5-20 hours</td></tr>
-                    <tr><td>Excel/Sheets templates</td><td class="rate">$10-50</td><td>5-15 hours</td></tr>
-                    <tr><td>Canva templates</td><td class="rate">$5-30</td><td>3-10 hours</td></tr>
-                    <tr><td>Printables & planners</td><td class="rate">$3-15</td><td>2-8 hours</td></tr>
-                    <tr><td>Ebooks & guides</td><td class="rate">$10-50</td><td>10-40 hours</td></tr>
-                    <tr><td>Lightroom presets</td><td class="rate">$15-50</td><td>5-15 hours</td></tr>
-                    <tr><td>Online courses</td><td class="rate">$50-500+</td><td>40-100+ hours</td></tr>
+                    <tr><td>Printables & planners</td><td class="rate">$3-15</td><td>2-8 hours</td><td>Beginner</td></tr>
+                    <tr><td>Canva templates</td><td class="rate">$5-30</td><td>3-10 hours</td><td>Beginner</td></tr>
+                    <tr><td>Notion templates</td><td class="rate">$10-50</td><td>5-20 hours</td><td>Beginner</td></tr>
+                    <tr><td>Excel/Sheets templates</td><td class="rate">$10-50</td><td>5-15 hours</td><td>Intermediate</td></tr>
+                    <tr><td>Lightroom presets</td><td class="rate">$15-50</td><td>5-15 hours</td><td>Intermediate</td></tr>
+                    <tr><td>Ebooks & guides</td><td class="rate">$10-50</td><td>10-40 hours</td><td>Intermediate</td></tr>
+                    <tr><td>Online courses</td><td class="rate">$50-500+</td><td>40-100+ hours</td><td>Advanced</td></tr>
                 </tbody>
             </table>
+            
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Start Simple!</div>
+                <p><strong>Printables and Canva templates are perfect for beginners!</strong> Low time investment, easy to create, people buy them constantly on Etsy. Make your first $100, then level up to more complex products!</p>
+            </div>
         </div>
 
         <div class="card">
             <h2><span class="icon">🛠️</span> Free Creation Tools</h2>
-            <div class="tools-grid">
+            <div class="tool-grid">
                 <div class="tool-card">
-                    <h4>Canva</h4>
+                    <h4">Canva</h4>
                     <div class="price">Free / $13/mo Pro</div>
                     <p>Templates, graphics, printables</p>
                 </div>
                 <div class="tool-card">
-                    <h4>Notion</h4>
+                    <h4">Notion</h4>
                     <div class="price">Free</div>
-                    <p>Notion templates</p>
+                    <p">Notion templates</p>
                 </div>
                 <div class="tool-card">
-                    <h4>Google Docs/Sheets</h4>
+                    <h4">Google Docs/Sheets</h4>
                     <div class="price">Free</div>
-                    <p>Ebooks, spreadsheets</p>
+                    <p">Ebooks, spreadsheets</p>
                 </div>
                 <div class="tool-card">
-                    <h4>Figma</h4>
+                    <h4">Figma</h4>
                     <div class="price">Free</div>
-                    <p>UI kits, graphics</p>
+                    <p">UI kits, graphics</p>
                 </div>
                 <div class="tool-card">
-                    <h4>Loom</h4>
+                    <h4">Loom</h4>
                     <div class="price">Free</div>
-                    <p>Course videos</p>
+                    <p">Course videos</p>
                 </div>
                 <div class="tool-card">
-                    <h4>ChatGPT</h4>
+                    <h4">ChatGPT</h4>
                     <div class="price">Free / $20/mo</div>
-                    <p>Content writing help</p>
+                    <p">Content writing help</p>
                 </div>
             </div>
         </div>
@@ -199,56 +197,57 @@
             <h2><span class="icon">🖥️</span> Where to Sell</h2>
             <div class="platform-grid">
                 <div class="platform-card">
-                    <h4>Gumroad</h4>
-                    <div class="feature">Easiest to start • 10% + fees</div>
-                    <p>Best for beginners. Simple setup, handles payments, instant delivery.</p>
-                    <a href="https://gumroad.com" target="_blank">gumroad.com →</a>
+                    <h4">🛒 Gumroad</h4>
+                    <div class="detail">Easiest to start • 10% + fees</div>
+                    <p">Best for beginners. Simple setup, handles payments, instant delivery. You drive traffic.</p>
+                    <a href="https://gumroad.com" class="platform-link" target="_blank">Gumroad →</a>
                 </div>
                 <div class="platform-card">
-                    <h4>Etsy</h4>
-                    <div class="feature">Huge traffic • 6.5% + fees</div>
-                    <p>Massive audience already looking to buy. Great for printables and templates.</p>
-                    <a href="https://etsy.com" target="_blank">etsy.com →</a>
+                    <h4">🧡 Etsy</h4>
+                    <div class="detail">Huge traffic • 6.5% + fees</div>
+                    <p">Massive audience already searching! Great for printables and templates. Built-in buyers.</p>
+                    <a href="https://etsy.com" class="platform-link" target="_blank">Etsy →</a>
                 </div>
                 <div class="platform-card">
-                    <h4>Creative Market</h4>
-                    <div class="feature">Design-focused • 40% to you</div>
-                    <p>For designers - templates, fonts, graphics. Curated marketplace.</p>
-                    <a href="https://creativemarket.com" target="_blank">creativemarket.com →</a>
+                    <h4">🎨 Creative Market</h4>
+                    <div class="detail">Design-focused • 40% to you</div>
+                    <p">For designers - templates, fonts, graphics. Curated marketplace, professional audience.</p>
+                    <a href="https://creativemarket.com" class="platform-link" target="_blank">Creative Market →</a>
                 </div>
                 <div class="platform-card">
-                    <h4>Teachable/Thinkific</h4>
-                    <div class="feature">Courses • $0-99/mo + fees</div>
-                    <p>For online courses. Professional course hosting and delivery.</p>
+                    <h4">🎓 Teachable/Thinkific</h4>
+                    <div class="detail">Courses • $0-99/mo + fees</div>
+                    <p">For online courses. Professional course hosting and delivery. Scales well.</p>
+                    <a href="https://teachable.com" class="platform-link" target="_blank">Teachable →</a>
                 </div>
             </div>
             
-            <div class="pro-tip">
-                <div class="pro-tip-title">💡 Start with Gumroad or Etsy</div>
+            <div class="info-box">
+                <div class="info-box-title">✅ Start with ONE Platform</div>
                 <p>• <strong>Gumroad</strong> - Easiest setup, you drive your own traffic</p>
                 <p>• <strong>Etsy</strong> - Built-in traffic, people already searching for products</p>
-                <p>Start with ONE platform. Master it before expanding!</p>
+                <p>Master one platform before expanding to others!</p>
             </div>
         </div>
 
         <div class="card">
             <h2><span class="icon">🔍</span> Research What's Selling</h2>
-            <div class="market-grid">
-                <div class="market-card">
-                    <h4>Check Etsy Bestsellers</h4>
-                    <p>Search your niche, filter by bestselling. What's popular?</p>
+            <div class="tool-grid">
+                <div class="tool-card">
+                    <h4">Etsy Bestsellers</h4>
+                    <p">Search your niche, filter by bestselling</p>
                 </div>
-                <div class="market-card">
-                    <h4>Browse Gumroad Discover</h4>
-                    <p>See top-selling products. What problems are people paying to solve?</p>
+                <div class="tool-card">
+                    <h4">Gumroad Discover</h4>
+                    <p">Browse top-selling products</p>
                 </div>
-                <div class="market-card">
-                    <h4>Reddit Communities</h4>
-                    <p>What are people asking for? What problems need solutions?</p>
+                <div class="tool-card">
+                    <h4">Reddit Communities</h4>
+                    <p">What are people asking for?</p>
                 </div>
-                <div class="market-card">
-                    <h4>Pinterest Trends</h4>
-                    <p>What's trending in your niche? Printables and templates do well here.</p>
+                <div class="tool-card">
+                    <h4">Pinterest Trends</h4>
+                    <p">What's trending in your niche?</p>
                 </div>
             </div>
         </div>
@@ -260,14 +259,14 @@
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
                     <div class="step-title">Step 1: Choose your product type</div>
-                    <div class="step-desc">Pick based on your skills. No skills? Templates and printables are beginner-friendly! Start with ONE product type.</div>
+                    <div class="step-desc">Pick based on your skills. No design skills? Printables and templates are beginner-friendly! Start with ONE product type and master it.</div>
                 </div>
             </div>
             <div class="step" data-step="2">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
                     <div class="step-title">Step 2: Research what's selling</div>
-                    <div class="step-desc">Check Etsy, Gumroad, Creative Market bestsellers. What problems can you solve? Don't reinvent the wheel - improve on what works!</div>
+                    <div class="step-desc">Check Etsy, Gumroad, Creative Market bestsellers. What problems can you solve? Don't reinvent the wheel - improve on what already works!</div>
                 </div>
             </div>
             <div class="step" data-step="3">
@@ -281,35 +280,35 @@
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
                     <div class="step-title">Step 4: Create compelling mockups</div>
-                    <div class="step-desc">Show your product in use! Canva has mockup templates. Good visuals = more sales. First impression matters!</div>
+                    <div class="step-desc">Show your product in use! Canva has mockup templates. Good visuals = more sales. First impression matters - invest time here!</div>
                 </div>
             </div>
             <div class="step" data-step="5">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
                     <div class="step-title">Step 5: Set up shop on ONE platform</div>
-                    <div class="step-desc">Gumroad (easiest) or Etsy (traffic). Write a great description focusing on benefits. Price competitively to start.</div>
+                    <div class="step-desc">Gumroad (easiest) or Etsy (traffic). Write a great description focusing on benefits. Price competitively to start - you can raise later!</div>
                 </div>
             </div>
             <div class="step" data-step="6">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
                     <div class="step-title">Step 6: Get your first sales</div>
-                    <div class="step-desc">Share on social media, Pinterest, relevant communities. Ask friends to buy and review. First reviews = social proof!</div>
+                    <div class="step-desc">Share on social media, Pinterest, relevant communities. Ask friends to buy and review. First reviews = social proof = more sales!</div>
                 </div>
             </div>
             <div class="step" data-step="7">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
                     <div class="step-title">Step 7: Market consistently</div>
-                    <div class="step-desc">Pinterest, TikTok, Instagram. Show your product in use. Behind-the-scenes content works. Build an email list for future launches!</div>
+                    <div class="step-desc">Pinterest, TikTok, Instagram. Show your product in use. Behind-the-scenes content works! Build an email list for future launches.</div>
                 </div>
             </div>
             <div class="step" data-step="8">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
                     <div class="step-title">Step 8: Create more products, scale what works</div>
-                    <div class="step-desc">Double down on winners. Create bundles. Raise prices as reviews grow. Build a catalog of products over time!</div>
+                    <div class="step-desc">Double down on winners. Create bundles. Raise prices as reviews grow. Build a catalog of products over time - this is where the real money is!</div>
                 </div>
             </div>
         </div>
@@ -318,32 +317,28 @@
             <h2><span class="icon">🎓</span> Learn From Digital Product Creators</h2>
             <div class="influencer-grid">
                 <div class="influencer-card">
-                    <div class="influencer-avatar">📦</div>
                     <h4>Gold City Ventures</h4>
                     <div class="platform">📺 YouTube</div>
-                    <p>Printables and Etsy digital products. Real income reports.</p>
+                    <p>Printables and Etsy digital products</p>
                     <a href="https://youtube.com" class="influencer-link" target="_blank">YouTube →</a>
                 </div>
                 <div class="influencer-card">
-                    <div class="influencer-avatar">💻</div>
-                    <h4>Notion VIP</h4>
-                    <div class="platform">🌐 Website</div>
-                    <p>Learn to create and sell Notion templates.</p>
-                    <a href="https://notionvip.com" class="influencer-link" target="_blank">notionvip.com →</a>
+                    <h4">r/passive_income</h4>
+                    <div class="platform">💬 Reddit</div>
+                    <p>Digital product sellers sharing strategies</p>
+                    <a href="https://reddit.com/r/passive_income" class="influencer-link" target="_blank">Reddit →</a>
                 </div>
                 <div class="influencer-card">
-                    <div class="influencer-avatar">💬</div>
-                    <h4>r/passive_income</h4>
-                    <div class="platform">🌐 Reddit</div>
-                    <p>Digital product sellers sharing strategies and income.</p>
-                    <a href="https://reddit.com/r/passive_income" class="influencer-link" target="_blank">r/passive_income →</a>
+                    <h4">Gumroad Discover</h4>
+                    <div class="platform">🌐 Website</div>
+                    <p>Browse successful products for inspiration</p>
+                    <a href="https://gumroad.com/discover" class="influencer-link" target="_blank">Gumroad →</a>
                 </div>
                 <div class="influencer-card">
-                    <div class="influencer-avatar">🎨</div>
-                    <h4>Gumroad Discover</h4>
+                    <h4">Etsy Seller Handbook</h4>
                     <div class="platform">🌐 Website</div>
-                    <p>Browse successful products for inspiration.</p>
-                    <a href="https://gumroad.com/discover" class="influencer-link" target="_blank">gumroad.com/discover →</a>
+                    <p>Official guides to selling on Etsy</p>
+                    <a href="https://www.etsy.com/seller-handbook" class="influencer-link" target="_blank">Etsy →</a>
                 </div>
             </div>
         </div>
@@ -359,52 +354,58 @@
         <div class="card">
             <h2><span class="icon">📝</span> Your Digital Product Tracker</h2>
             <div class="notes-section">
-                <textarea id="notes" placeholder="Track your digital product business!
+                <textarea id="notes" placeholder="Track your digital products!
 
-MY PRODUCT IDEAS:
-Idea 1: ____
-  Type: template / ebook / printable / course / preset
-  Problem it solves: ____
-  Price point: $____
-
-Idea 2: ____
-  Type: ____
-  Problem it solves: ____
-  Price point: $____
-
-MARKET RESEARCH:
-☐ Checked Etsy bestsellers
-☐ Browsed Gumroad Discover
-☐ Found 3-5 competitor products
-Competitor prices: $____-____
+PRODUCT IDEAS:
+1. ____
+2. ____
+3. ____
 
 MY FIRST PRODUCT:
-Product name: ____
 Type: ____
+Name: ____
 Price: $____
+Platform: ☐ Gumroad ☐ Etsy ☐ Other
+Status: ☐ Idea ☐ Creating ☐ Listed ☐ Selling!
+
+TOOLS I'M USING:
+☐ Canva
+☐ Notion
+☐ Google Docs/Sheets
+☐ Figma
+☐ Other: ____
+
+LISTING CHECKLIST:
 ☐ Product created
-☐ Mockups designed
+☐ Mockups made
 ☐ Description written
-
-SHOP SETUP:
-Platform: Gumroad / Etsy / Creative Market / Other: ____
-☐ Account created
-☐ First product listed
-☐ Payment connected
-
-MARKETING:
+☐ Priced competitively
+☐ Listed on platform
 ☐ Shared on social media
-☐ Posted on Pinterest
-☐ Shared in communities
-☐ Email list started
 
-SALES TRACKER:
-Product 1: ____ | Sales: ____ | Revenue: $____
-Product 2: ____ | Sales: ____ | Revenue: $____
-Product 3: ____ | Sales: ____ | Revenue: $____
+MY PRODUCTS:
+1. Product: ____ | Price: $____ | Sales: ____ | Revenue: $____
+2. Product: ____ | Price: $____ | Sales: ____ | Revenue: $____
+3. Product: ____ | Price: $____ | Sales: ____ | Revenue: $____
 
 TOTAL REVENUE: $____
-TOTAL PRODUCTS: ____
+
+MARKETING:
+☐ Pinterest set up
+☐ Instagram/TikTok content
+☐ Email list started
+Subscribers: ____
+
+GOALS:
+☐ First sale!
+☐ 10 sales
+☐ 50 sales
+☐ 100 sales
+☐ $1,000 revenue
+☐ $5,000 revenue
+
+NOTES:
+____
 "></textarea>
             </div>
         </div>
