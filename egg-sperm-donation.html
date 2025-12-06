@@ -1,28 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Egg Sperm Donation Business | ASAP Credit Repair Playbook</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>:root{--primary:#063d86;--success:#10b981;--bg:#f8fafc;--text:#1e293b;--text-light:#64748b;--border:#e2e8f0}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}.header{background:linear-gradient(135deg,#6366f1,#4f46e5);color:#fff;padding:40px 20px 50px;text-align:center}.header h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:12px}.main-content{max-width:800px;margin:-30px auto 40px;padding:0 20px}.back-link{color:#fff;text-decoration:none;opacity:.8;display:block;margin-bottom:16px}.category-badge{display:inline-block;background:rgba(255,255,255,.2);padding:6px 16px;border-radius:20px;font-size:.85rem;margin-bottom:16px}.goal-card{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid var(--success);border-radius:16px;padding:24px;margin-bottom:24px}.goal-card h2{color:#065f46;margin-bottom:12px}.goal-card .earnings{background:#fff;padding:10px 18px;border-radius:10px;margin-top:14px;font-weight:600;color:#065f46;display:inline-block}.section-card{background:#fff;border-radius:16px;padding:28px;margin-bottom:24px;border:1px solid var(--border)}.section-card h2{color:var(--primary);margin-bottom:20px}.task-list{list-style:none}.task-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)}.task-checkbox{width:28px;height:28px;border:2px solid var(--border);border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}.task-checkbox.checked{background:var(--success);border-color:var(--success);color:#fff}.task-title{font-weight:600;margin-bottom:6px}.task-desc{color:var(--text-light);font-size:.95rem}.task-badge{font-size:.8rem;padding:4px 10px;border-radius:6px;background:var(--bg);margin-top:10px;display:inline-block;margin-right:8px}textarea{width:100%;min-height:120px;padding:14px;border:2px solid var(--border);border-radius:10px;font-family:inherit;margin-top:10px}.help-section{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border:2px solid #7dd3fc;border-radius:16px;padding:20px;margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}.chat-btn{background:var(--primary);color:#fff;border:none;padding:12px 24px;border-radius:10px;font-weight:600;cursor:pointer}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Egg & Sperm Donation - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #1565c0; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #e3f2fd; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 15px; overflow: hidden; font-size: 14px; }
+        .pricing-table th, .pricing-table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .pricing-table th { background: #667eea; color: white; font-weight: 600; }
+        .pricing-table tr:hover { background: #f5f5f5; }
+        .pricing-table .rate { color: #4caf50; font-weight: 600; }
+        .comparison-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0; }
+        .comparison-card { background: #f8f9fa; border-radius: 15px; padding: 25px; border-top: 5px solid #667eea; }
+        .comparison-card h3 { color: #1a1a2e; margin-bottom: 15px; font-size: 1.3em; }
+        .comparison-card .pay { color: #4caf50; font-weight: 700; font-size: 1.5em; margin-bottom: 15px; }
+        .comparison-card ul { color: #666; font-size: 14px; line-height: 1.8; padding-left: 20px; }
+        .info-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-left: 4px solid #4caf50; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .info-box-title { font-weight: 700; color: #2e7d32; margin-bottom: 10px; }
+        .info-box p { color: #666; margin: 8px 0; }
+        .warning-box { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .warning-box-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .warning-box p { color: #666; margin: 8px 0; }
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .platform-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #667eea; }
+        .platform-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .platform-card .detail { color: #667eea; font-size: 12px; margin-bottom: 8px; }
+        .platform-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .platform-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; font-size: 13px; }
+        .platform-link:hover { text-decoration: underline; }
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #667eea; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+    </style>
 </head>
 <body>
-  <header class="header"><a href="index.html" class="back-link">← Back to All Playbooks</a><span class="category-badge">💰 Extra Income</span><h1>Egg Sperm Donation</h1><p style="opacity:.9;max-width:600px;margin:0 auto">Step-by-step guide to earning extra money!</p></header>
-  <main class="main-content">
-    <div class="goal-card"><h2>🎯 What You'll Achieve</h2><p>Start earning extra income with this simple side hustle!</p><div class="earnings">💰 Earn extra cash with minimal effort</div></div>
-    <div class="section-card"><h2>📋 Quick Start Guide</h2>
-      <ul class="task-list">
-        <li class="task-item"><div class="task-checkbox" data-task="0"></div><div><div class="task-title">Step 1: Research requirements</div><div class="task-desc">Learn what's needed to get started with this opportunity.</div></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="1"></div><div><div class="task-title">Step 2: Sign up on platforms</div><div class="task-desc">Register on the relevant websites and apps.</div></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="2"></div><div><div class="task-title">Step 3: Complete verification</div><div class="task-desc">Finish any required verification or onboarding steps.</div></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="3"></div><div><div class="task-title">Step 4: Start earning</div><div class="task-desc">Begin the activity and track your earnings.</div></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="4"></div><div><div class="task-title">Step 5: Optimize your approach</div><div class="task-desc">Find ways to maximize your earnings over time.</div></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="5"></div><div><div class="task-title">Step 6: Scale up</div><div class="task-desc">Expand your efforts as you gain experience.</div></div></li>
-      </ul></div>
-    <div class="section-card"><h2>📝 Your Progress Tracker</h2><textarea id="userNotes" placeholder="Track your progress here..."></textarea></div>
-    <div class="help-section"><span style="font-size:24px">💬</span><div style="flex:1"><strong>Need Help?</strong> Chat with a coach!</div><button class="chat-btn" onclick="location.href='https://asapcreditrepairusa.com/chat'">Start Chat</button></div>
-  </main>
-  <script>const K='pb_egg-sperm-donation';function load(){const s=localStorage.getItem(K);if(s){const d=JSON.parse(s);document.querySelectorAll('.task-checkbox').forEach((b,i)=>{if(d.tasks&&d.tasks[i]){b.classList.add('checked');b.innerHTML='✓'}});if(d.notes)document.getElementById('userNotes').value=d.notes}}function save(){const t=[];document.querySelectorAll('.task-checkbox').forEach(b=>t.push(b.classList.contains('checked')));localStorage.setItem(K,JSON.stringify({tasks:t,notes:document.getElementById('userNotes').value}))}document.querySelectorAll('.task-checkbox').forEach(b=>b.onclick=function(){this.classList.toggle('checked');this.innerHTML=this.classList.contains('checked')?'✓':'';save()});document.getElementById('userNotes').oninput=save;load();</script>
+    <div class="container">
+        <a href="income-playbooks.html" class="back-link">← Back to Income Playbooks</a>
+        
+        <div class="header">
+            <h1>🧬 Egg & Sperm Donation</h1>
+            <p class="subtitle">Help families while earning significant compensation</p>
+            <div class="time-badge">💰 Egg: $5,000-15,000+ per cycle • Sperm: $70-150 per donation</div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Help families struggling with infertility while receiving significant compensation! Egg donation pays $5,000-15,000+ per cycle (some agencies pay $25,000+ for experienced donors). Sperm donation pays $70-150 per donation and can be done 1-3x per week. Both require screening and commitment, but compensation is substantial. You're giving an incredible gift while earning money!</p>
+            </div>
+            <div class="income-highlight">
+                <h3>$5,000-15,000+ (Eggs) | $1,000-2,000/mo (Sperm)</h3>
+                <p>Egg: 1-2 cycles per year • Sperm: Ongoing weekly donations • Help create families!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">⚖️</span> Egg vs. Sperm Donation Comparison</h2>
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h3>🥚 Egg Donation</h3>
+                    <div class="pay">$5,000-15,000+/cycle</div>
+                    <ul>
+                        <li>Age 21-30 typically required</li>
+                        <li>Extensive screening process</li>
+                        <li>2-3 week medication/injection cycle</li>
+                        <li>Outpatient retrieval procedure</li>
+                        <li>1-2 cycles per year maximum</li>
+                        <li>Higher time commitment per cycle</li>
+                        <li>First-time donors: $5,000-8,000</li>
+                        <li>Experienced donors: $8,000-15,000+</li>
+                        <li>Premium donors: $25,000+</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <h3>🔬 Sperm Donation</h3>
+                    <div class="pay">$70-150/donation</div>
+                    <ul>
+                        <li>Age 18-39 typically required</li>
+                        <li>Screening required (less extensive)</li>
+                        <li>Quick in-clinic donation (30 min)</li>
+                        <li>Can donate 1-3x per week</li>
+                        <li>6-12 month commitment typical</li>
+                        <li>Ongoing income potential</li>
+                        <li>$1,000-2,000+ per month possible</li>
+                        <li>Bonuses for consistency</li>
+                        <li>Less physical demand than eggs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🥚</span> Egg Donation Details</h2>
+            
+            <div class="info-box">
+                <div class="info-box-title">📋 Typical Egg Donor Requirements</div>
+                <p>• Age 21-30 (some agencies 19-32)</p>
+                <p>• BMI typically under 28-30</p>
+                <p>• Non-smoker, no drug use</p>
+                <p>• No family history of genetic disorders</p>
+                <p>• Reliable and can commit to appointments</p>
+                <p>• Physically and mentally healthy</p>
+            </div>
+            
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Donor Type</th>
+                        <th>Compensation</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>First-time donor</td><td class="rate">$5,000-8,000</td><td>Standard compensation</td></tr>
+                    <tr><td>Repeat donor (proven)</td><td class="rate">$8,000-12,000</td><td>Previous successful cycles</td></tr>
+                    <tr><td>Premium donor</td><td class="rate">$15,000-25,000+</td><td>Specific traits, education, etc.</td></tr>
+                    <tr><td>Agency bonuses</td><td class="rate">+$500-2,000</td><td>Referrals, specific matches</td></tr>
+                </tbody>
+            </table>
+            
+            <div class="warning-box">
+                <div class="warning-box-title">⚠️ What to Know About Egg Donation</div>
+                <p>• Requires 2-3 weeks of daily hormone injections (self-administered)</p>
+                <p>• Multiple clinic visits for monitoring</p>
+                <p>• Egg retrieval is an outpatient procedure under sedation</p>
+                <p>• Recovery time: 1-2 days typically</p>
+                <p>• Medical costs fully covered by intended parents</p>
+                <p>• Limit of 6 cycles lifetime (ASRM guidelines)</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🔬</span> Sperm Donation Details</h2>
+            
+            <div class="info-box">
+                <div class="info-box-title">📋 Typical Sperm Donor Requirements</div>
+                <p>• Age 18-39 (varies by bank)</p>
+                <p>• Height often 5'8" or taller preferred</p>
+                <p>• College-educated or in college (many banks)</p>
+                <p>• No significant health issues or family genetic disorders</p>
+                <p>• Non-smoker, limited alcohol</p>
+                <p>• Commit to 6-12 month program</p>
+                <p>• Live near donation facility</p>
+            </div>
+            
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Donation Type</th>
+                        <th>Per Visit</th>
+                        <th>Monthly Potential</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Standard donation</td><td class="rate">$70-100</td><td class="rate">$500-800</td></tr>
+                    <tr><td>Premium programs</td><td class="rate">$100-150</td><td class="rate">$800-1,500</td></tr>
+                    <tr><td>Consistency bonuses</td><td class="rate">+$50-100/mo</td><td>For regular donations</td></tr>
+                    <tr><td>Referral bonuses</td><td class="rate">$50-100</td><td>Per accepted referral</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🏥</span> Where to Apply</h2>
+            
+            <h3 style="margin-bottom: 15px; color: #1a1a2e;">🥚 Egg Donation Agencies</h3>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h4">The World Egg Bank</h4>
+                    <div class="detail">$8,000+ compensation</div>
+                    <p>Large, reputable agency with locations nationwide.</p>
+                    <a href="https://www.theworldeggbank.com/become-an-egg-donor" class="platform-link" target="_blank">Apply →</a>
+                </div>
+                <div class="platform-card">
+                    <h4">Shady Grove Fertility</h4>
+                    <div class="detail">$6,000-10,000</div>
+                    <p>Large fertility clinic with donor program. East coast focus.</p>
+                    <a href="https://www.shadygrovefertility.com/egg-donation" class="platform-link" target="_blank">Apply →</a>
+                </div>
+                <div class="platform-card">
+                    <h4">Egg Donor America</h4>
+                    <div class="detail">$5,000-50,000</div>
+                    <p>Agency matching donors with intended parents nationwide.</p>
+                    <a href="https://www.eggdonoramerica.com" class="platform-link" target="_blank">Apply →</a>
+                </div>
+            </div>
+            
+            <h3 style="margin: 25px 0 15px; color: #1a1a2e;">🔬 Sperm Banks</h3>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h4">California Cryobank</h4>
+                    <div class="detail">$100+/donation • Major cities</div>
+                    <p>Largest sperm bank. Locations in LA, NYC, Boston, Palo Alto, more.</p>
+                    <a href="https://www.spermbank.com/how-to-become-a-sperm-donor" class="platform-link" target="_blank">Apply →</a>
+                </div>
+                <div class="platform-card">
+                    <h4">Fairfax Cryobank</h4>
+                    <div class="detail">$100+/donation</div>
+                    <p>Major sperm bank with multiple locations across the US.</p>
+                    <a href="https://fairfaxcryobank.com/become-a-donor" class="platform-link" target="_blank">Apply →</a>
+                </div>
+                <div class="platform-card">
+                    <h4">Seattle Sperm Bank</h4>
+                    <div class="detail">$70-100/donation</div>
+                    <p>Pacific Northwest location. Good compensation program.</p>
+                    <a href="https://www.seattlespermbank.com/become-a-donor" class="platform-link" target="_blank">Apply →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Donation Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Decide which type of donation</div>
+                    <div class="step-desc">Egg donation = higher pay but more intensive. Sperm donation = lower per visit but ongoing income. Consider your situation, time, and commitment level.</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Check if you meet basic requirements</div>
+                    <div class="step-desc">Age, health, BMI, lifestyle (non-smoker, etc.). Requirements vary by agency/bank. Don't be discouraged - apply to multiple places!</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Research agencies/banks near you</div>
+                    <div class="step-desc">You'll need to visit in person. Look for reputable, established organizations. Compare compensation rates and requirements.</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Submit applications</div>
+                    <div class="step-desc">Apply to multiple agencies/banks. Applications ask about health history, education, lifestyle. Include good photos (egg donation especially).</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Complete screening process</div>
+                    <div class="step-desc">Medical exams, genetic testing, psychological screening (egg donation), infectious disease testing. All costs covered by agency/bank!</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Get matched/accepted</div>
+                    <div class="step-desc">Egg donors: wait for intended parents to choose you. Sperm donors: if samples pass quality testing, you're accepted into program.</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Complete donation cycle</div>
+                    <div class="step-desc">Egg: 2-3 week medication cycle + retrieval procedure. Sperm: Regular donations 1-3x per week. Follow all instructions carefully!</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Receive compensation</div>
+                    <div class="step-desc">Egg: Payment after retrieval ($5,000-15,000+). Sperm: Paid per donation ($70-150). Consider future cycles if eligible!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Donation Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your egg/sperm donation journey!
+
+DONATION TYPE:
+☐ Egg donation
+☐ Sperm donation
+
+APPLICATIONS SUBMITTED:
+1. Agency/Bank: ____ | Date: ____ | Status: ____
+2. Agency/Bank: ____ | Date: ____ | Status: ____
+3. Agency/Bank: ____ | Date: ____ | Status: ____
+
+SCREENING STATUS:
+☐ Application approved
+☐ Medical exam completed
+☐ Genetic testing completed
+☐ Psychological screening (eggs)
+☐ Sample testing passed (sperm)
+☐ Accepted into program
+
+EGG DONATION CYCLES:
+Cycle 1: Date ____ | Compensation: $____ | Status: ____
+Cycle 2: Date ____ | Compensation: $____ | Status: ____
+
+SPERM DONATIONS:
+Week 1: ____ donations | Earned: $____
+Week 2: ____ donations | Earned: $____
+Week 3: ____ donations | Earned: $____
+Week 4: ____ donations | Earned: $____
+Monthly total: $____
+
+TOTAL EARNED: $____
+
+NOTES:
+____
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-egg-sperm-donation');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-egg-sperm-donation', JSON.stringify({ steps, notes }));
+        }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>

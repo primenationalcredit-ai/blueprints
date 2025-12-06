@@ -1,64 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Buy and Flip Websites | ASAP Credit Repair Playbook</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{--primary:#063d86;--success:#10b981;--bg:#f8fafc;--text:#1e293b;--text-light:#64748b;--border:#e2e8f0}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}.header{background:linear-gradient(135deg,#14b8a6,#0d9488);color:#fff;padding:40px 20px 50px;text-align:center}.header h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:12px}.main-content{max-width:800px;margin:-30px auto 40px;padding:0 20px}.back-link{color:#fff;text-decoration:none;opacity:.8;display:block;margin-bottom:16px}.category-badge{display:inline-block;background:rgba(255,255,255,.2);padding:6px 16px;border-radius:20px;font-size:.85rem;margin-bottom:16px}.goal-card{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid var(--success);border-radius:16px;padding:24px;margin-bottom:24px}.goal-card h2{color:#065f46;margin-bottom:12px}.goal-card .earnings{background:#fff;padding:10px 18px;border-radius:10px;margin-top:14px;font-weight:600;color:#065f46;display:inline-block}.section-card{background:#fff;border-radius:16px;padding:28px;margin-bottom:24px;border:1px solid var(--border)}.section-card h2{color:var(--primary);margin-bottom:20px}.task-list{list-style:none}.task-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)}.task-checkbox{width:28px;height:28px;border:2px solid var(--border);border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:content;flex-shrink:0}.task-checkbox.checked{background:var(--success);border-color:var(--success);color:#fff}.task-title{font-weight:600;margin-bottom:6px}.task-desc{color:var(--text-light);font-size:.95rem}.task-badge{font-size:.8rem;padding:4px 10px;border-radius:6px;background:var(--bg);margin-top:10px;display:inline-block;margin-right:8px}.details-box{background:#f8fafc;padding:14px;border-radius:8px;margin-top:12px;border-left:4px solid #14b8a6}.details-box h4{color:#0d9488;margin-bottom:8px;font-size:.9rem}.details-box ul{margin-left:18px;font-size:.9rem}.details-box li{margin-bottom:6px}.platform-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:12px}.platform-card{background:var(--bg);padding:12px;border-radius:8px;text-align:center;border:1px solid var(--border)}.platform-card h4{font-size:.9rem;color:var(--primary)}.platform-card p{font-size:.75rem;color:var(--text-light)}textarea{width:100%;min-height:120px;padding:14px;border:2px solid var(--border);border-radius:10px;font-family:inherit;margin-top:10px}.help-section{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border:2px solid #7dd3fc;border-radius:16px;padding:20px;margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}.chat-btn{background:var(--primary);color:#fff;border:none;padding:12px 24px;border-radius:10px;font-weight:600;cursor:pointer}.warning-box{background:#fef3c7;padding:14px;border-radius:8px;margin-top:12px;border-left:4px solid #f59e0b}.warning-box h4{color:#d97706;margin-bottom:8px;font-size:.9rem}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Flipping - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #1565c0; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #e3f2fd; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 15px; overflow: hidden; font-size: 14px; }
+        .pricing-table th, .pricing-table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .pricing-table th { background: #667eea; color: white; font-weight: 600; }
+        .pricing-table tr:hover { background: #f5f5f5; }
+        .pricing-table .rate { color: #4caf50; font-weight: 600; }
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .platform-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #667eea; }
+        .platform-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .platform-card .detail { color: #667eea; font-size: 12px; margin-bottom: 8px; }
+        .platform-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .platform-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; font-size: 13px; }
+        .platform-link:hover { text-decoration: underline; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .warning-box-title { font-weight: 700; color: #c62828; margin-bottom: 10px; }
+        .warning-box p { color: #666; margin: 8px 0; }
+        .tip-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .tip-card { background: #f8f9fa; border-radius: 15px; padding: 15px; border-left: 5px solid #4caf50; }
+        .tip-card h4 { color: #1a1a2e; font-size: 14px; margin-bottom: 8px; }
+        .tip-card p { color: #666; font-size: 13px; line-height: 1.4; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #667eea; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; }
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #667eea; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+    </style>
 </head>
 <body>
-  <header class="header"><a href="index.html" class="back-link">← Back to All Playbooks</a><span class="category-badge">💻 Digital Assets</span><h1>Buy and Flip Websites</h1><p style="opacity:.9;max-width:600px;margin:0 auto">Buy undervalued websites, improve them, sell for profit. Digital real estate investing!</p></header>
-  <main class="main-content">
-    <div class="goal-card"><h2>🎯 What You'll Achieve</h2><p>Learn to identify undervalued websites, improve their traffic/revenue, and sell for 2-4x what you paid!</p><div class="earnings">💰 Starter sites: $500-5,000 | Mid-range: $5,000-50,000 | Flip profit: 50-300% ROI | Hold for income: 25-40x monthly earnings</div></div>
-    
-    <div class="section-card"><h2>🖥️ Where to Buy Websites</h2>
-      <div class="platform-grid">
-        <div class="platform-card"><h4>Flippa</h4><p>Largest marketplace</p></div>
-        <div class="platform-card"><h4>Empire Flippers</h4><p>Vetted, $50K+ sites</p></div>
-        <div class="platform-card"><h4>Motion Invest</h4><p>Starter sites, $1-10K</p></div>
-        <div class="platform-card"><h4>FE International</h4><p>Premium sites</p></div>
-        <div class="platform-card"><h4>Investors Club</h4><p>Flippa premium tier</p></div>
-        <div class="platform-card"><h4>Facebook Groups</h4><p>Direct deals</p></div>
-      </div>
+    <div class="container">
+        <a href="income-playbooks.html" class="back-link">← Back to Income Playbooks</a>
+        
+        <div class="header">
+            <h1>💻 Website Flipping</h1>
+            <p class="subtitle">Buy undervalued websites, improve them, sell for profit - digital real estate!</p>
+            <div class="time-badge">⏱️ $500-5,000 to start • Flip profit: 50-300% ROI</div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Learn to identify undervalued websites, improve their traffic and revenue, then sell for 2-4x what you paid! Websites typically sell for 24-40x monthly profit. Buy a site earning $100/month for $2,500, improve it to $200/month, sell for $6,000-8,000. Or hold sites for passive monthly income. This is digital real estate investing - but requires learning and careful due diligence!</p>
+            </div>
+            <div class="income-highlight">
+                <h3>50-300% ROI Per Flip</h3>
+                <p>Starter sites: $500-5,000 • Mid-range: $5,000-50,000 • Sites sell for 24-40x monthly profit</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">⚠️</span> Important: Know the Risks</h2>
+            <div class="warning-box">
+                <div class="warning-box-title">⚠️ Website Flipping Risks</div>
+                <p>• <strong>Requires capital</strong> - $500-5,000+ minimum to start</p>
+                <p>• <strong>Due diligence is CRITICAL</strong> - scams and misrepresented sites exist</p>
+                <p>• <strong>Traffic/earnings can drop</strong> after purchase (Google updates, competition)</p>
+                <p>• <strong>Learning curve</strong> - takes 3-6 months minimum to understand</p>
+                <p>• <strong>Start small</strong> - expect to lose money on first deals while learning</p>
+                <p>• <strong>This is NOT passive</strong> - sites require ongoing work to improve</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💵</span> Website Valuation Guide</h2>
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Site Type</th>
+                        <th>Typical Multiple</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Content/Ad sites</td><td class="rate">24-36x monthly</td><td>$100/mo = $2,400-3,600</td></tr>
+                    <tr><td>Affiliate sites</td><td class="rate">28-40x monthly</td><td>$200/mo = $5,600-8,000</td></tr>
+                    <tr><td>E-commerce</td><td class="rate">24-36x monthly</td><td>$500/mo = $12,000-18,000</td></tr>
+                    <tr><td>SaaS (recurring)</td><td class="rate">36-60x monthly</td><td>$1,000/mo = $36,000-60,000</td></tr>
+                    <tr><td>Starter sites (new)</td><td class="rate">12-24x monthly</td><td>$50/mo = $600-1,200</td></tr>
+                </tbody>
+            </table>
+            
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 The Flip Math</div>
+                <p><strong>Buy a site at 24x, improve earnings, sell at 36x!</strong> Buy $100/mo site for $2,400. Improve to $200/mo. Sell for $7,200 (36x). Profit: $4,800! But improvement takes 6-12 months of work.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🛒</span> Where to Buy Websites</h2>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h4>🏪 Flippa</h4>
+                    <div class="detail">All price ranges • Largest marketplace</div>
+                    <p>Biggest marketplace with sites from $100 to $1M+. More scams here - due diligence critical! Good for learning.</p>
+                    <a href="https://www.flippa.com" class="platform-link" target="_blank">Flippa →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>🏆 Empire Flippers</h4>
+                    <div class="detail">$50K+ • Vetted listings</div>
+                    <p>Premium marketplace, heavily vetted sites. Higher quality but higher prices. $50K+ minimum.</p>
+                    <a href="https://empireflippers.com" class="platform-link" target="_blank">Empire Flippers →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>📈 Motion Invest</h4>
+                    <div class="detail">$1K-$50K • Starter sites</div>
+                    <p>Great for beginners! Smaller, vetted content sites. Good quality, reasonable prices.</p>
+                    <a href="https://www.motioninvest.com" class="platform-link" target="_blank">Motion Invest →</a>
+                </div>
+                <div class="platform-card">
+                    <h4>💎 Investors Club</h4>
+                    <div class="detail">Flippa premium tier</div>
+                    <p>Flippa's vetted section with verified financials. Less risk than main Flippa.</p>
+                    <a href="https://www.flippa.com/investors-club" class="platform-link" target="_blank">Investors Club →</a>
+                </div>
+                <div class="platform-card">
+                    <h4">🤝 Facebook Groups</h4>
+                    <div class="detail">Direct deals • Negotiate</div>
+                    <p>Join website buying/selling groups. Direct deals, negotiate prices. More work but potentially better deals.</p>
+                </div>
+                <div class="platform-card">
+                    <h4>🔒 Escrow.com</h4>
+                    <div class="detail">Safe payments</div>
+                    <p>ALWAYS use escrow for purchases! Protects both buyer and seller. Never wire money directly!</p>
+                    <a href="https://www.escrow.com" class="platform-link" target="_blank">Escrow.com →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🔍</span> Due Diligence Checklist</h2>
+            <div class="tip-grid">
+                <div class="tip-card">
+                    <h4>📊 Verify Traffic</h4>
+                    <p>Get Google Analytics access. Check traffic trends (growing/declining?). Verify traffic sources are legit.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>🔎 Google Search Console</h4>
+                    <p>Check for manual penalties, algorithm hits. Look at keyword rankings and click trends.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>💵 Verify Income</h4>
+                    <p>Get screenshots of ad earnings (Mediavine, AdSense), affiliate dashboards. Ask for bank statements!</p>
+                </div>
+                <div class="tip-card">
+                    <h4">🔗 Check Backlinks</h4>
+                    <p>Use Ahrefs or SEMrush. Look for spammy links, PBN links, or sudden link spikes (red flags!).</p>
+                </div>
+                <div class="tip-card">
+                    <h4">📈 Traffic Trend</h4>
+                    <p>Is traffic growing, stable, or declining? Declining traffic = declining income. Be careful!</p>
+                </div>
+                <div class="tip-card">
+                    <h4">🏗️ Content Quality</h4>
+                    <p>Is content original, well-written? AI content? Thin content? Quality affects long-term value.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Website Flipping Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Learn the fundamentals (20-40 hours)</div>
+                    <div class="step-desc">Understand how websites make money (ads, affiliates, products), basic SEO, Google Analytics, and website valuation. Take courses, watch YouTube, read blogs. Don't buy anything yet!</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Browse marketplaces and study valuations</div>
+                    <div class="step-desc">Spend 2-4 weeks browsing Flippa, Motion Invest listings. Study what sites sell for and why. Look at sold listings. Learn to spot red flags. Don't buy yet!</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Set your budget and criteria</div>
+                    <div class="step-desc">Decide how much you can afford to lose (seriously!). Set criteria: site type, niche, traffic source, earnings range. Stay disciplined!</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Do thorough due diligence</div>
+                    <div class="step-desc">When you find a potential site: verify traffic (Google Analytics), verify income (proof!), check backlinks, review content quality, look for red flags. Ask lots of questions!</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Buy your first small site ($500-2,000)</div>
+                    <div class="step-desc">Start small! Your first site is a learning experience. Look for growth potential. Use Escrow.com for safe payment. Expect this might not work out - that's okay!</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Improve the site (3-12 months)</div>
+                    <div class="step-desc">Add quality content, improve SEO, optimize ad placements, improve affiliate offers, fix technical issues. Document everything for future buyers!</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Decide: flip or hold for income</div>
+                    <div class="step-desc">Once improved, you can sell for 2-4x what you paid, or keep it for monthly passive income. Both strategies work!</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Reinvest and scale</div>
+                    <div class="step-desc">Take profits from your flip and buy a bigger site. Or buy multiple small sites. Build a portfolio over time. Learn from each deal!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎓</span> Learn From the Pros</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Empire Flippers Podcast</h4>
+                    <div class="platform">🎙️ Podcast</div>
+                    <p>Learn from successful website flippers and buyers!</p>
+                    <a href="https://empireflippers.com/podcast/" class="influencer-link" target="_blank">Listen →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Niche Pursuits</h4>
+                    <div class="platform">📺 YouTube/Blog</div>
+                    <p>Spencer Haws shares site building and flipping strategies!</p>
+                    <a href="https://www.nichepursuits.com" class="influencer-link" target="_blank">Niche Pursuits →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💬</div>
+                    <h4>r/juststart</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Community building content sites from scratch. Great learning resource!</p>
+                    <a href="https://www.reddit.com/r/juststart/" class="influencer-link" target="_blank">Reddit →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📚</div>
+                    <h4>Flippa Blog</h4>
+                    <div class="platform">🌐 Blog</div>
+                    <p>Guides on buying, selling, and valuing websites!</p>
+                    <a href="https://flippa.com/blog" class="influencer-link" target="_blank">Flippa Blog →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Website Flipping Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your website flipping journey!
+
+LEARNING:
+☐ How websites make money
+☐ Basic SEO understanding
+☐ Google Analytics basics
+☐ Website valuation (24-40x)
+☐ Due diligence process
+
+BUDGET:
+Total budget: $____
+Max per site: $____
+Amount I can afford to lose: $____
+
+MARKETPLACES WATCHING:
+☐ Flippa
+☐ Motion Invest
+☐ Empire Flippers
+☐ Facebook groups
+
+SITES I'M WATCHING:
+1. URL: ____ | Price: $____ | Monthly: $____ | Multiple: ____x
+2. URL: ____ | Price: $____ | Monthly: $____ | Multiple: ____x
+3. URL: ____ | Price: $____ | Monthly: $____ | Multiple: ____x
+
+DUE DILIGENCE CHECKLIST:
+☐ Google Analytics verified
+☐ Search Console checked
+☐ Income verified (screenshots)
+☐ Backlinks checked
+☐ Content quality reviewed
+☐ Traffic trend analyzed
+
+MY SITES:
+1. Site: ____ | Bought: $____ | Date: ____ | Monthly: $____
+   Status: Holding / Improving / Sold for $____
+
+FLIP RESULTS:
+Site: ____ | Bought: $____ | Sold: $____ | Profit: $____ | ROI: ____%
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
     </div>
 
-    <div class="section-card"><h2>⚠️ Important Warnings</h2>
-      <div class="warning-box"><h4>Website Flipping Risks:</h4><ul><li>Requires capital to start ($500-5,000+ minimum)</li><li>Due diligence is CRITICAL - verify all claims</li><li>Traffic/earnings can drop after purchase</li><li>Takes time to learn (3-6 months minimum)</li><li>Start small - expect to lose money learning</li></ul></div>
-    </div>
-
-    <div class="section-card"><h2>📋 Step-by-Step Action Plan</h2>
-      <ul class="task-list">
-        <li class="task-item"><div class="task-checkbox" data-task="0"></div><div><div class="task-title">Step 1: Learn the fundamentals</div><div class="task-desc">Understand SEO, content sites, affiliate marketing, and how websites make money.</div><div class="details-box"><h4>📚 Learn These Topics:</h4><ul><li>How websites make money (ads, affiliates, products)</li><li>Basic SEO and how Google ranks sites</li><li>Google Analytics and traffic analysis</li><li>Website valuation (typically 24-40x monthly profit)</li><li>Content site business model</li></ul></div><span class="task-badge">⏱️ 20-40 hours learning</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="1"></div><div><div class="task-title">Step 2: Browse marketplaces and learn valuations</div><div class="task-desc">Spend weeks browsing listings. Learn what sites sell for and why. Don't buy yet!</div><span class="task-badge">👀 Window shop first</span><span class="task-badge">📊 Study sold listings</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="2"></div><div><div class="task-title">Step 3: Do thorough due diligence</div><div class="task-desc">Verify EVERYTHING before buying. Check traffic in Google Analytics, verify income with proof.</div><div class="details-box"><h4>🔍 Due Diligence Checklist:</h4><ul><li>Verify Google Analytics access (real traffic?)</li><li>Check Google Search Console (penalties?)</li><li>Verify income with screenshots/statements</li><li>Check backlink profile (Ahrefs/SEMrush)</li><li>Look for traffic trends (growing or dying?)</li><li>Use escrow.com for safe payment</li></ul></div><span class="task-badge">⚠️ Verify everything!</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="3"></div><div><div class="task-title">Step 4: Buy your first small site</div><div class="task-desc">Start with a $500-2,000 site that has growth potential. Expect this to be a learning experience!</div><span class="task-badge">💵 Start small</span><span class="task-badge">📈 Look for growth potential</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="4"></div><div><div class="task-title">Step 5: Improve the site</div><div class="task-desc">Add content, improve SEO, increase monetization, fix technical issues. Document everything!</div><div class="details-box"><h4>🔧 Improvement Strategies:</h4><ul><li>Add more quality content (articles)</li><li>Improve on-page SEO</li><li>Add or optimize ad placements</li><li>Improve affiliate offers</li><li>Speed up the site</li><li>Better email capture</li></ul></div><span class="task-badge">⏱️ 3-12 months of work</span></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="5"></div><div><div class="task-title">Step 6: Sell for profit (or keep for income)</div><div class="task-desc">List improved site for 2-4x what you paid, or hold it for monthly passive income!</div><span class="task-badge">💰 Flip or hold</span><span class="task-badge">📈 30-40x monthly profit</span></div></li>
-      </ul>
-    </div>
-
-    <div class="section-card"><h2>📝 Your Website Flipping Tracker</h2><textarea id="userNotes" placeholder="Track your website flipping:
-
-Learning phase: (currently here)
-- Completed SEO course
-- Browsing Flippa daily
-- Studying sold listings
-
-Budget: $2,000 for first site
-
-Sites I'm watching:
-1. Cooking niche - $1,500 - 15K monthly visits
-   Pro: Growing traffic
-   Con: Low monetization
-   
-2. Pet supplies - $2,200 - $150/mo profit
-   Pro: Good affiliate setup
-   Con: Flat traffic"></textarea></div>
-    <div class="help-section"><span style="font-size:24px">💬</span><div style="flex:1"><strong>Need Help?</strong> Chat with a coach!</div><button class="chat-btn" onclick="location.href='https://asapcreditrepairusa.com/chat'">Start Chat</button></div>
-  </main>
-  <script>const K='pb_website_flip';function load(){const s=localStorage.getItem(K);if(s){const d=JSON.parse(s);document.querySelectorAll('.task-checkbox').forEach((b,i)=>{if(d.tasks&&d.tasks[i]){b.classList.add('checked');b.innerHTML='✓'}});if(d.notes)document.getElementById('userNotes').value=d.notes}}function save(){const t=[];document.querySelectorAll('.task-checkbox').forEach(b=>t.push(b.classList.contains('checked')));localStorage.setItem(K,JSON.stringify({tasks:t,notes:document.getElementById('userNotes').value}))}document.querySelectorAll('.task-checkbox').forEach(b=>b.onclick=function(){this.classList.toggle('checked');this.innerHTML=this.classList.contains('checked')?'✓':'';save()});document.getElementById('userNotes').oninput=save;load();</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-website-flipping');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-website-flipping', JSON.stringify({ steps, notes }));
+        }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>
