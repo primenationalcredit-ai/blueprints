@@ -1,1185 +1,346 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Income Gig Playbooks | ASAP Credit Repair</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #063d86;
-            --primary-dark: #042a5c;
-            --primary-light: #0a4fa8;
-            --accent: #00c9a7;
-            --accent-dark: #00a389;
-            --income-green: #10b981;
-            --income-green-dark: #059669;
-            --bg: #f8fafc;
-            --card-bg: #ffffff;
-            --text: #1e293b;
-            --text-light: #64748b;
-            --border: #e2e8f0;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-        }
-        
-        /* Hero Section - Green theme for income */
-        .hero {
-            background: linear-gradient(135deg, var(--income-green) 0%, var(--income-green-dark) 100%);
-            color: white;
-            padding: 60px 20px 80px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.5;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .hero-icon {
-            width: 80px;
-            height: 80px;
-            background: rgba(255,255,255,0.15);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 24px;
-            font-size: 40px;
-        }
-        
-        .hero h1 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 700;
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto 32px;
-        }
-        
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-        
-        .stat {
-            text-align: center;
-        }
-        
-        .stat-number {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #fef08a;
-        }
-        
-        .stat-label {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-        
-        /* Search Section */
-        .search-section {
-            max-width: 600px;
-            margin: -30px auto 40px;
-            padding: 0 20px;
-            position: relative;
-            z-index: 10;
-        }
-        
-        .search-box {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 10px 40px rgba(16, 185, 129, 0.2);
-            padding: 8px;
-            display: flex;
-            gap: 8px;
-        }
-        
-        .search-box input {
-            flex: 1;
-            border: none;
-            padding: 16px 20px;
-            font-size: 1rem;
-            font-family: inherit;
-            outline: none;
-            border-radius: 12px;
-            background: var(--bg);
-        }
-        
-        .search-box button {
-            background: var(--income-green);
-            color: white;
-            border: none;
-            padding: 16px 32px;
-            border-radius: 12px;
-            font-family: inherit;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        
-        .search-box button:hover {
-            background: var(--income-green-dark);
-        }
-        
-        /* Main Content */
-        .main-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px 60px;
-        }
-        
-        /* Earnings Potential Banner */
-        .earnings-banner {
-            background: linear-gradient(135deg, #fef3c7, #fde68a);
-            border-radius: 16px;
-            padding: 24px 32px;
-            margin-bottom: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        
-        .earnings-text h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.3rem;
-            color: #92400e;
-            margin-bottom: 4px;
-        }
-        
-        .earnings-text p {
-            color: #a16207;
-        }
-        
-        .earnings-examples {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-        
-        .earning-chip {
-            background: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: 600;
-            color: var(--income-green-dark);
-            font-size: 0.9rem;
-        }
-        
-        /* How It Works */
-        .how-it-works {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 50px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-        }
-        
-        .how-it-works h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            text-align: center;
-            color: var(--income-green);
-        }
-        
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-        }
-        
-        .step {
-            text-align: center;
-            padding: 20px;
-        }
-        
-        .step-number {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--income-green), var(--income-green-dark));
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 0 auto 16px;
-        }
-        
-        .step h3 {
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-            color: var(--text);
-        }
-        
-        .step p {
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-        
-        /* Skill Levels */
-        .skill-section {
-            margin-bottom: 40px;
-        }
-        
-        .skill-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 20px;
-        }
-        
-        .skill-badge {
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-        
-        .skill-badge.easy {
-            background: #dcfce7;
-            color: #166534;
-        }
-        
-        .skill-badge.medium {
-            background: #fef3c7;
-            color: #92400e;
-        }
-        
-        .skill-badge.skilled {
-            background: #dbeafe;
-            color: #1e40af;
-        }
-        
-        .skill-header h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-        }
-        
-        /* Category Grid */
-        .category-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 24px;
-            margin-bottom: 40px;
-        }
-        
-        .category-card {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: all 0.3s;
-            border: 1px solid var(--border);
-        }
-        
-        .category-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(16, 185, 129, 0.15);
-        }
-        
-        .category-header {
-            background: linear-gradient(135deg, var(--income-green), var(--income-green-dark));
-            color: white;
-            padding: 20px 24px;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-        
-        .category-icon {
-            width: 48px;
-            height: 48px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-        }
-        
-        .category-title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-        
-        .category-count {
-            font-size: 0.85rem;
-            opacity: 0.8;
-        }
-        
-        .category-playbooks {
-            padding: 16px;
-        }
-        
-        .playbook-item {
-            display: flex;
-            align-items: center;
-            padding: 12px 16px;
-            border-radius: 10px;
-            text-decoration: none;
-            color: var(--text);
-            transition: all 0.2s;
-            gap: 12px;
-        }
-        
-        .playbook-item:hover {
-            background: #ecfdf5;
-        }
-        
-        .playbook-check {
-            width: 20px;
-            height: 20px;
-            border: 2px solid var(--border);
-            border-radius: 50%;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            color: white;
-            transition: all 0.2s;
-        }
-        
-        .playbook-item:hover .playbook-check {
-            border-color: var(--income-green);
-            background: var(--income-green);
-        }
-        
-        .playbook-item:hover .playbook-check::before {
-            content: '→';
-        }
-        
-        .playbook-name {
-            flex: 1;
-            font-size: 0.95rem;
-        }
-        
-        .playbook-earning {
-            font-size: 0.8rem;
-            color: var(--income-green-dark);
-            background: #ecfdf5;
-            padding: 4px 10px;
-            border-radius: 12px;
-            font-weight: 600;
-        }
-        
-        .see-all {
-            display: block;
-            text-align: center;
-            padding: 14px;
-            color: var(--income-green);
-            text-decoration: none;
-            font-weight: 600;
-            border-top: 1px solid var(--border);
-            transition: background 0.2s;
-        }
-        
-        .see-all:hover {
-            background: #ecfdf5;
-        }
-        
-        /* Popular Gigs Section */
-        .popular-gigs {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            border-radius: 20px;
-            padding: 40px;
-            color: white;
-            margin-bottom: 40px;
-        }
-        
-        .popular-gigs h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.8rem;
-            margin-bottom: 8px;
-        }
-        
-        .popular-gigs > p {
-            opacity: 0.9;
-            margin-bottom: 24px;
-        }
-        
-        .popular-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 16px;
-        }
-        
-        .popular-item {
-            background: rgba(255,255,255,0.1);
-            border-radius: 12px;
-            padding: 20px;
-            text-decoration: none;
-            color: white;
-            transition: all 0.2s;
-            display: flex;
-            gap: 16px;
-        }
-        
-        .popular-item:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateX(4px);
-        }
-        
-        .popular-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(255,255,255,0.15);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            flex-shrink: 0;
-        }
-        
-        .popular-text h4 {
-            font-size: 1rem;
-            margin-bottom: 4px;
-        }
-        
-        .popular-text p {
-            font-size: 0.85rem;
-            opacity: 0.8;
-            margin-bottom: 8px;
-        }
-        
-        .popular-earning {
-            display: inline-block;
-            background: var(--accent);
-            color: #065f46;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-        
-        /* Help Section */
-        .help-section {
-            margin-bottom: 40px;
-        }
-        
-        .help-card {
-            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
-            border: 2px solid #6ee7b7;
-            border-radius: 20px;
-            padding: 32px 40px;
-            display: flex;
-            align-items: center;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
-        
-        .help-icon {
-            width: 64px;
-            height: 64px;
-            background: white;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            flex-shrink: 0;
-        }
-        
-        .help-content {
-            flex: 1;
-            min-width: 250px;
-        }
-        
-        .help-content h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.4rem;
-            color: var(--text);
-            margin-bottom: 8px;
-        }
-        
-        .help-content p {
-            color: var(--text-light);
-            margin-bottom: 16px;
-            font-size: 1rem;
-        }
-        
-        .btn-chat {
-            background: var(--income-green);
-            color: white;
-            border: none;
-            padding: 14px 28px;
-            border-radius: 12px;
-            font-family: inherit;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: all 0.2s;
-        }
-        
-        .btn-chat:hover {
-            background: var(--income-green-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);
-        }
-        
-        .btn-chat svg {
-            flex-shrink: 0;
-        }
-        
-        @media (max-width: 600px) {
-            .help-card {
-                flex-direction: column;
-                text-align: center;
-                padding: 24px;
-            }
-        }
-        
-        /* Footer CTA */
-        .footer-cta {
-            text-align: center;
-            padding: 60px 20px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-        }
-        
-        .footer-cta h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 2rem;
-            margin-bottom: 16px;
-            color: var(--text);
-        }
-        
-        .footer-cta p {
-            color: var(--text-light);
-            margin-bottom: 24px;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            padding: 16px 32px;
-            border-radius: 12px;
-            font-family: inherit;
-            font-size: 1rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            background: var(--primary-light);
-            transform: translateY(-2px);
-        }
-        
-        .btn-green {
-            background: var(--income-green);
-            color: white;
-        }
-        
-        .btn-green:hover {
-            background: var(--income-green-dark);
-            transform: translateY(-2px);
-        }
-        
-        .btn-secondary {
-            background: var(--bg);
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-        
-        .btn-secondary:hover {
-            background: var(--primary);
-            color: white;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero {
-                padding: 40px 20px 60px;
-            }
-            
-            .hero-stats {
-                gap: 24px;
-            }
-            
-            .stat-number {
-                font-size: 2rem;
-            }
-            
-            .category-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .how-it-works {
-                padding: 30px 20px;
-            }
-            
-            .popular-gigs {
-                padding: 30px 20px;
-            }
-            
-            .earnings-banner {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Income Playbooks | ASAP Financial Playbooks</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f7fa;color:#333;line-height:1.6}
+.header{background:linear-gradient(135deg,#1e3a5f 0%,#2563eb 100%);color:#fff;padding:30px 20px;text-align:center;position:relative}
+.header h1{font-size:32px;margin-bottom:10px}
+.header p{opacity:0.9;font-size:16px;max-width:600px;margin:0 auto}
+.back-link{position:absolute;top:20px;left:20px;color:#fff;text-decoration:none;font-size:14px;opacity:0.8}
+.back-link:hover{opacity:1}
+.container{max-width:900px;margin:0 auto;padding:30px 20px}
+.quick-start{background:linear-gradient(135deg,#dbeafe 0%,#bfdbfe 100%);border:2px solid #2563eb;border-radius:12px;padding:25px;margin-bottom:30px}
+.quick-start h3{color:#1e3a5f;font-size:18px;margin-bottom:8px}
+.quick-start p{color:#1e40af;font-size:14px;margin-bottom:15px}
+.quick-start-list{display:flex;flex-wrap:wrap;gap:10px}
+.quick-start-link{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;background:#fff;border:2px solid #2563eb;color:#1e3a5f;border-radius:8px;text-decoration:none;font-weight:600;font-size:13px;transition:all 0.2s}
+.quick-start-link:hover{background:#2563eb;color:#fff}
+.search-container{margin-bottom:30px}
+.search-box{width:100%;padding:15px 20px;border:2px solid #e0e0e0;border-radius:10px;font-size:16px;background:#fff}
+.search-box:focus{outline:none;border-color:#2563eb}
+.category{background:#fff;border-radius:12px;margin-bottom:15px;box-shadow:0 2px 10px rgba(0,0,0,0.08);overflow:hidden;scroll-margin-top:20px}
+.category-header{padding:20px 25px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;transition:background 0.2s}
+.category-header:hover{background:#f8fafc}
+.category-left{display:flex;align-items:center;gap:15px}
+.category-icon{font-size:32px}
+.category-title{font-size:18px;font-weight:700;color:#1e3a5f}
+.category-count{font-size:13px;color:#64748b;margin-top:2px}
+.category-arrow{font-size:20px;color:#94a3b8;transition:transform 0.3s}
+.category.open .category-arrow{transform:rotate(180deg)}
+.playbook-list{display:none;border-top:1px solid #e2e8f0}
+.category.open .playbook-list{display:block}
+.playbook-item{display:flex;align-items:center;justify-content:space-between;padding:15px 25px;border-bottom:1px solid #f1f5f9;text-decoration:none;color:#333;transition:background 0.2s}
+.playbook-item:last-child{border-bottom:none}
+.playbook-item:hover{background:#f0f9ff}
+.playbook-info{flex:1}
+.playbook-title{font-size:15px;font-weight:600;color:#1e3a5f;margin-bottom:3px}
+.playbook-desc{font-size:13px;color:#64748b}
+.playbook-meta{display:flex;align-items:center;gap:15px}
+.playbook-earnings{font-size:13px;color:#059669;font-weight:600}
+.playbook-difficulty{font-size:11px;padding:4px 10px;border-radius:15px;background:#f1f5f9;color:#475569}
+.difficulty-easy{background:#dcfce7;color:#166534}
+.difficulty-medium{background:#fef3c7;color:#92400e}
+.difficulty-hard{background:#dbeafe;color:#1e40af}
+.playbook-arrow{color:#cbd5e1;font-size:18px}
+@media(max-width:600px){.playbook-item{flex-direction:column;align-items:flex-start;gap:10px}.playbook-meta{width:100%;justify-content:space-between}}
+</style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-icon">💵</div>
-            <h1>Income Gig Playbooks</h1>
-            <p>Step-by-step guides to start side hustles and bring in extra money. No experience needed for most gigs!</p>
-            <div class="hero-stats">
-                <div class="stat">
-                    <div class="stat-number">114+</div>
-                    <div class="stat-label">Income Gigs</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">20+</div>
-                    <div class="stat-label">Categories</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">$500-5K</div>
-                    <div class="stat-label">Monthly Potential</div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Search Section -->
-    <section class="search-section">
-        <div class="search-box">
-            <input type="text" id="searchInput" placeholder="Search gigs (e.g., cleaning, pets, tech...)">
-            <button onclick="searchPlaybooks()">Search</button>
-        </div>
-    </section>
-    
-    <!-- Main Content -->
-    <main class="main-content">
-        <!-- Earnings Banner -->
-        <div class="earnings-banner">
-            <div class="earnings-text">
-                <h3>💰 Real Earning Potential</h3>
-                <p>These are actual income ranges people report for these gigs</p>
-            </div>
-            <div class="earnings-examples">
-                <span class="earning-chip">🧹 Cleaning: $25-50/hr</span>
-                <span class="earning-chip">🐕 Pet Care: $20-40/visit</span>
-                <span class="earning-chip">🔧 Handyman: $40-75/hr</span>
-            </div>
-        </div>
-        
-        <!-- How It Works -->
-        <section class="how-it-works">
-            <h2>How These Playbooks Work</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Choose a Gig</h3>
-                    <p>Pick something that matches your skills and interests</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Follow the Steps</h3>
-                    <p>Each task shows you exactly what to do</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Get Your First Client</h3>
-                    <p>Marketing tips included in every playbook</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Track Your Income</h3>
-                    <p>Log earnings as you grow your gig</p>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Popular Gigs -->
-        <section class="popular-gigs">
-            <h2>🔥 Most Popular Gigs</h2>
-            <p>These gigs are easy to start and in high demand</p>
-            <div class="popular-grid">
-                <a href="playbooks/dog-waste-removal-service.html" class="popular-item">
-                    <div class="popular-icon">🐕</div>
-                    <div class="popular-text">
-                        <h4>Dog Waste Removal</h4>
-                        <p>Weekly yard cleanup routes</p>
-                        <span class="popular-earning">$300-800/mo</span>
-                    </div>
-                </a>
-                <a href="playbooks/pressure-washing.html" class="popular-item">
-                    <div class="popular-icon">💦</div>
-                    <div class="popular-text">
-                        <h4>Pressure Washing</h4>
-                        <p>Driveways, decks, siding</p>
-                        <span class="popular-earning">$100-300/job</span>
-                    </div>
-                </a>
-                <a href="playbooks/flat-pack-furniture-assembly.html" class="popular-item">
-                    <div class="popular-icon">🔧</div>
-                    <div class="popular-text">
-                        <h4>Furniture Assembly</h4>
-                        <p>IKEA & flat-pack builds</p>
-                        <span class="popular-earning">$30-75/hr</span>
-                    </div>
-                </a>
-                <a href="playbooks/holiday-light-installation.html" class="popular-item">
-                    <div class="popular-icon">🎄</div>
-                    <div class="popular-text">
-                        <h4>Holiday Light Installation</h4>
-                        <p>Seasonal, high demand</p>
-                        <span class="popular-earning">$200-500/home</span>
-                    </div>
-                </a>
-                <a href="playbooks/senior-tech-help.html" class="popular-item">
-                    <div class="popular-icon">📱</div>
-                    <div class="popular-text">
-                        <h4>Senior Tech Help</h4>
-                        <p>Phones, computers, smart home</p>
-                        <span class="popular-earning">$30-50/hr</span>
-                    </div>
-                </a>
-                <a href="playbooks/maid-cleaning-services.html" class="popular-item">
-                    <div class="popular-icon">🧹</div>
-                    <div class="popular-text">
-                        <h4>Cleaning Services</h4>
-                        <p>Homes and apartments</p>
-                        <span class="popular-earning">$25-50/hr</span>
-                    </div>
-                </a>
-            </div>
-        </section>
-        
-        <!-- Category Grid -->
-        <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; margin-bottom: 24px;">Browse by Category</h2>
-        
-        <div class="category-grid">
-            <!-- Pets -->
-            <div class="category-card">
-                <div class="category-header">
-                    <div class="category-icon">🐾</div>
-                    <div>
-                        <div class="category-title">Pets</div>
-                        <div class="category-count">8 playbooks</div>
-                    </div>
-                </div>
-                <div class="category-playbooks">
-                    <a href="playbooks/dog-waste-removal-service.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Dog Waste Removal Service</span>
-                        <span class="playbook-earning">$15/yard</span>
-                    </a>
-                    <a href="playbooks/pet-sitting-and-dog-walking.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Pet Sitting & Dog Walking</span>
-                        <span class="playbook-earning">$20-50</span>
-                    </a>
-                    <a href="playbooks/pet-hair-de-shedding.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Pet Hair De-Shedding</span>
-                        <span class="playbook-earning">$40/pet</span>
-                    </a>
-                    <a href="playbooks/cat-only-drop-ins.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Cat-Only Drop-Ins</span>
-                        <span class="playbook-earning">$20/visit</span>
-                    </a>
-                </div>
-                <a href="playbooks/index.html?category=Pets" class="see-all">See all 8 playbooks →</a>
-            </div>
-            
-            <!-- Cleaning -->
-            <div class="category-card">
-                <div class="category-header">
-                    <div class="category-icon">🧹</div>
-                    <div>
-                        <div class="category-title">Cleaning & Maid</div>
-                        <div class="category-count">6 playbooks</div>
-                    </div>
-                </div>
-                <div class="category-playbooks">
-                    <a href="playbooks/maid-cleaning-services.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Maid/Cleaning Services</span>
-                        <span class="playbook-earning">$25-50/hr</span>
-                    </a>
-                    <a href="playbooks/window-washing.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Window Washing</span>
-                        <span class="playbook-earning">$150/home</span>
-                    </a>
-                    <a href="playbooks/wheelie-bin-cleaning.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Trash Can Cleaning</span>
-                        <span class="playbook-earning">$30/can</span>
-                    </a>
-                    <a href="playbooks/eco-cleaning-day.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Eco Cleaning Service</span>
-                        <span class="playbook-earning">$150+</span>
-                    </a>
-                </div>
-                <a href="playbooks/index.html?category=Cleaning" class="see-all">See all 6 playbooks →</a>
-            </div>
-            
-            <!-- Home Repairs -->
-            <div class="category-card">
-                <div class="category-header">
-                    <div class="category-icon">🔧</div>
-                    <div>
-                        <div class="category-title">Home Repairs & Installs</div>
-                        <div class="category-count">14 playbooks</div>
-                    </div>
-                </div>
-                <div class="category-playbooks">
-                    <a href="playbooks/flat-pack-furniture-assembly.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Furniture Assembly</span>
-                        <span class="playbook-earning">$45/hr</span>
-                    </a>
-                    <a href="playbooks/tv-mount-and-wire-conceal.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">TV Mounting & Wire Hide</span>
-                        <span class="playbook-earning">$75-125</span>
-                    </a>
-                    <a href="playbooks/picture-hanging-and-gallery-walls.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Picture Hanging</span>
-                        <span class="playbook-earning">$10/piece</span>
-                    </a>
-                    <a href="playbooks/dryer-vent-deep-clean.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Dryer Vent Cleaning</span>
-                        <span class="playbook-earning">$100</span>
-                    </a>
-                </div>
-                <a href="playbooks/index.html?category=Home%20Repairs" class="see-all">See all 14 playbooks →</a>
-            </div>
-            
-            <!-- Yard & Exterior -->
-            <div class="category-card">
-                <div class="category-header">
-                    <div class="category-icon">🌳</div>
-                    <div>
-                        <div class="category-title">Yard & Exterior</div>
-                        <div class="category-count">8 playbooks</div>
-                    </div>
-                </div>
-                <div class="category-playbooks">
-                    <a href="playbooks/pressure-washing.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Pressure Washing</span>
-                        <span class="playbook-earning">$150/job</span>
-                    </a>
-                    <a href="playbooks/gutter-cleaning.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Gutter Cleaning</span>
-                        <span class="playbook-earning">$125/home</span>
-                    </a>
-                    <a href="playbooks/mulch-delivery-and-spread.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Mulch Delivery & Spread</span>
-                        <span class="playbook-earning">$250/job</span>
-                    </a>
-                    <a href="playbooks/lawn-aeration-and-overseed.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Lawn Aeration</span>
-                        <span class="playbook-earning">$50/1000sqft</span>
-                    </a>
-                </div>
-                <a href="playbooks/index.html?category=Yard" class="see-all">See all 8 playbooks →</a>
-            </div>
-            
-            <!-- Seasonal -->
-            <div class="category-card">
-                <div class="category-header">
-                    <div class="category-icon">❄️</div>
-                    <div>
-                        <div class="category-title">Seasonal & Weather</div>
-                        <div class="category-count">7 playbooks</div>
-                    </div>
-                </div>
-                <div class="category-playbooks">
-                    <a href="playbooks/holiday-light-installation.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Holiday Light Installation</span>
-                        <span class="playbook-earning">$200-500</span>
-                    </a>
-                    <a href="playbooks/snow-shovel-and-ice-melt-route.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Snow Shoveling Route</span>
-                        <span class="playbook-earning">$35/house</span>
-                    </a>
-                    <a href="playbooks/leaf-rake-and-bag-route.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Leaf Raking Route</span>
-                        <span class="playbook-earning">$75/yard</span>
-                    </a>
-                    <a href="playbooks/storm-prep-service.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Storm Prep Service</span>
-                        <span class="playbook-earning">$200/home</span>
-                    </a>
-                </div>
-                <a href="playbooks/index.html?category=Seasonal" class="see-all">See all 7 playbooks →</a>
-            </div>
-            
-            <!-- Tech -->
-            <div class="category-card">
-                <div class="category-header">
-                    <div class="category-icon">💻</div>
-                    <div>
-                        <div class="category-title">Tech & Setup</div>
-                        <div class="category-count">8 playbooks</div>
-                    </div>
-                </div>
-                <div class="category-playbooks">
-                    <a href="playbooks/senior-tech-help.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Senior Tech Help</span>
-                        <span class="playbook-earning">$40/hr</span>
-                    </a>
-                    <a href="playbooks/smart-doorbell-camera-install.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Smart Camera Install</span>
-                        <span class="playbook-earning">$60/device</span>
-                    </a>
-                    <a href="playbooks/wifi-audit-and-mesh-setup.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">WiFi Mesh Setup</span>
-                        <span class="playbook-earning">$125</span>
-                    </a>
-                    <a href="playbooks/data-transfer-and-new-device-setup.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Data Transfer Service</span>
-                        <span class="playbook-earning">$50</span>
-                    </a>
-                </div>
-                <a href="playbooks/index.html?category=Tech" class="see-all">See all 8 playbooks →</a>
-            </div>
-            
-            <!-- Senior Support -->
-            <div class="category-card">
-                <div class="category-header">
-                    <div class="category-icon">👴</div>
-                    <div>
-                        <div class="category-title">Senior Support</div>
-                        <div class="category-count">6 playbooks</div>
-                    </div>
-                </div>
-                <div class="category-playbooks">
-                    <a href="playbooks/errand-runner-for-seniors.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Errand Runner for Seniors</span>
-                        <span class="playbook-earning">$25/trip</span>
-                    </a>
-                    <a href="playbooks/senior-home-safety-mini-upgrades.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Home Safety Upgrades</span>
-                        <span class="playbook-earning">$200</span>
-                    </a>
-                    <a href="playbooks/scam-shield-for-seniors.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Scam Shield Training</span>
-                        <span class="playbook-earning">$50/session</span>
-                    </a>
-                    <a href="playbooks/caregiver-relief-errands.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Caregiver Relief</span>
-                        <span class="playbook-earning">$25/errand</span>
-                    </a>
-                </div>
-                <a href="playbooks/index.html?category=Senior" class="see-all">See all 6 playbooks →</a>
-            </div>
-            
-            <!-- Business Boosters -->
-            <div class="category-card">
-                <div class="category-header">
-                    <div class="category-icon">📈</div>
-                    <div>
-                        <div class="category-title">Business Boosters</div>
-                        <div class="category-count">8 playbooks</div>
-                    </div>
-                </div>
-                <div class="category-playbooks">
-                    <a href="playbooks/google-business-profile-setup.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Google Business Setup</span>
-                        <span class="playbook-earning">$250</span>
-                    </a>
-                    <a href="playbooks/local-seo-citations.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Local SEO Citations</span>
-                        <span class="playbook-earning">$200</span>
-                    </a>
-                    <a href="playbooks/qr-menu-setup-for-restaurants.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">QR Menu Setup</span>
-                        <span class="playbook-earning">$250</span>
-                    </a>
-                    <a href="playbooks/flyer-door-drop-with-gps-proof.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Flyer Distribution</span>
-                        <span class="playbook-earning">$0.15/flyer</span>
-                    </a>
-                </div>
-                <a href="playbooks/index.html?category=Business" class="see-all">See all 8 playbooks →</a>
-            </div>
-            
-            <!-- Education -->
-            <div class="category-card">
-                <div class="category-header">
-                    <div class="category-icon">📚</div>
-                    <div>
-                        <div class="category-title">Education & Tutoring</div>
-                        <div class="category-count">8 playbooks</div>
-                    </div>
-                </div>
-                <div class="category-playbooks">
-                    <a href="playbooks/reading-tutor.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Reading Tutor</span>
-                        <span class="playbook-earning">$50/hr</span>
-                    </a>
-                    <a href="playbooks/after-school-homework-coach.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Homework Coach Pods</span>
-                        <span class="playbook-earning">$20/kid</span>
-                    </a>
-                    <a href="playbooks/music-minis-lessons.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Music Mini Lessons</span>
-                        <span class="playbook-earning">$30/lesson</span>
-                    </a>
-                    <a href="playbooks/local-workshop-host.html" class="playbook-item">
-                        <span class="playbook-check"></span>
-                        <span class="playbook-name">Local Workshop Host</span>
-                        <span class="playbook-earning">$35/person</span>
-                    </a>
-                </div>
-                <a href="playbooks/index.html?category=Education" class="see-all">See all 8 playbooks →</a>
-            </div>
-        </div>
-        
-        <!-- Need Help Section -->
-        <section class="help-section">
-            <div class="help-card">
-                <div class="help-icon">💬</div>
-                <div class="help-content">
-                    <h3>Need More Help?</h3>
-                    <p>Have questions about starting a gig or need personalized guidance? Chat with an ASAP Financial coach.</p>
-                    <button class="btn btn-chat" onclick="openChat()">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-                        Start Chat
-                    </button>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Footer CTA -->
-        <section class="footer-cta">
-            <h2>Want to Cut Expenses Too?</h2>
-            <p>Check out our Expense Reduction Playbooks to save money on bills, subscriptions, and everyday spending.</p>
-            <div class="cta-buttons">
-                <a href="expense-playbooks.html" class="btn btn-primary">
-                    💰 View Expense Playbooks
-                </a>
-                <a href="playbooks/index.html" class="btn btn-secondary">
-                    📚 Browse All 254 Playbooks
-                </a>
-            </div>
-        </section>
-    </main>
-    
-    <script>
-        function searchPlaybooks() {
-            const query = document.getElementById('searchInput').value.toLowerCase();
-            window.location.href = `playbooks/index.html?search=${encodeURIComponent(query)}&type=income`;
+<div class="header">
+<a href="index.html" class="back-link">← Back to Main Menu</a>
+<h1>💰 Increase Income</h1>
+<p>Step-by-step playbooks to make extra money on your schedule</p>
+</div>
+<div class="container">
+<div class="quick-start">
+<h3>🚀 Easiest Ways to Start Earning Today</h3>
+<p>These require minimal setup and you can start within 24-48 hours:</p>
+<div class="quick-start-list">
+<a href="/blueprints/rideshare-driver.html" class="quick-start-link">🚗 Rideshare Driving</a>
+<a href="/blueprints/delivery-driver-gig.html" class="quick-start-link">🍔 Food Delivery</a>
+<a href="/blueprints/pet-sitting-dog-walking.html" class="quick-start-link">🐾 Pet Care</a>
+<a href="/blueprints/online-surveys.html" class="quick-start-link">📝 Online Surveys</a>
+</div>
+</div>
+<div class="search-container">
+<input type="text" class="search-box" id="search" placeholder="🔍 Search all playbooks...">
+</div>
+
+<div class="category open" id="gig">
+<div class="category-header" onclick="toggleCategory(this)">
+<div class="category-left"><span class="category-icon">🚗</span><div><div class="category-title">Gig Economy & Delivery</div><div class="category-count">12 playbooks</div></div></div>
+<span class="category-arrow">▼</span>
+</div>
+<div class="playbook-list">
+<a href="/blueprints/rideshare-driver.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Rideshare Driver (Uber/Lyft)</div><div class="playbook-desc">Drive passengers on your own schedule</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-2000/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/delivery-driver-gig.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Food Delivery (DoorDash/UberEats)</div><div class="playbook-desc">Deliver food on evenings and weekends</div></div><div class="playbook-meta"><span class="playbook-earnings">$400-1500/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/grocery-delivery.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Grocery Shopping (Instacart/Shipt)</div><div class="playbook-desc">Shop and deliver groceries for tips</div></div><div class="playbook-meta"><span class="playbook-earnings">$400-1200/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/grocery-shopping-gigs.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Personal Grocery Shopper</div><div class="playbook-desc">Shop for busy families directly</div></div><div class="playbook-meta"><span class="playbook-earnings">$300-1000/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/amazon-mturk.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Amazon Mechanical Turk</div><div class="playbook-desc">Complete small online tasks for pay</div></div><div class="playbook-meta"><span class="playbook-earnings">$100-500/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/online-surveys.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Online Surveys</div><div class="playbook-desc">Get paid for your opinions</div></div><div class="playbook-meta"><span class="playbook-earnings">$50-300/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/survey-sites-microtasks.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Survey Sites & Microtasks</div><div class="playbook-desc">Best sites for quick earning</div></div><div class="playbook-meta"><span class="playbook-earnings">$100-400/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/user-testing-websites.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">User Testing Websites</div><div class="playbook-desc">Get paid to test websites and apps</div></div><div class="playbook-meta"><span class="playbook-earnings">$100-500/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/mystery-shopper.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Mystery Shopping</div><div class="playbook-desc">Get paid to shop and review stores</div></div><div class="playbook-meta"><span class="playbook-earnings">$100-400/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/paid-product-testing.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Paid Product Testing</div><div class="playbook-desc">Test products and keep them</div></div><div class="playbook-meta"><span class="playbook-earnings">$50-300/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/gig-economy.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Gig Economy Starter Guide</div><div class="playbook-desc">Overview of all gig opportunities</div></div><div class="playbook-meta"><span class="playbook-earnings">Varies</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/participate-clinical-trials.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Clinical Trials</div><div class="playbook-desc">Participate in paid medical studies</div></div><div class="playbook-meta"><span class="playbook-earnings">$100-5000</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+</div>
+</div>
+
+<div class="category" id="pets">
+<div class="category-header" onclick="toggleCategory(this)">
+<div class="category-left"><span class="category-icon">🐕</span><div><div class="category-title">Pet & Care Services</div><div class="category-count">7 playbooks</div></div></div>
+<span class="category-arrow">▼</span>
+</div>
+<div class="playbook-list">
+<a href="/blueprints/pet-sitting-dog-walking.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Pet Sitting & Dog Walking Business</div><div class="playbook-desc">Complete guide: walking, sitting, boarding via Rover & Wag</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-3000/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/dog-waste-removal-service.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Dog Waste Removal Service</div><div class="playbook-desc">Simple recurring income service</div></div><div class="playbook-meta"><span class="playbook-earnings">$300-1000/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/babysitting-childcare.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Babysitting & Childcare</div><div class="playbook-desc">Care for children on evenings/weekends</div></div><div class="playbook-meta"><span class="playbook-earnings">$400-1500/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/elderly-care.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Elderly Care Services</div><div class="playbook-desc">Companionship and daily care for seniors</div></div><div class="playbook-meta"><span class="playbook-earnings">$1500-6000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/senior-tech-help.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Senior Tech Help</div><div class="playbook-desc">Help seniors with technology</div></div><div class="playbook-meta"><span class="playbook-earnings">$200-800/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/errand-services.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Errand Running Service</div><div class="playbook-desc">Run errands for busy people</div></div><div class="playbook-meta"><span class="playbook-earnings">$300-1000/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/errand-running-seniors.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Errands for Seniors</div><div class="playbook-desc">Help seniors with shopping and tasks</div></div><div class="playbook-meta"><span class="playbook-earnings">$300-900/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+</div>
+</div>
+<div class="category" id="home">
+<div class="category-header" onclick="toggleCategory(this)">
+<div class="category-left"><span class="category-icon">🏠</span><div><div class="category-title">Home & Outdoor Services</div><div class="category-count">25 playbooks</div></div></div>
+<span class="category-arrow">▼</span>
+</div>
+<div class="playbook-list">
+<a href="/blueprints/lawn-care-business.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Lawn Care & Mowing</div><div class="playbook-desc">Mow lawns in your neighborhood</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-2000/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/landscaping.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Landscaping Services</div><div class="playbook-desc">Design and maintain outdoor spaces</div></div><div class="playbook-meta"><span class="playbook-earnings">$1000-4000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/pressure-washing.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Pressure Washing</div><div class="playbook-desc">Clean driveways, decks, and houses</div></div><div class="playbook-meta"><span class="playbook-earnings">$1000-3000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/gutter-cleaning.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Gutter Cleaning</div><div class="playbook-desc">Seasonal high-demand service</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-2000/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/window-cleaning.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Window Cleaning</div><div class="playbook-desc">Residential and commercial windows</div></div><div class="playbook-meta"><span class="playbook-earnings">$600-2000/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/pool-cleaning.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Pool Cleaning</div><div class="playbook-desc">Weekly pool maintenance routes</div></div><div class="playbook-meta"><span class="playbook-earnings">$800-3000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/house-cleaning-maid-service.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">House Cleaning Service</div><div class="playbook-desc">Clean homes for $25-50/hour</div></div><div class="playbook-meta"><span class="playbook-earnings">$800-3000/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/carpet-cleaning.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Carpet Cleaning</div><div class="playbook-desc">Deep clean carpets and rugs</div></div><div class="playbook-meta"><span class="playbook-earnings">$800-2500/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/handyman.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Handyman Services</div><div class="playbook-desc">Fix things for homeowners</div></div><div class="playbook-meta"><span class="playbook-earnings">$1000-4000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/appliance-repair.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Appliance Repair</div><div class="playbook-desc">Fix washers, dryers, refrigerators</div></div><div class="playbook-meta"><span class="playbook-earnings">$1000-3000/mo</span><span class="playbook-difficulty difficulty-hard">Advanced</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/fence-repair.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Fence Repair</div><div class="playbook-desc">Repair and install fences</div></div><div class="playbook-meta"><span class="playbook-earnings">$800-2500/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/interior-painting.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Interior Painting</div><div class="playbook-desc">Paint rooms and homes</div></div><div class="playbook-meta"><span class="playbook-earnings">$1000-3000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/mobile-car-detailing.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Mobile Car Detailing</div><div class="playbook-desc">Detail cars at customers homes</div></div><div class="playbook-meta"><span class="playbook-earnings">$1000-4000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/car-detailing.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Car Detailing Business</div><div class="playbook-desc">Professional auto detailing</div></div><div class="playbook-meta"><span class="playbook-earnings">$1000-4000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/car-washing.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Car Washing Service</div><div class="playbook-desc">Wash cars in your neighborhood</div></div><div class="playbook-meta"><span class="playbook-earnings">$400-1500/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/window-tinting.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Window Tinting</div><div class="playbook-desc">Tint car and home windows</div></div><div class="playbook-meta"><span class="playbook-earnings">$1000-3000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/snow-removal-service.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Snow Removal</div><div class="playbook-desc">Seasonal high-income opportunity</div></div><div class="playbook-meta"><span class="playbook-earnings">$1000-4000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/holiday-light-installation.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Holiday Light Installation</div><div class="playbook-desc">Seasonal Nov-Dec opportunity</div></div><div class="playbook-meta"><span class="playbook-earnings">$2000-8000 season</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/tree-service.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Tree Service</div><div class="playbook-desc">Trim and remove trees</div></div><div class="playbook-meta"><span class="playbook-earnings">$1500-5000/mo</span><span class="playbook-difficulty difficulty-hard">Advanced</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/junk-removal.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Junk Removal</div><div class="playbook-desc">Haul away unwanted items</div></div><div class="playbook-meta"><span class="playbook-earnings">$800-3000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/moving-helper.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Moving Helper</div><div class="playbook-desc">Help people move via TaskRabbit</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-2000/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/laundry-service.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Laundry Service</div><div class="playbook-desc">Wash and fold for busy clients</div></div><div class="playbook-meta"><span class="playbook-earnings">$400-1500/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/closet-organizing.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Closet Organizing</div><div class="playbook-desc">Organize closets and spaces</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-2000/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/home-staging.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Home Staging</div><div class="playbook-desc">Stage homes for real estate sales</div></div><div class="playbook-meta"><span class="playbook-earnings">$1000-4000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/house-sitting.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">House Sitting</div><div class="playbook-desc">Watch homes while owners travel</div></div><div class="playbook-meta"><span class="playbook-earnings">$200-800/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+</div>
+</div>
+<div class="category" id="freelance">
+<div class="category-header" onclick="toggleCategory(this)">
+<div class="category-left"><span class="category-icon">💻</span><div><div class="category-title">Freelance & Online</div><div class="category-count">27 playbooks</div></div></div>
+<span class="category-arrow">▼</span>
+</div>
+<div class="playbook-list">
+<a href="/blueprints/virtual-assistant.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Virtual Assistant</div><div class="playbook-desc">Admin support from home</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-2500/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/social-media-management.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Social Media Manager</div><div class="playbook-desc">Manage business social accounts</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-2000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/social-media-influencer.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Social Media Influencer</div><div class="playbook-desc">Build audience and monetize</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-10000/mo</span><span class="playbook-difficulty difficulty-hard">Advanced</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/graphic-design.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Graphic Design</div><div class="playbook-desc">Create logos, flyers, graphics</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-3000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/web-development.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Web Development</div><div class="playbook-desc">Build websites for businesses</div></div><div class="playbook-meta"><span class="playbook-earnings">$1000-5000/mo</span><span class="playbook-difficulty difficulty-hard">Advanced</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/copywriting.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Copywriting</div><div class="playbook-desc">Write sales and marketing copy</div></div><div class="playbook-meta"><span class="playbook-earnings">$1000-5000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/online-tutoring.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Online Tutoring</div><div class="playbook-desc">Teach subjects via video calls</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-2000/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/transcription-work.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Transcription Work</div><div class="playbook-desc">Convert audio to text</div></div><div class="playbook-meta"><span class="playbook-earnings">$300-1500/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/translation-services.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Translation Services</div><div class="playbook-desc">Translate documents and content</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-3000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/proofreading-editing.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Proofreading & Editing</div><div class="playbook-desc">Edit documents for errors</div></div><div class="playbook-meta"><span class="playbook-earnings">$400-2000/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/resume-writing.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Resume Writing</div><div class="playbook-desc">Write resumes for job seekers</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-2000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/bookkeeping.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Bookkeeping</div><div class="playbook-desc">Manage finances for small businesses</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-2500/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/data-entry.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Data Entry</div><div class="playbook-desc">Enter data for companies remotely</div></div><div class="playbook-meta"><span class="playbook-earnings">$300-1200/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/seo-services.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">SEO Services</div><div class="playbook-desc">Help businesses rank on Google</div></div><div class="playbook-meta"><span class="playbook-earnings">$1000-5000/mo</span><span class="playbook-difficulty difficulty-hard">Advanced</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/video-editing.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Video Editing</div><div class="playbook-desc">Edit videos for creators</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-3000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/podcast-editing.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Podcast Editing</div><div class="playbook-desc">Edit audio for podcasters</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-2000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/podcast.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Start a Podcast</div><div class="playbook-desc">Create and monetize a podcast</div></div><div class="playbook-meta"><span class="playbook-earnings">$100-5000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/youtube-channel.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">YouTube Channel</div><div class="playbook-desc">Create videos and earn ad revenue</div></div><div class="playbook-meta"><span class="playbook-earnings">$100-10000/mo</span><span class="playbook-difficulty difficulty-hard">Advanced</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/voice-acting.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Voice Acting</div><div class="playbook-desc">Record voiceovers from home</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-3000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/voiceover-work.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Voiceover Work</div><div class="playbook-desc">Narrate videos and audiobooks</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-3000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/online-coaching.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Online Coaching</div><div class="playbook-desc">Coach clients via video calls</div></div><div class="playbook-meta"><span class="playbook-earnings">$1000-5000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/online-courses.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Create Online Courses</div><div class="playbook-desc">Teach what you know online</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-10000/mo</span><span class="playbook-difficulty difficulty-hard">Advanced</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/affiliate-marketing.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Affiliate Marketing</div><div class="playbook-desc">Earn commissions promoting products</div></div><div class="playbook-meta"><span class="playbook-earnings">$100-5000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/dropshipping.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Dropshipping</div><div class="playbook-desc">Sell products without inventory</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-5000/mo</span><span class="playbook-difficulty difficulty-hard">Advanced</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/amazon-fba.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Amazon FBA</div><div class="playbook-desc">Sell products via Amazon</div></div><div class="playbook-meta"><span class="playbook-earnings">$1000-10000/mo</span><span class="playbook-difficulty difficulty-hard">Advanced</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/amazon-kdp.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Amazon KDP Publishing</div><div class="playbook-desc">Self-publish books on Amazon</div></div><div class="playbook-meta"><span class="playbook-earnings">$100-5000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/ebook-publishing.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">eBook Publishing</div><div class="playbook-desc">Write and sell digital books</div></div><div class="playbook-meta"><span class="playbook-earnings">$100-3000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+</div>
+</div>
+
+<div class="category" id="teaching">
+<div class="category-header" onclick="toggleCategory(this)">
+<div class="category-left"><span class="category-icon">📚</span><div><div class="category-title">Teaching & Coaching</div><div class="category-count">12 playbooks</div></div></div>
+<span class="category-arrow">▼</span>
+</div>
+<div class="playbook-list">
+<a href="/blueprints/teach-english-online.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Teach English Online</div><div class="playbook-desc">Teach English to international students</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-2000/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/language-tutoring.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Language Tutoring</div><div class="playbook-desc">Teach languages one-on-one</div></div><div class="playbook-meta"><span class="playbook-earnings">$400-1500/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/music-lessons.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Music Lessons</div><div class="playbook-desc">Teach instruments or voice</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-2500/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/personal-trainer.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Personal Trainer</div><div class="playbook-desc">Train clients at gym or home</div></div><div class="playbook-meta"><span class="playbook-earnings">$1000-4000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/sports-coaching.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Sports Coaching</div><div class="playbook-desc">Coach youth or adult sports</div></div><div class="playbook-meta"><span class="playbook-earnings">$300-1500/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/life-coaching.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Life Coaching</div><div class="playbook-desc">Help clients achieve goals</div></div><div class="playbook-meta"><span class="playbook-earnings">$1000-5000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/become-life-coach.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Become a Life Coach</div><div class="playbook-desc">Start a coaching practice</div></div><div class="playbook-meta"><span class="playbook-earnings">$1000-5000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/become-brand-ambassador.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Brand Ambassador</div><div class="playbook-desc">Represent brands at events</div></div><div class="playbook-meta"><span class="playbook-earnings">$200-1000/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/become-referee-umpire.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Referee or Umpire</div><div class="playbook-desc">Officiate sports games</div></div><div class="playbook-meta"><span class="playbook-earnings">$200-800/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/become-extra-film.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Film/TV Extra</div><div class="playbook-desc">Appear in movies and TV shows</div></div><div class="playbook-meta"><span class="playbook-earnings">$100-500/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/become-mock-juror.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Mock Juror</div><div class="playbook-desc">Get paid for mock trials</div></div><div class="playbook-meta"><span class="playbook-earnings">$50-200/session</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/wedding-officiant.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Wedding Officiant</div><div class="playbook-desc">Officiate wedding ceremonies</div></div><div class="playbook-meta"><span class="playbook-earnings">$200-500/wedding</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+</div>
+</div>
+<div class="category" id="photography">
+<div class="category-header" onclick="toggleCategory(this)">
+<div class="category-left"><span class="category-icon">📸</span><div><div class="category-title">Photography & Creative</div><div class="category-count">14 playbooks</div></div></div>
+<span class="category-arrow">▼</span>
+</div>
+<div class="playbook-list">
+<a href="/blueprints/photography-business.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Photography Business</div><div class="playbook-desc">Start a photography side business</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-3000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/event-photography.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Event Photography</div><div class="playbook-desc">Photograph weddings and events</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-3000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/real-estate-photography.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Real Estate Photography</div><div class="playbook-desc">Photograph homes for listings</div></div><div class="playbook-meta"><span class="playbook-earnings">$1000-4000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/stock-photography.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Stock Photography</div><div class="playbook-desc">Sell photos on stock sites</div></div><div class="playbook-meta"><span class="playbook-earnings">$100-1000/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/drone-photography.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Drone Photography</div><div class="playbook-desc">Aerial photos and videos</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-3000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/drone-services.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Drone Services</div><div class="playbook-desc">Commercial drone operations</div></div><div class="playbook-meta"><span class="playbook-earnings">$1000-5000/mo</span><span class="playbook-difficulty difficulty-hard">Advanced</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/candle-making.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Candle Making</div><div class="playbook-desc">Create and sell handmade candles</div></div><div class="playbook-meta"><span class="playbook-earnings">$300-2000/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/soap-making.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Soap Making</div><div class="playbook-desc">Create and sell handmade soaps</div></div><div class="playbook-meta"><span class="playbook-earnings">$300-1500/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/jewelry-making.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Jewelry Making</div><div class="playbook-desc">Create and sell handmade jewelry</div></div><div class="playbook-meta"><span class="playbook-earnings">$300-2000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/woodworking.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Woodworking</div><div class="playbook-desc">Create and sell wood products</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-3000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/screen-printing.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Screen Printing</div><div class="playbook-desc">Print custom apparel</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-3000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/tshirt-business.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">T-Shirt Business</div><div class="playbook-desc">Design and sell custom shirts</div></div><div class="playbook-meta"><span class="playbook-earnings">$300-2000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/calligraphy-business.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Calligraphy Business</div><div class="playbook-desc">Custom lettering and invitations</div></div><div class="playbook-meta"><span class="playbook-earnings">$300-1500/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/sewing-alterations.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Sewing & Alterations</div><div class="playbook-desc">Alter and repair clothing</div></div><div class="playbook-meta"><span class="playbook-earnings">$400-1500/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+</div>
+</div>
+
+<div class="category" id="food">
+<div class="category-header" onclick="toggleCategory(this)">
+<div class="category-left"><span class="category-icon">🍳</span><div><div class="category-title">Food & Events</div><div class="category-count">12 playbooks</div></div></div>
+<span class="category-arrow">▼</span>
+</div>
+<div class="playbook-list">
+<a href="/blueprints/baking-business.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Baking Business</div><div class="playbook-desc">Sell baked goods from home</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-2500/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/cake-decorating.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Cake Decorating</div><div class="playbook-desc">Custom cakes for events</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-3000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/personal-chef.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Personal Chef</div><div class="playbook-desc">Cook meals for families</div></div><div class="playbook-meta"><span class="playbook-earnings">$1000-4000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/catering.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Catering Service</div><div class="playbook-desc">Cater parties and events</div></div><div class="playbook-meta"><span class="playbook-earnings">$1000-5000/mo</span><span class="playbook-difficulty difficulty-hard">Advanced</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/meal-prep-service.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Meal Prep Service</div><div class="playbook-desc">Prepare weekly meals for clients</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-2500/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/mobile-bartending.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Mobile Bartending</div><div class="playbook-desc">Bartend at private events</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-2000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/mobile-dj.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Mobile DJ</div><div class="playbook-desc">DJ weddings and parties</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-3000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/event-planning.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Event Planning</div><div class="playbook-desc">Plan parties and events</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-3000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/balloon-decor.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Balloon Decor</div><div class="playbook-desc">Create balloon displays for events</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-2500/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/face-painting.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Face Painting</div><div class="playbook-desc">Paint faces at parties and events</div></div><div class="playbook-meta"><span class="playbook-earnings">$200-1000/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/gift-basket-business.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Gift Basket Business</div><div class="playbook-desc">Create and sell gift baskets</div></div><div class="playbook-meta"><span class="playbook-earnings">$300-1500/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/makeup-artist.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Makeup Artist</div><div class="playbook-desc">Do makeup for weddings and events</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-3000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+</div>
+</div>
+<div class="category" id="professional">
+<div class="category-header" onclick="toggleCategory(this)">
+<div class="category-left"><span class="category-icon">💼</span><div><div class="category-title">Notary & Professional Services</div><div class="category-count">9 playbooks</div></div></div>
+<span class="category-arrow">▼</span>
+</div>
+<div class="playbook-list">
+<a href="/blueprints/mobile-notary.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Mobile Notary</div><div class="playbook-desc">Notarize documents on the go</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-2000/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/notary-signing-agent.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Notary Signing Agent</div><div class="playbook-desc">Handle loan signings</div></div><div class="playbook-meta"><span class="playbook-earnings">$1000-4000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/tax-preparation.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Tax Preparation</div><div class="playbook-desc">Prepare taxes seasonally</div></div><div class="playbook-meta"><span class="playbook-earnings">$2000-10000 season</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/computer-repair.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Computer Repair</div><div class="playbook-desc">Fix computers and tech issues</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-2500/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/mobile-mechanic.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Mobile Mechanic</div><div class="playbook-desc">Fix cars at customers locations</div></div><div class="playbook-meta"><span class="playbook-earnings">$1000-4000/mo</span><span class="playbook-difficulty difficulty-hard">Advanced</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/interior-design.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Interior Design</div><div class="playbook-desc">Design home interiors</div></div><div class="playbook-meta"><span class="playbook-earnings">$1000-5000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/travel-planning.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Travel Planning</div><div class="playbook-desc">Plan trips for clients</div></div><div class="playbook-meta"><span class="playbook-earnings">$300-1500/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/negotiate-salary.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Negotiate Your Salary</div><div class="playbook-desc">Scripts to get a raise</div></div><div class="playbook-meta"><span class="playbook-earnings">$5000-20000/yr</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/ask-overtime.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Ask for Overtime</div><div class="playbook-desc">Get more hours at work</div></div><div class="playbook-meta"><span class="playbook-earnings">$200-1000/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+</div>
+</div>
+
+<div class="category" id="selling">
+<div class="category-header" onclick="toggleCategory(this)">
+<div class="category-left"><span class="category-icon">🏷️</span><div><div class="category-title">Selling & Reselling</div><div class="category-count">17 playbooks</div></div></div>
+<span class="category-arrow">▼</span>
+</div>
+<div class="playbook-list">
+<a href="/blueprints/selling-guide.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Quick Sell Guide</div><div class="playbook-desc">Sell items you already own</div></div><div class="playbook-meta"><span class="playbook-earnings">$100-1000</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/ebay-reselling.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">eBay Reselling</div><div class="playbook-desc">Buy low, sell high on eBay</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-3000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/furniture-flipping.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Furniture Flipping</div><div class="playbook-desc">Refinish and sell furniture</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-2000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/flea-market-flipping.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Flea Market Flipping</div><div class="playbook-desc">Find deals and resell for profit</div></div><div class="playbook-meta"><span class="playbook-earnings">$300-1500/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/vintage-reselling.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Vintage Reselling</div><div class="playbook-desc">Sell vintage clothing and items</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-2500/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/flip-electronics.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Flip Electronics</div><div class="playbook-desc">Buy and sell used electronics</div></div><div class="playbook-meta"><span class="playbook-earnings">$300-2000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/sell-facebook-marketplace.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Sell on Facebook Marketplace</div><div class="playbook-desc">Sell items locally on FB</div></div><div class="playbook-meta"><span class="playbook-earnings">$100-1000/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/sell-used-books.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Sell Used Books</div><div class="playbook-desc">Sell books online for profit</div></div><div class="playbook-meta"><span class="playbook-earnings">$100-500/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/sell-old-electronics.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Sell Old Electronics</div><div class="playbook-desc">Turn old tech into cash</div></div><div class="playbook-meta"><span class="playbook-earnings">$50-500</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/estate-sales.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Estate Sales</div><div class="playbook-desc">Find deals at estate sales</div></div><div class="playbook-meta"><span class="playbook-earnings">$300-2000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/scrap-metal-recycling.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Scrap Metal Recycling</div><div class="playbook-desc">Collect and sell scrap metal</div></div><div class="playbook-meta"><span class="playbook-earnings">$200-1000/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/print-on-demand.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Print on Demand</div><div class="playbook-desc">Design shirts, mugs - no inventory</div></div><div class="playbook-meta"><span class="playbook-earnings">$200-2000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/etsy-seller.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Etsy Seller</div><div class="playbook-desc">Sell handmade or digital products</div></div><div class="playbook-meta"><span class="playbook-earnings">$300-3000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/etsy-digital.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Etsy Digital Products</div><div class="playbook-desc">Sell digital downloads on Etsy</div></div><div class="playbook-meta"><span class="playbook-earnings">$200-2000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/etsy-printables.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Etsy Printables</div><div class="playbook-desc">Sell printable art and planners</div></div><div class="playbook-meta"><span class="playbook-earnings">$200-1500/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/domain-flipping.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Domain Flipping</div><div class="playbook-desc">Buy and sell domain names</div></div><div class="playbook-meta"><span class="playbook-earnings">$100-5000/mo</span><span class="playbook-difficulty difficulty-hard">Advanced</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/website-flipping.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Website Flipping</div><div class="playbook-desc">Buy, improve, and sell websites</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-10000/mo</span><span class="playbook-difficulty difficulty-hard">Advanced</span></div><span class="playbook-arrow">→</span></a>
+</div>
+</div>
+
+<div class="category" id="donations">
+<div class="category-header" onclick="toggleCategory(this)">
+<div class="category-left"><span class="category-icon">🩸</span><div><div class="category-title">Body & Donations</div><div class="category-count">6 playbooks</div></div></div>
+<span class="category-arrow">▼</span>
+</div>
+<div class="playbook-list">
+<a href="/blueprints/donate-plasma.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Donate Plasma</div><div class="playbook-desc">Get paid to donate plasma</div></div><div class="playbook-meta"><span class="playbook-earnings">$300-500/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/sell-plasma-blood.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Sell Plasma/Blood</div><div class="playbook-desc">Regular donation income</div></div><div class="playbook-meta"><span class="playbook-earnings">$200-400/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/donate-bone-marrow.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Bone Marrow Donation</div><div class="playbook-desc">Compensation for marrow donation</div></div><div class="playbook-meta"><span class="playbook-earnings">Varies</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/egg-sperm-donation.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Egg/Sperm Donation</div><div class="playbook-desc">Significant compensation available</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-10000</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/sell-hair.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Sell Your Hair</div><div class="playbook-desc">Sell long hair for wigs</div></div><div class="playbook-meta"><span class="playbook-earnings">$100-1000</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/sell-breast-milk.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Sell Breast Milk</div><div class="playbook-desc">Help mothers and earn money</div></div><div class="playbook-meta"><span class="playbook-earnings">$200-1000/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+</div>
+</div>
+<div class="category" id="passive">
+<div class="category-header" onclick="toggleCategory(this)">
+<div class="category-left"><span class="category-icon">🌙</span><div><div class="category-title">Rental & Passive Income</div><div class="category-count">23 playbooks</div></div></div>
+<span class="category-arrow">▼</span>
+</div>
+<div class="playbook-list">
+<a href="/blueprints/rent-spare-room.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Rent a Spare Room</div><div class="playbook-desc">Airbnb or long-term roommate</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-1500/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/airbnb-hosting.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Airbnb Hosting</div><div class="playbook-desc">Rent your home on Airbnb</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-3000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/airbnb-cohost.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Airbnb Cohost</div><div class="playbook-desc">Manage Airbnbs for others</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-2000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/airbnb-arbitrage.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Airbnb Arbitrage</div><div class="playbook-desc">Rent to sublet on Airbnb</div></div><div class="playbook-meta"><span class="playbook-earnings">$1000-5000/mo</span><span class="playbook-difficulty difficulty-hard">Advanced</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/house-hacking.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">House Hacking</div><div class="playbook-desc">Live free by renting rooms</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-2000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/rent-your-car.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Rent Your Car (Turo)</div><div class="playbook-desc">Rent car when not using it</div></div><div class="playbook-meta"><span class="playbook-earnings">$300-1000/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/rent-out-car.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Rent Out Your Car</div><div class="playbook-desc">Passive car rental income</div></div><div class="playbook-meta"><span class="playbook-earnings">$300-1000/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/rent-storage-space.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Rent Storage Space</div><div class="playbook-desc">Rent garage or basement space</div></div><div class="playbook-meta"><span class="playbook-earnings">$100-500/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/rent-parking-space.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Rent Parking Space</div><div class="playbook-desc">Rent your driveway or spot</div></div><div class="playbook-meta"><span class="playbook-earnings">$100-400/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/rent-driveway-parking.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Rent Driveway for Parking</div><div class="playbook-desc">Passive parking income</div></div><div class="playbook-meta"><span class="playbook-earnings">$100-400/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/rent-pool-swimply.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Rent Your Pool (Swimply)</div><div class="playbook-desc">Rent pool by the hour</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-2000/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/rent-backyard-peerspace.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Rent Backyard (Peerspace)</div><div class="playbook-desc">Rent yard for events</div></div><div class="playbook-meta"><span class="playbook-earnings">$200-1000/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/rent-camera-gear.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Rent Camera Gear</div><div class="playbook-desc">Rent out photography equipment</div></div><div class="playbook-meta"><span class="playbook-earnings">$100-500/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/rent-rv-camper.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Rent RV/Camper</div><div class="playbook-desc">Rent your RV on Outdoorsy</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-2000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/vending-machine-business.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Vending Machine Business</div><div class="playbook-desc">Passive income from vending</div></div><div class="playbook-meta"><span class="playbook-earnings">$200-1000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/atm-business.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">ATM Business</div><div class="playbook-desc">Own and operate ATMs</div></div><div class="playbook-meta"><span class="playbook-earnings">$200-500/mo per ATM</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/laundromat-ownership.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Laundromat Ownership</div><div class="playbook-desc">Semi-passive laundromat income</div></div><div class="playbook-meta"><span class="playbook-earnings">$2000-10000/mo</span><span class="playbook-difficulty difficulty-hard">Advanced</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/storage-unit-investing.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Storage Unit Investing</div><div class="playbook-desc">Invest in storage facilities</div></div><div class="playbook-meta"><span class="playbook-earnings">Varies</span><span class="playbook-difficulty difficulty-hard">Advanced</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/dividend-investing.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Dividend Investing</div><div class="playbook-desc">Earn quarterly dividend payments</div></div><div class="playbook-meta"><span class="playbook-earnings">Varies</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/reit-investing.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">REIT Investing</div><div class="playbook-desc">Real estate investment trusts</div></div><div class="playbook-meta"><span class="playbook-earnings">Varies</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/crypto-staking.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Crypto Staking</div><div class="playbook-desc">Earn interest on crypto</div></div><div class="playbook-meta"><span class="playbook-earnings">Varies</span><span class="playbook-difficulty difficulty-hard">Advanced</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/high-yield-savings.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">High-Yield Savings</div><div class="playbook-desc">Earn 4-5% on savings</div></div><div class="playbook-meta"><span class="playbook-earnings">4-5% APY</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/digital-products.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Sell Digital Products</div><div class="playbook-desc">Create once, sell forever</div></div><div class="playbook-meta"><span class="playbook-earnings">$100-5000/mo</span><span class="playbook-difficulty difficulty-hard">Advanced</span></div><span class="playbook-arrow">→</span></a>
+</div>
+</div>
+
+</div>
+<script>
+function toggleCategory(header){header.parentElement.classList.toggle('open')}
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+        if (target && target.classList.contains('category')) {
+            target.classList.add('open');
+            setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
         }
-        
-        document.getElementById('searchInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') searchPlaybooks();
-        });
-        
-        function openChat() {
-            // Replace this with your actual chat widget code
-            // Examples: Intercom, Drift, Crisp, Tidio, or custom chat
-            // window.Intercom('show');
-            // $crisp.push(['do', 'chat:open']);
-            // Tawk_API.toggle();
-            
-            // Fallback: Open a contact page or show a message
-            alert('Chat feature coming soon! For now, email us at support@asapcreditrepairusa.com');
-            
-            // Or redirect to a contact page:
-            // window.location.href = '/contact';
-        }
-    </script>
+    }
+});
+document.getElementById('search').addEventListener('input',function(){const query=this.value.toLowerCase();const items=document.querySelectorAll('.playbook-item');const categories=document.querySelectorAll('.category');if(query===''){categories.forEach((cat,i)=>{cat.style.display='block';if(i===0)cat.classList.add('open');else cat.classList.remove('open')});items.forEach(item=>item.style.display='flex');return}categories.forEach(cat=>{cat.classList.add('open');let hasVisible=false;cat.querySelectorAll('.playbook-item').forEach(item=>{const title=item.querySelector('.playbook-title').textContent.toLowerCase();const desc=item.querySelector('.playbook-desc').textContent.toLowerCase();if(title.includes(query)||desc.includes(query)){item.style.display='flex';hasVisible=true}else{item.style.display='none'}});cat.style.display=hasVisible?'block':'none'})});
+</script>
 </body>
 </html>
