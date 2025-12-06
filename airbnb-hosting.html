@@ -1,268 +1,372 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Airbnb Hosting | ASAP Credit Repair Playbook</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root { --primary: #063d86; --primary-light: #0a4fa8; --primary-dark: #042a5c; --accent: #00c9a7; --success: #10b981; --warning: #f59e0b; --bg: #f8fafc; --text: #1e293b; --text-light: #64748b; --border: #e2e8f0; }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 17px; }
-    .header { background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%); color: white; padding: 40px 20px 50px; text-align: center; }
-    .header-content { max-width: 800px; margin: 0 auto; }
-    .back-link { display: inline-flex; align-items: center; gap: 8px; color: white; text-decoration: none; opacity: 0.8; font-size: 0.9rem; margin-bottom: 16px; }
-    .category-badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; margin-bottom: 16px; }
-    .header h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 12px; }
-    .header-subtitle { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
-    .main-content { max-width: 800px; margin: -30px auto 40px; padding: 0 20px; }
-    .progress-section { position: sticky; top: 0; background: white; padding: 16px 20px; margin: 0 -20px 20px; border-bottom: 1px solid var(--border); z-index: 100; display: flex; align-items: center; gap: 16px; }
-    .progress-bar { flex: 1; height: 10px; background: var(--border); border-radius: 5px; overflow: hidden; }
-    .progress-fill { height: 100%; background: linear-gradient(90deg, #f43f5e, #fb7185); border-radius: 5px; transition: width 0.3s; width: 0%; }
-    .progress-text { font-weight: 600; color: var(--text); min-width: 50px; }
-    .goal-card { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border: 2px solid var(--success); border-radius: 16px; padding: 24px 28px; margin-bottom: 30px; }
-    .goal-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; color: #065f46; margin-bottom: 12px; }
-    .goal-card p { color: #047857; font-size: 1.05rem; }
-    .goal-card .earnings { background: white; display: inline-block; padding: 10px 18px; border-radius: 10px; margin-top: 14px; font-weight: 600; color: #065f46; font-size: 1.1rem; }
-    .section-card { background: white; border-radius: 16px; padding: 28px; margin-bottom: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid var(--border); }
-    .section-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; color: var(--primary); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
-    .section-card h2 .icon { width: 40px; height: 40px; background: linear-gradient(135deg, #f43f5e, #fb7185); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; }
-    .task-list { list-style: none; }
-    .task-item { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border); }
-    .task-item:last-child { border-bottom: none; }
-    .task-checkbox { flex-shrink: 0; width: 28px; height: 28px; border: 2px solid var(--border); border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; margin-top: 2px; font-weight: bold; }
-    .task-checkbox:hover { border-color: var(--primary); }
-    .task-checkbox.checked { background: var(--success); border-color: var(--success); color: white; }
-    .task-content { flex: 1; }
-    .task-title { font-weight: 600; font-size: 1.1rem; margin-bottom: 8px; color: var(--text); }
-    .task-desc { color: var(--text-light); font-size: 0.95rem; line-height: 1.6; }
-    .task-meta { display: flex; gap: 12px; margin-top: 10px; flex-wrap: wrap; }
-    .task-badge { font-size: 0.8rem; padding: 4px 10px; border-radius: 6px; background: var(--bg); color: var(--text-light); }
-    .task-badge.easy { background: #dcfce7; color: #166534; }
-    .details-box { background: #f8fafc; border-radius: 10px; padding: 16px; margin-top: 12px; border-left: 4px solid #f43f5e; }
-    .details-box h4 { font-size: 0.9rem; color: #e11d48; margin-bottom: 10px; }
-    .details-box ul { margin-left: 18px; color: var(--text); font-size: 0.9rem; }
-    .details-box li { margin-bottom: 8px; line-height: 1.5; }
-    .option-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; margin-top: 16px; }
-    .option-card { background: var(--bg); border-radius: 12px; padding: 18px; }
-    .option-card h4 { font-size: 1rem; color: #e11d48; margin-bottom: 6px; }
-    .option-card .earnings { font-size: 0.85rem; color: var(--success); font-weight: 600; margin-bottom: 8px; }
-    .option-card p { font-size: 0.85rem; color: var(--text-light); line-height: 1.5; }
-    .resources-section { background: linear-gradient(135deg, #ede9fe, #ddd6fe); border: 2px solid #a78bfa; }
-    .resources-section h2 { color: #5b21b6; }
-    .resource-item { background: white; border-radius: 12px; padding: 16px 20px; margin-bottom: 12px; display: block; text-decoration: none; color: var(--text); transition: all 0.2s; }
-    .resource-item:hover { transform: translateX(4px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-    .resource-item h4 { font-size: 1rem; margin-bottom: 4px; color: #5b21b6; }
-    .resource-item p { font-size: 0.85rem; color: var(--text-light); }
-    .resource-item .link { font-size: 0.8rem; color: #7c3aed; }
-    .section-card textarea { width: 100%; min-height: 150px; padding: 16px 18px; border: 2px solid var(--border); border-radius: 12px; font-family: inherit; font-size: 1rem; resize: vertical; box-sizing: border-box; display: block; line-height: 1.6; }
-    .section-card textarea:focus { outline: none; border-color: var(--primary); }
-    .help-section { background: linear-gradient(135deg, #f0f9ff, #e0f2fe); border: 2px solid #7dd3fc; border-radius: 16px; padding: 24px 28px; margin-top: 30px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
-    .help-icon { width: 56px; height: 56px; background: white; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; }
-    .help-content { flex: 1; min-width: 200px; }
-    .help-content h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; margin-bottom: 4px; }
-    .help-content p { color: var(--text-light); font-size: 0.95rem; }
-    .chat-btn { background: var(--primary); color: white; border: none; padding: 14px 28px; border-radius: 12px; font-family: inherit; font-size: 1rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: all 0.2s; }
-    .chat-btn:hover { background: var(--primary-light); transform: translateY(-2px); }
-    @media (max-width: 600px) { .header { padding: 30px 20px 40px; } .section-card { padding: 20px; } .help-section { flex-direction: column; text-align: center; } }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airbnb Hosting Side Gig - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #ff5a5f, #ff385c); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #ffe4e6, #fecdd3); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #be123c; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.2em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #ffe4e6; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #ff5a5f; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #ff5a5f; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+        .pricing-table th, .pricing-table td { padding: 12px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .pricing-table th { background: #ff5a5f; color: white; }
+        .pricing-table tr:hover { background: #f8f9fa; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .service-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; border-left: 4px solid #ff5a5f; }
+        .service-card .emoji { font-size: 2em; margin-bottom: 10px; }
+        .service-card h4 { color: #1a1a2e; font-size: 13px; margin-bottom: 5px; }
+        .service-card p { color: #666; font-size: 11px; }
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .platform-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #4caf50; }
+        .platform-card h4 { color: #1a1a2e; margin-bottom: 8px; }
+        .platform-card h4 a { color: #ff385c; text-decoration: none; }
+        .platform-card h4 a:hover { text-decoration: underline; }
+        .platform-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .platform-card .type { color: #2e7d32; font-weight: 600; font-size: 12px; margin-top: 8px; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .warning-box h4 { color: #c62828; margin-bottom: 10px; }
+        .warning-box p { color: #666; margin: 5px 0; font-size: 14px; }
+        .skills-box { background: #f8f9fa; border-radius: 15px; padding: 20px; margin: 15px 0; }
+        .skills-box h4 { color: #1a1a2e; margin-bottom: 15px; }
+        .skills-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+        .skill-item { display: flex; align-items: center; gap: 10px; padding: 10px; background: white; border-radius: 8px; }
+        .skill-item .emoji { font-size: 1.3em; }
+        .skill-item span { color: #666; font-size: 13px; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #ff5a5f, #ff385c); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #ff385c; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #ff385c; text-decoration: none; font-weight: 600; }
+        .progress-tracker { background: linear-gradient(135deg, #ff5a5f, #ff385c); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #ff5a5f; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #ff5a5f, #ff385c); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+    </style>
 </head>
 <body>
-  <header class="header">
-    <div class="header-content">
-      <a href="index.html" class="back-link">← Back to All Playbooks</a>
-      <span class="category-badge">🏠 Rental Income</span>
-      <h1>Airbnb Hosting</h1>
-      <p class="header-subtitle">Turn your extra space into income! Rent out a room, your whole place, or even just a parking spot. Hosts earn hundreds to thousands per month.</p>
-    </div>
-  </header>
-
-  <main class="main-content">
-    <div class="progress-section">
-      <span style="font-size: 0.9rem; color: var(--text-light);">Your Progress:</span>
-      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
-      <span class="progress-text" id="progressText">0%</span>
-    </div>
-
-    <div class="goal-card">
-      <h2>🎯 What You'll Achieve</h2>
-      <p>You'll earn passive income by renting out space you already have. Even a spare room can generate $500-1,500+/month in the right location!</p>
-      <div class="earnings">💰 Spare room: $500-1,500/month | Whole place: $1,000-5,000+/month</div>
-    </div>
-
-    <div class="section-card">
-      <h2><span class="icon">🏘️</span> What Can You Rent?</h2>
-      <div class="option-grid">
-        <div class="option-card">
-          <h4>🛏️ Spare Room</h4>
-          <div class="earnings">$500-1,500/month</div>
-          <p>Rent a bedroom while you live there. Lowest barrier to entry!</p>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Playbooks</a>
+        
+        <div class="header">
+            <h1>🏠 Airbnb Hosting Side Gig</h1>
+            <p class="subtitle">Turn your extra space into income! Room, whole place, or unique space</p>
+            <div class="time-badge">💰 $500-5,000+/month • Host on your schedule • 3% fee only!</div>
         </div>
-        <div class="option-card">
-          <h4>🏠 Entire Place</h4>
-          <div class="earnings">$1,000-5,000+/month</div>
-          <p>When you're traveling or have a second property.</p>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Your spare room, whole place while you travel, or unique space (RV, treehouse, yurt) can generate serious income! Average Airbnb hosts earn $924/month. Prime locations and whole-home rentals can earn $3,000-5,000+/month. It's flexible—host when you want, block dates when you don't. Start with one room and scale up!</p>
+            </div>
+            <div class="income-highlight">
+                <h3>$500-5,000+ Per Month</h3>
+                <p>Spare room: $500-1,500 • Whole place: $1,000-5,000+ • Unique space: Premium rates!</p>
+            </div>
         </div>
-        <div class="option-card">
-          <h4">🏕️ Unique Space</h4>
-          <div class="earnings">$50-200+/night</div>
-          <p>Treehouse, yurt, RV, boat - unique = premium!</p>
+
+        <div class="card">
+            <h2><span class="icon">🏘️</span> What Can You Rent?</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="emoji">🛏️</div>
+                    <h4>Spare Room</h4>
+                    <p>$500-1,500/month</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🏠</div>
+                    <h4>Entire Place</h4>
+                    <p>$1,000-5,000+/month</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🏕️</div>
+                    <h4>Unique Space</h4>
+                    <p>$50-200+/night</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🅿️</div>
+                    <h4>Parking Spot</h4>
+                    <p>$100-500/month</p>
+                </div>
+            </div>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Unique Spaces = Premium Pricing</div>
+                <p>Treehouses, yurts, RVs, boats, tiny homes, converted barns—unique = premium rates! Guests pay MORE for memorable experiences. Think creatively about what you could offer!</p>
+            </div>
         </div>
-        <div class="option-card">
-          <h4">🅿️ Parking Space</h4>
-          <div class="earnings">$100-500/month</div>
-          <p">In cities, parking is gold! List on SpotHero.</p>
+
+        <div class="card">
+            <h2><span class="icon">✨</span> Guest Essentials Checklist</h2>
+            <div class="skills-box">
+                <h4>What Guests Expect (Provide These!)</h4>
+                <div class="skills-list">
+                    <div class="skill-item"><span class="emoji">🛏️</span><span>Clean, quality bedding and towels</span></div>
+                    <div class="skill-item"><span class="emoji">🧴</span><span>Toiletries (shampoo, soap, conditioner)</span></div>
+                    <div class="skill-item"><span class="emoji">📶</span><span>Fast, reliable WiFi (VERY important!)</span></div>
+                    <div class="skill-item"><span class="emoji">☕</span><span>Coffee/tea setup with supplies</span></div>
+                    <div class="skill-item"><span class="emoji">💡</span><span>Good lighting and mirrors</span></div>
+                    <div class="skill-item"><span class="emoji">📋</span><span>Clear instructions for everything</span></div>
+                </div>
+            </div>
         </div>
-      </div>
+
+        <div class="card">
+            <h2><span class="icon">📱</span> Platforms & Tools</h2>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h4><a href="https://www.airbnb.com/host" target="_blank">Airbnb →</a></h4>
+                    <p>Largest platform with most travelers. Only 3% host fee! Free photography available in some areas. Start here!</p>
+                    <div class="type">🏠 3% fee • Largest audience</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.vrbo.com" target="_blank">VRBO →</a></h4>
+                    <p>Great for whole-home rentals. Attracts families. 3-5% fee. Cross-list with Airbnb for more bookings!</p>
+                    <div class="type">🏡 Families • Whole homes</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.airdna.co" target="_blank">AirDNA →</a></h4>
+                    <p>Research what properties earn in your area. See occupancy rates, pricing data. Worth checking before starting!</p>
+                    <div class="type">📊 Market research</div>
+                </div>
+                <div class="platform-card">
+                    <h4><a href="https://www.pricelabs.co" target="_blank">PriceLabs →</a></h4>
+                    <p>Dynamic pricing tool. Automatically adjusts your rates for events, seasons, demand. Maximizes revenue!</p>
+                    <div class="type">💰 Smart pricing</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Check local regulations</div>
+                    <div class="step-desc">Some cities require permits or limit short-term rentals. Check your city's rules, lease, and HOA before investing time!</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Prepare your space</div>
+                    <div class="step-desc">Deep clean, declutter, add nice touches. Fresh linens, toiletries, fast WiFi, good lighting. Make it photo-ready!</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Take AMAZING photos</div>
+                    <div class="step-desc">Photos make or break your listing! Natural light, wide angles, show every space. Airbnb sometimes offers free photography.</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Research competitors</div>
+                    <div class="step-desc">Check similar listings in your area. Note their pricing, amenities, reviews. What can you offer that's better?</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Create your listing</div>
+                    <div class="step-desc">Compelling description, accurate amenities, clear house rules. Be honest about what you offer. Detail = trust!</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Set competitive pricing</div>
+                    <div class="step-desc">Start slightly lower to get first reviews. Use Airbnb's smart pricing or PriceLabs. Raise prices as reviews build!</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Install smart lock</div>
+                    <div class="step-desc">Keyless entry makes check-in easy for everyone. $100-200 investment. Generate unique codes per guest. Game changer!</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Deliver 5-star experiences!</div>
+                    <div class="step-desc">Respond fast, be helpful, over-deliver. 5-star reviews = more bookings = higher prices. First few reviews are CRUCIAL!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💡</span> Pro Hosting Tips</h2>
+            <div class="pro-tip">
+                <div class="pro-tip-title">⭐ Superhost Secrets</div>
+                <p><strong>Respond within 1 hour:</strong> Fast responses boost your search ranking significantly.</p>
+                <p><strong>Get Superhost status:</strong> 4.8+ rating unlocks more visibility and bookings.</p>
+                <p><strong>Adjust for events:</strong> Concerts, sports, conventions = premium rates. Know your local calendar!</p>
+                <p><strong>Add amenities:</strong> Netflix, coffee, snacks, local guidebook = standout reviews.</p>
+                <p><strong>Automate messages:</strong> Set up auto-responses for booking confirmations, check-in instructions.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎓</span> Resources</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🏠</div>
+                    <h4>Airbnb Host</h4>
+                    <div class="platform">🌐 Platform</div>
+                    <p>Start your hosting journey here!</p>
+                    <a href="https://www.airbnb.com/host" class="influencer-link" target="_blank">Become Host →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📊</div>
+                    <h4>AirDNA</h4>
+                    <div class="platform">🌐 Research</div>
+                    <p>Research what properties earn in your area!</p>
+                    <a href="https://www.airdna.co" class="influencer-link" target="_blank">Research →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💬</div>
+                    <h4>r/AirBnB</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Host tips, experiences, advice!</p>
+                    <a href="https://www.reddit.com/r/AirBnB/" class="influencer-link" target="_blank">Reddit →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Airbnb YouTube</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Official tips and host stories!</p>
+                    <a href="https://www.youtube.com/airbnb" class="influencer-link" target="_blank">YouTube →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Airbnb Hosting Planner</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Plan your Airbnb hosting side gig!
+
+MY SPACE:
+Type: ☐ Room ☐ Whole place ☐ Unique space
+Location: ____
+Best features: ____
+
+LEGAL CHECK:
+☐ City allows STR?
+☐ HOA allows?
+☐ Lease allows? (or I own)
+☐ Permits needed?
+
+PREP CHECKLIST:
+☐ Deep cleaned
+☐ Decluttered
+☐ Quality bedding
+☐ Toiletries stocked
+☐ WiFi fast & reliable
+☐ Coffee/tea setup
+☐ Smart lock installed
+☐ House rules written
+☐ Local guidebook created
+
+PHOTOS:
+☐ Taken in natural light
+☐ All rooms covered
+☐ Wide angles used
+☐ Staged nicely
+
+LISTING:
+☐ Airbnb listing live
+☐ VRBO listing live
+Nightly rate: $____
+
+BOOKINGS LOG:
+1. Guest: ____ | Dates: ____ | Revenue: $____
+2. Guest: ____ | Dates: ____ | Revenue: $____
+3. Guest: ____ | Dates: ____ | Revenue: $____
+
+MONTHLY REVENUE:
+Month 1: $____
+Month 2: $____
+Month 3: $____
+
+SUPERHOST STATUS: ☐ Yes ☐ Not yet
+CURRENT RATING: ____
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
     </div>
 
-    <div class="section-card">
-      <h2><span class="icon">📋</span> Step-by-Step: Become an Airbnb Host</h2>
-      <ul class="task-list">
-        <li class="task-item">
-          <div class="task-checkbox" data-task="0"></div>
-          <div class="task-content">
-            <div class="task-title">Step 1: Check local regulations</div>
-            <div class="task-desc">Some cities require permits or limit short-term rentals. Check your city's rules and your lease/HOA.</div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 1 hour</span>
-              <span class="task-badge easy">Important!</span>
-            </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="1"></div>
-          <div class="task-content">
-            <div class="task-title">Step 2: Prepare your space</div>
-            <div class="task-desc">Clean thoroughly, declutter, add nice touches. Fresh linens, toiletries, good lighting!</div>
-            <div class="details-box">
-              <h4">Guest essentials:</h4>
-              <ul>
-                <li>Clean, quality bedding and towels</li>
-                <li>Toiletries (shampoo, soap, etc.)</li>
-                <li>Fast WiFi (very important!)</li>
-                <li>Coffee/tea setup</li>
-                <li>Good lighting and mirrors</li>
-                <li>Clear instructions for everything</li>
-              </ul>
-            </div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 2-4 hours</span>
-              <span class="task-badge easy">Make it inviting</span>
-            </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="2"></div>
-          <div class="task-content">
-            <div class="task-title">Step 3: Take great photos</div>
-            <div class="task-desc">Photos make or break your listing! Natural light, wide angles, show every space. Airbnb sometimes offers free photography.</div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 1-2 hours</span>
-              <span class="task-badge easy">Most important step!</span>
-            </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="3"></div>
-          <div class="task-content">
-            <div class="task-title">Step 4: Create your listing</div>
-            <div class="task-desc">Write a compelling description, set your price, and house rules. Be honest about what you offer!</div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 1 hour</span>
-              <span class="task-badge easy">Be detailed</span>
-            </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="4"></div>
-          <div class="task-content">
-            <div class="task-title">Step 5: Set competitive pricing</div>
-            <div class="task-desc">Use Airbnb's smart pricing or check what similar listings charge. Start slightly lower to get reviews!</div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ 30 minutes</span>
-              <span class="task-badge easy">Research competitors</span>
-            </div>
-          </div>
-        </li>
-        <li class="task-item">
-          <div class="task-checkbox" data-task="5"></div>
-          <div class="task-content">
-            <div class="task-title">Step 6: Welcome guests and get great reviews!</div>
-            <div class="task-desc">Respond quickly, be helpful, and over-deliver. 5-star reviews are everything on Airbnb!</div>
-            <div class="task-meta">
-              <span class="task-badge">⏱️ Ongoing</span>
-              <span class="task-badge easy">Reviews = bookings</span>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-
-    <div class="section-card">
-      <h2><span class="icon">💡</span> Pro Tips</h2>
-      <div class="details-box">
-        <h4">Maximize your earnings:</h4>
-        <ul>
-          <li><strong>Respond within 1 hour</strong> - Fast responses boost your ranking</li>
-          <li><strong>Get Superhost status</strong> - Hosts with 4.8+ ratings get more bookings</li>
-          <li><strong>Adjust pricing for events</strong> - Concerts, sports, conventions = premium rates</li>
-          <li><strong>Add amenities</strong> - Netflix, coffee, snacks set you apart</li>
-          <li><strong>Create a guidebook</strong> - Local recommendations impress guests</li>
-          <li><strong>Use a smart lock</strong> - Makes check-in easy for everyone</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="section-card resources-section">
-      <h2><span class="icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">💡</span> Get Started</h2>
-      
-      <a href="https://www.airbnb.com/host" target="_blank" class="resource-item">
-        <h4">🏠 Airbnb - Become a Host</h4>
-        <p">The biggest platform. Start your hosting journey here.</p>
-        <span class="link">airbnb.com/host →</span>
-      </a>
-      <a href="https://www.vrbo.com/list-your-property" target="_blank" class="resource-item">
-        <h4">🏡 VRBO</h4>
-        <p">Another major platform, especially for whole-home rentals.</p>
-        <span class="link">vrbo.com →</span>
-      </a>
-      <a href="https://www.airdna.co" target="_blank" class="resource-item">
-        <h4">📊 AirDNA</h4>
-        <p">Research what properties earn in your area.</p>
-        <span class="link">airdna.co →</span>
-      </a>
-    </div>
-
-    <div class="section-card">
-      <h2><span class="icon">📝</span> Your Notes</h2>
-      <textarea id="userNotes" placeholder="Example: Spare bedroom - can host! City allows STR with permit ($50). Comparable listings charge $85-120/night. Need to buy: new sheets, towels, coffee maker. Target launch: next month..."></textarea>
-    </div>
-
-    <div class="help-section">
-      <div class="help-icon">💬</div>
-      <div class="help-content">
-        <h3">Need Help?</h3>
-        <p">Have questions about Airbnb hosting? Chat with an ASAP Financial coach!</p>
-      </div>
-      <button class="chat-btn" onclick="openChat()">
-        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
-        Start Chat
-      </button>
-    </div>
-  </main>
-
-  <script>
-    const STORAGE_KEY = 'playbook_airbnb-hosting';
-    function loadState() { const saved = localStorage.getItem(STORAGE_KEY); if (saved) { const state = JSON.parse(saved); document.querySelectorAll('.task-checkbox').forEach((box, i) => { if (state.tasks && state.tasks[i]) { box.classList.add('checked'); box.innerHTML = '✓'; } }); if (state.notes) document.getElementById('userNotes').value = state.notes; updateProgress(); } }
-    function saveState() { const tasks = []; document.querySelectorAll('.task-checkbox').forEach(box => { tasks.push(box.classList.contains('checked')); }); localStorage.setItem(STORAGE_KEY, JSON.stringify({ tasks, notes: document.getElementById('userNotes').value })); }
-    function updateProgress() { const boxes = document.querySelectorAll('.task-checkbox'); const checked = document.querySelectorAll('.task-checkbox.checked').length; const percent = Math.round((checked / boxes.length) * 100); document.getElementById('progressFill').style.width = percent + '%'; document.getElementById('progressText').textContent = percent + '%'; }
-    document.querySelectorAll('.task-checkbox').forEach(box => { box.addEventListener('click', function() { this.classList.toggle('checked'); this.innerHTML = this.classList.contains('checked') ? '✓' : ''; updateProgress(); saveState(); }); });
-    document.getElementById('userNotes').addEventListener('input', saveState);
-    function openChat() { window.location.href = 'https://asapcreditrepairusa.com/chat'; }
-    loadState();
-  </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-airbnb-hosting');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-airbnb-hosting', JSON.stringify({ steps, notes }));
+        }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>
