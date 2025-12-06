@@ -1,28 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Laundromat Ownership | ASAP Credit Repair Playbook</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>:root{--primary:#063d86;--success:#10b981;--bg:#f8fafc;--text:#1e293b;--text-light:#64748b;--border:#e2e8f0}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}.header{background:linear-gradient(135deg,#8b5cf6,#7c3aed);color:#fff;padding:40px 20px 50px;text-align:center}.header h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:12px}.main-content{max-width:800px;margin:-30px auto 40px;padding:0 20px}.back-link{color:#fff;text-decoration:none;opacity:.8;display:block;margin-bottom:16px}.category-badge{display:inline-block;background:rgba(255,255,255,.2);padding:6px 16px;border-radius:20px;font-size:.85rem;margin-bottom:16px}.goal-card{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid var(--success);border-radius:16px;padding:24px;margin-bottom:24px}.goal-card h2{color:#065f46;margin-bottom:12px}.goal-card .earnings{background:#fff;padding:10px 18px;border-radius:10px;margin-top:14px;font-weight:600;color:#065f46;display:inline-block}.section-card{background:#fff;border-radius:16px;padding:28px;margin-bottom:24px;border:1px solid var(--border)}.section-card h2{color:var(--primary);margin-bottom:20px}.task-list{list-style:none}.task-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)}.task-checkbox{width:28px;height:28px;border:2px solid var(--border);border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}.task-checkbox.checked{background:var(--success);border-color:var(--success);color:#fff}.task-title{font-weight:600;margin-bottom:6px}.task-desc{color:var(--text-light);font-size:.95rem}.task-badge{font-size:.8rem;padding:4px 10px;border-radius:6px;background:var(--bg);margin-top:10px;display:inline-block;margin-right:8px}textarea{width:100%;min-height:120px;padding:14px;border:2px solid var(--border);border-radius:10px;font-family:inherit;margin-top:10px}.help-section{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border:2px solid #7dd3fc;border-radius:16px;padding:20px;margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}.chat-btn{background:var(--primary);color:#fff;border:none;padding:12px 24px;border-radius:10px;font-weight:600;cursor:pointer}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laundromat Ownership - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { font-size: 2.5em; color: #1a1a2e; margin-bottom: 10px; }
+        .header .subtitle { font-size: 1.2em; color: #666; margin-bottom: 20px; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 10px 25px; border-radius: 20px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #1565c0; font-size: 1.1em; }
+        .savings-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 25px; text-align: center; }
+        .savings-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .pricing-table th { background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 12px; text-align: left; }
+        .pricing-table td { padding: 12px; border-bottom: 1px solid #eee; }
+        .path-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin: 20px 0; }
+        .path-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #2196f3; }
+        .path-card h4 { color: #1a1a2e; margin-bottom: 10px; }
+        .path-card p { color: #666; font-size: 0.9em; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; }
+        .step:hover { background: #e3f2fd; }
+        .step-checkbox { width: 30px; height: 30px; min-width: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; color: transparent; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-title { font-weight: 700; color: #1a1a2e; margin-bottom: 8px; font-size: 1.1em; }
+        .step-desc { color: #666; font-size: 0.95em; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #5d4e37; }
+        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .warning-box .warning-title { font-weight: 700; color: #c62828; margin-bottom: 10px; }
+        .warning-box p { color: #5d3a3a; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #2196f3, #64b5f6); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #667eea; font-size: 0.9em; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 0.9em; margin-bottom: 15px; }
+        .influencer-link { display: inline-block; color: #667eea; text-decoration: none; font-weight: 600; padding: 8px 20px; border: 2px solid #667eea; border-radius: 20px; }
+        .influencer-link:hover { background: #667eea; color: white; }
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; width: 0%; }
+        .notes-section textarea { width: 100%; min-height: 280px; padding: 20px; border: 2px solid #e0e0e0; border-radius: 15px; font-family: monospace; font-size: 0.95em; resize: vertical; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; }
+        @media (max-width: 600px) { .header h1 { font-size: 1.8em; } .step { flex-direction: column; } }
+    </style>
 </head>
 <body>
-  <header class="header"><a href="index.html" class="back-link">← Back to All Playbooks</a><span class="category-badge">📈 Passive Income</span><h1>Laundromat Ownership</h1><p style="opacity:.9;max-width:600px;margin:0 auto">Build wealth with passive income strategies!</p></header>
-  <main class="main-content">
-    <div class="goal-card"><h2>🎯 What You'll Achieve</h2><p>Create passive income streams that work while you sleep!</p><div class="earnings">💰 Build long-term wealth and financial freedom</div></div>
-    <div class="section-card"><h2>📋 Quick Start Guide</h2>
-      <ul class="task-list">
-        <li class="task-item"><div class="task-checkbox" data-task="0"></div><div><div class="task-title">Step 1: Learn the fundamentals</div><div class="task-desc">Understand how this passive income stream works.</div></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="1"></div><div><div class="task-title">Step 2: Assess capital requirements</div><div class="task-desc">Determine how much you need to invest to start.</div></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="2"></div><div><div class="task-title">Step 3: Research platforms/opportunities</div><div class="task-desc">Find the best ways to get started.</div></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="3"></div><div><div class="task-title">Step 4: Make your first investment</div><div class="task-desc">Start small to learn the process.</div></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="4"></div><div><div class="task-title">Step 5: Monitor and optimize</div><div class="task-desc">Track performance and improve returns.</div></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="5"></div><div><div class="task-title">Step 6: Scale your investments</div><div class="task-desc">Grow your passive income over time.</div></div></li>
-      </ul></div>
-    <div class="section-card"><h2>📝 Your Investment Tracker</h2><textarea id="userNotes" placeholder="Track your passive income progress here..."></textarea></div>
-    <div class="help-section"><span style="font-size:24px">💬</span><div style="flex:1"><strong>Need Help?</strong> Chat with a coach!</div><button class="chat-btn" onclick="location.href='https://asapcreditrepairusa.com/chat'">Start Chat</button></div>
-  </main>
-  <script>const K='pb_laundromat-ownership';function load(){const s=localStorage.getItem(K);if(s){const d=JSON.parse(s);document.querySelectorAll('.task-checkbox').forEach((b,i)=>{if(d.tasks&&d.tasks[i]){b.classList.add('checked');b.innerHTML='✓'}});if(d.notes)document.getElementById('userNotes').value=d.notes}}function save(){const t=[];document.querySelectorAll('.task-checkbox').forEach(b=>t.push(b.classList.contains('checked')));localStorage.setItem(K,JSON.stringify({tasks:t,notes:document.getElementById('userNotes').value}))}document.querySelectorAll('.task-checkbox').forEach(b=>b.onclick=function(){this.classList.toggle('checked');this.innerHTML=this.classList.contains('checked')?'✓':'';save()});document.getElementById('userNotes').oninput=save;load();</script>
+    <div class="container">
+        <a href="income-playbooks.html" class="back-link">← Back to Income Playbooks</a>
+        <div class="header">
+            <h1>🧺 Laundromat Ownership</h1>
+            <p class="subtitle">Cash-flowing real estate that runs itself—recession-resistant passive income!</p>
+            <div class="time-badge">⏱️ $50K-500K investment • $2,000-15,000/month cash flow • Semi-passive</div>
+        </div>
+        <div class="card">
+            <h2>🎯 What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Laundromats are one of the most recession-resistant businesses—people always need clean clothes! With card payment systems and remote monitoring, modern laundromats can run almost passively. Buy an existing location or build from scratch. Generate $2,000-10,000+ monthly cash flow while building equity. Many owners hire an attendant and check in only weekly!</p>
+            </div>
+            <div class="savings-highlight">
+                <h3>$2,000-15,000+/Month Cash Flow</h3>
+                <p>Recession-resistant • Cash business • 20-35% profit margins • Builds equity • Can be mostly passive!</p>
+            </div>
+        </div>
+        <div class="card">
+            <h2>💵 Laundromat Economics</h2>
+            <table class="pricing-table">
+                <tr><th>Metric</th><th>Small (1,000 sq ft)</th><th>Medium (2,500 sq ft)</th><th>Large (4,000+ sq ft)</th></tr>
+                <tr><td>Purchase Price</td><td>$50,000-150,000</td><td>$150,000-350,000</td><td>$350,000-800,000+</td></tr>
+                <tr><td>Monthly Revenue</td><td>$5,000-10,000</td><td>$12,000-25,000</td><td>$25,000-50,000+</td></tr>
+                <tr><td>Profit Margin</td><td>20-30%</td><td>25-35%</td><td>30-40%</td></tr>
+                <tr><td>Monthly Cash Flow</td><td>$1,500-3,000</td><td>$4,000-8,000</td><td>$8,000-20,000</td></tr>
+            </table>
+            <div class="pro-tip"><div class="pro-tip-title">💡 SBA Loans Available</div><p><strong>Laundromats qualify for SBA loans with 10-20% down.</strong> A $200,000 laundromat might only require $20,000-40,000 down. The business cash flow pays the loan while you build equity!</p></div>
+        </div>
+        <div class="card">
+            <h2>🛤️ Paths to Laundromat Ownership</h2>
+            <div class="path-grid">
+                <div class="path-card"><h4>🏪 Buy Existing (Recommended)</h4><p>Lower risk—proven cash flow, existing customers, trained staff. Negotiate based on verified financials. Most common path!</p></div>
+                <div class="path-card"><h4>🔨 Build New (Retool)</h4><p>Find empty retail space, install equipment. Higher upfront cost but custom setup. Need $200K-500K+ capital.</p></div>
+                <div class="path-card"><h4>🔄 Acquire & Improve</h4><p>Buy underperforming laundromat, upgrade equipment, improve operations. Value-add strategy with high returns!</p></div>
+            </div>
+        </div>
+        <div class="card">
+            <h2>📋 Your Laundromat Action Plan</h2>
+            <div class="step" data-step="1"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 1: Learn the Business</div><div class="step-desc">Study laundromat operations, equipment types, financing options. Visit local laundromats. Join Coin Laundry Association. Watch YouTube channels from operators. Understand before you invest!</div></div></div>
+            <div class="step" data-step="2"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 2: Assess Your Finances</div><div class="step-desc">Determine your budget: cash available, financing capacity. SBA loans typically need 10-20% down plus working capital. Credit score and business plan matter for financing!</div></div></div>
+            <div class="step" data-step="3"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 3: Search for Opportunities</div><div class="step-desc">Check BizBuySell, LoopNet, laundromat brokers. Network with distributors (they often know who's selling). Tell everyone you're looking—deals come through connections!</div></div></div>
+            <div class="step" data-step="4"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 4: Evaluate Deals Carefully</div><div class="step-desc">Request 3 years of financials and utility bills. Visit at different times (busy hours?). Check equipment age and condition. Verify lease terms. Due diligence is CRITICAL!</div></div></div>
+            <div class="step" data-step="5"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 5: Negotiate and Close</div><div class="step-desc">Make offer based on cash flow (typically 2-4x annual profit). Negotiate seller training period. Use attorney for contracts. Secure financing. Close the deal!</div></div></div>
+            <div class="step" data-step="6"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 6: Optimize Operations</div><div class="step-desc">Add card payment systems (reduce theft, increase convenience). Upgrade to efficient machines. Improve cleanliness and lighting. Small improvements = big revenue gains!</div></div></div>
+            <div class="step" data-step="7"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 7: Systematize for Passive Income</div><div class="step-desc">Hire reliable attendant. Install remote monitoring. Set up automatic payments for utilities. Create cleaning schedules. Goal: minimal owner involvement!</div></div></div>
+            <div class="step" data-step="8"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 8: Scale to Multiple Locations</div><div class="step-desc">Use cash flow from first location to fund second. Create efficient management systems across locations. Many successful owners have 3-10+ laundromats!</div></div></div>
+        </div>
+        <div class="card">
+            <h2>💡 Pro Tips & Warnings</h2>
+            <div class="pro-tip"><div class="pro-tip-title">💡 Location Demographics Matter</div><p><strong>Look for high renter populations—renters use laundromats more than homeowners.</strong> Apartments, lower-middle income neighborhoods, near colleges. Population density within 1-2 miles is key!</p></div>
+            <div class="pro-tip"><div class="pro-tip-title">💡 Add Wash-Dry-Fold Service</div><p><strong>Drop-off laundry service can add 20-40% to revenue.</strong> Charge $1.50-2.00 per pound. Hire an attendant to provide the service. Higher margins than self-service!</p></div>
+            <div class="warning-box"><div class="warning-title">⚠️ Verify Financials Thoroughly</div><p><strong>Laundromats are cash businesses—sellers can inflate numbers.</strong> Verify with utility bills (water usage correlates with revenue), observe traffic yourself, and install your own tracking before buying if possible!</p></div>
+        </div>
+        <div class="card">
+            <h2>🎓 Learn From These Resources</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card"><div class="influencer-avatar">📺</div><h4>Laundromat Resource</h4><div class="platform">📺 YouTube / Podcast</div><p>Dave Menz shares detailed laundromat buying guides and operator interviews!</p><a href="https://www.youtube.com/@laundromatresource" class="influencer-link" target="_blank">YouTube →</a></div>
+                <div class="influencer-card"><div class="influencer-avatar">🏢</div><h4>Coin Laundry Association</h4><div class="platform">🌐 Industry Group</div><p>Industry association with resources, events, and networking for owners!</p><a href="https://www.coinlaundry.org" class="influencer-link" target="_blank">Join →</a></div>
+                <div class="influencer-card"><div class="influencer-avatar">📺</div><h4>Jordan Berry</h4><div class="platform">📺 YouTube</div><p>Laundromat investor sharing acquisition strategies and real numbers!</p><a href="https://www.youtube.com/@jordanberry" class="influencer-link" target="_blank">YouTube →</a></div>
+                <div class="influencer-card"><div class="influencer-avatar">🔍</div><h4>BizBuySell</h4><div class="platform">🌐 Marketplace</div><p>Browse laundromats for sale nationwide. Research asking prices!</p><a href="https://www.bizbuysell.com" class="influencer-link" target="_blank">Search →</a></div>
+            </div>
+        </div>
+        <div class="card">
+            <h2>📈 Your Progress</h2>
+            <div class="progress-tracker">
+                <div style="font-size: 1.2em; margin-bottom: 15px;"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+        <div class="card">
+            <h2>📝 Your Laundromat Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your laundromat search!
+
+FINANCIAL CAPACITY:
+Cash available: $____
+Financing pre-approval: $____
+Target purchase price: $____
+
+DEALS EVALUATED:
+Location 1: ____
+Price: $____ | Revenue: $____/mo
+Notes: ____
+
+Location 2: ____
+Price: $____ | Revenue: $____/mo
+Notes: ____
+
+CURRENT LAUNDROMAT (if owned):
+Location: ____
+Monthly revenue: $____
+Monthly expenses: $____
+Monthly profit: $____
+
+IMPROVEMENTS PLANNED:
+- ____
+- ____
+- ____
+
+NOTES:
+"></textarea>
+            </div>
+        </div>
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p style="opacity: 0.9; margin-bottom: 20px;">Chat with an ASAP Financial coach!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-laundromat');
+            if (saved) { const data = JSON.parse(saved); data.steps.forEach((checked, index) => { if (checked) { const cb = document.querySelectorAll('.step-checkbox')[index]; if (cb) cb.classList.add('checked'); }}); document.getElementById('notes').value = data.notes || ''; updateProgress(); }
+        });
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function updateProgress() { const t = document.querySelectorAll('.step-checkbox').length; const c = document.querySelectorAll('.step-checkbox.checked').length; document.getElementById('completed').textContent = c; document.getElementById('progressFill').style.width = (c/t*100)+'%'; }
+        function saveProgress() { const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked')); const notes = document.getElementById('notes').value; localStorage.setItem('playbook-laundromat', JSON.stringify({steps, notes})); }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>
