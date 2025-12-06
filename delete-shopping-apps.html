@@ -7,7 +7,7 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
-        .container { max-width: 800px; margin: 0 auto; }
+        .container { max-width: 900px; margin: 0 auto; }
         .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
         .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
         .header .subtitle { color: #666; font-size: 1.2em; }
@@ -15,304 +15,446 @@
         .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
         .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
         .card h2 .icon { font-size: 1.5em; }
-        .achieve-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
-        .achieve-box p { color: #c62828; font-size: 1.1em; line-height: 1.6; }
-        .savings-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
-        .savings-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
-        .savings-highlight p { font-size: 1.1em; opacity: 0.95; }
-        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
-        .step:hover { background: #ffebee; }
-        .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .achieve-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #1565c0; font-size: 1.1em; line-height: 1.8; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.2em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 25px; padding: 25px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #e3f2fd; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; margin-top: 5px; }
         .step-checkbox.checked { background: #667eea; color: white; }
         .step-content { flex: 1; }
-        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
-        .step-desc { color: #666; line-height: 1.5; }
-        .app-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; margin: 20px 0; }
-        .app-card { border-radius: 15px; padding: 15px; text-align: center; border: 3px solid transparent; }
-        .app-card.danger { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-color: #f44336; }
+        .step-title { font-weight: 700; color: #1a1a2e; font-size: 1.2em; margin-bottom: 10px; }
+        .step-desc { color: #444; line-height: 1.8; font-size: 1.05em; }
+        .step-details { background: #fff; border: 2px solid #e0e0e0; border-radius: 10px; padding: 15px; margin-top: 15px; }
+        .step-details h5 { color: #667eea; margin-bottom: 10px; font-size: 1em; }
+        .step-details ul { margin-left: 20px; color: #555; }
+        .step-details li { margin-bottom: 10px; line-height: 1.7; }
+        .how-to-box { background: #f0f0f0; border-radius: 10px; padding: 15px; margin: 10px 0; border-left: 4px solid #667eea; }
+        .how-to-box h6 { color: #667eea; margin-bottom: 8px; font-size: 1em; }
+        .how-to-box ol { margin-left: 20px; color: #444; }
+        .how-to-box li { margin-bottom: 5px; line-height: 1.6; }
+        .app-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 15px; margin: 20px 0; text-align: center; }
+        .app-card { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-radius: 15px; padding: 15px; cursor: pointer; transition: all 0.3s; border: 3px solid #f44336; }
+        .app-card:hover { transform: scale(1.05); }
+        .app-card.deleted { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-color: #4caf50; }
         .app-card .emoji { font-size: 2em; margin-bottom: 5px; }
-        .app-card h4 { color: #1a1a2e; font-size: 13px; margin-bottom: 3px; }
-        .app-card p { color: #c62828; font-size: 11px; font-weight: 600; }
-        .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .app-card .name { font-size: 12px; font-weight: 600; color: #c62828; }
+        .app-card.deleted .name { color: #2e7d32; }
+        .app-card .status { font-size: 10px; margin-top: 5px; }
+        .why-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 20px 0; text-align: center; }
+        .stat-card { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; }
+        .stat-card .number { font-size: 2.5em; font-weight: 700; }
+        .stat-card .label { font-size: 0.9em; opacity: 0.9; margin-top: 5px; }
+        .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
         .why-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #667eea; }
-        .why-card h4 { color: #1a1a2e; margin-bottom: 10px; font-size: 14px; }
-        .why-card p { color: #666; font-size: 13px; line-height: 1.5; }
-        .stat-box { background: linear-gradient(135deg, #fff3e0, #ffe0b2); border-radius: 15px; padding: 20px; text-align: center; margin: 20px 0; }
-        .stat-box .number { font-size: 2.5em; font-weight: 700; color: #e65100; }
-        .stat-box p { color: #666; font-size: 14px; }
-        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
-        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
-        .pro-tip p { color: #666; margin: 8px 0; }
-        .replacement-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
-        .replacement-card { background: #e8f5e9; border-radius: 12px; padding: 15px; text-align: center; }
-        .replacement-card .emoji { font-size: 1.5em; margin-bottom: 5px; }
-        .replacement-card h4 { color: #2e7d32; font-size: 13px; }
-        .tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .why-card h4 { color: #1a1a2e; margin-bottom: 8px; }
+        .why-card p { color: #666; font-size: 14px; line-height: 1.6; }
+        .replace-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .replace-card { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 20px; text-align: center; }
+        .replace-card .emoji { font-size: 2em; margin-bottom: 10px; }
+        .replace-card h4 { color: #2e7d32; margin-bottom: 5px; font-size: 14px; }
+        .replace-card p { color: #666; font-size: 12px; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 20px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; font-size: 1.1em; }
+        .pro-tip p { color: #555; margin: 8px 0; line-height: 1.7; }
+        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .warning-box-title { font-weight: 700; color: #c62828; margin-bottom: 10px; }
+        .warning-box p { color: #555; margin: 8px 0; line-height: 1.6; }
+        .info-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-left: 4px solid #4caf50; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .info-box-title { font-weight: 700; color: #2e7d32; margin-bottom: 10px; }
+        .info-box p { color: #555; margin: 8px 0; line-height: 1.6; }
+        .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
         .tool-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; }
         .tool-card .emoji { font-size: 2em; margin-bottom: 10px; }
         .tool-card h4 { color: #1a1a2e; margin-bottom: 5px; }
-        .tool-card p { color: #666; font-size: 12px; }
-        .tool-card a { color: #667eea; text-decoration: none; font-weight: 600; font-size: 13px; }
-        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
-        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
-        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
-        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
-        .influencer-card .platform { color: #667eea; font-size: 14px; margin-bottom: 10px; }
-        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
-        .influencer-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; }
+        .tool-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .day-counter { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .day-counter h3 { margin-bottom: 10px; }
+        .day-counter .days { font-size: 4em; font-weight: 700; }
+        .day-counter p { opacity: 0.9; }
         .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
         .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
         .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
         .progress-text { font-size: 1.2em; font-weight: 600; }
-        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 150px; resize: vertical; }
         .notes-section textarea:focus { outline: none; border-color: #667eea; }
         .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
         .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
         .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+        @media (max-width: 600px) {
+            .why-stats { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="index.html" class="back-link">← Back to Playbooks</a>
+        <a href="income-playbooks.html" class="back-link">← Back to Playbooks</a>
         
         <div class="header">
             <h1>📱 Delete Shopping Apps</h1>
-            <p class="subtitle">Remove temptation and stop impulse buying instantly</p>
+            <p class="subtitle">Remove temptation and stop impulse buying instantly!</p>
             <div class="time-badge">⏱️ 5 minutes • Save $150-300/month • No willpower needed!</div>
         </div>
 
         <div class="card">
             <h2><span class="icon">🎯</span> What You'll Achieve</h2>
             <div class="achieve-box">
-                <p>Remove the #1 source of impulse purchases from your life. No more late-night Amazon browsing or "just checking" Target deals. Out of sight, out of mind = money saved! If you need something, you can still buy it - you just have to use a website instead of an app.</p>
+                <p><strong>Shopping apps are designed to make you spend money!</strong> Companies hire psychologists to make their apps addictive. One-click buying, flash sales, countdown timers, "only 3 left!" - it's all designed to make you buy without thinking.</p>
+                <p style="margin-top: 15px;"><strong>The solution is simple: DELETE THEM!</strong> When the app isn't on your phone, you can't browse it at 11pm in bed. You can't "just check" the sales. You can't one-click buy something you don't need.</p>
+                <p style="margin-top: 15px;"><strong>Don't worry:</strong> If you truly NEED something, you can still buy it using the website on your phone's browser. But having to type in a web address, log in, and navigate the website adds enough "friction" that you'll actually think first!</p>
             </div>
-            <div class="savings-highlight">
-                <h3>Save $150-300/Month</h3>
-                <p>That's $1,800-3,600/year back in your pocket!</p>
+            <div class="income-highlight">
+                <h3>Save $150-300/Month!</h3>
+                <p>That's $1,800-3,600/year back in your pocket! Just by deleting a few apps!</p>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">🚨</span> Apps to Delete NOW</h2>
-            <p style="color: #c62828; margin-bottom: 15px; font-weight: 600;">These are the biggest impulse-buy triggers. Delete them ALL:</p>
+            <h2><span class="icon">🚨</span> Apps to Delete NOW (Click When Deleted!)</h2>
+            <p style="color: #666; margin-bottom: 15px;">These are the biggest impulse-buy triggers. Click each one when you've deleted it:</p>
             <div class="app-grid">
-                <div class="app-card danger">
+                <div class="app-card" onclick="toggleApp(this)" data-app="amazon">
                     <div class="emoji">📦</div>
-                    <h4>Amazon</h4>
-                    <p>DELETE IT</p>
+                    <div class="name">Amazon</div>
+                    <div class="status">Click when deleted!</div>
                 </div>
-                <div class="app-card danger">
+                <div class="app-card" onclick="toggleApp(this)" data-app="target">
                     <div class="emoji">🎯</div>
-                    <h4>Target</h4>
-                    <p>DELETE IT</p>
+                    <div class="name">Target</div>
+                    <div class="status">Click when deleted!</div>
                 </div>
-                <div class="app-card danger">
+                <div class="app-card" onclick="toggleApp(this)" data-app="walmart">
                     <div class="emoji">🛒</div>
-                    <h4>Walmart</h4>
-                    <p>DELETE IT</p>
+                    <div class="name">Walmart</div>
+                    <div class="status">Click when deleted!</div>
                 </div>
-                <div class="app-card danger">
+                <div class="app-card" onclick="toggleApp(this)" data-app="shein">
                     <div class="emoji">👗</div>
-                    <h4>Shein</h4>
-                    <p>DELETE IT</p>
+                    <div class="name">Shein</div>
+                    <div class="status">Click when deleted!</div>
                 </div>
-                <div class="app-card danger">
-                    <div class="emoji">🏠</div>
-                    <h4>Wayfair</h4>
-                    <p>DELETE IT</p>
-                </div>
-                <div class="app-card danger">
-                    <div class="emoji">👟</div>
-                    <h4>Nike/Clothing</h4>
-                    <p>DELETE IT</p>
-                </div>
-                <div class="app-card danger">
+                <div class="app-card" onclick="toggleApp(this)" data-app="doordash">
                     <div class="emoji">🍔</div>
-                    <h4>DoorDash</h4>
-                    <p>DELETE IT</p>
+                    <div class="name">DoorDash</div>
+                    <div class="status">Click when deleted!</div>
                 </div>
-                <div class="app-card danger">
+                <div class="app-card" onclick="toggleApp(this)" data-app="ubereats">
                     <div class="emoji">🥡</div>
-                    <h4>UberEats</h4>
-                    <p>DELETE IT</p>
+                    <div class="name">UberEats</div>
+                    <div class="status">Click when deleted!</div>
+                </div>
+                <div class="app-card" onclick="toggleApp(this)" data-app="wayfair">
+                    <div class="emoji">🏠</div>
+                    <div class="name">Wayfair</div>
+                    <div class="status">Click when deleted!</div>
+                </div>
+                <div class="app-card" onclick="toggleApp(this)" data-app="nike">
+                    <div class="emoji">👟</div>
+                    <div class="name">Nike/Clothes</div>
+                    <div class="status">Click when deleted!</div>
                 </div>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">🧠</span> Why This Works</h2>
-            <div class="stat-box">
-                <div class="number">70%</div>
-                <p>of impulse purchases are eliminated by a 24-hour wait</p>
+            <h2><span class="icon">🧠</span> Why This Works (The Science!)</h2>
+            <div class="why-stats">
+                <div class="stat-card">
+                    <div class="number">70%</div>
+                    <div class="label">of impulse buys eliminated with a 24-hour wait</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">96x</div>
+                    <div class="label">times/day average person checks phone</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">$0</div>
+                    <div class="label">willpower needed when app is gone!</div>
+                </div>
             </div>
+            
             <div class="why-grid">
                 <div class="why-card">
-                    <h4>🎯 Dark Patterns</h4>
-                    <p>Shopping apps are designed by psychology experts to make you buy impulsively. One-click buying, countdown timers, "only 2 left!" - all manipulation.</p>
+                    <h4">🎯 Apps Use "Dark Patterns"</h4>
+                    <p>Shopping apps are designed by psychologists to make you buy impulsively. One-click buying, countdown timers, "only 2 left!" - it's all manipulation.</p>
                 </div>
                 <div class="why-card">
-                    <h4>📱 96 Times/Day</h4>
-                    <p>The average person checks their phone 96 times per day. Each time is an opportunity for shopping apps to tempt you.</p>
+                    <h4">📱 96 Checks = 96 Temptations</h4>
+                    <p>You check your phone 96 times per day. Each time you see a shopping app, it's a temptation. Remove the app = remove the temptation!</p>
                 </div>
                 <div class="why-card">
-                    <h4>⏱️ Adding Friction</h4>
-                    <p>Having to go to a website, log in, and navigate gives your rational brain time to ask "Do I really need this?"</p>
+                    <h4">⏱️ Friction Forces Thinking</h4>
+                    <p>Having to open a browser, type a web address, and log in takes 2 minutes. That's enough time for your brain to ask "Do I NEED this?"</p>
                 </div>
                 <div class="why-card">
-                    <h4>🧘 No Willpower Needed</h4>
-                    <p>Willpower is limited. When the app isn't there, you don't have to resist. The decision is already made!</p>
+                    <h4">🧘 No Willpower Needed</h4>
+                    <p>Willpower gets tired. By deleting the app, you don't have to "resist" - the decision is already made. The temptation is simply GONE.</p>
                 </div>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">📋</span> Your Action Plan</h2>
+            <h2><span class="icon">📋</span> Your Step-by-Step Action Plan</h2>
             
             <div class="step" data-step="1">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Step 1: Delete Amazon app</div>
-                    <div class="step-desc">The biggest temptation for most people. Long-press the app, tap "Delete" or drag to trash. You can still use amazon.com in your browser if needed.</div>
+                    <div class="step-title">Step 1: Delete the Amazon App</div>
+                    <div class="step-desc">Amazon is the #1 impulse buying app for most people. Let's start with the big one!</div>
+                    <div class="step-details">
+                        <h5">📦 How to Delete Amazon:</h5>
+                        <div class="how-to-box">
+                            <h6">iPhone:</h6>
+                            <ol>
+                                <li>Find the Amazon app on your home screen</li>
+                                <li><strong>Press and HOLD</strong> the app icon (don't just tap)</li>
+                                <li>Wait for the menu to appear</li>
+                                <li>Tap <strong>"Remove App"</strong></li>
+                                <li>Tap <strong>"Delete App"</strong></li>
+                                <li>Tap <strong>"Delete"</strong> to confirm</li>
+                                <li><strong>DONE!</strong> The app is gone!</li>
+                            </ol>
+                        </div>
+                        <div class="how-to-box">
+                            <h6">Android:</h6>
+                            <ol>
+                                <li>Find the Amazon app on your home screen or app drawer</li>
+                                <li><strong>Press and HOLD</strong> the app icon</li>
+                                <li>Drag it to <strong>"Uninstall"</strong> at the top of the screen, OR</li>
+                                <li>Tap <strong>"Uninstall"</strong> if a menu appears</li>
+                                <li>Tap <strong>"OK"</strong> to confirm</li>
+                                <li><strong>DONE!</strong></li>
+                            </ol>
+                        </div>
+                        <p style="margin-top: 15px; color: #666;"><strong>Remember:</strong> You can still use Amazon.com in your browser if you really need something. You're just removing the easy one-tap temptation!</p>
+                    </div>
                 </div>
             </div>
+
             <div class="step" data-step="2">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Step 2: Delete Target app</div>
-                    <div class="step-desc">"Just going to check" becomes $200 every time. Delete it. If you need something from Target, drive there or use the website.</div>
+                    <div class="step-title">Step 2: Delete the Target App</div>
+                    <div class="step-desc">"I'm just going to check Target real quick" = $200 later. Delete it!</div>
+                    <div class="step-details">
+                        <h5">🎯 How to Delete Target:</h5>
+                        <ul>
+                            <li><strong>Same process as Amazon!</strong> Press and hold → Remove/Uninstall → Confirm</li>
+                            <li><strong>If you need something from Target:</strong> Drive there or use target.com in your browser</li>
+                            <li><strong>The in-store experience</strong> is actually BETTER because you can touch items and think about whether you really need them</li>
+                            <li><strong>Pro tip:</strong> Going to a physical store is harder than tapping an app. That friction helps you spend less!</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+
             <div class="step" data-step="3">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Step 3: Delete Walmart and other retail apps</div>
-                    <div class="step-desc">Walmart, Shein, Wayfair, Home Depot, any retail app. If you shop there regularly, you can use the website instead.</div>
+                    <div class="step-title">Step 3: Delete Walmart and Other Retail Apps</div>
+                    <div class="step-desc">Any store app where you browse and buy = DELETE!</div>
+                    <div class="step-details">
+                        <h5">🛒 Delete All of These:</h5>
+                        <ul>
+                            <li><strong>Walmart</strong> - Press and hold → Delete/Uninstall</li>
+                            <li><strong>Shein</strong> - This app is DESIGNED to be addictive. Delete it now!</li>
+                            <li><strong>Wayfair</strong> - Home stuff adds up fast. Delete!</li>
+                            <li><strong>Home Depot / Lowes</strong> - Unless you're a contractor, delete!</li>
+                            <li><strong>Best Buy</strong> - Electronics impulse buys are expensive. Delete!</li>
+                            <li><strong>Etsy</strong> - "Unique finds" = impulse buys. Delete!</li>
+                            <li><strong>Any other store app</strong> - If you shop there, delete the app!</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+
             <div class="step" data-step="4">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Step 4: Delete food delivery apps</div>
-                    <div class="step-desc">DoorDash, UberEats, Grubhub, Instacart. These apps make spending $30-50 on food feel effortless. Delete them!</div>
+                    <div class="step-title">Step 4: Delete ALL Food Delivery Apps</div>
+                    <div class="step-desc">DoorDash, UberEats, Grubhub - these apps make spending $40 on lunch feel "easy"!</div>
+                    <div class="step-details">
+                        <h5">🍔 Delete These NOW:</h5>
+                        <ul>
+                            <li><strong>DoorDash</strong> - Press and hold → Delete</li>
+                            <li><strong>UberEats</strong> - Delete it!</li>
+                            <li><strong>Grubhub</strong> - Gone!</li>
+                            <li><strong>Postmates</strong> - Delete!</li>
+                            <li><strong>Instacart</strong> - Even grocery delivery adds convenience fees. Delete!</li>
+                            <li><strong>Gopuff</strong> - Convenience stores on your phone = impulse buys. Delete!</li>
+                        </ul>
+                        <div class="pro-tip" style="margin-top: 15px;">
+                            <div class="pro-tip-title">💡 The Real Cost of Food Delivery</div>
+                            <p>A $15 meal becomes $25-30 after delivery fees, service fees, and tip. That's $10-15 EXTRA every time! If you order 3x/week, that's $30-45/week in fees = $120-180/month JUST in fees!</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+
             <div class="step" data-step="5">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Step 5: Delete clothing/fashion apps</div>
-                    <div class="step-desc">Nike, Zara, H&M, Nordstrom, any fashion apps. Browsing these is window shopping that leads to buying.</div>
+                    <div class="step-title">Step 5: Delete Clothing and Fashion Apps</div>
+                    <div class="step-desc">Browsing clothing apps is "window shopping" that leads to buying. Stop the cycle!</div>
+                    <div class="step-details">
+                        <h5">👗 Delete These Fashion Apps:</h5>
+                        <ul>
+                            <li><strong>Nike</strong> - Press and hold → Delete</li>
+                            <li><strong>Zara</strong> - Delete!</li>
+                            <li><strong>H&M</strong> - Gone!</li>
+                            <li><strong>Nordstrom</strong> - Delete!</li>
+                            <li><strong>ASOS</strong> - Delete!</li>
+                            <li><strong>Poshmark / ThredUp</strong> - Even "deals" on used clothes add up. Delete!</li>
+                            <li><strong>Any fashion/clothing app</strong> - If you browse it, delete it!</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+
             <div class="step" data-step="6">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Step 6: Tell someone you did this</div>
-                    <div class="step-desc">Tell a friend, family member, or post on social media. Accountability helps! They can remind you if you're tempted to reinstall.</div>
+                    <div class="step-title">Step 6: Tell Someone What You Did</div>
+                    <div class="step-desc">Accountability is powerful! Tell someone so they can support you.</div>
+                    <div class="step-details">
+                        <h5">📣 Who to Tell and What to Say:</h5>
+                        <ul>
+                            <li><strong>Text a friend:</strong> "Hey! I just deleted all my shopping apps from my phone. Trying to stop impulse buying!"</li>
+                            <li><strong>Tell your partner:</strong> "I deleted Amazon, Target, and DoorDash. If I say I need to buy something, remind me to wait 24 hours!"</li>
+                            <li><strong>Post on social media:</strong> "Deleted all shopping apps from my phone today! 📱🚫 Working on my finances!"</li>
+                            <li><strong>Why this helps:</strong> When you feel tempted to reinstall, you'll remember you told people. You won't want to admit you gave up!</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+
             <div class="step" data-step="7">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Step 7: Set up Screen Time limits (optional)</div>
-                    <div class="step-desc">Use Screen Time (iPhone) or Digital Wellbeing (Android) to block reinstalling or limit browser shopping sites.</div>
+                    <div class="step-title">Step 7: Set Up Screen Time Limits (Extra Protection!)</div>
+                    <div class="step-desc">Use your phone's built-in features to block shopping or limit reinstalling apps.</div>
+                    <div class="step-details">
+                        <h5">⏱️ How to Set Up Screen Time:</h5>
+                        <div class="how-to-box">
+                            <h6">iPhone (Screen Time):</h6>
+                            <ol>
+                                <li>Go to <strong>Settings → Screen Time</strong></li>
+                                <li>Tap <strong>"App Limits"</strong></li>
+                                <li>Tap <strong>"Add Limit"</strong></li>
+                                <li>Select <strong>"Shopping"</strong> category</li>
+                                <li>Set a limit of <strong>1 minute/day</strong> (basically blocking it!)</li>
+                                <li><strong>BONUS:</strong> Under "Content & Privacy Restrictions," you can block installing new apps!</li>
+                            </ol>
+                        </div>
+                        <div class="how-to-box">
+                            <h6">Android (Digital Wellbeing):</h6>
+                            <ol>
+                                <li>Go to <strong>Settings → Digital Wellbeing</strong></li>
+                                <li>Tap <strong>"Dashboard"</strong></li>
+                                <li>Find any shopping app</li>
+                                <li>Tap the <strong>timer icon</strong> next to it</li>
+                                <li>Set a daily limit of <strong>1 minute</strong></li>
+                            </ol>
+                        </div>
+                    </div>
                 </div>
             </div>
+
             <div class="step" data-step="8">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Step 8: Replace the habit</div>
-                    <div class="step-desc">When you feel the urge to browse shopping apps, do something else: read, walk, call a friend, check your savings balance.</div>
+                    <div class="step-title">Step 8: Replace the Habit!</div>
+                    <div class="step-desc">When you feel the urge to browse shopping apps, do THIS instead!</div>
+                    <div class="step-details">
+                        <h5">🔄 What to Do Instead of Shopping:</h5>
+                        <ul>
+                            <li><strong>Check your savings account</strong> - Watch your balance grow! It's satisfying!</li>
+                            <li><strong>Open a book app</strong> - Read something instead of shop</li>
+                            <li><strong>Call or text a friend</strong> - Human connection beats shopping dopamine</li>
+                            <li><strong>Go for a walk</strong> - Change your environment, change your mood</li>
+                            <li><strong>Write down what you "wanted"</strong> - Keep a list. After 24 hours, do you still want it?</li>
+                            <li><strong>Look at your financial goals</strong> - Remember WHY you're doing this!</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">🔄</span> Replace the Habit</h2>
-            <p style="color: #666; margin-bottom: 15px;">When you feel the urge to shop, open one of these instead:</p>
-            <div class="replacement-grid">
-                <div class="replacement-card">
+            <h2><span class="icon">🔄</span> Replace the Habit - Open These Instead!</h2>
+            <div class="replace-grid">
+                <div class="replace-card">
                     <div class="emoji">📚</div>
-                    <h4>Read a book</h4>
+                    <h4">Read a Book</h4>
+                    <p>Kindle, library apps</p>
                 </div>
-                <div class="replacement-card">
+                <div class="replace-card">
                     <div class="emoji">🚶</div>
-                    <h4>Go for a walk</h4>
+                    <h4">Go for a Walk</h4>
+                    <p>Change your environment</p>
                 </div>
-                <div class="replacement-card">
+                <div class="replace-card">
                     <div class="emoji">📞</div>
-                    <h4>Call a friend</h4>
+                    <h4">Call a Friend</h4>
+                    <p>Real connection > shopping</p>
                 </div>
-                <div class="replacement-card">
+                <div class="replace-card">
                     <div class="emoji">💰</div>
-                    <h4>Check savings</h4>
+                    <h4">Check Savings</h4>
+                    <p>Watch it grow!</p>
                 </div>
-            </div>
-            
-            <div class="pro-tip">
-                <div class="pro-tip-title">💡 The 21-Day Rule</div>
-                <p>It takes about 21 days to break a habit. If you reinstall a shopping app, delete it again immediately. Each day without the apps makes the next day easier!</p>
+                <div class="replace-card">
+                    <div class="emoji">🏋️</div>
+                    <h4">Exercise</h4>
+                    <p">Free dopamine!</p>
+                </div>
+                <div class="replace-card">
+                    <div class="emoji">📝</div>
+                    <h4">Journal</h4>
+                    <p>Write about urges</p>
+                </div>
             </div>
         </div>
 
         <div class="card">
             <h2><span class="icon">🛠️</span> Helpful Tools</h2>
-            <div class="tool-grid">
+            <div class="tools-grid">
                 <div class="tool-card">
                     <div class="emoji">⏱️</div>
-                    <h4>Screen Time</h4>
-                    <p>iPhone built-in. Set app limits.</p>
+                    <h4">Screen Time (iPhone)</h4>
+                    <p>Built-in! Set app limits and block categories.</p>
                 </div>
                 <div class="tool-card">
                     <div class="emoji">🤖</div>
-                    <h4>Digital Wellbeing</h4>
-                    <p>Android built-in. Set daily limits.</p>
+                    <h4">Digital Wellbeing (Android)</h4>
+                    <p>Built-in! Set daily limits on any app.</p>
                 </div>
                 <div class="tool-card">
                     <div class="emoji">⏸️</div>
-                    <h4>one sec</h4>
-                    <p>Adds pause before distracting apps.</p>
-                    <a href="https://one-sec.app" target="_blank">one-sec.app →</a>
+                    <h4">one sec</h4>
+                    <p>Adds a pause before opening distracting apps. Makes you think!</p>
                 </div>
                 <div class="tool-card">
-                    <div class="emoji">💵</div>
-                    <h4>Spending Tracker</h4>
-                    <p>Track savings after deleting apps!</p>
+                    <div class="emoji">🎯</div>
+                    <h4">Freedom</h4>
+                    <p>Block websites and apps. Schedule focus time.</p>
                 </div>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">🎓</span> Learn From These Creators</h2>
-            <div class="influencer-grid">
-                <div class="influencer-card">
-                    <div class="influencer-avatar">💸</div>
-                    <h4>The Financial Diet</h4>
-                    <div class="platform">📺 YouTube</div>
-                    <p>Chelsea Fagan talks spending psychology, impulse buying triggers, and money mindset.</p>
-                    <a href="https://youtube.com/thefinancialdiet" class="influencer-link" target="_blank">YouTube →</a>
-                </div>
-                <div class="influencer-card">
-                    <div class="influencer-avatar">🧘</div>
-                    <h4>Matt D'Avella</h4>
-                    <div class="platform">📺 YouTube</div>
-                    <p>Minimalism and intentional living. Great videos on breaking shopping habits.</p>
-                    <a href="https://youtube.com/mattdavella" class="influencer-link" target="_blank">YouTube →</a>
-                </div>
-                <div class="influencer-card">
-                    <div class="influencer-avatar">🚫</div>
-                    <h4>r/nobuy</h4>
-                    <div class="platform">🌐 Reddit</div>
-                    <p>Community of people doing no-buy challenges. Great support and tips!</p>
-                    <a href="https://reddit.com/r/nobuy" class="influencer-link" target="_blank">r/nobuy →</a>
-                </div>
-                <div class="influencer-card">
-                    <div class="influencer-avatar">📵</div>
-                    <h4>r/digitalminimalism</h4>
-                    <div class="platform">🌐 Reddit</div>
-                    <p>Reducing phone addiction and app dependency. Perfect for this challenge!</p>
-                    <a href="https://reddit.com/r/digitalminimalism" class="influencer-link" target="_blank">r/digitalminimalism →</a>
-                </div>
+            <h2><span class="icon">📅</span> The 21-Day Rule</h2>
+            <div class="info-box">
+                <div class="info-box-title">🧠 It Takes 21 Days to Break a Habit</div>
+                <p>The first few days will feel hard. You'll reach for apps that aren't there. That's NORMAL!</p>
+                <p style="margin-top: 10px;"><strong>Each day it gets easier.</strong> By day 21, you won't even miss them. If you reinstall an app, DELETE IT AGAIN immediately. Don't give up!</p>
+            </div>
+            
+            <div class="pro-tip">
+                <div class="pro-tip-title">💪 You've Got This!</div>
+                <p>Every day without shopping apps is money saved. Every urge you don't act on makes you stronger. You're not depriving yourself - you're FREEING yourself from manipulation!</p>
             </div>
         </div>
 
@@ -327,37 +469,48 @@
         <div class="card">
             <h2><span class="icon">📝</span> Your App Deletion Tracker</h2>
             <div class="notes-section">
-                <textarea id="notes" placeholder="Track your progress!
+                <textarea id="notes" placeholder="Track your progress here!
 
-APPS DELETED:
-☐ Amazon
-☐ Target
-☐ Walmart
-☐ Shein
-☐ Wayfair
-☐ DoorDash
-☐ UberEats
-☐ Grubhub
-☐ Nike
-☐ Other: ____
+APPS I DELETED:
+☐ Amazon - Deleted!
+☐ Target - Deleted!
+☐ Walmart - Deleted!
+☐ Shein - Deleted!
+☐ Wayfair - Deleted!
+☐ DoorDash - Deleted!
+☐ UberEats - Deleted!
+☐ Grubhub - Deleted!
+☐ Nike - Deleted!
+☐ Other: _____ - Deleted!
+☐ Other: _____ - Deleted!
 
-DATE DELETED: ____
+WHO I TOLD: _____
 
-ACCOUNTABILITY PARTNER: ____
+SCREEN TIME LIMITS SET: ☐ Yes ☐ No
 
-REPLACEMENT HABIT:
-When I want to shop, I will: ____
+MY REPLACEMENT ACTIVITIES:
+1. _____
+2. _____
+3. _____
 
-STREAK TRACKER:
-Day 1: ☐ | Day 7: ☐ | Day 14: ☐ | Day 21: ☐
+URGES I NOTICED (and resisted!):
+Day 1: _____
+Day 3: _____
+Day 7: _____
 
-MONTHLY SAVINGS: $____
+DAYS WITHOUT SHOPPING APPS: _____
+
+MONEY I WOULD HAVE SPENT: $_____
+(Track every time you wanted to buy something but didn't!)
+
+HOW IT FEELS:
+_____
 "></textarea>
             </div>
         </div>
 
         <div class="cta-section">
-            <h3>Need Help With Your Finances?</h3>
+            <h3">Need Help With Your Finances?</h3>
             <p>Chat with an ASAP Financial coach for personalized guidance!</p>
             <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
         </div>
@@ -371,11 +524,25 @@ MONTHLY SAVINGS: $____
                 data.steps.forEach((checked, index) => {
                     if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
                 });
+                if (data.apps) {
+                    data.apps.forEach(app => {
+                        const el = document.querySelector(`[data-app="${app}"]`);
+                        if (el) { 
+                            el.classList.add('deleted'); 
+                            el.querySelector('.status').textContent = '✅ DELETED!';
+                        }
+                    });
+                }
                 document.getElementById('notes').value = data.notes || '';
                 updateProgress();
             }
         });
         function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function toggleApp(el) { 
+            el.classList.toggle('deleted'); 
+            el.querySelector('.status').textContent = el.classList.contains('deleted') ? '✅ DELETED!' : 'Click when deleted!';
+            saveProgress(); 
+        }
         function updateProgress() {
             const total = document.querySelectorAll('.step-checkbox').length;
             const completed = document.querySelectorAll('.step-checkbox.checked').length;
@@ -384,8 +551,9 @@ MONTHLY SAVINGS: $____
         }
         function saveProgress() {
             const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const apps = Array.from(document.querySelectorAll('.app-card.deleted')).map(el => el.dataset.app);
             const notes = document.getElementById('notes').value;
-            localStorage.setItem('playbook-delete-shopping-apps', JSON.stringify({ steps, notes }));
+            localStorage.setItem('playbook-delete-shopping-apps', JSON.stringify({ steps, apps, notes }));
         }
         document.getElementById('notes').addEventListener('input', saveProgress);
     </script>
