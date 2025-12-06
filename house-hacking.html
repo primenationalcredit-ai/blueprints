@@ -1,28 +1,404 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>House Hacking | ASAP Credit Repair Playbook</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>:root{--primary:#063d86;--success:#10b981;--bg:#f8fafc;--text:#1e293b;--text-light:#64748b;--border:#e2e8f0}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}.header{background:linear-gradient(135deg,#8b5cf6,#7c3aed);color:#fff;padding:40px 20px 50px;text-align:center}.header h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:12px}.main-content{max-width:800px;margin:-30px auto 40px;padding:0 20px}.back-link{color:#fff;text-decoration:none;opacity:.8;display:block;margin-bottom:16px}.category-badge{display:inline-block;background:rgba(255,255,255,.2);padding:6px 16px;border-radius:20px;font-size:.85rem;margin-bottom:16px}.goal-card{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid var(--success);border-radius:16px;padding:24px;margin-bottom:24px}.goal-card h2{color:#065f46;margin-bottom:12px}.goal-card .earnings{background:#fff;padding:10px 18px;border-radius:10px;margin-top:14px;font-weight:600;color:#065f46;display:inline-block}.section-card{background:#fff;border-radius:16px;padding:28px;margin-bottom:24px;border:1px solid var(--border)}.section-card h2{color:var(--primary);margin-bottom:20px}.task-list{list-style:none}.task-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)}.task-checkbox{width:28px;height:28px;border:2px solid var(--border);border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}.task-checkbox.checked{background:var(--success);border-color:var(--success);color:#fff}.task-title{font-weight:600;margin-bottom:6px}.task-desc{color:var(--text-light);font-size:.95rem}.task-badge{font-size:.8rem;padding:4px 10px;border-radius:6px;background:var(--bg);margin-top:10px;display:inline-block;margin-right:8px}textarea{width:100%;min-height:120px;padding:14px;border:2px solid var(--border);border-radius:10px;font-family:inherit;margin-top:10px}.help-section{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border:2px solid #7dd3fc;border-radius:16px;padding:20px;margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}.chat-btn{background:var(--primary);color:#fff;border:none;padding:12px 24px;border-radius:10px;font-weight:600;cursor:pointer}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Hacking - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #3f51b5, #303f9f); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e8eaf6, #c5cae9); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #283593; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.2em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #e8eaf6; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #3f51b5; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #3f51b5; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.5; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+        .pricing-table th, .pricing-table td { padding: 12px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .pricing-table th { background: #3f51b5; color: white; }
+        .pricing-table tr:hover { background: #f8f9fa; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .service-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; border-left: 4px solid #3f51b5; }
+        .service-card .emoji { font-size: 2em; margin-bottom: 10px; }
+        .service-card h4 { color: #1a1a2e; font-size: 13px; margin-bottom: 5px; }
+        .service-card p { color: #666; font-size: 11px; }
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .platform-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #4caf50; }
+        .platform-card h4 { color: #1a1a2e; margin-bottom: 8px; }
+        .platform-card h4 a { color: #303f9f; text-decoration: none; }
+        .platform-card h4 a:hover { text-decoration: underline; }
+        .platform-card p { color: #666; font-size: 13px; line-height: 1.5; }
+        .platform-card .type { color: #2e7d32; font-weight: 600; font-size: 12px; margin-top: 8px; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .warning-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-left: 4px solid #1976d2; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .warning-box h4 { color: #1565c0; margin-bottom: 10px; }
+        .warning-box p { color: #666; margin: 5px 0; font-size: 14px; }
+        .skills-box { background: #f8f9fa; border-radius: 15px; padding: 20px; margin: 15px 0; }
+        .skills-box h4 { color: #1a1a2e; margin-bottom: 15px; }
+        .skills-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+        .skill-item { display: flex; align-items: center; gap: 10px; padding: 10px; background: white; border-radius: 8px; }
+        .skill-item .emoji { font-size: 1.3em; }
+        .skill-item span { color: #666; font-size: 13px; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #3f51b5, #303f9f); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #303f9f; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #303f9f; text-decoration: none; font-weight: 600; }
+        .progress-tracker { background: linear-gradient(135deg, #3f51b5, #303f9f); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #3f51b5; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #3f51b5, #303f9f); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+        .profit-example { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 20px; margin: 20px 0; }
+        .profit-example h4 { color: #2e7d32; margin-bottom: 15px; }
+        .profit-example pre { background: white; padding: 15px; border-radius: 10px; font-size: 13px; overflow-x: auto; }
+    </style>
 </head>
 <body>
-  <header class="header"><a href="index.html" class="back-link">← Back to All Playbooks</a><span class="category-badge">📈 Passive Income</span><h1>House Hacking</h1><p style="opacity:.9;max-width:600px;margin:0 auto">Build wealth with passive income strategies!</p></header>
-  <main class="main-content">
-    <div class="goal-card"><h2>🎯 What You'll Achieve</h2><p>Create passive income streams that work while you sleep!</p><div class="earnings">💰 Build long-term wealth and financial freedom</div></div>
-    <div class="section-card"><h2>📋 Quick Start Guide</h2>
-      <ul class="task-list">
-        <li class="task-item"><div class="task-checkbox" data-task="0"></div><div><div class="task-title">Step 1: Learn the fundamentals</div><div class="task-desc">Understand how this passive income stream works.</div></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="1"></div><div><div class="task-title">Step 2: Assess capital requirements</div><div class="task-desc">Determine how much you need to invest to start.</div></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="2"></div><div><div class="task-title">Step 3: Research platforms/opportunities</div><div class="task-desc">Find the best ways to get started.</div></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="3"></div><div><div class="task-title">Step 4: Make your first investment</div><div class="task-desc">Start small to learn the process.</div></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="4"></div><div><div class="task-title">Step 5: Monitor and optimize</div><div class="task-desc">Track performance and improve returns.</div></div></li>
-        <li class="task-item"><div class="task-checkbox" data-task="5"></div><div><div class="task-title">Step 6: Scale your investments</div><div class="task-desc">Grow your passive income over time.</div></div></li>
-      </ul></div>
-    <div class="section-card"><h2>📝 Your Investment Tracker</h2><textarea id="userNotes" placeholder="Track your passive income progress here..."></textarea></div>
-    <div class="help-section"><span style="font-size:24px">💬</span><div style="flex:1"><strong>Need Help?</strong> Chat with a coach!</div><button class="chat-btn" onclick="location.href='https://asapcreditrepairusa.com/chat'">Start Chat</button></div>
-  </main>
-  <script>const K='pb_house-hacking';function load(){const s=localStorage.getItem(K);if(s){const d=JSON.parse(s);document.querySelectorAll('.task-checkbox').forEach((b,i)=>{if(d.tasks&&d.tasks[i]){b.classList.add('checked');b.innerHTML='✓'}});if(d.notes)document.getElementById('userNotes').value=d.notes}}function save(){const t=[];document.querySelectorAll('.task-checkbox').forEach(b=>t.push(b.classList.contains('checked')));localStorage.setItem(K,JSON.stringify({tasks:t,notes:document.getElementById('userNotes').value}))}document.querySelectorAll('.task-checkbox').forEach(b=>b.onclick=function(){this.classList.toggle('checked');this.innerHTML=this.classList.contains('checked')?'✓':'';save()});document.getElementById('userNotes').oninput=save;load();</script>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Playbooks</a>
+        
+        <div class="header">
+            <h1>🏠 House Hacking</h1>
+            <p class="subtitle">Live for free (or get paid!) by renting out part of your home</p>
+            <div class="time-badge">💰 Live free or profit! • Build equity • #1 wealth hack for beginners!</div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>The #1 real estate wealth-building strategy! Buy a property, live in one part, rent out the rest to cover your mortgage (or more!). Duplex, triplex, single-family with rooms/basement—many options. Live for FREE while building equity. Move out in a year, keep renting it, buy another. Repeat to build a real estate portfolio!</p>
+            </div>
+            <div class="income-highlight">
+                <h3>Live FREE or Get Paid!</h3>
+                <p>Tenants pay your mortgage • Build equity • Low down payment (3.5% FHA) • Repeat to build wealth!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🏘️</span> House Hacking Strategies</h2>
+            <table class="pricing-table">
+                <tr><th>Strategy</th><th>Description</th><th>Income Potential</th></tr>
+                <tr><td>Duplex/Triplex/Fourplex</td><td>Live in one unit, rent others</td><td>$1,000-3,000+/mo</td></tr>
+                <tr><td>Rent Rooms</td><td>Single-family, rent spare bedrooms</td><td>$500-1,500/mo</td></tr>
+                <tr><td>Basement Unit</td><td>Rent finished basement as apartment</td><td>$800-1,500/mo</td></tr>
+                <tr><td>Airbnb a Room</td><td>Short-term rent spare room</td><td>$500-2,000/mo</td></tr>
+                <tr><td>ADU/Garage Conversion</td><td>Build/convert accessory dwelling unit</td><td>$1,000-2,000/mo</td></tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💰</span> The House Hack Math</h2>
+            <div class="profit-example">
+                <h4>💵 Example: Duplex House Hack</h4>
+                <pre>
+PURCHASE: $350,000 duplex
+Down payment (3.5% FHA): $12,250
+Closing costs: ~$10,000
+TOTAL TO START: ~$22,250
+
+YOUR MONTHLY COSTS:
+Mortgage (P&I):    $2,100
+Property taxes:    $350
+Insurance:         $150
+TOTAL:             $2,600
+
+RENTAL INCOME:
+Other unit rent:   $1,800
+
+YOUR NET COST: $800/month!
+
+Compare to renting: $1,500+/month
+YOU SAVE: $700+/month PLUS building equity!
+
+AFTER 1 YEAR:
+Move out, rent your unit too!
+Total rent: $3,600/month
+Cash flow: $1,000+/month!
+</pre>
+            </div>
+            <div class="profit-example">
+                <h4>💵 Example: Rent-By-Room</h4>
+                <pre>
+PURCHASE: $280,000 4BR house
+Mortgage + taxes + insurance: $2,000/mo
+
+RENT 3 ROOMS:
+Room 1: $650
+Room 2: $650
+Room 3: $600
+TOTAL RENT: $1,900
+
+YOUR COST: $100/month!
+(Basically FREE housing + building equity!)
+</pre>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🏦</span> Financing Options</h2>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h4>FHA Loan (3.5% down)</h4>
+                    <p>Best for beginners! Low down payment, allows 1-4 unit properties if you live in one. Must live there 1 year.</p>
+                    <div class="type">💰 Lowest down payment</div>
+                </div>
+                <div class="platform-card">
+                    <h4>Conventional (5-20% down)</h4>
+                    <p>No PMI at 20% down. Also allows house hacking on 1-4 units. More flexibility after closing.</p>
+                    <div class="type">🏠 Standard option</div>
+                </div>
+                <div class="platform-card">
+                    <h4>VA Loan (0% down)</h4>
+                    <p>For veterans/military. Zero down payment! Allows up to 4 units if you live in one. Best deal if you qualify!</p>
+                    <div class="type">🎖️ Veterans only</div>
+                </div>
+                <div class="platform-card">
+                    <h4>203k Renovation Loan</h4>
+                    <p>Buy a fixer-upper and finance repairs. Great for adding units (basement, ADU). More complex but powerful!</p>
+                    <div class="type">🔨 Buy + renovate</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📊</span> Property Types</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="emoji">🏠</div>
+                    <h4>Single Family</h4>
+                    <p>Rent rooms or basement</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🏘️</div>
+                    <h4>Duplex</h4>
+                    <p>2 units, live in 1</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🏢</div>
+                    <h4>Triplex</h4>
+                    <p>3 units, more cash flow</p>
+                </div>
+                <div class="service-card">
+                    <div class="emoji">🏗️</div>
+                    <h4>Fourplex</h4>
+                    <p>Max units for residential loan</p>
+                </div>
+            </div>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Why Fourplex is the Sweet Spot</div>
+                <p>4 units is the maximum you can buy with residential (FHA/VA/Conventional) financing. 5+ units requires commercial loans with higher down payments. A fourplex with 3 tenants can often fully cover your mortgage AND give you cash flow!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Check your finances</div>
+                    <div class="step-desc">Credit score (620+ for FHA, 680+ ideal), debt-to-income ratio, savings for down payment + reserves. Get pre-approved to know your budget!</div>
+                </div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Choose your strategy</div>
+                    <div class="step-desc">Duplex/triplex/fourplex? Rent rooms in single family? Basement apartment? Match strategy to your market and comfort level.</div>
+                </div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Research your market</div>
+                    <div class="step-desc">What do similar properties sell for? What can units rent for? Run the numbers—rental income should cover most/all of mortgage!</div>
+                </div>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Get pre-approved</div>
+                    <div class="step-desc">Talk to lenders about FHA, VA, or conventional. Know exactly what you can afford. Get multiple quotes!</div>
+                </div>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Find an investor-friendly agent</div>
+                    <div class="step-desc">Work with a realtor who understands house hacking and investment properties. They'll help you find deals!</div>
+                </div>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Analyze deals ruthlessly</div>
+                    <div class="step-desc">Run numbers on every property. Will rent cover your mortgage? BiggerPockets calculator helps. Don't buy a bad deal!</div>
+                </div>
+            </div>
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Close and move in</div>
+                    <div class="step-desc">Close on property, move into your unit. You must live there (FHA requires 1 year minimum). Make it your primary residence!</div>
+                </div>
+            </div>
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Rent out other units/rooms</div>
+                    <div class="step-desc">Find quality tenants, screen carefully. Collect rent, cover your mortgage, live free! After 1 year, move out and repeat with property #2!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎓</span> Resources</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🏠</div>
+                    <h4>BiggerPockets</h4>
+                    <div class="platform">🌐 Community</div>
+                    <p>THE real estate investing community. Forums, calculators, podcasts!</p>
+                    <a href="https://www.biggerpockets.com" class="influencer-link" target="_blank">BiggerPockets →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>BP Real Estate Podcast</h4>
+                    <div class="platform">📺 Podcast</div>
+                    <p>House hacking stories and strategies from real investors!</p>
+                    <a href="https://www.biggerpockets.com/podcast" class="influencer-link" target="_blank">Podcast →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📊</div>
+                    <h4>BP Rental Calculator</h4>
+                    <div class="platform">🌐 Tool</div>
+                    <p>Analyze any deal. Know if numbers work before buying!</p>
+                    <a href="https://www.biggerpockets.com/rental-property-calculator" class="influencer-link" target="_blank">Calculator →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💬</div>
+                    <h4>r/HouseHacking</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Active community sharing house hack deals and advice!</p>
+                    <a href="https://www.reddit.com/r/househacking/" class="influencer-link" target="_blank">Reddit →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your House Hacking Planner</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Plan your house hack!
+
+MY FINANCES:
+Credit score: ____
+Savings for down payment: $____
+Monthly income: $____
+Current rent paying: $____
+
+STRATEGY CHOICE:
+☐ Duplex/triplex/fourplex
+☐ Rent rooms (single family)
+☐ Basement apartment
+☐ Airbnb room
+☐ ADU/garage conversion
+
+LOAN TYPE:
+☐ FHA (3.5% down)
+☐ Conventional (5-20%)
+☐ VA (0% down)
+☐ 203k renovation
+
+TARGET PROPERTY:
+Property type: ____
+Price range: $____
+# of units: ____
+Target neighborhood: ____
+
+DEAL ANALYSIS:
+Purchase price: $____
+Down payment: $____
+Monthly mortgage (PITI): $____
+Expected rental income: $____
+My cost after rent: $____
+
+TEAM:
+Lender: ____
+Realtor: ____
+Insurance agent: ____
+
+TIMELINE:
+Pre-approval date: ____
+Start searching: ____
+Target close date: ____
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-house-hacking');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-house-hacking', JSON.stringify({ steps, notes }));
+        }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+    </script>
 </body>
 </html>
