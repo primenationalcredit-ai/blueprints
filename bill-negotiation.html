@@ -3,483 +3,269 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bill Negotiation Scripts - Word-for-Word Guides - ASAP Financial Playbook</title>
+    <title>Bill Negotiation Scripts - ASAP Financial Playbook</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
-        .container { max-width: 900px; margin: 0 auto; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
         .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
-        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
-        .header .subtitle { color: #666; font-size: 1.2em; }
-        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .header h1 { font-size: 2.5em; color: #1a1a2e; margin-bottom: 10px; }
+        .header .subtitle { font-size: 1.2em; color: #666; margin-bottom: 20px; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 10px 25px; border-radius: 20px; }
         .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
-        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
-        .card h2 .icon { font-size: 1.5em; }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; font-size: 1.5em; }
         .achieve-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
-        .achieve-box p { color: #2e7d32; font-size: 1.1em; line-height: 1.6; }
-        .savings-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .achieve-box p { color: #2e7d32; font-size: 1.1em; margin-bottom: 10px; }
+        .savings-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 25px; text-align: center; }
         .savings-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
-        .savings-highlight p { font-size: 1.1em; opacity: 0.95; }
-        
-        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
-        .step:hover { background: #e8f5e9; }
-        .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .savings-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .savings-table th { background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 12px; text-align: left; }
+        .savings-table td { padding: 12px; border-bottom: 1px solid #eee; }
+        .step { margin-bottom: 25px; padding: 25px; background: #f8f9fa; border-radius: 15px; border-left: 5px solid #667eea; }
+        .step-header { display: flex; gap: 15px; align-items: flex-start; margin-bottom: 15px; }
+        .step-checkbox { width: 35px; height: 35px; min-width: 35px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; color: transparent; font-size: 1.2em; }
         .step-checkbox.checked { background: #667eea; color: white; }
-        .step-content { flex: 1; }
-        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
-        .step-desc { color: #666; line-height: 1.5; }
-        
-        /* Savings Table */
-        .savings-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 15px; overflow: hidden; }
-        .savings-table th, .savings-table td { padding: 15px; text-align: left; border-bottom: 1px solid #e0e0e0; }
-        .savings-table th { background: #667eea; color: white; font-weight: 600; }
-        .savings-table tr:hover { background: #f5f5f5; }
-        .savings-table .high { color: #4caf50; font-weight: 700; }
-        .savings-table .medium { color: #ff9800; font-weight: 700; }
-        
-        /* Script Box */
-        .script-box { background: #f8f9fa; border-radius: 15px; padding: 25px; margin: 20px 0; border-left: 5px solid #667eea; }
-        .script-box h4 { color: #1a1a2e; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
-        .script-box .label { background: #667eea; color: white; padding: 3px 10px; border-radius: 5px; font-size: 12px; }
-        .script-text { background: white; padding: 20px; border-radius: 10px; font-style: italic; color: #333; line-height: 1.8; margin: 10px 0; border: 1px solid #e0e0e0; }
-        .script-note { font-size: 13px; color: #666; margin-top: 10px; }
-        
-        /* Response Box */
-        .response-box { background: #e3f2fd; padding: 15px; border-radius: 10px; margin: 10px 0; }
-        .response-box .them { color: #1565c0; font-weight: 600; margin-bottom: 5px; }
-        .response-box .you { color: #2e7d32; font-weight: 600; margin-top: 10px; }
-        .response-box p { color: #666; margin: 5px 0; font-style: italic; }
-        
+        .step-title { font-weight: 700; color: #1a1a2e; font-size: 1.2em; }
+        .step-time { color: #667eea; font-size: 0.9em; }
+        .step-content { margin-left: 50px; }
+        .step-desc { color: #444; font-size: 1.05em; margin-bottom: 15px; }
+        .substep { background: white; border-radius: 10px; padding: 15px; margin: 10px 0; border-left: 3px solid #4caf50; }
+        .substep-title { font-weight: 600; color: #2e7d32; margin-bottom: 8px; }
+        .substep p { color: #555; font-size: 0.95em; margin-bottom: 5px; }
+        .script-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 25px; margin: 20px 0; border-left: 5px solid #1976d2; }
+        .script-box h4 { color: #1565c0; margin-bottom: 15px; }
+        .script-text { background: white; border-radius: 10px; padding: 20px; font-size: 1.05em; color: #333; line-height: 1.8; border: 2px dashed #1976d2; }
+        .script-text strong { color: #1565c0; }
+        .followup-box { background: #f5f5f5; border-radius: 10px; padding: 15px; margin-top: 15px; }
+        .followup-box h5 { color: #666; margin-bottom: 10px; font-size: 0.9em; }
+        .followup-box p { color: #333; font-size: 0.95em; margin-bottom: 8px; }
+        .timing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 20px 0; }
+        .timing-card { border-radius: 12px; padding: 20px; text-align: center; }
+        .timing-card.best { background: #e8f5e9; border: 2px solid #4caf50; }
+        .timing-card.good { background: #fff8e1; border: 2px solid #ffc107; }
+        .timing-card.avoid { background: #ffebee; border: 2px solid #f44336; }
+        .timing-card h4 { margin-bottom: 8px; }
         .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
         .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
-        .pro-tip p { color: #666; margin: 8px 0; }
-        
+        .pro-tip p { color: #5d4e37; margin-bottom: 8px; }
         .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
-        .warning-box h4 { color: #c62828; margin-bottom: 10px; }
-        .warning-box p { color: #666; }
-        
-        /* Timing Grid */
-        .timing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
-        .timing-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; }
-        .timing-card.best { border: 3px solid #4caf50; background: #e8f5e9; }
-        .timing-card.good { border: 2px solid #ffc107; }
-        .timing-card.avoid { border: 2px solid #f44336; background: #ffebee; }
-        .timing-card h4 { margin-bottom: 8px; }
-        .timing-card.best h4 { color: #2e7d32; }
-        .timing-card.avoid h4 { color: #c62828; }
-        .timing-card p { font-size: 13px; color: #666; }
-        
-        /* Influencer Section */
-        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
-        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
-        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .warning-box .warning-title { font-weight: 700; color: #c62828; margin-bottom: 10px; }
+        .warning-box p { color: #5d3a3a; }
+        .discount-list { background: #f8f9fa; border-radius: 15px; padding: 20px; margin: 20px 0; }
+        .discount-list h4 { color: #1a1a2e; margin-bottom: 15px; }
+        .discount-list li { padding: 8px 0; color: #333; border-bottom: 1px solid #e0e0e0; list-style: none; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; }
+        .influencer-avatar { width: 70px; height: 70px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 1.8em; color: white; }
         .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
-        .influencer-card .platform { color: #667eea; font-size: 14px; margin-bottom: 10px; }
-        .influencer-card .followers { color: #999; font-size: 12px; margin-bottom: 10px; }
-        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
-        .influencer-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; }
-        
-        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .influencer-card .platform { color: #667eea; font-size: 0.85em; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 0.85em; margin-bottom: 12px; }
+        .influencer-link { display: inline-block; color: #667eea; text-decoration: none; font-weight: 600; padding: 6px 16px; border: 2px solid #667eea; border-radius: 20px; font-size: 0.9em; }
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; text-align: center; }
         .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
-        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
-        .progress-text { font-size: 1.2em; font-weight: 600; }
-        
-        .notes-section { margin-top: 20px; }
-        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
-        .notes-section textarea:focus { outline: none; border-color: #667eea; }
-        
+        .progress-fill { background: white; height: 100%; border-radius: 10px; width: 0%; }
+        .notes-section textarea { width: 100%; min-height: 220px; padding: 20px; border: 2px solid #e0e0e0; border-radius: 15px; font-family: inherit; font-size: 1em; resize: vertical; }
         .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
-        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
-        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; }
+        @media (max-width: 600px) { .header h1 { font-size: 1.8em; } .step-content { margin-left: 0; margin-top: 15px; } .step-header { flex-direction: column; } .timing-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
     <div class="container">
         <a href="expense-playbooks.html" class="back-link">← Back to Expense Playbooks</a>
-        
         <div class="header">
             <h1>📞 Bill Negotiation Scripts</h1>
-            <p class="subtitle">Word-for-word scripts to lower your monthly bills</p>
+            <p class="subtitle">Word-for-word scripts to lower your bills—just read what it says!</p>
             <div class="time-badge">⏱️ 15-30 min per call • Save $500-2,000/year</div>
         </div>
-
+        
         <div class="card">
-            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <h2>🎯 What This Does For You</h2>
             <div class="achieve-box">
-                <p>Most bills are negotiable - companies would rather give you a discount than lose you as a customer! With these proven scripts, you can lower your phone, internet, cable, insurance, and even medical bills by 10-40% with just a few phone calls. One afternoon of calls can save you thousands per year.</p>
+                <p><strong>Secret most people don't know:</strong> Almost every bill is negotiable! Companies would rather give you a discount than lose you as a customer.</p>
+                <p>The problem? Most people feel awkward asking. That's why we give you the EXACT words to say. Just read the script!</p>
             </div>
             <div class="savings-highlight">
-                <h3>Save $500-2,000/Year</h3>
-                <p>30 minutes on the phone can be worth $50-100/hour of your time!</p>
+                <h3>$500-2,000+ Saved Per Year</h3>
+                <p>15 minutes on the phone = $50-100/hour of your time!</p>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">💵</span> What You Can Save by Bill Type</h2>
+            <h2>💵 What You Can Save</h2>
             <table class="savings-table">
-                <thead>
-                    <tr>
-                        <th>Bill Type</th>
-                        <th>Typical Savings</th>
-                        <th>Success Rate</th>
-                        <th>Best Approach</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>📺 Cable/Internet</td>
-                        <td class="high">$20-60/month</td>
-                        <td class="high">Very High</td>
-                        <td>Threaten to cancel</td>
-                    </tr>
-                    <tr>
-                        <td>📱 Cell Phone</td>
-                        <td class="high">$20-50/month</td>
-                        <td class="high">High</td>
-                        <td>Mention competitors</td>
-                    </tr>
-                    <tr>
-                        <td>🚗 Car Insurance</td>
-                        <td class="high">$200-800/year</td>
-                        <td class="high">High</td>
-                        <td>Get competing quotes</td>
-                    </tr>
-                    <tr>
-                        <td>🏠 Home Insurance</td>
-                        <td class="high">$100-500/year</td>
-                        <td class="high">High</td>
-                        <td>Bundle + loyalty</td>
-                    </tr>
-                    <tr>
-                        <td>💳 Credit Card APR</td>
-                        <td class="medium">2-10% reduction</td>
-                        <td class="medium">Medium</td>
-                        <td>Good payment history</td>
-                    </tr>
-                    <tr>
-                        <td>🏥 Medical Bills</td>
-                        <td class="high">20-50% off</td>
-                        <td class="high">Medium-High</td>
-                        <td>Ask for cash discount</td>
-                    </tr>
-                    <tr>
-                        <td>🏋️ Gym Membership</td>
-                        <td class="medium">$10-30/month</td>
-                        <td class="medium">Medium</td>
-                        <td>Threaten to cancel</td>
-                    </tr>
-                </tbody>
+                <tr><th>Bill Type</th><th>Typical Savings</th><th>Difficulty</th></tr>
+                <tr><td>📺 Internet/Cable</td><td>$20-60/month</td><td>Easy!</td></tr>
+                <tr><td>📱 Cell Phone</td><td>$20-50/month</td><td>Easy!</td></tr>
+                <tr><td>🚗 Car Insurance</td><td>$200-800/year</td><td>Need quotes</td></tr>
+                <tr><td>🏥 Medical Bills</td><td>20-50% off</td><td>Just ask!</td></tr>
+                <tr><td>💳 Credit Card APR</td><td>2-10% lower</td><td>Need good history</td></tr>
             </table>
         </div>
 
         <div class="card">
-            <h2><span class="icon">📋</span> Your Negotiation Action Plan</h2>
+            <h2>⏰ Best Times to Call</h2>
+            <div class="timing-grid">
+                <div class="timing-card best"><h4>🎯 BEST</h4><p><strong>Tue-Thu 10am-2pm</strong><br>End of month</p></div>
+                <div class="timing-card good"><h4>👍 OK</h4><p><strong>Weekdays 9am-4pm</strong><br>Mid-month</p></div>
+                <div class="timing-card avoid"><h4>❌ AVOID</h4><p><strong>Mon, Fri</strong><br>Lunch, after 5pm</p></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📋 Your Action Plan</h2>
             
             <div class="step" data-step="1">
-                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-header">
+                    <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                    <div><div class="step-title">Step 1: Gather Your Bills (5 min)</div><div class="step-time">Know what you're paying</div></div>
+                </div>
                 <div class="step-content">
-                    <div class="step-title">Step 1: Gather your current bills</div>
-                    <div class="step-desc">Collect statements for internet, phone, insurance, and any recurring bills. Know exactly what you're paying - this is your baseline.</div>
+                    <div class="substep"><div class="substep-title">📝 Write down:</div><p>Company: ___ | Current cost: $___ | How long a customer: ___ years</p></div>
                 </div>
             </div>
+
             <div class="step" data-step="2">
-                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-header">
+                    <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                    <div><div class="step-title">Step 2: Research Competitor Prices (10 min)</div><div class="step-time">This is your leverage!</div></div>
+                </div>
                 <div class="step-content">
-                    <div class="step-title">Step 2: Research competitor prices</div>
-                    <div class="step-desc">Spend 10 minutes finding what competitors charge. Screenshot new customer deals. This is your leverage!</div>
+                    <div class="step-desc">Google competitors and screenshot their new customer deals. You NEED real numbers to mention on the call!</div>
                 </div>
             </div>
+
             <div class="step" data-step="3">
-                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-header">
+                    <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                    <div><div class="step-title">Step 3: Ask for "Retention" Department</div><div class="step-time">They have the real power!</div></div>
+                </div>
                 <div class="step-content">
-                    <div class="step-title">Step 3: Choose the right time to call</div>
-                    <div class="step-desc">Call Tuesday-Thursday, mid-morning (10am-2pm). End of month is best - reps have quotas. Avoid Mondays and Fridays.</div>
+                    <div class="substep"><div class="substep-title">📞 Say this:</div><p>"I'm considering canceling my service"</p><p>→ They'll transfer you to retention—THESE people can give big discounts!</p></div>
                 </div>
             </div>
+
             <div class="step" data-step="4">
-                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
-                <div class="step-content">
-                    <div class="step-title">Step 4: Ask for the retention department</div>
-                    <div class="step-desc">Regular customer service can't give big discounts. Say "I'm thinking of canceling" to get transferred to retention - they have the real power!</div>
+                <div class="step-header">
+                    <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                    <div><div class="step-title">Step 4: Use the Script Below</div><div class="step-time">Just read it word-for-word!</div></div>
                 </div>
             </div>
+
             <div class="step" data-step="5">
-                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-header">
+                    <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                    <div><div class="step-title">Step 5: Ask "What else can you do?"</div><div class="step-time">Their first offer isn't their best!</div></div>
+                </div>
                 <div class="step-content">
-                    <div class="step-title">Step 5: Use the scripts below</div>
-                    <div class="step-desc">Be polite but firm. Mention loyalty and competitor prices. Use strategic silence after asking for a discount - let them fill the gap!</div>
+                    <div class="pro-tip"><div class="pro-tip-title">💡 Then Stay Silent!</div><p>After asking, don't talk. Let them fill the silence—that's when they find extra discounts!</p></div>
                 </div>
             </div>
+
             <div class="step" data-step="6">
-                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
-                <div class="step-content">
-                    <div class="step-title">Step 6: Always ask "What else can you do?"</div>
-                    <div class="step-desc">Their first offer is rarely their best. After they give you something, ask this question. Often they'll find another discount!</div>
+                <div class="step-header">
+                    <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                    <div><div class="step-title">Step 6: Get It in Writing</div><div class="step-time">Ask for email confirmation!</div></div>
                 </div>
             </div>
+
             <div class="step" data-step="7">
-                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-header">
+                    <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                    <div><div class="step-title">Step 7: If No—Call Back!</div><div class="step-time">Different rep = different result</div></div>
+                </div>
                 <div class="step-content">
-                    <div class="step-title">Step 7: Get it in writing</div>
-                    <div class="step-desc">Ask for email confirmation of the new rate. Ask how long the discount lasts. Set a calendar reminder to renegotiate before it expires!</div>
-                </div>
-            </div>
-            <div class="step" data-step="8">
-                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
-                <div class="step-content">
-                    <div class="step-title">Step 8: If they say no, hang up and call back</div>
-                    <div class="step-desc">Different rep = different result. Some reps are more empowered than others. Try 2-3 times before giving up.</div>
+                    <div class="step-desc">Hang up, wait 15 min, call again. Try 2-3 times before giving up!</div>
                 </div>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">📜</span> Cable/Internet Script</h2>
+            <h2>📜 Internet/Cable Script</h2>
             <div class="script-box">
-                <h4>📺 Opening Script <span class="label">HIGH SUCCESS</span></h4>
-                <div class="script-text">
-                    "Hi, I've been a customer for [X years] and I really like your service, but I'm looking at my bill and it seems high compared to what I'm seeing from other providers. [Competitor] is offering new customers [specific deal] right now. I'd prefer to stay with you, but I need to get my bill down to make it work. What can you do to help me out?"
-                </div>
-                <div class="script-note">✓ Mentions loyalty | ✓ Has competitor info | ✓ Expresses preference to stay | ✓ Asks open-ended question</div>
+                <h4>📺 Read This Word-for-Word:</h4>
+                <div class="script-text">"Hi, I've been a customer for <strong>[X years]</strong> and I really like your service, but I'm looking at my bill and it seems high compared to what I'm seeing from other providers. <strong>[Competitor]</strong> is offering new customers <strong>[their deal]</strong> right now. I'd prefer to stay with you, but I need to get my bill down. <strong>What can you do to help me out?</strong>"</div>
             </div>
-            
-            <div class="response-box">
-                <div class="them">If they say: "Let me check what promotions we have available..."</div>
-                <p>Wait silently. Let them work. They're looking for discounts.</p>
-                <div class="you">After their offer, say:</div>
-                <p>"That helps, thank you. Is there anything else you can do? Any other discounts or promotions I might qualify for?"</p>
-            </div>
-            
-            <div class="response-box">
-                <div class="them">If they say: "I'm sorry, but that's the best we can do..."</div>
-                <div class="you">Say:</div>
-                <p>"I understand. Well, I think I need to go ahead and cancel then. Can you transfer me to someone who can process that?"</p>
-                <p style="color: #4caf50; font-weight: 600; margin-top: 10px;">🔥 This often triggers a better offer immediately!</p>
+            <div class="followup-box">
+                <h5>If they say "That's the best we can do..."</h5>
+                <p>→ Say: "I understand. Well, I think I need to go ahead and cancel then."</p>
+                <p style="color: #c62828; font-weight: 600;">🔥 This often triggers a better offer immediately!</p>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">📜</span> Cell Phone Script</h2>
+            <h2>📜 Cell Phone Script</h2>
             <div class="script-box">
-                <h4>📱 Opening Script <span class="label">HIGH SUCCESS</span></h4>
-                <div class="script-text">
-                    "Hi, I've been looking at my phone bill and comparing it to what's available now. I see that Mint Mobile offers unlimited for $30/month and Visible has unlimited for $25. I've been a loyal customer, but I'm paying [your current amount] and it's hard to justify when I could get the same service for so much less. What can you do to keep me as a customer?"
-                </div>
+                <h4>📱 Read This:</h4>
+                <div class="script-text">"Hi, I've been comparing prices and I see <strong>Mint Mobile offers unlimited for $30/month</strong>. I'm paying <strong>[your amount]</strong> and it's hard to justify. <strong>What can you do to keep me as a customer?</strong>"</div>
             </div>
-            
-            <div class="pro-tip">
-                <div class="pro-tip-title">💡 Cell Phone Negotiation Tips</div>
-                <p>• Ask about loyalty discounts (long-term customers often qualify)</p>
-                <p>• Ask about autopay discounts ($5-10/month at most carriers)</p>
-                <p>• Ask to switch to a cheaper plan tier if you don't use much data</p>
-                <p>• Ask to remove device protection if you don't need it ($15-20/month)</p>
+            <div class="discount-list">
+                <h4>📋 Also Ask About:</h4>
+                <ul>
+                    <li>✅ Loyalty discount for long-term customers</li>
+                    <li>✅ Autopay discount ($5-10/month!)</li>
+                    <li>✅ Cheaper plan if you don't use much data</li>
+                    <li>✅ Remove device protection ($15-20/month)</li>
+                </ul>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">📜</span> Insurance Script</h2>
+            <h2>📜 Insurance Script</h2>
             <div class="script-box">
-                <h4>🚗 Car/Home Insurance Script <span class="label">VERY HIGH SUCCESS</span></h4>
-                <div class="script-text">
-                    "Hi, I've been a customer for [X years] and I'm doing my annual review of my insurance costs. I've gotten some quotes from other companies that are quite a bit lower - [Competitor] quoted me [amount] for similar coverage. Before I switch, I wanted to see what you could do. Are there any discounts I'm not currently getting? Any way to bring my premium down?"
-                </div>
-                <div class="script-note">💡 Get actual quotes from 3+ competitors first - you need real numbers for leverage!</div>
+                <h4>🚗 Read This:</h4>
+                <div class="script-text">"Hi, I've been a customer for <strong>[X years]</strong> and I'm doing my annual insurance review. I got quotes from other companies that are lower—<strong>[Competitor]</strong> quoted me <strong>[amount]</strong>. Before I switch, <strong>are there any discounts I'm not getting?</strong>"</div>
             </div>
-            
-            <div class="pro-tip">
-                <div class="pro-tip-title">💡 Insurance Discounts to Ask For</div>
-                <p>• Multi-policy/bundle discount (combine auto + home)</p>
-                <p>• Loyalty discount (5+ years with company)</p>
-                <p>• Safe driver discount (no accidents/tickets)</p>
-                <p>• Low mileage discount (if you drive less than average)</p>
-                <p>• Defensive driving course discount</p>
-                <p>• Good credit discount</p>
-                <p>• Professional association discount</p>
-                <p>• Higher deductible = lower premium</p>
-            </div>
+            <div class="warning-box"><div class="warning-title">⚠️ Get REAL Quotes First!</div><p>Spend 15 min on Geico, Progressive, State Farm websites. You need real numbers!</p></div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">📜</span> Medical Bill Script</h2>
+            <h2>📜 Medical Bill Script</h2>
             <div class="script-box">
-                <h4>🏥 Medical Bill Script <span class="label">HIGH SUCCESS</span></h4>
-                <div class="script-text">
-                    "Hi, I received a bill for [amount] and I'd like to discuss payment options. I want to pay this bill, but the amount is difficult for me right now. Do you offer any discounts for paying in full today? Or payment plans? I've also heard you may have financial assistance programs - could you tell me about those?"
-                </div>
+                <h4>🏥 Read This:</h4>
+                <div class="script-text">"Hi, I received a bill for <strong>[amount]</strong> and I'd like to discuss payment options. <strong>Do you offer any discounts for paying in full today?</strong> Or payment plans? Do you have financial assistance programs?"</div>
             </div>
-            
-            <div class="pro-tip">
-                <div class="pro-tip-title">💡 Medical Bill Tips</div>
-                <p>• Always ask for an itemized bill first - errors are common!</p>
-                <p>• Cash pay discount: 10-40% off for paying immediately</p>
-                <p>• Ask about charity care or financial assistance programs</p>
-                <p>• Payment plans are usually interest-free</p>
-                <p>• Negotiate BEFORE the bill goes to collections</p>
-            </div>
+            <div class="pro-tip"><div class="pro-tip-title">💡 Medical Bill Tips:</div><p>• Ask for itemized bill first—errors are common!</p><p>• "Cash pay" discount = 10-40% off!</p><p>• Payment plans are usually interest-free</p></div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">📜</span> Credit Card APR Script</h2>
-            <div class="script-box">
-                <h4>💳 Lower Your Interest Rate <span class="label">MEDIUM SUCCESS</span></h4>
-                <div class="script-text">
-                    "Hi, I've been a cardholder for [X years] and I've always paid on time. I'm looking at my APR of [current rate] and I'm wondering if there's anything you can do to lower it? I've gotten offers from other cards with much lower rates, and I'd hate to have to transfer my balance, but I need to be smart about interest."
-                </div>
-                <div class="script-note">✓ Works best if you have good payment history | ✓ Mention competing offers | ✓ Average success: 2-6% reduction</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2><span class="icon">⏰</span> Best Times to Call</h2>
-            <div class="timing-grid">
-                <div class="timing-card best">
-                    <h4>🎯 BEST</h4>
-                    <p>Tue-Thu, 10am-2pm<br>End of month</p>
-                </div>
-                <div class="timing-card good">
-                    <h4>👍 GOOD</h4>
-                    <p>Weekdays 9am-4pm<br>Mid-month</p>
-                </div>
-                <div class="timing-card avoid">
-                    <h4>❌ AVOID</h4>
-                    <p>Mondays, Fridays<br>Lunch hours, after 5pm</p>
-                </div>
-            </div>
-            
-            <div class="pro-tip">
-                <div class="pro-tip-title">💡 Why Timing Matters</div>
-                <p>• End of month: Reps have quotas and may be more flexible to keep you</p>
-                <p>• Mid-week: Less call volume = reps are less rushed and more helpful</p>
-                <p>• Mid-morning: Reps are fresh but warmed up, not end-of-day tired</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2><span class="icon">🎓</span> Bill Negotiation Experts</h2>
-            <p style="color: #666; margin-bottom: 20px;">Learn more negotiation tactics from these trusted sources:</p>
-            
+            <h2>🎓 Experts & Tools</h2>
             <div class="influencer-grid">
-                <div class="influencer-card">
-                    <div class="influencer-avatar">⚖️</div>
-                    <h4>Erika Kullberg</h4>
-                    <div class="platform">📺 TikTok & YouTube</div>
-                    <div class="followers">10M+ Followers</div>
-                    <p>Lawyer sharing money-saving tips including negotiation scripts and hidden fees to avoid.</p>
-                    <a href="https://www.youtube.com/@ErikaKullberg" class="influencer-link" target="_blank">YouTube →</a>
-                </div>
-                <div class="influencer-card">
-                    <div class="influencer-avatar">📢</div>
-                    <h4>Clark Howard</h4>
-                    <div class="platform">🎙️ Podcast & Website</div>
-                    <div class="followers">Consumer Advocate</div>
-                    <p>Decades of bill negotiation tips and money-saving strategies. Highly trusted consumer advocate.</p>
-                    <a href="https://clark.com" class="influencer-link" target="_blank">clark.com →</a>
-                </div>
-                <div class="influencer-card">
-                    <div class="influencer-avatar">💰</div>
-                    <h4>NerdWallet</h4>
-                    <div class="platform">🌐 Website</div>
-                    <div class="followers">Finance Resource</div>
-                    <p>Detailed guides on negotiating every type of bill with success rate data and scripts.</p>
-                    <a href="https://www.nerdwallet.com" class="influencer-link" target="_blank">nerdwallet.com →</a>
-                </div>
-                <div class="influencer-card">
-                    <div class="influencer-avatar">📞</div>
-                    <h4>Billshark</h4>
-                    <div class="platform">📱 App & Service</div>
-                    <div class="followers">Negotiation Service</div>
-                    <p>App that negotiates bills FOR you - they call companies on your behalf and split the savings!</p>
-                    <a href="https://www.billshark.com" class="influencer-link" target="_blank">billshark.com →</a>
-                </div>
-                <div class="influencer-card">
-                    <div class="influencer-avatar">🤖</div>
-                    <h4>Trim</h4>
-                    <div class="platform">📱 App</div>
-                    <div class="followers">AI Negotiator</div>
-                    <p>AI-powered app that analyzes your bills and negotiates lower rates automatically.</p>
-                    <a href="https://www.asktrim.com" class="influencer-link" target="_blank">asktrim.com →</a>
-                </div>
-                <div class="influencer-card">
-                    <div class="influencer-avatar">💸</div>
-                    <h4>The Penny Hoarder</h4>
-                    <div class="platform">🌐 Website</div>
-                    <div class="followers">Finance Blog</div>
-                    <p>Real success stories and detailed how-tos for negotiating every type of bill.</p>
-                    <a href="https://www.thepennyhoarder.com" class="influencer-link" target="_blank">thepennyhoarder.com →</a>
-                </div>
+                <div class="influencer-card"><div class="influencer-avatar">⚖️</div><h4>Erika Kullberg</h4><div class="platform">📺 YouTube</div><p>Money-saving scripts, 10M+ followers</p><a href="https://www.youtube.com/@ErikaKullberg" class="influencer-link" target="_blank">Watch →</a></div>
+                <div class="influencer-card"><div class="influencer-avatar">📞</div><h4>Billshark</h4><div class="platform">📱 App</div><p>They negotiate FOR you!</p><a href="https://www.billshark.com" class="influencer-link" target="_blank">Try →</a></div>
+                <div class="influencer-card"><div class="influencer-avatar">🤖</div><h4>Trim</h4><div class="platform">📱 App</div><p>AI negotiates bills automatically</p><a href="https://www.asktrim.com" class="influencer-link" target="_blank">Try →</a></div>
+                <div class="influencer-card"><div class="influencer-avatar">📢</div><h4>Clark Howard</h4><div class="platform">🎙️ Podcast</div><p>Decades of consumer tips</p><a href="https://clark.com" class="influencer-link" target="_blank">Visit →</a></div>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">📈</span> Your Progress</h2>
+            <h2>📈 Your Progress</h2>
             <div class="progress-tracker">
-                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
-                <div class="progress-bar">
-                    <div class="progress-fill" id="progressFill"></div>
-                </div>
+                <div style="font-size: 1.2em; margin-bottom: 15px;"><span id="completed">0</span> of 7 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">📝</span> Your Negotiation Tracker</h2>
+            <h2>📝 Your Negotiation Tracker</h2>
             <div class="notes-section">
-                <textarea id="notes" placeholder="Track your bill negotiation calls!
+                <textarea id="notes" placeholder="BILL NEGOTIATION TRACKER
 
-BILL NEGOTIATION LOG:
+INTERNET: Old $____ → NEW $____ = Save $____/mo
+PHONE: Old $____ → NEW $____ = Save $____/mo  
+INSURANCE: Old $____ → NEW $____ = Save $____/yr
+OTHER: Old $____ → NEW $____ = Save $____
 
-INTERNET/CABLE:
-Company: ____
-Current bill: $____/month
-Called on: ____
-Rep name: ____
-Outcome: ☐ Success ☐ Try again
-New rate: $____/month
-Savings: $____/month
-Discount expires: ____
+TOTAL ANNUAL SAVINGS: $____
 
-CELL PHONE:
-Company: ____
-Current bill: $____/month
-Called on: ____
-Outcome: ☐ Success ☐ Try again
-New rate: $____/month
-Savings: $____/month
-
-CAR INSURANCE:
-Company: ____
-Current premium: $____/year
-Competitor quotes: ____ ($____), ____ ($____)
-Called on: ____
-Outcome: ☐ Success ☐ Switching
-New rate: $____/year
-Savings: $____/year
-
-HOME/RENTERS INSURANCE:
-Company: ____
-Called on: ____
-Outcome: ☐ Success ☐ Try again
-Savings: $____/year
-
-OTHER BILLS NEGOTIATED:
-1. ____ : Saved $____
-2. ____ : Saved $____
-3. ____ : Saved $____
-
-TOTAL MONTHLY SAVINGS: $____
-TOTAL YEARLY SAVINGS: $____
-
-CALENDAR REMINDERS SET:
-☐ Internet - renegotiate by: ____
-☐ Phone - renegotiate by: ____
-☐ Insurance - annual review: ____
-"></textarea>
+Reminder: Renegotiate in ___ months!"></textarea>
             </div>
         </div>
 
         <div class="cta-section">
             <h3>Need Help With Your Finances?</h3>
-            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <p style="opacity: 0.9; margin-bottom: 20px;">Chat with an ASAP Financial coach!</p>
             <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
         </div>
     </div>
@@ -491,7 +277,8 @@ CALENDAR REMINDERS SET:
                 const data = JSON.parse(saved);
                 data.steps.forEach((checked, index) => {
                     if (checked) {
-                        document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                        const cb = document.querySelectorAll('.step-checkbox')[index];
+                        if (cb) cb.classList.add('checked');
                     }
                 });
                 document.getElementById('notes').value = data.notes || '';

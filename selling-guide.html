@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selling Guide - Turn Your Stuff Into Cash - ASAP Financial Playbook</title>
+    <title>Quick Sell Guide - ASAP Financial Playbook</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; line-height: 1.6; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; line-height: 1.7; }
         .container { max-width: 800px; margin: 0 auto; }
         .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
         .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
@@ -14,191 +14,421 @@
         .header .subtitle { font-size: 1.2em; color: #666; margin-bottom: 20px; }
         .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 10px 25px; border-radius: 20px; }
         .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
-        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; font-size: 1.5em; }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; font-size: 1.5em; }
         .achieve-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
-        .achieve-box p { color: #2e7d32; font-size: 1.1em; }
+        .achieve-box p { color: #2e7d32; font-size: 1.1em; margin-bottom: 10px; }
         .savings-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 25px; text-align: center; }
         .savings-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
-        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
-        .platform-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; border-left: 5px solid #4caf50; transition: all 0.3s; }
-        .platform-card:hover { transform: translateY(-3px); }
+        .value-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 20px 0; }
+        .value-card { background: #f8f9fa; border-radius: 12px; padding: 15px; text-align: center; border-left: 4px solid #4caf50; }
+        .value-card h4 { color: #1a1a2e; font-size: 0.95em; margin-bottom: 5px; }
+        .value-card .price { color: #4caf50; font-weight: 700; font-size: 1.1em; }
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin: 20px 0; }
+        .platform-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; border-top: 4px solid #667eea; }
         .platform-card h4 { color: #1a1a2e; margin-bottom: 5px; }
-        .platform-card .best-for { color: #4caf50; font-size: 0.85em; font-weight: 600; margin-bottom: 8px; }
-        .platform-card p { color: #666; font-size: 0.9em; margin-bottom: 10px; }
-        .platform-card a { color: #667eea; text-decoration: none; font-weight: 600; }
-        .category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 20px 0; }
-        .category-card { background: #f8f9fa; border-radius: 12px; padding: 15px; text-align: center; border-left: 4px solid #ff9800; }
-        .category-card h4 { color: #1a1a2e; font-size: 0.9em; }
-        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; }
+        .platform-card .best-for { color: #667eea; font-size: 0.85em; margin-bottom: 10px; }
+        .platform-card p { color: #666; font-size: 0.85em; }
+        .step { margin-bottom: 25px; padding: 25px; background: #f8f9fa; border-radius: 15px; border-left: 5px solid #667eea; }
         .step:hover { background: #e8f5e9; }
-        .step-checkbox { width: 30px; height: 30px; min-width: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; color: transparent; }
+        .step-header { display: flex; gap: 15px; align-items: flex-start; margin-bottom: 15px; }
+        .step-checkbox { width: 35px; height: 35px; min-width: 35px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; color: transparent; font-size: 1.2em; }
         .step-checkbox.checked { background: #667eea; color: white; }
-        .step-title { font-weight: 700; color: #1a1a2e; margin-bottom: 8px; font-size: 1.1em; }
-        .step-desc { color: #666; font-size: 0.95em; }
+        .step-title { font-weight: 700; color: #1a1a2e; font-size: 1.2em; }
+        .step-time { color: #667eea; font-size: 0.9em; margin-top: 3px; }
+        .step-content { margin-left: 50px; }
+        .step-desc { color: #444; font-size: 1.05em; margin-bottom: 15px; }
+        .substep { background: white; border-radius: 10px; padding: 15px; margin: 10px 0; border-left: 3px solid #4caf50; }
+        .substep-title { font-weight: 600; color: #2e7d32; margin-bottom: 8px; }
+        .substep p { color: #555; font-size: 0.95em; margin-bottom: 5px; }
+        .photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 15px 0; }
+        .photo-do { background: #e8f5e9; border-radius: 10px; padding: 15px; }
+        .photo-do h5 { color: #2e7d32; margin-bottom: 10px; }
+        .photo-dont { background: #ffebee; border-radius: 10px; padding: 15px; }
+        .photo-dont h5 { color: #c62828; margin-bottom: 10px; }
+        .photo-do p, .photo-dont p { font-size: 0.9em; margin-bottom: 5px; }
+        .template-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 20px; margin: 15px 0; }
+        .template-box h4 { color: #1565c0; margin-bottom: 15px; }
+        .template-text { background: white; border-radius: 10px; padding: 15px; font-family: monospace; font-size: 0.95em; line-height: 1.6; white-space: pre-wrap; }
         .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
         .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
         .pro-tip p { color: #5d4e37; }
         .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
         .warning-box .warning-title { font-weight: 700; color: #c62828; margin-bottom: 10px; }
         .warning-box p { color: #5d3a3a; }
-        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
-        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; }
-        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #4caf50, #66bb6a); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
-        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
-        .influencer-card .platform { color: #667eea; font-size: 0.9em; margin-bottom: 10px; }
-        .influencer-card p { color: #666; font-size: 0.9em; margin-bottom: 15px; }
-        .influencer-link { display: inline-block; color: #667eea; text-decoration: none; font-weight: 600; padding: 8px 20px; border: 2px solid #667eea; border-radius: 20px; }
-        .influencer-link:hover { background: #667eea; color: white; }
+        .safety-box { background: #fff3e0; border-radius: 15px; padding: 20px; margin: 20px 0; border: 2px solid #ff9800; }
+        .safety-box h4 { color: #e65100; margin-bottom: 15px; }
+        .safety-box li { color: #5d4037; padding: 8px 0; list-style: none; }
         .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; text-align: center; }
         .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
-        .progress-fill { background: white; height: 100%; border-radius: 10px; width: 0%; }
-        .notes-section textarea { width: 100%; min-height: 280px; padding: 20px; border: 2px solid #e0e0e0; border-radius: 15px; font-family: monospace; font-size: 0.95em; resize: vertical; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; width: 0%; transition: width 0.3s; }
+        .notes-section textarea { width: 100%; min-height: 250px; padding: 20px; border: 2px solid #e0e0e0; border-radius: 15px; font-family: inherit; font-size: 1em; resize: vertical; }
         .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
         .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; }
-        @media (max-width: 600px) { .header h1 { font-size: 1.8em; } .step { flex-direction: column; } }
+        @media (max-width: 600px) { .header h1 { font-size: 1.8em; } .step-content { margin-left: 0; margin-top: 15px; } .step-header { flex-direction: column; } .photo-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
     <div class="container">
         <a href="expense-playbooks.html" class="back-link">← Back to Expense Playbooks</a>
-        
         <div class="header">
-            <h1>💰 Selling Guide</h1>
-            <p class="subtitle">Turn your unused stuff into cash—you have $500-5,000+ hiding in your home!</p>
-            <div class="time-badge">⏱️ $0 cost • Quick cash • Declutter and earn</div>
+            <h1>💰 Quick Sell Guide</h1>
+            <p class="subtitle">Turn your stuff into cash in 48 hours or less!</p>
+            <div class="time-badge">⏱️ 30 min to list • Sell in 24-48 hours • Make $100-500+</div>
         </div>
         
         <div class="card">
-            <h2>🎯 What You'll Achieve</h2>
+            <h2>🎯 What This Does For You</h2>
             <div class="achieve-box">
-                <p>The average American household has $3,000-5,000 worth of unused items collecting dust. Clothes you don't wear, electronics you don't use, furniture you don't need—it's all money sitting in your closets! This guide shows you exactly where and how to sell everything for maximum profit. Declutter your space AND pad your bank account!</p>
+                <p><strong>You're sitting on money right now!</strong> That old phone in a drawer? $150. Those jeans you never wear? $25. The treadmill collecting dust? $200.</p>
+                <p>The average American home has $3,000-5,000 worth of unused stuff just sitting around. Let's turn your clutter into cash TODAY!</p>
             </div>
             <div class="savings-highlight">
-                <h3>$500-5,000+</h3>
-                <p>Hidden in your home right now • Average household has $3,000+ in unused items • Turn clutter into cash!</p>
+                <h3>$100-500+ in 48 Hours</h3>
+                <p>Most homes have $3,000-5,000 in sellable items!</p>
             </div>
         </div>
-        
+
         <div class="card">
-            <h2>📱 Where to Sell (By Item Type)</h2>
+            <h2>💵 What Your Stuff Is Worth</h2>
+            <div class="value-grid">
+                <div class="value-card"><h4>📱 Old Phone</h4><div class="price">$75-400</div></div>
+                <div class="value-card"><h4>🎮 Gaming Console</h4><div class="price">$100-300</div></div>
+                <div class="value-card"><h4>👜 Designer Bag</h4><div class="price">$50-500</div></div>
+                <div class="value-card"><h4>🏋️ Exercise Equipment</h4><div class="price">$50-400</div></div>
+                <div class="value-card"><h4>👕 Clothes (bundle)</h4><div class="price">$30-100</div></div>
+                <div class="value-card"><h4>🪑 Furniture</h4><div class="price">$50-500</div></div>
+                <div class="value-card"><h4>💻 Old Laptop</h4><div class="price">$50-300</div></div>
+                <div class="value-card"><h4>👶 Baby Gear</h4><div class="price">$50-300</div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📱 Where to Sell (Pick ONE to Start!)</h2>
             <div class="platform-grid">
-                <div class="platform-card"><h4>📘 FB Marketplace</h4><div class="best-for">Furniture, appliances, local items</div><p>Free to list. Huge local audience. Best for big items you don't want to ship.</p><a href="https://facebook.com/marketplace" target="_blank">Start Selling →</a></div>
-                <div class="platform-card"><h4>🛒 eBay</h4><div class="best-for">Electronics, collectibles, niche items</div><p>Largest buyer pool. 13% fees. Best for items with specific demand.</p><a href="https://www.ebay.com/sell" target="_blank">Start Selling →</a></div>
-                <div class="platform-card"><h4>👗 Poshmark</h4><div class="best-for">Clothing, shoes, accessories</div><p>Fashion-focused. 20% fee. Great for brands that hold value.</p><a href="https://poshmark.com" target="_blank">Start Selling →</a></div>
-                <div class="platform-card"><h4>📱 Mercari</h4><div class="best-for">Everything, easy shipping</div><p>10% fee. Simple shipping. Good for general items.</p><a href="https://mercari.com" target="_blank">Start Selling →</a></div>
-                <div class="platform-card"><h4>🏘️ Nextdoor</h4><div class="best-for">Neighbor sales, trusted</div><p>Verified neighbors only. Safe and local. Great for family items.</p><a href="https://nextdoor.com" target="_blank">Start Selling →</a></div>
-                <div class="platform-card"><h4>🏠 Craigslist</h4><div class="best-for">Free items, cars, large items</div><p>No fees. Cash transactions. Good for stuff that needs to go fast.</p><a href="https://craigslist.org" target="_blank">Start Selling →</a></div>
+                <div class="platform-card">
+                    <h4>📘 Facebook Marketplace</h4>
+                    <div class="best-for">Best for: Most items!</div>
+                    <p>✓ Free to list<br>✓ Huge local audience<br>✓ Meet locally = instant cash</p>
+                </div>
+                <div class="platform-card">
+                    <h4>📱 OfferUp</h4>
+                    <div class="best-for">Best for: Everything local</div>
+                    <p>✓ Free to list<br>✓ Easy messaging<br>✓ User ratings for safety</p>
+                </div>
+                <div class="platform-card">
+                    <h4>👗 Poshmark</h4>
+                    <div class="best-for">Best for: Clothes & accessories</div>
+                    <p>✓ Ships for you<br>✓ 20% fee but easy<br>✓ Great for brand names</p>
+                </div>
+                <div class="platform-card">
+                    <h4>🌐 Craigslist</h4>
+                    <div class="best-for">Best for: Large items, fast sales</div>
+                    <p>✓ Totally free<br>✓ Cash deals<br>✓ Be careful meeting!</p>
+                </div>
+            </div>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Start with Facebook Marketplace!</div>
+                <p>It has the most buyers and it's FREE. Most items sell within 24-48 hours if priced right!</p>
             </div>
         </div>
-        
+
         <div class="card">
-            <h2>🔥 What Sells Best</h2>
-            <p style="color: #666; margin-bottom: 15px;">Focus on these categories for fastest sales:</p>
-            <div class="category-grid">
-                <div class="category-card"><h4>📱 Electronics</h4></div>
-                <div class="category-card"><h4>👟 Brand Clothing</h4></div>
-                <div class="category-card"><h4>👶 Baby Gear</h4></div>
-                <div class="category-card"><h4>🔧 Tools</h4></div>
-                <div class="category-card"><h4>🛋️ Furniture</h4></div>
-                <div class="category-card"><h4>🏋️ Fitness Equipment</h4></div>
-                <div class="category-card"><h4>🎮 Video Games</h4></div>
-                <div class="category-card"><h4>📚 Textbooks</h4></div>
+            <h2>📋 Your 48-Hour Selling Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-header">
+                    <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                    <div>
+                        <div class="step-title">Step 1: Walk Through Your Home (15 minutes)</div>
+                        <div class="step-time">Find 3-5 items to sell right now</div>
+                    </div>
+                </div>
+                <div class="step-content">
+                    <div class="step-desc">Go room by room looking for things you haven't used in 6+ months. You'll find more than you think!</div>
+                    <div class="substep">
+                        <div class="substep-title">🔍 Check these spots:</div>
+                        <p>• <strong>Closet:</strong> Clothes that don't fit, shoes you don't wear</p>
+                        <p>• <strong>Garage:</strong> Tools, sports equipment, exercise gear</p>
+                        <p>• <strong>Drawers:</strong> Old phones, electronics, chargers</p>
+                        <p>• <strong>Kids' rooms:</strong> Outgrown toys, clothes, baby gear</p>
+                        <p>• <strong>Kitchen:</strong> Duplicate appliances, unused gadgets</p>
+                    </div>
+                </div>
             </div>
-            <div class="pro-tip"><div class="pro-tip-title">💡 Hidden Value Items</div><p><strong>Check these for surprising value:</strong> Vintage Pyrex, vinyl records, old Pokemon cards, Apple products (even old ones), LEGO sets, vintage clothing/band tees. Google "[item] sold eBay" before tossing anything!</p></div>
-        </div>
-        
-        <div class="card">
-            <h2>📋 Your Selling Action Plan</h2>
-            
-            <div class="step" data-step="1"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 1: Gather Your Items</div><div class="step-desc">Go room by room. If you haven't used it in 6 months, it goes in the sell pile. Check closets, garage, attic, under beds. You'll be surprised what you find!</div></div></div>
-            
-            <div class="step" data-step="2"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 2: Research Prices</div><div class="step-desc">Search "sold" listings on eBay and Mercari—not asking prices, what items ACTUALLY sold for. This tells you the real market value. Price accordingly!</div></div></div>
-            
-            <div class="step" data-step="3"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 3: Take Great Photos</div><div class="step-desc">Use natural lighting near a window. Clean background (white wall or sheet). Multiple angles. Show any flaws. Good photos sell items—bad photos don't!</div></div></div>
-            
-            <div class="step" data-step="4"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 4: Write Clear Descriptions</div><div class="step-desc">Include brand, size, condition, and any flaws. Add measurements for clothing/furniture. Be honest—hidden problems lead to returns and bad reviews!</div></div></div>
-            
-            <div class="step" data-step="5"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 5: Price Competitively</div><div class="step-desc">Price 10-20% below similar listings to sell fast. Or price high and enable "Best Offer." Remember: 80% of asking is still money in your pocket!</div></div></div>
-            
-            <div class="step" data-step="6"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 6: List on Multiple Platforms</div><div class="step-desc">Cross-post items to FB Marketplace, eBay, Mercari, and Craigslist. More eyes = faster sales. Just remember to remove listings when sold!</div></div></div>
-            
-            <div class="step" data-step="7"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 7: Respond Quickly</div><div class="step-desc">Fast responses = more sales. Answer within an hour if possible. Buyers move on quickly to other sellers. Set up notifications on your phone!</div></div></div>
-            
-            <div class="step" data-step="8"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 8: Complete Sales Safely</div><div class="step-desc">Ship promptly for online sales. For local meetups, choose police station parking lots or busy public areas—never invite strangers home alone. Cash or Venmo at pickup!</div></div></div>
-        </div>
-        
-        <div class="card">
-            <h2>💡 Pro Tips & Warnings</h2>
-            <div class="pro-tip"><div class="pro-tip-title">💡 Bundle Slow Sellers</div><p><strong>"Take all 3 for $50"</strong> moves items that aren't selling individually. Bundle similar items (kids clothes by size, video games, books) for better results!</p></div>
-            <div class="pro-tip"><div class="pro-tip-title">💡 Refresh Listings Weekly</div><p><strong>Relist or edit listings to boost visibility.</strong> Marketplace algorithms favor fresh listings. Relist items that have been sitting for 2+ weeks.</p></div>
-            <div class="warning-box"><div class="warning-title">⚠️ Avoid These Mistakes</div><p><strong>Bad photos</strong> (dark, blurry) kill sales. <strong>Overpricing</strong>—check what items actually sell for, not asking prices. <strong>Slow responses</strong>—buyers move on. <strong>Unsafe meetups</strong>—always meet in public places!</p></div>
-        </div>
-        
-        <div class="card">
-            <h2>🎓 Learn From These Resources</h2>
-            <div class="influencer-grid">
-                <div class="influencer-card"><div class="influencer-avatar">💬</div><h4>r/Flipping</h4><div class="platform">🌐 Reddit</div><p>Active community sharing selling tips, what's hot, and success stories!</p><a href="https://www.reddit.com/r/Flipping/" class="influencer-link" target="_blank">Reddit →</a></div>
-                <div class="influencer-card"><div class="influencer-avatar">📱</div><h4>FB Marketplace Tips</h4><div class="platform">🌐 Facebook</div><p>Facebook's official guide to selling successfully on Marketplace!</p><a href="https://www.facebook.com/marketplace/learn-more" class="influencer-link" target="_blank">Learn →</a></div>
-                <div class="influencer-card"><div class="influencer-avatar">🛒</div><h4>eBay Seller Hub</h4><div class="platform">🌐 eBay</div><p>Free analytics and listing tools from eBay to optimize your sales!</p><a href="https://www.ebay.com/sh/landing" class="influencer-link" target="_blank">Seller Hub →</a></div>
-                <div class="influencer-card"><div class="influencer-avatar">👗</div><h4>r/poshmark</h4><div class="platform">🌐 Reddit</div><p>Tips for selling clothing and accessories on Poshmark!</p><a href="https://www.reddit.com/r/poshmark/" class="influencer-link" target="_blank">Reddit →</a></div>
+
+            <div class="step" data-step="2">
+                <div class="step-header">
+                    <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                    <div>
+                        <div class="step-title">Step 2: Clean the Items (10 minutes)</div>
+                        <div class="step-time">Clean items sell for 20-30% more!</div>
+                    </div>
+                </div>
+                <div class="step-content">
+                    <div class="step-desc">Take 2-3 minutes per item to make them look their best.</div>
+                    <div class="substep">
+                        <div class="substep-title">🧹 Quick cleaning tips:</div>
+                        <p>• Wipe electronics with a microfiber cloth</p>
+                        <p>• Wash or lint-roll clothes</p>
+                        <p>• Wipe down furniture with damp cloth</p>
+                        <p>• Remove stickers and price tags</p>
+                        <p>• Charge electronics so they work for photos/demos</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step" data-step="3">
+                <div class="step-header">
+                    <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                    <div>
+                        <div class="step-title">Step 3: Take Great Photos (10 minutes)</div>
+                        <div class="step-time">Photos sell items—this is the most important step!</div>
+                    </div>
+                </div>
+                <div class="step-content">
+                    <div class="step-desc">Bad photos = no sales. Good photos = fast sales. It's that simple!</div>
+                    <div class="photo-grid">
+                        <div class="photo-do">
+                            <h5>✅ DO:</h5>
+                            <p>• Use natural light (by a window)</p>
+                            <p>• Clean, plain background</p>
+                            <p>• Take 4-6 photos from angles</p>
+                            <p>• Show any flaws honestly</p>
+                            <p>• Show size reference if helpful</p>
+                        </div>
+                        <div class="photo-dont">
+                            <h5>❌ DON'T:</h5>
+                            <p>• Dark, blurry photos</p>
+                            <p>• Messy background</p>
+                            <p>• Only 1 photo</p>
+                            <p>• Use flash (harsh shadows)</p>
+                            <p>• Hide damage</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step" data-step="4">
+                <div class="step-header">
+                    <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                    <div>
+                        <div class="step-title">Step 4: Research the Price (5 minutes)</div>
+                        <div class="step-time">Price it right and it sells FAST!</div>
+                    </div>
+                </div>
+                <div class="step-content">
+                    <div class="step-desc">Search for your item on the platform and see what similar items SOLD for (not just what people are asking).</div>
+                    <div class="substep">
+                        <div class="substep-title">💲 The 60-70% Rule:</div>
+                        <p><strong>Your Price = 60-70% of retail price</strong></p>
+                        <p>$100 retail item → Price at $60-70</p>
+                        <p>$50 retail item → Price at $30-35</p>
+                        <p style="margin-top: 10px;"><strong>Want to sell in 24 hours?</strong> Price at 50% of retail!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step" data-step="5">
+                <div class="step-header">
+                    <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                    <div>
+                        <div class="step-title">Step 5: Write a Clear Description (5 minutes)</div>
+                        <div class="step-time">Use this template—just fill in the blanks!</div>
+                    </div>
+                </div>
+                <div class="step-content">
+                    <div class="template-box">
+                        <h4>📝 Copy This Template:</h4>
+                        <div class="template-text">[Brand] [Item] - [Size/Specs] - Great Condition!
+
+Selling my [item]. [Why - moving, upgrading, etc.]
+
+• Condition: [Excellent/Good/Fair]
+• Retail price: $[X]
+• Asking: $[Your price] OBO
+
+Pickup in [Your area]. Cash only.
+Message me with questions!</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step" data-step="6">
+                <div class="step-header">
+                    <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                    <div>
+                        <div class="step-title">Step 6: Post on Facebook Marketplace (5 minutes)</div>
+                        <div class="step-time">Time to go live!</div>
+                    </div>
+                </div>
+                <div class="step-content">
+                    <div class="substep">
+                        <div class="substep-title">📱 How to post on Facebook Marketplace:</div>
+                        <p>1. Open Facebook app → tap the Marketplace icon (🏪)</p>
+                        <p>2. Tap the "+ Sell" button</p>
+                        <p>3. Select "Item for Sale"</p>
+                        <p>4. Add your photos (first photo = most important!)</p>
+                        <p>5. Enter title, price, category, condition</p>
+                        <p>6. Paste your description</p>
+                        <p>7. Set your location</p>
+                        <p>8. Tap "Publish"!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step" data-step="7">
+                <div class="step-header">
+                    <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                    <div>
+                        <div class="step-title">Step 7: Respond FAST to Messages</div>
+                        <div class="step-time">Quick responses = more sales!</div>
+                    </div>
+                </div>
+                <div class="step-content">
+                    <div class="step-desc">When someone messages you, reply within 1 hour if possible. Buyers move on fast!</div>
+                    <div class="substep">
+                        <div class="substep-title">💬 How to handle offers:</div>
+                        <p>• <strong>Full price offer:</strong> Accept immediately!</p>
+                        <p>• <strong>Reasonable offer (80%+):</strong> Usually worth accepting</p>
+                        <p>• <strong>Lowball offer (50%):</strong> Counter at 75-80%</p>
+                        <p>• <strong>"Is this available?":</strong> Reply "Yes! Are you interested?"</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step" data-step="8">
+                <div class="step-header">
+                    <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                    <div>
+                        <div class="step-title">Step 8: Complete the Sale Safely</div>
+                        <div class="step-time">Get your cash!</div>
+                    </div>
+                </div>
+                <div class="step-content">
+                    <div class="safety-box">
+                        <h4>🛡️ SAFETY RULES (Read This!):</h4>
+                        <ul>
+                            <li>✅ Meet at a police station parking lot (many have "safe exchange zones")</li>
+                            <li>✅ Meet during daylight only</li>
+                            <li>✅ Bring a friend or tell someone where you're going</li>
+                            <li>✅ Cash only—never accept checks or payment app from strangers</li>
+                            <li>✅ Trust your gut—if it feels off, cancel</li>
+                            <li>❌ NEVER invite strangers to your home alone</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step" data-step="9">
+                <div class="step-header">
+                    <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                    <div>
+                        <div class="step-title">Step 9: Put the Cash in Savings!</div>
+                        <div class="step-time">Don't let it disappear!</div>
+                    </div>
+                </div>
+                <div class="step-content">
+                    <div class="step-desc">The second you get home with cash, transfer it to your savings account. Out of sight = out of temptation to spend!</div>
+                </div>
             </div>
         </div>
-        
+
+        <div class="card">
+            <h2>💡 Pro Tips to Sell Faster</h2>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 List on Multiple Platforms</div>
+                <p>Post the same item on Facebook Marketplace AND OfferUp. More eyes = faster sale. Just delete from one when it sells on the other!</p>
+            </div>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Bundle Slow Sellers</div>
+                <p>"Take all 3 for $50" moves items that aren't selling individually. Great for clothes, books, or kids' items!</p>
+            </div>
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Refresh Listings Weekly</div>
+                <p>If something hasn't sold in a week, delete and repost it. Fresh listings show up higher in search!</p>
+            </div>
+        </div>
+
         <div class="card">
             <h2>📈 Your Progress</h2>
             <div class="progress-tracker">
-                <div style="font-size: 1.2em; margin-bottom: 15px;"><span id="completed">0</span> of 8 steps completed</div>
+                <div style="font-size: 1.2em; margin-bottom: 15px;"><span id="completed">0</span> of 9 steps completed</div>
                 <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
             </div>
         </div>
-        
+
         <div class="card">
             <h2>📝 Your Selling Tracker</h2>
             <div class="notes-section">
-                <textarea id="notes" placeholder="Track what you're selling!
+                <textarea id="notes" placeholder="MY ITEMS TO SELL
 
-ITEMS TO SELL:
-1. ____ | Platform: ____ | Price: $____
-2. ____ | Platform: ____ | Price: $____
-3. ____ | Platform: ____ | Price: $____
-4. ____ | Platform: ____ | Price: $____
-5. ____ | Platform: ____ | Price: $____
+Item 1: ____
+Condition: ____
+Asking price: $____
+Platform: ____
+SOLD FOR: $____
 
-SOLD ITEMS:
-Item: ____ | Sold for: $____ | Platform: ____
-Item: ____ | Sold for: $____ | Platform: ____
-Item: ____ | Sold for: $____ | Platform: ____
+Item 2: ____
+Condition: ____
+Asking price: $____
+Platform: ____
+SOLD FOR: $____
+
+Item 3: ____
+Condition: ____
+Asking price: $____
+Platform: ____
+SOLD FOR: $____
 
 TOTAL EARNED: $____
 
-PLATFORMS ACTIVE ON:
-☐ FB Marketplace
-☐ eBay
-☐ Poshmark
-☐ Mercari
-☐ Craigslist
-
-NOTES:
+TRANSFERRED TO SAVINGS: $____
 "></textarea>
             </div>
         </div>
-        
+
         <div class="cta-section">
             <h3>Need Help With Your Finances?</h3>
-            <p style="opacity: 0.9; margin-bottom: 20px;">Chat with an ASAP Financial coach for personalized guidance!</p>
+            <p style="opacity: 0.9; margin-bottom: 20px;">Chat with an ASAP Financial coach!</p>
             <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
         </div>
     </div>
-    
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const saved = localStorage.getItem('playbook-selling-guide');
-            if (saved) { const data = JSON.parse(saved); data.steps.forEach((checked, index) => { if (checked) { const cb = document.querySelectorAll('.step-checkbox')[index]; if (cb) cb.classList.add('checked'); }}); document.getElementById('notes').value = data.notes || ''; updateProgress(); }
+            const saved = localStorage.getItem('playbook-quick-sell');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) {
+                        const cb = document.querySelectorAll('.step-checkbox')[index];
+                        if (cb) cb.classList.add('checked');
+                    }
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
         });
-        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
-        function updateProgress() { const t = document.querySelectorAll('.step-checkbox').length; const c = document.querySelectorAll('.step-checkbox.checked').length; document.getElementById('completed').textContent = c; document.getElementById('progressFill').style.width = (c/t*100)+'%'; }
-        function saveProgress() { const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked')); const notes = document.getElementById('notes').value; localStorage.setItem('playbook-selling-guide', JSON.stringify({steps, notes})); }
+
+        function toggleStep(el) {
+            el.classList.toggle('checked');
+            updateProgress();
+            saveProgress();
+        }
+
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-quick-sell', JSON.stringify({ steps, notes }));
+        }
+
         document.getElementById('notes').addEventListener('input', saveProgress);
     </script>
 </body>
