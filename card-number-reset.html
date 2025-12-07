@@ -6,462 +6,401 @@
     <title>Card Number Reset - ASAP Financial Playbook</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
-        .container { max-width: 900px; margin: 0 auto; }
-        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
-        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
-        .header .subtitle { color: #666; font-size: 1.2em; }
-        .time-badge { display: inline-block; background: linear-gradient(135deg, #f44336, #e91e63); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
-        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
-        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
-        .card h2 .icon { font-size: 1.5em; }
-        .achieve-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
-        .achieve-box p { color: #1565c0; font-size: 1.1em; line-height: 1.8; }
-        .nuclear-highlight { background: linear-gradient(135deg, #f44336, #e91e63); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
-        .nuclear-highlight h3 { font-size: 2em; margin-bottom: 10px; }
-        .nuclear-highlight p { font-size: 1.1em; opacity: 0.95; }
-        .step { display: flex; gap: 15px; margin-bottom: 25px; padding: 25px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
-        .step:hover { background: #e3f2fd; }
-        .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; margin-top: 5px; }
-        .step-checkbox.checked { background: #667eea; color: white; }
-        .step-content { flex: 1; }
-        .step-title { font-weight: 700; color: #1a1a2e; font-size: 1.2em; margin-bottom: 10px; }
-        .step-desc { color: #444; line-height: 1.8; font-size: 1.05em; }
-        .step-details { background: #fff; border: 2px solid #e0e0e0; border-radius: 10px; padding: 15px; margin-top: 15px; }
-        .step-details h5 { color: #667eea; margin-bottom: 10px; font-size: 1em; }
-        .step-details ul { margin-left: 20px; color: #555; }
-        .step-details li { margin-bottom: 10px; line-height: 1.7; }
-        .script-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 25px; margin: 20px 0; }
-        .script-box h4 { color: #2e7d32; margin-bottom: 15px; }
-        .script-line { background: white; border-radius: 10px; padding: 15px; margin-bottom: 10px; }
-        .script-line .speaker { font-weight: 700; color: #667eea; margin-bottom: 5px; }
-        .script-line .text { color: #333; font-style: italic; line-height: 1.6; }
-        .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
-        .why-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #667eea; }
-        .why-card h4 { color: #1a1a2e; margin-bottom: 8px; }
-        .why-card p { color: #666; font-size: 14px; line-height: 1.6; }
-        .essential-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin: 20px 0; }
-        .essential-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; border-top: 5px solid #4caf50; }
-        .essential-card .emoji { font-size: 2em; margin-bottom: 10px; }
-        .essential-card h4 { color: #1a1a2e; margin-bottom: 5px; font-size: 14px; }
-        .essential-card p { color: #666; font-size: 12px; }
-        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 20px 0; }
-        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; font-size: 1.1em; }
-        .pro-tip p { color: #555; margin: 8px 0; line-height: 1.7; }
-        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
-        .warning-box-title { font-weight: 700; color: #c62828; margin-bottom: 10px; }
-        .warning-box p { color: #555; margin: 8px 0; line-height: 1.6; }
-        .info-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-left: 4px solid #4caf50; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
-        .info-box-title { font-weight: 700; color: #2e7d32; margin-bottom: 10px; }
-        .info-box p { color: #555; margin: 8px 0; line-height: 1.6; }
-        .not-affected { background: #f8f9fa; border-radius: 15px; padding: 20px; margin: 20px 0; }
-        .not-affected h4 { color: #1a1a2e; margin-bottom: 15px; }
-        .not-affected ul { list-style: none; }
-        .not-affected li { padding: 8px 0; color: #666; border-bottom: 1px solid #e0e0e0; }
-        .not-affected li:last-child { border-bottom: none; }
-        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
-        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
-        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
-        .progress-text { font-size: 1.2em; font-weight: 600; }
-        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 150px; resize: vertical; }
-        .notes-section textarea:focus { outline: none; border-color: #667eea; }
-        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
-        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; }
         .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { font-size: 2.5em; color: #1a1a2e; margin-bottom: 10px; }
+        .header .subtitle { font-size: 1.2em; color: #666; margin-bottom: 20px; }
+        .nuclear-badge { display: inline-block; background: linear-gradient(135deg, #f44336, #ff5722); color: white; padding: 10px 25px; border-radius: 20px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-radius: 15px; padding: 25px; margin-bottom: 20px; border: 2px solid #f44336; }
+        .achieve-box p { color: #c62828; font-size: 1.1em; margin-bottom: 10px; }
+        .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .why-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; border-top: 4px solid #f44336; }
+        .why-card .icon { font-size: 2em; margin-bottom: 10px; }
+        .why-card h4 { color: #1a1a2e; margin-bottom: 10px; }
+        .why-card p { color: #666; font-size: 0.9em; }
+        .script-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 25px; margin: 20px 0; border-left: 5px solid #1976d2; }
+        .script-box h4 { color: #1565c0; margin-bottom: 15px; }
+        .script-text { background: white; border-radius: 10px; padding: 20px; font-size: 1.1em; color: #333; line-height: 1.8; border: 2px dashed #1976d2; text-align: center; }
+        .step { margin-bottom: 25px; padding: 25px; background: #f8f9fa; border-radius: 15px; border-left: 5px solid #667eea; }
+        .step:hover { background: #ffebee; }
+        .step-header { display: flex; gap: 15px; align-items: flex-start; margin-bottom: 15px; }
+        .step-checkbox { width: 35px; height: 35px; min-width: 35px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; color: transparent; font-size: 1.2em; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-title { font-weight: 700; color: #1a1a2e; font-size: 1.2em; }
+        .step-time { color: #667eea; font-size: 0.9em; margin-top: 3px; }
+        .step-content { margin-left: 50px; }
+        .step-desc { color: #444; font-size: 1.05em; margin-bottom: 15px; }
+        .substep { background: white; border-radius: 10px; padding: 15px; margin: 10px 0; border-left: 3px solid #4caf50; }
+        .substep-title { font-weight: 600; color: #2e7d32; margin-bottom: 8px; }
+        .substep p { color: #555; font-size: 0.95em; margin-bottom: 5px; }
+        .essential-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 20px 0; }
+        .essential-card { background: #e8f5e9; border-radius: 12px; padding: 15px; border-left: 4px solid #4caf50; }
+        .essential-card h5 { color: #2e7d32; margin-bottom: 5px; }
+        .essential-card p { color: #555; font-size: 0.9em; }
+        .dont-update { background: #ffebee; border-radius: 15px; padding: 20px; margin: 20px 0; }
+        .dont-update h4 { color: #c62828; margin-bottom: 15px; }
+        .dont-item { display: flex; gap: 10px; padding: 8px 0; color: #5d3a3a; }
+        .info-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 20px; margin: 20px 0; }
+        .info-box h4 { color: #2e7d32; margin-bottom: 15px; }
+        .info-item { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid #a5d6a7; }
+        .info-item:last-child { border-bottom: none; }
+        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .warning-box .warning-title { font-weight: 700; color: #c62828; margin-bottom: 10px; }
+        .warning-box p { color: #5d3a3a; margin-bottom: 8px; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #5d4e37; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; }
+        .influencer-avatar { width: 70px; height: 70px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 1.8em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #667eea; font-size: 0.85em; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 0.85em; margin-bottom: 12px; }
+        .influencer-link { display: inline-block; color: #667eea; text-decoration: none; font-weight: 600; padding: 6px 16px; border: 2px solid #667eea; border-radius: 20px; font-size: 0.9em; }
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; width: 0%; }
+        .notes-section textarea { width: 100%; min-height: 200px; padding: 20px; border: 2px solid #e0e0e0; border-radius: 15px; font-family: inherit; font-size: 1em; resize: vertical; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; }
+        @media (max-width: 600px) { .header h1 { font-size: 1.8em; } .step-content { margin-left: 0; margin-top: 15px; } .step-header { flex-direction: column; } .essential-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="income-playbooks.html" class="back-link">← Back to Playbooks</a>
-        
+        <a href="expense-playbooks.html" class="back-link">← Back to Expense Playbooks</a>
         <div class="header">
             <h1>🔄 Card Number Reset</h1>
-            <p class="subtitle">The "nuclear option" - Break ALL saved payment methods at once!</p>
-            <div class="time-badge">☢️ NUCLEAR OPTION • 5-minute call • Breaks EVERYTHING</div>
+            <p class="subtitle">The nuclear option: Break ALL saved payment methods at once!</p>
+            <div class="nuclear-badge">☢️ NUCLEAR OPTION • 5-minute call • Breaks EVERYTHING</div>
         </div>
-
+        
         <div class="card">
-            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <h2>🎯 What This Does For You</h2>
             <div class="achieve-box">
-                <p><strong>This is the most powerful way to stop impulse buying!</strong> When you call your bank and ask for a new card number, something amazing happens: EVERY single website and app where you saved your card suddenly stops working!</p>
-                <p style="margin-top: 15px;">Think about it: Amazon, Target, DoorDash, Netflix, Uber - they ALL have your card saved. When your number changes, ALL of them break at once. It's like unplugging 100 things with one cord!</p>
-                <p style="margin-top: 15px;"><strong>Why is this so effective?</strong> Instead of hunting through dozens of websites to delete your card (which takes hours), one phone call does EVERYTHING. Plus, you get a 5-7 day "cooling off" period while you wait for your new card!</p>
-            </div>
-            <div class="nuclear-highlight">
-                <h3>☢️ One Call = Hundreds Broken</h3>
-                <p>Every saved card on every site, app, and subscription - GONE. Complete reset in 5 minutes!</p>
+                <p><strong>This is the most powerful way to stop impulse buying.</strong> When you request a new card number, EVERY website and app that has your card saved will stop working instantly.</p>
+                <p>Amazon? Broken. DoorDash? Broken. Target? Broken. Every single saved card—GONE. One phone call resets EVERYTHING.</p>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">✅</span> Why This Works So Well</h2>
+            <h2>💡 Why This Works So Well</h2>
             <div class="why-grid">
                 <div class="why-card">
-                    <h4">💥 Instant Everywhere</h4>
-                    <p>Immediately breaks saved cards on Amazon, Target, DoorDash, and EVERYWHERE else. No hunting through accounts one by one.</p>
+                    <div class="icon">💥</div>
+                    <h4>Instant Everywhere</h4>
+                    <p>Breaks saved cards on hundreds of sites at once. No hunting through accounts one by one.</p>
                 </div>
                 <div class="why-card">
-                    <h4">🚧 Maximum Friction</h4>
-                    <p>To buy anything, you'd have to manually re-add your new card. That gives you time to ask "Do I really need this?"</p>
+                    <div class="icon">🚧</div>
+                    <h4>Maximum Friction</h4>
+                    <p>To buy something, you'd have to get up, find your card, and type in 16 digits. Most impulses die right there.</p>
                 </div>
                 <div class="why-card">
-                    <h4">⏳ Built-in Cooling Off</h4>
-                    <p>The 5-7 day wait for your new card is a built-in break. You literally CAN'T impulse buy!</p>
+                    <div class="icon">⏳</div>
+                    <h4>Built-in Cooling Off</h4>
+                    <p>New card takes 5-7 days to arrive. You literally CAN'T impulse buy during that time!</p>
                 </div>
                 <div class="why-card">
-                    <h4">🔒 Fresh Start</h4>
-                    <p>Forces you to decide: "Does this site REALLY need my card saved?" Most don't! Start fresh.</p>
+                    <div class="icon">🔒</div>
+                    <h4>Forces Intentionality</h4>
+                    <p>You must consciously decide: "Does this site REALLY need my card saved?" Most don't!</p>
                 </div>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">📞</span> Exactly What to Say (Word-for-Word Script)</h2>
+            <h2>📞 What to Say (It's Easy!)</h2>
             <div class="script-box">
-                <h4">📞 Call the number on the back of your card:</h4>
-                
-                <div class="script-line">
-                    <div class="speaker">You say:</div>
-                    <div class="text">"Hi, I'd like to request a replacement card with a new card number, please."</div>
-                </div>
-                
-                <div class="script-line">
-                    <div class="speaker">They might ask:</div>
-                    <div class="text">"Can I ask why you need a new number?"</div>
-                </div>
-                
-                <div class="script-line">
-                    <div class="speaker">You say:</div>
-                    <div class="text">"I'm concerned about security and would like a fresh number."</div>
-                </div>
-                
-                <div class="script-line">
-                    <div class="speaker">They'll say:</div>
-                    <div class="text">"No problem! I'll process that for you. Your new card will arrive in 5-7 business days."</div>
-                </div>
-                
-                <div class="script-line">
-                    <div class="speaker">You say:</div>
-                    <div class="text">"Thank you! Will my old card stop working immediately?"</div>
-                </div>
-                
-                <div class="script-line">
-                    <div class="speaker">They'll confirm:</div>
-                    <div class="text">"Yes, your old card number will be deactivated right away."</div>
-                </div>
+                <h4>📜 Call the number on the back of your card and say:</h4>
+                <div class="script-text">"Hi, I'd like to request a replacement card with a <strong>new card number</strong>, please."</div>
             </div>
-            
             <div class="pro-tip">
-                <div class="pro-tip-title">💡 That's Really It!</div>
-                <p>This call takes about 5 minutes. You don't need to explain the real reason. "Security concerns" is a normal request they handle every day. They won't question it!</p>
+                <div class="pro-tip-title">💡 If they ask why:</div>
+                <p>Just say: "I'm concerned about security and would like a fresh number."</p>
+                <p>That's it! They'll process it immediately. New card arrives in 5-7 business days.</p>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">⚠️</span> IMPORTANT: Read This Before You Call!</h2>
-            <div class="warning-box">
-                <div class="warning-box-title">⚠️ Your Old Card Stops Working IMMEDIATELY</div>
-                <p>• The moment they process your request, your current card number is <strong>dead</strong></p>
-                <p>• You <strong>cannot use it</strong> for 5-7 days until your new card arrives</p>
-                <p>• Make sure you have a <strong>backup way to pay</strong> (cash, another card, Apple Pay with a different card)</p>
-                <p>• This is actually a <strong>GOOD thing</strong> - it forces you to be intentional!</p>
-            </div>
-            
-            <div class="info-box">
-                <div class="info-box-title">✅ What Stays the Same (Don't Worry!)</div>
-                <p>• Your card <strong>ACCOUNT</strong> stays the same - just the number changes</p>
-                <p>• Your <strong>credit limit</strong> stays exactly the same</p>
-                <p>• Your <strong>rewards points</strong> stay exactly the same</p>
-                <p>• Your <strong>credit history</strong> is NOT affected at all</p>
-                <p>• Your <strong>credit score</strong> is NOT affected at all</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2><span class="icon">📋</span> Your Step-by-Step Action Plan</h2>
+            <h2>📋 Your Card Reset Action Plan</h2>
             
             <div class="step" data-step="1">
-                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-header">
+                    <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                    <div>
+                        <div class="step-title">Step 1: Make Sure You Have Backup Payment (2 minutes)</div>
+                        <div class="step-time">Your old card stops working IMMEDIATELY!</div>
+                    </div>
+                </div>
                 <div class="step-content">
-                    <div class="step-title">Step 1: Make Sure You Have a Backup Payment Method</div>
-                    <div class="step-desc">Your old card will stop working RIGHT AWAY. You need another way to pay for the next 5-7 days!</div>
-                    <div class="step-details">
-                        <h5">💰 Here's What To Do:</h5>
-                        <ul>
-                            <li><strong>Get some cash:</strong> Go to an ATM and take out $100-200 for the next week. This is your backup!</li>
-                            <li><strong>Do you have another card?</strong> A different credit card or debit card you could use for emergencies?</li>
-                            <li><strong>Set up Apple Pay or Google Pay</strong> with a DIFFERENT card (if you have one)</li>
-                            <li><strong>Venmo/PayPal:</strong> Make sure your account has money or is connected to your bank account (not the card you're resetting)</li>
-                            <li><strong>Tell your family/roommates:</strong> "Hey, I won't have my card for about a week. Can I pay you back if I need to borrow?"</li>
-                            <li><strong>Remember:</strong> This temporary inconvenience is the whole point! It stops impulse buying COMPLETELY.</li>
-                        </ul>
+                    <div class="warning-box">
+                        <div class="warning-title">⚠️ Important!</div>
+                        <p>The moment they issue a new number, your old card is DEAD. Make sure you have another way to pay for the next 5-7 days!</p>
+                    </div>
+                    <div class="substep">
+                        <div class="substep-title">✅ Backup options:</div>
+                        <p>• Cash in your wallet</p>
+                        <p>• A different credit/debit card</p>
+                        <p>• Apple Pay or Google Pay (if linked to a different card)</p>
+                        <p>• Venmo or PayPal balance</p>
                     </div>
                 </div>
             </div>
 
             <div class="step" data-step="2">
-                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-header">
+                    <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                    <div>
+                        <div class="step-title">Step 2: Write Down Your Essential Autopay Bills (5 minutes)</div>
+                        <div class="step-time">These are the ONLY things you'll update with your new card</div>
+                    </div>
+                </div>
                 <div class="step-content">
-                    <div class="step-title">Step 2: Write Down Your ESSENTIAL Autopay Bills</div>
-                    <div class="step-desc">Some bills automatically charge your card each month. You'll need to update these with your new number when it arrives.</div>
-                    <div class="step-details">
-                        <h5">📝 Check These and Write Down Which Use Your Card:</h5>
-                        <ul>
-                            <li><strong>Electric/Gas/Water:</strong> Does your utility bill auto-charge your card? Write it down.</li>
-                            <li><strong>Internet/Phone:</strong> Is your phone or internet bill on autopay with this card?</li>
-                            <li><strong>Car insurance:</strong> Many people put insurance on autopay. Check if you do!</li>
-                            <li><strong>Health insurance:</strong> If you pay monthly, is it this card?</li>
-                            <li><strong>Rent:</strong> Some people pay rent by card. Is that you?</li>
-                            <li><strong>HOW TO CHECK:</strong> Look at your credit card statement or bank statement. Find charges that happen EVERY month on the same day. Those are autopay!</li>
-                            <li><strong>Make a list now!</strong> You'll update these (and ONLY these) when your new card arrives.</li>
-                        </ul>
+                    <div class="step-desc">Make a list of bills that MUST be paid by this card. You'll update these when your new card arrives.</div>
+                    <div class="essential-grid">
+                        <div class="essential-card"><h5>💡 Utilities</h5><p>Electric, gas, water, internet</p></div>
+                        <div class="essential-card"><h5>🚗 Insurance</h5><p>Car, health, home/renters</p></div>
+                        <div class="essential-card"><h5>📱 Phone Bill</h5><p>Monthly cell service</p></div>
+                        <div class="essential-card"><h5>🏠 Rent</h5><p>Only if paid by card</p></div>
+                    </div>
+                    <div class="dont-update">
+                        <h4>❌ DON'T Update These (Let Them Break!):</h4>
+                        <div class="dont-item"><span>🛒</span><span>Amazon, Target, Walmart (you can type your card in when you REALLY need something)</span></div>
+                        <div class="dont-item"><span>🍔</span><span>DoorDash, Uber Eats, Grubhub (cook at home!)</span></div>
+                        <div class="dont-item"><span>🎬</span><span>Streaming services (great time to audit which ones you actually use!)</span></div>
+                        <div class="dont-item"><span>🎮</span><span>Gaming, app stores (do you really need that?)</span></div>
                     </div>
                 </div>
             </div>
 
             <div class="step" data-step="3">
-                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-header">
+                    <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                    <div>
+                        <div class="step-title">Step 3: Call Your Card Company (5 minutes)</div>
+                        <div class="step-time">The actual call is quick and easy</div>
+                    </div>
+                </div>
                 <div class="step-content">
-                    <div class="step-title">Step 3: Find the Phone Number and MAKE THE CALL</div>
-                    <div class="step-desc">Look at the back of your credit or debit card. There's a phone number there. Call it!</div>
-                    <div class="step-details">
-                        <h5">📞 Here's Exactly What To Do:</h5>
-                        <ul>
-                            <li><strong>Flip your card over.</strong> See the customer service number? That's who you're calling.</li>
-                            <li><strong>Call now!</strong> Don't overthink it. Pick up your phone and dial.</li>
-                            <li><strong>You'll hear an automated menu.</strong> Listen for options like "report lost/stolen card" or "request new card" or just press 0 to talk to a person.</li>
-                            <li><strong>When you get a person, say:</strong> "Hi, I'd like to request a replacement card with a new card number, please."</li>
-                            <li><strong>If they ask why:</strong> "I'm concerned about security and would like a fresh number."</li>
-                            <li><strong>They'll ask to verify you:</strong> Be ready with your name, last 4 digits of card, birthday, address.</li>
-                            <li><strong>Confirm your mailing address</strong> so they send the new card to the right place!</li>
-                            <li><strong>Ask:</strong> "When will the new card arrive?" and "Will my old card stop working right away?"</li>
-                            <li><strong>That's it!</strong> The whole call takes about 5 minutes. You did it!</li>
-                        </ul>
+                    <div class="substep">
+                        <div class="substep-title">📞 Here's exactly what to do:</div>
+                        <p>1. Flip your credit card over</p>
+                        <p>2. Call the customer service number on the back</p>
+                        <p>3. When they answer, say: "I'd like a replacement card with a new card number"</p>
+                        <p>4. If asked why: "Security concerns"</p>
+                        <p>5. Confirm your mailing address</p>
+                        <p>6. Done! New card ships immediately.</p>
                     </div>
                 </div>
             </div>
 
             <div class="step" data-step="4">
-                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
-                <div class="step-content">
-                    <div class="step-title">Step 4: Repeat for Any Other Cards You Want to Reset</div>
-                    <div class="step-desc">Do you have multiple credit cards or debit cards that you impulse-shop with? Reset them all!</div>
-                    <div class="step-details">
-                        <h5">💳 Consider Resetting These Too:</h5>
-                        <ul>
-                            <li><strong>Your main credit card:</strong> If you just did this one, great! Check it off.</li>
-                            <li><strong>Second credit card:</strong> Do you have a store card (Target, Amazon) or another credit card? Reset it too!</li>
-                            <li><strong>Debit card:</strong> Is your debit card saved on shopping sites? You can reset this number too!</li>
-                            <li><strong>Each card = one phone call.</strong> Call each bank separately. Same script!</li>
-                            <li><strong>Don't have other cards?</strong> That's fine! One card reset is still powerful!</li>
-                            <li><strong>Pro tip:</strong> If you have an Amazon or store credit card that you ONLY use for impulse shopping, consider closing it entirely instead of just resetting!</li>
-                        </ul>
+                <div class="step-header">
+                    <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                    <div>
+                        <div class="step-title">Step 4: Repeat for Other Cards (Optional)</div>
+                        <div class="step-time">Reset all cards with impulse-buy temptations</div>
                     </div>
+                </div>
+                <div class="step-content">
+                    <div class="step-desc">If you have multiple cards saved on shopping sites, reset them all. One call per card.</div>
                 </div>
             </div>
 
             <div class="step" data-step="5">
-                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-header">
+                    <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                    <div>
+                        <div class="step-title">Step 5: Wait for Your New Card (5-7 days)</div>
+                        <div class="step-time">This is your "cooling off" period!</div>
+                    </div>
+                </div>
                 <div class="step-content">
-                    <div class="step-title">Step 5: Use the Waiting Period Wisely (5-7 Days)</div>
-                    <div class="step-desc">While you wait for your new card, pay attention to how often you reach for your card out of habit!</div>
-                    <div class="step-details">
-                        <h5">🧠 This Waiting Period Is GOLDEN:</h5>
-                        <ul>
-                            <li><strong>Notice your habits:</strong> How many times do you reach for your wallet without thinking? Count them!</li>
-                            <li><strong>Write down urges:</strong> Each time you want to buy something, write it down. What was it? Why did you want it?</li>
-                            <li><strong>After 24 hours:</strong> Look at your list. How many things do you still want?</li>
-                            <li><strong>Enjoy the freedom:</strong> You literally CAN'T impulse buy right now. Notice how that feels!</li>
-                            <li><strong>Plan ahead:</strong> Decide NOW which sites will get your new card number (hint: as few as possible!)</li>
-                            <li><strong>Do the Zero-Spend Challenge:</strong> Since you can't spend anyway, try our 48-hour Zero-Spend Challenge too!</li>
-                        </ul>
+                    <div class="step-desc">Use this time to notice how often you reach for your card out of habit. Every blocked purchase is money saved!</div>
+                    <div class="pro-tip">
+                        <div class="pro-tip-title">💡 Track Your Impulses!</div>
+                        <p>Keep a note on your phone of every time you tried to buy something and couldn't. Add up what you would have spent. You'll be shocked!</p>
                     </div>
                 </div>
             </div>
 
             <div class="step" data-step="6">
-                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-header">
+                    <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                    <div>
+                        <div class="step-title">Step 6: When Card Arrives — Update ONLY Essentials</div>
+                        <div class="step-time">Be very selective!</div>
+                    </div>
+                </div>
                 <div class="step-content">
-                    <div class="step-title">Step 6: New Card Arrives - Update ONLY Essential Bills</div>
-                    <div class="step-desc">Your new card is here! Now update ONLY the important autopay bills. NOT shopping sites!</div>
-                    <div class="step-details">
-                        <h5">✅ ONLY Update These (Nothing Else!):</h5>
-                        <ul>
-                            <li><strong>Utility bills</strong> - Electric, gas, water, internet (the stuff that keeps your house running)</li>
-                            <li><strong>Insurance</strong> - Car insurance, health insurance, renters insurance</li>
-                            <li><strong>Phone bill</strong> - Your cell phone service</li>
-                            <li><strong>Rent/mortgage</strong> - ONLY if you pay by card</li>
-                            <li><strong>HOW TO UPDATE:</strong> Go to each company's website → Log in → Find "Payment Methods" or "Billing" → Update card number</li>
-                            <li><strong>DO NOT update:</strong> Amazon, Target, DoorDash, Netflix, or any shopping/entertainment site!</li>
-                            <li><strong>The whole point:</strong> If you want to buy something, you have to MANUALLY enter your card. That extra step = time to think!</li>
-                        </ul>
+                    <div class="substep">
+                        <div class="substep-title">✅ Only update these:</div>
+                        <p>• Utility bills (electric, water, gas, internet)</p>
+                        <p>• Insurance (car, health, home)</p>
+                        <p>• Phone bill</p>
+                        <p>• Rent (if paid by card)</p>
+                        <p><strong>That's it! Nothing else NEEDS your card saved.</strong></p>
                     </div>
                 </div>
             </div>
 
             <div class="step" data-step="7">
-                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
-                <div class="step-content">
-                    <div class="step-title">Step 7: Review Failed Subscription Charges</div>
-                    <div class="step-desc">Your old subscriptions will try to charge your old card and FAIL. This is your chance to audit them!</div>
-                    <div class="step-details">
-                        <h5">📧 What Will Happen:</h5>
-                        <ul>
-                            <li><strong>You'll get emails:</strong> "Your payment failed!" from Netflix, Spotify, gym, etc.</li>
-                            <li><strong>DON'T PANIC:</strong> Your accounts aren't deleted. They just can't charge you.</li>
-                            <li><strong>FOR EACH EMAIL, ASK:</strong> "Did I actually use this in the last 30 days?"</li>
-                            <li><strong>If YES:</strong> Decide if it's worth keeping. If so, update your card on that site.</li>
-                            <li><strong>If NO:</strong> Don't update your card! Let it cancel! You weren't using it anyway!</li>
-                            <li><strong>Examples to probably cancel:</strong> Gym you don't go to, streaming service you forgot about, app subscription you never use</li>
-                            <li><strong>Examples to probably keep:</strong> Streaming service you watch daily, software you use for work</li>
-                            <li><strong>This alone can save you $50-200/month!</strong> Many people are paying for things they forgot about!</li>
-                        </ul>
+                <div class="step-header">
+                    <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                    <div>
+                        <div class="step-title">Step 7: Review Failed Subscriptions</div>
+                        <div class="step-time">Perfect time to cancel what you don't use!</div>
                     </div>
+                </div>
+                <div class="step-content">
+                    <div class="step-desc">You'll get emails saying "Payment failed!" for old subscriptions. For each one, ask yourself: "Do I actually use this?" If not, let it stay canceled!</div>
                 </div>
             </div>
 
             <div class="step" data-step="8">
-                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-header">
+                    <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                    <div>
+                        <div class="step-title">Step 8: Be Intentional About New Card Saves</div>
+                        <div class="step-time">The whole point of this exercise!</div>
+                    </div>
+                </div>
                 <div class="step-content">
-                    <div class="step-title">Step 8: Be VERY Intentional About Saving Your New Card</div>
-                    <div class="step-desc">Going forward, think HARD before saving your card on any website. Most sites don't need it!</div>
-                    <div class="step-details">
-                        <h5">🤔 Before Saving Your Card Anywhere, Ask:</h5>
-                        <ul>
-                            <li><strong>"Is this a NEED or a WANT?"</strong> Utility bills = need. Amazon = want.</li>
-                            <li><strong>"Will saving my card make me spend more?"</strong> If yes, DON'T SAVE IT!</li>
-                            <li><strong>"Can I manually enter my card each time?"</strong> Yes, you can! It takes 30 seconds.</li>
-                            <li><strong>"What would happen if I didn't save it?"</strong> Usually nothing bad. Just a tiny inconvenience.</li>
-                            <li><strong>DEFAULT TO NO:</strong> When a site asks "Save this card?" click NO. Make it your habit!</li>
-                            <li><strong>The 30-second rule:</strong> Entering your card manually takes 30 seconds. If a purchase isn't worth 30 seconds of effort, it's not worth buying!</li>
-                            <li><strong>Enjoy your new freedom!</strong> You've broken the one-click buying trap!</li>
-                        </ul>
+                    <div class="step-desc">Before saving your card ANYWHERE new, ask: "Is this a need or a want?" The answer is usually "want."</div>
+                    <div class="pro-tip">
+                        <div class="pro-tip-title">💡 The Magic Question:</div>
+                        <p>"Would I get up, get my wallet, and type in 16 digits for this?" If the answer is no, you don't really want it that badly!</p>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">✅</span> Update ONLY These Essential Bills</h2>
-            <div class="essential-grid">
-                <div class="essential-card">
-                    <div class="emoji">💡</div>
-                    <h4">Utilities</h4>
-                    <p>Electric, gas, water, internet</p>
-                </div>
-                <div class="essential-card">
-                    <div class="emoji">🚗</div>
-                    <h4">Insurance</h4>
-                    <p>Car, health, home/renters</p>
-                </div>
-                <div class="essential-card">
-                    <div class="emoji">📱</div>
-                    <h4">Phone Bill</h4>
-                    <p>Monthly cell service</p>
-                </div>
-                <div class="essential-card">
-                    <div class="emoji">🏠</div>
-                    <h4">Rent (if by card)</h4>
-                    <p>Only if you pay by card</p>
-                </div>
-            </div>
-            
-            <div class="warning-box">
-                <div class="warning-box-title">❌ DO NOT Update These (Let Them Fail!)</div>
-                <p>Amazon, Target, Walmart, DoorDash, UberEats, Starbucks app, any shopping site, any food delivery app, any subscription you don't use regularly. Let them fail! Review each one before deciding to update.</p>
+            <h2>✅ What's NOT Affected (Don't Worry!)</h2>
+            <div class="info-box">
+                <h4>Your card ACCOUNT stays exactly the same:</h4>
+                <div class="info-item"><span>✅</span><span>Same credit limit</span></div>
+                <div class="info-item"><span>✅</span><span>Same rewards points</span></div>
+                <div class="info-item"><span>✅</span><span>Same payment history</span></div>
+                <div class="info-item"><span>✅</span><span>Same credit score (not affected at all!)</span></div>
+                <div class="info-item"><span>✅</span><span>Same account number (just new card number)</span></div>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">📈</span> Your Progress</h2>
+            <h2>🎓 Learn More About Breaking Shopping Habits</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💸</div>
+                    <h4>The Financial Diet</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Breaking bad money habits and spending psychology.</p>
+                    <a href="https://youtube.com/thefinancialdiet" class="influencer-link" target="_blank">Watch →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🚫</div>
+                    <h4>r/nobuy</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Community doing no-buy challenges. Great support!</p>
+                    <a href="https://reddit.com/r/nobuy" class="influencer-link" target="_blank">Join →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💰</div>
+                    <h4>Caleb Hammer</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Real financial audits showing consequences of impulse spending.</p>
+                    <a href="https://youtube.com/@CalebHammer" class="influencer-link" target="_blank">Watch →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🛒</div>
+                    <h4>r/shoppingaddiction</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Supportive community for controlling spending urges.</p>
+                    <a href="https://reddit.com/r/shoppingaddiction" class="influencer-link" target="_blank">Join →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📈 Your Progress</h2>
             <div class="progress-tracker">
-                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div style="font-size: 1.2em; margin-bottom: 15px;"><span id="completed">0</span> of 8 steps completed</div>
                 <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">📝</span> Your Card Reset Tracker</h2>
+            <h2>📝 Your Card Reset Tracker</h2>
             <div class="notes-section">
-                <textarea id="notes" placeholder="Track your card number reset here!
+                <textarea id="notes" placeholder="CARD RESET TRACKER
 
-CARDS I'M RESETTING:
-Card 1: _______ (Bank: _______)
-☐ Called and requested new number
-☐ Date called: _____
-☐ Expected arrival: _____
-☐ New card received: _____
+CARD RESET: ____
+Date called: ____
+New card expected: ____
 
-Card 2: _______ (Bank: _______)
-☐ Called and requested new number
-☐ Date called: _____
-☐ Expected arrival: _____
+ESSENTIAL BILLS TO UPDATE:
+☐ Electric: ____
+☐ Internet: ____
+☐ Insurance: ____
+☐ Phone: ____
 
-BACKUP PAYMENT METHODS:
-☐ Cash withdrawn: $______
-☐ Another card available: _____
-☐ Apple/Google Pay set up with different card
+IMPULSE PURCHASES BLOCKED:
+1. ____ ($____)
+2. ____ ($____)
+3. ____ ($____)
 
-MY ESSENTIAL AUTOPAY BILLS TO UPDATE:
-☐ Electric: _____
-☐ Gas: _____
-☐ Water: _____
-☐ Internet: _____
-☐ Phone: _____
-☐ Car insurance: _____
-☐ Health insurance: _____
-☐ Rent: _____
-☐ Other: _____
-
-SUBSCRIPTIONS THAT FAILED (Review these!):
-1. _____ - Keep? ☐ Yes ☐ Cancel
-2. _____ - Keep? ☐ Yes ☐ Cancel
-3. _____ - Keep? ☐ Yes ☐ Cancel
-4. _____ - Keep? ☐ Yes ☐ Cancel
-5. _____ - Keep? ☐ Yes ☐ Cancel
-
-MONEY SAVED BY CANCELING: $___/month
-
-URGES I NOTICED DURING THE WAITING PERIOD:
-_____
-
-HOW IT FELT:
-_____
+TOTAL SAVED BY FRICTION: $____
 "></textarea>
             </div>
         </div>
 
         <div class="cta-section">
             <h3>Need Help With Your Finances?</h3>
-            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <p style="opacity: 0.9; margin-bottom: 20px;">Chat with an ASAP Financial coach!</p>
             <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
         </div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const saved = localStorage.getItem('playbook-card-number-reset');
+            const saved = localStorage.getItem('playbook-card-reset');
             if (saved) {
                 const data = JSON.parse(saved);
                 data.steps.forEach((checked, index) => {
-                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                    if (checked) {
+                        const cb = document.querySelectorAll('.step-checkbox')[index];
+                        if (cb) cb.classList.add('checked');
+                    }
                 });
                 document.getElementById('notes').value = data.notes || '';
                 updateProgress();
             }
         });
-        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+
+        function toggleStep(el) {
+            el.classList.toggle('checked');
+            updateProgress();
+            saveProgress();
+        }
+
         function updateProgress() {
             const total = document.querySelectorAll('.step-checkbox').length;
             const completed = document.querySelectorAll('.step-checkbox.checked').length;
             document.getElementById('completed').textContent = completed;
             document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
         }
+
         function saveProgress() {
             const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
             const notes = document.getElementById('notes').value;
-            localStorage.setItem('playbook-card-number-reset', JSON.stringify({ steps, notes }));
+            localStorage.setItem('playbook-card-reset', JSON.stringify({ steps, notes }));
         }
+
         document.getElementById('notes').addEventListener('input', saveProgress);
     </script>
 </body>

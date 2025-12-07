@@ -3,141 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goal Setting Template - Turn Dreams Into Reality - ASAP Financial Playbook</title>
+    <title>Financial Goal Setting - ASAP Financial Playbook</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; line-height: 1.7; }
         .container { max-width: 800px; margin: 0 auto; }
-        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
-        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
-        .header .subtitle { color: #666; font-size: 1.2em; }
-        .time-badge { display: inline-block; background: linear-gradient(135deg, #9c27b0, #7b1fa2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
-        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
-        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; font-size: 1.5em; }
-        .card h3 { color: #7b1fa2; margin: 25px 0 15px 0; font-size: 1.2em; }
-        .achieve-box { background: linear-gradient(135deg, #f3e5f5, #e1bee7); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
-        .achieve-box p { color: #4a148c; font-size: 1.1em; line-height: 1.8; }
-        .income-highlight { background: linear-gradient(135deg, #9c27b0, #7b1fa2); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
-        .income-highlight h3 { font-size: 2em; margin-bottom: 10px; }
-        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
-        .step-section { background: #f8f9fa; border-radius: 15px; padding: 25px; margin: 20px 0; border-left: 5px solid #9c27b0; }
-        .step-section h3 { color: #7b1fa2; margin-bottom: 15px; font-size: 1.3em; }
-        .step-section p { color: #333; margin: 12px 0; font-size: 1.05em; }
-        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 5px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
-        .warning-box h4 { color: #c62828; margin-bottom: 10px; }
-        .warning-box p { color: #b71c1c; margin: 8px 0; }
-        .success-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-left: 5px solid #4caf50; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
-        .success-box h4 { color: #2e7d32; margin-bottom: 10px; }
-        .success-box p { color: #1b5e20; margin: 8px 0; }
-        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 5px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
-        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
-        .pro-tip p { color: #666; margin: 8px 0; }
-        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
-        .step:hover { background: #f3e5f5; }
-        .step-checkbox { width: 30px; height: 30px; border: 3px solid #9c27b0; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
-        .step-checkbox.checked { background: #9c27b0; color: white; }
-        .step-content { flex: 1; }
-        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
-        .step-desc { color: #666; line-height: 1.6; }
-        .comparison-box { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
-        .comparison-good { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 12px; padding: 20px; border-top: 4px solid #4caf50; }
-        .comparison-bad { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-radius: 12px; padding: 20px; border-top: 4px solid #f44336; }
-        .comparison-good h4 { color: #2e7d32; margin-bottom: 10px; }
-        .comparison-bad h4 { color: #c62828; margin-bottom: 10px; }
-        .comparison-good p, .comparison-bad p { font-size: 0.95em; margin: 8px 0; color: #333; }
-        .smart-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 20px 0; }
-        .smart-letter { background: linear-gradient(135deg, #9c27b0, #7b1fa2); color: white; border-radius: 12px; padding: 20px 10px; text-align: center; }
-        .smart-letter .letter { font-size: 2em; font-weight: bold; }
-        .smart-letter .word { font-size: 0.85em; margin-top: 5px; opacity: 0.9; }
-        .number-circle { display: inline-flex; width: 28px; height: 28px; background: #9c27b0; color: white; border-radius: 50%; align-items: center; justify-content: center; font-weight: bold; margin-right: 10px; font-size: 14px; }
-        .worksheet-section { background: linear-gradient(135deg, #f3e5f5, #e1bee7); border-radius: 15px; padding: 25px; margin: 20px 0; }
-        .worksheet-section h3 { color: #4a148c; margin-bottom: 20px; }
-        .action-item { background: white; border-radius: 10px; padding: 15px; margin: 12px 0; }
-        .action-item label { display: block; color: #7b1fa2; font-weight: 600; margin-bottom: 8px; font-size: 1.05em; }
-        .action-item input, .action-item textarea, .action-item select { width: 100%; padding: 12px; border: 2px solid #e1bee7; border-radius: 8px; font-size: 1em; font-family: inherit; }
-        .action-item textarea { min-height: 100px; resize: vertical; }
-        .action-item input:focus, .action-item textarea:focus, .action-item select:focus { outline: none; border-color: #9c27b0; }
-        .action-item .helper { color: #666; font-size: 0.85em; margin-top: 5px; font-style: italic; }
-        .calc-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 15px 0; }
-        .calc-box { background: linear-gradient(135deg, #9c27b0, #7b1fa2); color: white; border-radius: 12px; padding: 20px; text-align: center; }
-        .calc-box.orange { background: linear-gradient(135deg, #ff9800, #f57c00); }
-        .calc-box.green { background: linear-gradient(135deg, #4caf50, #388e3c); }
-        .calc-box h4 { font-size: 0.9em; opacity: 0.9; margin-bottom: 8px; }
-        .calc-box .amount { font-size: 2em; font-weight: bold; }
-        .milestone-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 20px 0; }
-        .milestone { background: #f8f9fa; border-radius: 10px; padding: 15px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.2s; }
-        .milestone:hover { border-color: #e1bee7; }
-        .milestone.reached { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-color: #4caf50; }
-        .milestone .percent { font-size: 1.5em; font-weight: bold; color: #9c27b0; }
-        .milestone.reached .percent { color: #4caf50; }
-        .milestone p { font-size: 0.8em; color: #666; margin-top: 5px; }
-        .milestone input { width: 100%; padding: 6px; border: 1px solid #e0e0e0; border-radius: 4px; text-align: center; margin-top: 8px; font-size: 0.85em; }
-        .checklist-item { display: flex; align-items: center; gap: 12px; padding: 12px; background: white; border-radius: 8px; margin: 8px 0; cursor: pointer; }
-        .checklist-item:hover { background: #f8f9fa; }
-        .checklist-item.done { background: #e8f5e9; }
-        .checklist-box { width: 24px; height: 24px; border: 2px solid #9c27b0; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: transparent; flex-shrink: 0; }
-        .checklist-item.done .checklist-box { background: #4caf50; border-color: #4caf50; color: white; }
-        .progress-tracker { background: linear-gradient(135deg, #9c27b0, #7b1fa2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
-        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
-        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
-        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
-        .cta-button { display: inline-block; background: linear-gradient(135deg, #9c27b0, #7b1fa2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
         .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
-        @media (max-width: 600px) { .comparison-box, .calc-row { grid-template-columns: 1fr; } .smart-grid { grid-template-columns: repeat(3, 1fr); } .milestone-grid { grid-template-columns: repeat(2, 1fr); } }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { font-size: 2.5em; color: #1a1a2e; margin-bottom: 10px; }
+        .header .subtitle { font-size: 1.2em; color: #666; margin-bottom: 20px; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 10px 25px; border-radius: 20px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #2e7d32; font-size: 1.1em; margin-bottom: 10px; }
+        .smart-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 20px 0; }
+        .smart-letter { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 20px 10px; text-align: center; }
+        .smart-letter .letter { font-size: 2em; font-weight: 700; }
+        .smart-letter .word { font-size: 0.7em; margin-top: 5px; opacity: 0.9; }
+        .example-box { background: #f8f9fa; border-radius: 15px; padding: 20px; margin: 20px 0; }
+        .bad-goal { background: #ffebee; border-radius: 10px; padding: 15px; margin-bottom: 15px; border-left: 4px solid #f44336; }
+        .bad-goal h5 { color: #c62828; margin-bottom: 5px; }
+        .good-goal { background: #e8f5e9; border-radius: 10px; padding: 15px; border-left: 4px solid #4caf50; }
+        .good-goal h5 { color: #2e7d32; margin-bottom: 5px; }
+        .form-section { background: #f8f9fa; border-radius: 15px; padding: 25px; margin: 20px 0; }
+        .form-section h4 { color: #1a1a2e; margin-bottom: 15px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; color: #666; margin-bottom: 8px; font-weight: 600; }
+        .form-group input, .form-group textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-family: inherit; font-size: 1em; }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: #667eea; }
+        .form-group textarea { min-height: 80px; resize: vertical; }
+        .calculated-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 20px; margin: 20px 0; }
+        .calculated-box h4 { color: #1565c0; margin-bottom: 15px; }
+        .calc-item { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #90caf9; }
+        .calc-item:last-child { border-bottom: none; }
+        .calc-label { color: #0d47a1; }
+        .calc-value { font-weight: 700; color: #1565c0; font-size: 1.2em; }
+        .step { margin-bottom: 25px; padding: 25px; background: #f8f9fa; border-radius: 15px; border-left: 5px solid #667eea; }
+        .step:hover { background: #e8f5e9; }
+        .step-header { display: flex; gap: 15px; align-items: flex-start; margin-bottom: 15px; }
+        .step-checkbox { width: 35px; height: 35px; min-width: 35px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; color: transparent; font-size: 1.2em; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-title { font-weight: 700; color: #1a1a2e; font-size: 1.2em; }
+        .step-time { color: #667eea; font-size: 0.9em; margin-top: 3px; }
+        .step-content { margin-left: 50px; }
+        .step-desc { color: #444; font-size: 1.05em; margin-bottom: 15px; }
+        .substep { background: white; border-radius: 10px; padding: 15px; margin: 10px 0; border-left: 3px solid #4caf50; }
+        .substep-title { font-weight: 600; color: #2e7d32; margin-bottom: 8px; }
+        .substep p { color: #555; font-size: 0.95em; margin-bottom: 5px; }
+        .milestone-tracker { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 20px 0; }
+        .milestone { background: #f5f5f5; border-radius: 12px; padding: 15px; text-align: center; cursor: pointer; transition: all 0.3s; border: 3px solid transparent; }
+        .milestone:hover { background: #e8f5e9; }
+        .milestone.completed { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; }
+        .milestone .percent { font-size: 1.5em; font-weight: 700; }
+        .milestone .label { font-size: 0.8em; opacity: 0.8; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #5d4e37; }
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; width: 0%; }
+        .notes-section textarea { width: 100%; min-height: 200px; padding: 20px; border: 2px solid #e0e0e0; border-radius: 15px; font-family: inherit; font-size: 1em; resize: vertical; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; }
+        @media (max-width: 600px) { .header h1 { font-size: 1.8em; } .step-content { margin-left: 0; margin-top: 15px; } .step-header { flex-direction: column; } .smart-grid { grid-template-columns: repeat(5, 1fr); font-size: 0.8em; } .milestone-tracker { grid-template-columns: repeat(2, 1fr); } }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="index.html" class="back-link">← Back to Playbooks</a>
-        
+        <a href="expense-playbooks.html" class="back-link">← Back to Expense Playbooks</a>
         <div class="header">
-            <h1>🎯 Goal Setting Template</h1>
+            <h1>🎯 Financial Goal Setting</h1>
             <p class="subtitle">Turn your dreams into achievable financial goals!</p>
-            <div class="time-badge">⏱️ 20 minutes • 📈 42% more likely to succeed!</div>
+            <div class="time-badge">⏱️ 15 minutes to set up • Life-changing results</div>
         </div>
-
+        
         <div class="card">
-            <h2><span class="icon">💡</span> Why Most People Fail With Money Goals</h2>
+            <h2>🎯 What This Does For You</h2>
             <div class="achieve-box">
-                <p><strong>Here's the problem:</strong> Most people say things like "I want to save more money" or "I should pay off debt." These are wishes, not goals. And wishes don't come true on their own!</p>
-                <p style="margin-top: 15px;"><strong>Here's the solution:</strong> A REAL goal looks like this: "I will save $3,000 by December 31st by putting $250 into savings every month." NOW you know exactly what to do!</p>
-            </div>
-            <div class="income-highlight">
-                <h3>Writing Down Your Goal Makes You 42% More Likely to Achieve It!</h3>
-                <p>That's not a guess—scientists actually studied this. Let's write YOUR goal today!</p>
+                <p><strong>Vague goals fail. Specific goals succeed.</strong> "I want to save more money" never works. "I will save $5,000 for my emergency fund by December 31st by auto-transferring $417/month" DOES work.</p>
+                <p>This playbook helps you turn fuzzy dreams into crystal-clear, achievable goals with exact steps and timelines!</p>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">❌</span> Bad Goals vs. Good Goals (Real Examples)</h2>
-            <p style="color: #666; margin-bottom: 20px;">Look at these side by side. See the difference?</p>
-            
-            <div class="comparison-box">
-                <div class="comparison-bad">
-                    <h4>❌ BAD Goals (Wishes)</h4>
-                    <p>😐 "I want to save more money"</p>
-                    <p>😐 "I should pay off debt"</p>
-                    <p>😐 "I need to be better with money"</p>
-                    <p>😐 "I want to buy a house someday"</p>
-                    <p>😐 "I should start saving for retirement"</p>
-                    <p style="margin-top: 15px; font-style: italic; color: #c62828;"><strong>Why they fail:</strong> No specific amount. No deadline. No plan. How do you even know when you've succeeded?</p>
-                </div>
-                <div class="comparison-good">
-                    <h4>✅ GOOD Goals (Real Goals)</h4>
-                    <p>🎯 "I will save $5,000 by December 31st by saving $417/month"</p>
-                    <p>🎯 "I will pay off my $3,200 credit card by June 30th by paying $533/month"</p>
-                    <p>🎯 "I will spend under $400 on food this month"</p>
-                    <p>🎯 "I will save $20,000 for a down payment by Dec 2026"</p>
-                    <p>🎯 "I will put $200/month into my 401(k) starting Feb 1st"</p>
-                    <p style="margin-top: 15px; font-style: italic; color: #2e7d32;"><strong>Why they work:</strong> Specific amount + deadline + action plan = SUCCESS!</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2><span class="icon">🧠</span> The SMART Goal Formula (Made Simple)</h2>
-            <p style="color: #666; margin-bottom: 20px;">Every good goal has these 5 things. If yours is missing ANY of them, it will probably fail!</p>
-            
+            <h2>📐 The SMART Framework</h2>
+            <p style="color: #666; margin-bottom: 15px;">Every financial goal should pass the SMART test:</p>
             <div class="smart-grid">
                 <div class="smart-letter"><div class="letter">S</div><div class="word">Specific</div></div>
                 <div class="smart-letter"><div class="letter">M</div><div class="word">Measurable</div></div>
@@ -145,422 +96,329 @@
                 <div class="smart-letter"><div class="letter">R</div><div class="word">Relevant</div></div>
                 <div class="smart-letter"><div class="letter">T</div><div class="word">Time-bound</div></div>
             </div>
-
-            <div class="step-section">
-                <h3>S = SPECIFIC (What exactly do you want?)</h3>
-                <p><strong>Bad:</strong> "Save money" → Save how much? For what? This is too vague!</p>
-                <p><strong>Good:</strong> "Save $5,000 for an emergency fund"</p>
-                <p style="margin-top: 10px;"><strong>Ask yourself:</strong> What EXACTLY do I want? Can I picture it clearly?</p>
-            </div>
-
-            <div class="step-section">
-                <h3>M = MEASURABLE (Can you track progress?)</h3>
-                <p><strong>Bad:</strong> "Save more money" → How do you know when you've saved "more"?</p>
-                <p><strong>Good:</strong> "Save $5,000" → You can check: Am I at $1,000? $2,500? $5,000? Done!</p>
-                <p style="margin-top: 10px;"><strong>Ask yourself:</strong> Can I put a NUMBER on this? Can I track it weekly?</p>
-            </div>
-
-            <div class="step-section">
-                <h3>A = ACHIEVABLE (Is it actually possible?)</h3>
-                <p><strong>Bad:</strong> "Save $50,000 in 3 months" on a $40,000 salary → Impossible!</p>
-                <p><strong>Good:</strong> "Save $5,000 in 12 months" on a $40,000 salary → Challenging but doable!</p>
-                <p style="margin-top: 10px;"><strong>Ask yourself:</strong> Can I actually DO this? Is the math realistic?</p>
-            </div>
-
-            <div class="step-section">
-                <h3>R = RELEVANT (Does it matter to YOU?)</h3>
-                <p><strong>Bad:</strong> "Save money because my mom said I should" → You won't care enough to try</p>
-                <p><strong>Good:</strong> "Save money so I never have to borrow from anyone again" → This fires you up!</p>
-                <p style="margin-top: 10px;"><strong>Ask yourself:</strong> WHY do I want this? Does thinking about it excite me?</p>
-            </div>
-
-            <div class="step-section">
-                <h3>T = TIME-BOUND (What's the deadline?)</h3>
-                <p><strong>Bad:</strong> "Save $5,000 someday" → "Someday" never comes!</p>
-                <p><strong>Good:</strong> "Save $5,000 by December 31st, 2025" → Now you have urgency!</p>
-                <p style="margin-top: 10px;"><strong>Ask yourself:</strong> WHEN exactly will I achieve this? What's my deadline?</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2><span class="icon">📋</span> Your Step-by-Step Process</h2>
-            <p style="color: #666; margin-bottom: 20px;">Follow these 7 steps to create a goal that actually works. Check each one off as you complete it!</p>
-            
-            <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 1: Pick Your ONE Goal</div><div class="step-desc">Choose the most important financial goal you want to achieve. Just ONE—not five!</div></div></div>
-            
-            <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 2: Make It Specific (The "S")</div><div class="step-desc">Write exactly WHAT you want and HOW MUCH money is involved.</div></div></div>
-            
-            <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 3: Do the Math (The "M")</div><div class="step-desc">Use the calculator to figure out your monthly and weekly amounts.</div></div></div>
-            
-            <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 4: Reality Check (The "A")</div><div class="step-desc">Can you actually afford this monthly amount? If not, adjust!</div></div></div>
-            
-            <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 5: Find Your WHY (The "R")</div><div class="step-desc">Write down WHY this goal matters to you emotionally.</div></div></div>
-            
-            <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 6: Set Your Deadline (The "T")</div><div class="step-desc">Pick a specific date. Put it in your phone calendar!</div></div></div>
-            
-            <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 7: Take Your FIRST Action Today</div><div class="step-desc">Don't wait! Do ONE thing right now to start.</div></div></div>
-        </div>
-
-        <div class="card">
-            <h2><span class="icon">📝</span> Worksheet 1: Define Your Goal (The "S" and "M")</h2>
-            <p style="color: #666; margin-bottom: 20px;">Fill this out completely. Your answers save automatically!</p>
-            
-            <div class="worksheet-section">
-                <div class="action-item">
-                    <label>🎯 What exactly do I want to achieve?</label>
-                    <input type="text" id="goal-what" placeholder="Examples: Save for emergency fund, Pay off credit card, Save for vacation, Buy a car in cash" oninput="saveAllData()">
+            <div class="example-box">
+                <div class="bad-goal">
+                    <h5>❌ BAD Goal:</h5>
+                    <p>"I want to save more money"</p>
                 </div>
-                
-                <div class="action-item">
-                    <label>💵 How much money do I need? $</label>
-                    <input type="number" id="goal-amount" placeholder="Example: 5000" oninput="calculateGoal()">
-                </div>
-                
-                <div class="action-item">
-                    <label>📅 By what DATE do I want to achieve this?</label>
-                    <input type="text" id="goal-deadline" placeholder="Example: December 31, 2025 (be specific!)" oninput="saveAllData()">
-                </div>
-                
-                <div class="action-item">
-                    <label>📅 How many MONTHS until my deadline?</label>
-                    <input type="number" id="goal-months" placeholder="Example: 12" oninput="calculateGoal()">
-                </div>
-                
-                <h3 style="margin-top: 25px; color: #4a148c;">🧮 Your Numbers (Auto-Calculated):</h3>
-                <div class="calc-row">
-                    <div class="calc-box">
-                        <h4>Save Per MONTH</h4>
-                        <div class="amount" id="monthly-need">$0</div>
-                    </div>
-                    <div class="calc-box orange">
-                        <h4>Save Per WEEK</h4>
-                        <div class="amount" id="weekly-need">$0</div>
-                    </div>
-                </div>
-                <div class="calc-row">
-                    <div class="calc-box green">
-                        <h4>Save Per DAY</h4>
-                        <div class="amount" id="daily-need">$0</div>
-                    </div>
-                    <div class="calc-box" style="background: linear-gradient(135deg, #607d8b, #455a64);">
-                        <h4>Per Paycheck (bi-weekly)</h4>
-                        <div class="amount" id="paycheck-need">$0</div>
-                    </div>
+                <div class="good-goal">
+                    <h5>✅ GOOD Goal:</h5>
+                    <p>"I will save $5,000 for my emergency fund by December 31st by auto-transferring $417/month from my checking account"</p>
                 </div>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">🔍</span> Worksheet 2: Reality Check (The "A")</h2>
-            
-            <div class="worksheet-section">
-                <div class="action-item">
-                    <label>🤔 Can I realistically save/pay this amount each month?</label>
-                    <select id="realistic" onchange="saveAllData()">
-                        <option value="">Click to select...</option>
-                        <option value="yes">✅ Yes, I can do this!</option>
-                        <option value="stretch">🟡 It's a stretch, but possible if I try hard</option>
-                        <option value="no">❌ No, I need to adjust my goal</option>
-                    </select>
+            <h2>📝 Define Your Goal (Fill This Out!)</h2>
+            <div class="form-section">
+                <div class="form-group">
+                    <label>🎯 What exactly do you want to achieve?</label>
+                    <textarea id="goalWhat" placeholder="Example: Build a $5,000 emergency fund, Pay off my $3,000 credit card, Save $2,000 for vacation"></textarea>
                 </div>
-                
-                <div class="action-item">
-                    <label>✂️ What expenses can I CUT to make room for this goal?</label>
-                    <textarea id="expenses-cut" placeholder="Think about these:
-• Subscriptions I don't use (Netflix, Spotify, gym?) 
-• Eating out / fast food / coffee shops
-• Impulse shopping (Amazon, Target runs)
-• Things I could do cheaper (phone plan, insurance)
-
-Write what you can cut:" oninput="saveAllData()"></textarea>
+                <div class="form-group">
+                    <label>💰 How much money do you need?</label>
+                    <input type="number" id="goalAmount" placeholder="Enter dollar amount (e.g., 5000)">
                 </div>
-                
-                <div class="action-item">
-                    <label>💵 Where will this money come from each month?</label>
-                    <textarea id="money-source" placeholder="Example:
-$100 from cutting eating out
-$50 from canceling Netflix + Hulu
-$75 from doing overtime at work  
-$25 from selling old stuff
-= $250/month total!" oninput="saveAllData()"></textarea>
+                <div class="form-group">
+                    <label>📅 By when? (Target date)</label>
+                    <input type="date" id="goalDate">
+                </div>
+                <div class="form-group">
+                    <label>❤️ WHY does this matter to you?</label>
+                    <textarea id="goalWhy" placeholder="Example: So I never have to stress about unexpected expenses, So I can finally take my family on vacation, So I can stop paying interest and put that money toward my future"></textarea>
                 </div>
             </div>
-
+            <div class="calculated-box">
+                <h4>📊 Your Numbers (Auto-Calculated!):</h4>
+                <div class="calc-item">
+                    <span class="calc-label">Monthly amount needed:</span>
+                    <span class="calc-value" id="monthlyAmount">$0</span>
+                </div>
+                <div class="calc-item">
+                    <span class="calc-label">Weekly amount needed:</span>
+                    <span class="calc-value" id="weeklyAmount">$0</span>
+                </div>
+                <div class="calc-item">
+                    <span class="calc-label">Daily amount needed:</span>
+                    <span class="calc-value" id="dailyAmount">$0</span>
+                </div>
+            </div>
             <div class="pro-tip">
-                <div class="pro-tip-title">💡 If Your Monthly Amount Seems Too High:</div>
-                <p><strong>Option 1:</strong> Extend your deadline (12 months → 18 months = smaller monthly payment!)</p>
-                <p><strong>Option 2:</strong> Start with a smaller goal ($5,000 → $3,000)</p>
-                <p><strong>Option 3:</strong> Find more money (side gig, sell stuff, cut more expenses)</p>
-                <p style="margin-top: 10px;"><em>It's better to set a realistic goal and HIT IT than set an impossible goal and fail!</em></p>
+                <div class="pro-tip-title">💡 The Daily Amount is Powerful!</div>
+                <p>Seeing "I need to save $14/day" feels way more doable than "$5,000 by year end." Skip that latte, pack lunch once, and you're there!</p>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">❤️</span> Worksheet 3: Find Your WHY (The "R")</h2>
-            <p style="color: #666; margin-bottom: 15px;">This is the most important part! Your "why" keeps you going when things get hard.</p>
+            <h2>📋 Your Goal Achievement Plan</h2>
             
-            <div class="worksheet-section">
-                <div class="action-item">
-                    <label>🔥 WHY does this goal matter to me? (Get emotional!)</label>
-                    <textarea id="goal-why" placeholder="Dig deep! Think about:
-• How will I FEEL when I achieve this?
-• What stress will go away?
-• How will my life be different?
-• Who am I doing this for (myself, family, kids)?
-• What happens if I DON'T achieve this?
-
-Write your honest WHY:" oninput="saveAllData()"></textarea>
-                    <div class="helper">Read this when you're tempted to give up or spend the money!</div>
+            <div class="step" data-step="1">
+                <div class="step-header">
+                    <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                    <div>
+                        <div class="step-title">Step 1: Write Down Your SMART Goal (3 minutes)</div>
+                        <div class="step-time">Make it crystal clear</div>
+                    </div>
                 </div>
-                
-                <div class="action-item">
-                    <label>🌟 How will my life be DIFFERENT when I reach this goal?</label>
-                    <textarea id="goal-vision" placeholder="Picture yourself after you've achieved this goal:
-• How do you feel when you wake up?
-• What's different about your stress levels?
-• What can you do that you couldn't do before?
-• How does your family benefit?
-
-Describe your new life:" oninput="saveAllData()"></textarea>
+                <div class="step-content">
+                    <div class="substep">
+                        <div class="substep-title">📝 Your SMART Goal Statement:</div>
+                        <p>"I will save/pay off <strong>$[amount]</strong> for <strong>[what]</strong> by <strong>[date]</strong> by <strong>[how - specific action]</strong>"</p>
+                        <p style="margin-top: 10px; color: #666;">Example: "I will save $5,000 for my emergency fund by December 31st by auto-transferring $417/month from my checking account on the 1st of each month."</p>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="card">
-            <h2><span class="icon">📜</span> Worksheet 4: Write Your Complete SMART Goal</h2>
-            <p style="color: #666; margin-bottom: 15px;">Now put it all together into ONE powerful sentence!</p>
-            
-            <div class="worksheet-section">
-                <div class="action-item">
-                    <label>📝 My Complete SMART Goal Statement:</label>
-                    <textarea id="smart-goal" placeholder='Use this formula:
-
-"I will [WHAT] [AMOUNT] by [DEADLINE] by [HOW]."
-
-Example: "I will save $5,000 for my emergency fund by December 31, 2025 by automatically transferring $417 to my savings account every month on payday."
-
-Write YOUR goal:' oninput="saveAllData()"></textarea>
+            <div class="step" data-step="2">
+                <div class="step-header">
+                    <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                    <div>
+                        <div class="step-title">Step 2: Post It Where You'll See It Daily (2 minutes)</div>
+                        <div class="step-time">Out of sight = out of mind</div>
+                    </div>
                 </div>
-                
-                <div class="action-item">
-                    <label>📍 Where will I put this goal so I see it EVERY DAY?</label>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px;">
-                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: normal;">
-                            <input type="checkbox" id="post-mirror" onchange="saveAllData()"> 🪞 Bathroom mirror
-                        </label>
-                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: normal;">
-                            <input type="checkbox" id="post-phone" onchange="saveAllData()"> 📱 Phone wallpaper/notes
-                        </label>
-                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: normal;">
-                            <input type="checkbox" id="post-fridge" onchange="saveAllData()"> 🧊 Refrigerator
-                        </label>
-                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: normal;">
-                            <input type="checkbox" id="post-desk" onchange="saveAllData()"> 💻 Computer/work desk
-                        </label>
-                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: normal;">
-                            <input type="checkbox" id="post-wallet" onchange="saveAllData()"> 👛 Inside wallet
-                        </label>
-                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: normal;">
-                            <input type="checkbox" id="post-car" onchange="saveAllData()"> 🚗 Car dashboard
-                        </label>
+                <div class="step-content">
+                    <div class="substep">
+                        <div class="substep-title">📍 Good places to post your goal:</div>
+                        <p>• Sticky note on your bathroom mirror</p>
+                        <p>• Phone lock screen wallpaper</p>
+                        <p>• Note taped to your credit card</p>
+                        <p>• Desktop wallpaper on your computer</p>
+                        <p>• Inside your wallet</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step" data-step="3">
+                <div class="step-header">
+                    <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                    <div>
+                        <div class="step-title">Step 3: Set Up Automatic Transfers (10 minutes)</div>
+                        <div class="step-time">Automation is the secret to success!</div>
+                    </div>
+                </div>
+                <div class="step-content">
+                    <div class="step-desc">The best way to save is to make it automatic. Set up a recurring transfer so money moves before you can spend it!</div>
+                    <div class="substep">
+                        <div class="substep-title">📱 How to set up auto-transfer:</div>
+                        <p>1. Log into your bank app or website</p>
+                        <p>2. Go to "Transfers" or "Move Money"</p>
+                        <p>3. Set up recurring transfer: Checking → Savings</p>
+                        <p>4. Amount: Your monthly goal amount</p>
+                        <p>5. Frequency: Monthly (or weekly if that works better)</p>
+                        <p>6. Start date: Day after your paycheck arrives</p>
+                        <p>7. Save and confirm!</p>
+                    </div>
+                    <div class="pro-tip">
+                        <div class="pro-tip-title">💡 Pay Yourself FIRST!</div>
+                        <p>Schedule the transfer for right after payday. What you don't see, you don't spend!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step" data-step="4">
+                <div class="step-header">
+                    <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                    <div>
+                        <div class="step-title">Step 4: Find ONE Expense to Cut (5 minutes)</div>
+                        <div class="step-time">Where will the money come from?</div>
+                    </div>
+                </div>
+                <div class="step-content">
+                    <div class="substep">
+                        <div class="substep-title">💸 Common cuts that add up fast:</div>
+                        <p>• Cancel unused subscriptions: $10-50/month</p>
+                        <p>• Eat out one less time/week: $40-100/month</p>
+                        <p>• Make coffee at home: $50-150/month</p>
+                        <p>• Pack lunch 3x/week: $60-120/month</p>
+                        <p>• Cancel gym, work out at home: $30-80/month</p>
+                    </div>
+                    <div class="substep">
+                        <div class="substep-title">📝 My ONE cut this week:</div>
+                        <p>I will cut: ________________</p>
+                        <p>This saves me: $____/month</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step" data-step="5">
+                <div class="step-header">
+                    <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                    <div>
+                        <div class="step-title">Step 5: Tell Your Accountability Partner (2 minutes)</div>
+                        <div class="step-time">Shared goals are 2x more likely to succeed!</div>
+                    </div>
+                </div>
+                <div class="step-content">
+                    <div class="step-desc">Text a friend or family member your goal. Ask them to check in on you monthly!</div>
+                    <div class="substep">
+                        <div class="substep-title">📱 Text template:</div>
+                        <p>"Hey! I'm working on a financial goal: [your goal]. Can you check in with me once a month to see how I'm doing? I need someone to keep me accountable! 🙏"</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step" data-step="6">
+                <div class="step-header">
+                    <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                    <div>
+                        <div class="step-title">Step 6: Schedule Monthly Check-ins</div>
+                        <div class="step-time">Review progress monthly during Money Pulse!</div>
+                    </div>
+                </div>
+                <div class="step-content">
+                    <div class="substep">
+                        <div class="substep-title">📅 Add to your weekly Money Pulse:</div>
+                        <p>• How much have I saved so far?</p>
+                        <p>• Am I on track for my monthly target?</p>
+                        <p>• Do I need to adjust anything?</p>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">🏁</span> Worksheet 5: Track Your Milestones</h2>
-            <p style="color: #666; margin-bottom: 15px;">Big goals feel easier when you break them into smaller wins. Click each milestone when you reach it!</p>
-            
-            <div class="worksheet-section">
-                <div class="milestone-grid">
-                    <div class="milestone" onclick="toggleMilestone(this)">
-                        <div class="percent">25%</div>
-                        <p>Quarter done!</p>
-                        <input type="text" id="mile-25" placeholder="$___" oninput="saveAllData()">
-                    </div>
-                    <div class="milestone" onclick="toggleMilestone(this)">
-                        <div class="percent">50%</div>
-                        <p>HALFWAY! 🎉</p>
-                        <input type="text" id="mile-50" placeholder="$___" oninput="saveAllData()">
-                    </div>
-                    <div class="milestone" onclick="toggleMilestone(this)">
-                        <div class="percent">75%</div>
-                        <p>Almost there!</p>
-                        <input type="text" id="mile-75" placeholder="$___" oninput="saveAllData()">
-                    </div>
-                    <div class="milestone" onclick="toggleMilestone(this)">
-                        <div class="percent">100%</div>
-                        <p>GOAL! 🏆</p>
-                        <input type="text" id="mile-100" placeholder="$___" oninput="saveAllData()">
-                    </div>
-                </div>
-                
-                <div class="pro-tip" style="margin-top: 20px;">
-                    <div class="pro-tip-title">🎁 Reward Yourself!</div>
-                    <p>Plan small celebrations for each milestone (that don't involve spending money on things that hurt your goal!):</p>
-                    <p>• 25% - Take a walk somewhere beautiful</p>
-                    <p>• 50% - Nice home-cooked meal / movie night at home</p>
-                    <p>• 75% - Tell everyone how proud you are on social media!</p>
-                    <p>• 100% - BIG celebration (you earned it!)</p>
-                </div>
+            <h2>🏆 Track Your Milestones!</h2>
+            <p style="color: #666; margin-bottom: 15px;">Click each milestone as you reach it. Celebrate every step!</p>
+            <div class="milestone-tracker">
+                <div class="milestone" onclick="toggleMilestone(this, 0)"><div class="percent">25%</div><div class="label">Quarter way!</div></div>
+                <div class="milestone" onclick="toggleMilestone(this, 1)"><div class="percent">50%</div><div class="label">Halfway! 🎉</div></div>
+                <div class="milestone" onclick="toggleMilestone(this, 2)"><div class="percent">75%</div><div class="label">Almost there!</div></div>
+                <div class="milestone" onclick="toggleMilestone(this, 3)"><div class="percent">100%</div><div class="label">GOAL! 🏆</div></div>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">⚡</span> Worksheet 6: First 7 Days Action Plan</h2>
-            <p style="color: #666; margin-bottom: 15px;">Don't just read this—DO IT! Check off each item as you complete it!</p>
-            
-            <div class="warning-box">
-                <h4>⚠️ This Is Where Most People Fail!</h4>
-                <p>90% of people read about goals but never take ACTION. Be in the 10% who actually DO IT!</p>
-                <p>Complete at least ONE action TODAY before you close this page!</p>
-            </div>
-            
-            <div class="worksheet-section">
-                <h3>Your First Week Actions:</h3>
-                
-                <div class="checklist-item" onclick="toggleChecklist(this)">
-                    <div class="checklist-box">✓</div>
-                    <span>Write down my SMART goal and put it somewhere I'll see daily</span>
-                </div>
-                <div class="checklist-item" onclick="toggleChecklist(this)">
-                    <div class="checklist-box">✓</div>
-                    <span>Set up automatic transfer from checking to savings (even if just $20!)</span>
-                </div>
-                <div class="checklist-item" onclick="toggleChecklist(this)">
-                    <div class="checklist-box">✓</div>
-                    <span>Cancel or reduce ONE expense this week</span>
-                </div>
-                <div class="checklist-item" onclick="toggleChecklist(this)">
-                    <div class="checklist-box">✓</div>
-                    <span>Tell someone about my goal (accountability partner, friend, family)</span>
-                </div>
-                <div class="checklist-item" onclick="toggleChecklist(this)">
-                    <div class="checklist-box">✓</div>
-                    <span>Set weekly reminder in my phone (Sunday evening) to check progress</span>
-                </div>
-                <div class="checklist-item" onclick="toggleChecklist(this)">
-                    <div class="checklist-box">✓</div>
-                    <span>Transfer my FIRST amount to savings TODAY (any amount counts!)</span>
-                </div>
-            </div>
-
-            <div class="success-box" style="margin-top: 20px;">
-                <h4>💪 Remember This:</h4>
-                <p>Progress beats perfection! If you miss a week, don't quit—just start again the next week.</p>
-                <p>Review your goal every Sunday. Adjust if needed. But NEVER give up!</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2><span class="icon">📈</span> Your Progress</h2>
+            <h2>📈 Your Progress</h2>
             <div class="progress-tracker">
-                <div class="progress-text"><span id="completed">0</span> of 7 steps completed</div>
+                <div style="font-size: 1.2em; margin-bottom: 15px;"><span id="completed">0</span> of 6 steps completed</div>
                 <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📝 Your Goal Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="MY FINANCIAL GOAL
+
+SMART GOAL STATEMENT:
+I will save/pay off $____ for ____
+by ____ (date)
+by ____ (how)
+
+WHY THIS MATTERS:
+____
+
+MONTHLY TARGET: $____
+WEEKLY TARGET: $____
+
+EXPENSE I'M CUTTING: ____
+SAVES ME: $____/month
+
+ACCOUNTABILITY PARTNER: ____
+
+PROGRESS:
+Month 1: $____ saved (____% of goal)
+Month 2: $____ saved (____% of goal)
+Month 3: $____ saved (____% of goal)
+"></textarea>
             </div>
         </div>
 
         <div class="cta-section">
             <h3>Need Help With Your Finances?</h3>
-            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <p style="opacity: 0.9; margin-bottom: 20px;">Chat with an ASAP Financial coach!</p>
             <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
         </div>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', loadAllData);
+        let milestones = [false, false, false, false];
 
-        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveAllData(); }
-        function toggleMilestone(el) { el.classList.toggle('reached'); saveAllData(); }
-        function toggleChecklist(el) { el.classList.toggle('done'); saveAllData(); }
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-goal-setting');
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (data.steps) {
+                    data.steps.forEach((checked, index) => {
+                        if (checked) {
+                            const cb = document.querySelectorAll('.step-checkbox')[index];
+                            if (cb) cb.classList.add('checked');
+                        }
+                    });
+                }
+                if (data.milestones) {
+                    milestones = data.milestones;
+                    milestones.forEach((completed, index) => {
+                        if (completed) {
+                            document.querySelectorAll('.milestone')[index].classList.add('completed');
+                        }
+                    });
+                }
+                if (data.notes) document.getElementById('notes').value = data.notes;
+                if (data.goalWhat) document.getElementById('goalWhat').value = data.goalWhat;
+                if (data.goalAmount) document.getElementById('goalAmount').value = data.goalAmount;
+                if (data.goalDate) document.getElementById('goalDate').value = data.goalDate;
+                if (data.goalWhy) document.getElementById('goalWhy').value = data.goalWhy;
+                updateProgress();
+                calculateAmounts();
+            }
+        });
 
-        function calculateGoal() {
-            const amount = parseFloat(document.getElementById('goal-amount').value) || 0;
-            const months = parseFloat(document.getElementById('goal-months').value) || 1;
-            const monthly = amount / months;
-            const weekly = monthly / 4.33;
-            const daily = monthly / 30;
-            const paycheck = monthly / 2;
-            
-            document.getElementById('monthly-need').textContent = '$' + monthly.toFixed(0);
-            document.getElementById('weekly-need').textContent = '$' + weekly.toFixed(0);
-            document.getElementById('daily-need').textContent = '$' + daily.toFixed(0);
-            document.getElementById('paycheck-need').textContent = '$' + paycheck.toFixed(0);
-            
-            // Auto-suggest milestone amounts
-            document.getElementById('mile-25').placeholder = '$' + (amount * 0.25).toFixed(0);
-            document.getElementById('mile-50').placeholder = '$' + (amount * 0.5).toFixed(0);
-            document.getElementById('mile-75').placeholder = '$' + (amount * 0.75).toFixed(0);
-            document.getElementById('mile-100').placeholder = '$' + amount.toFixed(0);
-            
-            saveAllData();
+        function toggleMilestone(el, index) {
+            el.classList.toggle('completed');
+            milestones[index] = el.classList.contains('completed');
+            saveProgress();
+        }
+
+        function toggleStep(el) {
+            el.classList.toggle('checked');
+            updateProgress();
+            saveProgress();
         }
 
         function updateProgress() {
-            const done = document.querySelectorAll('.step-checkbox.checked').length;
-            document.getElementById('completed').textContent = done;
-            document.getElementById('progressFill').style.width = (done / 7 * 100) + '%';
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
         }
 
-        function saveAllData() {
-            localStorage.setItem('playbook-goal-setting-v2', JSON.stringify({
-                steps: Array.from(document.querySelectorAll('.step-checkbox')).map(e => e.classList.contains('checked')),
-                milestones: Array.from(document.querySelectorAll('.milestone')).map(e => e.classList.contains('reached')),
-                checklist: Array.from(document.querySelectorAll('.checklist-item')).map(e => e.classList.contains('done')),
-                goalWhat: document.getElementById('goal-what').value,
-                goalAmount: document.getElementById('goal-amount').value,
-                goalDeadline: document.getElementById('goal-deadline').value,
-                goalMonths: document.getElementById('goal-months').value,
-                realistic: document.getElementById('realistic').value,
-                expensesCut: document.getElementById('expenses-cut').value,
-                moneySource: document.getElementById('money-source').value,
-                goalWhy: document.getElementById('goal-why').value,
-                goalVision: document.getElementById('goal-vision').value,
-                smartGoal: document.getElementById('smart-goal').value,
-                postMirror: document.getElementById('post-mirror').checked,
-                postPhone: document.getElementById('post-phone').checked,
-                postFridge: document.getElementById('post-fridge').checked,
-                postDesk: document.getElementById('post-desk').checked,
-                postWallet: document.getElementById('post-wallet').checked,
-                postCar: document.getElementById('post-car').checked,
-                mile25: document.getElementById('mile-25').value,
-                mile50: document.getElementById('mile-50').value,
-                mile75: document.getElementById('mile-75').value,
-                mile100: document.getElementById('mile-100').value
+        function calculateAmounts() {
+            const amount = parseFloat(document.getElementById('goalAmount').value) || 0;
+            const dateStr = document.getElementById('goalDate').value;
+            
+            if (amount > 0 && dateStr) {
+                const targetDate = new Date(dateStr);
+                const today = new Date();
+                const daysLeft = Math.max(1, Math.ceil((targetDate - today) / (1000 * 60 * 60 * 24)));
+                const monthsLeft = Math.max(1, daysLeft / 30);
+                const weeksLeft = Math.max(1, daysLeft / 7);
+                
+                document.getElementById('monthlyAmount').textContent = '$' + Math.ceil(amount / monthsLeft).toLocaleString();
+                document.getElementById('weeklyAmount').textContent = '$' + Math.ceil(amount / weeksLeft).toLocaleString();
+                document.getElementById('dailyAmount').textContent = '$' + Math.ceil(amount / daysLeft).toLocaleString();
+            }
+        }
+
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            localStorage.setItem('playbook-goal-setting', JSON.stringify({
+                steps,
+                milestones,
+                notes: document.getElementById('notes').value,
+                goalWhat: document.getElementById('goalWhat').value,
+                goalAmount: document.getElementById('goalAmount').value,
+                goalDate: document.getElementById('goalDate').value,
+                goalWhy: document.getElementById('goalWhy').value
             }));
         }
 
-        function loadAllData() {
-            const d = JSON.parse(localStorage.getItem('playbook-goal-setting-v2') || '{}');
-            if (d.steps) d.steps.forEach((c, i) => { if (c) document.querySelectorAll('.step-checkbox')[i]?.classList.add('checked'); });
-            if (d.milestones) d.milestones.forEach((c, i) => { if (c) document.querySelectorAll('.milestone')[i]?.classList.add('reached'); });
-            if (d.checklist) d.checklist.forEach((c, i) => { if (c) document.querySelectorAll('.checklist-item')[i]?.classList.add('done'); });
-            
-            if (d.goalWhat) document.getElementById('goal-what').value = d.goalWhat;
-            if (d.goalAmount) document.getElementById('goal-amount').value = d.goalAmount;
-            if (d.goalDeadline) document.getElementById('goal-deadline').value = d.goalDeadline;
-            if (d.goalMonths) document.getElementById('goal-months').value = d.goalMonths;
-            if (d.realistic) document.getElementById('realistic').value = d.realistic;
-            if (d.expensesCut) document.getElementById('expenses-cut').value = d.expensesCut;
-            if (d.moneySource) document.getElementById('money-source').value = d.moneySource;
-            if (d.goalWhy) document.getElementById('goal-why').value = d.goalWhy;
-            if (d.goalVision) document.getElementById('goal-vision').value = d.goalVision;
-            if (d.smartGoal) document.getElementById('smart-goal').value = d.smartGoal;
-            if (d.postMirror) document.getElementById('post-mirror').checked = true;
-            if (d.postPhone) document.getElementById('post-phone').checked = true;
-            if (d.postFridge) document.getElementById('post-fridge').checked = true;
-            if (d.postDesk) document.getElementById('post-desk').checked = true;
-            if (d.postWallet) document.getElementById('post-wallet').checked = true;
-            if (d.postCar) document.getElementById('post-car').checked = true;
-            if (d.mile25) document.getElementById('mile-25').value = d.mile25;
-            if (d.mile50) document.getElementById('mile-50').value = d.mile50;
-            if (d.mile75) document.getElementById('mile-75').value = d.mile75;
-            if (d.mile100) document.getElementById('mile-100').value = d.mile100;
-            
-            calculateGoal();
-            updateProgress();
-        }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+        document.getElementById('goalWhat').addEventListener('input', saveProgress);
+        document.getElementById('goalAmount').addEventListener('input', function() { calculateAmounts(); saveProgress(); });
+        document.getElementById('goalDate').addEventListener('input', function() { calculateAmounts(); saveProgress(); });
+        document.getElementById('goalWhy').addEventListener('input', saveProgress);
     </script>
 </body>
 </html>
