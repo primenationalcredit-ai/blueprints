@@ -3,146 +3,509 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>401(k) Match Guide | ASAP Financial Playbook</title>
+    <title>401(k) Match Guide - Get Your FREE Money - ASAP Financial Playbook</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; background: #f5f5f5; color: #333; line-height: 1.6; }
-        .playbook { max-width: 700px; margin: 0 auto; background: white; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
-        .header { background: linear-gradient(135deg, #3f51b5 0%, #303f9f 100%); color: white; padding: 30px; text-align: center; }
-        .header h1 { font-size: 28px; margin-bottom: 10px; }
-        .header p { opacity: 0.9; font-size: 14px; }
-        .meta { display: flex; justify-content: center; gap: 20px; margin-top: 15px; font-size: 12px; }
-        .meta span { background: rgba(255,255,255,0.2); padding: 5px 12px; border-radius: 15px; }
-        .content { padding: 30px; }
-        .section { margin-bottom: 30px; }
-        .section h2 { color: #303f9f; font-size: 18px; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 2px solid #3f51b5; }
-        .section p { margin-bottom: 12px; color: #555; }
-        .highlight-box { background: #e8eaf6; border-left: 4px solid #3f51b5; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
-        .money-box { background: #e8f5e9; border: 3px solid #4caf50; padding: 20px; border-radius: 8px; margin: 20px 0; text-align: center; }
-        .money-box h3 { color: #2e7d32; margin-bottom: 10px; font-size: 24px; }
-        .money-box p { color: #333; }
-        .example-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-        .example-table th, .example-table td { padding: 12px; text-align: left; border-bottom: 1px solid #e0e0e0; }
-        .example-table th { background: #3f51b5; color: white; }
-        .example-table tr:nth-child(even) { background: #f5f5f5; }
-        .example-table .highlight { background: #c8e6c9; font-weight: 700; }
-        .checklist { list-style: none; padding: 0; }
-        .checklist li { padding: 12px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 12px; }
-        .checklist li:last-child { border-bottom: none; }
-        .checklist input[type="checkbox"] { width: 20px; height: 20px; margin-top: 2px; cursor: pointer; flex-shrink: 0; }
-        .checklist label { cursor: pointer; flex: 1; }
-        .checklist .done { text-decoration: line-through; color: #888; }
-        .warning-box { background: #fff3e0; border: 2px solid #ff9800; padding: 15px 20px; border-radius: 8px; margin: 20px 0; }
-        .warning-box h3 { color: #e65100; font-size: 14px; margin-bottom: 8px; }
-        .progress-section { background: #f8f9fa; padding: 20px; border-radius: 8px; margin-top: 30px; }
-        .progress-bar { height: 20px; background: #e0e0e0; border-radius: 10px; overflow: hidden; margin: 10px 0; }
-        .progress-fill { height: 100%; background: linear-gradient(90deg, #3f51b5, #303f9f); transition: width 0.3s; border-radius: 10px; }
-        .progress-text { text-align: center; font-weight: 600; color: #303f9f; }
-        .cta-button { display: block; width: 100%; padding: 15px; background: #3f51b5; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; text-align: center; text-decoration: none; margin-top: 20px; }
-        .cta-button:hover { background: #303f9f; }
-        .back-link { display: inline-block; margin: 20px 30px; color: #666; text-decoration: none; font-size: 14px; }
-        .back-link:hover { color: #3f51b5; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #4caf50, #388e3c); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; font-size: 1.5em; }
+        .card h3 { color: #388e3c; margin: 25px 0 15px 0; font-size: 1.2em; }
+        .achieve-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #1b5e20; font-size: 1.1em; line-height: 1.8; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step-section { background: #f8f9fa; border-radius: 15px; padding: 25px; margin: 20px 0; border-left: 5px solid #4caf50; }
+        .step-section h3 { color: #2e7d32; margin-bottom: 15px; font-size: 1.3em; }
+        .step-section p { color: #333; margin: 12px 0; font-size: 1.05em; }
+        .warning-box { background: linear-gradient(135deg, #fff3e0, #ffe0b2); border-left: 5px solid #ff9800; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .warning-box h4 { color: #e65100; margin-bottom: 10px; }
+        .warning-box p { color: #bf360c; margin: 8px 0; }
+        .success-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-left: 5px solid #4caf50; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .success-box h4 { color: #2e7d32; margin-bottom: 10px; }
+        .success-box p { color: #1b5e20; margin: 8px 0; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 5px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #e8f5e9; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #4caf50; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #4caf50; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.6; }
+        .example-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 12px; padding: 20px; margin: 15px 0; }
+        .example-box h4 { color: #1565c0; margin-bottom: 12px; }
+        .example-box p { color: #0d47a1; margin: 8px 0; }
+        .match-table { width: 100%; border-collapse: collapse; margin: 20px 0; border-radius: 10px; overflow: hidden; }
+        .match-table th { background: linear-gradient(135deg, #4caf50, #388e3c); color: white; padding: 15px; text-align: left; }
+        .match-table td { padding: 15px; border-bottom: 1px solid #e0e0e0; }
+        .match-table tr:nth-child(even) { background: #f8f9fa; }
+        .match-table tr:hover { background: #e8f5e9; }
+        .number-circle { display: inline-flex; width: 28px; height: 28px; background: #4caf50; color: white; border-radius: 50%; align-items: center; justify-content: center; font-weight: bold; margin-right: 10px; font-size: 14px; }
+        .provider-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .provider-card { background: #f8f9fa; border-radius: 12px; padding: 15px; border-left: 4px solid #4caf50; }
+        .provider-card h4 { color: #1a1a2e; margin-bottom: 8px; }
+        .provider-card p { color: #666; font-size: 0.9em; line-height: 1.5; }
+        .worksheet-section { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 25px; margin: 20px 0; }
+        .worksheet-section h3 { color: #1b5e20; margin-bottom: 20px; }
+        .action-item { background: white; border-radius: 10px; padding: 15px; margin: 12px 0; }
+        .action-item label { display: block; color: #2e7d32; font-weight: 600; margin-bottom: 8px; font-size: 1.05em; }
+        .action-item input, .action-item select { width: 100%; padding: 12px; border: 2px solid #c8e6c9; border-radius: 8px; font-size: 1em; }
+        .action-item input:focus, .action-item select:focus { outline: none; border-color: #4caf50; }
+        .calc-box { background: linear-gradient(135deg, #4caf50, #388e3c); color: white; border-radius: 12px; padding: 20px; text-align: center; margin: 15px 0; }
+        .calc-box h4 { font-size: 1em; opacity: 0.9; margin-bottom: 10px; }
+        .calc-box .amount { font-size: 2.2em; font-weight: bold; }
+        .calc-box .sub { font-size: 0.9em; opacity: 0.85; margin-top: 5px; }
+        .checklist-item { display: flex; align-items: center; gap: 12px; padding: 12px; background: white; border-radius: 8px; margin: 8px 0; cursor: pointer; }
+        .checklist-item:hover { background: #f8f9fa; }
+        .checklist-item.done { background: #e8f5e9; }
+        .checklist-box { width: 24px; height: 24px; border: 2px solid #4caf50; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: transparent; flex-shrink: 0; }
+        .checklist-item.done .checklist-box { background: #4caf50; color: white; }
+        .progress-tracker { background: linear-gradient(135deg, #4caf50, #388e3c); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #4caf50, #388e3c); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+        @media (max-width: 600px) { .match-table { font-size: 0.9em; } .match-table th, .match-table td { padding: 10px; } }
     </style>
 </head>
 <body>
-    <a href="javascript:history.back()" class="back-link">← Back to Blueprint</a>
-    
-    <div class="playbook">
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Playbooks</a>
+        
         <div class="header">
             <h1>💼 401(k) Match Guide</h1>
-            <p>Don't leave FREE MONEY on the table</p>
-            <div class="meta">
-                <span>💰 FREE Money</span>
-                <span>📈 Instant 50-100% Return</span>
-                <span>🎯 #1 Priority</span>
+            <p class="subtitle">Stop leaving FREE MONEY on the table!</p>
+            <div class="time-badge">⏱️ 15-30 minutes • 💰 Get 50-100% FREE return!</div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎁</span> What Is a 401(k) Match? (Simple Explanation)</h2>
+            <div class="achieve-box">
+                <p><strong>Imagine this:</strong> You put $100 into a piggy bank. Then your boss walks over and puts ANOTHER $50-$100 into YOUR piggy bank. For FREE. Just because you saved money.</p>
+                <p style="margin-top: 15px;"><strong>That's exactly what a 401(k) match is!</strong> When you put money into your retirement account, your employer ADDS extra money on top. It's literally free money that your boss gives you!</p>
+            </div>
+            <div class="income-highlight">
+                <h3>🚨 This Is FREE Money!</h3>
+                <p>If you're not getting your full match, you're throwing away part of your paycheck. It's like your boss handing you cash and you saying "No thanks!"</p>
             </div>
         </div>
-        
-        <div class="content">
-            <div class="section">
-                <h2>What is a 401(k) Match?</h2>
-                <p>Many employers will <strong>match your retirement contributions</strong> up to a certain percentage. This is literally free money added to your retirement account.</p>
-                <div class="money-box">
-                    <h3>🎁 This is FREE MONEY!</h3>
-                    <p>If your employer offers a match and you're not getting it, you're giving away part of your salary.</p>
+
+        <div class="card">
+            <h2><span class="icon">🤔</span> Wait, What's a 401(k)?</h2>
+            <div class="step-section">
+                <h3>Let Me Explain Like You're 10 Years Old:</h3>
+                <p>A 401(k) is a special savings account for when you're old and stop working (retirement). The money comes out of your paycheck BEFORE taxes, which means you pay less in taxes!</p>
+                <p style="margin-top: 15px;"><strong>Think of it like this:</strong></p>
+                <p>• Regular savings = You earn $100, pay $25 in taxes, save $75</p>
+                <p>• 401(k) savings = You save $100 FIRST, then pay taxes on the remaining $75</p>
+                <p style="margin-top: 15px;">You end up saving MORE money and paying LESS taxes. Win-win!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📊</span> How Does the Match Work? (Real Examples)</h2>
+            <p style="color: #666; margin-bottom: 20px;">Different companies give different amounts of free money. Here are the most common:</p>
+            
+            <table class="match-table">
+                <thead>
+                    <tr>
+                        <th>What Your Company Says</th>
+                        <th>What It Actually Means</th>
+                        <th>What YOU Need to Do</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>"100% up to 3%"</strong></td>
+                        <td>For every $1 you put in, they put in $1 (up to 3% of your salary)</td>
+                        <td>Put in at least 3%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>"50% up to 6%"</strong></td>
+                        <td>For every $1 you put in, they put in 50 cents (up to 6% of your salary)</td>
+                        <td>Put in at least 6%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>"100% up to 6%"</strong></td>
+                        <td>For every $1 you put in, they put in $1 (up to 6% of your salary)</td>
+                        <td>Put in at least 6%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example-box">
+                <h4>📝 Let's Do Real Math Together!</h4>
+                <p><strong>Let's say you make $50,000 per year.</strong></p>
+                <p><strong>Your company offers:</strong> 100% match up to 3%</p>
+                <p style="margin-top: 15px;"><strong>Here's what happens:</strong></p>
+                <p>• 3% of $50,000 = $1,500 per year</p>
+                <p>• YOU put in $1,500 (that's $125/month from your paycheck)</p>
+                <p>• Your EMPLOYER puts in $1,500 for FREE!</p>
+                <p style="margin-top: 15px; font-size: 1.2em;"><strong>💰 Total in your retirement: $3,000/year</strong></p>
+                <p style="color: #1565c0; font-weight: 600;">You only paid HALF! The other half was FREE!</p>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ Don't Make This Mistake!</h4>
+                <p>If your company matches 3% but you only put in 2%, you're losing FREE money!</p>
+                <p>That's like your boss trying to give you a $750 bonus and you saying "Nah, just give me $500."</p>
+                <p><strong>ALWAYS contribute at least enough to get the FULL match!</strong></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Step-by-Step Process</h2>
+            <p style="color: #666; margin-bottom: 20px;">Follow these steps in order. Check each one off as you complete it!</p>
+            
+            <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 1: Find Out Your Company's Match</div><div class="step-desc">You need to know: Does your company match? How much? We'll show you exactly how to find out below.</div></div></div>
+            
+            <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 2: Log Into Your 401(k) Account</div><div class="step-desc">Find your 401(k) provider (Fidelity, Vanguard, etc.) and log in. We'll show you where to look.</div></div></div>
+            
+            <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 3: Check Your Current Contribution</div><div class="step-desc">Find out how much you're currently putting in. Is it enough to get the full match?</div></div></div>
+            
+            <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 4: Increase to Get the FULL Match</div><div class="step-desc">If you're not getting the full match, increase your contribution percentage.</div></div></div>
+            
+            <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 5: Pick Your Investments</div><div class="step-desc">Choose a Target Date Fund—it's the easiest option and works great!</div></div></div>
+            
+            <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 6: Confirm and Celebrate!</div><div class="step-desc">Make sure changes take effect on your next paycheck. You're now getting FREE money!</div></div></div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🔍</span> Step 1: How to Find Your Match (3 Easy Ways)</h2>
+            
+            <div class="step-section">
+                <h3>🅰️ Way #1: Check Your Benefits Website</h3>
+                <p><span class="number-circle">1</span> Go to your company's HR or Benefits website (the one you use for time off, pay stubs, etc.)</p>
+                <p><span class="number-circle">2</span> Look for a section called "Retirement" or "401(k)" or "Benefits"</p>
+                <p><span class="number-circle">3</span> Find where it says "Employer Match" or "Company Contribution"</p>
+                <p><span class="number-circle">4</span> Write down what it says (example: "50% match up to 6%")</p>
+            </div>
+
+            <div class="step-section">
+                <h3>🅱️ Way #2: Email or Ask HR</h3>
+                <p>Copy and paste this message to HR:</p>
+                <div class="example-box" style="margin-top: 15px;">
+                    <p><em>"Hi! I want to make sure I'm getting the full 401(k) match. Can you please tell me:</em></p>
+                    <p><em>1. What is our company's match formula?</em></p>
+                    <p><em>2. What percentage do I need to contribute to get the full match?</em></p>
+                    <p><em>Thank you!"</em></p>
                 </div>
             </div>
-            
-            <div class="section">
-                <h2>Common Match Formulas</h2>
-                <table class="example-table">
-                    <tr><th>Match Type</th><th>What It Means</th><th>You Need to Contribute</th></tr>
-                    <tr><td>100% match up to 3%</td><td>They match dollar-for-dollar up to 3%</td><td>At least 3%</td></tr>
-                    <tr><td>50% match up to 6%</td><td>They give 50¢ for every $1 up to 6%</td><td>At least 6%</td></tr>
-                    <tr><td>100% match up to 6%</td><td>Dollar-for-dollar up to 6%</td><td>At least 6%</td></tr>
-                </table>
+
+            <div class="step-section">
+                <h3>🅲️ Way #3: Look at Your Pay Stub</h3>
+                <p><span class="number-circle">1</span> Find your most recent pay stub</p>
+                <p><span class="number-circle">2</span> Look for "401(k)" or "Retirement" deduction</p>
+                <p><span class="number-circle">3</span> Check if there's an "Employer Match" or "Company Contribution" line</p>
+                <p><span class="number-circle">4</span> If it shows $0 for employer contribution, you might not be getting the match!</p>
             </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💻</span> Step 2: How to Log Into Your 401(k)</h2>
+            <p style="color: #666; margin-bottom: 20px;">Your 401(k) is managed by one of these companies. Find yours and click the link:</p>
             
-            <div class="highlight-box">
-                <strong>Example:</strong> You make $50,000/year. Your employer matches 100% up to 3%.<br><br>
-                • You contribute 3% = $1,500/year<br>
-                • Employer adds 3% = $1,500/year FREE<br>
-                • <strong>Total: $3,000/year invested (you only paid half!)</strong>
+            <div class="provider-grid">
+                <div class="provider-card">
+                    <h4>🔵 Fidelity</h4>
+                    <p><strong>Website:</strong> netbenefits.fidelity.com</p>
+                    <p>Very common for big companies</p>
+                </div>
+                <div class="provider-card">
+                    <h4>🟢 Vanguard</h4>
+                    <p><strong>Website:</strong> my.vanguardplan.com</p>
+                    <p>Known for low fees</p>
+                </div>
+                <div class="provider-card">
+                    <h4>🟠 Empower</h4>
+                    <p><strong>Website:</strong> participant.empower-retirement.com</p>
+                    <p>Used to be called MassMutual</p>
+                </div>
+                <div class="provider-card">
+                    <h4>🔴 Principal</h4>
+                    <p><strong>Website:</strong> principal.com</p>
+                    <p>Common for medium companies</p>
+                </div>
+                <div class="provider-card">
+                    <h4>💜 T. Rowe Price</h4>
+                    <p><strong>Website:</strong> rps.troweprice.com</p>
+                    <p>Great investment options</p>
+                </div>
+                <div class="provider-card">
+                    <h4>🟡 Schwab</h4>
+                    <p><strong>Website:</strong> workplace.schwab.com</p>
+                    <p>Growing provider</p>
+                </div>
             </div>
+
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Don't Know Your Provider?</div>
+                <p>Look at your pay stub—it usually shows the 401(k) provider name. Or just ask HR: "Who manages our 401(k)?"</p>
+            </div>
+
+            <div class="step-section">
+                <h3>First Time Logging In? Here's What to Do:</h3>
+                <p><span class="number-circle">1</span> Go to the website above</p>
+                <p><span class="number-circle">2</span> Click "Register" or "First Time User" or "Create Account"</p>
+                <p><span class="number-circle">3</span> You'll need: Your Social Security Number, Date of Birth, and Company Name</p>
+                <p><span class="number-circle">4</span> Create a username and password</p>
+                <p><span class="number-circle">5</span> You're in!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📊</span> Step 3: Check Your Current Contribution</h2>
             
-            <div class="section">
-                <h2>Step 1: Find Your Match</h2>
-                <ul class="checklist">
-                    <li><input type="checkbox" id="f1" onchange="updateProgress()"><label for="f1">Log into your 401(k) provider (Fidelity, Vanguard, etc.)</label></li>
-                    <li><input type="checkbox" id="f2" onchange="updateProgress()"><label for="f2">Look for "Employer Match" or "Company Contribution"</label></li>
-                    <li><input type="checkbox" id="f3" onchange="updateProgress()"><label for="f3">OR ask HR: "What is our 401k match formula?"</label></li>
-                    <li><input type="checkbox" id="f4" onchange="updateProgress()"><label for="f4">Write it down: Match = ___% up to ___%</label></li>
-                </ul>
+            <div class="step-section">
+                <h3>Once You're Logged In, Find These Things:</h3>
+                <p><span class="number-circle">1</span> Look for "Contribution Rate" or "Deferral Percentage" or "How Much You're Saving"</p>
+                <p><span class="number-circle">2</span> It will show a percentage like "3%" or "6%"</p>
+                <p><span class="number-circle">3</span> Write this number down—this is how much of YOUR paycheck goes into retirement</p>
+                <p><span class="number-circle">4</span> Compare it to the match threshold from Step 1</p>
             </div>
+
+            <div class="example-box">
+                <h4>📝 Example:</h4>
+                <p>Your company matches "100% up to 4%"</p>
+                <p>You're currently contributing "2%"</p>
+                <p><strong>Problem:</strong> You need to be at 4% to get the FULL free money!</p>
+                <p><strong>Solution:</strong> Increase to 4% in the next step!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Worksheet: Your 401(k) Information</h2>
+            <p style="color: #666; margin-bottom: 20px;">Fill this out as you go. Your answers save automatically!</p>
             
-            <div class="section">
-                <h2>Step 2: Check Your Current Contribution</h2>
-                <ul class="checklist">
-                    <li><input type="checkbox" id="c1" onchange="updateProgress()"><label for="c1">Log into 401(k) account</label></li>
-                    <li><input type="checkbox" id="c2" onchange="updateProgress()"><label for="c2">Find "Contribution Rate" or "Deferral Percentage"</label></li>
-                    <li><input type="checkbox" id="c3" onchange="updateProgress()"><label for="c3">Write it down: Current contribution = ___%</label></li>
-                </ul>
+            <div class="worksheet-section">
+                <div class="action-item">
+                    <label>🏢 My 401(k) Provider Is:</label>
+                    <select id="provider" onchange="saveAllData()">
+                        <option value="">Click to select...</option>
+                        <option value="fidelity">Fidelity</option>
+                        <option value="vanguard">Vanguard</option>
+                        <option value="empower">Empower</option>
+                        <option value="principal">Principal</option>
+                        <option value="troweprice">T. Rowe Price</option>
+                        <option value="schwab">Schwab</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="action-item">
+                    <label>💵 My Yearly Salary: $</label>
+                    <input type="number" id="salary" placeholder="Example: 50000" oninput="calculateMatch()">
+                </div>
+                
+                <div class="action-item">
+                    <label>📊 My Company's Match Formula:</label>
+                    <select id="match-formula" onchange="calculateMatch()">
+                        <option value="">Click to select...</option>
+                        <option value="100-3">100% match up to 3%</option>
+                        <option value="100-4">100% match up to 4%</option>
+                        <option value="100-5">100% match up to 5%</option>
+                        <option value="100-6">100% match up to 6%</option>
+                        <option value="50-6">50% match up to 6%</option>
+                        <option value="50-8">50% match up to 8%</option>
+                        <option value="none">My company doesn't match 😢</option>
+                        <option value="other">Other (I'll figure it out)</option>
+                    </select>
+                </div>
+                
+                <div class="action-item">
+                    <label>📈 My CURRENT Contribution: %</label>
+                    <input type="number" id="current-contrib" placeholder="Example: 3" oninput="calculateMatch()">
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px;">
+                    <div class="calc-box">
+                        <h4>You Need to Contribute</h4>
+                        <div class="amount" id="need-contrib">—%</div>
+                        <div class="sub">to get the FULL match</div>
+                    </div>
+                    <div class="calc-box" style="background: linear-gradient(135deg, #ff9800, #f57c00);">
+                        <h4>FREE Money Per Year</h4>
+                        <div class="amount" id="free-money">$0</div>
+                        <div class="sub">from your employer!</div>
+                    </div>
+                </div>
             </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> Step 5: Pick Your Investments (Easy Mode)</h2>
             
-            <div class="section">
-                <h2>Step 3: Maximize the Match</h2>
-                <ul class="checklist">
-                    <li><input type="checkbox" id="m1" onchange="updateProgress()"><label for="m1">Compare: Is your contribution ≥ the match threshold?</label></li>
-                    <li><input type="checkbox" id="m2" onchange="updateProgress()"><label for="m2">If NO: Increase contribution to get FULL match</label></li>
-                    <li><input type="checkbox" id="m3" onchange="updateProgress()"><label for="m3">Click "Change Contribution" and set new percentage</label></li>
-                    <li><input type="checkbox" id="m4" onchange="updateProgress()"><label for="m4">Confirm change takes effect next paycheck</label></li>
-                </ul>
+            <div class="achieve-box">
+                <p><strong>Good news:</strong> You don't need to be a stock market expert! There's ONE easy choice that works great for most people:</p>
+                <p style="font-size: 1.3em; margin-top: 15px; font-weight: bold;">🎯 Pick a "Target Date Fund"!</p>
             </div>
+
+            <div class="step-section">
+                <h3>What's a Target Date Fund?</h3>
+                <p>It's a fund that automatically invests your money based on when you plan to retire. You pick the year, and it does ALL the work for you!</p>
+                <p style="margin-top: 15px;"><strong>Example names:</strong></p>
+                <p>• "Target 2055 Fund" (if you'll retire around 2055)</p>
+                <p>• "Retirement 2050 Fund" (if you'll retire around 2050)</p>
+                <p>• "LifePath 2060 Fund" (if you'll retire around 2060)</p>
+            </div>
+
+            <div class="step-section">
+                <h3>How to Pick Your Year:</h3>
+                <p><span class="number-circle">1</span> Think about when you want to retire (usually age 65)</p>
+                <p><span class="number-circle">2</span> Subtract your current age from 65</p>
+                <p><span class="number-circle">3</span> Add that number to today's year</p>
+                <p><span class="number-circle">4</span> Pick the fund closest to that year!</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Example Calculation:</h4>
+                <p>You're 30 years old. It's 2025. You want to retire at 65.</p>
+                <p>65 - 30 = 35 years until retirement</p>
+                <p>2025 + 35 = 2060</p>
+                <p><strong>👉 Pick: "Target 2060 Fund" (or 2055 or 2065 if 2060 isn't available)</strong></p>
+            </div>
+
+            <div class="success-box">
+                <h4>🎉 Why Target Date Funds Are Awesome:</h4>
+                <p>✅ Automatically diversified (mix of stocks and bonds)</p>
+                <p>✅ Gets safer as you get closer to retirement</p>
+                <p>✅ Set it and forget it—no maintenance needed!</p>
+                <p>✅ Perfect for beginners (and experts too!)</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">⏰</span> Important: What Is Vesting?</h2>
             
             <div class="warning-box">
-                <h3>⚠️ Vesting Schedule</h3>
-                <p>Some employers require you to work there 2-4 years before you "own" their matching contributions. Check your vesting schedule - but this doesn't change the advice: <strong>ALWAYS get the full match.</strong></p>
+                <h4>Quick Explanation:</h4>
+                <p>"Vesting" means how long you need to work at your company before you get to KEEP the matching money if you leave.</p>
             </div>
-            
-            <div class="section">
-                <h2>Investment Selection (Keep It Simple)</h2>
-                <ul class="checklist">
-                    <li><input type="checkbox" id="i1" onchange="updateProgress()"><label for="i1">Look for a "Target Date Fund" matching your retirement year</label></li>
-                    <li><input type="checkbox" id="i2" onchange="updateProgress()"><label for="i2">Example: If retiring around 2055, choose "Target 2055 Fund"</label></li>
-                    <li><input type="checkbox" id="i3" onchange="updateProgress()"><label for="i3">These auto-adjust as you age - set it and forget it!</label></li>
-                </ul>
+
+            <div class="step-section">
+                <h3>Common Vesting Schedules:</h3>
+                <p><strong>🟢 Immediate (Best!):</strong> You own 100% of the match right away</p>
+                <p><strong>🟡 Cliff (3-year):</strong> You own 0% until year 3, then 100%</p>
+                <p><strong>🟠 Graded:</strong> 20% after year 1, 40% after year 2, 60% year 3, 80% year 4, 100% year 5</p>
             </div>
-            
-            <div class="progress-section">
-                <h3>Your Progress</h3>
-                <div class="progress-bar"><div class="progress-fill" id="progress-bar" style="width: 0%"></div></div>
-                <div class="progress-text" id="progress-text">0 of 14 tasks complete</div>
+
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Here's What Matters:</div>
+                <p><strong>STILL contribute to get the match!</strong> Even if you're not fully vested, you might be by the time you leave. And YOUR contributions are always 100% yours—only the employer match has vesting.</p>
             </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">✅</span> Final Checklist: Am I All Set?</h2>
+            <p style="color: #666; margin-bottom: 15px;">Click each item as you complete it!</p>
             
-            <a href="javascript:history.back()" class="cta-button">✓ Return to Blueprint</a>
+            <div class="worksheet-section">
+                <div class="checklist-item" onclick="toggleChecklist(this)">
+                    <div class="checklist-box">✓</div>
+                    <span>I know my company's match formula</span>
+                </div>
+                <div class="checklist-item" onclick="toggleChecklist(this)">
+                    <div class="checklist-box">✓</div>
+                    <span>I can log into my 401(k) account</span>
+                </div>
+                <div class="checklist-item" onclick="toggleChecklist(this)">
+                    <div class="checklist-box">✓</div>
+                    <span>My contribution is at or above the match threshold</span>
+                </div>
+                <div class="checklist-item" onclick="toggleChecklist(this)">
+                    <div class="checklist-box">✓</div>
+                    <span>I've picked a Target Date Fund for my investments</span>
+                </div>
+                <div class="checklist-item" onclick="toggleChecklist(this)">
+                    <div class="checklist-box">✓</div>
+                    <span>I understand my vesting schedule</span>
+                </div>
+                <div class="checklist-item" onclick="toggleChecklist(this)">
+                    <div class="checklist-box">✓</div>
+                    <span>I'll check my next paycheck to confirm changes</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 6 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
         </div>
     </div>
-    
+
     <script>
-        const STORAGE_KEY = 'playbook_401k';
-        function loadProgress() { const saved = localStorage.getItem(STORAGE_KEY); if (saved) { JSON.parse(saved).forEach(id => { const cb = document.getElementById(id); if (cb) { cb.checked = true; cb.nextElementSibling.classList.add('done'); } }); } updateProgress(); }
-        function updateProgress() { const checkboxes = document.querySelectorAll('input[type="checkbox"]'); const checked = []; let count = 0; checkboxes.forEach(cb => { if (cb.checked) { count++; checked.push(cb.id); cb.nextElementSibling.classList.add('done'); } else { cb.nextElementSibling.classList.remove('done'); } }); localStorage.setItem(STORAGE_KEY, JSON.stringify(checked)); document.getElementById('progress-bar').style.width = Math.round((count / checkboxes.length) * 100) + '%'; document.getElementById('progress-text').textContent = count + ' of ' + checkboxes.length + ' tasks complete'; }
-        document.addEventListener('DOMContentLoaded', loadProgress);
+        document.addEventListener('DOMContentLoaded', loadAllData);
+
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveAllData(); }
+        function toggleChecklist(el) { el.classList.toggle('done'); saveAllData(); }
+
+        function calculateMatch() {
+            const salary = parseFloat(document.getElementById('salary').value) || 0;
+            const formula = document.getElementById('match-formula').value;
+            const current = parseFloat(document.getElementById('current-contrib').value) || 0;
+            
+            let needPercent = 0;
+            let matchPercent = 0;
+            
+            if (formula === '100-3') { needPercent = 3; matchPercent = Math.min(current, 3); }
+            else if (formula === '100-4') { needPercent = 4; matchPercent = Math.min(current, 4); }
+            else if (formula === '100-5') { needPercent = 5; matchPercent = Math.min(current, 5); }
+            else if (formula === '100-6') { needPercent = 6; matchPercent = Math.min(current, 6); }
+            else if (formula === '50-6') { needPercent = 6; matchPercent = Math.min(current, 6) * 0.5; }
+            else if (formula === '50-8') { needPercent = 8; matchPercent = Math.min(current, 8) * 0.5; }
+            
+            const freeMoney = salary * (matchPercent / 100);
+            
+            document.getElementById('need-contrib').textContent = needPercent ? needPercent + '%' : '—%';
+            document.getElementById('free-money').textContent = '$' + freeMoney.toLocaleString('en-US', {maximumFractionDigits: 0});
+            saveAllData();
+        }
+
+        function updateProgress() {
+            const done = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = done;
+            document.getElementById('progressFill').style.width = (done / 6 * 100) + '%';
+        }
+
+        function saveAllData() {
+            localStorage.setItem('playbook-401k-guide-v2', JSON.stringify({
+                steps: Array.from(document.querySelectorAll('.step-checkbox')).map(e => e.classList.contains('checked')),
+                checklist: Array.from(document.querySelectorAll('.checklist-item')).map(e => e.classList.contains('done')),
+                provider: document.getElementById('provider').value,
+                salary: document.getElementById('salary').value,
+                matchFormula: document.getElementById('match-formula').value,
+                currentContrib: document.getElementById('current-contrib').value
+            }));
+        }
+
+        function loadAllData() {
+            const d = JSON.parse(localStorage.getItem('playbook-401k-guide-v2') || '{}');
+            if (d.steps) d.steps.forEach((c, i) => { if (c) document.querySelectorAll('.step-checkbox')[i]?.classList.add('checked'); });
+            if (d.checklist) d.checklist.forEach((c, i) => { if (c) document.querySelectorAll('.checklist-item')[i]?.classList.add('done'); });
+            if (d.provider) document.getElementById('provider').value = d.provider;
+            if (d.salary) document.getElementById('salary').value = d.salary;
+            if (d.matchFormula) document.getElementById('match-formula').value = d.matchFormula;
+            if (d.currentContrib) document.getElementById('current-contrib').value = d.currentContrib;
+            calculateMatch();
+            updateProgress();
+        }
     </script>
 </body>
 </html>
