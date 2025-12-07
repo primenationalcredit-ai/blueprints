@@ -3,159 +3,630 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HSA Strategy Guide | ASAP Financial Playbook</title>
+    <title>HSA Strategy Guide - ASAP Financial Playbook</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; background: #f5f5f5; color: #333; line-height: 1.6; }
-        .playbook { max-width: 700px; margin: 0 auto; background: white; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
-        .header { background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%); color: white; padding: 30px; text-align: center; }
-        .header h1 { font-size: 28px; margin-bottom: 10px; }
-        .header p { opacity: 0.9; font-size: 14px; }
-        .meta { display: flex; justify-content: center; gap: 20px; margin-top: 15px; font-size: 12px; }
-        .meta span { background: rgba(255,255,255,0.2); padding: 5px 12px; border-radius: 15px; }
-        .content { padding: 30px; }
-        .section { margin-bottom: 30px; }
-        .section h2 { color: #c2185b; font-size: 18px; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 2px solid #e91e63; }
-        .section p { margin-bottom: 12px; color: #555; }
-        .highlight-box { background: #fce4ec; border-left: 4px solid #e91e63; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
-        .triple-box { background: linear-gradient(135deg, #4caf50, #2e7d32); color: white; padding: 25px; border-radius: 8px; margin: 20px 0; text-align: center; }
-        .triple-box h3 { font-size: 22px; margin-bottom: 15px; }
-        .triple-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
-        .triple-item { background: rgba(255,255,255,0.2); padding: 15px; border-radius: 8px; }
-        .triple-item h4 { font-size: 16px; margin-bottom: 5px; }
-        .triple-item p { font-size: 12px; opacity: 0.9; }
-        .checklist { list-style: none; padding: 0; }
-        .checklist li { padding: 12px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 12px; }
-        .checklist li:last-child { border-bottom: none; }
-        .checklist input[type="checkbox"] { width: 20px; height: 20px; margin-top: 2px; cursor: pointer; flex-shrink: 0; }
-        .checklist label { cursor: pointer; flex: 1; }
-        .checklist .done { text-decoration: line-through; color: #888; }
-        .warning-box { background: #fff3e0; border: 2px solid #ff9800; padding: 15px 20px; border-radius: 8px; margin: 20px 0; }
-        .warning-box h3 { color: #e65100; font-size: 14px; margin-bottom: 8px; }
-        .limits-box { background: #f8f9fa; padding: 15px 20px; border-radius: 8px; margin: 15px 0; }
-        .limits-box h4 { margin-bottom: 10px; color: #333; }
-        .limits-row { display: flex; justify-content: space-between; padding: 5px 0; font-size: 14px; }
-        .progress-section { background: #f8f9fa; padding: 20px; border-radius: 8px; margin-top: 30px; }
-        .progress-bar { height: 20px; background: #e0e0e0; border-radius: 10px; overflow: hidden; margin: 10px 0; }
-        .progress-fill { height: 100%; background: linear-gradient(90deg, #e91e63, #c2185b); transition: width 0.3s; border-radius: 10px; }
-        .progress-text { text-align: center; font-weight: 600; color: #c2185b; }
-        .cta-button { display: block; width: 100%; padding: 15px; background: #e91e63; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; text-align: center; text-decoration: none; margin-top: 20px; }
-        .cta-button:hover { background: #c2185b; }
-        .back-link { display: inline-block; margin: 20px 30px; color: #666; text-decoration: none; font-size: 14px; }
-        .back-link:hover { color: #e91e63; }
-        @media (max-width: 600px) { .triple-grid { grid-template-columns: 1fr; } }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #1565c0; font-size: 1.1em; line-height: 1.8; }
+        .triple-tax-section { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; margin: 20px 0; }
+        .triple-tax-section h3 { text-align: center; margin-bottom: 25px; font-size: 1.8em; }
+        .tax-benefits { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+        .tax-benefit { background: rgba(255,255,255,0.2); border-radius: 15px; padding: 20px; text-align: center; }
+        .tax-benefit .number { font-size: 2.5em; font-weight: 700; margin-bottom: 10px; }
+        .tax-benefit h4 { margin-bottom: 10px; font-size: 1.2em; }
+        .tax-benefit p { opacity: 0.95; font-size: 0.95em; line-height: 1.5; }
+        .comparison-box { background: linear-gradient(135deg, #fff3e0, #ffe0b2); border-radius: 15px; padding: 25px; margin: 20px 0; }
+        .comparison-box h4 { color: #e65100; margin-bottom: 15px; text-align: center; }
+        .comparison-table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; }
+        .comparison-table th { background: #e65100; color: white; padding: 12px; text-align: left; }
+        .comparison-table td { padding: 12px; border-bottom: 1px solid #e0e0e0; }
+        .comparison-table tr:nth-child(even) { background: #f8f9fa; }
+        .comparison-table .winner { color: #4caf50; font-weight: 700; }
+        .eligibility-section { background: #f8f9fa; border-radius: 15px; padding: 25px; margin: 20px 0; }
+        .eligibility-section h4 { color: #1a1a2e; margin-bottom: 20px; }
+        .eligibility-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .eligibility-card { background: white; border-radius: 10px; padding: 20px; border-left: 5px solid #667eea; }
+        .eligibility-card h5 { color: #667eea; margin-bottom: 10px; }
+        .eligibility-card .amount { font-size: 1.5em; font-weight: 700; color: #1a1a2e; }
+        .eligibility-card p { color: #666; font-size: 0.9em; margin-top: 5px; }
+        .limits-section { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin: 20px 0; }
+        .limits-section h4 { text-align: center; margin-bottom: 20px; }
+        .limits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+        .limit-card { background: rgba(255,255,255,0.2); border-radius: 10px; padding: 20px; text-align: center; }
+        .limit-card .label { font-size: 0.9em; opacity: 0.9; margin-bottom: 5px; }
+        .limit-card .amount { font-size: 1.8em; font-weight: 700; }
+        .step { display: flex; gap: 15px; margin-bottom: 25px; padding: 25px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #e3f2fd; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; margin-top: 5px; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 700; color: #1a1a2e; font-size: 1.2em; margin-bottom: 10px; }
+        .step-desc { color: #444; line-height: 1.8; font-size: 1.05em; }
+        .step-details { background: #fff; border: 2px solid #e0e0e0; border-radius: 10px; padding: 15px; margin-top: 15px; }
+        .step-details h5 { color: #667eea; margin-bottom: 10px; font-size: 1em; }
+        .step-details ul { margin-left: 20px; color: #555; }
+        .step-details li { margin-bottom: 10px; line-height: 1.7; }
+        .provider-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 15px 0; }
+        .provider-card { background: white; border-radius: 10px; padding: 20px; text-align: center; border: 2px solid #e0e0e0; }
+        .provider-card h5 { color: #1a1a2e; margin-bottom: 5px; }
+        .provider-card p { color: #666; font-size: 0.85em; margin-bottom: 10px; }
+        .provider-card .feature { color: #4caf50; font-weight: 600; font-size: 0.9em; }
+        .strategy-section { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 25px; margin: 20px 0; }
+        .strategy-section h4 { color: #2e7d32; margin-bottom: 15px; }
+        .strategy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px; }
+        .strategy-card { background: white; border-radius: 10px; padding: 20px; }
+        .strategy-card.basic { border-top: 5px solid #2196f3; }
+        .strategy-card.advanced { border-top: 5px solid #4caf50; }
+        .strategy-card h5 { margin-bottom: 10px; }
+        .strategy-card.basic h5 { color: #1565c0; }
+        .strategy-card.advanced h5 { color: #2e7d32; }
+        .strategy-card p { color: #555; font-size: 0.95em; line-height: 1.6; }
+        .qualified-expenses { background: #f8f9fa; border-radius: 15px; padding: 25px; margin: 20px 0; }
+        .qualified-expenses h4 { color: #1a1a2e; margin-bottom: 15px; }
+        .expense-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+        .expense-item { background: white; padding: 12px 15px; border-radius: 8px; border-left: 3px solid #4caf50; display: flex; align-items: center; gap: 10px; }
+        .expense-item .check { color: #4caf50; font-weight: 700; }
+        .retirement-section { background: linear-gradient(135deg, #ffd54f, #ffb300); color: #1a1a2e; border-radius: 15px; padding: 25px; margin: 20px 0; }
+        .retirement-section h4 { margin-bottom: 20px; text-align: center; }
+        .retirement-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .retirement-card { background: white; border-radius: 10px; padding: 20px; }
+        .retirement-card h5 { color: #f57f17; margin-bottom: 10px; }
+        .retirement-card p { color: #555; font-size: 0.95em; line-height: 1.6; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 20px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; font-size: 1.1em; }
+        .pro-tip p { color: #555; margin: 8px 0; line-height: 1.7; }
+        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .warning-box-title { font-weight: 700; color: #c62828; margin-bottom: 10px; }
+        .warning-box p { color: #555; margin: 8px 0; line-height: 1.6; }
+        .info-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-left: 4px solid #4caf50; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .info-box-title { font-weight: 700; color: #2e7d32; margin-bottom: 10px; }
+        .info-box p { color: #555; margin: 8px 0; line-height: 1.6; }
+        .checklist-section { background: #f8f9fa; border-radius: 15px; padding: 20px; margin: 20px 0; }
+        .checklist-section h4 { color: #1a1a2e; margin-bottom: 15px; }
+        .checklist-item { display: flex; align-items: center; gap: 10px; padding: 10px; background: white; border-radius: 10px; margin-bottom: 8px; }
+        .checklist-item input { width: 20px; height: 20px; }
+        .checklist-item label { color: #333; flex: 1; }
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 150px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #667eea; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+        @media (max-width: 600px) {
+            .tax-benefits, .eligibility-grid, .limits-grid, .strategy-grid, .retirement-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
-    <a href="javascript:history.back()" class="back-link">← Back to Blueprint</a>
-    
-    <div class="playbook">
+    <div class="container">
+        <a href="income-playbooks.html" class="back-link">← Back to Playbooks</a>
+        
         <div class="header">
             <h1>🏥 HSA Strategy Guide</h1>
-            <p>The most tax-advantaged account that exists</p>
-            <div class="meta">
-                <span>💰 Triple Tax Benefit</span>
-                <span>📈 Invest & Grow</span>
-                <span>🎯 Long-Term Wealth</span>
+            <p class="subtitle">The BEST tax-advantaged account that exists!</p>
+            <div class="time-badge">💰 Triple Tax Benefit • 📈 Invest & Grow • 🎯 Long-Term Wealth Builder!</div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p><strong>What's an HSA?</strong> HSA stands for "Health Savings Account." It's a special account that lets you save money for medical expenses - but here's the secret: it's actually the BEST retirement account that exists!</p>
+                <p style="margin-top: 15px;"><strong>Why is it so special?</strong> The HSA has a "triple tax advantage" that NO other account has. Not your 401(k). Not your IRA. Nothing beats the HSA for tax savings!</p>
+                <p style="margin-top: 15px;"><strong>The catch?</strong> You can only open an HSA if you have a "High-Deductible Health Plan" (HDHP) through your job or that you buy yourself. If you have one, this is a MUST-USE account!</p>
             </div>
         </div>
-        
-        <div class="content">
-            <div class="section">
-                <h2>What's an HSA?</h2>
-                <p>A Health Savings Account (HSA) is available if you have a <strong>High-Deductible Health Plan (HDHP)</strong>. It's like a retirement account for healthcare expenses - but even better.</p>
-            </div>
-            
-            <div class="triple-box">
-                <h3>🌟 The TRIPLE Tax Advantage</h3>
-                <p style="margin-bottom: 20px;">No other account offers this!</p>
-                <div class="triple-grid">
-                    <div class="triple-item">
-                        <h4>1️⃣ Tax-Free In</h4>
-                        <p>Contributions reduce your taxable income</p>
+
+        <div class="card">
+            <h2><span class="icon">🌟</span> The TRIPLE Tax Advantage (No Other Account Has This!)</h2>
+            <div class="triple-tax-section">
+                <h3>🏆 HSA = Triple Tax WIN!</h3>
+                <div class="tax-benefits">
+                    <div class="tax-benefit">
+                        <div class="number">1️⃣</div>
+                        <h4>Tax-Free IN</h4>
+                        <p>Your contributions reduce your taxable income. Less taxes THIS year!</p>
                     </div>
-                    <div class="triple-item">
-                        <h4>2️⃣ Tax-Free Growth</h4>
-                        <p>Investments grow with no taxes</p>
+                    <div class="tax-benefit">
+                        <div class="number">2️⃣</div>
+                        <h4>Tax-Free GROWTH</h4>
+                        <p>Your investments grow with NO taxes on the gains. Ever!</p>
                     </div>
-                    <div class="triple-item">
-                        <h4>3️⃣ Tax-Free Out</h4>
-                        <p>Withdrawals for medical expenses are tax-free</p>
+                    <div class="tax-benefit">
+                        <div class="number">3️⃣</div>
+                        <h4>Tax-Free OUT</h4>
+                        <p>Withdrawals for medical expenses are 100% tax-free!</p>
                     </div>
                 </div>
             </div>
             
+            <div class="comparison-box">
+                <h4>How HSA Compares to Other Accounts</h4>
+                <table class="comparison-table">
+                    <tr>
+                        <th>Account</th>
+                        <th>Tax on Money Going In?</th>
+                        <th>Tax on Growth?</th>
+                        <th>Tax on Withdrawals?</th>
+                    </tr>
+                    <tr>
+                        <td><strong>HSA</strong></td>
+                        <td class="winner">✓ NO TAX</td>
+                        <td class="winner">✓ NO TAX</td>
+                        <td class="winner">✓ NO TAX*</td>
+                    </tr>
+                    <tr>
+                        <td>Roth IRA</td>
+                        <td>❌ Taxed</td>
+                        <td class="winner">✓ NO TAX</td>
+                        <td class="winner">✓ NO TAX</td>
+                    </tr>
+                    <tr>
+                        <td>Traditional 401(k)</td>
+                        <td class="winner">✓ NO TAX</td>
+                        <td class="winner">✓ NO TAX</td>
+                        <td>❌ Taxed</td>
+                    </tr>
+                    <tr>
+                        <td>Regular Savings</td>
+                        <td>❌ Taxed</td>
+                        <td>❌ Taxed</td>
+                        <td>❌ Taxed</td>
+                    </tr>
+                </table>
+                <p style="text-align: center; margin-top: 15px; color: #666; font-size: 0.9em;">*When used for qualified medical expenses</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">✅</span> Do You Qualify? (Check This First!)</h2>
+            <div class="eligibility-section">
+                <h4>You Need a High-Deductible Health Plan (HDHP)</h4>
+                <p style="color: #555; margin-bottom: 20px;">To open an HSA, your health insurance must be a "High-Deductible Health Plan." Here's what that means for 2024:</p>
+                
+                <div class="eligibility-grid">
+                    <div class="eligibility-card">
+                        <h5>👤 Individual Coverage</h5>
+                        <p>Your deductible must be at least:</p>
+                        <div class="amount">$1,600</div>
+                        <p>And out-of-pocket max no more than $8,050</p>
+                    </div>
+                    <div class="eligibility-card">
+                        <h5>👨‍👩‍👧‍👦 Family Coverage</h5>
+                        <p>Your deductible must be at least:</p>
+                        <div class="amount">$3,200</div>
+                        <p>And out-of-pocket max no more than $16,100</p>
+                    </div>
+                </div>
+                
+                <div class="step-details" style="margin-top: 20px;">
+                    <h5>🔍 How to Check If You Have an HDHP:</h5>
+                    <ul>
+                        <li><strong>Look at your health insurance card</strong> - It might say "HSA-eligible" or "HDHP"</li>
+                        <li><strong>Check your benefits portal</strong> - Log into your employer's benefits website</li>
+                        <li><strong>Ask HR:</strong> "Is my health plan HSA-eligible?"</li>
+                        <li><strong>Look at your plan documents</strong> - Find your deductible amount</li>
+                        <li><strong>If your deductible is $1,600+ (individual) or $3,200+ (family)</strong> - You probably qualify!</li>
+                    </ul>
+                </div>
+            </div>
+            
             <div class="warning-box">
-                <h3>⚠️ Do You Qualify?</h3>
-                <p>You need a High-Deductible Health Plan (HDHP). For 2024:</p>
-                <p>• Individual: Deductible ≥ $1,600</p>
-                <p>• Family: Deductible ≥ $3,200</p>
-                <p>Check your health plan details or ask HR!</p>
+                <div class="warning-box-title">⚠️ You CAN'T Have an HSA If:</div>
+                <p>• You're enrolled in Medicare</p>
+                <p>• You're claimed as a dependent on someone else's taxes</p>
+                <p>• You have other health coverage that's not an HDHP (like a spouse's non-HDHP plan)</p>
+                <p>• You have a general-purpose FSA (limited-purpose FSA is OK)</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💰</span> 2024 HSA Contribution Limits</h2>
+            <div class="limits-section">
+                <h4>How Much Can You Contribute?</h4>
+                <div class="limits-grid">
+                    <div class="limit-card">
+                        <div class="label">Individual Coverage</div>
+                        <div class="amount">$4,150</div>
+                        <p style="font-size: 0.85em; margin-top: 5px;">per year</p>
+                    </div>
+                    <div class="limit-card">
+                        <div class="label">Family Coverage</div>
+                        <div class="amount">$8,300</div>
+                        <p style="font-size: 0.85em; margin-top: 5px;">per year</p>
+                    </div>
+                    <div class="limit-card">
+                        <div class="label">Age 55+ Catch-Up</div>
+                        <div class="amount">+$1,000</div>
+                        <p style="font-size: 0.85em; margin-top: 5px;">extra per year</p>
+                    </div>
+                </div>
             </div>
             
-            <div class="limits-box">
-                <h4>2024 HSA Contribution Limits</h4>
-                <div class="limits-row"><span>Individual coverage:</span><strong>$4,150/year</strong></div>
-                <div class="limits-row"><span>Family coverage:</span><strong>$8,300/year</strong></div>
-                <div class="limits-row"><span>Age 55+ catch-up:</span><strong>+$1,000/year</strong></div>
+            <div class="info-box">
+                <div class="info-box-title">💡 Monthly Breakdown:</div>
+                <p>• Individual: $4,150 ÷ 12 = <strong>$346/month</strong></p>
+                <p>• Family: $8,300 ÷ 12 = <strong>$692/month</strong></p>
+                <p>• Can't contribute this much? Start smaller! Even $100/month adds up!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Step-by-Step Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Confirm You Have an HSA-Eligible Health Plan</div>
+                    <div class="step-desc">Before anything else, make sure your health insurance qualifies!</div>
+                    <div class="step-details">
+                        <h5>🔍 How to Check:</h5>
+                        <ul>
+                            <li><strong>Look at your insurance card</strong> - Does it say "HDHP" or "HSA-eligible"?</li>
+                            <li><strong>Check your benefits website</strong> - Log in and look for HSA information</li>
+                            <li><strong>Call your insurance company</strong> - Ask "Is my plan HSA-eligible?"</li>
+                            <li><strong>Ask HR</strong> - They can tell you immediately</li>
+                            <li><strong>Check your deductible:</strong> Individual ≥$1,600 or Family ≥$3,200 = likely eligible!</li>
+                            <li><strong>Write it down:</strong> "My plan IS / IS NOT HSA-eligible"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Check If Your Employer Offers an HSA</div>
+                    <div class="step-desc">Many employers offer HSAs with payroll deduction (the BEST way!).</div>
+                    <div class="step-details">
+                        <h5>🏢 Why Employer HSA Is Best:</h5>
+                        <ul>
+                            <li><strong>Pre-tax payroll deduction</strong> - Money comes out BEFORE taxes (saves even more!)</li>
+                            <li><strong>Avoids FICA taxes</strong> - Saves extra 7.65% that you can't get any other way!</li>
+                            <li><strong>Automatic contributions</strong> - Set it and forget it</li>
+                            <li><strong>Some employers contribute too!</strong> - Free money like a 401(k) match</li>
+                            <li><strong>Ask HR:</strong> "Do we offer an HSA? Does the company contribute anything?"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Open Your HSA Account</div>
+                    <div class="step-desc">Enroll through your employer OR open your own HSA at a top provider.</div>
+                    <div class="step-details">
+                        <h5>🏦 How to Open:</h5>
+                        <ul>
+                            <li><strong>If employer offers HSA:</strong> Enroll during open enrollment or ask HR how to sign up</li>
+                            <li><strong>If opening on your own:</strong> Choose a provider below and click "Open Account"</li>
+                        </ul>
+                        <div class="provider-grid">
+                            <div class="provider-card">
+                                <h5>Fidelity</h5>
+                                <p>No fees, great investments</p>
+                                <div class="feature">✓ $0 fees, no minimum</div>
+                            </div>
+                            <div class="provider-card">
+                                <h5>Lively</h5>
+                                <p>Great for self-employed</p>
+                                <div class="feature">✓ $0 fees, easy setup</div>
+                            </div>
+                            <div class="provider-card">
+                                <h5>HealthEquity</h5>
+                                <p>Common employer choice</p>
+                                <div class="feature">✓ Good investment options</div>
+                            </div>
+                        </div>
+                        <p style="margin-top: 15px;"><strong>What you'll need:</strong> Social Security Number, date of birth, proof of HDHP coverage</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Set Your Contribution Amount</div>
+                    <div class="step-desc">Decide how much to contribute each paycheck or month.</div>
+                    <div class="step-details">
+                        <h5>💰 How Much to Contribute:</h5>
+                        <ul>
+                            <li><strong>Ideal goal:</strong> Max it out! ($4,150 individual / $8,300 family per year)</li>
+                            <li><strong>If employer contributes:</strong> Their amount counts toward your limit</li>
+                            <li><strong>Can't max it out?</strong> Start with what you can - even $50-100/paycheck helps!</li>
+                            <li><strong>Through employer:</strong> Set your per-paycheck deduction amount</li>
+                            <li><strong>On your own:</strong> Set up automatic monthly transfers from your bank</li>
+                        </ul>
+                        <p style="margin-top: 10px;"><strong>Example (Bi-weekly pay, Individual):</strong> $4,150 ÷ 26 paychecks = $160/paycheck</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Choose Your Strategy (Basic or Advanced!)</div>
+                    <div class="step-desc">There are two ways to use your HSA. Both are good - pick what works for you!</div>
+                    <div class="step-details">
+                        <div class="strategy-grid">
+                            <div class="strategy-card basic">
+                                <h5>📋 Basic Strategy</h5>
+                                <p><strong>Use HSA for current medical expenses</strong></p>
+                                <p style="margin-top: 10px;">• Pay for doctor visits, prescriptions, etc. from your HSA</p>
+                                <p>• Simple and straightforward</p>
+                                <p>• Still get the triple tax benefit!</p>
+                                <p>• Good if you have regular medical expenses</p>
+                            </div>
+                            <div class="strategy-card advanced">
+                                <h5>🚀 Advanced Strategy (BEST!)</h5>
+                                <p><strong>DON'T use HSA now - let it grow!</strong></p>
+                                <p style="margin-top: 10px;">• Pay medical expenses out of pocket today</p>
+                                <p>• Let your HSA invest and grow for decades</p>
+                                <p>• Keep ALL your medical receipts</p>
+                                <p>• Reimburse yourself TAX-FREE in retirement</p>
+                                <p>• Turns HSA into a SUPER retirement account!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: INVEST Your HSA Money (Don't Leave It As Cash!)</div>
+                    <div class="step-desc">This is CRITICAL! Most people don't know you can invest your HSA. Don't make this mistake!</div>
+                    <div class="step-details">
+                        <h5>📈 How to Invest Your HSA:</h5>
+                        <ul>
+                            <li><strong>Keep ~$1,000-2,000 in cash</strong> for near-term medical needs (just in case!)</li>
+                            <li><strong>INVEST THE REST!</strong> This is where the magic happens</li>
+                            <li><strong>Log into your HSA account</strong> and find "Investments" or "Invest"</li>
+                            <li><strong>Look for a Target Date Fund</strong> (just like with your 401k/IRA)</li>
+                            <li><strong>OR choose a Total Stock Market Index Fund</strong> (low cost, diversified)</li>
+                            <li><strong>Set up automatic investment</strong> so new contributions get invested automatically</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: Keep ALL Your Medical Receipts!</div>
+                    <div class="step-desc">If using the advanced strategy, you'll need receipts to reimburse yourself later.</div>
+                    <div class="step-details">
+                        <h5>🧾 Receipt Organization System:</h5>
+                        <ul>
+                            <li><strong>Create a folder</strong> on your computer called "HSA Receipts" with subfolders by year</li>
+                            <li><strong>Scan or photograph</strong> every medical receipt and statement</li>
+                            <li><strong>Save them digitally</strong> - paper fades over time!</li>
+                            <li><strong>Include the date, amount, and what it was for</strong></li>
+                            <li><strong>There's NO deadline</strong> to reimburse yourself - you can wait 30 years!</li>
+                            <li><strong>Track your total:</strong> Keep a running total of unreimbursed medical expenses</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Understand How to Use Your HSA in Retirement</div>
+                    <div class="step-desc">Your HSA becomes even MORE powerful after age 65!</div>
+                    <div class="step-details">
+                        <h5>🎉 HSA After Age 65:</h5>
+                        <ul>
+                            <li><strong>Medical expenses:</strong> Still 100% tax-free (same as always!)</li>
+                            <li><strong>Medicare premiums:</strong> Can be paid from HSA tax-free!</li>
+                            <li><strong>Long-term care:</strong> Tax-free from HSA</li>
+                            <li><strong>Non-medical expenses:</strong> You CAN use it for anything after 65 - just pay income tax (like a 401k withdrawal)</li>
+                            <li><strong>No 20% penalty</strong> for non-medical use after 65 (before 65 there's a penalty!)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💊</span> Qualified Medical Expenses (What You Can Use HSA For)</h2>
+            <div class="qualified-expenses">
+                <h4>These Expenses Are Tax-Free From Your HSA:</h4>
+                <div class="expense-grid">
+                    <div class="expense-item"><span class="check">✓</span> Doctor visits & copays</div>
+                    <div class="expense-item"><span class="check">✓</span> Prescription medications</div>
+                    <div class="expense-item"><span class="check">✓</span> Dental work & cleanings</div>
+                    <div class="expense-item"><span class="check">✓</span> Vision - glasses, contacts, exams</div>
+                    <div class="expense-item"><span class="check">✓</span> Hospital bills</div>
+                    <div class="expense-item"><span class="check">✓</span> Lab tests & X-rays</div>
+                    <div class="expense-item"><span class="check">✓</span> Mental health services</div>
+                    <div class="expense-item"><span class="check">✓</span> Physical therapy</div>
+                    <div class="expense-item"><span class="check">✓</span> Chiropractor</div>
+                    <div class="expense-item"><span class="check">✓</span> LASIK surgery</div>
+                    <div class="expense-item"><span class="check">✓</span> Hearing aids</div>
+                    <div class="expense-item"><span class="check">✓</span> Insulin & diabetic supplies</div>
+                    <div class="expense-item"><span class="check">✓</span> Sunscreen (SPF 15+)</div>
+                    <div class="expense-item"><span class="check">✓</span> First aid supplies</div>
+                    <div class="expense-item"><span class="check">✓</span> Menstrual products</div>
+                    <div class="expense-item"><span class="check">✓</span> OTC medications (since 2020!)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> HSA in Retirement = Super Powerful!</h2>
+            <div class="retirement-section">
+                <h4>Why HSA Is Amazing for Retirement</h4>
+                <div class="retirement-grid">
+                    <div class="retirement-card">
+                        <h5>🏥 Medical Expenses After 65</h5>
+                        <p>The average retired couple needs $315,000+ for healthcare in retirement. Your HSA can cover this TAX-FREE!</p>
+                    </div>
+                    <div class="retirement-card">
+                        <h5>💳 Medicare Premiums</h5>
+                        <p>You can pay Medicare Part B, D, and Medicare Advantage premiums directly from your HSA - tax-free!</p>
+                    </div>
+                    <div class="retirement-card">
+                        <h5>🏠 Non-Medical After 65</h5>
+                        <p>After 65, you can use HSA funds for ANYTHING. You'll just pay income tax (no penalty) - like a 401(k)!</p>
+                    </div>
+                    <div class="retirement-card">
+                        <h5>📁 Receipt Reimbursement</h5>
+                        <p>All those receipts you saved? Reimburse yourself for decades of medical expenses - completely tax-free!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💡</span> Pro Tips for HSA Success</h2>
+            <div class="pro-tip">
+                <div class="pro-tip-title">🚀 The Ultimate HSA Strategy</div>
+                <p>1. Max out your HSA contributions every year</p>
+                <p>2. Pay for medical expenses out of pocket (if you can afford to)</p>
+                <p>3. Invest 100% of your HSA in index funds</p>
+                <p>4. Save ALL your medical receipts digitally</p>
+                <p>5. Let it grow for 20-30 years</p>
+                <p>6. In retirement, reimburse yourself for decades of expenses - TAX FREE!</p>
             </div>
             
-            <div class="section">
-                <h2>Step 1: Check Eligibility</h2>
-                <ul class="checklist">
-                    <li><input type="checkbox" id="e1" onchange="updateProgress()"><label for="e1">Confirm you have an HDHP health plan</label></li>
-                    <li><input type="checkbox" id="e2" onchange="updateProgress()"><label for="e2">Check if employer offers HSA (often through Fidelity, HealthEquity, etc.)</label></li>
-                    <li><input type="checkbox" id="e3" onchange="updateProgress()"><label for="e3">Ask HR: "Do we have an HSA option?"</label></li>
-                </ul>
+            <div class="info-box">
+                <div class="info-box-title">💰 HSA Is Better Than 401(k) for These Reasons:</div>
+                <p>• Triple tax advantage (401k only has double)</p>
+                <p>• No required minimum distributions (RMDs)</p>
+                <p>• Can be used for medical at any age (no early withdrawal penalty for medical)</p>
+                <p>• Your money is ALWAYS yours (no vesting schedule)</p>
             </div>
             
-            <div class="section">
-                <h2>Step 2: Open & Fund</h2>
-                <ul class="checklist">
-                    <li><input type="checkbox" id="f1" onchange="updateProgress()"><label for="f1">Enroll through employer (pre-tax payroll deduction is best)</label></li>
-                    <li><input type="checkbox" id="f2" onchange="updateProgress()"><label for="f2">OR open independent HSA at Fidelity (no fees, great investments)</label></li>
-                    <li><input type="checkbox" id="f3" onchange="updateProgress()"><label for="f3">Set contribution amount (aim for the max if possible)</label></li>
-                </ul>
+            <div class="warning-box">
+                <div class="warning-box-title">⚠️ Don't Make These HSA Mistakes:</div>
+                <p>• Leaving money as cash instead of investing it</p>
+                <p>• Using HSA for non-medical expenses before age 65 (20% penalty + taxes!)</p>
+                <p>• Not keeping receipts for future reimbursement</p>
+                <p>• Contributing more than the annual limit</p>
+                <p>• Forgetting to enroll during open enrollment</p>
             </div>
-            
-            <div class="highlight-box">
-                <strong>🧠 Pro Strategy:</strong> Don't use your HSA for current medical expenses. Pay out of pocket, let HSA grow for decades, then withdraw tax-free in retirement. Keep receipts forever - you can reimburse yourself later!
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">✅</span> HSA Setup Checklist</h2>
+            <div class="checklist-section">
+                <h4>Check off each item as you complete it:</h4>
+                <label class="checklist-item"><input type="checkbox" onchange="saveChecklist()"> Confirmed I have an HSA-eligible HDHP</label>
+                <label class="checklist-item"><input type="checkbox" onchange="saveChecklist()"> Asked HR about employer HSA option</label>
+                <label class="checklist-item"><input type="checkbox" onchange="saveChecklist()"> Opened my HSA account</label>
+                <label class="checklist-item"><input type="checkbox" onchange="saveChecklist()"> Set up my contribution amount</label>
+                <label class="checklist-item"><input type="checkbox" onchange="saveChecklist()"> Decided on my strategy (basic vs advanced)</label>
+                <label class="checklist-item"><input type="checkbox" onchange="saveChecklist()"> Set up investments (not just cash!)</label>
+                <label class="checklist-item"><input type="checkbox" onchange="saveChecklist()"> Created receipt filing system</label>
+                <label class="checklist-item"><input type="checkbox" onchange="saveChecklist()"> Linked my bank account for easy transfers</label>
             </div>
-            
-            <div class="section">
-                <h2>Step 3: Invest It</h2>
-                <ul class="checklist">
-                    <li><input type="checkbox" id="i1" onchange="updateProgress()"><label for="i1">Keep ~$1,000 in cash for near-term medical needs</label></li>
-                    <li><input type="checkbox" id="i2" onchange="updateProgress()"><label for="i2">Invest the rest in low-cost index funds</label></li>
-                    <li><input type="checkbox" id="i3" onchange="updateProgress()"><label for="i3">Choose a Target Date Fund or Total Stock Market Index</label></li>
-                    <li><input type="checkbox" id="i4" onchange="updateProgress()"><label for="i4">Let it grow - this is a long-term wealth builder!</label></li>
-                </ul>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
             </div>
-            
-            <div class="section">
-                <h2>HSA in Retirement</h2>
-                <ul class="checklist">
-                    <li><input type="checkbox" id="r1" onchange="updateProgress()"><label for="r1">After 65: Use tax-free for ANY medical expense</label></li>
-                    <li><input type="checkbox" id="r2" onchange="updateProgress()"><label for="r2">After 65: Can use for non-medical too (just pay income tax like 401k)</label></li>
-                    <li><input type="checkbox" id="r3" onchange="updateProgress()"><label for="r3">Medicare premiums can be paid from HSA tax-free!</label></li>
-                </ul>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your HSA Notes</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your HSA setup here!
+
+MY HSA ELIGIBILITY:
+My health plan: _____
+Is it an HDHP? ☐ Yes ☐ No
+Deductible amount: $_____
+
+EMPLOYER HSA INFO:
+Does employer offer HSA? ☐ Yes ☐ No
+HSA provider: _____
+Does employer contribute? ☐ Yes: $_____ ☐ No
+
+MY HSA ACCOUNT:
+Provider: _____
+Account opened on: _____
+Login info: _____
+
+MY CONTRIBUTION:
+Per paycheck: $_____
+Annual total: $_____
+☐ Maxing out ($4,150 individual / $8,300 family)
+
+MY STRATEGY:
+☐ Basic (use for current medical expenses)
+☐ Advanced (let it grow, reimburse later)
+
+MY INVESTMENTS:
+Cash kept for medical needs: $_____
+Invested in: _____
+Auto-invest set up? ☐ Yes ☐ No
+
+RECEIPT TRACKING:
+Folder location: _____
+Total unreimbursed medical expenses: $_____
+
+NOTES:
+_____
+"></textarea>
             </div>
-            
-            <div class="progress-section">
-                <h3>Your Progress</h3>
-                <div class="progress-bar"><div class="progress-fill" id="progress-bar" style="width: 0%"></div></div>
-                <div class="progress-text" id="progress-text">0 of 13 tasks complete</div>
-            </div>
-            
-            <a href="javascript:history.back()" class="cta-button">✓ Return to Blueprint</a>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
         </div>
     </div>
-    
+
     <script>
-        const STORAGE_KEY = 'playbook_hsa';
-        function loadProgress() { const saved = localStorage.getItem(STORAGE_KEY); if (saved) { JSON.parse(saved).forEach(id => { const cb = document.getElementById(id); if (cb) { cb.checked = true; cb.nextElementSibling.classList.add('done'); } }); } updateProgress(); }
-        function updateProgress() { const checkboxes = document.querySelectorAll('input[type="checkbox"]'); const checked = []; let count = 0; checkboxes.forEach(cb => { if (cb.checked) { count++; checked.push(cb.id); cb.nextElementSibling.classList.add('done'); } else { cb.nextElementSibling.classList.remove('done'); } }); localStorage.setItem(STORAGE_KEY, JSON.stringify(checked)); document.getElementById('progress-bar').style.width = Math.round((count / checkboxes.length) * 100) + '%'; document.getElementById('progress-text').textContent = count + ' of ' + checkboxes.length + ' tasks complete'; }
-        document.addEventListener('DOMContentLoaded', loadProgress);
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-hsa-guide');
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
+                if (data.checklist) {
+                    const checkboxes = document.querySelectorAll('.checklist-item input');
+                    data.checklist.forEach((checked, index) => {
+                        if (checkboxes[index]) checkboxes[index].checked = checked;
+                    });
+                }
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+        function saveChecklist() { saveProgress(); }
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            const checklist = Array.from(document.querySelectorAll('.checklist-item input')).map(el => el.checked);
+            localStorage.setItem('playbook-hsa-guide', JSON.stringify({ steps, notes, checklist }));
+        }
+        document.getElementById('notes').addEventListener('input', saveProgress);
     </script>
 </body>
 </html>

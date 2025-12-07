@@ -3,164 +3,615 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sinking Funds Setup | ASAP Financial Playbook</title>
+    <title>Sinking Funds Setup - ASAP Financial Playbook</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; background: #f5f5f5; color: #333; line-height: 1.6; }
-        .playbook { max-width: 700px; margin: 0 auto; background: white; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
-        .header { background: linear-gradient(135deg, #009688 0%, #00796b 100%); color: white; padding: 30px; text-align: center; }
-        .header h1 { font-size: 28px; margin-bottom: 10px; }
-        .header p { opacity: 0.9; font-size: 14px; }
-        .meta { display: flex; justify-content: center; gap: 20px; margin-top: 15px; font-size: 12px; }
-        .meta span { background: rgba(255,255,255,0.2); padding: 5px 12px; border-radius: 15px; }
-        .content { padding: 30px; }
-        .section { margin-bottom: 30px; }
-        .section h2 { color: #00796b; font-size: 18px; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 2px solid #009688; }
-        .section p { margin-bottom: 12px; color: #555; }
-        .highlight-box { background: #e0f2f1; border-left: 4px solid #009688; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
-        .fund-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 20px 0; }
-        .fund-card { background: #f8f9fa; padding: 15px; border-radius: 8px; border: 2px solid #e0e0e0; text-align: center; }
-        .fund-card h4 { color: #00796b; margin-bottom: 5px; }
-        .fund-card .amount { font-size: 20px; font-weight: 700; color: #009688; }
-        .fund-card .monthly { font-size: 12px; color: #666; }
-        .checklist { list-style: none; padding: 0; }
-        .checklist li { padding: 12px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 12px; }
-        .checklist li:last-child { border-bottom: none; }
-        .checklist input[type="checkbox"] { width: 20px; height: 20px; margin-top: 2px; cursor: pointer; flex-shrink: 0; }
-        .checklist label { cursor: pointer; flex: 1; }
-        .checklist .done { text-decoration: line-through; color: #888; }
-        .example-box { background: #fff8e1; border: 2px solid #ffc107; padding: 20px; border-radius: 8px; margin: 20px 0; }
-        .example-box h3 { color: #f57f17; margin-bottom: 10px; }
-        .progress-section { background: #f8f9fa; padding: 20px; border-radius: 8px; margin-top: 30px; }
-        .progress-bar { height: 20px; background: #e0e0e0; border-radius: 10px; overflow: hidden; margin: 10px 0; }
-        .progress-fill { height: 100%; background: linear-gradient(90deg, #009688, #00796b); transition: width 0.3s; border-radius: 10px; }
-        .progress-text { text-align: center; font-weight: 600; color: #00796b; }
-        .cta-button { display: block; width: 100%; padding: 15px; background: #009688; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; text-align: center; text-decoration: none; margin-top: 20px; }
-        .cta-button:hover { background: #00796b; }
-        .back-link { display: inline-block; margin: 20px 30px; color: #666; text-decoration: none; font-size: 14px; }
-        .back-link:hover { color: #009688; }
-        @media (max-width: 600px) { .fund-grid { grid-template-columns: 1fr; } }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #1565c0; font-size: 1.1em; line-height: 1.8; }
+        .highlight-box { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .highlight-box h3 { font-size: 2em; margin-bottom: 10px; }
+        .highlight-box p { font-size: 1.1em; opacity: 0.95; }
+        .funds-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .fund-card { background: #f8f9fa; border-radius: 15px; padding: 25px; border-left: 5px solid #667eea; }
+        .fund-card .emoji { font-size: 2em; margin-bottom: 10px; }
+        .fund-card h4 { color: #1a1a2e; margin-bottom: 10px; }
+        .fund-card .target { font-size: 1.8em; font-weight: 700; color: #4caf50; }
+        .fund-card .monthly { color: #666; font-size: 0.95em; margin-top: 5px; }
+        .fund-card .why { color: #555; font-size: 0.9em; margin-top: 10px; line-height: 1.5; }
+        .formula-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 25px; margin: 20px 0; text-align: center; }
+        .formula-box h4 { color: #2e7d32; margin-bottom: 15px; }
+        .formula { font-size: 1.5em; font-weight: 700; color: #1a1a2e; background: white; padding: 15px 25px; border-radius: 10px; display: inline-block; }
+        .example-box { background: #f8f9fa; border-radius: 10px; padding: 20px; margin-top: 15px; text-align: left; }
+        .example-box h5 { color: #667eea; margin-bottom: 10px; }
+        .step { display: flex; gap: 15px; margin-bottom: 25px; padding: 25px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #e3f2fd; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; margin-top: 5px; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 700; color: #1a1a2e; font-size: 1.2em; margin-bottom: 10px; }
+        .step-desc { color: #444; line-height: 1.8; font-size: 1.05em; }
+        .step-details { background: #fff; border: 2px solid #e0e0e0; border-radius: 10px; padding: 15px; margin-top: 15px; }
+        .step-details h5 { color: #667eea; margin-bottom: 10px; font-size: 1em; }
+        .step-details ul { margin-left: 20px; color: #555; }
+        .step-details li { margin-bottom: 10px; line-height: 1.7; }
+        .bank-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 15px 0; }
+        .bank-card { background: white; border-radius: 10px; padding: 15px; border: 2px solid #e0e0e0; text-align: center; }
+        .bank-card h5 { color: #1a1a2e; margin-bottom: 5px; }
+        .bank-card p { color: #666; font-size: 0.85em; }
+        .bank-card .feature { color: #4caf50; font-weight: 600; font-size: 0.9em; margin-top: 5px; }
+        .calculator-section { background: #f8f9fa; border-radius: 15px; padding: 25px; margin: 20px 0; }
+        .calculator-section h4 { color: #1a1a2e; margin-bottom: 20px; text-align: center; }
+        .calc-row { display: flex; gap: 15px; margin-bottom: 15px; align-items: center; flex-wrap: wrap; }
+        .calc-row label { flex: 1; min-width: 150px; color: #333; }
+        .calc-row input { flex: 1; min-width: 120px; padding: 10px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1em; }
+        .calc-row input:focus { outline: none; border-color: #667eea; }
+        .calc-result { background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 20px; border-radius: 10px; text-align: center; margin-top: 15px; }
+        .calc-result .amount { font-size: 2em; font-weight: 700; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 20px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; font-size: 1.1em; }
+        .pro-tip p { color: #555; margin: 8px 0; line-height: 1.7; }
+        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .warning-box-title { font-weight: 700; color: #c62828; margin-bottom: 10px; }
+        .warning-box p { color: #555; margin: 8px 0; line-height: 1.6; }
+        .info-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-left: 4px solid #4caf50; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .info-box-title { font-weight: 700; color: #2e7d32; margin-bottom: 10px; }
+        .info-box p { color: #555; margin: 8px 0; line-height: 1.6; }
+        .my-funds-section { background: #f8f9fa; border-radius: 15px; padding: 25px; margin: 20px 0; }
+        .my-funds-section h4 { color: #1a1a2e; margin-bottom: 20px; }
+        .fund-input-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px; align-items: center; }
+        .fund-input-row input { padding: 10px; border: 2px solid #e0e0e0; border-radius: 8px; }
+        .fund-input-row input:focus { outline: none; border-color: #667eea; }
+        .fund-input-row .monthly-calc { background: #e8f5e9; padding: 10px; border-radius: 8px; text-align: center; color: #2e7d32; font-weight: 600; }
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 150px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #667eea; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+        @media (max-width: 600px) {
+            .fund-input-row { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
-    <a href="javascript:history.back()" class="back-link">← Back to Blueprint</a>
-    
-    <div class="playbook">
+    <div class="container">
+        <a href="expense-playbooks.html" class="back-link">← Back to Playbooks</a>
+        
         <div class="header">
             <h1>🪣 Sinking Funds Setup</h1>
-            <p>Save for planned expenses so nothing is an "emergency"</p>
-            <div class="meta">
-                <span>⏱️ 20 Minutes</span>
-                <span>🎯 No More Surprises</span>
-                <span>💰 Stress-Free</span>
+            <p class="subtitle">Save for planned expenses so nothing is ever an "emergency"!</p>
+            <div class="time-badge">⏱️ 20 min setup • 🎯 No more money stress • 💰 Be ready for ANYTHING!</div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p><strong>Here's the truth: Most "emergencies" aren't really emergencies!</strong> Christmas comes every December - that's not a surprise. Your car will need repairs eventually - that's not a surprise. These are things you can PLAN for!</p>
+                <p style="margin-top: 15px;"><strong>What are sinking funds?</strong> They're separate savings accounts for different goals. Instead of one big savings account, you have small "buckets" for each expense. One bucket for car repairs. One for Christmas. One for vacation. When the expense comes up, the money is ALREADY THERE!</p>
+                <p style="margin-top: 15px;"><strong>The magic:</strong> When you KNOW you have $1,500 saved for car repairs, a flat tire is just an inconvenience - NOT a crisis. When you KNOW you have $800 saved for Christmas, December is stress-free. No credit cards. No panic. Just peace of mind!</p>
+            </div>
+            <div class="highlight-box">
+                <h3>Turn "Emergencies" Into Non-Events!</h3>
+                <p>Save a little each month → Be ready when expenses hit → No stress, no debt!</p>
             </div>
         </div>
-        
-        <div class="content">
-            <div class="section">
-                <h2>What Are Sinking Funds?</h2>
-                <p>Sinking funds are savings accounts for <strong>planned expenses</strong>. Christmas comes every year - it's not an emergency. Car repairs happen - not an emergency. Save a little each month so these expenses are covered.</p>
-                <div class="highlight-box">
-                    <strong>The Magic:</strong> When you KNOW you have $800 saved for Christmas, December isn't stressful. When you KNOW you have $1,500 for car repairs, a flat tire is just an inconvenience, not a crisis.
+
+        <div class="card">
+            <h2><span class="icon">🪣</span> Common Sinking Funds (Pick Yours!)</h2>
+            <p style="color: #666; margin-bottom: 20px;">Here are the most popular sinking funds. You don't need ALL of these - start with 2-3 that matter most to YOU!</p>
+            
+            <div class="funds-grid">
+                <div class="fund-card">
+                    <div class="emoji">🚗</div>
+                    <h4>Car Repairs & Maintenance</h4>
+                    <div class="target">$1,500</div>
+                    <div class="monthly">≈ $125/month to reach in 1 year</div>
+                    <div class="why">Oil changes, tires, brakes, unexpected repairs. Cars ALWAYS need work!</div>
+                </div>
+                <div class="fund-card">
+                    <div class="emoji">🎄</div>
+                    <h4>Christmas / Holidays</h4>
+                    <div class="target">$800</div>
+                    <div class="monthly">≈ $70/month (start in January!)</div>
+                    <div class="why">Gifts, decorations, travel, food. December comes EVERY year!</div>
+                </div>
+                <div class="fund-card">
+                    <div class="emoji">✈️</div>
+                    <h4>Vacation / Travel</h4>
+                    <div class="target">$2,000</div>
+                    <div class="monthly">≈ $170/month to reach in 1 year</div>
+                    <div class="why">Finally take that trip without going into debt!</div>
+                </div>
+                <div class="fund-card">
+                    <div class="emoji">🏠</div>
+                    <h4>Home Repairs</h4>
+                    <div class="target">$1,000</div>
+                    <div class="monthly">≈ $85/month to reach in 1 year</div>
+                    <div class="why">Appliances break, things leak, stuff needs fixing.</div>
+                </div>
+                <div class="fund-card">
+                    <div class="emoji">🐕</div>
+                    <h4>Pet Expenses</h4>
+                    <div class="target">$500</div>
+                    <div class="monthly">≈ $45/month to reach in 1 year</div>
+                    <div class="why">Vet visits, grooming, unexpected pet costs.</div>
+                </div>
+                <div class="fund-card">
+                    <div class="emoji">📱</div>
+                    <h4>Tech Replacement</h4>
+                    <div class="target">$600</div>
+                    <div class="monthly">≈ $50/month to reach in 1 year</div>
+                    <div class="why">Phones, laptops, tablets - they don't last forever!</div>
+                </div>
+                <div class="fund-card">
+                    <div class="emoji">👔</div>
+                    <h4>Clothing</h4>
+                    <div class="target">$400</div>
+                    <div class="monthly">≈ $35/month to reach in 1 year</div>
+                    <div class="why">New clothes, shoes, work attire, seasonal needs.</div>
+                </div>
+                <div class="fund-card">
+                    <div class="emoji">🎂</div>
+                    <h4>Birthdays & Gifts</h4>
+                    <div class="target">$300</div>
+                    <div class="monthly">≈ $25/month to reach in 1 year</div>
+                    <div class="why">Friends, family, kids' parties throughout the year.</div>
+                </div>
+                <div class="fund-card">
+                    <div class="emoji">🏥</div>
+                    <h4>Medical / Dental</h4>
+                    <div class="target">$500</div>
+                    <div class="monthly">≈ $45/month to reach in 1 year</div>
+                    <div class="why">Copays, prescriptions, dental work, glasses.</div>
+                </div>
+                <div class="fund-card">
+                    <div class="emoji">📚</div>
+                    <h4>Kids / School</h4>
+                    <div class="target">$400</div>
+                    <div class="monthly">≈ $35/month to reach in 1 year</div>
+                    <div class="why">Back to school, activities, field trips, sports.</div>
+                </div>
+                <div class="fund-card">
+                    <div class="emoji">🚗</div>
+                    <h4>Car Insurance</h4>
+                    <div class="target">$1,200</div>
+                    <div class="monthly">≈ $100/month</div>
+                    <div class="why">Pay annually and save 5-10% vs monthly payments!</div>
+                </div>
+                <div class="fund-card">
+                    <div class="emoji">🎓</div>
+                    <h4>Education / Courses</h4>
+                    <div class="target">$500</div>
+                    <div class="monthly">≈ $45/month to reach in 1 year</div>
+                    <div class="why">Certifications, classes, books, career growth.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🧮</span> The Simple Math (Super Easy!)</h2>
+            <div class="formula-box">
+                <h4>The Sinking Fund Formula:</h4>
+                <div class="formula">Target Amount ÷ Months Until Needed = Monthly Savings</div>
+                <div class="example-box">
+                    <h5>📝 Examples:</h5>
+                    <ul style="margin-left: 20px;">
+                        <li><strong>Christmas:</strong> $1,200 ÷ 12 months = <strong>$100/month</strong> (start in January, ready by December!)</li>
+                        <li><strong>Car repairs:</strong> $1,500 ÷ 12 months = <strong>$125/month</strong></li>
+                        <li><strong>Summer vacation:</strong> $2,000 ÷ 10 months = <strong>$200/month</strong></li>
+                        <li><strong>New phone in 6 months:</strong> $600 ÷ 6 months = <strong>$100/month</strong></li>
+                    </ul>
                 </div>
             </div>
             
-            <div class="section">
-                <h2>Common Sinking Funds</h2>
-                <div class="fund-grid">
-                    <div class="fund-card">
-                        <h4>🚗 Car Repairs</h4>
-                        <div class="amount">$1,500</div>
-                        <div class="monthly">≈ $125/month</div>
-                    </div>
-                    <div class="fund-card">
-                        <h4>🎄 Holidays/Gifts</h4>
-                        <div class="amount">$800</div>
-                        <div class="monthly">≈ $70/month</div>
-                    </div>
-                    <div class="fund-card">
-                        <h4>✈️ Vacation</h4>
-                        <div class="amount">$2,000</div>
-                        <div class="monthly">≈ $170/month</div>
-                    </div>
-                    <div class="fund-card">
-                        <h4>🏠 Home Repairs</h4>
-                        <div class="amount">$1,000</div>
-                        <div class="monthly">≈ $85/month</div>
-                    </div>
-                    <div class="fund-card">
-                        <h4>🐕 Pet Expenses</h4>
-                        <div class="amount">$500</div>
-                        <div class="monthly">≈ $45/month</div>
-                    </div>
-                    <div class="fund-card">
-                        <h4>📱 Tech Replacement</h4>
-                        <div class="amount">$600</div>
-                        <div class="monthly">≈ $50/month</div>
+            <div class="calculator-section">
+                <h4>🧮 Calculate YOUR Sinking Fund Amount</h4>
+                <div class="calc-row">
+                    <label>How much do you need? $</label>
+                    <input type="number" id="calcTarget" placeholder="1000" oninput="calculateMonthly()">
+                </div>
+                <div class="calc-row">
+                    <label>How many months to save?</label>
+                    <input type="number" id="calcMonths" placeholder="12" oninput="calculateMonthly()">
+                </div>
+                <div class="calc-result">
+                    <p>Save this much per month:</p>
+                    <div class="amount" id="calcResult">$0</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Step-by-Step Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: List ALL Your Predictable Expenses</div>
+                    <div class="step-desc">Think about every big expense that happens during the year. Write them ALL down!</div>
+                    <div class="step-details">
+                        <h5>📝 Think About:</h5>
+                        <ul>
+                            <li><strong>Annual events:</strong> Christmas, birthdays, anniversaries, back-to-school</li>
+                            <li><strong>Maintenance:</strong> Car repairs, oil changes, home repairs, appliances</li>
+                            <li><strong>Insurance:</strong> Car insurance, home insurance, renters insurance (if paid annually)</li>
+                            <li><strong>Medical:</strong> Dental cleanings, eye exams, prescriptions, copays</li>
+                            <li><strong>Fun stuff:</strong> Vacations, concerts, events, hobbies</li>
+                            <li><strong>Replacements:</strong> Phone, laptop, tires, mattress, furniture</li>
+                            <li><strong>Write down EVERYTHING you can think of!</strong></li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            
-            <div class="example-box">
-                <h3>📊 How to Calculate</h3>
-                <p><strong>Formula:</strong> Target Amount ÷ Months Until Needed = Monthly Savings</p>
-                <p><strong>Example:</strong> $1,200 for Christmas ÷ 12 months = $100/month</p>
-                <p>Start in January, have $1,200 ready by December!</p>
+
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Estimate the Cost for Each One</div>
+                    <div class="step-desc">For each expense, figure out roughly how much it costs.</div>
+                    <div class="step-details">
+                        <h5">💰 How to Estimate:</h5>
+                        <ul>
+                            <li><strong>Look at last year:</strong> How much did you spend on Christmas last year? On car repairs?</li>
+                            <li><strong">Check old bank statements:</strong> Look for these expenses in your history</li>
+                            <li><strong>Google average costs:</strong> "Average car repair cost" or "Average Christmas spending"</li>
+                            <li><strong>When in doubt, round UP:</strong> Better to have too much than not enough!</li>
+                            <li><strong">Be honest:</strong> Don't underestimate to make yourself feel better</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Pick Your Top 2-3 Funds to Start</div>
+                    <div class="step-desc">Don't try to save for everything at once! Start with 2-3 that matter most.</div>
+                    <div class="step-details">
+                        <h5">🎯 How to Choose:</h5>
+                        <ul>
+                            <li><strong>What caused stress last year?</strong> Car broke down? Christmas debt? Start there!</li>
+                            <li><strong">What's coming soonest?</strong> If summer vacation is in 4 months, prioritize that</li>
+                            <li><strong">What's biggest?</strong> Big expenses cause the most stress - tackle those first</li>
+                            <li><strong">Be realistic:</strong> If you can only save $200/month total, split between 2-3 funds</li>
+                            <li><strong">You can add more funds later!</strong> Start small, build the habit, then expand</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Open a High-Yield Savings Account with "Buckets"</div>
+                    <div class="step-desc">You need a bank that lets you create separate savings "buckets" or folders for each fund.</div>
+                    <div class="step-details">
+                        <h5">🏦 Best Banks for Sinking Funds:</h5>
+                        <div class="bank-options">
+                            <div class="bank-card">
+                                <h5>Ally Bank</h5>
+                                <p>Create unlimited "buckets" in one account</p>
+                                <div class="feature">✓ 4%+ APY</div>
+                            </div>
+                            <div class="bank-card">
+                                <h5">Capital One 360</h5>
+                                <p">Multiple savings accounts, easy to name</p>
+                                <div class="feature">✓ 4%+ APY</div>
+                            </div>
+                            <div class="bank-card">
+                                <h5">SoFi</h5>
+                                <p">"Vaults" feature for different goals</p>
+                                <div class="feature">✓ 4%+ APY</div>
+                            </div>
+                            <div class="bank-card">
+                                <h5">Marcus by Goldman</h5>
+                                <p">Open multiple accounts for free</p>
+                                <div class="feature">✓ 4%+ APY</div>
+                            </div>
+                        </div>
+                        <p style="margin-top: 15px;"><strong">How to set up:</strong></p>
+                        <ul>
+                            <li>Go to the bank's website (ally.com, capitalone.com, etc.)</li>
+                            <li">Open a savings account (takes 10 minutes)</li>
+                            <li">Find "Buckets," "Vaults," or "Goals" feature</li>
+                            <li">Create one bucket for each sinking fund</li>
+                            <li">Name them clearly: "CAR REPAIRS," "CHRISTMAS," "VACATION"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Calculate Your Monthly Amount for Each Fund</div>
+                    <div class="step-desc">Use the formula: Target ÷ Months = Monthly Savings</div>
+                    <div class="step-details">
+                        <h5">🧮 Calculate Each Fund:</h5>
+                        <ul>
+                            <li><strong">Fund 1:</strong> $_____ target ÷ _____ months = $_____ per month</li>
+                            <li><strong">Fund 2:</strong> $_____ target ÷ _____ months = $_____ per month</li>
+                            <li><strong">Fund 3:</strong> $_____ target ÷ _____ months = $_____ per month</li>
+                            <li><strong">TOTAL monthly sinking fund savings:</strong> $_____ per month</li>
+                        </ul>
+                        <p style="margin-top: 10px;"><strong">Can't afford all that?</strong> Start smaller! Even $25/month to each fund adds up. You can increase later when you have more room in your budget.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Set Up Automatic Transfers (This Is the KEY!)</div>
+                    <div class="step-desc">Make saving automatic so you don't have to think about it or remember!</div>
+                    <div class="step-details">
+                        <h5">🔄 How to Automate:</h5>
+                        <ul>
+                            <li"><strong">Go to your HYSA</strong> (the bank with your buckets)</li>
+                            <li"><strong">Find "Transfers" or "Automatic Transfers"</strong></li>
+                            <li"><strong">Set up a recurring transfer</strong> FROM your checking TO your sinking fund</li>
+                            <li"><strong">Amount:</strong> The monthly amount you calculated</li>
+                            <li"><strong">Timing:</strong> 1-2 days AFTER your payday hits</li>
+                            <li"><strong">Frequency:</strong> Match your pay schedule (weekly, bi-weekly, monthly)</li>
+                            <li"><strong">Do this for EACH sinking fund!</strong></li>
+                        </ul>
+                        <p style="margin-top: 10px;"><strong">Example:</strong> If you get paid on the 1st and 15th:</p>
+                        <ul style="margin-top: 5px;">
+                            <li">Set transfers for the 2nd and 16th</li>
+                            <li">$50 to Car Repairs, $35 to Christmas, $40 to Vacation = $125 total</li>
+                            <li">The money moves automatically before you can spend it!</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: When Expense Hits - USE THE FUND!</div>
+                    <div class="step-desc">This is the fun part! When the expense comes, you're READY!</div>
+                    <div class="step-details">
+                        <h5">💸 How to Use Your Sinking Funds:</h5>
+                        <ul>
+                            <li"><strong">Transfer from that specific fund only</strong> - don't raid other funds!</li>
+                            <li"><strong">Move the money</strong> from your sinking fund to your checking</li>
+                            <li"><strong">Pay the expense</strong> with peace of mind</li>
+                            <li"><strong">Notice how it feels?</strong> No stress! No credit card! You planned for this!</li>
+                            <li"><strong">After using:</strong> Your automatic transfers keep going to rebuild the fund</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step" data-step="8">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 8: Review and Adjust Quarterly</div>
+                    <div class="step-desc">Every 3 months, check your funds. Are you on track? Need to adjust?</div>
+                    <div class="step-details">
+                        <h5">📊 Quarterly Review:</h5>
+                        <ul>
+                            <li"><strong">Check each fund balance:</strong> Are you on track to hit your goal?</li>
+                            <li"><strong">If behind:</strong> Can you increase your monthly transfer?</li>
+                            <li"><strong">If ahead:</strong> Great! Keep going or redirect to another goal</li>
+                            <li"><strong">Add new funds:</strong> As you get comfortable, add more sinking funds</li>
+                            <li"><strong">Adjust goals:</strong> Did Christmas cost more than expected? Update your target for next year!</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2"><span class="icon">💡</span> Pro Tips for Sinking Fund Success</h2>
+            <div class="pro-tip">
+                <div class="pro-tip-title">🎯 The Golden Rule: Don't Borrow Between Funds!</div>
+                <p">If your car fund has $1,000 but you want to use it for Christmas gifts - DON'T! Each fund has ONE purpose. Mixing them defeats the whole point. Discipline now = stress-free later!</p>
             </div>
             
-            <div class="section">
-                <h2>Step 1: Choose Your Funds</h2>
-                <ul class="checklist">
-                    <li><input type="checkbox" id="c1" onchange="updateProgress()"><label for="c1">List all big expenses you know are coming this year</label></li>
-                    <li><input type="checkbox" id="c2" onchange="updateProgress()"><label for="c2">Estimate cost for each expense</label></li>
-                    <li><input type="checkbox" id="c3" onchange="updateProgress()"><label for="c3">Pick 2-3 funds to start (don't overdo it!)</label></li>
-                    <li><input type="checkbox" id="c4" onchange="updateProgress()"><label for="c4">Calculate monthly amount for each</label></li>
-                </ul>
+            <div class="info-box">
+                <div class="info-box-title">💰 Start Small - Even $25/Month Helps!</div>
+                <p">Don't stress if you can't save big amounts right now. Even $25/month to a car fund = $300/year. That covers an oil change and minor repairs! Something is ALWAYS better than nothing.</p>
             </div>
             
-            <div class="section">
-                <h2>Step 2: Set Up Accounts</h2>
-                <ul class="checklist">
-                    <li><input type="checkbox" id="s1" onchange="updateProgress()"><label for="s1">Open a HYSA if you don't have one (see HYSA playbook)</label></li>
-                    <li><input type="checkbox" id="s2" onchange="updateProgress()"><label for="s2">Create sub-accounts or "buckets" for each fund</label></li>
-                    <li><input type="checkbox" id="s3" onchange="updateProgress()"><label for="s3">Name each account clearly (e.g., "CAR REPAIRS")</label></li>
-                </ul>
-                <p style="margin-top: 15px; font-size: 13px; color: #666;"><strong>Best banks for buckets:</strong> Ally Bank, Capital One 360, SoFi all let you create multiple savings "buckets" in one account.</p>
+            <div class="pro-tip">
+                <div class="pro-tip-title">🏆 Celebrate When You Use Your Funds!</div>
+                <p">When your car breaks down and you have the money saved - that's a WIN! You planned ahead. You avoided debt. You beat the "emergency." Take a moment to feel proud!</p>
             </div>
-            
-            <div class="section">
-                <h2>Step 3: Automate Transfers</h2>
-                <ul class="checklist">
-                    <li><input type="checkbox" id="a1" onchange="updateProgress()"><label for="a1">Set up automatic transfer for each fund</label></li>
-                    <li><input type="checkbox" id="a2" onchange="updateProgress()"><label for="a2">Schedule transfers 1-2 days after payday</label></li>
-                    <li><input type="checkbox" id="a3" onchange="updateProgress()"><label for="a3">Start small - you can increase later</label></li>
-                </ul>
+        </div>
+
+        <div class="card">
+            <h2"><span class="icon">📝</span> My Sinking Funds Tracker</h2>
+            <div class="my-funds-section">
+                <h4">Plan Your Sinking Funds Here:</h4>
+                <div style="overflow-x: auto;">
+                    <div class="fund-input-row" style="font-weight: 700; color: #667eea;">
+                        <span>Fund Name</span>
+                        <span>Target $</span>
+                        <span>Months</span>
+                        <span>Monthly $</span>
+                    </div>
+                    <div class="fund-input-row">
+                        <input type="text" id="fund1name" placeholder="e.g., Car Repairs" oninput="calcFund(1)">
+                        <input type="number" id="fund1target" placeholder="1500" oninput="calcFund(1)">
+                        <input type="number" id="fund1months" placeholder="12" oninput="calcFund(1)">
+                        <div class="monthly-calc" id="fund1monthly">$0</div>
+                    </div>
+                    <div class="fund-input-row">
+                        <input type="text" id="fund2name" placeholder="e.g., Christmas" oninput="calcFund(2)">
+                        <input type="number" id="fund2target" placeholder="800" oninput="calcFund(2)">
+                        <input type="number" id="fund2months" placeholder="12" oninput="calcFund(2)">
+                        <div class="monthly-calc" id="fund2monthly">$0</div>
+                    </div>
+                    <div class="fund-input-row">
+                        <input type="text" id="fund3name" placeholder="e.g., Vacation" oninput="calcFund(3)">
+                        <input type="number" id="fund3target" placeholder="2000" oninput="calcFund(3)">
+                        <input type="number" id="fund3months" placeholder="12" oninput="calcFund(3)">
+                        <div class="monthly-calc" id="fund3monthly">$0</div>
+                    </div>
+                    <div class="fund-input-row">
+                        <input type="text" id="fund4name" placeholder="e.g., Home Repairs" oninput="calcFund(4)">
+                        <input type="number" id="fund4target" placeholder="1000" oninput="calcFund(4)">
+                        <input type="number" id="fund4months" placeholder="12" oninput="calcFund(4)">
+                        <div class="monthly-calc" id="fund4monthly">$0</div>
+                    </div>
+                    <div class="fund-input-row" style="background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 10px; padding: 15px; color: white; font-weight: 700;">
+                        <span>TOTAL MONTHLY:</span>
+                        <span></span>
+                        <span></span>
+                        <div id="totalMonthly" style="background: white; color: #667eea; padding: 10px; border-radius: 8px;">$0</div>
+                    </div>
+                </div>
             </div>
-            
-            <div class="section">
-                <h2>Step 4: Use Your Funds</h2>
-                <ul class="checklist">
-                    <li><input type="checkbox" id="u1" onchange="updateProgress()"><label for="u1">When expense comes, transfer from that fund only</label></li>
-                    <li><input type="checkbox" id="u2" onchange="updateProgress()"><label for="u2">Don't borrow from other funds!</label></li>
-                    <li><input type="checkbox" id="u3" onchange="updateProgress()"><label for="u3">After using, continue auto-transfers to rebuild</label></li>
-                </ul>
+        </div>
+
+        <div class="card">
+            <h2"><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
             </div>
-            
-            <div class="progress-section">
-                <h3>Your Progress</h3>
-                <div class="progress-bar"><div class="progress-fill" id="progress-bar" style="width: 0%"></div></div>
-                <div class="progress-text" id="progress-text">0 of 13 tasks complete</div>
+        </div>
+
+        <div class="card">
+            <h2"><span class="icon">📝</span> Your Sinking Funds Notes</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Plan your sinking funds here!
+
+MY SINKING FUNDS:
+
+Fund 1: _____
+Target: $_____
+Months to save: _____
+Monthly amount: $_____
+Bucket created? ☐ Yes
+Auto-transfer set up? ☐ Yes
+
+Fund 2: _____
+Target: $_____
+Months to save: _____
+Monthly amount: $_____
+Bucket created? ☐ Yes
+Auto-transfer set up? ☐ Yes
+
+Fund 3: _____
+Target: $_____
+Months to save: _____
+Monthly amount: $_____
+Bucket created? ☐ Yes
+Auto-transfer set up? ☐ Yes
+
+TOTAL MONTHLY SINKING FUND SAVINGS: $_____
+
+BANK I'M USING: _____
+
+AUTO-TRANSFER DATES: _____
+
+QUARTERLY REVIEW DATES:
+☐ March _____
+☐ June _____
+☐ September _____
+☐ December _____
+
+NOTES:
+_____
+"></textarea>
             </div>
-            
-            <a href="javascript:history.back()" class="cta-button">✓ Return to Blueprint</a>
+        </div>
+
+        <div class="cta-section">
+            <h3">Need Help With Your Finances?</h3>
+            <p">Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
         </div>
     </div>
-    
+
     <script>
-        const STORAGE_KEY = 'playbook_sinking';
-        function loadProgress() { const saved = localStorage.getItem(STORAGE_KEY); if (saved) { JSON.parse(saved).forEach(id => { const cb = document.getElementById(id); if (cb) { cb.checked = true; cb.nextElementSibling.classList.add('done'); } }); } updateProgress(); }
-        function updateProgress() { const checkboxes = document.querySelectorAll('input[type="checkbox"]'); const checked = []; let count = 0; checkboxes.forEach(cb => { if (cb.checked) { count++; checked.push(cb.id); cb.nextElementSibling.classList.add('done'); } else { cb.nextElementSibling.classList.remove('done'); } }); localStorage.setItem(STORAGE_KEY, JSON.stringify(checked)); document.getElementById('progress-bar').style.width = Math.round((count / checkboxes.length) * 100) + '%'; document.getElementById('progress-text').textContent = count + ' of ' + checkboxes.length + ' tasks complete'; }
-        document.addEventListener('DOMContentLoaded', loadProgress);
+        function calculateMonthly() {
+            const target = parseFloat(document.getElementById('calcTarget').value) || 0;
+            const months = parseFloat(document.getElementById('calcMonths').value) || 1;
+            const monthly = target / months;
+            document.getElementById('calcResult').textContent = '$' + monthly.toFixed(2);
+        }
+        
+        function calcFund(num) {
+            const target = parseFloat(document.getElementById('fund' + num + 'target').value) || 0;
+            const months = parseFloat(document.getElementById('fund' + num + 'months').value) || 1;
+            const monthly = target / months;
+            document.getElementById('fund' + num + 'monthly').textContent = '$' + monthly.toFixed(0);
+            calcTotal();
+            saveFunds();
+        }
+        
+        function calcTotal() {
+            let total = 0;
+            for (let i = 1; i <= 4; i++) {
+                const target = parseFloat(document.getElementById('fund' + i + 'target').value) || 0;
+                const months = parseFloat(document.getElementById('fund' + i + 'months').value) || 1;
+                total += target / months;
+            }
+            document.getElementById('totalMonthly').textContent = '$' + total.toFixed(0);
+        }
+        
+        function saveFunds() {
+            const funds = [];
+            for (let i = 1; i <= 4; i++) {
+                funds.push({
+                    name: document.getElementById('fund' + i + 'name').value,
+                    target: document.getElementById('fund' + i + 'target').value,
+                    months: document.getElementById('fund' + i + 'months').value
+                });
+            }
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-sinking-funds', JSON.stringify({ funds, steps, notes }));
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('playbook-sinking-funds');
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (data.funds) {
+                    data.funds.forEach((fund, index) => {
+                        const num = index + 1;
+                        document.getElementById('fund' + num + 'name').value = fund.name || '';
+                        document.getElementById('fund' + num + 'target').value = fund.target || '';
+                        document.getElementById('fund' + num + 'months').value = fund.months || '';
+                        calcFund(num);
+                    });
+                }
+                if (data.steps) {
+                    data.steps.forEach((checked, index) => {
+                        if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                    });
+                }
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
+        });
+        
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveFunds(); }
+        
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+        
+        document.getElementById('notes').addEventListener('input', saveFunds);
     </script>
 </body>
 </html>
