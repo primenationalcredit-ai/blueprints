@@ -1,117 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Find Your Accountability Partner | ASAP Playbook</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial,sans-serif;background:#f5f7fa;color:#333;line-height:1.6}.container{max-width:800px;margin:0 auto;padding:20px}.header{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:30px;border-radius:10px 10px 0 0;text-align:center}.header h1{font-size:28px;margin-bottom:10px}.header p{opacity:.9;font-size:16px}.content{background:#fff;padding:30px;border-radius:0 0 10px 10px;box-shadow:0 2px 10px rgba(0,0,0,.1)}.section{margin-bottom:30px}.section h2{color:#667eea;font-size:20px;margin-bottom:15px;padding-bottom:10px;border-bottom:2px solid #eee}.step{background:#f8f9fa;padding:15px;border-radius:8px;margin-bottom:15px;border-left:4px solid #667eea}.step h3{color:#333;margin-bottom:8px}.step p{color:#666;font-size:14px}.checklist{list-style:none;padding:0}.checklist li{padding:12px 15px;background:#fff;margin-bottom:8px;border-radius:6px;border:1px solid #e0e0e0;display:flex;align-items:center;gap:10px}.checklist input[type="checkbox"]{width:20px;height:20px;cursor:pointer;flex-shrink:0}.tip-box{background:#fff3cd;border:1px solid #ffc107;padding:15px;border-radius:8px;margin:15px 0}.tip-box strong{color:#856404}.success-box{background:#d4edda;border:1px solid #c3e6cb;padding:15px;border-radius:8px;margin:15px 0}.success-box strong{color:#155724}.script-box{background:#e8f4f8;border:2px solid #17a2b8;border-radius:8px;padding:20px;margin:15px 0}.script-box h4{color:#17a2b8;margin-bottom:10px}.script-box p{font-style:italic;color:#333;margin-bottom:10px;padding:10px;background:#fff;border-radius:5px}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accountability Partner Guide - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #9c27b0, #7b1fa2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; font-size: 1.5em; }
+        .card h2 .icon { font-size: 1.3em; }
+        .achieve-box { background: linear-gradient(135deg, #f3e5f5, #e1bee7); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #6a1b9a; font-size: 1.1em; line-height: 1.8; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .comparison-box { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
+        .comparison-good { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 12px; padding: 20px; border-top: 4px solid #4caf50; }
+        .comparison-bad { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-radius: 12px; padding: 20px; border-top: 4px solid #f44336; }
+        .comparison-good h4 { color: #2e7d32; margin-bottom: 10px; }
+        .comparison-bad h4 { color: #c62828; margin-bottom: 10px; }
+        .comparison-good p, .comparison-bad p { font-size: 0.95em; margin: 5px 0; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #f3e5f5; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #9c27b0; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #9c27b0; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.6; }
+        .script-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 12px; padding: 20px; margin: 15px 0; border-left: 4px solid #2196f3; }
+        .script-box h4 { color: #1565c0; margin-bottom: 10px; }
+        .script-box p { color: #0d47a1; font-style: italic; line-height: 1.8; }
+        .copy-btn { background: #2196f3; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 0.85em; margin-top: 10px; }
+        .copy-btn:hover { background: #1565c0; }
+        .copy-btn.copied { background: #4caf50; }
+        .worksheet-section { background: linear-gradient(135deg, #f3e5f5, #e1bee7); border-radius: 15px; padding: 25px; margin: 20px 0; }
+        .worksheet-section h3 { color: #6a1b9a; margin-bottom: 20px; }
+        .action-item { background: white; border-radius: 10px; padding: 15px; margin: 10px 0; }
+        .action-item label { display: block; color: #6a1b9a; font-weight: 600; margin-bottom: 8px; }
+        .action-item input, .action-item textarea { width: 100%; padding: 12px; border: 2px solid #e1bee7; border-radius: 8px; font-size: 1em; font-family: inherit; }
+        .action-item textarea { min-height: 100px; resize: vertical; }
+        .action-item input:focus, .action-item textarea:focus { outline: none; border-color: #9c27b0; }
+        .partner-option { background: white; border-radius: 10px; padding: 15px; margin: 10px 0; display: flex; align-items: center; gap: 15px; cursor: pointer; border: 2px solid transparent; transition: all 0.2s; }
+        .partner-option:hover { border-color: #e1bee7; }
+        .partner-option.selected { border-color: #9c27b0; background: #fce4ec; }
+        .partner-option .option-check { width: 24px; height: 24px; border: 2px solid #9c27b0; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: transparent; flex-shrink: 0; }
+        .partner-option.selected .option-check { background: #9c27b0; color: white; }
+        .checkin-preview { background: white; border-radius: 10px; padding: 20px; margin: 15px 0; border: 2px dashed #9c27b0; }
+        .checkin-preview h4 { color: #6a1b9a; margin-bottom: 15px; }
+        .checkin-field { margin: 10px 0; }
+        .checkin-field label { display: block; color: #666; font-size: 0.9em; margin-bottom: 5px; }
+        .checkin-field input { width: 100%; padding: 10px; border: 2px solid #e0e0e0; border-radius: 6px; }
+        .checkin-field input:focus { outline: none; border-color: #9c27b0; }
+        .generate-btn { background: linear-gradient(135deg, #9c27b0, #7b1fa2); color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-size: 1em; margin-top: 15px; width: 100%; }
+        .generate-btn:hover { opacity: 0.9; }
+        .generated-message { background: #f8f9fa; border-radius: 10px; padding: 15px; margin-top: 15px; font-family: monospace; white-space: pre-wrap; display: none; }
+        .progress-tracker { background: linear-gradient(135deg, #9c27b0, #7b1fa2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #9c27b0, #7b1fa2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+        @media (max-width: 600px) { .comparison-box { grid-template-columns: 1fr; } }
+    </style>
 </head>
 <body>
-<div class="container">
-<div class="header">
-<h1>👥 Find Your Accountability Partner</h1>
-<p>People with accountability partners are 65% more likely to reach their goals</p>
-</div>
-<div class="content">
-<div class="section">
-<h2>Why This Works</h2>
-<p>When you commit to someone else, you're more likely to follow through. An accountability partner provides support, celebrates wins, and helps you stay honest. Studies show this ONE step dramatically increases success rates.</p>
-</div>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Playbooks</a>
+        
+        <div class="header">
+            <h1>🤝 Accountability Partner Guide</h1>
+            <p class="subtitle">The secret weapon that turns 35% success into 95% success!</p>
+            <div class="time-badge">⏱️ 15 minutes • 📈 3X your success rate!</div>
+        </div>
 
-<div class="success-box">
-<strong>📊 The Research:</strong> People who share their goals with a friend are 65% more likely to achieve them. Weekly check-ins increase that to 95%!
-</div>
+        <div class="card">
+            <h2><span class="icon">🎯</span> Why This Works So Well</h2>
+            <div class="achieve-box">
+                <p><strong>Here's the research:</strong> When you keep goals to yourself, you only have a 35% chance of reaching them. But when you tell someone and check in weekly? Your success rate jumps to 95%!</p>
+            </div>
+            <div class="income-highlight">
+                <h3>35% → 95% Success Rate!</h3>
+                <p>Just by having someone check in with you weekly</p>
+            </div>
+        </div>
 
-<div class="section">
-<h2>Who Makes a Good Partner?</h2>
-<ul class="checklist">
-<li><input type="checkbox"> <span><strong>Someone you trust</strong> - They'll see your real numbers</span></li>
-<li><input type="checkbox"> <span><strong>Someone supportive</strong> - Not judgmental or critical</span></li>
-<li><input type="checkbox"> <span><strong>Someone reliable</strong> - Will actually respond to check-ins</span></li>
-<li><input type="checkbox"> <span><strong>Someone honest</strong> - Will call you out when needed</span></li>
-</ul>
-</div>
+        <div class="card">
+            <h2><span class="icon">👥</span> What Makes a Good Partner?</h2>
+            <div class="comparison-box">
+                <div class="comparison-good">
+                    <h4>✅ Good Partners</h4>
+                    <p>• Someone you trust</p>
+                    <p>• Someone supportive</p>
+                    <p>• Someone reliable</p>
+                    <p>• Someone honest</p>
+                </div>
+                <div class="comparison-bad">
+                    <h4>❌ Avoid These</h4>
+                    <p>• People who judge you</p>
+                    <p>• People who won't respond</p>
+                    <p>• People who compete</p>
+                    <p>• People who enable bad habits</p>
+                </div>
+            </div>
+        </div>
 
-<div class="section">
-<h2>Good Candidates</h2>
-<div class="step">
-<h3>Best Options:</h3>
-<p>Spouse/Partner • Close friend • Sibling • Parent • Coworker you trust • Someone also working on finances</p>
-</div>
-<div class="step">
-<h3>Avoid:</h3>
-<p>Anyone who enables bad spending • People who judge or shame • Anyone who's not reliable with communication</p>
-</div>
-</div>
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Setup Steps</h2>
+            
+            <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 1: List 3 Possible Partners</div><div class="step-desc">Fill out the worksheet below with 3 people you could ask.</div></div></div>
+            <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 2: Reach Out TODAY</div><div class="step-desc">Copy the script below and send it to Person #1. If they say no, try #2.</div></div></div>
+            <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 3: Agree on Check-In Day</div><div class="step-desc">Pick a day and time (Sunday evening works great). Set a phone reminder!</div></div></div>
+            <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 4: Share Your Goal</div><div class="step-desc">Tell them your specific 90-day goal. Be specific with numbers and dates!</div></div></div>
+            <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 5: Send First Check-In</div><div class="step-desc">Use the check-in generator below and send within 24 hours!</div></div></div>
+        </div>
 
-<div class="section">
-<h2>How to Ask - The Script</h2>
-<div class="script-box">
-<h4>The Opening:</h4>
-<p>"Hey [Name], I'm working on getting my finances under control and I need some help. Would you be willing to be my accountability partner?"</p>
-<h4>Explain What It Means:</h4>
-<p>"All I need is someone to check in with once a week - just a quick text. I'll share my wins and struggles, and it helps me stay on track knowing someone's in my corner."</p>
-<h4>Make It Easy:</h4>
-<p>"It's literally just responding to a text once a week. You don't need to give advice or anything - just knowing you're there helps me stay accountable."</p>
-</div>
-</div>
+        <div class="card">
+            <h2><span class="icon">👤</span> Worksheet 1: Choose Your Partner</h2>
+            <div class="worksheet-section">
+                <div class="partner-option" onclick="selectPartner(this)"><div class="option-check">✓</div><input type="text" id="partner1" placeholder="Person #1: Name (e.g., Sarah - best friend)" onclick="event.stopPropagation()" oninput="saveAllData()" style="flex:1; padding:10px; border:2px solid #e0e0e0; border-radius:6px;"></div>
+                <div class="partner-option" onclick="selectPartner(this)"><div class="option-check">✓</div><input type="text" id="partner2" placeholder="Person #2: Name (e.g., Mike - brother)" onclick="event.stopPropagation()" oninput="saveAllData()" style="flex:1; padding:10px; border:2px solid #e0e0e0; border-radius:6px;"></div>
+                <div class="partner-option" onclick="selectPartner(this)"><div class="option-check">✓</div><input type="text" id="partner3" placeholder="Person #3: Name (e.g., Jen - coworker)" onclick="event.stopPropagation()" oninput="saveAllData()" style="flex:1; padding:10px; border:2px solid #e0e0e0; border-radius:6px;"></div>
+                <div class="action-item" style="margin-top:20px;"><label>✅ Who Said Yes?</label><input type="text" id="confirmed" placeholder="e.g., Sarah agreed on Jan 5th!" oninput="saveAllData()"></div>
+            </div>
+        </div>
 
-<div class="section">
-<h2>Step 1: Choose Your Partner</h2>
-<ul class="checklist">
-<li><input type="checkbox"> <span>Write down 3 people who might be a good fit</span></li>
-<li><input type="checkbox"> <span>Pick the one you feel most comfortable sharing finances with</span></li>
-<li><input type="checkbox"> <span>Reach out to them TODAY (don't wait!)</span></li>
-</ul>
-</div>
+        <div class="card">
+            <h2><span class="icon">💬</span> Script: What to Say</h2>
+            <div class="script-box">
+                <h4>📱 Text Message (Copy This!):</h4>
+                <p id="script-text">"Hey! I'm working on getting my finances together and I could really use some help staying on track. Would you be willing to be my accountability partner? It's literally just responding to one text per week where I share how I'm doing. You don't have to give advice - just knowing someone's checking in helps me stay focused. Let me know! 🙏"</p>
+                <button class="copy-btn" onclick="copyScript()">📋 Copy Message</button>
+            </div>
+        </div>
 
-<div class="section">
-<h2>Step 2: Set Up Your Check-In System</h2>
-<ul class="checklist">
-<li><input type="checkbox"> <span>Agree on a check-in day (Sunday evenings work great)</span></li>
-<li><input type="checkbox"> <span>Choose a method: Text, call, or in-person</span></li>
-<li><input type="checkbox"> <span>Set a recurring reminder on your phone</span></li>
-<li><input type="checkbox"> <span>Share your 90-day financial goal with them</span></li>
-</ul>
-</div>
+        <div class="card">
+            <h2><span class="icon">🎯</span> Worksheet 2: Your 90-Day Goal</h2>
+            <div class="worksheet-section">
+                <div class="action-item"><label>My Specific 90-Day Money Goal:</label><input type="text" id="my-goal" placeholder="e.g., Save $1,500 for emergency fund by March 15th" oninput="saveAllData()"></div>
+                <div class="action-item"><label>Why This Goal Matters to Me:</label><textarea id="goal-why" placeholder="e.g., I want to stop stressing about unexpected expenses..." oninput="saveAllData()"></textarea></div>
+                <div class="action-item"><label>Check-In Day & Time:</label><input type="text" id="checkin-time" placeholder="e.g., Every Sunday at 7pm" oninput="saveAllData()"></div>
+            </div>
+        </div>
 
-<div class="section">
-<h2>Weekly Check-In Template</h2>
-<div class="script-box">
-<h4>Send This Every Week:</h4>
-<p>"Weekly Money Check-In 📊<br><br>
-This week I spent: $___<br>
-Win: [Something you did well]<br>
-Struggle: [Something you're working on]<br>
-Next week's focus: [One specific goal]<br><br>
-Thanks for keeping me accountable! 💪"</p>
-</div>
-</div>
+        <div class="card">
+            <h2><span class="icon">📊</span> Worksheet 3: Weekly Check-In Generator</h2>
+            <p style="color:#666;margin-bottom:15px;">Fill this out, then click "Generate" to create a ready-to-send message!</p>
+            <div class="worksheet-section">
+                <div class="checkin-preview">
+                    <div class="checkin-field"><label>💰 This week I spent: $____ (goal was $____)</label><input type="text" id="spent" placeholder="e.g., $380 (goal was $400)" oninput="saveAllData()"></div>
+                    <div class="checkin-field"><label>🏆 My Win This Week:</label><input type="text" id="win" placeholder="e.g., Packed lunch every day" oninput="saveAllData()"></div>
+                    <div class="checkin-field"><label>😅 My Struggle This Week:</label><input type="text" id="struggle" placeholder="e.g., Almost bought shoes I didn't need" oninput="saveAllData()"></div>
+                    <div class="checkin-field"><label>🎯 Next Week's Focus:</label><input type="text" id="focus" placeholder="e.g., Finding cheaper car insurance" oninput="saveAllData()"></div>
+                    <div class="checkin-field"><label>📈 Progress Toward Goal:</label><input type="text" id="progress" placeholder="e.g., $350 saved toward $1,500!" oninput="saveAllData()"></div>
+                    <button class="generate-btn" onclick="generateCheckin()">✨ Generate Check-In Message (Copies to Clipboard!)</button>
+                    <div class="generated-message" id="generated-message"></div>
+                </div>
+            </div>
+        </div>
 
-<div class="tip-box">
-<strong>💡 Pro Tip:</strong> If you can't find a person, join an online community or Facebook group focused on debt-free living. The r/personalfinance subreddit is also supportive!
-</div>
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 5 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
 
-<div class="section">
-<h2>After You Have a Partner</h2>
-<ul class="checklist">
-<li><input type="checkbox"> <span>Send your first check-in within 24 hours</span></li>
-<li><input type="checkbox"> <span>Share your specific 90-day goal</span></li>
-<li><input type="checkbox"> <span>Be honest - the more real you are, the more it helps</span></li>
-<li><input type="checkbox"> <span>Thank them regularly for their support</span></li>
-<li><input type="checkbox"> <span>Offer to be their accountability partner too!</span></li>
-</ul>
-</div>
-</div>
-</div>
-<script>
-document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
-  const key = 'playbook_accountability_' + cb.closest('li').innerText.substring(0,25);
-  cb.checked = localStorage.getItem(key) === 'true';
-  cb.addEventListener('change', () => localStorage.setItem(key, cb.checked));
-});
-</script>
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', loadAllData);
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveAllData(); }
+        function selectPartner(el) { document.querySelectorAll('.partner-option').forEach(p => p.classList.remove('selected')); el.classList.add('selected'); saveAllData(); }
+        function copyScript() {
+            navigator.clipboard.writeText(document.getElementById('script-text').innerText).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                btn.textContent = '✅ Copied!'; btn.classList.add('copied');
+                setTimeout(() => { btn.textContent = '📋 Copy Message'; btn.classList.remove('copied'); }, 2000);
+            });
+        }
+        function generateCheckin() {
+            const msg = `📊 Weekly Money Check-In\n\nHey! Here's my weekly update:\n\n💰 This week: ${document.getElementById('spent').value || '[amount]'}\n\n🏆 Win: ${document.getElementById('win').value || '[win]'}\n\n😅 Struggle: ${document.getElementById('struggle').value || '[struggle]'}\n\n🎯 Next week: ${document.getElementById('focus').value || '[focus]'}\n\n📈 Progress: ${document.getElementById('progress').value || '[progress]'}\n\nThanks for keeping me accountable! 💪`;
+            document.getElementById('generated-message').textContent = msg;
+            document.getElementById('generated-message').style.display = 'block';
+            navigator.clipboard.writeText(msg).then(() => {
+                const btn = document.querySelector('.generate-btn');
+                btn.textContent = '✅ Copied to Clipboard!';
+                setTimeout(() => { btn.textContent = '✨ Generate Check-In Message (Copies to Clipboard!)'; }, 2000);
+            });
+        }
+        function updateProgress() {
+            const done = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = done;
+            document.getElementById('progressFill').style.width = (done / 5 * 100) + '%';
+        }
+        function saveAllData() {
+            const sel = document.querySelector('.partner-option.selected');
+            localStorage.setItem('playbook-accountability-partner', JSON.stringify({
+                steps: Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked')),
+                selectedPartner: sel ? Array.from(document.querySelectorAll('.partner-option')).indexOf(sel) : -1,
+                partner1: document.getElementById('partner1').value, partner2: document.getElementById('partner2').value, partner3: document.getElementById('partner3').value, confirmed: document.getElementById('confirmed').value,
+                goal: document.getElementById('my-goal').value, why: document.getElementById('goal-why').value, time: document.getElementById('checkin-time').value,
+                spent: document.getElementById('spent').value, win: document.getElementById('win').value, struggle: document.getElementById('struggle').value, focus: document.getElementById('focus').value, progress: document.getElementById('progress').value
+            }));
+        }
+        function loadAllData() {
+            const d = JSON.parse(localStorage.getItem('playbook-accountability-partner') || '{}');
+            if (d.steps) d.steps.forEach((c,i) => { if(c) document.querySelectorAll('.step-checkbox')[i]?.classList.add('checked'); });
+            if (d.selectedPartner >= 0) document.querySelectorAll('.partner-option')[d.selectedPartner]?.classList.add('selected');
+            ['partner1','partner2','partner3','confirmed','my-goal','goal-why','checkin-time','spent','win','struggle','focus','progress'].forEach(id => {
+                const el = document.getElementById(id.replace('my-goal','my-goal').replace('goal-why','goal-why').replace('checkin-time','checkin-time'));
+                if (el && d[id.replace(/-/g,'')]) el.value = d[id.replace(/-/g,'')];
+            });
+            if(d.goal) document.getElementById('my-goal').value = d.goal;
+            if(d.why) document.getElementById('goal-why').value = d.why;
+            if(d.time) document.getElementById('checkin-time').value = d.time;
+            updateProgress();
+        }
+    </script>
 </body>
 </html>

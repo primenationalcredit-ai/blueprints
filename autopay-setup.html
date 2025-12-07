@@ -3,587 +3,410 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autopay Setup Guide - ASAP Financial Playbook</title>
+    <title>Autopay Setup Guide - Never Miss a Payment - ASAP Financial Playbook</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
-        .container { max-width: 900px; margin: 0 auto; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; }
         .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
         .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
         .header .subtitle { color: #666; font-size: 1.2em; }
-        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #ff9800, #f57c00); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
         .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
-        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
-        .card h2 .icon { font-size: 1.5em; }
-        .achieve-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
-        .achieve-box p { color: #1565c0; font-size: 1.1em; line-height: 1.8; }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; font-size: 1.5em; }
+        .card h2 .icon { font-size: 1.3em; }
+        .achieve-box { background: linear-gradient(135deg, #fff3e0, #ffe0b2); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #e65100; font-size: 1.1em; line-height: 1.8; }
         .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
-        .income-highlight h3 { font-size: 2.2em; margin-bottom: 10px; }
+        .income-highlight h3 { font-size: 2em; margin-bottom: 10px; }
         .income-highlight p { font-size: 1.1em; opacity: 0.95; }
-        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; text-align: center; }
-        .benefit-card { background: #f8f9fa; border-radius: 15px; padding: 20px; }
-        .benefit-card .emoji { font-size: 2em; margin-bottom: 10px; }
-        .benefit-card h4 { color: #1a1a2e; font-size: 0.95em; margin-bottom: 5px; }
-        .benefit-card p { color: #666; font-size: 0.85em; }
-        .step { display: flex; gap: 15px; margin-bottom: 25px; padding: 25px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
-        .step:hover { background: #e3f2fd; }
-        .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; margin-top: 5px; }
-        .step-checkbox.checked { background: #667eea; color: white; }
+        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 5px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .warning-box h4 { color: #c62828; margin-bottom: 10px; }
+        .warning-box p { color: #b71c1c; margin: 8px 0; }
+        .success-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-left: 5px solid #4caf50; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .success-box h4 { color: #2e7d32; margin-bottom: 10px; }
+        .success-box p { color: #1b5e20; margin: 8px 0; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #fff3e0; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #ff9800; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #ff9800; color: white; }
         .step-content { flex: 1; }
-        .step-title { font-weight: 700; color: #1a1a2e; font-size: 1.2em; margin-bottom: 10px; }
-        .step-desc { color: #444; line-height: 1.8; font-size: 1.05em; }
-        .step-details { background: #fff; border: 2px solid #e0e0e0; border-radius: 10px; padding: 15px; margin-top: 15px; }
-        .step-details h5 { color: #667eea; margin-bottom: 10px; font-size: 1em; }
-        .step-details ul { margin-left: 20px; color: #555; }
-        .step-details li { margin-bottom: 10px; line-height: 1.7; }
-        .how-to-box { background: #f0f0f0; border-radius: 10px; padding: 15px; margin: 10px 0; border-left: 4px solid #667eea; }
-        .how-to-box h6 { color: #667eea; margin-bottom: 8px; font-size: 1em; }
-        .how-to-box ol { margin-left: 20px; color: #444; }
-        .how-to-box li { margin-bottom: 5px; line-height: 1.6; }
-        .credit-card-warning { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-radius: 15px; padding: 25px; margin: 20px 0; border: 3px solid #f44336; }
-        .credit-card-warning h3 { color: #c62828; margin-bottom: 15px; }
-        .cc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px; }
-        .cc-card { border-radius: 15px; padding: 20px; }
-        .cc-card.good { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-left: 5px solid #4caf50; }
-        .cc-card.bad { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 5px solid #f44336; }
-        .cc-card h4 { margin-bottom: 10px; }
-        .cc-card.good h4 { color: #2e7d32; }
-        .cc-card.bad h4 { color: #c62828; }
-        .cc-card ul { list-style: none; color: #555; }
-        .cc-card li { padding: 5px 0; line-height: 1.5; }
-        .discount-table { width: 100%; border-collapse: collapse; margin: 20px 0; border-radius: 15px; overflow: hidden; }
-        .discount-table th { background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px; text-align: left; }
-        .discount-table td { padding: 12px 15px; border-bottom: 1px solid #e0e0e0; }
-        .discount-table tr:nth-child(even) { background: #f8f9fa; }
-        .discount-table .savings { color: #4caf50; font-weight: 700; }
-        .checklist-section { background: #f8f9fa; border-radius: 15px; padding: 20px; margin: 20px 0; }
-        .checklist-section h4 { color: #1a1a2e; margin-bottom: 15px; }
-        .checklist-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
-        .checklist-item { display: flex; align-items: center; gap: 10px; padding: 10px; background: white; border-radius: 10px; cursor: pointer; }
-        .checklist-item:hover { background: #e3f2fd; }
-        .checklist-item input { width: 20px; height: 20px; }
-        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 20px 0; }
-        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; font-size: 1.1em; }
-        .pro-tip p { color: #555; margin: 8px 0; line-height: 1.7; }
-        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
-        .warning-box-title { font-weight: 700; color: #c62828; margin-bottom: 10px; }
-        .warning-box p { color: #555; margin: 8px 0; line-height: 1.6; }
-        .info-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-left: 4px solid #4caf50; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
-        .info-box-title { font-weight: 700; color: #2e7d32; margin-bottom: 10px; }
-        .info-box p { color: #555; margin: 8px 0; line-height: 1.6; }
-        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.6; }
+        .comparison-box { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
+        .comparison-good { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 12px; padding: 20px; border-top: 4px solid #4caf50; }
+        .comparison-bad { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-radius: 12px; padding: 20px; border-top: 4px solid #f44336; }
+        .comparison-good h4 { color: #2e7d32; margin-bottom: 10px; }
+        .comparison-bad h4 { color: #c62828; margin-bottom: 10px; }
+        .comparison-good p, .comparison-bad p { font-size: 0.95em; margin: 5px 0; }
+        
+        /* Interactive Worksheet Styles */
+        .worksheet-section { background: linear-gradient(135deg, #fff3e0, #ffe0b2); border-radius: 15px; padding: 25px; margin: 20px 0; }
+        .worksheet-section h3 { color: #e65100; margin-bottom: 20px; }
+        .bill-entry { background: white; border-radius: 10px; padding: 15px; margin: 10px 0; display: grid; grid-template-columns: auto 1fr 100px 100px auto; gap: 10px; align-items: center; }
+        .bill-entry .bill-check { width: 24px; height: 24px; border: 2px solid #ff9800; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: transparent; }
+        .bill-entry.done .bill-check { background: #4caf50; border-color: #4caf50; color: white; }
+        .bill-entry input { padding: 8px; border: 2px solid #e0e0e0; border-radius: 6px; font-size: 0.95em; }
+        .bill-entry input:focus { outline: none; border-color: #ff9800; }
+        .bill-entry select { padding: 8px; border: 2px solid #e0e0e0; border-radius: 6px; background: white; }
+        .bill-category { background: #f8f9fa; border-radius: 10px; padding: 15px; margin: 15px 0; }
+        .bill-category h4 { color: #e65100; margin-bottom: 15px; font-size: 1.1em; }
+        .add-btn { background: #ff9800; color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-size: 0.95em; margin-top: 10px; }
+        .add-btn:hover { background: #f57c00; }
+        .total-box { background: linear-gradient(135deg, #ff9800, #f57c00); color: white; border-radius: 10px; padding: 20px; margin-top: 15px; text-align: center; }
+        .total-box h4 { font-size: 1em; margin-bottom: 10px; opacity: 0.9; }
+        .total-box .amount { font-size: 2em; font-weight: bold; }
+        .action-item { background: white; border-radius: 10px; padding: 15px; margin: 10px 0; }
+        .action-item label { display: block; color: #e65100; font-weight: 600; margin-bottom: 8px; }
+        .action-item input { width: 100%; padding: 12px; border: 2px solid #ffe0b2; border-radius: 8px; font-size: 1em; }
+        .action-item input:focus { outline: none; border-color: #ff9800; }
+        
+        .progress-tracker { background: linear-gradient(135deg, #ff9800, #f57c00); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
         .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
         .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
         .progress-text { font-size: 1.2em; font-weight: 600; }
-        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 150px; resize: vertical; }
-        .notes-section textarea:focus { outline: none; border-color: #667eea; }
         .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
-        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #ff9800, #f57c00); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
         .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
-        @media (max-width: 600px) {
-            .cc-grid { grid-template-columns: 1fr; }
+        
+        @media (max-width: 700px) {
+            .bill-entry { grid-template-columns: auto 1fr; }
+            .comparison-box { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="income-playbooks.html" class="back-link">← Back to Playbooks</a>
+        <a href="index.html" class="back-link">← Back to Playbooks</a>
         
         <div class="header">
             <h1>⚡ Autopay Setup Guide</h1>
-            <p class="subtitle">Never miss a payment or pay a late fee EVER again!</p>
-            <div class="time-badge">⏱️ 30-60 min setup • 💰 Save $200-500/year • Protect your credit!</div>
+            <p class="subtitle">Never miss a payment or pay a late fee again!</p>
+            <div class="time-badge">⏱️ 30-60 minutes • 💰 Save $200-500/year!</div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <h2><span class="icon">🎯</span> Why Autopay Changes Everything</h2>
             <div class="achieve-box">
-                <p><strong>Late fees are EXPENSIVE!</strong> Most bills charge $25-50 if you're even one day late. Miss a few payments per year and you've lost $100-200+ for nothing!</p>
-                <p style="margin-top: 15px;"><strong>Even worse:</strong> Late payments can hurt your credit score! Payment history is 35% of your credit score - the biggest factor. One late payment can drop your score 50-100 points!</p>
-                <p style="margin-top: 15px;"><strong">The fix is easy:</strong> Set up autopay ONCE and never worry again. Your bills pay themselves automatically on time, every time. Plus, many companies give you a DISCOUNT just for using autopay!</p>
+                <p><strong>Autopay means your bills pay themselves.</strong> You set it up once, and the money automatically leaves your account on the due date. No more forgetting. No more late fees. No more damaged credit. Plus, many companies give you a DISCOUNT just for using autopay!</p>
             </div>
             <div class="income-highlight">
-                <h3">Save $200-500+/Year!</h3>
-                <p>Late fees avoided + autopay discounts + perfect credit score = real money saved!</p>
+                <h3>Save $200-500/Year!</h3>
+                <p>Late fees avoided + autopay discounts = real money in your pocket!</p>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">✨</span> Benefits of Autopay</h2>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="emoji">🚫</div>
-                    <h4">No More Late Fees</h4>
-                    <p>Save $25-50 per missed payment!</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="emoji">📊</div>
-                    <h4">Protect Credit Score</h4>
-                    <p">On-time = 35% of your score!</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="emoji">💰</div>
-                    <h4">Autopay Discounts</h4>
-                    <p">Many offer $5-20/month off!</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="emoji">🧠</div>
-                    <h4">Less Mental Load</h4>
-                    <p">Never worry about due dates!</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="emoji">⏰</div>
-                    <h4">Save Time</h4>
-                    <p">No manual payments monthly!</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="emoji">📱</div>
-                    <h4">Set It & Forget It</h4>
-                    <p">One-time setup, forever benefits!</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2><span class="icon">💳</span> CRITICAL: Credit Card Autopay Rules!</h2>
-            <div class="credit-card-warning">
-                <h3">⚠️ READ THIS BEFORE SETTING UP CREDIT CARD AUTOPAY!</h3>
-                <div class="cc-grid">
-                    <div class="cc-card good">
-                        <h4">✅ ALWAYS: Pay FULL Statement Balance</h4>
-                        <ul>
-                            <li>✓ Pay $0 in interest charges</li>
-                            <li>✓ Balance goes to $0 each month</li>
-                            <li>✓ Best for your credit score</li>
-                            <li>✓ Still get grace period on new purchases</li>
-                            <li>✓ <strong">This is what you want!</strong></li>
-                        </ul>
-                    </div>
-                    <div class="cc-card bad">
-                        <h4">❌ NEVER: Pay Minimum Only</h4>
-                        <ul>
-                            <li>✗ Pay 20-30% APR interest!</li>
-                            <li>✗ Takes YEARS to pay off</li>
-                            <li>✗ $1,000 balance = $200+/year in interest</li>
-                            <li>✗ Your debt GROWS instead of shrinks</li>
-                            <li>✗ <strong">This is a TRAP!</strong></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <h2><span class="icon">⚠️</span> Credit Card Rule: FULL BALANCE Only!</h2>
             
+            <div class="comparison-box">
+                <div class="comparison-good">
+                    <h4>✅ DO THIS: Full Statement Balance</h4>
+                    <p>• Pay $0 in interest</p>
+                    <p>• Balance goes to $0</p>
+                    <p>• Best for credit score</p>
+                    <p>• No debt builds up</p>
+                </div>
+                <div class="comparison-bad">
+                    <h4>❌ NOT THIS: Minimum Payment</h4>
+                    <p>• Pay 20-30% interest</p>
+                    <p>• Takes YEARS to pay off</p>
+                    <p>• Costs hundreds extra</p>
+                    <p>• Debt grows and grows</p>
+                </div>
+            </div>
+
             <div class="warning-box">
-                <div class="warning-box-title">⚠️ If You Currently Carry a Credit Card Balance...</div>
-                <p">If you have credit card debt you can't pay off each month, DON'T set up autopay for the full balance yet. Instead:</p>
-                <p style="margin-top: 10px;">• Set a <strong">calendar reminder</strong> for each due date</p>
-                <p">• Pay as much as you can manually each month</p>
-                <p">• Focus on paying down the debt first</p>
-                <p">• THEN switch to full-balance autopay when you can pay it off monthly</p>
+                <h4>🚨 Example: Why Minimum Payment Is a Trap</h4>
+                <p>$3,000 credit card balance at 24% interest:</p>
+                <p>• Minimum payment only = 17 YEARS to pay off, $4,700 in interest!</p>
+                <p>• Full balance = $0 interest, paid in full each month</p>
             </div>
         </div>
 
         <div class="card">
-            <h2><span class="icon">💰</span> Autopay Discounts - Free Money!</h2>
-            <p style="color: #666; margin-bottom: 15px;">Many companies will PAY YOU to set up autopay:</p>
-            
-            <table class="discount-table">
-                <tr>
-                    <th">Bill Type</th>
-                    <th">Typical Discount</th>
-                    <th">Annual Savings</th>
-                </tr>
-                <tr>
-                    <td">📱 Cell Phone (Verizon, AT&T, T-Mobile)</td>
-                    <td">$5-10/month</td>
-                    <td class="savings">$60-120/year</td>
-                </tr>
-                <tr>
-                    <td">🌐 Internet</td>
-                    <td">$5/month (+ paperless)</td>
-                    <td class="savings">$60/year</td>
-                </tr>
-                <tr>
-                    <td">🚗 Car Insurance</td>
-                    <td">3-5% + pay-in-full discount</td>
-                    <td class="savings">$50-200/year</td>
-                </tr>
-                <tr>
-                    <td">💡 Utilities</td>
-                    <td">$1-5/month (varies)</td>
-                    <td class="savings">$12-60/year</td>
-                </tr>
-                <tr>
-                    <td">📚 Student Loans</td>
-                    <td">0.25-0.50% interest reduction</td>
-                    <td class="savings">$50-200+/year</td>
-                </tr>
-                <tr>
-                    <td"><strong">TOTAL POTENTIAL</strong></td>
-                    <td"></td>
-                    <td class="savings"><strong">$232-640+/year!</strong></td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="card">
-            <h2><span class="icon">📋</span> Your Step-by-Step Action Plan</h2>
+            <h2><span class="icon">📋</span> Your Setup Steps</h2>
             
             <div class="step" data-step="1">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Step 1: List ALL Your Recurring Bills</div>
-                    <div class="step-desc">Make a complete list of every bill you pay. Check your bank statements!</div>
-                    <div class="step-details">
-                        <h5">📝 Find Every Bill:</h5>
-                        <ul>
-                            <li><strong">Open your bank statements</strong> from the last 2-3 months</li>
-                            <li><strong">Look for recurring charges:</strong> Same amount, same day each month</li>
-                            <li><strong">Common bills to find:</strong>
-                                <ul style="margin-top: 10px;">
-                                    <li>Rent/Mortgage</li>
-                                    <li>Electric, Gas, Water</li>
-                                    <li>Internet, Phone</li>
-                                    <li>Car payment, Car insurance</li>
-                                    <li">Health insurance, Renters insurance</li>
-                                    <li>Credit cards (each one!)</li>
-                                    <li">Subscriptions (Netflix, Spotify, gym, etc.)</li>
-                                    <li">Student loans</li>
-                                </ul>
-                            </li>
-                            <li><strong">Write them ALL down</strong> - use the notes section at the bottom!</li>
-                        </ul>
-                    </div>
+                    <div class="step-title">Step 1: List All Your Bills</div>
+                    <div class="step-desc">Use the worksheet below to list every recurring bill you have.</div>
                 </div>
             </div>
 
             <div class="step" data-step="2">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Step 2: Write Down Due Dates and Amounts</div>
-                    <div class="step-desc">For each bill, note when it's due and how much it typically costs.</div>
-                    <div class="step-details">
-                        <h5">📅 Organize Your Bills:</h5>
-                        <ul>
-                            <li"><strong">Find the due date</strong> for each bill (check statements or log into each account)</li>
-                            <li"><strong">Note the typical amount</strong> (some vary like electric, note the average)</li>
-                            <li"><strong">Group by timing:</strong>
-                                <ul style="margin-top: 10px;">
-                                    <li">Bills due 1st-15th of month</li>
-                                    <li">Bills due 16th-31st of month</li>
-                                </ul>
-                            </li>
-                            <li"><strong">Compare to your paydays:</strong> Do bills hit AFTER you get paid?</li>
-                            <li"><strong">Add up total:</strong> What's your total monthly bills? This helps with budgeting!</li>
-                        </ul>
-                    </div>
+                    <div class="step-title">Step 2: Set Up Credit Cards (FULL BALANCE!)</div>
+                    <div class="step-desc">Log into each credit card. Find Autopay. Choose "Full Statement Balance" - never minimum!</div>
                 </div>
             </div>
 
             <div class="step" data-step="3">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Step 3: Set Up Credit Card Autopay (FULL BALANCE!)</div>
-                    <div class="step-desc">This is the most important one. Pay your full credit card balance automatically!</div>
-                    <div class="step-details">
-                        <h5">💳 How to Set Up Credit Card Autopay:</h5>
-                        <div class="how-to-box">
-                            <h6">For Each Credit Card:</h6>
-                            <ol>
-                                <li"><strong">Log into</strong> your credit card account (website or app)</li>
-                                <li"><strong">Find "Payments"</strong> or "AutoPay" or "Automatic Payments"</li>
-                                <li"><strong">Select "Pay Full Statement Balance"</strong> - NOT minimum!</li>
-                                <li"><strong">Choose payment source:</strong> Your checking account</li>
-                                <li"><strong">Enter your bank info:</strong> Routing number and account number</li>
-                                <li"><strong">Set payment date:</strong> Usually 1-3 days before due date</li>
-                                <li"><strong">Confirm and save!</strong></li>
-                                <li"><strong">Repeat for each credit card</strong> you have</li>
-                            </ol>
-                        </div>
-                    </div>
+                    <div class="step-title">Step 3: Set Up Utilities</div>
+                    <div class="step-desc">Electric, gas, water, internet - set each one to autopay through their website or app.</div>
                 </div>
             </div>
 
             <div class="step" data-step="4">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Step 4: Set Up Utilities on Autopay</div>
-                    <div class="step-desc">Electric, gas, water, trash - set them all up so you never miss a payment!</div>
-                    <div class="step-details">
-                        <h5">💡 How to Set Up Utility Autopay:</h5>
-                        <div class="how-to-box">
-                            <h6">For Each Utility Company:</h6>
-                            <ol>
-                                <li"><strong">Go to their website</strong> or call customer service</li>
-                                <li"><strong">Log into your account</strong> (create one if you haven't)</li>
-                                <li"><strong">Find "Payment Options"</strong> or "AutoPay" or "Automatic Payment"</li>
-                                <li"><strong">Choose to pay by:</strong> Bank account (ACH) or credit card</li>
-                                <li"><strong">Enter your payment info</strong></li>
-                                <li"><strong">Ask about discounts!</strong> Many offer $1-5/month off for autopay</li>
-                                <li"><strong">Also sign up for "paperless"</strong> - often gives additional discount!</li>
-                            </ol>
-                        </div>
-                        <p style="margin-top: 15px;"><strong">Utilities to set up:</strong> Electric, Gas/Propane, Water/Sewer, Trash pickup, Internet</p>
-                    </div>
+                    <div class="step-title">Step 4: Set Up Phone & Insurance</div>
+                    <div class="step-desc">Many offer $5-10/month discount for autopay! Ask when you set it up.</div>
                 </div>
             </div>
 
             <div class="step" data-step="5">
                 <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
                 <div class="step-content">
-                    <div class="step-title">Step 5: Set Up Phone and Internet (Get the Discounts!)</div>
-                    <div class="step-desc">Cell phone companies often give $5-10/month OFF just for using autopay!</div>
-                    <div class="step-details">
-                        <h5">📱 Phone & Internet Autopay:</h5>
-                        <div class="how-to-box">
-                            <h6">Cell Phone (Verizon, AT&T, T-Mobile, etc.):</h6>
-                            <ol>
-                                <li"><strong">Log into your carrier's app or website</strong></li>
-                                <li"><strong">Go to "Billing" or "Payment"</strong></li>
-                                <li"><strong">Find "Auto Pay" or "Automatic Payment"</strong></li>
-                                <li"><strong">IMPORTANT:</strong> Many carriers require you to use a <strong">debit card</strong> (not credit card) to get the discount!</li>
-                                <li"><strong">Enter your debit card or bank account info</strong></li>
-                                <li"><strong">Verify the discount:</strong> You should see "$5/line discount" or similar</li>
-                                <li"><strong">T-Mobile:</strong> $5/line off with autopay + debit/bank</li>
-                                <li"><strong">Verizon:</strong> $5-10/line depending on plan</li>
-                                <li"><strong">AT&T:</strong> $5-10/line off</li>
-                            </ol>
+                    <div class="step-title">Step 5: Keep Buffer in Checking</div>
+                    <div class="step-desc">Always keep $500+ extra in checking so autopays don't overdraft you.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- INTERACTIVE WORKSHEET: Bills -->
+        <div class="card">
+            <h2><span class="icon">📝</span> Worksheet: Your Bills & Autopay Status</h2>
+            <p style="color: #666; margin-bottom: 15px;">List all your bills. Check the box when autopay is set up. Your progress saves automatically!</p>
+            
+            <div class="worksheet-section">
+                <div class="bill-category">
+                    <h4>💳 Credit Cards (Set to FULL BALANCE!)</h4>
+                    <div id="credit-cards">
+                        <div class="bill-entry" onclick="toggleBill(this)">
+                            <div class="bill-check">✓</div>
+                            <input type="text" class="bill-name" placeholder="Card name (e.g., Chase Visa)" onclick="event.stopPropagation()" oninput="saveAllData()">
+                            <input type="number" class="bill-amount" placeholder="$ limit" onclick="event.stopPropagation()" oninput="saveAllData()">
+                            <select class="bill-status" onclick="event.stopPropagation()" onchange="saveAllData()">
+                                <option value="">Status...</option>
+                                <option value="full">✅ Full Balance</option>
+                                <option value="not">❌ Not Set Up</option>
+                            </select>
                         </div>
-                        <div class="how-to-box" style="margin-top: 15px;">
-                            <h6">Internet Provider:</h6>
-                            <ol>
-                                <li"><strong">Log into your provider's website</strong></li>
-                                <li"><strong">Go to "Billing" or "Payment Options"</strong></li>
-                                <li"><strong">Set up autopay</strong> and <strong">paperless billing</strong> together</li>
-                                <li"><strong">Many give $5-10/month off</strong> for both combined!</li>
-                            </ol>
+                        <div class="bill-entry" onclick="toggleBill(this)">
+                            <div class="bill-check">✓</div>
+                            <input type="text" class="bill-name" placeholder="Card name" onclick="event.stopPropagation()" oninput="saveAllData()">
+                            <input type="number" class="bill-amount" placeholder="$ limit" onclick="event.stopPropagation()" oninput="saveAllData()">
+                            <select class="bill-status" onclick="event.stopPropagation()" onchange="saveAllData()">
+                                <option value="">Status...</option>
+                                <option value="full">✅ Full Balance</option>
+                                <option value="not">❌ Not Set Up</option>
+                            </select>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="step" data-step="6">
-                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
-                <div class="step-content">
-                    <div class="step-title">Step 6: Set Up Insurance Payments</div>
-                    <div class="step-desc">Car, renters, health insurance - most offer autopay discounts too!</div>
-                    <div class="step-details">
-                        <h5">🚗 Insurance Autopay Tips:</h5>
-                        <ul>
-                            <li"><strong">Car Insurance:</strong> Log into your policy online → Payment Options → Set up autopay</li>
-                            <li"><strong">Ask about paying in FULL:</strong> Many insurers give 5-10% off if you pay 6 months or a year at once!</li>
-                            <li"><strong">Renters/Home Insurance:</strong> Same process - website or call your agent</li>
-                            <li"><strong">Health Insurance:</strong> If you pay premiums, set up autopay through your insurer's website</li>
-                            <li"><strong">Pro tip:</strong> Call your insurance agent and ask: "What discounts am I missing?" They often know ones you don't!</li>
-                        </ul>
+                <div class="bill-category">
+                    <h4>🏠 Housing & Utilities</h4>
+                    <div id="housing-bills">
+                        <div class="bill-entry" onclick="toggleBill(this)">
+                            <div class="bill-check">✓</div>
+                            <input type="text" class="bill-name" placeholder="Bill (e.g., Rent)" onclick="event.stopPropagation()" oninput="saveAllData()">
+                            <input type="number" class="bill-amount" placeholder="$/mo" onclick="event.stopPropagation()" oninput="calculateTotal()">
+                            <input type="text" class="bill-due" placeholder="Due date" onclick="event.stopPropagation()" oninput="saveAllData()">
+                        </div>
+                        <div class="bill-entry" onclick="toggleBill(this)">
+                            <div class="bill-check">✓</div>
+                            <input type="text" class="bill-name" placeholder="Bill (e.g., Electric)" onclick="event.stopPropagation()" oninput="saveAllData()">
+                            <input type="number" class="bill-amount" placeholder="$/mo" onclick="event.stopPropagation()" oninput="calculateTotal()">
+                            <input type="text" class="bill-due" placeholder="Due date" onclick="event.stopPropagation()" oninput="saveAllData()">
+                        </div>
+                        <div class="bill-entry" onclick="toggleBill(this)">
+                            <div class="bill-check">✓</div>
+                            <input type="text" class="bill-name" placeholder="Bill (e.g., Internet)" onclick="event.stopPropagation()" oninput="saveAllData()">
+                            <input type="number" class="bill-amount" placeholder="$/mo" onclick="event.stopPropagation()" oninput="calculateTotal()">
+                            <input type="text" class="bill-due" placeholder="Due date" onclick="event.stopPropagation()" oninput="saveAllData()">
+                        </div>
                     </div>
+                    <button class="add-btn" onclick="addBill('housing-bills')">+ Add More Bills</button>
                 </div>
-            </div>
 
-            <div class="step" data-step="7">
-                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
-                <div class="step-content">
-                    <div class="step-title">Step 7: Consider Changing Due Dates (Free to Do!)</div>
-                    <div class="step-desc">Most companies will change your due date for free - align bills with payday!</div>
-                    <div class="step-details">
-                        <h5">📅 Strategic Due Date Changes:</h5>
-                        <ul>
-                            <li"><strong">Goal:</strong> Have bills due 3-5 days AFTER your paycheck hits</li>
-                            <li"><strong">Why:</strong> Ensures money is in your account when autopay pulls</li>
-                            <li"><strong">How to change:</strong> Call customer service or look in account settings online</li>
-                            <li"><strong">Example:</strong> If you get paid on the 1st and 15th:
-                                <ul style="margin-top: 10px;">
-                                    <li">Set half your bills for the 3rd-5th</li>
-                                    <li">Set the other half for the 18th-20th</li>
-                                </ul>
-                            </li>
-                            <li"><strong">Don't stack all bills on one day!</strong> Spread them out</li>
-                            <li"><strong">Credit cards:</strong> Most let you change due date once per year online!</li>
-                        </ul>
+                <div class="bill-category">
+                    <h4>📱 Phone, Insurance & Other</h4>
+                    <div id="other-bills">
+                        <div class="bill-entry" onclick="toggleBill(this)">
+                            <div class="bill-check">✓</div>
+                            <input type="text" class="bill-name" placeholder="Bill (e.g., Phone)" onclick="event.stopPropagation()" oninput="saveAllData()">
+                            <input type="number" class="bill-amount" placeholder="$/mo" onclick="event.stopPropagation()" oninput="calculateTotal()">
+                            <input type="text" class="bill-discount" placeholder="Discount?" onclick="event.stopPropagation()" oninput="saveAllData()">
+                        </div>
+                        <div class="bill-entry" onclick="toggleBill(this)">
+                            <div class="bill-check">✓</div>
+                            <input type="text" class="bill-name" placeholder="Bill (e.g., Car Insurance)" onclick="event.stopPropagation()" oninput="saveAllData()">
+                            <input type="number" class="bill-amount" placeholder="$/mo" onclick="event.stopPropagation()" oninput="calculateTotal()">
+                            <input type="text" class="bill-discount" placeholder="Discount?" onclick="event.stopPropagation()" oninput="saveAllData()">
+                        </div>
+                        <div class="bill-entry" onclick="toggleBill(this)">
+                            <div class="bill-check">✓</div>
+                            <input type="text" class="bill-name" placeholder="Bill (e.g., Gym)" onclick="event.stopPropagation()" oninput="saveAllData()">
+                            <input type="number" class="bill-amount" placeholder="$/mo" onclick="event.stopPropagation()" oninput="calculateTotal()">
+                            <input type="text" class="bill-discount" placeholder="Discount?" onclick="event.stopPropagation()" oninput="saveAllData()">
+                        </div>
                     </div>
+                    <button class="add-btn" onclick="addBill('other-bills')">+ Add More Bills</button>
                 </div>
-            </div>
 
-            <div class="step" data-step="8">
-                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
-                <div class="step-content">
-                    <div class="step-title">Step 8: Keep a Buffer in Checking - Set Up Alerts!</div>
-                    <div class="step-desc">Autopay only works if the money is there! Keep a buffer and set alerts.</div>
-                    <div class="step-details">
-                        <h5">🛡️ Protect Against Overdrafts:</h5>
-                        <ul>
-                            <li"><strong">Keep at least $500 buffer</strong> in checking at all times</li>
-                            <li"><strong">Think of this as "untouchable"</strong> - it's your autopay safety net</li>
-                            <li"><strong">Set up LOW BALANCE ALERTS:</strong>
-                                <ul style="margin-top: 10px;">
-                                    <li">Go to your bank's app or website</li>
-                                    <li">Find "Alerts" or "Notifications"</li>
-                                    <li">Set an alert for when balance drops below $500 (or your buffer amount)</li>
-                                    <li">Get text or email notifications</li>
-                                </ul>
-                            </li>
-                            <li"><strong">Consider overdraft protection:</strong> Link savings to checking as backup</li>
-                            <li"><strong">Check your account weekly:</strong> Quick glance ensures no surprises</li>
-                        </ul>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px;">
+                    <div class="total-box">
+                        <h4>Total Monthly Bills</h4>
+                        <div class="amount" id="total-bills">$0</div>
+                    </div>
+                    <div class="total-box" style="background: linear-gradient(135deg, #4caf50, #388e3c);">
+                        <h4>Bills on Autopay</h4>
+                        <div class="amount" id="bills-done">0 of 0</div>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- ACTION ITEMS -->
         <div class="card">
-            <h2><span class="icon">✅</span> Your Autopay Checklist</h2>
+            <h2><span class="icon">✅</span> Worksheet: Final Setup</h2>
             
-            <div class="checklist-section">
-                <h4">💳 Credit Cards (FULL BALANCE)</h4>
-                <div class="checklist-grid">
-                    <label class="checklist-item"><input type="checkbox" onchange="saveChecklist()"> Credit Card 1</label>
-                    <label class="checklist-item"><input type="checkbox" onchange="saveChecklist()"> Credit Card 2</label>
-                    <label class="checklist-item"><input type="checkbox" onchange="saveChecklist()"> Credit Card 3</label>
+            <div class="worksheet-section">
+                <div class="action-item">
+                    <label>💰 Checking Account Buffer (keep $500+ minimum):</label>
+                    <input type="text" id="buffer" placeholder="e.g., $750" oninput="saveAllData()">
                 </div>
-            </div>
-            
-            <div class="checklist-section">
-                <h4">🏠 Housing</h4>
-                <div class="checklist-grid">
-                    <label class="checklist-item"><input type="checkbox" onchange="saveChecklist()"> Rent/Mortgage</label>
-                    <label class="checklist-item"><input type="checkbox" onchange="saveChecklist()"> Renters/Home Insurance</label>
+                <div class="action-item">
+                    <label>📅 My Pay Dates (to align bills):</label>
+                    <input type="text" id="paydays" placeholder="e.g., 1st and 15th of each month" oninput="saveAllData()">
                 </div>
-            </div>
-            
-            <div class="checklist-section">
-                <h4">💡 Utilities</h4>
-                <div class="checklist-grid">
-                    <label class="checklist-item"><input type="checkbox" onchange="saveChecklist()"> Electric</label>
-                    <label class="checklist-item"><input type="checkbox" onchange="saveChecklist()"> Gas</label>
-                    <label class="checklist-item"><input type="checkbox" onchange="saveChecklist()"> Water/Sewer</label>
-                    <label class="checklist-item"><input type="checkbox" onchange="saveChecklist()"> Trash</label>
-                    <label class="checklist-item"><input type="checkbox" onchange="saveChecklist()"> Internet</label>
+                <div class="action-item">
+                    <label>💵 Total Autopay Discounts I'm Getting:</label>
+                    <input type="text" id="discounts" placeholder="e.g., $15/month ($5 phone + $10 insurance)" oninput="saveAllData()">
                 </div>
-            </div>
-            
-            <div class="checklist-section">
-                <h4">📱 Phone & Transportation</h4>
-                <div class="checklist-grid">
-                    <label class="checklist-item"><input type="checkbox" onchange="saveChecklist()"> Cell Phone</label>
-                    <label class="checklist-item"><input type="checkbox" onchange="saveChecklist()"> Car Payment</label>
-                    <label class="checklist-item"><input type="checkbox" onchange="saveChecklist()"> Car Insurance</label>
-                </div>
-            </div>
-            
-            <div class="checklist-section">
-                <h4">📺 Subscriptions</h4>
-                <div class="checklist-grid">
-                    <label class="checklist-item"><input type="checkbox" onchange="saveChecklist()"> Netflix/Streaming</label>
-                    <label class="checklist-item"><input type="checkbox" onchange="saveChecklist()"> Gym</label>
-                    <label class="checklist-item"><input type="checkbox" onchange="saveChecklist()"> Other subs</label>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2><span class="icon">💡</span> Pro Tips</h2>
-            <div class="pro-tip">
-                <div class="pro-tip-title">🎯 Two-Paycheck Strategy</div>
-                <p">If you get paid twice a month: Set half your bills for 3 days after paycheck #1, and the other half for 3 days after paycheck #2. This prevents any single paycheck from being wiped out!</p>
-            </div>
-            
-            <div class="info-box">
-                <div class="info-box-title">📊 Review Autopays Monthly</div>
-                <p">Even with autopay, check your accounts monthly. Look for:</p>
-                <p">• Charges that seem higher than normal</p>
-                <p">• Subscriptions you forgot about</p>
-                <p">• Any errors or double-charges</p>
-                <p">• Opportunities to negotiate lower rates</p>
             </div>
         </div>
 
         <div class="card">
             <h2><span class="icon">📈</span> Your Progress</h2>
             <div class="progress-tracker">
-                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-text"><span id="completed">0</span> of 5 steps completed</div>
                 <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
             </div>
         </div>
 
-        <div class="card">
-            <h2><span class="icon">📝</span> Your Autopay Setup Tracker</h2>
-            <div class="notes-section">
-                <textarea id="notes" placeholder="Track your autopay setup here!
-
-MY BILLS (list all with due dates and amounts):
-1. _____ - Due: ____ - Amount: $____ - Autopay set up? Y/N
-2. _____ - Due: ____ - Amount: $____ - Autopay set up? Y/N
-3. _____ - Due: ____ - Amount: $____ - Autopay set up? Y/N
-4. _____ - Due: ____ - Amount: $____ - Autopay set up? Y/N
-5. _____ - Due: ____ - Amount: $____ - Autopay set up? Y/N
-6. _____ - Due: ____ - Amount: $____ - Autopay set up? Y/N
-7. _____ - Due: ____ - Amount: $____ - Autopay set up? Y/N
-8. _____ - Due: ____ - Amount: $____ - Autopay set up? Y/N
-
-TOTAL MONTHLY BILLS: $_____
-
-MY PAYDAYS: _____ and _____
-
-BUFFER AMOUNT I'LL KEEP IN CHECKING: $_____
-
-LOW BALANCE ALERT SET FOR: $_____
-
-DISCOUNTS I'M GETTING:
-☐ Cell phone autopay discount: $____/month
-☐ Internet autopay/paperless: $____/month
-☐ Insurance autopay: $____/month
-☐ Other: $____/month
-
-TOTAL DISCOUNTS: $____/month = $____/year saved!
-
-DUE DATES I CHANGED:
-_____
-
-NOTES:
-_____
-"></textarea>
-            </div>
-        </div>
-
         <div class="cta-section">
-            <h3">Need Help With Your Finances?</h3>
-            <p">Chat with an ASAP Financial coach for personalized guidance!</p>
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
             <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
         </div>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const saved = localStorage.getItem('playbook-autopay-setup');
-            if (saved) {
-                const data = JSON.parse(saved);
-                data.steps.forEach((checked, index) => {
-                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
-                });
-                document.getElementById('notes').value = data.notes || '';
-                if (data.checklist) {
-                    const checkboxes = document.querySelectorAll('.checklist-item input');
-                    data.checklist.forEach((checked, index) => {
-                        if (checkboxes[index]) checkboxes[index].checked = checked;
-                    });
-                }
-                updateProgress();
-            }
-        });
-        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        document.addEventListener('DOMContentLoaded', loadAllData);
+
+        function toggleStep(el) {
+            el.classList.toggle('checked');
+            updateProgress();
+            saveAllData();
+        }
+
+        function toggleBill(el) {
+            el.classList.toggle('done');
+            updateProgress();
+            saveAllData();
+        }
+
+        function addBill(containerId) {
+            const container = document.getElementById(containerId);
+            const entry = document.createElement('div');
+            entry.className = 'bill-entry';
+            entry.onclick = function() { toggleBill(this); };
+            entry.innerHTML = `
+                <div class="bill-check">✓</div>
+                <input type="text" class="bill-name" placeholder="Bill name" onclick="event.stopPropagation()" oninput="saveAllData()">
+                <input type="number" class="bill-amount" placeholder="$/mo" onclick="event.stopPropagation()" oninput="calculateTotal()">
+                <input type="text" class="bill-due" placeholder="Due/Discount" onclick="event.stopPropagation()" oninput="saveAllData()">
+            `;
+            container.appendChild(entry);
+            saveAllData();
+        }
+
+        function calculateTotal() {
+            let total = 0;
+            document.querySelectorAll('.bill-amount').forEach(input => {
+                total += parseFloat(input.value) || 0;
+            });
+            document.getElementById('total-bills').textContent = '$' + total.toFixed(0);
+            saveAllData();
+        }
+
         function updateProgress() {
-            const total = document.querySelectorAll('.step-checkbox').length;
-            const completed = document.querySelectorAll('.step-checkbox.checked').length;
-            document.getElementById('completed').textContent = completed;
-            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+            const totalSteps = document.querySelectorAll('.step-checkbox').length;
+            const doneSteps = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = doneSteps;
+            document.getElementById('progressFill').style.width = (doneSteps / totalSteps * 100) + '%';
+
+            const totalBills = document.querySelectorAll('.bill-entry').length;
+            const doneBills = document.querySelectorAll('.bill-entry.done').length;
+            document.getElementById('bills-done').textContent = doneBills + ' of ' + totalBills;
         }
-        function saveChecklist() { saveProgress(); }
-        function saveProgress() {
-            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
-            const notes = document.getElementById('notes').value;
-            const checklist = Array.from(document.querySelectorAll('.checklist-item input')).map(el => el.checked);
-            localStorage.setItem('playbook-autopay-setup', JSON.stringify({ steps, notes, checklist }));
+
+        function saveAllData() {
+            const data = {
+                steps: Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked')),
+                bills: [],
+                inputs: {
+                    buffer: document.getElementById('buffer').value,
+                    paydays: document.getElementById('paydays').value,
+                    discounts: document.getElementById('discounts').value
+                }
+            };
+            document.querySelectorAll('.bill-entry').forEach(entry => {
+                const inputs = entry.querySelectorAll('input');
+                const select = entry.querySelector('select');
+                data.bills.push({
+                    done: entry.classList.contains('done'),
+                    values: Array.from(inputs).map(i => i.value),
+                    selectValue: select ? select.value : null
+                });
+            });
+            localStorage.setItem('playbook-autopay-setup', JSON.stringify(data));
         }
-        document.getElementById('notes').addEventListener('input', saveProgress);
+
+        function loadAllData() {
+            const saved = localStorage.getItem('playbook-autopay-setup');
+            if (!saved) { updateProgress(); return; }
+            const data = JSON.parse(saved);
+
+            if (data.steps) {
+                data.steps.forEach((checked, i) => {
+                    if (checked && document.querySelectorAll('.step-checkbox')[i]) {
+                        document.querySelectorAll('.step-checkbox')[i].classList.add('checked');
+                    }
+                });
+            }
+
+            if (data.bills) {
+                const entries = document.querySelectorAll('.bill-entry');
+                data.bills.forEach((bill, i) => {
+                    if (entries[i]) {
+                        if (bill.done) entries[i].classList.add('done');
+                        const inputs = entries[i].querySelectorAll('input');
+                        bill.values.forEach((val, j) => {
+                            if (inputs[j]) inputs[j].value = val;
+                        });
+                        const select = entries[i].querySelector('select');
+                        if (select && bill.selectValue) select.value = bill.selectValue;
+                    }
+                });
+            }
+
+            if (data.inputs) {
+                document.getElementById('buffer').value = data.inputs.buffer || '';
+                document.getElementById('paydays').value = data.inputs.paydays || '';
+                document.getElementById('discounts').value = data.inputs.discounts || '';
+            }
+
+            calculateTotal();
+            updateProgress();
+        }
     </script>
 </body>
 </html>

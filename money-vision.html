@@ -1,101 +1,353 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Choose Your Money Vision | ASAP Playbook</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial,sans-serif;background:#f5f7fa;color:#333;line-height:1.6}.container{max-width:800px;margin:0 auto;padding:20px}.header{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:30px;border-radius:10px 10px 0 0;text-align:center}.header h1{font-size:28px;margin-bottom:10px}.header p{opacity:.9;font-size:16px}.content{background:#fff;padding:30px;border-radius:0 0 10px 10px;box-shadow:0 2px 10px rgba(0,0,0,.1)}.section{margin-bottom:30px}.section h2{color:#667eea;font-size:20px;margin-bottom:15px;padding-bottom:10px;border-bottom:2px solid #eee}.checklist{list-style:none;padding:0}.checklist li{padding:12px 15px;background:#fff;margin-bottom:8px;border-radius:6px;border:1px solid #e0e0e0;display:flex;align-items:center;gap:10px}.checklist input[type="checkbox"]{width:20px;height:20px;cursor:pointer;flex-shrink:0}.tip-box{background:#fff3cd;border:1px solid #ffc107;padding:15px;border-radius:8px;margin:15px 0}.tip-box strong{color:#856404}.success-box{background:#d4edda;border:1px solid #c3e6cb;padding:15px;border-radius:8px;margin:15px 0}.success-box strong{color:#155724}.vision-card{background:#f8f9fa;border:2px solid #ddd;border-radius:10px;padding:20px;margin-bottom:15px;cursor:pointer;transition:all 0.2s}.vision-card:hover{border-color:#667eea;transform:translateY(-2px)}.vision-card h3{color:#667eea;margin-bottom:8px}.vision-card p{color:#666;font-size:14px;margin-bottom:10px}.vision-card .timeline{background:#667eea;color:#fff;display:inline-block;padding:4px 12px;border-radius:20px;font-size:12px}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money Vision - Set Your Financial Goal - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #00bcd4, #0097a7); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; font-size: 1.5em; }
+        .card h2 .icon { font-size: 1.3em; }
+        .achieve-box { background: linear-gradient(135deg, #e0f7fa, #b2ebf2); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #006064; font-size: 1.1em; line-height: 1.8; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #e0f7fa; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #00bcd4; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox.checked { background: #00bcd4; color: white; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
+        .step-desc { color: #666; line-height: 1.6; }
+        
+        /* Vision Selection */
+        .vision-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin: 20px 0; }
+        .vision-option { background: #f8f9fa; border-radius: 15px; padding: 20px; cursor: pointer; border: 3px solid transparent; transition: all 0.3s; text-align: center; }
+        .vision-option:hover { border-color: #b2ebf2; transform: translateY(-3px); }
+        .vision-option.selected { border-color: #00bcd4; background: #e0f7fa; }
+        .vision-option .emoji { font-size: 2.5em; margin-bottom: 10px; }
+        .vision-option h4 { color: #006064; margin-bottom: 8px; }
+        .vision-option p { color: #666; font-size: 0.9em; }
+        .vision-option .timeline { background: #00bcd4; color: white; padding: 4px 12px; border-radius: 12px; font-size: 0.8em; display: inline-block; margin-top: 10px; }
+        
+        /* Calculator */
+        .calculator-section { background: linear-gradient(135deg, #e0f7fa, #b2ebf2); border-radius: 15px; padding: 25px; margin: 20px 0; }
+        .calc-row { display: flex; gap: 15px; margin: 15px 0; align-items: center; flex-wrap: wrap; }
+        .calc-row label { color: #006064; font-weight: 600; min-width: 200px; }
+        .calc-row input { flex: 1; min-width: 150px; padding: 12px; border: 2px solid #b2ebf2; border-radius: 8px; font-size: 1.1em; }
+        .calc-row input:focus { outline: none; border-color: #00bcd4; }
+        .calc-result { background: linear-gradient(135deg, #00bcd4, #0097a7); color: white; border-radius: 10px; padding: 20px; text-align: center; margin-top: 20px; }
+        .calc-result h3 { font-size: 1.2em; margin-bottom: 10px; }
+        .calc-result .big-number { font-size: 2.5em; font-weight: bold; }
+        .calc-result .sub-text { opacity: 0.9; margin-top: 5px; }
+        
+        /* Worksheet */
+        .worksheet-section { background: linear-gradient(135deg, #e0f7fa, #b2ebf2); border-radius: 15px; padding: 25px; margin: 20px 0; }
+        .action-item { background: white; border-radius: 10px; padding: 15px; margin: 10px 0; }
+        .action-item label { display: block; color: #006064; font-weight: 600; margin-bottom: 8px; }
+        .action-item input, .action-item textarea { width: 100%; padding: 12px; border: 2px solid #b2ebf2; border-radius: 8px; font-size: 1em; font-family: inherit; }
+        .action-item textarea { min-height: 80px; resize: vertical; }
+        .action-item input:focus, .action-item textarea:focus { outline: none; border-color: #00bcd4; }
+        
+        .comparison-box { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
+        .comparison-good { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 12px; padding: 20px; border-top: 4px solid #4caf50; }
+        .comparison-bad { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-radius: 12px; padding: 20px; border-top: 4px solid #f44336; }
+        .comparison-good h4 { color: #2e7d32; margin-bottom: 10px; }
+        .comparison-bad h4 { color: #c62828; margin-bottom: 10px; }
+        .comparison-good p, .comparison-bad p { font-size: 0.95em; margin: 8px 0; }
+        
+        .progress-tracker { background: linear-gradient(135deg, #00bcd4, #0097a7); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #00bcd4, #0097a7); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+        
+        @media (max-width: 600px) { 
+            .comparison-box { grid-template-columns: 1fr; }
+            .calc-row { flex-direction: column; align-items: stretch; }
+            .calc-row label { min-width: auto; }
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-<div class="header">
-<h1>🎯 Choose Your Money Vision</h1>
-<p>Pick ONE goal to focus on for the next 90 days</p>
-</div>
-<div class="content">
-<div class="section">
-<h2>Why You Need a Vision</h2>
-<p>Without a clear goal, money just... disappears. When you have a specific vision, every spending decision becomes easier: "Does this help me reach my goal, or hurt it?" Focus creates momentum.</p>
-</div>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Playbooks</a>
+        
+        <div class="header">
+            <h1>🎯 Money Vision</h1>
+            <p class="subtitle">Pick ONE clear goal and make it happen!</p>
+            <div class="time-badge">⏱️ 15 minutes • 📈 42% more likely to succeed!</div>
+        </div>
 
-<div class="success-box">
-<strong>🔑 The Power of ONE Goal:</strong> Don't try to do everything at once. Laser focus on ONE vision creates momentum. Once you achieve it, pick the next one. This is how wealth is built.
-</div>
+        <div class="card">
+            <h2><span class="icon">💡</span> Why ONE Goal?</h2>
+            <div class="achieve-box">
+                <p><strong>Research shows:</strong> People who write down specific goals are 42% more likely to achieve them. But here's the key - focus on ONE goal at a time. Trying to save AND pay off debt AND invest all at once? You'll make zero progress on everything. Pick ONE. Crush it. Then move to the next.</p>
+            </div>
+            <div class="income-highlight">
+                <h3>Focus = Results</h3>
+                <p>One clear goal beats five vague ones every time!</p>
+            </div>
+        </div>
 
-<div class="section">
-<h2>Choose Your 90-Day Vision</h2>
+        <div class="card">
+            <h2><span class="icon">🎯</span> Vague vs. Specific Goals</h2>
+            <div class="comparison-box">
+                <div class="comparison-bad">
+                    <h4>❌ Vague (Fails)</h4>
+                    <p>"I want to save more money"</p>
+                    <p>"I should pay off debt"</p>
+                    <p>"I need to be better with money"</p>
+                    <p>"I want to buy a house someday"</p>
+                </div>
+                <div class="comparison-good">
+                    <h4>✅ Specific (Succeeds)</h4>
+                    <p>"I will save $1,500 by March 1st"</p>
+                    <p>"I will pay off my $3,200 Visa by June"</p>
+                    <p>"I will spend under $400/month on food"</p>
+                    <p>"I will save $20,000 by December 2026"</p>
+                </div>
+            </div>
+        </div>
 
-<div class="vision-card">
-<h3>🏆 Vision 1: Become Debt-Free</h3>
-<p>Pay off all credit cards and consumer debt. Feel the freedom of owing nothing to anyone. Imagine the weight lifted off your shoulders.</p>
-<span class="timeline">Timeline: 6-24 months depending on debt</span>
-</div>
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Setup Steps</h2>
+            <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 1: Choose Your ONE Vision</div><div class="step-desc">Pick ONE goal from the options below. Just one!</div></div></div>
+            <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 2: Calculate Your Numbers</div><div class="step-desc">Use the calculator to figure out exactly how much to save per month.</div></div></div>
+            <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 3: Set Your Deadline</div><div class="step-desc">Pick a specific date. Put it in your calendar!</div></div></div>
+            <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 4: Write Your Goal Statement</div><div class="step-desc">Fill out the worksheet with your complete, specific goal.</div></div></div>
+            <div class="step"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 5: Take First Action TODAY</div><div class="step-desc">Transfer money, open an account, or cancel something - do ONE thing now!</div></div></div>
+        </div>
 
-<div class="vision-card">
-<h3>💰 Vision 2: Build $10K Emergency Fund</h3>
-<p>Never worry about unexpected expenses again. Sleep better knowing you're protected from life's surprises. No more living paycheck to paycheck.</p>
-<span class="timeline">Timeline: 6-12 months</span>
-</div>
+        <!-- VISION SELECTION -->
+        <div class="card">
+            <h2><span class="icon">🏆</span> Worksheet 1: Choose Your Vision</h2>
+            <p style="color:#666;margin-bottom:15px;">Click to select ONE goal. This becomes your focus!</p>
+            
+            <div class="vision-grid">
+                <div class="vision-option" onclick="selectVision(this, '1k-emergency')">
+                    <div class="emoji">🏆</div>
+                    <h4>$1,000 Emergency Fund</h4>
+                    <p>Start with a safety net. Beats 60% of Americans!</p>
+                    <div class="timeline">1-3 months</div>
+                </div>
+                <div class="vision-option" onclick="selectVision(this, '10k-emergency')">
+                    <div class="emoji">💰</div>
+                    <h4>$10,000 Emergency Fund</h4>
+                    <p>3-6 months expenses. Real financial security!</p>
+                    <div class="timeline">6-12 months</div>
+                </div>
+                <div class="vision-option" onclick="selectVision(this, 'debt-free')">
+                    <div class="emoji">💳</div>
+                    <h4>Pay Off Credit Cards</h4>
+                    <p>Eliminate 20-30% interest. Huge relief!</p>
+                    <div class="timeline">6-24 months</div>
+                </div>
+                <div class="vision-option" onclick="selectVision(this, 'house')">
+                    <div class="emoji">🏠</div>
+                    <h4>House Down Payment</h4>
+                    <p>Save 3-20% to stop renting forever!</p>
+                    <div class="timeline">12-36 months</div>
+                </div>
+                <div class="vision-option" onclick="selectVision(this, 'vacation')">
+                    <div class="emoji">✈️</div>
+                    <h4>Dream Vacation (Cash!)</h4>
+                    <p>No credit card debt from travel!</p>
+                    <div class="timeline">6-12 months</div>
+                </div>
+                <div class="vision-option" onclick="selectVision(this, 'car')">
+                    <div class="emoji">🚗</div>
+                    <h4>Buy Car in Cash</h4>
+                    <p>No $700/month car payments!</p>
+                    <div class="timeline">6-18 months</div>
+                </div>
+            </div>
+            
+            <div class="action-item" style="margin-top:20px;">
+                <label>✅ My Chosen Vision:</label>
+                <input type="text" id="chosen-vision" placeholder="Will auto-fill when you click above, or type your own!" oninput="saveAllData()">
+            </div>
+        </div>
 
-<div class="vision-card">
-<h3>🏠 Vision 3: Save for a Home Down Payment</h3>
-<p>Stop paying someone else's mortgage. Build equity and wealth through homeownership. Create a stable foundation for your family.</p>
-<span class="timeline">Timeline: 12-36 months</span>
-</div>
+        <!-- CALCULATOR -->
+        <div class="card">
+            <h2><span class="icon">🧮</span> Worksheet 2: Calculate Your Numbers</h2>
+            <p style="color:#666;margin-bottom:15px;">Figure out exactly how much you need to save each month!</p>
+            
+            <div class="calculator-section">
+                <div class="calc-row">
+                    <label>💵 Total Amount I Need:</label>
+                    <input type="number" id="goal-amount" placeholder="e.g., 5000" oninput="calculateMonthly()">
+                </div>
+                <div class="calc-row">
+                    <label>📅 Months Until Deadline:</label>
+                    <input type="number" id="goal-months" placeholder="e.g., 12" oninput="calculateMonthly()">
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-top: 20px;">
+                    <div class="calc-result">
+                        <h3>Monthly Savings Needed</h3>
+                        <div class="big-number" id="monthly-needed">$0</div>
+                    </div>
+                    <div class="calc-result" style="background: linear-gradient(135deg, #ff9800, #f57c00);">
+                        <h3>Weekly</h3>
+                        <div class="big-number" id="weekly-needed">$0</div>
+                    </div>
+                    <div class="calc-result" style="background: linear-gradient(135deg, #9c27b0, #7b1fa2);">
+                        <h3>Daily</h3>
+                        <div class="big-number" id="daily-needed">$0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<div class="vision-card">
-<h3>✈️ Vision 4: Fund Your Dream Vacation</h3>
-<p>Take that trip you've always wanted - paid in CASH, no credit card debt after. Come home to zero financial regret.</p>
-<span class="timeline">Timeline: 6-12 months</span>
-</div>
+        <!-- GOAL STATEMENT -->
+        <div class="card">
+            <h2><span class="icon">📝</span> Worksheet 3: Your Goal Statement</h2>
+            <p style="color:#666;margin-bottom:15px;">Write your complete, specific goal. This is what you'll track!</p>
+            
+            <div class="worksheet-section">
+                <div class="action-item">
+                    <label>🎯 My Complete Goal Statement:</label>
+                    <textarea id="goal-statement" placeholder='Use this format: "I will [GOAL] by [DATE] by saving $[AMOUNT] per month."
 
-<div class="vision-card">
-<h3>🚗 Vision 5: Buy a Car in Cash</h3>
-<p>No car payment = more money every month. Buy a reliable used car outright and feel the freedom of no monthly payment.</p>
-<span class="timeline">Timeline: 6-18 months</span>
-</div>
-</div>
+Example: "I will save $5,000 for my emergency fund by September 1st by saving $625 per month."' oninput="saveAllData()"></textarea>
+                </div>
+                <div class="action-item">
+                    <label>📅 My Specific Deadline Date:</label>
+                    <input type="text" id="deadline" placeholder="e.g., September 1, 2025" oninput="saveAllData()">
+                </div>
+                <div class="action-item">
+                    <label>🔥 Why This Goal Matters to Me:</label>
+                    <textarea id="why-matters" placeholder="e.g., I'm tired of living paycheck to paycheck. I want to feel secure knowing I can handle any emergency without going into debt..." oninput="saveAllData()"></textarea>
+                </div>
+                <div class="action-item">
+                    <label>✂️ What I'm Willing to Sacrifice:</label>
+                    <textarea id="sacrifice" placeholder="e.g., Eating out (will cook more), streaming services (keeping just one), impulse Amazon purchases..." oninput="saveAllData()"></textarea>
+                </div>
+            </div>
+        </div>
 
-<div class="section">
-<h2>Your Action Steps</h2>
-<ul class="checklist">
-<li><input type="checkbox"> <span>Choose ONE vision from above (circle it, write it down)</span></li>
-<li><input type="checkbox"> <span>Calculate exactly how much money you need</span></li>
-<li><input type="checkbox"> <span>Find a picture that represents your goal</span></li>
-<li><input type="checkbox"> <span>Put that picture where you'll see it daily (bathroom mirror, phone wallpaper)</span></li>
-<li><input type="checkbox"> <span>Tell your accountability partner your specific goal</span></li>
-<li><input type="checkbox"> <span>Write your goal and deadline somewhere visible</span></li>
-</ul>
-</div>
+        <!-- FIRST ACTION -->
+        <div class="card">
+            <h2><span class="icon">⚡</span> Worksheet 4: First Action TODAY</h2>
+            <p style="color:#666;margin-bottom:15px;">Don't wait until tomorrow. Do ONE thing right now!</p>
+            
+            <div class="worksheet-section">
+                <div class="action-item">
+                    <label>✅ My First Action (doing TODAY):</label>
+                    <input type="text" id="first-action" placeholder="e.g., Open a separate savings account just for this goal" oninput="saveAllData()">
+                </div>
+                <div class="action-item">
+                    <label>💵 First Amount I'm Transferring/Saving:</label>
+                    <input type="text" id="first-amount" placeholder="e.g., $50 right now to start!" oninput="saveAllData()">
+                </div>
+                <div class="action-item">
+                    <label>📱 Reminder Set? (Put it in your phone!)</label>
+                    <input type="text" id="reminder" placeholder="e.g., Yes - every Friday at 5pm to transfer money" oninput="saveAllData()">
+                </div>
+            </div>
+        </div>
 
-<div class="tip-box">
-<strong>💡 Make It Visual:</strong> Print a picture of your goal - the house, the vacation spot, the $0 balance - and tape it to your bathroom mirror. Look at it every morning. This keeps your "why" front and center.
-</div>
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 5 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
 
-<div class="section">
-<h2>Define Your Goal Specifically</h2>
-<ul class="checklist">
-<li><input type="checkbox"> <span>My specific goal is: ________________________________</span></li>
-<li><input type="checkbox"> <span>I need $________ to achieve it</span></li>
-<li><input type="checkbox"> <span>My deadline is: ____________</span></li>
-<li><input type="checkbox"> <span>I need to save $_______ per month to reach it</span></li>
-<li><input type="checkbox"> <span>I'm willing to sacrifice _____________ to get there</span></li>
-</ul>
-</div>
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
+    </div>
 
-<div class="success-box">
-<strong>✅ Remember:</strong> Vague goals produce vague results. Specific goals produce specific results. "I want to save money" fails. "I will save $5,000 for an emergency fund by December 31st" succeeds.
-</div>
-</div>
-</div>
-<script>
-document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
-  const key = 'playbook_vision_' + cb.closest('li').innerText.substring(0,25);
-  cb.checked = localStorage.getItem(key) === 'true';
-  cb.addEventListener('change', () => localStorage.setItem(key, cb.checked));
-});
-</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', loadAllData);
+        
+        const visionLabels = {
+            '1k-emergency': '$1,000 Emergency Fund',
+            '10k-emergency': '$10,000 Emergency Fund',
+            'debt-free': 'Pay Off All Credit Card Debt',
+            'house': 'Save for House Down Payment',
+            'vacation': 'Dream Vacation (Paid in Cash!)',
+            'car': 'Buy Car in Cash'
+        };
+        
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveAllData(); }
+        
+        function selectVision(el, type) {
+            document.querySelectorAll('.vision-option').forEach(v => v.classList.remove('selected'));
+            el.classList.add('selected');
+            document.getElementById('chosen-vision').value = visionLabels[type] || type;
+            saveAllData();
+        }
+        
+        function calculateMonthly() {
+            const amount = parseFloat(document.getElementById('goal-amount').value) || 0;
+            const months = parseFloat(document.getElementById('goal-months').value) || 1;
+            const monthly = amount / months;
+            const weekly = monthly / 4.33;
+            const daily = monthly / 30;
+            document.getElementById('monthly-needed').textContent = '$' + monthly.toFixed(0);
+            document.getElementById('weekly-needed').textContent = '$' + weekly.toFixed(0);
+            document.getElementById('daily-needed').textContent = '$' + daily.toFixed(0);
+            saveAllData();
+        }
+        
+        function updateProgress() {
+            const done = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = done;
+            document.getElementById('progressFill').style.width = (done / 5 * 100) + '%';
+        }
+        
+        function saveAllData() {
+            const sel = document.querySelector('.vision-option.selected');
+            localStorage.setItem('playbook-money-vision', JSON.stringify({
+                steps: Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked')),
+                selectedVision: sel ? Array.from(document.querySelectorAll('.vision-option')).indexOf(sel) : -1,
+                chosenVision: document.getElementById('chosen-vision').value,
+                goalAmount: document.getElementById('goal-amount').value,
+                goalMonths: document.getElementById('goal-months').value,
+                goalStatement: document.getElementById('goal-statement').value,
+                deadline: document.getElementById('deadline').value,
+                whyMatters: document.getElementById('why-matters').value,
+                sacrifice: document.getElementById('sacrifice').value,
+                firstAction: document.getElementById('first-action').value,
+                firstAmount: document.getElementById('first-amount').value,
+                reminder: document.getElementById('reminder').value
+            }));
+        }
+        
+        function loadAllData() {
+            const d = JSON.parse(localStorage.getItem('playbook-money-vision') || '{}');
+            if (d.steps) d.steps.forEach((c,i) => { if(c) document.querySelectorAll('.step-checkbox')[i]?.classList.add('checked'); });
+            if (d.selectedVision >= 0) document.querySelectorAll('.vision-option')[d.selectedVision]?.classList.add('selected');
+            if (d.chosenVision) document.getElementById('chosen-vision').value = d.chosenVision;
+            if (d.goalAmount) document.getElementById('goal-amount').value = d.goalAmount;
+            if (d.goalMonths) document.getElementById('goal-months').value = d.goalMonths;
+            if (d.goalStatement) document.getElementById('goal-statement').value = d.goalStatement;
+            if (d.deadline) document.getElementById('deadline').value = d.deadline;
+            if (d.whyMatters) document.getElementById('why-matters').value = d.whyMatters;
+            if (d.sacrifice) document.getElementById('sacrifice').value = d.sacrifice;
+            if (d.firstAction) document.getElementById('first-action').value = d.firstAction;
+            if (d.firstAmount) document.getElementById('first-amount').value = d.firstAmount;
+            if (d.reminder) document.getElementById('reminder').value = d.reminder;
+            calculateMonthly();
+            updateProgress();
+        }
+    </script>
 </body>
 </html>
