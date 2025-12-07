@@ -6,262 +6,470 @@
     <title>Ask for Overtime - ASAP Financial Playbook</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; line-height: 1.6; }
-        .container { max-width: 800px; margin: 0 auto; }
-        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; font-weight: 500; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
         .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
-        .header h1 { font-size: 2.5em; color: #1a1a2e; margin-bottom: 10px; }
-        .header .subtitle { font-size: 1.2em; color: #666; margin-bottom: 20px; }
-        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 10px 25px; border-radius: 20px; font-size: 0.95em; }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
         .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
-        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; font-size: 1.5em; }
-        .achieve-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
-        .achieve-box p { color: #2e7d32; font-size: 1.1em; }
-        .savings-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 25px; text-align: center; }
-        .savings-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
-        .savings-highlight p { font-size: 1.1em; opacity: 0.95; }
-        .income-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin: 20px 0; }
-        .income-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; border-left: 5px solid #4caf50; }
-        .income-card .hours { color: #666; font-size: 0.9em; margin-bottom: 5px; }
-        .income-card .amount { font-size: 1.8em; font-weight: 700; color: #4caf50; }
-        .income-card .period { color: #666; font-size: 0.85em; }
-        .timing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; }
-        .timing-box { background: #f8f9fa; border-radius: 15px; padding: 20px; }
-        .timing-box.good { border-left: 5px solid #4caf50; }
-        .timing-box.bad { border-left: 5px solid #f44336; }
-        .timing-box h4 { margin-bottom: 15px; }
-        .timing-box ul { list-style: none; padding: 0; }
-        .timing-box li { padding: 8px 0; color: #444; }
-        .script-box { background: #f8f9fa; border-radius: 15px; padding: 25px; margin: 20px 0; border-left: 5px solid #667eea; }
-        .script-box h4 { color: #1a1a2e; margin-bottom: 15px; }
-        .script-box p { color: #444; font-style: italic; line-height: 1.8; }
-        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; transition: all 0.3s; }
-        .step:hover { background: #e8f5e9; }
-        .step-checkbox { width: 30px; height: 30px; min-width: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #1565c0; font-size: 1.1em; line-height: 1.8; }
+        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2.2em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        .earnings-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 20px 0; text-align: center; }
+        .earnings-card { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; }
+        .earnings-card .hours { font-size: 1.2em; opacity: 0.9; }
+        .earnings-card .amount { font-size: 2.2em; font-weight: 700; }
+        .earnings-card .period { font-size: 0.9em; opacity: 0.8; }
+        .step { display: flex; gap: 15px; margin-bottom: 25px; padding: 25px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .step:hover { background: #e3f2fd; }
+        .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; margin-top: 5px; }
         .step-checkbox.checked { background: #667eea; color: white; }
         .step-content { flex: 1; }
-        .step-title { font-weight: 700; color: #1a1a2e; margin-bottom: 8px; font-size: 1.1em; }
-        .step-desc { color: #666; font-size: 0.95em; line-height: 1.6; }
-        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
-        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
-        .pro-tip p { color: #5d4e37; }
-        .alt-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-left: 4px solid #2196f3; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
-        .alt-box h4 { color: #1565c0; margin-bottom: 10px; }
-        .alt-box ul { list-style: none; padding: 0; margin: 0; }
-        .alt-box li { padding: 8px 0; color: #1565c0; }
-        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
-        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
-        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #4caf50, #66bb6a); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
-        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
-        .influencer-card .platform { color: #667eea; font-size: 0.9em; margin-bottom: 10px; }
-        .influencer-card p { color: #666; font-size: 0.9em; margin-bottom: 15px; }
-        .influencer-link { display: inline-block; color: #667eea; text-decoration: none; font-weight: 600; padding: 8px 20px; border: 2px solid #667eea; border-radius: 20px; transition: all 0.3s; }
-        .influencer-link:hover { background: #667eea; color: white; }
-        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; text-align: center; }
+        .step-title { font-weight: 700; color: #1a1a2e; font-size: 1.2em; margin-bottom: 10px; }
+        .step-desc { color: #444; line-height: 1.8; font-size: 1.05em; }
+        .step-details { background: #fff; border: 2px solid #e0e0e0; border-radius: 10px; padding: 15px; margin-top: 15px; }
+        .step-details h5 { color: #667eea; margin-bottom: 10px; font-size: 1em; }
+        .step-details ul { margin-left: 20px; color: #555; }
+        .step-details li { margin-bottom: 10px; line-height: 1.7; }
+        .timing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; }
+        .timing-card { border-radius: 15px; padding: 25px; }
+        .timing-card.good { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-left: 5px solid #4caf50; }
+        .timing-card.bad { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 5px solid #f44336; }
+        .timing-card h4 { margin-bottom: 15px; }
+        .timing-card.good h4 { color: #2e7d32; }
+        .timing-card.bad h4 { color: #c62828; }
+        .timing-card ul { list-style: none; }
+        .timing-card li { padding: 8px 0; font-size: 1.05em; line-height: 1.5; }
+        .script-section { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 25px; margin: 20px 0; }
+        .script-section h4 { color: #2e7d32; margin-bottom: 15px; }
+        .script-box { background: white; border-radius: 10px; padding: 20px; margin-bottom: 15px; border-left: 5px solid #667eea; }
+        .script-box h5 { color: #667eea; margin-bottom: 10px; }
+        .script-box .script-text { font-style: italic; color: #333; line-height: 1.8; font-size: 1.05em; background: #f8f9fa; padding: 15px; border-radius: 8px; }
+        .script-box .script-note { color: #666; font-size: 0.9em; margin-top: 10px; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 20px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; font-size: 1.1em; }
+        .pro-tip p { color: #555; margin: 8px 0; line-height: 1.7; }
+        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .warning-box-title { font-weight: 700; color: #c62828; margin-bottom: 10px; }
+        .warning-box p { color: #555; margin: 8px 0; line-height: 1.6; }
+        .info-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-left: 4px solid #4caf50; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .info-box-title { font-weight: 700; color: #2e7d32; margin-bottom: 10px; }
+        .info-box p { color: #555; margin: 8px 0; line-height: 1.6; }
+        .alternatives-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .alternative-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #667eea; }
+        .alternative-card h4 { color: #1a1a2e; margin-bottom: 8px; }
+        .alternative-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
         .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
         .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
-        .notes-section textarea { width: 100%; min-height: 280px; padding: 20px; border: 2px solid #e0e0e0; border-radius: 15px; font-family: 'Segoe UI', monospace; font-size: 0.95em; resize: vertical; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 150px; resize: vertical; }
         .notes-section textarea:focus { outline: none; border-color: #667eea; }
         .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
-        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; }
-        @media (max-width: 600px) { .header h1 { font-size: 1.8em; } .savings-highlight h3 { font-size: 2em; } .step { flex-direction: column; } .timing-grid { grid-template-columns: 1fr; } }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+        @media (max-width: 600px) {
+            .timing-grid, .earnings-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="income-playbooks.html" class="back-link">← Back to Income Playbooks</a>
+        <a href="income-playbooks.html" class="back-link">← Back to Playbooks</a>
         
         <div class="header">
             <h1>⏰ Ask for Overtime</h1>
-            <p class="subtitle">The easiest extra money—you already have the job, just get more hours!</p>
-            <div class="time-badge">⏱️ 10-minute conversation • Instant income boost • 1.5x pay rate</div>
+            <p class="subtitle">Get more hours (and more money!) at your current job</p>
+            <div class="time-badge">⏱️ 10 min prep • 💰 $600-2,400+/month • Easy!</div>
         </div>
-        
+
         <div class="card">
             <h2><span class="icon">🎯</span> What You'll Achieve</h2>
             <div class="achieve-box">
-                <p>Get more hours at your current job—the easiest way to boost your income! You already have the job, you already know the work, you already get paid there. No job searching, no interviews, no new training. Plus, overtime usually pays 1.5x your regular rate (time-and-a-half), so you earn MORE per hour. Just ask your boss and start making extra money!</p>
+                <p><strong>Overtime is the EASIEST extra money you can make!</strong> Think about it: You already have the job. You already know how to do the work. You already get a paycheck. All you're doing is working MORE hours - no new applications, no interviews, no learning new skills.</p>
+                <p style="margin-top: 15px;"><strong>Even better:</strong> Overtime usually pays 1.5 times your normal rate! So if you make $20/hour, overtime pays $30/hour. If you make $15/hour, overtime pays $22.50/hour. That extra half-rate adds up FAST!</p>
+                <p style="margin-top: 15px;">Many people are afraid to ask for overtime because they don't know what to say. This playbook gives you word-for-word scripts so you know EXACTLY what to say to your boss!</p>
             </div>
-            <div class="savings-highlight">
-                <h3>$600-2,400+ Extra/Month</h3>
-                <p>At $20/hr base ($30/hr OT): 5 hrs/week = $600/mo • 10 hrs/week = $1,200/mo • Weekends only = $2,400/mo!</p>
+            <div class="income-highlight">
+                <h3>Overtime Pays 1.5x Your Rate!</h3>
+                <p>At $20/hour, overtime = $30/hour. Just 5 extra hours/week = $600+/month extra!</p>
             </div>
         </div>
-        
+
         <div class="card">
             <h2><span class="icon">💵</span> See How Overtime Adds Up</h2>
-            <p style="color: #666; margin-bottom: 15px;">Example: $20/hr base pay = $30/hr overtime rate</p>
-            <div class="income-grid">
-                <div class="income-card"><div class="hours">5 extra hrs/week</div><div class="amount">$600</div><div class="period">per month</div></div>
-                <div class="income-card"><div class="hours">10 extra hrs/week</div><div class="amount">$1,200</div><div class="period">per month</div></div>
-                <div class="income-card"><div class="hours">Saturdays only (8 hrs)</div><div class="amount">$960</div><div class="period">per month</div></div>
-                <div class="income-card"><div class="hours">Full weekends (16 hrs)</div><div class="amount">$1,920</div><div class="period">per month</div></div>
+            <p style="color: #666; margin-bottom: 15px;">Based on $20/hour regular rate = $30/hour overtime:</p>
+            <div class="earnings-grid">
+                <div class="earnings-card">
+                    <div class="hours">5 extra hrs/week</div>
+                    <div class="amount">$600</div>
+                    <div class="period">per month</div>
+                </div>
+                <div class="earnings-card">
+                    <div class="hours">10 extra hrs/week</div>
+                    <div class="amount">$1,200</div>
+                    <div class="period">per month</div>
+                </div>
+                <div class="earnings-card">
+                    <div class="hours">Weekends only</div>
+                    <div class="amount">$2,400</div>
+                    <div class="period">per month</div>
+                </div>
             </div>
+            
             <div class="pro-tip">
-                <div class="pro-tip-title">💡 Holiday Pay = Even More!</div>
-                <p><strong>Many companies pay double-time on holidays.</strong> Thanksgiving, Christmas, New Year's shifts can pay $40-50/hr at a $20/hr base. Volunteer for holidays—one 8-hour shift could mean $320-400 in your pocket!</p>
+                <div class="pro-tip-title">💡 Calculate YOUR Overtime Rate!</div>
+                <p><strong>Your hourly rate:</strong> $_____ × 1.5 = <strong>$_____ overtime rate</strong></p>
+                <p style="margin-top: 10px;"><strong>Example:</strong> $15/hr × 1.5 = $22.50 OT rate | $18/hr × 1.5 = $27 OT rate | $25/hr × 1.5 = $37.50 OT rate</p>
             </div>
         </div>
-        
+
         <div class="card">
-            <h2><span class="icon">⏱️</span> Best Times to Ask</h2>
+            <h2><span class="icon">⏰</span> Best Time to Ask (This Matters!)</h2>
             <div class="timing-grid">
-                <div class="timing-box good">
-                    <h4>✅ GOOD Times to Ask</h4>
+                <div class="timing-card good">
+                    <h4>✅ GOOD Times to Ask:</h4>
                     <ul>
-                        <li>✅ Busy season at your company</li>
-                        <li>✅ After a coworker quits or is fired</li>
-                        <li>✅ When you just finished a project well</li>
-                        <li>✅ During your 1-on-1 with your boss</li>
-                        <li>✅ When your boss is in a good mood</li>
-                        <li>✅ When they're asking for volunteers</li>
+                        <li>✅ <strong>Busy season</strong> at your company (they NEED extra help!)</li>
+                        <li>✅ <strong>After someone quits or gets fired</strong> (work needs to be covered!)</li>
+                        <li>✅ <strong>Right after you did something good</strong> (finished a project, got a compliment)</li>
+                        <li>✅ <strong>During your regular 1-on-1 meeting</strong> with your boss</li>
+                        <li>✅ <strong>When your boss seems relaxed</strong> and in a good mood</li>
+                        <li>✅ <strong>Mid-week (Tuesday-Thursday)</strong> when things are settled</li>
+                        <li>✅ <strong>Morning, after coffee</strong> - people are usually in better moods!</li>
                     </ul>
                 </div>
-                <div class="timing-box bad">
-                    <h4>❌ BAD Times to Ask</h4>
+                <div class="timing-card bad">
+                    <h4>❌ BAD Times to Ask:</h4>
                     <ul>
-                        <li>❌ Right after making a mistake</li>
-                        <li>❌ When your boss is stressed/rushing</li>
-                        <li>❌ During company layoffs</li>
-                        <li>❌ Monday mornings</li>
-                        <li>❌ End of day Friday</li>
-                        <li>❌ During a crisis or deadline</li>
+                        <li>❌ <strong>Right after making a mistake</strong> (wait a few days!)</li>
+                        <li>❌ <strong>When boss is stressed or rushing</strong> (they'll say no automatically)</li>
+                        <li>❌ <strong>During company layoffs or budget cuts</strong> (bad timing!)</li>
+                        <li>❌ <strong>Monday morning</strong> (everyone is adjusting to the week)</li>
+                        <li>❌ <strong>Friday afternoon</strong> (people just want to go home)</li>
+                        <li>❌ <strong>Right before an important meeting</strong> (boss is distracted)</li>
+                        <li>❌ <strong>During lunch or breaks</strong> (they're trying to relax)</li>
                     </ul>
                 </div>
             </div>
         </div>
-        
+
         <div class="card">
-            <h2><span class="icon">📝</span> Exactly What to Say</h2>
+            <h2><span class="icon">📝</span> Exactly What to Say (Word-for-Word Scripts!)</h2>
             
-            <div class="script-box">
-                <h4>📞 Script #1: Direct Ask (Best Approach)</h4>
-                <p>"Hey [Boss name], do you have a quick minute? I wanted to ask about overtime opportunities. I'm looking to pick up some extra hours and I'm flexible on when. Are there any extra shifts available, or any projects that need more coverage?"</p>
+            <div class="script-section">
+                <h4>📝 Script #1: The Direct Ask (Best for Most Situations)</h4>
+                <div class="script-box">
+                    <h5>What YOU Say:</h5>
+                    <div class="script-text">"Hey [Boss's name], do you have a quick minute? I wanted to ask about overtime opportunities. I'm looking to pick up some extra hours and I'm pretty flexible on when. Are there any extra shifts available, or any projects that need more coverage?"</div>
+                    <div class="script-note"><strong>Why this works:</strong> You're direct, you show flexibility, and you're asking an open question that's easy for them to answer.</div>
+                </div>
             </div>
             
-            <div class="script-box">
-                <h4>📞 Script #2: Show Initiative</h4>
-                <p>"I noticed we've been pretty busy lately. I'd be happy to come in early, stay late, or work weekends if that would help the team. Just let me know what you need!"</p>
+            <div class="script-section">
+                <h4">📝 Script #2: Show Initiative (When Things Are Busy)</h4>
+                <div class="script-box">
+                    <h5">What YOU Say:</h5>
+                    <div class="script-text">"I've noticed we've been really busy lately. I wanted to let you know - I'm happy to come in early, stay late, or work weekends if that would help the team. Just let me know what you need!"</div>
+                    <div class="script-note"><strong>Why this works:</strong> You're offering to solve THEIR problem. Bosses love employees who notice what needs to be done and volunteer!</div>
+                </div>
             </div>
             
-            <div class="script-box">
-                <h4>📧 Script #3: Email Version</h4>
-                <p>Subject: Available for Extra Hours<br><br>Hi [Boss],<br><br>I wanted to let you know I'm available and interested in picking up any overtime hours that become available. I'm flexible with my schedule and happy to help wherever needed.<br><br>Please keep me in mind for any extra shifts!<br><br>Thanks,<br>[Your name]</p>
+            <div class="script-section">
+                <h4">📝 Script #3: Email Version (If You're Nervous)</h4>
+                <div class="script-box">
+                    <h5">Subject Line: Available for Extra Hours</h5>
+                    <div class="script-text">Hi [Boss's name],<br><br>I wanted to let you know that I'm available and interested in picking up any overtime hours that become available. I'm flexible with my schedule and happy to help wherever needed.<br><br>Please keep me in mind for any extra shifts!<br><br>Thanks,<br>[Your name]</div>
+                    <div class="script-note"><strong>Why this works:</strong> Email gives you time to think, and your boss can respond when convenient. Good if face-to-face feels scary!</div>
+                </div>
+            </div>
+            
+            <div class="script-section">
+                <h4">📝 Script #4: After They Say "We'll See" or "Not Right Now"</h4>
+                <div class="script-box">
+                    <h5">What YOU Say:</h5>
+                    <div class="script-text">"I totally understand! Just wanted to put it on your radar. Would it be okay if I check back in a week or two? And if anything comes up before then, I'd love to be considered first!"</div>
+                    <div class="script-note"><strong>Why this works:</strong> You're being persistent without being pushy. You're giving them permission to think about it AND reminding them to keep you in mind.</div>
+                </div>
             </div>
         </div>
-        
+
         <div class="card">
-            <h2><span class="icon">📋</span> Your Overtime Action Plan</h2>
+            <h2><span class="icon">📋</span> Your Step-by-Step Action Plan</h2>
             
-            <div class="step" data-step="1"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 1: Check If Your Company Offers Overtime</div><div class="step-desc">Ask HR or check your employee handbook. Some salaried positions don't qualify. Know your hourly rate and overtime rate (usually 1.5x). If you're unsure, just ask—it's a normal question!</div></div></div>
-            
-            <div class="step" data-step="2"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 2: Decide How Many Hours You Want</div><div class="step-desc">Be realistic about your energy and commitments. Start with 5-10 hours/week. Too much overtime leads to burnout. Calculate how much extra you'd earn to stay motivated!</div></div></div>
-            
-            <div class="step" data-step="3"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 3: Pick the Right Time to Ask</div><div class="step-desc">Choose a moment when your boss isn't stressed. After a positive interaction is ideal. Avoid Monday mornings and Friday afternoons. During or right after busy periods is perfect!</div></div></div>
-            
-            <div class="step" data-step="4"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 4: Practice Your Script</div><div class="step-desc">Read the scripts above out loud. Pick the one that fits your style. Practice it a few times. The more natural it feels, the more confident you'll be when you ask!</div></div></div>
-            
-            <div class="step" data-step="5"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 5: Have the Conversation</div><div class="step-desc">Keep it simple and brief. Show enthusiasm for helping the team. Be flexible on timing—let them know you're willing to work when it's needed. Smile and be positive!</div></div></div>
-            
-            <div class="step" data-step="6"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 6: If They Say Yes—Be Reliable!</div><div class="step-desc">Show up on time, do great work, don't call out. Being reliable means you'll be the first one they call for extra hours. Thank your boss for the opportunity!</div></div></div>
-            
-            <div class="step" data-step="7"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 7: If They Say No—Ask What Would Help</div><div class="step-desc">Don't give up! Ask: "What would need to change for overtime to be available?" or "Can you keep me in mind when opportunities come up?" Follow up in 1-2 weeks.</div></div></div>
-            
-            <div class="step" data-step="8"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 8: Put That Extra Money to Work!</div><div class="step-desc">When you get extra hours, direct that money toward your goals—debt payoff, emergency fund, credit repair, savings. Don't let lifestyle creep eat your overtime earnings!</div></div></div>
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Check If Your Job Offers Overtime</div>
+                    <div class="step-desc">Before you ask, make sure overtime is even possible at your job!</div>
+                    <div class="step-details">
+                        <h5">🔍 How to Find Out:</h5>
+                        <ul>
+                            <li><strong>Check your employee handbook</strong> - Look for sections on "overtime," "extra hours," or "work hours"</li>
+                            <li><strong>Ask HR</strong> - Say: "I'm curious about the company's overtime policy. Is overtime available in my department?"</li>
+                            <li><strong">Ask a coworker</strong> who's been there longer - "Hey, does anyone ever work overtime here?"</li>
+                            <li><strong>Look at your pay stubs</strong> - If you've worked over 40 hours and got paid more, OT is available!</li>
+                            <li><strong>Salaried vs. Hourly:</strong> Hourly workers usually get overtime. Some salaried workers are "exempt" (no OT). Ask HR if unsure!</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Pick the BEST Time This Week to Ask</div>
+                    <div class="step-desc">Timing matters! Choose a moment when your boss is relaxed and approachable.</div>
+                    <div class="step-details">
+                        <h5">📅 Planning Your Ask:</h5>
+                        <ul>
+                            <li><strong>Look at your boss's calendar</strong> (if you can see it) - find a light day</li>
+                            <li><strong>Pay attention this week</strong> - when does your boss seem happiest?</li>
+                            <li><strong">Best days:</strong> Tuesday, Wednesday, or Thursday</li>
+                            <li><strong>Best times:</strong> Mid-morning (after they've settled in) or early afternoon</li>
+                            <li><strong>Write it down:</strong> "I will ask on _________ at _________ o'clock"</li>
+                            <li><strong">If you have a regular 1-on-1:</strong> That's the PERFECT time to bring it up!</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Practice the Script OUT LOUD</div>
+                    <div class="step-desc">This sounds silly, but saying it out loud makes it SO much easier when it's real!</div>
+                    <div class="step-details">
+                        <h5">🗣️ How to Practice:</h5>
+                        <ul>
+                            <li><strong>Pick ONE script</strong> from above that feels most natural to you</li>
+                            <li><strong>Say it out loud 3-5 times</strong> - in your car, shower, room, anywhere private!</li>
+                            <li><strong">Practice with a friend or family member</strong> if you can - have them pretend to be your boss</li>
+                            <li><strong>Think about follow-up questions</strong> they might ask: "When are you available?" "How many extra hours do you want?"</li>
+                            <li><strong">Know your answers:</strong> Be ready to say exactly WHEN you can work extra (mornings? evenings? weekends?)</li>
+                            <li><strong>The more you practice, the more confident you'll sound!</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Have the Conversation!</div>
+                    <div class="step-desc">This is it! Walk up to your boss and say what you practiced.</div>
+                    <div class="step-details">
+                        <h5">💬 During the Conversation:</h5>
+                        <ul>
+                            <li><strong>Take a deep breath</strong> before you walk up. You've got this!</li>
+                            <li><strong>Start with:</strong> "Hey, do you have a quick minute?" (Respect their time!)</li>
+                            <li><strong">Use your script</strong> - it's okay if it's not word-for-word perfect</li>
+                            <li><strong>Be specific about your availability:</strong> "I can work Saturdays" or "I'm free after 5pm on weekdays"</li>
+                            <li><strong>Smile and be positive!</strong> Enthusiasm goes a long way</li>
+                            <li><strong">Listen to their response</strong> - take notes if they mention future opportunities</li>
+                            <li><strong>Thank them</strong> regardless of the answer: "Thanks for considering me!"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: If They Say No - Ask This Follow-Up Question!</div>
+                    <div class="step-desc">A "no" today doesn't mean "no" forever. Ask this magic question!</div>
+                    <div class="step-details">
+                        <h5">🔮 The Magic Follow-Up Question:</h5>
+                        <ul>
+                            <li><strong>Ask:</strong> "I understand! What would need to change for overtime to become available?"</li>
+                            <li><strong>This question:</strong> Shows you're serious, gets you information, and keeps the door open!</li>
+                            <li><strong">They might say:</strong> "When we're busier" → Now you know to ask again during busy season!</li>
+                            <li><strong>They might say:</strong> "If someone quits" → Now you know to jump on it when that happens!</li>
+                            <li><strong>They might say:</strong> "Budget reasons" → Ask again after a few months</li>
+                            <li><strong>Also ask:</strong> "Is it okay if I check back in a couple weeks?" (Gets permission to follow up!)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Follow Up in 1-2 Weeks</div>
+                    <div class="step-desc">If you don't hear back, a gentle reminder shows you're serious!</div>
+                    <div class="step-details">
+                        <h5">📧 How to Follow Up:</h5>
+                        <ul>
+                            <li><strong>Set a calendar reminder</strong> for 7-10 days after your first ask</li>
+                            <li><strong>In person:</strong> "Hey, just wanted to check back about those extra hours. Any opportunities come up?"</li>
+                            <li><strong>By email:</strong> "Hi [Boss], just circling back on my availability for extra hours. Let me know if anything opens up!"</li>
+                            <li><strong">Don't follow up more than once a week</strong> - you don't want to be annoying!</li>
+                            <li><strong>Be patient but persistent</strong> - opportunities often come when you least expect them</li>
+                            <li><strong>If still no:</strong> Ask again in a month, or when you notice things getting busy</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step" data-step="7">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 7: When You Get Hours - Put That Money to Work!</div>
+                    <div class="step-desc">You got overtime! Now make sure that extra money goes toward your goals!</div>
+                    <div class="step-details">
+                        <h5">💰 What to Do with Overtime Pay:</h5>
+                        <ul>
+                            <li><strong>Calculate your extra earnings</strong> - How much extra per paycheck?</li>
+                            <li><strong>Send it straight to savings</strong> before you can spend it!</li>
+                            <li><strong">Pay down debt faster</strong> - Extra payments save you interest!</li>
+                            <li><strong">Build your emergency fund</strong> - Goal: 3-6 months of expenses</li>
+                            <li><strong>Invest in yourself</strong> - Certifications, courses, tools for a side business</li>
+                            <li><strong">Thank your boss</strong> when you get those extra hours - it'll help you get more!</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-        
+
         <div class="card">
-            <h2><span class="icon">💡</span> Pro Tips & Alternatives</h2>
-            
+            <h2><span class="icon">🔄</span> If Overtime Isn't Available - Try These Alternatives!</h2>
+            <div class="alternatives-grid">
+                <div class="alternative-card">
+                    <h4">📍 Other Locations</h4>
+                    <p>If you work at a chain (store, restaurant, etc.), ask if you can pick up shifts at other locations!</p>
+                </div>
+                <div class="alternative-card">
+                    <h4">🔄 Cover Coworkers</h4>
+                    <p>Let coworkers know you'll cover for them when they want time off. Easy extra hours!</p>
+                </div>
+                <div class="alternative-card">
+                    <h4">🦃 Holiday Shifts</h4>
+                    <p>Volunteer for Thanksgiving, Christmas, holidays. Often pays DOUBLE time!</p>
+                </div>
+                <div class="alternative-card">
+                    <h4">📞 On-Call/Backup</h4>
+                    <p>Ask to be the backup person when someone calls in sick. First call = your hours!</p>
+                </div>
+                <div class="alternative-card">
+                    <h4">🏢 Different Department</h4>
+                    <p>Some companies let you work part-time in another department. Ask HR!</p>
+                </div>
+                <div class="alternative-card">
+                    <h4">📚 Cross-Train</h4>
+                    <p>Learn other jobs at your company. The more you can do, the more hours you can get!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💡</span> Pro Tips to Get MORE Hours</h2>
             <div class="pro-tip">
-                <div class="pro-tip-title">💡 Be the "Yes" Person</div>
-                <p><strong>When others say no to extra shifts, say yes.</strong> Being reliable and flexible makes you the go-to person for overtime. Bosses remember who helps when they need it!</p>
+                <div class="pro-tip-title">🌟 Be the Person Who Says YES!</div>
+                <p>When others say no to extra hours, say YES. When nobody wants to work Saturday, YOU work Saturday. When someone calls in sick, YOU cover. Bosses remember who's reliable!</p>
             </div>
             
-            <div class="alt-box">
-                <h4>🔄 If Overtime Isn't Available, Ask About:</h4>
-                <ul>
-                    <li>• Picking up shifts at other locations (if chain store/restaurant)</li>
-                    <li>• Covering for coworkers who want time off</li>
-                    <li>• Holiday shifts (often pay double!)</li>
-                    <li>• On-call or backup shifts</li>
-                    <li>• Training for other departments/roles</li>
-                    <li>• A second part-time position at the same company</li>
-                </ul>
+            <div class="info-box">
+                <div class="info-box-title">📈 More Tips for Success:</div>
+                <p>• <strong>Be on time, every time.</strong> Reliable employees get first pick for overtime.</p>
+                <p>• <strong>Don't call out unless truly sick.</strong> Perfect attendance = more opportunities.</p>
+                <p>• <strong>Thank your boss</strong> every time they give you extra hours. Appreciation goes far!</p>
+                <p>• <strong>Do great work.</strong> Quality matters - they'll want YOU specifically for overtime.</p>
+                <p>• <strong>Be flexible.</strong> The more availability you have, the more hours you'll get.</p>
             </div>
         </div>
-        
-        <div class="card">
-            <h2><span class="icon">🎓</span> Learn From These Resources</h2>
-            <div class="influencer-grid">
-                <div class="influencer-card"><div class="influencer-avatar">💼</div><h4>Ask A Manager</h4><div class="platform">🌐 Website</div><p>Alison Green's blog on workplace issues, including how to ask for what you want at work!</p><a href="https://www.askamanager.org" class="influencer-link" target="_blank">Website →</a></div>
-                <div class="influencer-card"><div class="influencer-avatar">💬</div><h4>r/personalfinance</h4><div class="platform">🌐 Reddit</div><p>Community sharing income-boosting strategies and success stories!</p><a href="https://www.reddit.com/r/personalfinance/" class="influencer-link" target="_blank">Reddit →</a></div>
-                <div class="influencer-card"><div class="influencer-avatar">📊</div><h4>DOL Overtime Rules</h4><div class="platform">🌐 Government</div><p>Department of Labor info on overtime eligibility and your rights!</p><a href="https://www.dol.gov/agencies/whd/overtime" class="influencer-link" target="_blank">DOL.gov →</a></div>
-                <div class="influencer-card"><div class="influencer-avatar">💰</div><h4>r/FinancialPlanning</h4><div class="platform">🌐 Reddit</div><p>Discussions on maximizing income and what to do with extra earnings!</p><a href="https://www.reddit.com/r/FinancialPlanning/" class="influencer-link" target="_blank">Reddit →</a></div>
-            </div>
-        </div>
-        
+
         <div class="card">
             <h2><span class="icon">📈</span> Your Progress</h2>
             <div class="progress-tracker">
-                <div style="font-size: 1.2em; margin-bottom: 15px;"><span id="completed">0</span> of 8 steps completed</div>
+                <div class="progress-text"><span id="completed">0</span> of 7 steps completed</div>
                 <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
             </div>
         </div>
-        
+
         <div class="card">
-            <h2><span class="icon">📝</span> Your Overtime Tracker</h2>
+            <h2><span class="icon">📝</span> Your Overtime Planning Notes</h2>
             <div class="notes-section">
-                <textarea id="notes" placeholder="Track your overtime progress!
+                <textarea id="notes" placeholder="Plan your overtime conversation here!
 
-MY PAY INFO:
-Regular hourly rate: $____
-Overtime rate (1.5x): $____
-Double-time rate: $____
+MY HOURLY RATE: $_____
+MY OVERTIME RATE (×1.5): $_____
 
-OVERTIME GOALS:
-Hours per week wanted: ____
-Extra income goal: $____/month
+DOES MY JOB OFFER OVERTIME?
+☐ Yes - checked handbook/HR
+☐ Not sure - need to ask
+☐ No - will try alternatives
 
-CONVERSATION TRACKER:
-Asked on: ____
-Boss response: ____
-Follow-up date: ____
+WHEN I'LL ASK:
+Day: _____
+Time: _____
+Boss's name: _____
 
-OVERTIME EARNED:
-Week 1: ____ hrs = $____
-Week 2: ____ hrs = $____
-Week 3: ____ hrs = $____
-Week 4: ____ hrs = $____
-MONTHLY TOTAL: $____
+SCRIPT I'LL USE:
+☐ Script #1: Direct Ask
+☐ Script #2: Show Initiative  
+☐ Script #3: Email Version
 
-WHERE THIS MONEY GOES:
+MY AVAILABILITY FOR EXTRA HOURS:
+☐ Mornings (before work)
+☐ Evenings (after work)
+☐ Saturdays
+☐ Sundays
+☐ Holidays
+
+WHAT THEY SAID:
+_____
+
+FOLLOW-UP DATE: _____
+
+HOW MUCH EXTRA I'LL EARN:
+_____ extra hours × $_____ OT rate = $_____ per week
+= $_____ per month
+
+WHERE I'LL PUT THE EXTRA MONEY:
+☐ Savings
+☐ Pay off debt: _____
 ☐ Emergency fund
-☐ Debt payoff
-☐ Credit repair
-☐ Savings goal: ____
-
-NOTES:
+☐ Other: _____
 "></textarea>
             </div>
         </div>
-        
+
         <div class="cta-section">
             <h3>Need Help With Your Finances?</h3>
-            <p style="opacity: 0.9; margin-bottom: 20px;">Chat with an ASAP Financial coach for personalized guidance!</p>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
             <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
         </div>
     </div>
-    
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const saved = localStorage.getItem('playbook-ask-overtime');
-            if (saved) { const data = JSON.parse(saved); data.steps.forEach((checked, index) => { if (checked) { const cb = document.querySelectorAll('.step-checkbox')[index]; if (cb) cb.classList.add('checked'); }}); document.getElementById('notes').value = data.notes || ''; updateProgress(); }
+            if (saved) {
+                const data = JSON.parse(saved);
+                data.steps.forEach((checked, index) => {
+                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
+                });
+                document.getElementById('notes').value = data.notes || '';
+                updateProgress();
+            }
         });
         function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
-        function updateProgress() { const t = document.querySelectorAll('.step-checkbox').length; const c = document.querySelectorAll('.step-checkbox.checked').length; document.getElementById('completed').textContent = c; document.getElementById('progressFill').style.width = (c/t*100)+'%'; }
-        function saveProgress() { const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked')); const notes = document.getElementById('notes').value; localStorage.setItem('playbook-ask-overtime', JSON.stringify({steps, notes})); }
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-ask-overtime', JSON.stringify({ steps, notes }));
+        }
         document.getElementById('notes').addEventListener('input', saveProgress);
     </script>
 </body>
