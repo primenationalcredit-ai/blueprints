@@ -30,16 +30,8 @@
             --radius-lg: 20px;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             background: var(--bg-main);
@@ -49,13 +41,9 @@
             overflow-x: hidden;
         }
 
-        /* Background Pattern */
         .bg-pattern {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            top: 0; left: 0; right: 0; bottom: 0;
             background: 
                 radial-gradient(ellipse at 20% 0%, rgba(26, 86, 219, 0.08) 0%, transparent 50%),
                 radial-gradient(ellipse at 80% 100%, rgba(16, 185, 129, 0.06) 0%, transparent 50%),
@@ -63,13 +51,11 @@
             z-index: -1;
         }
 
-        /* Header */
         .header {
             padding: 20px 24px;
             display: flex;
             justify-content: center;
             align-items: center;
-            position: relative;
         }
 
         .logo {
@@ -95,7 +81,6 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
-            display: block;
         }
 
         .logo-text {
@@ -105,11 +90,8 @@
             color: var(--text-primary);
         }
 
-        .logo-text span {
-            color: var(--primary);
-        }
+        .logo-text span { color: var(--primary); }
 
-        /* Progress Bar */
         .progress-container {
             max-width: 600px;
             margin: 0 auto 20px;
@@ -147,27 +129,14 @@
             background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
             border-radius: 100px;
             transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
         }
 
-        .progress-fill::after {
-            content: '';
-            position: absolute;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            width: 20px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4));
-        }
-
-        /* Main Container */
         .main-container {
             max-width: 600px;
             margin: 0 auto;
             padding: 0 24px 40px;
         }
 
-        /* Form Card */
         .form-card {
             background: var(--bg-card);
             border-radius: var(--radius-lg);
@@ -180,42 +149,27 @@
         .form-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             height: 4px;
             background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
         }
 
         @media (max-width: 640px) {
-            .form-card {
-                padding: 32px 24px;
-                border-radius: var(--radius);
-            }
+            .form-card { padding: 32px 24px; border-radius: var(--radius); }
         }
 
-        /* Step Container */
         .step {
             display: none;
             animation: fadeIn 0.4s ease;
         }
 
-        .step.active {
-            display: block;
-        }
+        .step.active { display: block; }
 
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(12px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Typography */
         .step-label {
             display: inline-flex;
             align-items: center;
@@ -228,9 +182,7 @@
             margin-bottom: 12px;
         }
 
-        .step-label .icon {
-            font-size: 14px;
-        }
+        .step-label .icon { font-size: 14px; }
 
         .step-title {
             font-family: 'Fraunces', serif;
@@ -247,14 +199,8 @@
             margin-bottom: 32px;
         }
 
-        /* Input Styles */
-        .input-group {
-            margin-bottom: 24px;
-        }
-
-        .input-group:last-of-type {
-            margin-bottom: 32px;
-        }
+        .input-group { margin-bottom: 24px; }
+        .input-group:last-of-type { margin-bottom: 32px; }
 
         .input-label {
             display: block;
@@ -264,9 +210,7 @@
             margin-bottom: 8px;
         }
 
-        .input-wrapper {
-            position: relative;
-        }
+        .input-wrapper { position: relative; }
 
         .input-prefix {
             position: absolute;
@@ -283,6 +227,7 @@
         input[type="email"],
         input[type="number"],
         input[type="tel"],
+        input[type="date"],
         select {
             width: 100%;
             padding: 16px 20px;
@@ -297,30 +242,19 @@
             appearance: none;
         }
 
-        input.has-prefix {
-            padding-left: 36px;
-        }
+        input.has-prefix { padding-left: 36px; }
 
-        input:focus,
-        select:focus {
+        input:focus, select:focus {
             outline: none;
             border-color: var(--primary);
             box-shadow: 0 0 0 4px rgba(26, 86, 219, 0.1);
         }
 
-        input::placeholder {
-            color: var(--text-muted);
-        }
+        input::placeholder { color: var(--text-muted); }
 
         input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-
-        input[type=number] {
-            -moz-appearance: textfield;
-        }
+        input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+        input[type=number] { -moz-appearance: textfield; }
 
         select {
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
@@ -331,7 +265,6 @@
             cursor: pointer;
         }
 
-        /* Big Number Input */
         .big-input-container {
             text-align: center;
             margin-bottom: 32px;
@@ -362,9 +295,7 @@
             color: var(--text-primary);
         }
 
-        .big-input:focus {
-            box-shadow: none !important;
-        }
+        .big-input:focus { box-shadow: none !important; }
 
         .big-input-label {
             font-size: 14px;
@@ -372,7 +303,6 @@
             margin-top: 8px;
         }
 
-        /* Expense Grid */
         .expense-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -381,14 +311,10 @@
         }
 
         @media (max-width: 500px) {
-            .expense-grid {
-                grid-template-columns: 1fr;
-            }
+            .expense-grid { grid-template-columns: 1fr; }
         }
 
-        .expense-item {
-            position: relative;
-        }
+        .expense-item { position: relative; }
 
         .expense-item label {
             display: block;
@@ -408,144 +334,6 @@
             font-size: 16px;
         }
 
-        /* Debt Repeater */
-        .debt-section {
-            margin-bottom: 32px;
-        }
-
-        .debt-section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 16px;
-        }
-
-        .debt-section-title {
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-
-        .debt-items {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .debt-card {
-            background: var(--bg-main);
-            border: 2px solid var(--border);
-            border-radius: var(--radius);
-            padding: 20px;
-            position: relative;
-            transition: all 0.2s ease;
-        }
-
-        .debt-card:hover {
-            border-color: var(--primary-light);
-        }
-
-        .debt-card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 16px;
-        }
-
-        .debt-card-title {
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-
-        .debt-card-remove {
-            background: none;
-            border: none;
-            color: var(--text-muted);
-            cursor: pointer;
-            padding: 4px 8px;
-            font-size: 20px;
-            line-height: 1;
-            border-radius: 6px;
-            transition: all 0.2s;
-        }
-
-        .debt-card-remove:hover {
-            background: rgba(239, 68, 68, 0.1);
-            color: var(--error);
-        }
-
-        .debt-card-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 12px;
-        }
-
-        @media (max-width: 500px) {
-            .debt-card-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .debt-card-grid.installment {
-            grid-template-columns: 2fr 1fr 1fr;
-        }
-
-        @media (max-width: 500px) {
-            .debt-card-grid.installment {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .debt-field label {
-            display: block;
-            font-size: 11px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-            color: var(--text-muted);
-            margin-bottom: 6px;
-        }
-
-        .debt-field input,
-        .debt-field select {
-            padding: 12px 14px;
-            font-size: 15px;
-        }
-
-        .debt-field input.has-prefix {
-            padding-left: 28px;
-        }
-
-        .debt-field .input-prefix {
-            left: 12px;
-            font-size: 14px;
-        }
-
-        /* Add Button */
-        .add-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 20px;
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--primary);
-            background: rgba(26, 86, 219, 0.08);
-            border: 2px dashed var(--primary-light);
-            border-radius: var(--radius);
-            cursor: pointer;
-            transition: all 0.2s;
-            width: 100%;
-            justify-content: center;
-        }
-
-        .add-btn:hover {
-            background: rgba(26, 86, 219, 0.12);
-            border-style: solid;
-        }
-
-        /* Buttons */
         .btn-container {
             display: flex;
             gap: 12px;
@@ -579,10 +367,6 @@
             box-shadow: 0 6px 20px rgba(26, 86, 219, 0.5);
         }
 
-        .btn-primary:active {
-            transform: translateY(0);
-        }
-
         .btn-secondary {
             background: var(--bg-main);
             color: var(--text-secondary);
@@ -594,11 +378,8 @@
             color: var(--text-primary);
         }
 
-        .btn-icon {
-            font-size: 18px;
-        }
+        .btn-icon { font-size: 18px; }
 
-        /* Info Box */
         .info-box {
             background: linear-gradient(135deg, rgba(26, 86, 219, 0.08) 0%, rgba(16, 185, 129, 0.08) 100%);
             border: 1px solid rgba(26, 86, 219, 0.15);
@@ -608,55 +389,6 @@
             display: flex;
             gap: 12px;
             align-items: flex-start;
-        }
-
-        /* Monthly Banner */
-        .monthly-banner {
-            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-            border: 2px solid #f59e0b;
-            border-radius: var(--radius);
-            padding: 12px 20px;
-            margin-bottom: 24px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .monthly-banner-icon {
-            font-size: 24px;
-        }
-
-        .monthly-banner-text {
-            font-size: 14px;
-            font-weight: 600;
-            color: #92400e;
-        }
-
-        .monthly-banner-text strong {
-            color: #78350f;
-        }
-
-        /* After-Tax Banner */
-        .aftertax-banner {
-            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
-            border: 2px solid #10b981;
-            border-radius: var(--radius);
-            padding: 12px 20px;
-            margin-bottom: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .aftertax-banner-icon {
-            font-size: 20px;
-        }
-
-        .aftertax-banner-text {
-            font-size: 15px;
-            font-weight: 700;
-            color: #065f46;
         }
 
         .info-box-icon {
@@ -670,7 +402,47 @@
             line-height: 1.5;
         }
 
-        /* Welcome Step */
+        .monthly-banner {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 2px solid #f59e0b;
+            border-radius: var(--radius);
+            padding: 12px 20px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .monthly-banner-icon { font-size: 24px; }
+
+        .monthly-banner-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: #92400e;
+        }
+
+        .monthly-banner-text strong { color: #78350f; }
+
+        .aftertax-banner {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            border: 2px solid #10b981;
+            border-radius: var(--radius);
+            padding: 12px 20px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .aftertax-banner-icon { font-size: 20px; }
+
+        .aftertax-banner-text {
+            font-size: 15px;
+            font-weight: 700;
+            color: #065f46;
+        }
+
         .welcome-icon {
             font-size: 64px;
             margin-bottom: 24px;
@@ -692,9 +464,7 @@
             color: var(--text-secondary);
         }
 
-        .benefits-list li:last-child {
-            border-bottom: none;
-        }
+        .benefits-list li:last-child { border-bottom: none; }
 
         .benefits-list .check {
             width: 24px;
@@ -709,10 +479,7 @@
             flex-shrink: 0;
         }
 
-        /* Review Step */
-        .review-section {
-            margin-bottom: 24px;
-        }
+        .review-section { margin-bottom: 24px; }
 
         .review-section-title {
             font-size: 12px;
@@ -748,7 +515,6 @@
             color: var(--text-primary);
         }
 
-        /* Success State */
         .success-container {
             text-align: center;
             padding: 20px 0;
@@ -789,22 +555,31 @@
             margin-bottom: 32px;
         }
 
-        /* Skip Button */
-        .skip-link {
-            display: block;
+        .footer {
             text-align: center;
-            margin-top: 16px;
-            font-size: 14px;
+            padding: 24px;
             color: var(--text-muted);
-            text-decoration: none;
-            cursor: pointer;
+            font-size: 13px;
         }
 
-        .skip-link:hover {
+        .footer a {
             color: var(--text-secondary);
+            text-decoration: none;
         }
 
-        /* Loading Spinner */
+        .footer a:hover { color: var(--primary); }
+
+        .input-error { border-color: var(--error) !important; }
+
+        .error-message {
+            color: var(--error);
+            font-size: 13px;
+            margin-top: 6px;
+            display: none;
+        }
+
+        .error-message.show { display: block; }
+
         .spinner {
             width: 20px;
             height: 20px;
@@ -818,117 +593,69 @@
             to { transform: rotate(360deg); }
         }
 
-        /* Tooltip */
-        .tooltip-trigger {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 18px;
-            height: 18px;
-            background: var(--border);
-            border-radius: 50%;
-            font-size: 11px;
-            font-weight: 700;
-            color: var(--text-muted);
-            cursor: help;
-            margin-left: 6px;
+        /* Pay frequency selector styling */
+        .pay-option-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 24px;
         }
 
-        /* No Debt Option */
-        .no-debt-option {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 16px 20px;
-            background: var(--bg-main);
+        .pay-option {
+            padding: 16px;
             border: 2px solid var(--border);
             border-radius: var(--radius);
-            margin-bottom: 20px;
             cursor: pointer;
             transition: all 0.2s;
-        }
-
-        .no-debt-option:hover {
-            border-color: var(--accent);
-        }
-
-        .no-debt-option.selected {
-            border-color: var(--accent);
-            background: rgba(16, 185, 129, 0.08);
-        }
-
-        .no-debt-checkbox {
-            width: 22px;
-            height: 22px;
-            border: 2px solid var(--border);
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s;
-            flex-shrink: 0;
-        }
-
-        .no-debt-option.selected .no-debt-checkbox {
-            background: var(--accent);
-            border-color: var(--accent);
-            color: white;
-        }
-
-        .no-debt-text {
-            font-size: 15px;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        /* Footer */
-        .footer {
             text-align: center;
-            padding: 24px;
+        }
+
+        .pay-option:hover {
+            border-color: var(--primary-light);
+            background: rgba(26, 86, 219, 0.04);
+        }
+
+        .pay-option.selected {
+            border-color: var(--primary);
+            background: rgba(26, 86, 219, 0.08);
+        }
+
+        .pay-option-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .pay-option-desc {
+            font-size: 12px;
             color: var(--text-muted);
-            font-size: 13px;
         }
 
-        .footer a {
-            color: var(--text-secondary);
-            text-decoration: none;
+        /* Date inputs row */
+        .date-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
         }
 
-        .footer a:hover {
-            color: var(--primary);
-        }
-
-        /* Validation */
-        .input-error {
-            border-color: var(--error) !important;
-        }
-
-        .error-message {
-            color: var(--error);
-            font-size: 13px;
-            margin-top: 6px;
-            display: none;
-        }
-
-        .error-message.show {
-            display: block;
+        @media (max-width: 500px) {
+            .date-row { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
     <div class="bg-pattern"></div>
 
-    <!-- Header -->
     <header class="header">
         <div class="logo">
             <div class="logo-icon">
-                <img src="https://storage.googleapis.com/msgsndr/f58EcBfh5X2TxJZZE1MR/media/692e66f073043a1a9b285b1c.png" alt="ASAP" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=&quot;font-weight:700;color:#1a56db;font-size:14px;&quot;>ASAP</span>';">
+                <img src="https://storage.googleapis.com/msgsndr/f58EcBfh5X2TxJZZE1MR/media/692e66f073043a1a9b285b1c.png" alt="ASAP">
             </div>
             <div class="logo-text">ASAP <span>Financial</span></div>
         </div>
     </header>
 
-    <!-- Progress Bar -->
     <div class="progress-container">
         <div class="progress-info">
             <span class="progress-step" id="progress-step">Let's get started</span>
@@ -939,7 +666,6 @@
         </div>
     </div>
 
-    <!-- Main Container -->
     <main class="main-container">
         <div class="form-card">
             <form id="blueprint-form" onsubmit="return false;">
@@ -951,22 +677,10 @@
                     <p class="step-subtitle">In just 3 minutes, we'll create a personalized action plan to help you take control of your finances.</p>
                     
                     <ul class="benefits-list">
-                        <li>
-                            <span class="check">✓</span>
-                            <span>Custom 50/30/20 budget breakdown</span>
-                        </li>
-                        <li>
-                            <span class="check">✓</span>
-                            <span>Identify exactly where your money is going</span>
-                        </li>
-                        <li>
-                            <span class="check">✓</span>
-                            <span>Step-by-step action plan with playbooks</span>
-                        </li>
-                        <li>
-                            <span class="check">✓</span>
-                            <span>Emergency fund & debt payoff roadmap</span>
-                        </li>
+                        <li><span class="check">✓</span><span>Custom 50/30/20 budget breakdown</span></li>
+                        <li><span class="check">✓</span><span>Your daily spending limit calculated</span></li>
+                        <li><span class="check">✓</span><span>Step-by-step action plan with exact amounts</span></li>
+                        <li><span class="check">✓</span><span>Emergency fund & debt payoff roadmap</span></li>
                     </ul>
 
                     <div class="btn-container">
@@ -1018,8 +732,59 @@
                     </div>
                 </div>
 
-                <!-- Step 3: Monthly Income -->
+                <!-- Step 3: Pay Schedule (NEW) -->
                 <div class="step" data-step="3">
+                    <span class="step-label"><span class="icon">📅</span> Pay Schedule</span>
+                    <h2 class="step-title">How often do you get paid?</h2>
+                    <p class="step-subtitle">This helps us time your action items to your paydays.</p>
+
+                    <div class="pay-option-grid">
+                        <div class="pay-option" data-value="weekly" onclick="selectPayFrequency(this)">
+                            <div class="pay-option-title">Weekly</div>
+                            <div class="pay-option-desc">Every week (52x/year)</div>
+                        </div>
+                        <div class="pay-option selected" data-value="biweekly" onclick="selectPayFrequency(this)">
+                            <div class="pay-option-title">Bi-Weekly</div>
+                            <div class="pay-option-desc">Every 2 weeks (26x/year)</div>
+                        </div>
+                        <div class="pay-option" data-value="semimonthly" onclick="selectPayFrequency(this)">
+                            <div class="pay-option-title">Semi-Monthly</div>
+                            <div class="pay-option-desc">1st & 15th (24x/year)</div>
+                        </div>
+                        <div class="pay-option" data-value="monthly" onclick="selectPayFrequency(this)">
+                            <div class="pay-option-title">Monthly</div>
+                            <div class="pay-option-desc">Once a month (12x/year)</div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="pay_frequency" name="pay_frequency" value="biweekly">
+
+                    <div class="input-group">
+                        <label class="input-label">Your Next 2 Pay Dates</label>
+                        <div class="date-row">
+                            <div>
+                                <input type="date" id="paydate_1" name="paydate_1">
+                                <div class="error-message" id="error-paydate_1">Please select your next pay date</div>
+                            </div>
+                            <div>
+                                <input type="date" id="paydate_2" name="paydate_2">
+                                <div class="error-message" id="error-paydate_2">Please select your second pay date</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <span class="info-box-icon">💡</span>
+                        <span class="info-box-text">We'll use your pay dates to tell you exactly <strong>when</strong> to make payments and transfers.</span>
+                    </div>
+
+                    <div class="btn-container">
+                        <button type="button" class="btn btn-secondary" onclick="prevStep()">← Back</button>
+                        <button type="button" class="btn btn-primary" onclick="nextStep()">Continue →</button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Monthly Income -->
+                <div class="step" data-step="4">
                     <span class="step-label"><span class="icon">💰</span> Income</span>
                     <h2 class="step-title">What's your monthly take-home pay?</h2>
                     <p class="step-subtitle">The amount that actually hits your bank account.</p>
@@ -1039,7 +804,7 @@
 
                     <div class="info-box">
                         <span class="info-box-icon">💡</span>
-                        <span class="info-box-text"><strong>After taxes only!</strong> Add up your paycheck deposits, side gigs, rental income, child support - everything that lands in your account each month.</span>
+                        <span class="info-box-text"><strong>After taxes only!</strong> Add up your paycheck deposits, side gigs, rental income - everything that lands in your account each month.</span>
                     </div>
 
                     <div class="btn-container">
@@ -1048,14 +813,22 @@
                     </div>
                 </div>
 
-                <!-- Step 4: Savings -->
-                <div class="step" data-step="4">
-                    <span class="step-label"><span class="icon">🏦</span> Savings</span>
-                    <h2 class="step-title">Tell us about your savings</h2>
-                    <p class="step-subtitle">This helps us build your emergency fund target.</p>
+                <!-- Step 5: Cash & Savings (NEW - Combined) -->
+                <div class="step" data-step="5">
+                    <span class="step-label"><span class="icon">🏦</span> Cash & Savings</span>
+                    <h2 class="step-title">What's your current cash situation?</h2>
+                    <p class="step-subtitle">This helps us calculate your starting point.</p>
 
                     <div class="input-group">
-                        <label class="input-label">How much do you currently save per month?</label>
+                        <label class="input-label">Cash available right now (checking account)</label>
+                        <div class="input-wrapper">
+                            <span class="input-prefix">$</span>
+                            <input type="number" class="has-prefix" id="cash_available" name="cash_available" placeholder="1,500" min="0">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label">How much do you save per month?</label>
                         <div class="input-wrapper">
                             <span class="input-prefix">$</span>
                             <input type="number" class="has-prefix" id="savings" name="savings" placeholder="500" min="0">
@@ -1063,11 +836,16 @@
                     </div>
 
                     <div class="input-group">
-                        <label class="input-label">Current emergency fund balance</label>
+                        <label class="input-label">Emergency fund balance (separate savings)</label>
                         <div class="input-wrapper">
                             <span class="input-prefix">$</span>
                             <input type="number" class="has-prefix" id="emergency_fund" name="emergency_fund" placeholder="1,000" min="0">
                         </div>
+                    </div>
+
+                    <div class="info-box">
+                        <span class="info-box-icon">💡</span>
+                        <span class="info-box-text"><strong>Cash available</strong> = what's in your checking account today. <strong>Emergency fund</strong> = savings set aside for emergencies only.</span>
                     </div>
 
                     <div class="btn-container">
@@ -1076,8 +854,8 @@
                     </div>
                 </div>
 
-                <!-- Step 5: Essential Expenses (Needs) -->
-                <div class="step" data-step="5">
+                <!-- Step 6: Essential Expenses (Needs) -->
+                <div class="step" data-step="6">
                     <span class="step-label"><span class="icon">🏠</span> Essential Expenses</span>
                     <h2 class="step-title">Monthly essentials</h2>
                     <p class="step-subtitle">Enter the amount you pay <strong>each month</strong> for these essentials.</p>
@@ -1173,8 +951,8 @@
                     </div>
                 </div>
 
-                <!-- Step 6: Discretionary Expenses (Wants) -->
-                <div class="step" data-step="6">
+                <!-- Step 7: Discretionary Expenses (Wants) -->
+                <div class="step" data-step="7">
                     <span class="step-label"><span class="icon">🎯</span> Lifestyle Spending</span>
                     <h2 class="step-title">Monthly discretionary spending</h2>
                     <p class="step-subtitle">Enter what you typically spend <strong>each month</strong> on these items.</p>
@@ -1193,21 +971,21 @@
                             </div>
                         </div>
                         <div class="expense-item">
-                            <label>Food Delivery (DoorDash, Uber Eats, etc.)</label>
+                            <label>Food Delivery (DoorDash, etc.)</label>
                             <div class="input-wrapper">
                                 <span class="input-prefix">$</span>
                                 <input type="number" class="has-prefix" id="food_delivery" name="food_delivery" placeholder="0" min="0">
                             </div>
                         </div>
                         <div class="expense-item">
-                            <label>Streaming (Netflix, Disney+, etc.)</label>
+                            <label>Streaming (Netflix, etc.)</label>
                             <div class="input-wrapper">
                                 <span class="input-prefix">$</span>
                                 <input type="number" class="has-prefix" id="netflix_streaming" name="netflix_streaming" placeholder="0" min="0">
                             </div>
                         </div>
                         <div class="expense-item">
-                            <label>Software & Apps (subscriptions)</label>
+                            <label>Software & Apps</label>
                             <div class="input-wrapper">
                                 <span class="input-prefix">$</span>
                                 <input type="number" class="has-prefix" id="software_apps" name="software_apps" placeholder="0" min="0">
@@ -1221,21 +999,21 @@
                             </div>
                         </div>
                         <div class="expense-item">
-                            <label>Shopping (Amazon, clothes, etc.)</label>
+                            <label>Shopping (Amazon, clothes)</label>
                             <div class="input-wrapper">
                                 <span class="input-prefix">$</span>
                                 <input type="number" class="has-prefix" id="shopping" name="shopping" placeholder="0" min="0">
                             </div>
                         </div>
                         <div class="expense-item">
-                            <label>Entertainment (bars, events, etc.)</label>
+                            <label>Entertainment (bars, events)</label>
                             <div class="input-wrapper">
                                 <span class="input-prefix">$</span>
                                 <input type="number" class="has-prefix" id="entertainment" name="entertainment" placeholder="0" min="0">
                             </div>
                         </div>
                         <div class="expense-item">
-                            <label>Other Subscriptions (any other monthly costs)</label>
+                            <label>Other Subscriptions</label>
                             <div class="input-wrapper">
                                 <span class="input-prefix">$</span>
                                 <input type="number" class="has-prefix" id="other_subscriptions" name="other_subscriptions" placeholder="0" min="0">
@@ -1249,8 +1027,8 @@
                     </div>
                 </div>
 
-                <!-- Step 7: Review -->
-                <div class="step" data-step="7">
+                <!-- Step 8: Review -->
+                <div class="step" data-step="8">
                     <span class="step-label"><span class="icon">✅</span> Almost Done!</span>
                     <h2 class="step-title">Review your information</h2>
                     <p class="step-subtitle">Make sure everything looks correct before we create your blueprint.</p>
@@ -1266,15 +1044,27 @@
                                 <span class="review-item-label">Email</span>
                                 <span class="review-item-value" id="review-email">-</span>
                             </div>
+                            <div class="review-item">
+                                <span class="review-item-label">Pay Frequency</span>
+                                <span class="review-item-value" id="review-payfreq">-</span>
+                            </div>
+                            <div class="review-item">
+                                <span class="review-item-label">Next Pay Date</span>
+                                <span class="review-item-value" id="review-paydate">-</span>
+                            </div>
                         </div>
                     </div>
 
                     <div class="review-section">
-                        <div class="review-section-title">Income & Savings</div>
+                        <div class="review-section-title">Income & Cash</div>
                         <div class="review-grid">
                             <div class="review-item">
                                 <span class="review-item-label">Monthly Income</span>
                                 <span class="review-item-value" id="review-income">-</span>
+                            </div>
+                            <div class="review-item">
+                                <span class="review-item-label">Cash Available</span>
+                                <span class="review-item-value" id="review-cash">-</span>
                             </div>
                             <div class="review-item">
                                 <span class="review-item-label">Monthly Savings</span>
@@ -1314,16 +1104,16 @@
                     </div>
                 </div>
 
-                <!-- Step 8: Success -->
-                <div class="step" data-step="8">
+                <!-- Step 9: Success -->
+                <div class="step" data-step="9">
                     <div class="success-container">
                         <div class="success-icon">✓</div>
                         <h2 class="success-title">Thank You!</h2>
-                        <p class="success-text">Your personalized Financial Blueprint will be sent to <strong id="success-email">your@email.com</strong> soon. Keep an eye on your inbox!</p>
+                        <p class="success-text">Your personalized Financial Blueprint will be sent to <strong id="success-email">your@email.com</strong> soon.</p>
                         
                         <div class="info-box">
                             <span class="info-box-icon">📧</span>
-                            <span class="info-box-text">Your Blueprint is being put together and we'll email it to you soon. Be sure to check your spam folder if you don't see it!</span>
+                            <span class="info-box-text">Your Blueprint is being put together and we'll email it to you soon. Check your spam folder if you don't see it!</span>
                         </div>
                     </div>
                 </div>
@@ -1332,62 +1122,50 @@
         </div>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <p>© 2024 ASAP Credit Repair. <a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></p>
     </footer>
 
     <script>
-        // ==================== STATE ====================
         let currentStep = 0;
-        const totalSteps = 8;
+        const totalSteps = 9;
 
-        // Prevent Enter key from submitting form
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' && e.target.tagName !== 'TEXTAREA') {
-                e.preventDefault();
-                // If on a step with a Continue button, trigger next step
-                if (currentStep < 7) {
-                    nextStep();
-                }
-            }
-        });
-
-        // Step names for progress display
         const stepNames = [
             "Let's get started",
-            "Step 1 of 6: Your name",
-            "Step 2 of 6: Contact info",
-            "Step 3 of 6: Income",
-            "Step 4 of 6: Savings",
-            "Step 5 of 6: Monthly essentials",
-            "Step 6 of 6: Lifestyle spending",
+            "Step 1 of 7: Your name",
+            "Step 2 of 7: Contact info",
+            "Step 3 of 7: Pay schedule",
+            "Step 4 of 7: Income",
+            "Step 5 of 7: Cash & savings",
+            "Step 6 of 7: Monthly essentials",
+            "Step 7 of 7: Lifestyle spending",
             "Review & Submit",
             "Complete!"
         ];
 
-        // ==================== NAVIGATION ====================
+        // Prevent Enter key submission
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && e.target.tagName !== 'TEXTAREA') {
+                e.preventDefault();
+                if (currentStep < 8) nextStep();
+            }
+        });
+
         function showStep(step) {
             document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
             document.querySelector(`[data-step="${step}"]`).classList.add('active');
             
-            // Update progress
             const progress = Math.min(100, Math.round((step / (totalSteps - 1)) * 100));
             document.getElementById('progress-fill').style.width = `${progress}%`;
             document.getElementById('progress-percent').textContent = `${progress}%`;
             document.getElementById('progress-step').textContent = stepNames[step];
             
-            // Scroll to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function nextStep() {
             if (!validateStep(currentStep)) return;
-            
-            if (currentStep === 6) {
-                populateReview();
-            }
-            
+            if (currentStep === 7) populateReview();
             currentStep++;
             showStep(currentStep);
         }
@@ -1399,45 +1177,39 @@
             }
         }
 
-        // ==================== VALIDATION ====================
+        function selectPayFrequency(el) {
+            document.querySelectorAll('.pay-option').forEach(o => o.classList.remove('selected'));
+            el.classList.add('selected');
+            document.getElementById('pay_frequency').value = el.dataset.value;
+        }
+
         function validateStep(step) {
             let isValid = true;
             
             if (step === 1) {
-                // Validate name
                 const firstName = document.getElementById('name_first').value.trim();
                 const lastName = document.getElementById('name_last').value.trim();
                 
-                if (!firstName) {
-                    showError('name_first');
-                    isValid = false;
-                } else {
-                    hideError('name_first');
-                }
-                
-                if (!lastName) {
-                    showError('name_last');
-                    isValid = false;
-                } else {
-                    hideError('name_last');
-                }
+                if (!firstName) { showError('name_first'); isValid = false; } else { hideError('name_first'); }
+                if (!lastName) { showError('name_last'); isValid = false; } else { hideError('name_last'); }
             }
             
             if (step === 2) {
-                // Validate email
                 const email = document.getElementById('email').value.trim();
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 
-                if (!email || !emailRegex.test(email)) {
-                    showError('email');
-                    isValid = false;
-                } else {
-                    hideError('email');
-                }
+                if (!email || !emailRegex.test(email)) { showError('email'); isValid = false; } else { hideError('email'); }
+            }
+
+            if (step === 3) {
+                const paydate1 = document.getElementById('paydate_1').value;
+                const paydate2 = document.getElementById('paydate_2').value;
+                
+                if (!paydate1) { showError('paydate_1'); isValid = false; } else { hideError('paydate_1'); }
+                if (!paydate2) { showError('paydate_2'); isValid = false; } else { hideError('paydate_2'); }
             }
             
-            if (step === 3) {
-                // Validate income
+            if (step === 4) {
                 const income = document.getElementById('income').value;
                 if (!income || parseFloat(income) <= 0) {
                     document.getElementById('income').classList.add('input-error');
@@ -1460,34 +1232,37 @@
             document.getElementById(`error-${fieldId}`).classList.remove('show');
         }
 
-        // ==================== REVIEW ====================
         function populateReview() {
-            // Personal
             document.getElementById('review-name').textContent = 
                 `${document.getElementById('name_first').value} ${document.getElementById('name_last').value}`;
             document.getElementById('review-email').textContent = document.getElementById('email').value;
             
-            // Income & Savings
+            // Pay schedule
+            const freqMap = { weekly: 'Weekly', biweekly: 'Bi-Weekly', semimonthly: 'Semi-Monthly', monthly: 'Monthly' };
+            document.getElementById('review-payfreq').textContent = freqMap[document.getElementById('pay_frequency').value] || 'Bi-Weekly';
+            
+            const paydate1 = document.getElementById('paydate_1').value;
+            if (paydate1) {
+                const d = new Date(paydate1 + 'T00:00:00');
+                document.getElementById('review-paydate').textContent = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+            }
+            
             document.getElementById('review-income').textContent = formatCurrency(document.getElementById('income').value);
+            document.getElementById('review-cash').textContent = formatCurrency(document.getElementById('cash_available').value || 0);
             document.getElementById('review-savings').textContent = formatCurrency(document.getElementById('savings').value || 0);
             document.getElementById('review-emergency').textContent = formatCurrency(document.getElementById('emergency_fund').value || 0);
             
-            // Calculate Needs total
+            // Calculate totals
             const needsFields = ['mortgage_rent', 'utilities', 'groceries', 'car_payment', 'gas_transportation', 
                                  'insurance', 'phone_service', 'healthcare', 'childcare', 'student_loans_payment', 'taxes'];
             let needsTotal = 0;
-            needsFields.forEach(field => {
-                needsTotal += parseFloat(document.getElementById(field).value || 0);
-            });
+            needsFields.forEach(field => { needsTotal += parseFloat(document.getElementById(field).value || 0); });
             document.getElementById('review-needs').textContent = formatCurrency(needsTotal);
             
-            // Calculate Wants total
             const wantsFields = ['restaurants', 'food_delivery', 'netflix_streaming', 'software_apps', 
                                  'gym_fitness', 'shopping', 'entertainment', 'other_subscriptions'];
             let wantsTotal = 0;
-            wantsFields.forEach(field => {
-                wantsTotal += parseFloat(document.getElementById(field).value || 0);
-            });
+            wantsFields.forEach(field => { wantsTotal += parseFloat(document.getElementById(field).value || 0); });
             document.getElementById('review-wants').textContent = formatCurrency(wantsTotal);
         }
 
@@ -1496,46 +1271,35 @@
             return '$' + num.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
         }
 
-        // ==================== FORM SUBMISSION ====================
-        // PASTE YOUR ZAPIER WEBHOOK URL HERE:
+        // WEBHOOK URL
         const ZAPIER_WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/172130/ukvs2e2/';
 
         document.getElementById('blueprint-form').addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            // Show loading state
             const submitBtn = document.getElementById('submit-btn');
             submitBtn.innerHTML = '<span class="spinner"></span> Submitting...';
             submitBtn.disabled = true;
             
-            // Collect all form data
             const formData = collectFormData();
-            
-            // Add timestamp and generate unique ID
             formData.submission_id = 'client_' + Date.now() + '_' + Math.random().toString(36).substring(2, 8);
             formData.submission_date = new Date().toISOString();
-            formData.status = 'pending_debt_entry'; // Waiting for admin to add debt data
+            formData.status = 'pending_debt_entry';
             
             console.log('Submitting to Zapier:', formData);
             
             try {
-                // Send to Zapier webhook
                 if (ZAPIER_WEBHOOK_URL && ZAPIER_WEBHOOK_URL !== 'YOUR_ZAPIER_WEBHOOK_URL_HERE') {
                     await fetch(ZAPIER_WEBHOOK_URL, {
                         method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        mode: 'no-cors', // Required for Zapier webhooks
+                        headers: { 'Content-Type': 'application/json' },
+                        mode: 'no-cors',
                         body: JSON.stringify(formData)
                     });
                 }
                 
-                // Update success email
                 document.getElementById('success-email').textContent = document.getElementById('email').value;
-                
-                // Show success step
-                currentStep = 8;
+                currentStep = 9;
                 showStep(currentStep);
                 
             } catch (error) {
@@ -1547,14 +1311,19 @@
         });
 
         function collectFormData() {
-            // Personal
-            const data = {
+            return {
                 name_first: document.getElementById('name_first').value,
                 name_last: document.getElementById('name_last').value,
                 email: document.getElementById('email').value,
                 
-                // Income & Savings
+                // NEW: Pay schedule fields
+                pay_frequency: document.getElementById('pay_frequency').value,
+                paydate_1: document.getElementById('paydate_1').value,
+                paydate_2: document.getElementById('paydate_2').value,
+                
+                // Income & Cash
                 income: parseFloat(document.getElementById('income').value) || 0,
+                cash_available: parseFloat(document.getElementById('cash_available').value) || 0,
                 savings: parseFloat(document.getElementById('savings').value) || 0,
                 emergency_fund: parseFloat(document.getElementById('emergency_fund').value) || 0,
                 
@@ -1581,8 +1350,6 @@
                 entertainment: parseFloat(document.getElementById('entertainment').value) || 0,
                 other_subscriptions: parseFloat(document.getElementById('other_subscriptions').value) || 0,
             };
-            
-            return data;
         }
     </script>
 </body>
