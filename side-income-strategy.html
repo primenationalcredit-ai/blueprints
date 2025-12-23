@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💵 Side Income Strategy</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; font-size: 14px; opacity: 0.9; }
+        .back-link:hover { opacity: 1; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        h1 { font-size: 2.2em; margin-bottom: 10px; color: #1a1a2e; }
+        .subtitle { font-size: 1.2em; color: #666; margin-bottom: 15px; }
+        .meta { display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 20px; font-size: 0.9em; color: #888; }
+        .meta span { background: #f0f0f0; padding: 5px 12px; border-radius: 20px; }
+        h2 { color: #1a1a2e; margin: 25px 0 15px 0; font-size: 1.5em; border-bottom: 3px solid #667eea; padding-bottom: 10px; }
+        h3 { color: #333; margin: 20px 0 10px 0; }
+        p { margin-bottom: 15px; }
+        ul, ol { margin: 15px 0 15px 25px; }
+        li { margin-bottom: 8px; }
+        .highlight-box { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 15px; margin: 20px 0; }
+        .highlight-box h3 { color: white; margin-top: 0; }
+        .warning-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 0 10px 10px 0; }
+        .success-box { background: #d4edda; border-left: 4px solid #28a745; padding: 15px; margin: 20px 0; border-radius: 0 10px 10px 0; }
+        .step-card { background: #f8f9fa; border-radius: 15px; padding: 20px; margin: 15px 0; border-left: 4px solid #667eea; }
+        .step-number { background: #667eea; color: white; width: 30px; height: 30px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 10px; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .stat-box { background: #f8f9fa; padding: 20px; border-radius: 15px; text-align: center; }
+        .stat-number { font-size: 2em; font-weight: bold; color: #667eea; }
+        .stat-label { font-size: 0.9em; color: #666; }
+        .checklist { list-style: none; margin-left: 0; }
+        .checklist li { padding: 10px 0; border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 10px; }
+        .checklist li:last-child { border-bottom: none; }
+        .checkbox { width: 24px; height: 24px; border: 2px solid #667eea; border-radius: 5px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .checkbox.checked { background: #667eea; color: white; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; margin: 10px 0; }
+        .progress-bar { background: #e9ecef; border-radius: 10px; height: 20px; margin: 20px 0; overflow: hidden; }
+        .progress-fill { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 100%; border-radius: 10px; transition: width 0.5s; }
+        .flow-chart { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; }
+        .flow-item { background: #f8f9fa; padding: 15px; border-radius: 10px; display: flex; align-items: center; gap: 15px; }
+        .flow-arrow { text-align: center; color: #667eea; font-size: 1.5em; }
+        .flow-number { background: #667eea; color: white; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; }
+        .priority-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .priority-table th, .priority-table td { padding: 12px; text-align: left; border-bottom: 1px solid #eee; }
+        .priority-table th { background: #667eea; color: white; }
+        .priority-table tr:nth-child(even) { background: #f8f9fa; }
+        @media (max-width: 600px) { .container { padding: 10px; } .card { padding: 20px; } h1 { font-size: 1.8em; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="income-playbooks.html" class="back-link">← Back to Playbooks</a>
+        
+        <div class="card">
+            <h1>💵 Side Income Strategy</h1>
+            <p class="subtitle">Maximize every extra dollar by routing it to the right place</p>
+            <div class="meta">
+                <span>⏱️ 15 minutes to plan</span>
+                <span>💰 Accelerate your goals</span>
+                <span>🎯 Clear priority system</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🎯 The Big Question: Where Does Extra Money Go?</h2>
+            <p>You sold something on Facebook Marketplace. You got a bonus at work. You did a side gig. <strong>Now what?</strong></p>
+            <p>Without a plan, extra money disappears into random spending. With a plan, every dollar accelerates your financial goals!</p>
+            
+            <div class="highlight-box">
+                <h3>💡 The Golden Rule</h3>
+                <p>Side income should NEVER go into your regular checking account where it gets spent on random stuff. It goes directly to your #1 financial priority!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📊 The Priority Waterfall</h2>
+            <p>Route your side income in THIS order until each goal is met:</p>
+            
+            <div class="flow-chart">
+                <div class="flow-item">
+                    <div class="flow-number">1</div>
+                    <div>
+                        <strong>$1,000 Starter Emergency Fund</strong><br>
+                        <small>100% of side income → Until you have $1,000</small>
+                    </div>
+                </div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-item">
+                    <div class="flow-number">2</div>
+                    <div>
+                        <strong>High-Interest Debt (18%+ APR)</strong><br>
+                        <small>100% of side income → Until cards are paid off</small>
+                    </div>
+                </div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-item">
+                    <div class="flow-number">3</div>
+                    <div>
+                        <strong>Full Emergency Fund (3-6 months expenses)</strong><br>
+                        <small>100% of side income → Until fully funded</small>
+                    </div>
+                </div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-item">
+                    <div class="flow-number">4</div>
+                    <div>
+                        <strong>Other Goals (Car, House, Investing)</strong><br>
+                        <small>Split as desired between remaining goals</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📋 Action Plan: Set Up Your System</h2>
+            
+            <div class="step-card">
+                <h3><span class="step-number">1</span> Identify Your Current Priority</h3>
+                <p>Where are you in the waterfall?</p>
+                <ul class="checklist">
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Do I have $1,000 in emergency savings? If NO → Priority 1</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Do I have high-interest debt (18%+)? If YES → Priority 2</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Do I have 3-6 months expenses saved? If NO → Priority 3</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> If all above are done → Priority 4 (Wealth building!)</li>
+                </ul>
+                <div class="success-box">
+                    <strong>📍 My current priority is: _______________</strong>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <h3><span class="step-number">2</span> Open a Dedicated Account</h3>
+                <p>Keep side income separate so you don't accidentally spend it:</p>
+                <ul class="checklist">
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Open a High-Yield Savings Account (HYSA) if you don't have one</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Name it after your current priority ("Emergency Fund" or "Debt Crusher")</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Link it to your checking for easy transfers</li>
+                </ul>
+            </div>
+
+            <div class="step-card">
+                <h3><span class="step-number">3</span> Create Your Income Routing Rule</h3>
+                <p>Write down your rule and stick to it:</p>
+                
+                <div class="warning-box">
+                    <strong>📝 My Rule:</strong><br>
+                    "Every time I receive side income, I will immediately transfer ___% to my _____________ account."<br><br>
+                    <strong>Recommended:</strong> 100% until your current priority is complete!
+                </div>
+
+                <ul class="checklist">
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> I've written down my income routing rule</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> I've committed to following it every time</li>
+                </ul>
+            </div>
+
+            <div class="step-card">
+                <h3><span class="step-number">4</span> Set Up Instant Transfers</h3>
+                <p>When side income hits your account, transfer it IMMEDIATELY:</p>
+                <ul>
+                    <li><strong>Same day:</strong> Don't let it sit in checking overnight</li>
+                    <li><strong>Before you check the balance:</strong> Transfer first, then look</li>
+                    <li><strong>Make it automatic:</strong> Some apps (like Venmo) can auto-transfer to your bank</li>
+                </ul>
+                <ul class="checklist">
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> I know how to quickly transfer between my accounts</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> I've set up quick transfer shortcuts on my phone</li>
+                </ul>
+            </div>
+
+            <div class="step-card">
+                <h3><span class="step-number">5</span> Track Every Dollar</h3>
+                <p>Keep a log of all side income and where it went:</p>
+                <ul class="checklist">
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Create a simple spreadsheet or note: Date | Source | Amount | Where It Went</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Review monthly to see your progress</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Celebrate milestones! ($500 saved, first debt paid off, etc.)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>💡 Types of Side Income to Route</h2>
+            <table class="priority-table">
+                <tr>
+                    <th>Income Type</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>Sold items (FB Marketplace, eBay)</td>
+                    <td>100% → Current priority</td>
+                </tr>
+                <tr>
+                    <td>Gig work (DoorDash, Uber, etc.)</td>
+                    <td>Set aside 25% for taxes, 75% → priority</td>
+                </tr>
+                <tr>
+                    <td>Work bonus</td>
+                    <td>100% → Current priority</td>
+                </tr>
+                <tr>
+                    <td>Tax refund</td>
+                    <td>100% → Current priority</td>
+                </tr>
+                <tr>
+                    <td>Birthday/gift money</td>
+                    <td>At least 50% → Current priority</td>
+                </tr>
+                <tr>
+                    <td>Cash back rewards</td>
+                    <td>100% → Current priority</td>
+                </tr>
+                <tr>
+                    <td>Plasma donation</td>
+                    <td>100% → Current priority</td>
+                </tr>
+            </table>
+
+            <div class="warning-box">
+                <strong>⚠️ Gig Income Tax Reminder:</strong> If you do gig work (DoorDash, Uber, freelance), set aside 25-30% for taxes BEFORE routing the rest to your priority. Open a separate "Tax Fund" savings account!
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🎯 Real Example</h2>
+            <div class="success-box">
+                <strong>Sarah's Side Income Strategy:</strong><br><br>
+                <strong>Current Priority:</strong> Pay off $3,000 credit card (Priority 2)<br><br>
+                <strong>This Month's Side Income:</strong><br>
+                • Sold old clothes: $85 → Transferred to credit card<br>
+                • Plasma donation: $75 → Transferred to credit card<br>
+                • Overtime at work: $200 → Transferred to credit card<br><br>
+                <strong>Total Extra Paid:</strong> $360<br>
+                <strong>Result:</strong> Card will be paid off 4 months faster!
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🏆 Success Checklist</h2>
+            <ul class="checklist">
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Identified my current priority in the waterfall</li>
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Have a dedicated savings account for my priority</li>
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Written down my income routing rule</li>
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Know how to quickly transfer money between accounts</li>
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Started tracking all side income</li>
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Committed to routing 100% until priority is complete</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>📈 Your Progress</h2>
+            <p><span id="completed">0</span> of <span id="total">0</span> steps completed</p>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>💬 Need Help?</h2>
+            <p>Questions about maximizing your side income? We're here to help!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleCheck(el) {
+            el.classList.toggle('checked');
+            el.innerHTML = el.classList.contains('checked') ? '✓' : '';
+            updateProgress();
+            saveProgress();
+        }
+        function updateProgress() {
+            const total = document.querySelectorAll('.checkbox').length;
+            const completed = document.querySelectorAll('.checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('total').textContent = total;
+            document.getElementById('progress').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const checkboxes = document.querySelectorAll('.checkbox');
+            const states = Array.from(checkboxes).map(cb => cb.classList.contains('checked'));
+            localStorage.setItem('side-income-strategy-progress', JSON.stringify(states));
+        }
+        function loadProgress() {
+            const saved = localStorage.getItem('side-income-strategy-progress');
+            if (saved) {
+                const states = JSON.parse(saved);
+                const checkboxes = document.querySelectorAll('.checkbox');
+                checkboxes.forEach((cb, i) => { if (states[i]) { cb.classList.add('checked'); cb.innerHTML = '✓'; }});
+            }
+            updateProgress();
+        }
+        document.addEventListener('DOMContentLoaded', loadProgress);
+    </script>
+</body>
+</html>

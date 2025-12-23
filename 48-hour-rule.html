@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⏰ 48-Hour Rule</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; font-size: 14px; opacity: 0.9; }
+        .back-link:hover { opacity: 1; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        h1 { font-size: 2.2em; margin-bottom: 10px; color: #1a1a2e; }
+        .subtitle { font-size: 1.2em; color: #666; margin-bottom: 15px; }
+        .meta { display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 20px; font-size: 0.9em; color: #888; }
+        .meta span { background: #f0f0f0; padding: 5px 12px; border-radius: 20px; }
+        h2 { color: #1a1a2e; margin: 25px 0 15px 0; font-size: 1.5em; border-bottom: 3px solid #667eea; padding-bottom: 10px; }
+        h3 { color: #333; margin: 20px 0 10px 0; }
+        p { margin-bottom: 15px; }
+        ul, ol { margin: 15px 0 15px 25px; }
+        li { margin-bottom: 8px; }
+        .highlight-box { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 15px; margin: 20px 0; }
+        .highlight-box h3 { color: white; margin-top: 0; }
+        .warning-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 0 10px 10px 0; }
+        .success-box { background: #d4edda; border-left: 4px solid #28a745; padding: 15px; margin: 20px 0; border-radius: 0 10px 10px 0; }
+        .step-card { background: #f8f9fa; border-radius: 15px; padding: 20px; margin: 15px 0; border-left: 4px solid #667eea; }
+        .step-number { background: #667eea; color: white; width: 30px; height: 30px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 10px; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .stat-box { background: #f8f9fa; padding: 20px; border-radius: 15px; text-align: center; }
+        .stat-number { font-size: 2em; font-weight: bold; color: #667eea; }
+        .stat-label { font-size: 0.9em; color: #666; }
+        .checklist { list-style: none; margin-left: 0; }
+        .checklist li { padding: 10px 0; border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 10px; }
+        .checklist li:last-child { border-bottom: none; }
+        .checkbox { width: 24px; height: 24px; border: 2px solid #667eea; border-radius: 5px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .checkbox.checked { background: #667eea; color: white; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; margin: 10px 0; }
+        .progress-bar { background: #e9ecef; border-radius: 10px; height: 20px; margin: 20px 0; overflow: hidden; }
+        .progress-fill { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 100%; border-radius: 10px; transition: width 0.5s; }
+        .question-box { background: #e8f4f8; border-radius: 15px; padding: 20px; margin: 15px 0; }
+        .question-box h4 { color: #667eea; margin-bottom: 10px; }
+        @media (max-width: 600px) { .container { padding: 10px; } .card { padding: 20px; } h1 { font-size: 1.8em; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="expense-playbooks.html" class="back-link">← Back to Playbooks</a>
+        
+        <div class="card">
+            <h1>⏰ The 48-Hour Rule</h1>
+            <p class="subtitle">Stop impulse buying by waiting 48 hours before any purchase over $50</p>
+            <div class="meta">
+                <span>⏱️ 2 minutes to set up</span>
+                <span>💰 Save $200-500/month</span>
+                <span>🧠 Zero willpower needed</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🎯 What Is The 48-Hour Rule?</h2>
+            <p><strong>Simple: Before buying ANYTHING over $50, you must wait 48 hours.</strong></p>
+            <p>That's it. See something you want? Write it down. Wait 48 hours. If you still want it AND can afford it, buy it. Most of the time? You'll forget about it or realize you didn't actually need it.</p>
+            
+            <div class="highlight-box">
+                <h3>🧠 The Science Behind It</h3>
+                <p>Impulse purchases trigger dopamine - the "feel good" chemical. That rush fades within 24-48 hours. By waiting, you let the emotional high pass and make decisions with your logical brain instead!</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-number">70%</div>
+                    <div class="stat-label">of impulse buys regretted within a week</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">$5,400</div>
+                    <div class="stat-label">average yearly impulse spending</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">48hrs</div>
+                    <div class="stat-label">is all it takes to break the urge</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📋 How to Use The 48-Hour Rule</h2>
+            
+            <div class="step-card">
+                <h3><span class="step-number">1</span> Set Your Threshold</h3>
+                <p>Decide your dollar amount. We recommend $50, but you can adjust:</p>
+                <ul>
+                    <li><strong>$25</strong> - If you're really trying to cut spending</li>
+                    <li><strong>$50</strong> - The sweet spot for most people</li>
+                    <li><strong>$100</strong> - If you have more financial flexibility</li>
+                </ul>
+                <ul class="checklist">
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> I've set my threshold at: $______</li>
+                </ul>
+            </div>
+
+            <div class="step-card">
+                <h3><span class="step-number">2</span> Create Your "Want List"</h3>
+                <p>When you want to buy something over your threshold, DON'T BUY IT. Instead:</p>
+                <ul class="checklist">
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Create a note on your phone called "48-Hour Wait List"</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Write down: Item name, price, date/time you wanted it</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Set a reminder for exactly 48 hours later</li>
+                </ul>
+                <div class="success-box">
+                    <strong>📝 Example Entry:</strong><br>
+                    "Nike Air Max - $129 - Dec 23, 3:00pm - Check again Dec 25, 3:00pm"
+                </div>
+            </div>
+
+            <div class="step-card">
+                <h3><span class="step-number">3</span> Ask These 5 Questions (After 48 Hours)</h3>
+                <p>When your reminder goes off, ask yourself:</p>
+                
+                <div class="question-box">
+                    <h4>1. Do I still want this?</h4>
+                    <p>Often the answer is "I forgot about it" or "Not really"</p>
+                </div>
+                
+                <div class="question-box">
+                    <h4>2. Can I actually afford it?</h4>
+                    <p>Not "can I put it on a card" - do I have cash for this?</p>
+                </div>
+                
+                <div class="question-box">
+                    <h4>3. Do I already own something similar?</h4>
+                    <p>Check your closet/garage/drawers first</p>
+                </div>
+                
+                <div class="question-box">
+                    <h4>4. What else could this money do?</h4>
+                    <p>Emergency fund? Debt payoff? Something you need more?</p>
+                </div>
+                
+                <div class="question-box">
+                    <h4>5. Will this matter in 30 days?</h4>
+                    <p>If not, it's probably not worth buying</p>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <h3><span class="step-number">4</span> Make Your Decision</h3>
+                <p>After 48 hours and asking the 5 questions:</p>
+                <ul>
+                    <li><strong>If YES to all 5:</strong> Buy it guilt-free! You made a thoughtful decision.</li>
+                    <li><strong>If NO to any:</strong> Delete it from your list. You just saved money!</li>
+                </ul>
+                <ul class="checklist">
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> I understand the decision framework</li>
+                </ul>
+            </div>
+
+            <div class="step-card">
+                <h3><span class="step-number">5</span> Track Your Wins</h3>
+                <p>Keep a running total of money you DIDN'T spend. This is motivating!</p>
+                <ul class="checklist">
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Start a "Money Saved" note on my phone</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Add each item I decided NOT to buy</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Watch my savings grow!</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>⚠️ Exceptions to the Rule</h2>
+            <p>The 48-hour rule does NOT apply to:</p>
+            <ul>
+                <li>✅ True emergencies (car breakdown, medical needs)</li>
+                <li>✅ Planned purchases you've already budgeted for</li>
+                <li>✅ Groceries and essential household items</li>
+                <li>✅ Bills and recurring expenses</li>
+            </ul>
+            
+            <div class="warning-box">
+                <strong>🚫 Watch Out For Fake Urgency!</strong><br>
+                "Sale ends tonight!" and "Only 2 left!" are marketing tricks. Real deals come back. If you miss a sale, another one will happen. Don't let fake urgency override your 48-hour rule!
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🏆 Success Checklist</h2>
+            <ul class="checklist">
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Set my purchase threshold ($50 recommended)</li>
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Created "48-Hour Wait List" note on phone</li>
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Memorized the 5 questions to ask</li>
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Started "Money Saved" tracking note</li>
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Committed to using this rule for 30 days</li>
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Told my accountability partner about this rule</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>📈 Your Progress</h2>
+            <p><span id="completed">0</span> of <span id="total">0</span> steps completed</p>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>💬 Need Help?</h2>
+            <p>Questions about managing impulse spending? We're here to help!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleCheck(el) {
+            el.classList.toggle('checked');
+            el.innerHTML = el.classList.contains('checked') ? '✓' : '';
+            updateProgress();
+            saveProgress();
+        }
+        function updateProgress() {
+            const total = document.querySelectorAll('.checkbox').length;
+            const completed = document.querySelectorAll('.checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('total').textContent = total;
+            document.getElementById('progress').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const checkboxes = document.querySelectorAll('.checkbox');
+            const states = Array.from(checkboxes).map(cb => cb.classList.contains('checked'));
+            localStorage.setItem('48-hour-rule-progress', JSON.stringify(states));
+        }
+        function loadProgress() {
+            const saved = localStorage.getItem('48-hour-rule-progress');
+            if (saved) {
+                const states = JSON.parse(saved);
+                const checkboxes = document.querySelectorAll('.checkbox');
+                checkboxes.forEach((cb, i) => { if (states[i]) { cb.classList.add('checked'); cb.innerHTML = '✓'; }});
+            }
+            updateProgress();
+        }
+        document.addEventListener('DOMContentLoaded', loadProgress);
+    </script>
+</body>
+</html>
