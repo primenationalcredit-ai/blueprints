@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚗 Car Insurance Negotiation - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; font-weight: 500; }
+        .back-link:hover { opacity: 1; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { font-size: 2.2em; color: #1a1a2e; margin-bottom: 10px; }
+        .header .subtitle { font-size: 1.1em; color: #666; margin-bottom: 20px; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 10px 25px; border-radius: 20px; font-size: 0.95em; font-weight: 500; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; font-size: 1.4em; }
+        .card p { color: #444; margin-bottom: 15px; }
+        .savings-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 25px; text-align: center; margin: 20px 0; }
+        .savings-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; }
+        .step:hover { background: #e3f2fd; }
+        .step-checkbox { width: 30px; height: 30px; min-width: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px; transition: all 0.3s; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-content h3 { color: #1a1a2e; margin-bottom: 8px; font-size: 1.1em; }
+        .step-content p { color: #666; font-size: 0.95em; margin: 0; }
+        .script-box { background: #f0f7ff; border-left: 4px solid #2196f3; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .script-box h4 { color: #1565c0; margin-bottom: 10px; }
+        .script-box p { color: #333; font-style: italic; margin: 0; line-height: 1.8; }
+        .tip-box { background: #fff3e0; border-left: 4px solid #ff9800; padding: 15px 20px; border-radius: 0 10px 10px 0; margin: 15px 0; }
+        .tip-box strong { color: #e65100; }
+        .warning-box { background: #ffebee; border-left: 4px solid #f44336; padding: 15px 20px; border-radius: 0 10px 10px 0; margin: 15px 0; }
+        .warning-box strong { color: #c62828; }
+        .company-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .company-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; }
+        .company-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .company-card .phone { color: #667eea; font-weight: 600; font-size: 1.1em; }
+        .company-card .website { color: #666; font-size: 0.9em; margin-top: 5px; }
+        .discount-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 20px 0; }
+        .discount-item { background: #e8f5e9; padding: 12px 15px; border-radius: 10px; display: flex; align-items: center; gap: 10px; }
+        .discount-item .icon { font-size: 1.3em; }
+        .discount-item .text { font-size: 0.9em; color: #2e7d32; }
+        .progress-container { background: #f0f0f0; border-radius: 10px; height: 20px; margin: 20px 0; overflow: hidden; }
+        .progress-bar { background: linear-gradient(90deg, #667eea, #764ba2); height: 100%; width: 0%; transition: width 0.5s; border-radius: 10px; }
+        .progress-text { text-align: center; color: #666; margin-top: 10px; font-weight: 600; }
+        .notes-section { margin-top: 20px; }
+        .notes-section h3 { color: #1a1a2e; margin-bottom: 15px; }
+        .notes-section textarea { width: 100%; min-height: 120px; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-family: inherit; font-size: 1em; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #667eea; }
+        .cta-box { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; text-align: center; margin-top: 30px; }
+        .cta-box h3 { margin-bottom: 10px; }
+        .cta-box a { display: inline-block; background: white; color: #667eea; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        .checklist { list-style: none; padding: 0; }
+        .checklist li { padding: 10px 0; border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 10px; }
+        .checklist li:last-child { border-bottom: none; }
+        .check-icon { color: #4caf50; font-weight: bold; }
+        @media (max-width: 600px) { .header h1 { font-size: 1.8em; } .company-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="expense-playbooks.html" class="back-link">← Back to Expense Playbooks</a>
+        
+        <div class="header">
+            <h1>🚗 Car Insurance Negotiation</h1>
+            <p class="subtitle">Save $50-150/month with one phone call!</p>
+            <div class="time-badge">⏱️ 30 min call • 💰 Save $600-1,800/year</div>
+        </div>
+
+        <div class="card">
+            <h2>🎯 What This Does For You</h2>
+            <p><strong>Most people overpay for car insurance by 20-40%!</strong> Insurance companies count on you being too lazy to call. One 30-minute phone call can save you $50-150 every month.</p>
+            <p>You don't need to switch companies. Just calling and asking for discounts often works. If it doesn't, getting competing quotes gives you leverage!</p>
+            
+            <div class="savings-highlight">
+                <h3>$600 - $1,800/year</h3>
+                <p>Average savings from shopping your car insurance</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>✅ Before You Call: Gather This Info</h2>
+            <p>Have these ready before calling. It makes the process 10x faster!</p>
+            
+            <ul class="checklist">
+                <li><span class="check-icon">□</span> Your current policy declaration page (or premium amount)</li>
+                <li><span class="check-icon">□</span> Driver's license numbers for all drivers</li>
+                <li><span class="check-icon">□</span> Vehicle info: Year, make, model, VIN</li>
+                <li><span class="check-icon">□</span> Current mileage on each vehicle</li>
+                <li><span class="check-icon">□</span> Any recent life changes (married, new home, retired, etc.)</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>💰 Discounts to Ask About</h2>
+            <p>Most companies offer these but DON'T automatically apply them!</p>
+            
+            <div class="discount-grid">
+                <div class="discount-item"><span class="icon">💍</span><span class="text">Married discount</span></div>
+                <div class="discount-item"><span class="icon">🏠</span><span class="text">Homeowner discount</span></div>
+                <div class="discount-item"><span class="icon">📦</span><span class="text">Bundle (home + auto)</span></div>
+                <div class="discount-item"><span class="icon">🎓</span><span class="text">Good student (under 25)</span></div>
+                <div class="discount-item"><span class="icon">💳</span><span class="text">Pay-in-full discount</span></div>
+                <div class="discount-item"><span class="icon">📱</span><span class="text">Paperless/autopay</span></div>
+                <div class="discount-item"><span class="icon">🚗</span><span class="text">Low mileage (under 7,500/yr)</span></div>
+                <div class="discount-item"><span class="icon">🛡️</span><span class="text">Defensive driving course</span></div>
+                <div class="discount-item"><span class="icon">⭐</span><span class="text">Loyalty discount (3+ years)</span></div>
+                <div class="discount-item"><span class="icon">👴</span><span class="text">Senior/retiree discount</span></div>
+                <div class="discount-item"><span class="icon">🎖️</span><span class="text">Military/veteran discount</span></div>
+                <div class="discount-item"><span class="icon">📍</span><span class="text">Safe driver/no accidents</span></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📋 Your Action Plan</h2>
+            
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 1: Call Your Current Insurance Company</h3>
+                    <p>Start with your current company. They often have unadvertised discounts!</p>
+                    
+                    <div class="script-box">
+                        <h4>📞 Say This:</h4>
+                        <p>"Hi, I'm reviewing my budget and my car insurance seems high. I've been a customer for [X years] and I'd like to see what discounts I qualify for that I might not be getting. Can you also review my coverage to make sure I'm not over-insured?"</p>
+                    </div>
+                    
+                    <div class="tip-box">
+                        <strong>💡 Pro Tip:</strong> Ask to speak with the "retention department" - they have more power to offer discounts!
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 2: Get 3 Competing Quotes</h3>
+                    <p>Even if your company gives you a discount, get quotes from competitors. It takes 10 minutes each online.</p>
+                    
+                    <div class="company-grid">
+                        <div class="company-card">
+                            <h4>GEICO</h4>
+                            <div class="phone">1-800-861-8380</div>
+                            <div class="website">geico.com</div>
+                        </div>
+                        <div class="company-card">
+                            <h4>Progressive</h4>
+                            <div class="phone">1-800-776-4737</div>
+                            <div class="website">progressive.com</div>
+                        </div>
+                        <div class="company-card">
+                            <h4>State Farm</h4>
+                            <div class="phone">1-800-782-8332</div>
+                            <div class="website">statefarm.com</div>
+                        </div>
+                        <div class="company-card">
+                            <h4>Allstate</h4>
+                            <div class="phone">1-800-255-7828</div>
+                            <div class="website">allstate.com</div>
+                        </div>
+                        <div class="company-card">
+                            <h4>Liberty Mutual</h4>
+                            <div class="phone">1-800-290-8711</div>
+                            <div class="website">libertymutual.com</div>
+                        </div>
+                        <div class="company-card">
+                            <h4>USAA (Military)</h4>
+                            <div class="phone">1-800-531-8722</div>
+                            <div class="website">usaa.com</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 3: Call Back with Your Best Quote</h3>
+                    <p>Now call your current company back with leverage!</p>
+                    
+                    <div class="script-box">
+                        <h4>📞 Say This:</h4>
+                        <p>"Hi, I got a quote from [Company] for $[Amount] per month, which is $[X] less than I'm paying now. I'd prefer to stay with you since I've been a customer for [X years], but I need you to match or beat this rate. What can you do?"</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 4: Consider Raising Your Deductible</h3>
+                    <p>If you have savings, raising your deductible from $500 to $1,000 can save 15-20% on premiums.</p>
+                    
+                    <div class="warning-box">
+                        <strong>⚠️ Only do this if:</strong> You have at least $1,000 in savings to cover a potential claim. Otherwise, keep your lower deductible.
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 5: Remove Unnecessary Coverage</h3>
+                    <p>If your car is older (10+ years, worth less than $5,000), consider dropping collision/comprehensive coverage.</p>
+                    
+                    <div class="tip-box">
+                        <strong>💡 Rule of Thumb:</strong> If your annual premium for collision/comprehensive is more than 10% of your car's value, it's probably not worth it.
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 6: Set Calendar Reminder</h3>
+                    <p>Insurance rates change! Set a reminder to shop around every 6-12 months.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🚫 If They Say "No" to a Discount</h2>
+            
+            <div class="script-box">
+                <h4>📞 Try This:</h4>
+                <p>"I understand. Is there a supervisor or retention specialist I could speak with? I've been a loyal customer and I'd hate to have to switch, but I have a much lower quote from [competitor]."</p>
+            </div>
+            
+            <div class="tip-box">
+                <strong>💡 HUCA Strategy:</strong> "Hang Up, Call Again" - Different reps have different authorization levels. If you get a "no," politely end the call and try again with a different rep!
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📈 Your Progress</h2>
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <p class="progress-text"><span id="progressText">0</span> of 6 steps completed</p>
+        </div>
+
+        <div class="card">
+            <div class="notes-section">
+                <h3>📝 Your Insurance Notes</h3>
+                <textarea id="notes" placeholder="Track your quotes here:
+
+Current company: _________ Premium: $_____
+
+Quote 1: _________ Premium: $_____
+Quote 2: _________ Premium: $_____
+Quote 3: _________ Premium: $_____
+
+Best deal: _________
+Monthly savings: $_____
+Annual savings: $_____"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-box">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach!</p>
+            <a href="https://asapcreditrepairusa.com">Get Support →</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleStep(el) {
+            el.classList.toggle('checked');
+            el.textContent = el.classList.contains('checked') ? '✓' : '';
+            updateProgress();
+            saveProgress();
+        }
+
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('progressText').textContent = completed;
+            document.getElementById('progressBar').style.width = (completed / total * 100) + '%';
+        }
+
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-insurance-negotiation', JSON.stringify({ steps, notes }));
+        }
+
+        function loadProgress() {
+            const saved = localStorage.getItem('playbook-insurance-negotiation');
+            if (saved) {
+                const data = JSON.parse(saved);
+                document.querySelectorAll('.step-checkbox').forEach((el, i) => {
+                    if (data.steps[i]) {
+                        el.classList.add('checked');
+                        el.textContent = '✓';
+                    }
+                });
+                if (data.notes) document.getElementById('notes').value = data.notes;
+                updateProgress();
+            }
+        }
+
+        document.getElementById('notes').addEventListener('input', saveProgress);
+        loadProgress();
+    </script>
+</body>
+</html>

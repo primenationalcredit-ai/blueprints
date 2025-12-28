@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 Take Your First Action - 30 Day Wealth Building Kickstart</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; font-size: 14px; opacity: 0.9; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        h1 { font-size: 2.2em; margin-bottom: 10px; color: #1a1a2e; }
+        .subtitle { font-size: 1.2em; color: #666; margin-bottom: 15px; }
+        .meta { display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 20px; font-size: 0.9em; color: #888; }
+        .meta span { background: #f0f0f0; padding: 5px 12px; border-radius: 20px; }
+        h2 { color: #1a1a2e; margin: 25px 0 15px 0; font-size: 1.5em; border-bottom: 3px solid #667eea; padding-bottom: 10px; }
+        h3 { color: #333; margin: 20px 0 10px 0; font-size: 1.2em; }
+        h4 { color: #667eea; margin: 15px 0 8px 0; }
+        p { margin-bottom: 15px; }
+        ul, ol { margin: 15px 0 15px 25px; }
+        li { margin-bottom: 8px; }
+        .highlight-box { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 15px; margin: 20px 0; }
+        .highlight-box h3, .highlight-box h4 { color: white; margin-top: 0; }
+        .warning-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 0 10px 10px 0; }
+        .success-box { background: #d4edda; border-left: 4px solid #28a745; padding: 15px; margin: 20px 0; border-radius: 0 10px 10px 0; }
+        .info-box { background: #e7f3ff; border-left: 4px solid #0066cc; padding: 15px; margin: 20px 0; border-radius: 0 10px 10px 0; }
+        .action-card { background: #f8f9fa; border-radius: 15px; padding: 25px; margin: 20px 0; border-left: 5px solid #667eea; }
+        .action-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+        .action-icon { font-size: 2.5em; }
+        .action-title { font-size: 1.3em; font-weight: bold; color: #1a1a2e; }
+        .action-time { background: #667eea; color: white; padding: 3px 10px; border-radius: 15px; font-size: 0.85em; }
+        .step-card { background: white; border-radius: 10px; padding: 15px; margin: 10px 0; border: 1px solid #e0e0e0; }
+        .step-number { background: #667eea; color: white; width: 28px; height: 28px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 10px; font-size: 0.9em; }
+        .checklist { list-style: none; margin-left: 0; }
+        .checklist li { padding: 12px 0; border-bottom: 1px solid #eee; display: flex; align-items: flex-start; gap: 10px; }
+        .checklist li:last-child { border-bottom: none; }
+        .checkbox { width: 24px; height: 24px; min-width: 24px; border: 2px solid #667eea; border-radius: 5px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+        .checkbox.checked { background: #667eea; color: white; }
+        .deadline-box { background: #1a1a2e; color: white; padding: 15px 20px; border-radius: 10px; margin: 15px 0; display: flex; align-items: center; gap: 15px; }
+        .deadline-icon { font-size: 2em; }
+        .deadline-text { flex: 1; }
+        .deadline-date { font-size: 1.2em; font-weight: bold; color: #f8961e; }
+        .path-tabs { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
+        .path-tab { padding: 12px 20px; background: #f0f0f0; border-radius: 25px; cursor: pointer; font-weight: 500; transition: all 0.2s; border: 2px solid transparent; }
+        .path-tab:hover { background: #e0e0e0; }
+        .path-tab.active { background: #667eea; color: white; }
+        .path-content { display: none; }
+        .path-content.active { display: block; }
+        .timeline { position: relative; padding-left: 30px; margin: 20px 0; }
+        .timeline::before { content: ''; position: absolute; left: 10px; top: 0; bottom: 0; width: 3px; background: #667eea; }
+        .timeline-item { position: relative; margin-bottom: 25px; }
+        .timeline-item::before { content: ''; position: absolute; left: -25px; top: 5px; width: 14px; height: 14px; background: #667eea; border-radius: 50%; border: 3px solid white; box-shadow: 0 0 0 2px #667eea; }
+        .timeline-week { font-weight: bold; color: #667eea; font-size: 1.1em; margin-bottom: 8px; }
+        .timeline-task { background: #f8f9fa; padding: 15px; border-radius: 10px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; margin: 10px 0; }
+        .progress-bar { background: #e9ecef; border-radius: 10px; height: 20px; margin: 20px 0; overflow: hidden; }
+        .progress-fill { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 100%; border-radius: 10px; transition: width 0.5s; }
+        .commitment-box { background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%); color: white; padding: 25px; border-radius: 15px; margin: 20px 0; text-align: center; }
+        .commitment-box h3 { color: #f8961e; margin-bottom: 15px; }
+        .signature-line { border-bottom: 2px solid white; margin: 30px auto 10px; width: 250px; }
+        .signature-label { font-size: 0.9em; opacity: 0.8; }
+        @media (max-width: 600px) { 
+            .container { padding: 10px; } 
+            .card { padding: 20px; } 
+            h1 { font-size: 1.8em; }
+            .path-tabs { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="wealth-building-paths.html" class="back-link">← Back to Wealth Building Paths</a>
+        
+        <div class="card">
+            <h1>🚀 Take Your First Action</h1>
+            <p class="subtitle">Stop planning. Start doing. Your 30-day wealth building kickstart.</p>
+            <div class="meta">
+                <span>📅 30 Day Challenge</span>
+                <span>🎯 One Path, One Action</span>
+                <span>💪 No More Excuses</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🎯 The Problem: Analysis Paralysis</h2>
+            <p>You've learned about wealth building paths. You understand the options. But here's what usually happens next:</p>
+            
+            <div class="warning-box">
+                <strong>❌ Common Traps:</strong>
+                <ul style="margin: 10px 0 0 15px;">
+                    <li>"I need to research more before I start..."</li>
+                    <li>"I'll start next month when things calm down..."</li>
+                    <li>"I'm not sure which path is best, so I'll wait..."</li>
+                    <li>"I don't have enough money to start yet..."</li>
+                </ul>
+            </div>
+
+            <p><strong>The truth?</strong> You will NEVER feel 100% ready. The best time to start was yesterday. The second best time is TODAY.</p>
+
+            <div class="highlight-box">
+                <h3>💡 The 30-Day Rule</h3>
+                <p>You have <strong>30 days from today</strong> to take your FIRST real action toward building wealth. Not "think about it." Not "research more." <strong>Actually DO something.</strong></p>
+                <p style="margin-top: 10px;">Even a small action beats perfect planning. A $50 investment beats a $10,000 plan that never happens.</p>
+            </div>
+
+            <div class="deadline-box">
+                <span class="deadline-icon">⏰</span>
+                <div class="deadline-text">
+                    <div>Your deadline to take first action:</div>
+                    <div class="deadline-date" id="deadline-date"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🛤️ Choose Your Path & First Action</h2>
+            <p>Select the path you want to pursue. Then follow the specific first action for that path.</p>
+
+            <div class="path-tabs">
+                <div class="path-tab active" onclick="showPath('retirement')">🏦 Retirement</div>
+                <div class="path-tab" onclick="showPath('index')">📈 Index Funds</div>
+                <div class="path-tab" onclick="showPath('realestate')">🏠 Real Estate</div>
+                <div class="path-tab" onclick="showPath('business')">🏪 Business</div>
+                <div class="path-tab" onclick="showPath('dividends')">💵 Dividends</div>
+            </div>
+
+            <!-- RETIREMENT PATH -->
+            <div class="path-content active" id="path-retirement">
+                <div class="action-card">
+                    <div class="action-header">
+                        <span class="action-icon">🏦</span>
+                        <div>
+                            <div class="action-title">Retirement Account First Action</div>
+                            <span class="action-time">⏱️ 30-60 minutes</span>
+                        </div>
+                    </div>
+
+                    <h4>Your 30-Day Goal: Start Contributing to a 401(k) or Open a Roth IRA</h4>
+
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-week">Week 1: Research & Decide</div>
+                            <div class="timeline-task">
+                                <ul class="checklist">
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Check if your employer offers a 401(k)</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Find out if there's an employer match (FREE MONEY!)</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Get enrollment paperwork from HR</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> If no 401(k): Decide between Roth IRA or Traditional IRA</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-week">Week 2: Take Action</div>
+                            <div class="timeline-task">
+                                <p><strong>If you have a 401(k):</strong></p>
+                                <ul class="checklist">
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Complete enrollment paperwork</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Set contribution to AT LEAST get full employer match</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Choose a Target Date Fund for your retirement year</li>
+                                </ul>
+                                <p style="margin-top: 15px;"><strong>If opening a Roth IRA:</strong></p>
+                                <ul class="checklist">
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Go to Fidelity.com, Vanguard.com, or Schwab.com</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Click "Open an Account" → Select "Roth IRA"</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Complete application (need SSN, bank info)</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Link your bank account</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-week">Week 3: Fund It</div>
+                            <div class="timeline-task">
+                                <ul class="checklist">
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Make your FIRST contribution (even $50 counts!)</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Set up automatic monthly contributions</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Invest in a Total Market Index Fund or Target Date Fund</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-week">Week 4: Optimize</div>
+                            <div class="timeline-task">
+                                <ul class="checklist">
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Confirm contributions are being deducted</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Verify money is invested (not sitting in cash!)</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Plan to increase contribution by 1% every raise</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="success-box">
+                        <strong>🎉 Success = </strong> You've made your first retirement contribution and set up automatic investing. Even $50/month = $150,000+ over 30 years!
+                    </div>
+                </div>
+            </div>
+
+            <!-- INDEX FUNDS PATH -->
+            <div class="path-content" id="path-index">
+                <div class="action-card">
+                    <div class="action-header">
+                        <span class="action-icon">📈</span>
+                        <div>
+                            <div class="action-title">Index Fund First Action</div>
+                            <span class="action-time">⏱️ 20-30 minutes</span>
+                        </div>
+                    </div>
+
+                    <h4>Your 30-Day Goal: Open a Brokerage Account and Buy Your First Index Fund</h4>
+
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-week">Week 1: Open Account</div>
+                            <div class="timeline-task">
+                                <ul class="checklist">
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Choose a broker: Fidelity, Vanguard, or Schwab (all great, free)</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Go to their website and click "Open an Account"</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Select "Individual Brokerage Account"</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Complete application (10-15 minutes)</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Link your bank account for transfers</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-week">Week 2: Fund & Learn</div>
+                            <div class="timeline-task">
+                                <ul class="checklist">
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Transfer money to your brokerage (start with $100+)</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Learn what these funds are:
+                                        <ul style="margin-top: 5px; font-size: 0.9em;">
+                                            <li><strong>VTI / FSKAX / SWTSX</strong> = Total US Stock Market</li>
+                                            <li><strong>VOO / FXAIX / SWPPX</strong> = S&P 500 (top 500 companies)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-week">Week 3: Buy Your First Shares!</div>
+                            <div class="timeline-task">
+                                <ul class="checklist">
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Search for a Total Market Fund (VTI, FSKAX, or SWTSX)</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Click "Buy" or "Trade"</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Enter dollar amount (can buy fractional shares!)</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Confirm and submit order</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> 🎉 YOU'RE NOW AN INVESTOR!</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-week">Week 4: Automate</div>
+                            <div class="timeline-task">
+                                <ul class="checklist">
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Set up automatic monthly investment</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Choose amount you can afford consistently</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Pick same day each month (after payday!)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="success-box">
+                        <strong>🎉 Success = </strong> You own shares of a total market index fund and have automatic investing set up!
+                    </div>
+                </div>
+            </div>
+
+            <!-- REAL ESTATE PATH -->
+            <div class="path-content" id="path-realestate">
+                <div class="action-card">
+                    <div class="action-header">
+                        <span class="action-icon">🏠</span>
+                        <div>
+                            <div class="action-title">Real Estate First Action</div>
+                            <span class="action-time">⏱️ Varies by approach</span>
+                        </div>
+                    </div>
+
+                    <h4>Choose Your Starting Point:</h4>
+
+                    <div class="step-card">
+                        <h4>Option A: Start with REITs (Easiest - $100 to start)</h4>
+                        <p>Real Estate Investment Trusts let you invest in real estate like buying stocks.</p>
+                        <ul class="checklist">
+                            <li><span class="checkbox" onclick="toggleCheck(this)"></span> Open brokerage account (Fidelity, Vanguard, Schwab)</li>
+                            <li><span class="checkbox" onclick="toggleCheck(this)"></span> Search for a REIT fund: VNQ (Vanguard Real Estate ETF) or FREL (Fidelity)</li>
+                            <li><span class="checkbox" onclick="toggleCheck(this)"></span> Buy your first shares ($100+)</li>
+                            <li><span class="checkbox" onclick="toggleCheck(this)"></span> Set up monthly automatic investment</li>
+                        </ul>
+                    </div>
+
+                    <div class="step-card">
+                        <h4>Option B: Learn House Hacking (Medium - Future purchase)</h4>
+                        <p>Buy a 2-4 unit property, live in one unit, rent the others.</p>
+                        <ul class="checklist">
+                            <li><span class="checkbox" onclick="toggleCheck(this)"></span> Check your credit score (need 620+ for FHA loan)</li>
+                            <li><span class="checkbox" onclick="toggleCheck(this)"></span> Research FHA loans (3.5% down payment!)</li>
+                            <li><span class="checkbox" onclick="toggleCheck(this)"></span> Look at 2-4 unit properties in your area on Zillow/Redfin</li>
+                            <li><span class="checkbox" onclick="toggleCheck(this)"></span> Calculate potential rent income vs mortgage</li>
+                            <li><span class="checkbox" onclick="toggleCheck(this)"></span> Talk to a lender about pre-approval</li>
+                        </ul>
+                    </div>
+
+                    <div class="step-card">
+                        <h4>Option C: Rental Property Analysis (Advanced)</h4>
+                        <p>Learn to analyze rental property deals.</p>
+                        <ul class="checklist">
+                            <li><span class="checkbox" onclick="toggleCheck(this)"></span> Learn the 1% rule (monthly rent should be ~1% of purchase price)</li>
+                            <li><span class="checkbox" onclick="toggleCheck(this)"></span> Analyze 5 properties on Zillow using the 1% rule</li>
+                            <li><span class="checkbox" onclick="toggleCheck(this)"></span> Research rental rates in your target area</li>
+                            <li><span class="checkbox" onclick="toggleCheck(this)"></span> Calculate cash-on-cash return for one property</li>
+                            <li><span class="checkbox" onclick="toggleCheck(this)"></span> Join a local real estate investor meetup</li>
+                        </ul>
+                    </div>
+
+                    <div class="success-box">
+                        <strong>🎉 Success = </strong> You've either invested in REITs OR completed analysis on real properties in your market!
+                    </div>
+                </div>
+            </div>
+
+            <!-- BUSINESS PATH -->
+            <div class="path-content" id="path-business">
+                <div class="action-card">
+                    <div class="action-header">
+                        <span class="action-icon">🏪</span>
+                        <div>
+                            <div class="action-title">Business First Action</div>
+                            <span class="action-time">⏱️ 2-4 hours</span>
+                        </div>
+                    </div>
+
+                    <h4>Your 30-Day Goal: Make Your First $1 from a Side Business</h4>
+
+                    <div class="highlight-box">
+                        <h4>💡 The $1 Challenge</h4>
+                        <p>Your first dollar from YOUR business is the hardest. Once you've made $1, you can make $100. Once $100, you can make $1,000. <strong>Just get to $1!</strong></p>
+                    </div>
+
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-week">Week 1: Identify Your Skill</div>
+                            <div class="timeline-task">
+                                <p>What can you do that others would pay for?</p>
+                                <ul class="checklist">
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> List 5 skills you have (cleaning, writing, design, repairs, tutoring, etc.)</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Ask 3 friends: "What would you pay me to help with?"</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Choose ONE service to offer</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Set a simple price (start low to get first customers)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-week">Week 2: Tell People</div>
+                            <div class="timeline-task">
+                                <ul class="checklist">
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Post on Facebook: "I'm offering [service] for [price]. DM me!"</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Post on Nextdoor</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Tell 10 friends/family members personally</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Create a simple flyer (Canva.com - free!)</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Post flyer in local Facebook groups</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-week">Week 3: Get Your First Customer</div>
+                            <div class="timeline-task">
+                                <ul class="checklist">
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Offer a discount to first customer ("50% off first job!")</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Ask friends if they know anyone who needs your service</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Follow up with anyone who showed interest</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> BOOK YOUR FIRST CUSTOMER!</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-week">Week 4: Deliver & Learn</div>
+                            <div class="timeline-task">
+                                <ul class="checklist">
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Complete the job for your first customer</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Collect payment (cash, Venmo, Zelle)</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Ask for a review/testimonial</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Ask: "Do you know anyone else who needs this?"</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> 🎉 YOU'VE MADE YOUR FIRST $1!</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="success-box">
+                        <strong>🎉 Success = </strong> You've made money from YOUR OWN business! Now scale it!
+                    </div>
+                </div>
+            </div>
+
+            <!-- DIVIDENDS PATH -->
+            <div class="path-content" id="path-dividends">
+                <div class="action-card">
+                    <div class="action-header">
+                        <span class="action-icon">💵</span>
+                        <div>
+                            <div class="action-title">Dividend Investing First Action</div>
+                            <span class="action-time">⏱️ 30-45 minutes</span>
+                        </div>
+                    </div>
+
+                    <h4>Your 30-Day Goal: Buy Your First Dividend-Paying Investment</h4>
+
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-week">Week 1: Open Account & Learn</div>
+                            <div class="timeline-task">
+                                <ul class="checklist">
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Open brokerage account (Fidelity, Vanguard, or Schwab)</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Learn what "dividend yield" means (annual dividend ÷ stock price)</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Understand: Dividends are paid quarterly (4x per year)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-week">Week 2: Choose Your Investments</div>
+                            <div class="timeline-task">
+                                <p><strong>Beginner-friendly dividend investments:</strong></p>
+                                <ul class="checklist">
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> <strong>SCHD</strong> - Schwab US Dividend Equity ETF (~3.5% yield)</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> <strong>VYM</strong> - Vanguard High Dividend Yield ETF (~3% yield)</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> <strong>DGRO</strong> - iShares Dividend Growth ETF (~2.5% yield)</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Research one of these funds</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-week">Week 3: Make Your First Purchase</div>
+                            <div class="timeline-task">
+                                <ul class="checklist">
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Transfer money to brokerage ($100+)</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Search for SCHD, VYM, or DGRO</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Buy your first shares!</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Enable DRIP (Dividend Reinvestment)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-week">Week 4: Calculate & Automate</div>
+                            <div class="timeline-task">
+                                <ul class="checklist">
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Calculate your expected annual dividends</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Set up automatic monthly investment</li>
+                                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Track when your first dividend will be paid!</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <strong>💡 Example:</strong> $1,000 invested in SCHD (3.5% yield) = ~$35/year in dividends. That's $35 just for owning shares! Now imagine $100,000 = $3,500/year passive income.
+                    </div>
+
+                    <div class="success-box">
+                        <strong>🎉 Success = </strong> You own dividend-paying investments and have DRIP enabled. You'll receive your first dividend payment within 3 months!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- COMMITMENT SECTION -->
+        <div class="card">
+            <h2>✍️ Your Commitment</h2>
+            
+            <div class="commitment-box">
+                <h3>🎯 30-Day Wealth Building Commitment</h3>
+                <p>I commit to taking my first wealth-building action within 30 days.</p>
+                <p style="margin-top: 15px;">I will not let fear, doubt, or "research" stop me from starting.</p>
+                <p style="margin-top: 15px;">I understand that imperfect action beats perfect planning.</p>
+                <div class="signature-line"></div>
+                <div class="signature-label">Your mental signature: I COMMIT!</div>
+            </div>
+
+            <ul class="checklist">
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> I've chosen my wealth-building path</li>
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> I know my specific first action</li>
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> I've committed to taking action within 30 days</li>
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> I will not make excuses!</li>
+            </ul>
+        </div>
+
+        <!-- SUCCESS TRACKER -->
+        <div class="card">
+            <h2>🏆 Track Your Success</h2>
+            
+            <ul class="checklist">
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> ✅ Week 1 tasks completed</li>
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> ✅ Week 2 tasks completed</li>
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> ✅ Week 3 tasks completed</li>
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> ✅ Week 4 tasks completed</li>
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> 🎉 FIRST ACTION TAKEN!</li>
+            </ul>
+
+            <div class="success-box" style="text-align: center; padding: 25px;">
+                <h3 style="color: #155724; margin-bottom: 10px;">🎉 When You Complete This Challenge:</h3>
+                <p>You'll have gone from <strong>"thinking about"</strong> wealth building to <strong>actually doing it</strong>.</p>
+                <p>That puts you ahead of 90% of people who never start!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📈 Your Progress</h2>
+            <p><span id="completed">0</span> of <span id="total">0</span> items completed</p>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>💬 Need Help?</h2>
+            <p>Stuck? Have questions? Our team can help you take that first step!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
+    </div>
+
+    <script>
+        // Set deadline date (30 days from today)
+        function setDeadline() {
+            const today = new Date();
+            const deadline = new Date(today.getTime() + 30 * 24 * 60 * 60 * 1000);
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('deadline-date').textContent = deadline.toLocaleDateString('en-US', options);
+        }
+
+        // Path tabs
+        function showPath(pathId) {
+            // Hide all path contents
+            document.querySelectorAll('.path-content').forEach(el => el.classList.remove('active'));
+            // Remove active from all tabs
+            document.querySelectorAll('.path-tab').forEach(el => el.classList.remove('active'));
+            
+            // Show selected path
+            document.getElementById('path-' + pathId).classList.add('active');
+            // Activate selected tab
+            event.target.classList.add('active');
+        }
+
+        function toggleCheck(el) {
+            el.classList.toggle('checked');
+            el.innerHTML = el.classList.contains('checked') ? '✓' : '';
+            updateProgress();
+            saveProgress();
+        }
+
+        function updateProgress() {
+            const total = document.querySelectorAll('.checkbox').length;
+            const completed = document.querySelectorAll('.checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('total').textContent = total;
+            document.getElementById('progress').style.width = (completed / total * 100) + '%';
+        }
+
+        function saveProgress() {
+            const checkboxes = document.querySelectorAll('.checkbox');
+            const states = Array.from(checkboxes).map(cb => cb.classList.contains('checked'));
+            localStorage.setItem('wealth-first-action-progress', JSON.stringify(states));
+        }
+
+        function loadProgress() {
+            const saved = localStorage.getItem('wealth-first-action-progress');
+            if (saved) {
+                const states = JSON.parse(saved);
+                const checkboxes = document.querySelectorAll('.checkbox');
+                checkboxes.forEach((cb, i) => {
+                    if (states[i]) {
+                        cb.classList.add('checked');
+                        cb.innerHTML = '✓';
+                    }
+                });
+            }
+            updateProgress();
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            setDeadline();
+            loadProgress();
+        });
+    </script>
+</body>
+</html>

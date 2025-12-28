@@ -3,40 +3,296 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Side Income Strategy - ASAP Financial Playbook</title>
-    <style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);min-height:100vh;padding:20px;line-height:1.7}.container{max-width:800px;margin:0 auto}.back-link{display:inline-block;color:white;text-decoration:none;margin-bottom:20px;opacity:0.9}.header{background:white;border-radius:20px;padding:40px;text-align:center;margin-bottom:20px;box-shadow:0 10px 40px rgba(0,0,0,0.2)}.header h1{font-size:2.5em;color:#1a1a2e;margin-bottom:10px}.header .subtitle{font-size:1.2em;color:#666;margin-bottom:20px}.time-badge{display:inline-block;background:linear-gradient(135deg,#667eea,#764ba2);color:white;padding:10px 25px;border-radius:20px}.card{background:white;border-radius:20px;padding:30px;margin-bottom:20px;box-shadow:0 10px 40px rgba(0,0,0,0.1)}.card h2{color:#1a1a2e;margin-bottom:20px;font-size:1.5em}.achieve-box{background:linear-gradient(135deg,#e8f5e9,#c8e6c9);border-radius:15px;padding:25px;margin-bottom:20px}.achieve-box p{color:#2e7d32;font-size:1.1em}.savings-highlight{background:linear-gradient(135deg,#4caf50,#66bb6a);color:white;border-radius:15px;padding:25px;text-align:center}.savings-highlight h3{font-size:2.5em;margin-bottom:10px}.idea-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;margin:20px 0}.idea-card{background:#f8f9fa;border-radius:15px;padding:20px;text-align:center;border-top:4px solid #4caf50}.idea-card h4{color:#1a1a2e;margin-bottom:5px;font-size:0.95em}.idea-card .earn{color:#4caf50;font-weight:700;margin-bottom:5px}.idea-card p{color:#666;font-size:0.85em}.step{margin-bottom:25px;padding:25px;background:#f8f9fa;border-radius:15px;border-left:5px solid #667eea}.step:hover{background:#e8f5e9}.step-header{display:flex;gap:15px;align-items:flex-start;margin-bottom:15px}.step-checkbox{width:35px;height:35px;min-width:35px;border:3px solid #667eea;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;color:transparent;font-size:1.2em}.step-checkbox.checked{background:#667eea;color:white}.step-title{font-weight:700;color:#1a1a2e;font-size:1.2em}.step-time{color:#667eea;font-size:0.9em;margin-top:3px}.step-content{margin-left:50px}.substep{background:white;border-radius:10px;padding:15px;margin:10px 0;border-left:3px solid #4caf50}.substep-title{font-weight:600;color:#2e7d32;margin-bottom:8px}.substep p{color:#555;font-size:0.95em}.pro-tip{background:linear-gradient(135deg,#fff8e1,#ffecb3);border-left:4px solid #ffc107;padding:20px;border-radius:0 15px 15px 0;margin:15px 0}.pro-tip-title{font-weight:700;color:#f57f17;margin-bottom:10px}.pro-tip p{color:#5d4e37}.influencer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin:20px 0}.influencer-card{background:#f8f9fa;border-radius:15px;padding:20px;text-align:center}.influencer-avatar{width:80px;height:80px;background:linear-gradient(135deg,#667eea,#764ba2);border-radius:50%;margin:0 auto 15px;display:flex;align-items:center;justify-content:center;font-size:2em;color:white}.influencer-card h4{color:#1a1a2e;margin-bottom:5px}.influencer-card .platform{color:#667eea;font-size:0.9em;margin-bottom:10px}.influencer-card p{color:#666;font-size:0.9em;margin-bottom:15px}.influencer-link{display:inline-block;color:#667eea;text-decoration:none;font-weight:600;padding:8px 20px;border:2px solid #667eea;border-radius:20px}.influencer-link:hover{background:#667eea;color:white}.progress-tracker{background:linear-gradient(135deg,#667eea,#764ba2);color:white;border-radius:15px;padding:25px;text-align:center}.progress-bar{background:rgba(255,255,255,0.3);border-radius:10px;height:20px;margin:15px 0;overflow:hidden}.progress-fill{background:white;height:100%;border-radius:10px;width:0%;transition:width 0.3s}.notes-section textarea{width:100%;min-height:200px;padding:20px;border:2px solid #e0e0e0;border-radius:15px;font-family:inherit;font-size:1em;resize:vertical}.cta-section{background:linear-gradient(135deg,#1a1a2e,#2d2d44);color:white;border-radius:15px;padding:30px;text-align:center;margin-top:20px}.cta-button{display:inline-block;background:linear-gradient(135deg,#667eea,#764ba2);color:white;padding:15px 40px;border-radius:30px;text-decoration:none;font-weight:600}@media(max-width:600px){.header h1{font-size:1.8em}.step-content{margin-left:0;margin-top:15px}.step-header{flex-direction:column}}</style>
+    <title>💵 Side Income Strategy</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; font-size: 14px; opacity: 0.9; }
+        .back-link:hover { opacity: 1; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        h1 { font-size: 2.2em; margin-bottom: 10px; color: #1a1a2e; }
+        .subtitle { font-size: 1.2em; color: #666; margin-bottom: 15px; }
+        .meta { display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 20px; font-size: 0.9em; color: #888; }
+        .meta span { background: #f0f0f0; padding: 5px 12px; border-radius: 20px; }
+        h2 { color: #1a1a2e; margin: 25px 0 15px 0; font-size: 1.5em; border-bottom: 3px solid #667eea; padding-bottom: 10px; }
+        h3 { color: #333; margin: 20px 0 10px 0; }
+        p { margin-bottom: 15px; }
+        ul, ol { margin: 15px 0 15px 25px; }
+        li { margin-bottom: 8px; }
+        .highlight-box { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 15px; margin: 20px 0; }
+        .highlight-box h3 { color: white; margin-top: 0; }
+        .warning-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 0 10px 10px 0; }
+        .success-box { background: #d4edda; border-left: 4px solid #28a745; padding: 15px; margin: 20px 0; border-radius: 0 10px 10px 0; }
+        .step-card { background: #f8f9fa; border-radius: 15px; padding: 20px; margin: 15px 0; border-left: 4px solid #667eea; }
+        .step-number { background: #667eea; color: white; width: 30px; height: 30px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 10px; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .stat-box { background: #f8f9fa; padding: 20px; border-radius: 15px; text-align: center; }
+        .stat-number { font-size: 2em; font-weight: bold; color: #667eea; }
+        .stat-label { font-size: 0.9em; color: #666; }
+        .checklist { list-style: none; margin-left: 0; }
+        .checklist li { padding: 10px 0; border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 10px; }
+        .checklist li:last-child { border-bottom: none; }
+        .checkbox { width: 24px; height: 24px; border: 2px solid #667eea; border-radius: 5px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .checkbox.checked { background: #667eea; color: white; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; margin: 10px 0; }
+        .progress-bar { background: #e9ecef; border-radius: 10px; height: 20px; margin: 20px 0; overflow: hidden; }
+        .progress-fill { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 100%; border-radius: 10px; transition: width 0.5s; }
+        .flow-chart { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; }
+        .flow-item { background: #f8f9fa; padding: 15px; border-radius: 10px; display: flex; align-items: center; gap: 15px; }
+        .flow-arrow { text-align: center; color: #667eea; font-size: 1.5em; }
+        .flow-number { background: #667eea; color: white; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; }
+        .priority-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .priority-table th, .priority-table td { padding: 12px; text-align: left; border-bottom: 1px solid #eee; }
+        .priority-table th { background: #667eea; color: white; }
+        .priority-table tr:nth-child(even) { background: #f8f9fa; }
+        @media (max-width: 600px) { .container { padding: 10px; } .card { padding: 20px; } h1 { font-size: 1.8em; } }
+    </style>
 </head>
 <body>
     <div class="container">
-        <a href="foundation-playbooks.html" class="back-link">← Back to Foundation Playbooks</a>
-        <div class="header"><h1>💼 Plan Your Side Income Strategy</h1><p class="subtitle">Find 1 realistic side income idea that matches your skills and schedule</p><div class="time-badge">⏱️ 30 minutes to plan • Earn $200-1000+/month</div></div>
-        <div class="card"><h2>🎯 What This Does For You</h2><div class="achieve-box"><p><strong>Side income accelerates every financial goal.</strong> Want to pay off debt faster? Save for a house? Build an emergency fund? Extra income is the fastest path!</p><p style="margin-top:15px"><strong>The key is finding something that fits YOUR life.</strong> Your skills, your schedule, your interests. No point starting something you'll quit in 2 weeks!</p></div><div class="savings-highlight"><h3>$200-1000+/Month</h3><p>Extra income changes everything!</p></div></div>
-        <div class="card"><h2>💡 Side Income Ideas by Time</h2><div class="idea-grid"><div class="idea-card"><h4>🚗 Rideshare/Delivery</h4><div class="earn">$15-25/hr</div><p>Uber, Lyft, DoorDash</p></div><div class="idea-card"><h4>🐕 Pet Sitting</h4><div class="earn">$25-50/night</div><p>Rover, Wag, local</p></div><div class="idea-card"><h4>📝 Freelance Writing</h4><div class="earn">$50-200/article</div><p>Upwork, Fiverr</p></div><div class="idea-card"><h4>📚 Tutoring</h4><div class="earn">$20-80/hr</div><p>Wyzant, local</p></div><div class="idea-card"><h4>🛠️ Handyman</h4><div class="earn">$30-75/hr</div><p>TaskRabbit</p></div><div class="idea-card"><h4>📦 Reselling</h4><div class="earn">$100-500+/mo</div><p>eBay, Poshmark</p></div></div></div>
-        <div class="card"><h2>📋 Your Step-by-Step Action Plan</h2>
-            <div class="step" data-step="1"><div class="step-header"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div><div class="step-title">Step 1: Inventory Your Skills (5 min)</div><div class="step-time">What are you already good at?</div></div></div><div class="step-content"><div class="substep"><div class="substep-title">📝 List your skills:</div><p>• What do friends ask you for help with? • What do you do at work? • What hobbies do you have? • What have people paid you for before?</p></div></div></div>
-            <div class="step" data-step="2"><div class="step-header"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div><div class="step-title">Step 2: Audit Your Available Time (5 min)</div><div class="step-time">Be realistic about your schedule</div></div></div><div class="step-content"><div class="substep"><div class="substep-title">⏰ When could you work?</div><p>• Weekday evenings? How many hours? • Weekends? Full days or just a few hours? • Early mornings? Be honest—life is busy!</p></div></div></div>
-            <div class="step" data-step="3"><div class="step-header"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div><div class="step-title">Step 3: Match Skills to Opportunities (10 min)</div><div class="step-time">Find the intersection</div></div></div><div class="step-content"><div class="substep"><div class="substep-title">🎯 Best fits by skill type:</div><p>• <strong>Good with people?</strong> → Tutoring, pet sitting, rideshare • <strong>Good with hands?</strong> → Handyman, cleaning • <strong>Good with computers?</strong> → Freelance, VA work • <strong>Good at finding deals?</strong> → Reselling</p></div></div></div>
-            <div class="step" data-step="4"><div class="step-header"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div><div class="step-title">Step 4: Research Your Top Pick (10 min)</div><div class="step-time">Understand what it really takes</div></div></div><div class="step-content"><div class="substep"><div class="substep-title">🔍 Research questions:</div><p>• What's realistic earning potential? • What are startup costs? • Search Reddit: "[side hustle name] review"</p></div></div></div>
-            <div class="step" data-step="5"><div class="step-header"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div><div class="step-title">Step 5: Set Your Income Goal (5 min)</div><div class="step-time">Make it specific and achievable</div></div></div><div class="step-content"><div class="substep"><div class="substep-title">🎯 Your goal:</div><p>"I will earn $____ per month from ____________ working ____ hours per week." Start small! $200-300/month is a great first goal.</p></div></div></div>
-            <div class="step" data-step="6"><div class="step-header"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div><div class="step-title">Step 6: Take First Action TODAY (15 min)</div><div class="step-time">Momentum beats perfection</div></div></div><div class="step-content"><div class="substep"><div class="substep-title">🚀 First actions:</div><p>• <strong>Gig work:</strong> Download app, complete signup • <strong>Freelance:</strong> Create profile on Upwork • <strong>Local service:</strong> Post on NextDoor • <strong>Reselling:</strong> List 3 items today</p></div><div class="pro-tip"><div class="pro-tip-title">💡 The 15-Minute Rule</div><p>Spend just 15 minutes taking your first action. Starting is the hardest part!</p></div></div></div>
-            <div class="step" data-step="7"><div class="step-header"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div><div class="step-title">Step 7: Schedule Your Side Hustle Time (5 min)</div><div class="step-time">Put it on the calendar!</div></div></div><div class="step-content"><div class="substep"><div class="substep-title">📅 Block specific times:</div><p>Put your side hustle hours on your calendar like appointments. If it's not scheduled, it won't happen!</p></div></div></div>
+        <a href="income-playbooks.html" class="back-link">← Back to Playbooks</a>
+        
+        <div class="card">
+            <h1>💵 Side Income Strategy</h1>
+            <p class="subtitle">Maximize every extra dollar by routing it to the right place</p>
+            <div class="meta">
+                <span>⏱️ 15 minutes to plan</span>
+                <span>💰 Accelerate your goals</span>
+                <span>🎯 Clear priority system</span>
+            </div>
         </div>
-        <div class="card"><h2>🎓 Learn From These Experts</h2><div class="influencer-grid"><div class="influencer-card"><div class="influencer-avatar">💼</div><h4>Side Hustle Nation</h4><div class="platform">🎙️ Podcast</div><p>Nick Loper interviews real side hustlers!</p><a href="https://www.sidehustlenation.com" class="influencer-link" target="_blank">Listen →</a></div><div class="influencer-card"><div class="influencer-avatar">💬</div><h4>r/sidehustle</h4><div class="platform">🌐 Reddit</div><p>Real people sharing what works!</p><a href="https://www.reddit.com/r/sidehustle/" class="influencer-link" target="_blank">Join →</a></div><div class="influencer-card"><div class="influencer-avatar">📺</div><h4>Graham Stephan</h4><div class="platform">📺 YouTube</div><p>How side income built his wealth!</p><a href="https://www.youtube.com/@GrahamStephan" class="influencer-link" target="_blank">Watch →</a></div><div class="influencer-card"><div class="influencer-avatar">💰</div><h4>r/beermoney</h4><div class="platform">🌐 Reddit</div><p>Easy ways to earn extra cash!</p><a href="https://www.reddit.com/r/beermoney/" class="influencer-link" target="_blank">Join →</a></div></div></div>
-        <div class="card"><h2>📈 Your Progress</h2><div class="progress-tracker"><div style="font-size:1.2em;margin-bottom:15px"><span id="completed">0</span> of 7 steps completed</div><div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div></div></div>
-        <div class="card"><h2>📝 Your Side Income Plan</h2><div class="notes-section"><textarea id="notes" placeholder="MY SKILLS:
-1. ________________
-2. ________________
 
-MY AVAILABLE TIME:
-Weekdays: ____ hrs | Weekends: ____ hrs
+        <div class="card">
+            <h2>🎯 The Big Question: Where Does Extra Money Go?</h2>
+            <p>You sold something on Facebook Marketplace. You got a bonus at work. You did a side gig. <strong>Now what?</strong></p>
+            <p>Without a plan, extra money disappears into random spending. With a plan, every dollar accelerates your financial goals!</p>
+            
+            <div class="highlight-box">
+                <h3>💡 The Golden Rule</h3>
+                <p>Side income should NEVER go into your regular checking account where it gets spent on random stuff. It goes directly to your #1 financial priority!</p>
+            </div>
+        </div>
 
-MY CHOSEN SIDE HUSTLE: ________________
+        <div class="card">
+            <h2>📊 The Priority Waterfall</h2>
+            <p>Route your side income in THIS order until each goal is met:</p>
+            
+            <div class="flow-chart">
+                <div class="flow-item">
+                    <div class="flow-number">1</div>
+                    <div>
+                        <strong>$1,000 Starter Emergency Fund</strong><br>
+                        <small>100% of side income → Until you have $1,000</small>
+                    </div>
+                </div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-item">
+                    <div class="flow-number">2</div>
+                    <div>
+                        <strong>High-Interest Debt (18%+ APR)</strong><br>
+                        <small>100% of side income → Until cards are paid off</small>
+                    </div>
+                </div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-item">
+                    <div class="flow-number">3</div>
+                    <div>
+                        <strong>Full Emergency Fund (3-6 months expenses)</strong><br>
+                        <small>100% of side income → Until fully funded</small>
+                    </div>
+                </div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-item">
+                    <div class="flow-number">4</div>
+                    <div>
+                        <strong>Other Goals (Car, House, Investing)</strong><br>
+                        <small>Split as desired between remaining goals</small>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-MY GOAL: $____/month
+        <div class="card">
+            <h2>📋 Action Plan: Set Up Your System</h2>
+            
+            <div class="step-card">
+                <h3><span class="step-number">1</span> Identify Your Current Priority</h3>
+                <p>Where are you in the waterfall?</p>
+                <ul class="checklist">
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Do I have $1,000 in emergency savings? If NO → Priority 1</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Do I have high-interest debt (18%+)? If YES → Priority 2</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Do I have 3-6 months expenses saved? If NO → Priority 3</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> If all above are done → Priority 4 (Wealth building!)</li>
+                </ul>
+                <div class="success-box">
+                    <strong>📍 My current priority is: _______________</strong>
+                </div>
+            </div>
 
-FIRST ACTION TAKEN: ☐ ________________"></textarea></div></div>
-        <div class="cta-section"><h3>Need Help With Your Finances?</h3><p style="opacity:0.9;margin-bottom:20px">Chat with an ASAP Financial coach!</p><a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a></div>
+            <div class="step-card">
+                <h3><span class="step-number">2</span> Open a Dedicated Account</h3>
+                <p>Keep side income separate so you don't accidentally spend it:</p>
+                <ul class="checklist">
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Open a High-Yield Savings Account (HYSA) if you don't have one</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Name it after your current priority ("Emergency Fund" or "Debt Crusher")</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Link it to your checking for easy transfers</li>
+                </ul>
+            </div>
+
+            <div class="step-card">
+                <h3><span class="step-number">3</span> Create Your Income Routing Rule</h3>
+                <p>Write down your rule and stick to it:</p>
+                
+                <div class="warning-box">
+                    <strong>📝 My Rule:</strong><br>
+                    "Every time I receive side income, I will immediately transfer ___% to my _____________ account."<br><br>
+                    <strong>Recommended:</strong> 100% until your current priority is complete!
+                </div>
+
+                <ul class="checklist">
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> I've written down my income routing rule</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> I've committed to following it every time</li>
+                </ul>
+            </div>
+
+            <div class="step-card">
+                <h3><span class="step-number">4</span> Set Up Instant Transfers</h3>
+                <p>When side income hits your account, transfer it IMMEDIATELY:</p>
+                <ul>
+                    <li><strong>Same day:</strong> Don't let it sit in checking overnight</li>
+                    <li><strong>Before you check the balance:</strong> Transfer first, then look</li>
+                    <li><strong>Make it automatic:</strong> Some apps (like Venmo) can auto-transfer to your bank</li>
+                </ul>
+                <ul class="checklist">
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> I know how to quickly transfer between my accounts</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> I've set up quick transfer shortcuts on my phone</li>
+                </ul>
+            </div>
+
+            <div class="step-card">
+                <h3><span class="step-number">5</span> Track Every Dollar</h3>
+                <p>Keep a log of all side income and where it went:</p>
+                <ul class="checklist">
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Create a simple spreadsheet or note: Date | Source | Amount | Where It Went</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Review monthly to see your progress</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Celebrate milestones! ($500 saved, first debt paid off, etc.)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>💡 Types of Side Income to Route</h2>
+            <table class="priority-table">
+                <tr>
+                    <th>Income Type</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>Sold items (FB Marketplace, eBay)</td>
+                    <td>100% → Current priority</td>
+                </tr>
+                <tr>
+                    <td>Gig work (DoorDash, Uber, etc.)</td>
+                    <td>Set aside 25% for taxes, 75% → priority</td>
+                </tr>
+                <tr>
+                    <td>Work bonus</td>
+                    <td>100% → Current priority</td>
+                </tr>
+                <tr>
+                    <td>Tax refund</td>
+                    <td>100% → Current priority</td>
+                </tr>
+                <tr>
+                    <td>Birthday/gift money</td>
+                    <td>At least 50% → Current priority</td>
+                </tr>
+                <tr>
+                    <td>Cash back rewards</td>
+                    <td>100% → Current priority</td>
+                </tr>
+                <tr>
+                    <td>Plasma donation</td>
+                    <td>100% → Current priority</td>
+                </tr>
+            </table>
+
+            <div class="warning-box">
+                <strong>⚠️ Gig Income Tax Reminder:</strong> If you do gig work (DoorDash, Uber, freelance), set aside 25-30% for taxes BEFORE routing the rest to your priority. Open a separate "Tax Fund" savings account!
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🎯 Real Example</h2>
+            <div class="success-box">
+                <strong>Sarah's Side Income Strategy:</strong><br><br>
+                <strong>Current Priority:</strong> Pay off $3,000 credit card (Priority 2)<br><br>
+                <strong>This Month's Side Income:</strong><br>
+                • Sold old clothes: $85 → Transferred to credit card<br>
+                • Plasma donation: $75 → Transferred to credit card<br>
+                • Overtime at work: $200 → Transferred to credit card<br><br>
+                <strong>Total Extra Paid:</strong> $360<br>
+                <strong>Result:</strong> Card will be paid off 4 months faster!
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🏆 Success Checklist</h2>
+            <ul class="checklist">
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Identified my current priority in the waterfall</li>
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Have a dedicated savings account for my priority</li>
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Written down my income routing rule</li>
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Know how to quickly transfer money between accounts</li>
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Started tracking all side income</li>
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Committed to routing 100% until priority is complete</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>📈 Your Progress</h2>
+            <p><span id="completed">0</span> of <span id="total">0</span> steps completed</p>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>💬 Need Help?</h2>
+            <p>Questions about maximizing your side income? We're here to help!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
     </div>
-    <script>document.addEventListener('DOMContentLoaded',function(){const saved=localStorage.getItem('playbook-side-income-strategy');if(saved){const data=JSON.parse(saved);data.steps.forEach((checked,index)=>{if(checked){const cb=document.querySelectorAll('.step-checkbox')[index];if(cb)cb.classList.add('checked')}});document.getElementById('notes').value=data.notes||'';updateProgress()}});function toggleStep(el){el.classList.toggle('checked');updateProgress();saveProgress()}function updateProgress(){const total=document.querySelectorAll('.step-checkbox').length;const completed=document.querySelectorAll('.step-checkbox.checked').length;document.getElementById('completed').textContent=completed;document.getElementById('progressFill').style.width=(completed/total*100)+'%'}function saveProgress(){const steps=Array.from(document.querySelectorAll('.step-checkbox')).map(el=>el.classList.contains('checked'));const notes=document.getElementById('notes').value;localStorage.setItem('playbook-side-income-strategy',JSON.stringify({steps,notes}))}document.getElementById('notes').addEventListener('input',saveProgress);</script>
+
+    <script>
+        function toggleCheck(el) {
+            el.classList.toggle('checked');
+            el.innerHTML = el.classList.contains('checked') ? '✓' : '';
+            updateProgress();
+            saveProgress();
+        }
+        function updateProgress() {
+            const total = document.querySelectorAll('.checkbox').length;
+            const completed = document.querySelectorAll('.checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('total').textContent = total;
+            document.getElementById('progress').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const checkboxes = document.querySelectorAll('.checkbox');
+            const states = Array.from(checkboxes).map(cb => cb.classList.contains('checked'));
+            localStorage.setItem('side-income-strategy-progress', JSON.stringify(states));
+        }
+        function loadProgress() {
+            const saved = localStorage.getItem('side-income-strategy-progress');
+            if (saved) {
+                const states = JSON.parse(saved);
+                const checkboxes = document.querySelectorAll('.checkbox');
+                checkboxes.forEach((cb, i) => { if (states[i]) { cb.classList.add('checked'); cb.innerHTML = '✓'; }});
+            }
+            updateProgress();
+        }
+        document.addEventListener('DOMContentLoaded', loadProgress);
+    </script>
 </body>
 </html>

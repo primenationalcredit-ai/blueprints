@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔍 Subscription Audit - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { font-size: 2.2em; color: #1a1a2e; margin-bottom: 10px; }
+        .header .subtitle { font-size: 1.1em; color: #666; margin-bottom: 20px; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 10px 25px; border-radius: 20px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; font-size: 1.4em; }
+        .savings-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 25px; text-align: center; margin: 20px 0; }
+        .savings-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; }
+        .step:hover { background: #e3f2fd; }
+        .step-checkbox { width: 30px; height: 30px; min-width: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-content h3 { color: #1a1a2e; margin-bottom: 8px; }
+        .step-content p { color: #666; font-size: 0.95em; }
+        .tip-box { background: #fff3e0; border-left: 4px solid #ff9800; padding: 15px 20px; border-radius: 0 10px 10px 0; margin: 15px 0; }
+        .sub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 15px 0; }
+        .sub-item { background: #f8f9fa; padding: 12px; border-radius: 10px; text-align: center; font-size: 0.9em; }
+        .sub-item .icon { font-size: 1.3em; }
+        .question-box { background: #e8f5e9; border-left: 4px solid #4caf50; padding: 15px 20px; border-radius: 0 10px 10px 0; margin: 15px 0; }
+        .progress-container { background: #f0f0f0; border-radius: 10px; height: 20px; margin: 20px 0; overflow: hidden; }
+        .progress-bar { background: linear-gradient(90deg, #667eea, #764ba2); height: 100%; width: 0%; }
+        .progress-text { text-align: center; color: #666; margin-top: 10px; }
+        .notes-section textarea { width: 100%; min-height: 150px; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-family: inherit; resize: vertical; }
+        .cta-box { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; text-align: center; margin-top: 30px; }
+        .cta-box a { display: inline-block; background: white; color: #667eea; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="expense-playbooks.html" class="back-link">← Back to Expense Playbooks</a>
+        <div class="header">
+            <h1>🔍 Subscription Audit</h1>
+            <p class="subtitle">Find and cancel subscriptions you forgot you had!</p>
+            <div class="time-badge">⏱️ 30 minutes • 💰 Save $50-200/month</div>
+        </div>
+        <div class="card">
+            <h2>🎯 The Subscription Trap</h2>
+            <p><strong>The average American spends $219/month on subscriptions</strong>—but they THINK they spend only $86. That's $133/month in forgotten subscriptions!</p>
+            <p>Companies love subscriptions because most people forget to cancel. Let's find your hidden money drains!</p>
+            <div class="savings-highlight">
+                <h3>$50 - $200/month</h3>
+                <p>What most people save from a subscription audit</p>
+            </div>
+        </div>
+        <div class="card">
+            <h2>🔎 Common Hidden Subscriptions</h2>
+            <div class="sub-grid">
+                <div class="sub-item"><span class="icon">📺</span> Streaming (Netflix, Hulu, Disney+)</div>
+                <div class="sub-item"><span class="icon">🎵</span> Music (Spotify, Apple Music)</div>
+                <div class="sub-item"><span class="icon">🎮</span> Gaming (Xbox, PlayStation, Nintendo)</div>
+                <div class="sub-item"><span class="icon">☁️</span> Cloud Storage (iCloud, Dropbox)</div>
+                <div class="sub-item"><span class="icon">📱</span> Apps (dating, fitness, news)</div>
+                <div class="sub-item"><span class="icon">🏋️</span> Gym memberships</div>
+                <div class="sub-item"><span class="icon">📦</span> Subscription boxes</div>
+                <div class="sub-item"><span class="icon">🛡️</span> Antivirus/VPN</div>
+                <div class="sub-item"><span class="icon">📰</span> News/Magazines</div>
+                <div class="sub-item"><span class="icon">🎓</span> Online courses</div>
+            </div>
+        </div>
+        <div class="card">
+            <h2>📋 Your Audit Plan</h2>
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 1: Check Your Bank Statements</h3>
+                    <p>Download the last 3 months of statements. Search for recurring charges—anything that repeats monthly or yearly.</p>
+                    <div class="tip-box"><strong>💡 Look For:</strong> Charges ending in .99, small amounts ($4.99, $9.99, $14.99), and company names you don't recognize.</div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 2: Check Your Credit Card Statements</h3>
+                    <p>Do the same for all credit cards. Subscriptions often get charged to cards you rarely use!</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 3: Check Your Email for Receipts</h3>
+                    <p>Search your email for "subscription," "recurring," "monthly," "renewal," and "receipt."</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 4: Check App Store Subscriptions</h3>
+                    <p><strong>iPhone:</strong> Settings → Your Name → Subscriptions<br>
+                    <strong>Android:</strong> Play Store → Menu → Subscriptions</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 5: Ask "The Question" for Each Subscription</h3>
+                    <div class="question-box">
+                        <strong>🤔 For each subscription ask:</strong><br>
+                        "Have I used this in the last 2 weeks?"<br><br>
+                        If NO → Cancel it immediately!<br>
+                        If YES → Keep it (for now)
+                    </div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 6: Cancel Everything You Don't Use</h3>
+                    <p>Don't "pause"—CANCEL. You can always re-subscribe later. Most services make canceling hard, so be persistent!</p>
+                    <div class="tip-box"><strong>💡 Pro Tip:</strong> If a service won't let you cancel online, call them. Say "I'd like to cancel" and they often offer a discount to keep you!</div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 7: Consolidate Streaming Services</h3>
+                    <p>You don't need 5 streaming services at once! Keep 1-2 and rotate quarterly. $15/mo × 5 = $75. Just Netflix + one other = $30.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <h2>📈 Your Progress</h2>
+            <div class="progress-container"><div class="progress-bar" id="progressBar"></div></div>
+            <p class="progress-text"><span id="progressText">0</span> of 7 steps completed</p>
+        </div>
+        <div class="card">
+            <div class="notes-section">
+                <h3>📝 Your Subscription Tracker</h3>
+                <textarea id="notes" placeholder="LIST ALL SUBSCRIPTIONS FOUND:
+
+KEEP:
+□ _________ - $___/mo - Use: Weekly
+□ _________ - $___/mo - Use: Weekly
+
+CANCEL:
+□ _________ - $___/mo - Cancelled ✓
+□ _________ - $___/mo - Cancelled ✓
+□ _________ - $___/mo - Cancelled ✓
+
+TOTAL BEFORE: $___/month
+TOTAL AFTER: $___/month
+MONTHLY SAVINGS: $___"></textarea>
+            </div>
+        </div>
+        <div class="cta-box">
+            <h3>Need Help With Your Finances?</h3>
+            <a href="https://asapcreditrepairusa.com">Get Support →</a>
+        </div>
+    </div>
+    <script>
+        function toggleStep(el) { el.classList.toggle('checked'); el.textContent = el.classList.contains('checked') ? '✓' : ''; updateProgress(); saveProgress(); }
+        function updateProgress() { const t = document.querySelectorAll('.step-checkbox').length; const c = document.querySelectorAll('.step-checkbox.checked').length; document.getElementById('progressText').textContent = c; document.getElementById('progressBar').style.width = (c/t*100)+'%'; }
+        function saveProgress() { const s = Array.from(document.querySelectorAll('.step-checkbox')).map(e => e.classList.contains('checked')); const n = document.getElementById('notes').value; localStorage.setItem('playbook-subscription-audit', JSON.stringify({steps:s,notes:n})); }
+        function loadProgress() { const d = localStorage.getItem('playbook-subscription-audit'); if(d){ const p=JSON.parse(d); document.querySelectorAll('.step-checkbox').forEach((e,i)=>{ if(p.steps[i]){e.classList.add('checked');e.textContent='✓';} }); if(p.notes)document.getElementById('notes').value=p.notes; updateProgress(); } }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+        loadProgress();
+    </script>
+</body>
+</html>

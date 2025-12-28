@@ -3,362 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spending Regret Review - ASAP Financial Playbook</title>
+    <title>🔍 Spending Regret Review</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; line-height: 1.7; }
-        .container { max-width: 800px; margin: 0 auto; }
-        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
-        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
-        .header h1 { font-size: 2.5em; color: #1a1a2e; margin-bottom: 10px; }
-        .header .subtitle { font-size: 1.2em; color: #666; margin-bottom: 20px; }
-        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 10px 25px; border-radius: 20px; }
-        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
-        .card h2 { color: #1a1a2e; margin-bottom: 20px; font-size: 1.5em; }
-        .achieve-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
-        .achieve-box p { color: #2e7d32; font-size: 1.1em; }
-        .savings-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 25px; text-align: center; }
-        .savings-highlight h3 { font-size: 2em; margin-bottom: 10px; }
-        .why-box { background: linear-gradient(135deg, #fff3e0, #ffe0b2); border-radius: 15px; padding: 25px; margin: 20px 0; }
-        .why-box h4 { color: #e65100; margin-bottom: 15px; font-size: 1.2em; }
-        .why-box p { color: #5d4037; font-size: 1.05em; margin-bottom: 10px; }
-        .step { margin-bottom: 25px; padding: 25px; background: #f8f9fa; border-radius: 15px; border-left: 5px solid #667eea; }
-        .step:hover { background: #e8f5e9; }
-        .step-header { display: flex; gap: 15px; align-items: flex-start; margin-bottom: 15px; }
-        .step-checkbox { width: 35px; height: 35px; min-width: 35px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; color: transparent; font-size: 1.2em; }
-        .step-checkbox.checked { background: #667eea; color: white; }
-        .step-title { font-weight: 700; color: #1a1a2e; font-size: 1.2em; }
-        .step-time { color: #667eea; font-size: 0.9em; margin-top: 3px; }
-        .step-content { margin-left: 50px; }
-        .step-desc { color: #444; font-size: 1.05em; margin-bottom: 15px; }
-        .substep { background: white; border-radius: 10px; padding: 15px; margin: 10px 0; border-left: 3px solid #4caf50; }
-        .substep-title { font-weight: 600; color: #2e7d32; margin-bottom: 8px; }
-        .substep p { color: #555; font-size: 0.95em; }
-        .trigger-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 15px 0; }
-        .trigger-card { background: #fff3e0; border-radius: 10px; padding: 15px; text-align: center; }
-        .trigger-card .emoji { font-size: 2em; }
-        .trigger-card .label { color: #e65100; font-weight: 600; font-size: 0.9em; }
-        .trigger-card .solution { color: #5d4037; font-size: 0.8em; margin-top: 5px; }
-        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
-        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
-        .pro-tip p { color: #5d4e37; }
-        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
-        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; }
-        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
-        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
-        .influencer-card .platform { color: #667eea; font-size: 0.9em; margin-bottom: 10px; }
-        .influencer-card p { color: #666; font-size: 0.9em; margin-bottom: 15px; }
-        .influencer-link { display: inline-block; color: #667eea; text-decoration: none; font-weight: 600; padding: 8px 20px; border: 2px solid #667eea; border-radius: 20px; }
-        .influencer-link:hover { background: #667eea; color: white; }
-        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; text-align: center; }
-        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
-        .progress-fill { background: white; height: 100%; border-radius: 10px; width: 0%; transition: width 0.3s; }
-        .notes-section textarea { width: 100%; min-height: 280px; padding: 20px; border: 2px solid #e0e0e0; border-radius: 15px; font-family: inherit; font-size: 1em; resize: vertical; }
-        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
-        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; }
-        @media (max-width: 600px) { .header h1 { font-size: 1.8em; } .step-content { margin-left: 0; margin-top: 15px; } .step-header { flex-direction: column; } }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; font-size: 14px; opacity: 0.9; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        h1 { font-size: 2.2em; margin-bottom: 10px; color: #1a1a2e; }
+        .subtitle { font-size: 1.2em; color: #666; margin-bottom: 15px; }
+        .meta { display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 20px; font-size: 0.9em; color: #888; }
+        .meta span { background: #f0f0f0; padding: 5px 12px; border-radius: 20px; }
+        h2 { color: #1a1a2e; margin: 25px 0 15px 0; font-size: 1.5em; border-bottom: 3px solid #667eea; padding-bottom: 10px; }
+        h3 { color: #333; margin: 20px 0 10px 0; }
+        p { margin-bottom: 15px; }
+        ul { margin: 15px 0 15px 25px; }
+        li { margin-bottom: 8px; }
+        .highlight-box { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 15px; margin: 20px 0; }
+        .warning-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 0 10px 10px 0; }
+        .success-box { background: #d4edda; border-left: 4px solid #28a745; padding: 15px; margin: 20px 0; border-radius: 0 10px 10px 0; }
+        .step-card { background: #f8f9fa; border-radius: 15px; padding: 20px; margin: 15px 0; border-left: 4px solid #667eea; }
+        .step-number { background: #667eea; color: white; width: 30px; height: 30px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 10px; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .stat-box { background: #f8f9fa; padding: 20px; border-radius: 15px; text-align: center; }
+        .stat-number { font-size: 2em; font-weight: bold; color: #667eea; }
+        .stat-label { font-size: 0.9em; color: #666; }
+        .checklist { list-style: none; margin-left: 0; }
+        .checklist li { padding: 10px 0; border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 10px; }
+        .checkbox { width: 24px; height: 24px; border: 2px solid #667eea; border-radius: 5px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .checkbox.checked { background: #667eea; color: white; }
+        .regret-entry { background: #fff5f5; border: 2px solid #f8d7da; border-radius: 15px; padding: 20px; margin: 15px 0; }
+        .regret-entry h4 { color: #721c24; margin-bottom: 10px; }
+        .entry-field { background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin: 5px 0; font-family: inherit; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; }
+        .progress-bar { background: #e9ecef; border-radius: 10px; height: 20px; margin: 20px 0; overflow: hidden; }
+        .progress-fill { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 100%; border-radius: 10px; transition: width 0.5s; }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="expense-playbooks.html" class="back-link">← Back to Expense Playbooks</a>
+        <a href="expense-playbooks.html" class="back-link">← Back to Playbooks</a>
         
-        <div class="header">
+        <div class="card">
             <h1>🔍 Spending Regret Review</h1>
             <p class="subtitle">Review 30 days of statements and highlight 3 purchases you regret</p>
-            <div class="time-badge">⏱️ 20 minutes • Learn from your mistakes • Prevent future regrets</div>
-        </div>
-
-        <div class="card">
-            <h2>🎯 What This Does For You</h2>
-            <div class="achieve-box">
-                <p><strong>Most people never look at their spending after the fact.</strong> They just check their balance and wonder where the money went.</p>
-                <p style="margin-top: 15px;"><strong>By reviewing what you bought—and how you feel about it NOW—</strong>you reveal powerful patterns about your impulse triggers. Once you know your triggers, you can create rules to prevent them!</p>
-            </div>
-            <div class="savings-highlight">
-                <h3>Stop Repeating Mistakes</h3>
-                <p>Find your patterns, fix them, save thousands!</p>
+            <div class="meta">
+                <span>⏱️ 20 minutes</span>
+                <span>💡 Learn from mistakes</span>
+                <span>🎯 Prevent future regrets</span>
             </div>
         </div>
 
         <div class="card">
-            <h2>🧠 Common Spending Triggers</h2>
-            <div class="why-box">
-                <h4>Which of these sound familiar?</h4>
-                <p>Most regrettable purchases happen when we're in certain emotional or situational states.</p>
-            </div>
-            <div class="trigger-grid">
-                <div class="trigger-card"><div class="emoji">🌙</div><div class="label">Late Night</div><div class="solution">Set phone curfew</div></div>
-                <div class="trigger-card"><div class="emoji">😰</div><div class="label">Stress</div><div class="solution">Walk instead of shop</div></div>
-                <div class="trigger-card"><div class="emoji">😴</div><div class="label">Boredom</div><div class="solution">Delete shopping apps</div></div>
-                <div class="trigger-card"><div class="emoji">🍺</div><div class="label">Drinking</div><div class="solution">Lock phone wallet</div></div>
-                <div class="trigger-card"><div class="emoji">💔</div><div class="label">Sad/Lonely</div><div class="solution">Call friend first</div></div>
-                <div class="trigger-card"><div class="emoji">🎉</div><div class="label">Celebrating</div><div class="solution">Set budget first</div></div>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2>📋 Your Step-by-Step Action Plan</h2>
+            <h2>🎯 Why This Exercise Matters</h2>
+            <p>Most people never look at their spending after the fact. But reviewing what you bought - and how you feel about it NOW - reveals powerful patterns about your impulse triggers.</p>
             
-            <div class="step" data-step="1">
-                <div class="step-header">
-                    <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
-                    <div>
-                        <div class="step-title">Step 1: Pull Up Your Statements (5 min)</div>
-                        <div class="step-time">Get the last 30 days of transactions</div>
-                    </div>
-                </div>
-                <div class="step-content">
-                    <div class="substep">
-                        <div class="substep-title">📱 Log into your accounts:</div>
-                        <p>1. Open your bank app or website</p>
-                        <p>2. Open your credit card app(s)</p>
-                        <p>3. View transactions from the last 30 days</p>
-                        <p>4. Get a piece of paper ready to take notes</p>
-                    </div>
-                </div>
+            <div class="highlight-box">
+                <h3>🧠 The Insight</h3>
+                <p>When you identify WHY you made regrettable purchases, you can create rules to prevent them. "I always overspend when I'm bored at night" → Solution: No shopping after 9pm.</p>
             </div>
 
-            <div class="step" data-step="2">
-                <div class="step-header">
-                    <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
-                    <div>
-                        <div class="step-title">Step 2: Scan Every Transaction (10 min)</div>
-                        <div class="step-time">Ask one question for each purchase</div>
-                    </div>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-number">70%</div>
+                    <div class="stat-label">of purchases regretted within a week</div>
                 </div>
-                <div class="step-content">
-                    <div class="substep">
-                        <div class="substep-title">🤔 For EACH purchase, ask yourself:</div>
-                        <p><strong>"Knowing what I know now, would I buy this again?"</strong></p>
-                        <p>• YES = Good purchase, move on</p>
-                        <p>• NO = Write it down as a regret</p>
-                        <p>• MAYBE = Probably a regret, write it down</p>
-                    </div>
+                <div class="stat-box">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">regrets to analyze</div>
                 </div>
-            </div>
-
-            <div class="step" data-step="3">
-                <div class="step-header">
-                    <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
-                    <div>
-                        <div class="step-title">Step 3: Identify Your Top 3 Regrets (3 min)</div>
-                        <div class="step-time">The ones that hurt the most</div>
-                    </div>
-                </div>
-                <div class="step-content">
-                    <div class="substep">
-                        <div class="substep-title">📝 Pick 3 purchases that make you think:</div>
-                        <p>• "Why did I buy that?"</p>
-                        <p>• "I never even used it"</p>
-                        <p>• "That was such a waste"</p>
-                        <p>• "I could have used that money for..."</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="step" data-step="4">
-                <div class="step-header">
-                    <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
-                    <div>
-                        <div class="step-title">Step 4: Analyze Each Regret (5 min)</div>
-                        <div class="step-time">Find the pattern behind each one</div>
-                    </div>
-                </div>
-                <div class="step-content">
-                    <div class="substep">
-                        <div class="substep-title">🔍 For each regret, answer:</div>
-                        <p>1. <strong>What time of day was it?</strong> (Late night? Lunch break?)</p>
-                        <p>2. <strong>How were you feeling?</strong> (Stressed? Bored? Celebrating?)</p>
-                        <p>3. <strong>Where were you?</strong> (At home? At work? In a store?)</p>
-                        <p>4. <strong>What triggered it?</strong> (Ad? Sale email? Friend had it?)</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="step" data-step="5">
-                <div class="step-header">
-                    <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
-                    <div>
-                        <div class="step-title">Step 5: Spot Your Pattern (3 min)</div>
-                        <div class="step-time">What do your regrets have in common?</div>
-                    </div>
-                </div>
-                <div class="step-content">
-                    <div class="substep">
-                        <div class="substep-title">🔎 Look for common threads:</div>
-                        <p>• Are most regrets from the same store?</p>
-                        <p>• Same time of day?</p>
-                        <p>• Same emotional state?</p>
-                        <p>• Same type of product (food, clothes, gadgets)?</p>
-                    </div>
-                    <div class="pro-tip">
-                        <div class="pro-tip-title">💡 Common Patterns People Find</div>
-                        <p>"All my regrets are late-night Amazon orders" or "I always overspend when stressed at work" or "Food delivery is my weakness"</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="step" data-step="6">
-                <div class="step-header">
-                    <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
-                    <div>
-                        <div class="step-title">Step 6: Create Your Prevention Rule (5 min)</div>
-                        <div class="step-time">Turn your pattern into a rule</div>
-                    </div>
-                </div>
-                <div class="step-content">
-                    <div class="substep">
-                        <div class="substep-title">📜 Examples of prevention rules:</div>
-                        <p>• "No online shopping after 9pm"</p>
-                        <p>• "When stressed, I walk around the block instead of opening Amazon"</p>
-                        <p>• "No food delivery on weeknights"</p>
-                        <p>• "48-hour rule for anything over $30"</p>
-                        <p>• "Unfollow all shopping accounts on Instagram"</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="step" data-step="7">
-                <div class="step-header">
-                    <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
-                    <div>
-                        <div class="step-title">Step 7: Set Monthly Review Reminder (1 min)</div>
-                        <div class="step-time">Make this a habit!</div>
-                    </div>
-                </div>
-                <div class="step-content">
-                    <div class="substep">
-                        <div class="substep-title">📅 Schedule your next review:</div>
-                        <p>1. Open your calendar app</p>
-                        <p>2. Create: "Spending Regret Review - 20 min"</p>
-                        <p>3. Set to repeat monthly (1st of each month works great)</p>
-                    </div>
+                <div class="stat-box">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">future regrets prevented</div>
                 </div>
             </div>
         </div>
 
         <div class="card">
-            <h2>🎓 Learn From These Experts</h2>
-            <div class="influencer-grid">
-                <div class="influencer-card">
-                    <div class="influencer-avatar">💸</div>
-                    <h4>The Financial Diet</h4>
-                    <div class="platform">📺 YouTube</div>
-                    <p>Chelsea Fagan on emotional spending and money psychology!</p>
-                    <a href="https://www.youtube.com/@TheFiancialDiet" class="influencer-link" target="_blank">Watch →</a>
-                </div>
-                <div class="influencer-card">
-                    <div class="influencer-avatar">🔥</div>
-                    <h4>Caleb Hammer</h4>
-                    <div class="platform">📺 YouTube</div>
-                    <p>Financial audits that reveal spending patterns!</p>
-                    <a href="https://www.youtube.com/@CalebHammer" class="influencer-link" target="_blank">Watch →</a>
-                </div>
-                <div class="influencer-card">
-                    <div class="influencer-avatar">💬</div>
-                    <h4>r/shoppingaddiction</h4>
-                    <div class="platform">🌐 Reddit</div>
-                    <p>Supportive community for controlling spending urges!</p>
-                    <a href="https://www.reddit.com/r/shoppingaddiction/" class="influencer-link" target="_blank">Join →</a>
-                </div>
-                <div class="influencer-card">
-                    <div class="influencer-avatar">🧠</div>
-                    <h4>Your Money or Your Life</h4>
-                    <div class="platform">📚 Book</div>
-                    <p>Classic book on examining your relationship with money!</p>
-                    <a href="https://www.amazon.com/Your-Money-Life-Transforming-Relationship/dp/0143115766" class="influencer-link" target="_blank">Read →</a>
-                </div>
+            <h2>📋 Step-by-Step Review Process</h2>
+            
+            <div class="step-card">
+                <h3><span class="step-number">1</span> Pull Up Your Statements</h3>
+                <p>Log into your bank and credit card accounts. Look at the last 30 days of transactions.</p>
+                <ul class="checklist">
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Logged into my bank account</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Logged into my credit card account(s)</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Pulled up last 30 days of transactions</li>
+                </ul>
             </div>
+
+            <div class="step-card">
+                <h3><span class="step-number">2</span> Scan Through Each Transaction</h3>
+                <p>For each purchase, ask yourself:</p>
+                <ul>
+                    <li><strong>"Did I actually use/enjoy this?"</strong></li>
+                    <li><strong>"Would I buy this again?"</strong></li>
+                    <li><strong>"Did this improve my life?"</strong></li>
+                </ul>
+                <p>If the answer is "no" to any of these, it might be a regret.</p>
+                <ul class="checklist">
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Reviewed all transactions from last 30 days</li>
+                </ul>
+            </div>
+
+            <div class="step-card">
+                <h3><span class="step-number">3</span> Identify Your Top 3 Regrets</h3>
+                <p>Find the 3 purchases that make you think "I wish I hadn't bought that."</p>
+                
+                <div class="regret-entry">
+                    <h4>😞 Regret #1</h4>
+                    <p><strong>What I bought:</strong></p>
+                    <div class="entry-field">________________________</div>
+                    <p><strong>How much:</strong></p>
+                    <div class="entry-field">$________</div>
+                    <p><strong>Why I regret it:</strong></p>
+                    <div class="entry-field">________________________</div>
+                    <p><strong>What triggered this purchase?</strong> (bored, stressed, saw an ad, drunk, late night, etc.)</p>
+                    <div class="entry-field">________________________</div>
+                </div>
+
+                <div class="regret-entry">
+                    <h4>😞 Regret #2</h4>
+                    <p><strong>What I bought:</strong></p>
+                    <div class="entry-field">________________________</div>
+                    <p><strong>How much:</strong></p>
+                    <div class="entry-field">$________</div>
+                    <p><strong>Why I regret it:</strong></p>
+                    <div class="entry-field">________________________</div>
+                    <p><strong>What triggered this purchase?</strong></p>
+                    <div class="entry-field">________________________</div>
+                </div>
+
+                <div class="regret-entry">
+                    <h4>😞 Regret #3</h4>
+                    <p><strong>What I bought:</strong></p>
+                    <div class="entry-field">________________________</div>
+                    <p><strong>How much:</strong></p>
+                    <div class="entry-field">$________</div>
+                    <p><strong>Why I regret it:</strong></p>
+                    <div class="entry-field">________________________</div>
+                    <p><strong>What triggered this purchase?</strong></p>
+                    <div class="entry-field">________________________</div>
+                </div>
+
+                <ul class="checklist">
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Identified regret #1</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Identified regret #2</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Identified regret #3</li>
+                </ul>
+            </div>
+
+            <div class="step-card">
+                <h3><span class="step-number">4</span> Calculate Total Regret Cost</h3>
+                <p>Add up how much you spent on things you regret:</p>
+                <div class="success-box" style="text-align: center; font-size: 1.3em;">
+                    <strong>Total Regret Spending: $________</strong><br>
+                    <small>This is money you could have saved or used for goals!</small>
+                </div>
+                <ul class="checklist">
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Calculated my total regret spending</li>
+                </ul>
+            </div>
+
+            <div class="step-card">
+                <h3><span class="step-number">5</span> Find Your Patterns</h3>
+                <p>Look at your triggers. Do you see patterns?</p>
+                <ul>
+                    <li>🌙 <strong>Late night shopping?</strong> → Rule: No buying after 9pm</li>
+                    <li>😰 <strong>Stress spending?</strong> → Rule: Walk around the block instead</li>
+                    <li>😴 <strong>Boredom buying?</strong> → Rule: Call a friend first</li>
+                    <li>🍺 <strong>Drunk purchases?</strong> → Rule: Remove payment apps when drinking</li>
+                    <li>📱 <strong>Social media ads?</strong> → Rule: Delete shopping apps</li>
+                </ul>
+                <ul class="checklist">
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Identified my main spending trigger pattern</li>
+                </ul>
+            </div>
+
+            <div class="step-card">
+                <h3><span class="step-number">6</span> Create Your Prevention Rule</h3>
+                <p>Based on your patterns, create ONE rule to prevent future regrets:</p>
+                <div class="warning-box">
+                    <strong>📝 My New Money Rule:</strong><br><br>
+                    "I will NOT _________________________ because that's when I make regrettable purchases."
+                </div>
+                <ul class="checklist">
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Created my prevention rule</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Wrote it down somewhere I'll see it</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Shared it with my accountability partner</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🏆 Success Checklist</h2>
+            <ul class="checklist">
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Reviewed last 30 days of transactions</li>
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Identified 3 purchases I regret</li>
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Calculated total regret spending</li>
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Found my trigger patterns</li>
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Created my prevention rule</li>
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Committed to doing this review monthly</li>
+            </ul>
         </div>
 
         <div class="card">
             <h2>📈 Your Progress</h2>
-            <div class="progress-tracker">
-                <div style="font-size: 1.2em; margin-bottom: 15px;"><span id="completed">0</span> of 7 steps completed</div>
-                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            <p><span id="completed">0</span> of <span id="total">0</span> steps completed</p>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress" style="width: 0%"></div>
             </div>
         </div>
 
         <div class="card">
-            <h2>📝 Your Regret Review Notes</h2>
-            <div class="notes-section">
-                <textarea id="notes" placeholder="MY TOP 3 REGRETTABLE PURCHASES:
-
-REGRET #1:
-What: _________________ Amount: $_____
-When: _________________ 
-How I felt: _________________
-Trigger: _________________
-
-REGRET #2:
-What: _________________ Amount: $_____
-When: _________________ 
-How I felt: _________________
-Trigger: _________________
-
-REGRET #3:
-What: _________________ Amount: $_____
-When: _________________ 
-How I felt: _________________
-Trigger: _________________
-
-MY PATTERN:
-_________________________________
-
-MY PREVENTION RULE:
-_________________________________
-
-TOTAL REGRETTED SPENDING: $_____
-
-NEXT REVIEW DATE: _____________
-"></textarea>
-            </div>
-        </div>
-
-        <div class="cta-section">
-            <h3>Need Help With Your Finances?</h3>
-            <p style="opacity: 0.9; margin-bottom: 20px;">Chat with an ASAP Financial coach!</p>
+            <h2>💬 Need Help?</h2>
             <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
         </div>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const saved = localStorage.getItem('playbook-spending-regret-review');
-            if (saved) {
-                const data = JSON.parse(saved);
-                data.steps.forEach((checked, index) => {
-                    if (checked) {
-                        const cb = document.querySelectorAll('.step-checkbox')[index];
-                        if (cb) cb.classList.add('checked');
-                    }
-                });
-                document.getElementById('notes').value = data.notes || '';
-                updateProgress();
-            }
-        });
-
-        function toggleStep(el) {
-            el.classList.toggle('checked');
-            updateProgress();
-            saveProgress();
-        }
-
-        function updateProgress() {
-            const total = document.querySelectorAll('.step-checkbox').length;
-            const completed = document.querySelectorAll('.step-checkbox.checked').length;
-            document.getElementById('completed').textContent = completed;
-            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
-        }
-
-        function saveProgress() {
-            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
-            const notes = document.getElementById('notes').value;
-            localStorage.setItem('playbook-spending-regret-review', JSON.stringify({ steps, notes }));
-        }
-
-        document.getElementById('notes').addEventListener('input', saveProgress);
+        function toggleCheck(el) { el.classList.toggle('checked'); el.innerHTML = el.classList.contains('checked') ? '✓' : ''; updateProgress(); saveProgress(); }
+        function updateProgress() { const total = document.querySelectorAll('.checkbox').length; const completed = document.querySelectorAll('.checkbox.checked').length; document.getElementById('completed').textContent = completed; document.getElementById('total').textContent = total; document.getElementById('progress').style.width = (completed / total * 100) + '%'; }
+        function saveProgress() { const states = Array.from(document.querySelectorAll('.checkbox')).map(cb => cb.classList.contains('checked')); localStorage.setItem('spending-regret-review-progress', JSON.stringify(states)); }
+        function loadProgress() { const saved = localStorage.getItem('spending-regret-review-progress'); if (saved) { JSON.parse(saved).forEach((state, i) => { const cb = document.querySelectorAll('.checkbox')[i]; if (state && cb) { cb.classList.add('checked'); cb.innerHTML = '✓'; }}); } updateProgress(); }
+        document.addEventListener('DOMContentLoaded', loadProgress);
     </script>
 </body>
 </html>

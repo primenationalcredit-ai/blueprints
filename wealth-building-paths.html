@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💎 Wealth Building Paths - Education Guide</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; font-size: 14px; opacity: 0.9; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        h1 { font-size: 2.2em; margin-bottom: 10px; color: #1a1a2e; }
+        .subtitle { font-size: 1.2em; color: #666; margin-bottom: 15px; }
+        .meta { display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 20px; font-size: 0.9em; color: #888; }
+        .meta span { background: #f0f0f0; padding: 5px 12px; border-radius: 20px; }
+        h2 { color: #1a1a2e; margin: 25px 0 15px 0; font-size: 1.5em; border-bottom: 3px solid #667eea; padding-bottom: 10px; }
+        h3 { color: #333; margin: 20px 0 10px 0; font-size: 1.2em; }
+        h4 { color: #667eea; margin: 15px 0 8px 0; }
+        p { margin-bottom: 15px; }
+        ul, ol { margin: 15px 0 15px 25px; }
+        li { margin-bottom: 8px; }
+        .highlight-box { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 15px; margin: 20px 0; }
+        .highlight-box h3, .highlight-box h4 { color: white; margin-top: 0; }
+        .warning-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 0 10px 10px 0; }
+        .success-box { background: #d4edda; border-left: 4px solid #28a745; padding: 15px; margin: 20px 0; border-radius: 0 10px 10px 0; }
+        .info-box { background: #e7f3ff; border-left: 4px solid #0066cc; padding: 15px; margin: 20px 0; border-radius: 0 10px 10px 0; }
+        .path-card { background: #f8f9fa; border-radius: 15px; padding: 25px; margin: 20px 0; border-left: 5px solid #667eea; }
+        .path-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+        .path-icon { font-size: 2.5em; }
+        .path-title { font-size: 1.4em; font-weight: bold; color: #1a1a2e; }
+        .path-subtitle { color: #666; font-size: 0.95em; }
+        .path-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 15px 0; padding: 15px; background: white; border-radius: 10px; }
+        .path-stat { text-align: center; }
+        .path-stat-value { font-weight: bold; color: #667eea; font-size: 1.1em; }
+        .path-stat-label { font-size: 0.8em; color: #888; }
+        .difficulty { display: inline-block; padding: 3px 10px; border-radius: 15px; font-size: 0.85em; font-weight: 500; }
+        .difficulty-easy { background: #d4edda; color: #155724; }
+        .difficulty-medium { background: #fff3cd; color: #856404; }
+        .difficulty-hard { background: #f8d7da; color: #721c24; }
+        .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 15px 0; }
+        .pros, .cons { padding: 15px; border-radius: 10px; }
+        .pros { background: #d4edda; }
+        .cons { background: #f8d7da; }
+        .pros h5 { color: #155724; margin-bottom: 10px; }
+        .cons h5 { color: #721c24; margin-bottom: 10px; }
+        .pros ul, .cons ul { margin: 0; padding-left: 20px; }
+        .checklist { list-style: none; margin-left: 0; }
+        .checklist li { padding: 12px 0; border-bottom: 1px solid #eee; display: flex; align-items: flex-start; gap: 10px; }
+        .checklist li:last-child { border-bottom: none; }
+        .checkbox { width: 24px; height: 24px; min-width: 24px; border: 2px solid #667eea; border-radius: 5px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+        .checkbox.checked { background: #667eea; color: white; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.9em; }
+        .comparison-table th, .comparison-table td { padding: 12px; text-align: left; border-bottom: 1px solid #eee; }
+        .comparison-table th { background: #f8f9fa; font-weight: 600; color: #667eea; }
+        .comparison-table tr:hover { background: #f8f9fa; }
+        .quiz-section { background: #f0f7ff; padding: 20px; border-radius: 15px; margin: 20px 0; }
+        .quiz-question { font-weight: bold; margin-bottom: 15px; color: #1a1a2e; }
+        .quiz-options { display: grid; gap: 10px; }
+        .quiz-option { padding: 12px 15px; background: white; border: 2px solid #ddd; border-radius: 10px; cursor: pointer; transition: all 0.2s; }
+        .quiz-option:hover { border-color: #667eea; background: #f8f9ff; }
+        .quiz-option.selected { border-color: #667eea; background: #667eea; color: white; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; margin: 10px 0; }
+        .progress-bar { background: #e9ecef; border-radius: 10px; height: 20px; margin: 20px 0; overflow: hidden; }
+        .progress-fill { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 100%; border-radius: 10px; transition: width 0.5s; }
+        .step-card { background: #f8f9fa; border-radius: 15px; padding: 20px; margin: 15px 0; border-left: 4px solid #667eea; }
+        .step-number { background: #667eea; color: white; width: 30px; height: 30px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 10px; }
+        @media (max-width: 600px) { 
+            .container { padding: 10px; } 
+            .card { padding: 20px; } 
+            h1 { font-size: 1.8em; }
+            .pros-cons { grid-template-columns: 1fr; }
+            .path-stats { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Blueprint</a>
+        
+        <div class="card">
+            <h1>💎 Wealth Building Paths</h1>
+            <p class="subtitle">Understand your options for building long-term wealth and financial freedom</p>
+            <div class="meta">
+                <span>📚 Education Guide</span>
+                <span>⏱️ 30 min read</span>
+                <span>🎯 Pick 1-2 paths to focus on</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🎯 What is Wealth Building?</h2>
+            <p>Wealth building is about making your money <strong>work FOR you</strong> instead of just working for money. It's the difference between trading hours for dollars forever versus creating assets that generate income whether you work or not.</p>
+            
+            <div class="highlight-box">
+                <h3>💡 The Simple Truth About Wealth</h3>
+                <p>There are only <strong>3 ways</strong> to build wealth:</p>
+                <ol style="margin: 10px 0 0 20px;">
+                    <li><strong>Earn more</strong> - Increase your income through skills, business, or career growth</li>
+                    <li><strong>Spend less</strong> - Keep more of what you earn (you've already done this!)</li>
+                    <li><strong>Invest the difference</strong> - Put your money to work in assets that grow</li>
+                </ol>
+            </div>
+
+            <div class="info-box">
+                <strong>📍 Where You Are Now:</strong> If you're reading this, you've likely completed Steps 1-6 of your Blueprint. You've reduced expenses, possibly increased income, built an emergency fund, and paid down debt. NOW it's time to think about growing wealth for the long term!
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🛤️ The 6 Wealth Building Paths</h2>
+            <p>There's no single "right" way to build wealth. The best path depends on your skills, interests, time, and starting capital. Here are the main paths:</p>
+
+            <!-- PATH 1: RETIREMENT ACCOUNTS -->
+            <div class="path-card">
+                <div class="path-header">
+                    <span class="path-icon">🏦</span>
+                    <div>
+                        <div class="path-title">Path 1: Retirement Accounts</div>
+                        <div class="path-subtitle">401(k), IRA, Roth IRA - Tax-advantaged investing</div>
+                    </div>
+                </div>
+                
+                <div class="path-stats">
+                    <div class="path-stat">
+                        <div class="path-stat-value">$50+/mo</div>
+                        <div class="path-stat-label">Min to Start</div>
+                    </div>
+                    <div class="path-stat">
+                        <div class="path-stat-value">7-10%</div>
+                        <div class="path-stat-label">Avg Annual Return</div>
+                    </div>
+                    <div class="path-stat">
+                        <div class="path-stat-value"><span class="difficulty difficulty-easy">Easy</span></div>
+                        <div class="path-stat-label">Difficulty</div>
+                    </div>
+                </div>
+
+                <p><strong>What it is:</strong> Investing in the stock market through special accounts that give you tax breaks. Your employer's 401(k) often includes FREE MONEY through matching!</p>
+
+                <h4>🔑 Key Concepts:</h4>
+                <ul>
+                    <li><strong>401(k):</strong> Through your employer. Money comes out pre-tax. Many employers MATCH your contributions (free money!)</li>
+                    <li><strong>Traditional IRA:</strong> You open yourself. Tax deduction now, pay taxes when you withdraw in retirement</li>
+                    <li><strong>Roth IRA:</strong> You open yourself. Pay taxes now, withdrawals in retirement are TAX-FREE</li>
+                    <li><strong>Compound interest:</strong> Your earnings make earnings. $500/mo for 30 years at 8% = $745,000!</li>
+                </ul>
+
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h5>✅ Pros</h5>
+                        <ul>
+                            <li>Tax advantages save thousands</li>
+                            <li>Employer match = free money</li>
+                            <li>Set it and forget it</li>
+                            <li>Historically reliable returns</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h5>❌ Cons</h5>
+                        <ul>
+                            <li>Can't access until 59½ (penalties)</li>
+                            <li>Market can go down short-term</li>
+                            <li>Contribution limits apply</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="success-box">
+                    <strong>🎯 Best For:</strong> EVERYONE! This should be your foundation. At minimum, contribute enough to get your full employer match.
+                </div>
+
+                <ul class="checklist">
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> I understand what a 401(k) is</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> I understand the difference between Traditional and Roth</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> I know if my employer offers a 401(k) match</li>
+                </ul>
+            </div>
+
+            <!-- PATH 2: INDEX FUND INVESTING -->
+            <div class="path-card">
+                <div class="path-header">
+                    <span class="path-icon">📈</span>
+                    <div>
+                        <div class="path-title">Path 2: Index Fund Investing</div>
+                        <div class="path-subtitle">Simple, low-cost stock market investing</div>
+                    </div>
+                </div>
+                
+                <div class="path-stats">
+                    <div class="path-stat">
+                        <div class="path-stat-value">$1+</div>
+                        <div class="path-stat-label">Min to Start</div>
+                    </div>
+                    <div class="path-stat">
+                        <div class="path-stat-value">7-10%</div>
+                        <div class="path-stat-label">Avg Annual Return</div>
+                    </div>
+                    <div class="path-stat">
+                        <div class="path-stat-value"><span class="difficulty difficulty-easy">Easy</span></div>
+                        <div class="path-stat-label">Difficulty</div>
+                    </div>
+                </div>
+
+                <p><strong>What it is:</strong> Instead of picking individual stocks (risky!), you buy a fund that owns a little piece of HUNDREDS of companies. When the overall market goes up, you go up.</p>
+
+                <h4>🔑 Key Concepts:</h4>
+                <ul>
+                    <li><strong>S&P 500 Index Fund:</strong> Owns the 500 biggest US companies. One purchase = instant diversification</li>
+                    <li><strong>Total Market Fund:</strong> Owns basically ALL publicly traded companies</li>
+                    <li><strong>Expense Ratio:</strong> The fee you pay. Look for under 0.20% (Vanguard, Fidelity, Schwab)</li>
+                    <li><strong>Dollar Cost Averaging:</strong> Invest the same amount regularly regardless of price</li>
+                </ul>
+
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h5>✅ Pros</h5>
+                        <ul>
+                            <li>Very low fees</li>
+                            <li>Instant diversification</li>
+                            <li>No expertise needed</li>
+                            <li>Beats most "expert" stock pickers</li>
+                            <li>Can access anytime (taxable accounts)</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h5>❌ Cons</h5>
+                        <ul>
+                            <li>Market volatility (down years happen)</li>
+                            <li>No control over which companies</li>
+                            <li>Taxes on gains (unless in retirement account)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="success-box">
+                    <strong>🎯 Best For:</strong> People who want to invest simply without spending time researching stocks. "Set it and forget it" investors.
+                </div>
+
+                <ul class="checklist">
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> I understand what an index fund is</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> I understand dollar cost averaging</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> I know to look for low expense ratios</li>
+                </ul>
+            </div>
+
+            <!-- PATH 3: REAL ESTATE -->
+            <div class="path-card">
+                <div class="path-header">
+                    <span class="path-icon">🏠</span>
+                    <div>
+                        <div class="path-title">Path 3: Real Estate Investing</div>
+                        <div class="path-subtitle">Rental properties, house hacking, REITs</div>
+                    </div>
+                </div>
+                
+                <div class="path-stats">
+                    <div class="path-stat">
+                        <div class="path-stat-value">$100-$50K+</div>
+                        <div class="path-stat-label">Min to Start</div>
+                    </div>
+                    <div class="path-stat">
+                        <div class="path-stat-value">8-12%+</div>
+                        <div class="path-stat-label">Potential Return</div>
+                    </div>
+                    <div class="path-stat">
+                        <div class="path-stat-value"><span class="difficulty difficulty-medium">Medium</span></div>
+                        <div class="path-stat-label">Difficulty</div>
+                    </div>
+                </div>
+
+                <p><strong>What it is:</strong> Making money from property - either through rental income, property value appreciation, or both. You can start small (REITs) or go big (buying rental properties).</p>
+
+                <h4>🔑 Key Concepts:</h4>
+                <ul>
+                    <li><strong>REITs:</strong> Real Estate Investment Trusts - buy shares of real estate like stocks. Start with $100!</li>
+                    <li><strong>House Hacking:</strong> Live in one unit, rent out others. Your tenants pay your mortgage!</li>
+                    <li><strong>Rental Property:</strong> Buy property, rent it out, collect monthly cash flow</li>
+                    <li><strong>Cash Flow:</strong> Rent collected minus all expenses (mortgage, taxes, repairs, vacancy)</li>
+                    <li><strong>Appreciation:</strong> Property value increasing over time</li>
+                </ul>
+
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h5>✅ Pros</h5>
+                        <ul>
+                            <li>Monthly cash flow (passive income)</li>
+                            <li>Tax advantages (depreciation, deductions)</li>
+                            <li>Leverage (use bank's money)</li>
+                            <li>Tangible asset you can see/touch</li>
+                            <li>Hedge against inflation</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h5>❌ Cons</h5>
+                        <ul>
+                            <li>Requires significant capital (or creativity)</li>
+                            <li>Not passive - tenants, repairs, management</li>
+                            <li>Illiquid (can't sell quickly)</li>
+                            <li>Location dependent</li>
+                            <li>Risk of bad tenants, vacancies</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="success-box">
+                    <strong>🎯 Best For:</strong> People willing to learn, hands-on investors, those with access to capital or willing to house hack.
+                </div>
+
+                <ul class="checklist">
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> I understand the difference between REITs and physical property</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> I understand what cash flow means</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> I understand house hacking</li>
+                </ul>
+            </div>
+
+            <!-- PATH 4: BUSINESS OWNERSHIP -->
+            <div class="path-card">
+                <div class="path-header">
+                    <span class="path-icon">🏪</span>
+                    <div>
+                        <div class="path-title">Path 4: Business Ownership</div>
+                        <div class="path-subtitle">Start or buy a business that generates income</div>
+                    </div>
+                </div>
+                
+                <div class="path-stats">
+                    <div class="path-stat">
+                        <div class="path-stat-value">$0-$100K+</div>
+                        <div class="path-stat-label">Min to Start</div>
+                    </div>
+                    <div class="path-stat">
+                        <div class="path-stat-value">Unlimited</div>
+                        <div class="path-stat-label">Potential Return</div>
+                    </div>
+                    <div class="path-stat">
+                        <div class="path-stat-value"><span class="difficulty difficulty-hard">Hard</span></div>
+                        <div class="path-stat-label">Difficulty</div>
+                    </div>
+                </div>
+
+                <p><strong>What it is:</strong> Creating or buying a business that solves a problem for customers. Can range from a side hustle to a full-scale company. Highest risk but highest potential reward!</p>
+
+                <h4>🔑 Types of Businesses:</h4>
+                <ul>
+                    <li><strong>Service Business:</strong> Sell your skills (cleaning, landscaping, consulting, freelancing)</li>
+                    <li><strong>Product Business:</strong> Sell physical or digital products (e-commerce, courses, software)</li>
+                    <li><strong>Content Business:</strong> Build audience, monetize (YouTube, blog, podcast, social media)</li>
+                    <li><strong>Franchise:</strong> Buy into proven system (requires capital)</li>
+                    <li><strong>Buy Existing Business:</strong> Purchase a business already making money</li>
+                </ul>
+
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h5>✅ Pros</h5>
+                        <ul>
+                            <li>Unlimited income potential</li>
+                            <li>Tax advantages</li>
+                            <li>Build an asset you can sell</li>
+                            <li>Control your destiny</li>
+                            <li>Can start with $0 (service business)</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h5>❌ Cons</h5>
+                        <ul>
+                            <li>High failure rate</li>
+                            <li>Requires significant time/effort</li>
+                            <li>Income not guaranteed</li>
+                            <li>Stress and responsibility</li>
+                            <li>May need capital to scale</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="success-box">
+                    <strong>🎯 Best For:</strong> Problem solvers, self-starters, people with marketable skills, those willing to take calculated risks.
+                </div>
+
+                <ul class="checklist">
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> I understand different types of businesses</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> I have skills I could potentially monetize</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> I understand the risks and rewards</li>
+                </ul>
+            </div>
+
+            <!-- PATH 5: DIVIDEND INVESTING -->
+            <div class="path-card">
+                <div class="path-header">
+                    <span class="path-icon">💵</span>
+                    <div>
+                        <div class="path-title">Path 5: Dividend Investing</div>
+                        <div class="path-subtitle">Stocks that pay you regular income</div>
+                    </div>
+                </div>
+                
+                <div class="path-stats">
+                    <div class="path-stat">
+                        <div class="path-stat-value">$100+</div>
+                        <div class="path-stat-label">Min to Start</div>
+                    </div>
+                    <div class="path-stat">
+                        <div class="path-stat-value">2-5%</div>
+                        <div class="path-stat-label">Dividend Yield</div>
+                    </div>
+                    <div class="path-stat">
+                        <div class="path-stat-value"><span class="difficulty difficulty-medium">Medium</span></div>
+                        <div class="path-stat-label">Difficulty</div>
+                    </div>
+                </div>
+
+                <p><strong>What it is:</strong> Buying stocks in companies that share their profits with you through regular dividend payments. Get paid just for owning the stock!</p>
+
+                <h4>🔑 Key Concepts:</h4>
+                <ul>
+                    <li><strong>Dividend:</strong> A portion of company profits paid to shareholders (usually quarterly)</li>
+                    <li><strong>Dividend Yield:</strong> Annual dividend ÷ stock price. A $100 stock paying $4/year = 4% yield</li>
+                    <li><strong>Dividend Growth:</strong> Companies that increase dividends every year (Dividend Aristocrats)</li>
+                    <li><strong>DRIP:</strong> Dividend Reinvestment Plan - automatically buy more shares with dividends</li>
+                </ul>
+
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h5>✅ Pros</h5>
+                        <ul>
+                            <li>Regular passive income</li>
+                            <li>Less volatile than growth stocks</li>
+                            <li>Compounding through reinvestment</li>
+                            <li>Can eventually replace job income</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h5>❌ Cons</h5>
+                        <ul>
+                            <li>Lower growth potential</li>
+                            <li>Dividends can be cut</li>
+                            <li>Taxes on dividends (unless in retirement account)</li>
+                            <li>Need large portfolio for significant income</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="success-box">
+                    <strong>🎯 Best For:</strong> People seeking passive income, those closer to retirement, conservative investors.
+                </div>
+
+                <ul class="checklist">
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> I understand what dividends are</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> I understand dividend yield</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> I understand DRIP (reinvestment)</li>
+                </ul>
+            </div>
+
+            <!-- PATH 6: ALTERNATIVE INVESTMENTS -->
+            <div class="path-card">
+                <div class="path-header">
+                    <span class="path-icon">🎨</span>
+                    <div>
+                        <div class="path-title">Path 6: Alternative Investments</div>
+                        <div class="path-subtitle">Crypto, collectibles, precious metals, and more</div>
+                    </div>
+                </div>
+                
+                <div class="path-stats">
+                    <div class="path-stat">
+                        <div class="path-stat-value">$10+</div>
+                        <div class="path-stat-label">Min to Start</div>
+                    </div>
+                    <div class="path-stat">
+                        <div class="path-stat-value">???</div>
+                        <div class="path-stat-label">Potential Return</div>
+                    </div>
+                    <div class="path-stat">
+                        <div class="path-stat-value"><span class="difficulty difficulty-hard">High Risk</span></div>
+                        <div class="path-stat-label">Difficulty</div>
+                    </div>
+                </div>
+
+                <p><strong>What it is:</strong> Investments outside traditional stocks, bonds, and real estate. Higher risk, potentially higher reward. Should only be a SMALL portion of your portfolio!</p>
+
+                <h4>🔑 Types:</h4>
+                <ul>
+                    <li><strong>Cryptocurrency:</strong> Bitcoin, Ethereum, etc. - Highly volatile, speculative</li>
+                    <li><strong>Precious Metals:</strong> Gold, silver - Hedge against inflation/uncertainty</li>
+                    <li><strong>Collectibles:</strong> Art, watches, sports cards - Need expertise</li>
+                    <li><strong>Peer-to-Peer Lending:</strong> Lend money for interest - Risk of defaults</li>
+                </ul>
+
+                <div class="warning-box">
+                    <strong>⚠️ Warning:</strong> Alternative investments should be MAX 5-10% of your portfolio. Never invest more than you can afford to lose completely!
+                </div>
+
+                <ul class="checklist">
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> I understand these are high-risk investments</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> I will only invest money I can afford to lose</li>
+                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> I will keep this to a small % of my portfolio</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- COMPARISON TABLE -->
+        <div class="card">
+            <h2>📊 Path Comparison</h2>
+            
+            <table class="comparison-table">
+                <tr>
+                    <th>Path</th>
+                    <th>Min to Start</th>
+                    <th>Time Required</th>
+                    <th>Risk Level</th>
+                    <th>Passive?</th>
+                </tr>
+                <tr>
+                    <td>🏦 Retirement Accounts</td>
+                    <td>$50/mo</td>
+                    <td>15 min setup</td>
+                    <td>Low-Medium</td>
+                    <td>✅ Yes</td>
+                </tr>
+                <tr>
+                    <td>📈 Index Funds</td>
+                    <td>$1</td>
+                    <td>15 min setup</td>
+                    <td>Low-Medium</td>
+                    <td>✅ Yes</td>
+                </tr>
+                <tr>
+                    <td>🏠 Real Estate</td>
+                    <td>$100 (REITs) - $50K+ (property)</td>
+                    <td>2-10+ hrs/mo</td>
+                    <td>Medium</td>
+                    <td>⚠️ Semi</td>
+                </tr>
+                <tr>
+                    <td>🏪 Business</td>
+                    <td>$0-$100K+</td>
+                    <td>10-60+ hrs/wk</td>
+                    <td>High</td>
+                    <td>❌ No (at first)</td>
+                </tr>
+                <tr>
+                    <td>💵 Dividends</td>
+                    <td>$100</td>
+                    <td>1-2 hrs/mo</td>
+                    <td>Low-Medium</td>
+                    <td>✅ Yes</td>
+                </tr>
+                <tr>
+                    <td>🎨 Alternatives</td>
+                    <td>$10</td>
+                    <td>Varies</td>
+                    <td>High</td>
+                    <td>Varies</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- RECOMMENDED ORDER -->
+        <div class="card">
+            <h2>🎯 Recommended Order</h2>
+            <p>Not sure where to start? Here's our recommended order:</p>
+
+            <div class="step-card">
+                <h3><span class="step-number">1</span> Get Your Employer 401(k) Match</h3>
+                <p>If your employer matches contributions, this is FREE MONEY. A 100% instant return! Always do this first.</p>
+            </div>
+
+            <div class="step-card">
+                <h3><span class="step-number">2</span> Max Out Roth IRA ($7,000/year)</h3>
+                <p>Tax-free growth forever. Open at Fidelity, Vanguard, or Schwab. Invest in a total market index fund.</p>
+            </div>
+
+            <div class="step-card">
+                <h3><span class="step-number">3</span> Increase 401(k) to 15% of Income</h3>
+                <p>Work up to contributing 15% of your income to retirement accounts.</p>
+            </div>
+
+            <div class="step-card">
+                <h3><span class="step-number">4</span> THEN Choose Additional Paths</h3>
+                <p>Once the above is covered, explore real estate, business, dividends, or taxable brokerage investing based on your interests and goals.</p>
+            </div>
+
+            <div class="highlight-box">
+                <h3>💡 The Power of Focus</h3>
+                <p>Don't try to do everything at once! Master ONE path before adding another. Spreading yourself too thin leads to mediocre results everywhere.</p>
+            </div>
+        </div>
+
+        <!-- QUIZ -->
+        <div class="card">
+            <h2>🤔 Which Path Might Be Right for You?</h2>
+            
+            <div class="quiz-section">
+                <div class="quiz-question">How much time can you dedicate to wealth building per week?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="selectQuiz(this)">⏰ Less than 1 hour → <strong>Index Funds / Retirement Accounts</strong></div>
+                    <div class="quiz-option" onclick="selectQuiz(this)">⏰ 2-5 hours → <strong>Dividend Investing / REITs</strong></div>
+                    <div class="quiz-option" onclick="selectQuiz(this)">⏰ 5-15 hours → <strong>Real Estate / Side Business</strong></div>
+                    <div class="quiz-option" onclick="selectQuiz(this)">⏰ 15+ hours → <strong>Full Business Ownership</strong></div>
+                </div>
+            </div>
+
+            <div class="quiz-section">
+                <div class="quiz-question">What's your risk tolerance?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="selectQuiz(this)">😌 Low - I want steady, predictable growth → <strong>Index Funds / Bonds / Dividends</strong></div>
+                    <div class="quiz-option" onclick="selectQuiz(this)">😊 Medium - Some volatility is okay → <strong>Real Estate / Growth Stocks</strong></div>
+                    <div class="quiz-option" onclick="selectQuiz(this)">🎢 High - I can handle big swings → <strong>Business / Crypto / Individual Stocks</strong></div>
+                </div>
+            </div>
+
+            <div class="quiz-section">
+                <div class="quiz-question">How much capital do you have to start?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="selectQuiz(this)">💵 Under $1,000 → <strong>Index Funds / Retirement / Service Business</strong></div>
+                    <div class="quiz-option" onclick="selectQuiz(this)">💵 $1,000 - $10,000 → <strong>REITs / Dividend Stocks / Small Business</strong></div>
+                    <div class="quiz-option" onclick="selectQuiz(this)">💵 $10,000+ → <strong>Real Estate / Larger Business Ventures</strong></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SUCCESS CHECKLIST -->
+        <div class="card">
+            <h2>🏆 Education Complete Checklist</h2>
+            <ul class="checklist">
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> I understand the 6 main wealth building paths</li>
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> I know the pros and cons of each path</li>
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> I understand why 401(k) matching comes first</li>
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> I've identified 1-2 paths that interest me most</li>
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> I understand that focus beats diversification when starting out</li>
+                <li><span class="checkbox" onclick="toggleCheck(this)"></span> I'm ready to take my first action!</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>📈 Your Progress</h2>
+            <p><span id="completed">0</span> of <span id="total">0</span> items completed</p>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>⏭️ Next Step</h2>
+            <p>Now that you understand the paths, it's time to take your first action! Check out the <strong>"Take Your First Action"</strong> playbook to get started within 30 days.</p>
+            <a href="wealth-building-first-action.html" class="cta-button">Take First Action →</a>
+        </div>
+
+        <div class="card">
+            <h2>💬 Need Help?</h2>
+            <p>Have questions about which path is right for you? Our team can help guide you!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleCheck(el) {
+            el.classList.toggle('checked');
+            el.innerHTML = el.classList.contains('checked') ? '✓' : '';
+            updateProgress();
+            saveProgress();
+        }
+
+        function selectQuiz(el) {
+            el.classList.toggle('selected');
+        }
+
+        function updateProgress() {
+            const total = document.querySelectorAll('.checkbox').length;
+            const completed = document.querySelectorAll('.checkbox.checked').length;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('total').textContent = total;
+            document.getElementById('progress').style.width = (completed / total * 100) + '%';
+        }
+
+        function saveProgress() {
+            const checkboxes = document.querySelectorAll('.checkbox');
+            const states = Array.from(checkboxes).map(cb => cb.classList.contains('checked'));
+            localStorage.setItem('wealth-building-paths-progress', JSON.stringify(states));
+        }
+
+        function loadProgress() {
+            const saved = localStorage.getItem('wealth-building-paths-progress');
+            if (saved) {
+                const states = JSON.parse(saved);
+                const checkboxes = document.querySelectorAll('.checkbox');
+                checkboxes.forEach((cb, i) => {
+                    if (states[i]) {
+                        cb.classList.add('checked');
+                        cb.innerHTML = '✓';
+                    }
+                });
+            }
+            updateProgress();
+        }
+
+        document.addEventListener('DOMContentLoaded', loadProgress);
+    </script>
+</body>
+</html>

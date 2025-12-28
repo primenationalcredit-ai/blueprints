@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📱 Phone Bill Negotiation - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; font-weight: 500; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { font-size: 2.2em; color: #1a1a2e; margin-bottom: 10px; }
+        .header .subtitle { font-size: 1.1em; color: #666; margin-bottom: 20px; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 10px 25px; border-radius: 20px; font-size: 0.95em; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; font-size: 1.4em; }
+        .savings-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 25px; text-align: center; margin: 20px 0; }
+        .savings-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; }
+        .step:hover { background: #e3f2fd; }
+        .step-checkbox { width: 30px; height: 30px; min-width: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px; transition: all 0.3s; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-content h3 { color: #1a1a2e; margin-bottom: 8px; font-size: 1.1em; }
+        .step-content p { color: #666; font-size: 0.95em; }
+        .script-box { background: #f0f7ff; border-left: 4px solid #2196f3; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .script-box h4 { color: #1565c0; margin-bottom: 10px; }
+        .script-box p { color: #333; font-style: italic; line-height: 1.8; }
+        .tip-box { background: #fff3e0; border-left: 4px solid #ff9800; padding: 15px 20px; border-radius: 0 10px 10px 0; margin: 15px 0; }
+        .company-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .company-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; }
+        .company-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .company-card .phone { color: #667eea; font-weight: 600; font-size: 1.1em; }
+        .compare-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .compare-table th, .compare-table td { padding: 12px; text-align: left; border-bottom: 1px solid #eee; }
+        .compare-table th { background: #f8f9fa; color: #1a1a2e; }
+        .compare-table tr:hover { background: #f0f7ff; }
+        .progress-container { background: #f0f0f0; border-radius: 10px; height: 20px; margin: 20px 0; overflow: hidden; }
+        .progress-bar { background: linear-gradient(90deg, #667eea, #764ba2); height: 100%; width: 0%; transition: width 0.5s; }
+        .progress-text { text-align: center; color: #666; margin-top: 10px; font-weight: 600; }
+        .notes-section textarea { width: 100%; min-height: 120px; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-family: inherit; font-size: 1em; resize: vertical; }
+        .cta-box { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; text-align: center; margin-top: 30px; }
+        .cta-box a { display: inline-block; background: white; color: #667eea; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="expense-playbooks.html" class="back-link">← Back to Expense Playbooks</a>
+        
+        <div class="header">
+            <h1>📱 Phone Bill Negotiation</h1>
+            <p class="subtitle">Lower your phone bill in one 15-minute call!</p>
+            <div class="time-badge">⏱️ 15 min call • 💰 Save $20-50/month</div>
+        </div>
+
+        <div class="card">
+            <h2>🎯 What This Does For You</h2>
+            <p><strong>Phone companies make BILLIONS from customers who never ask for a better deal!</strong> They have retention departments whose entire job is to keep you from leaving.</p>
+            <p>The magic words: "I'm thinking of switching to [competitor]." This unlocks discounts they never advertise!</p>
+            
+            <div class="savings-highlight">
+                <h3>$240 - $600/year</h3>
+                <p>Average savings from negotiating your phone bill</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📊 Know Your Options First</h2>
+            <p>Before calling, check what competitors are offering. You need leverage!</p>
+            
+            <table class="compare-table">
+                <thead>
+                    <tr><th>Carrier</th><th>Basic Plan</th><th>Unlimited</th><th>Best For</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Mint Mobile</strong></td><td>$15/mo</td><td>$30/mo</td><td>Best value overall</td></tr>
+                    <tr><td><strong>Visible</strong></td><td>$25/mo</td><td>$25/mo</td><td>Unlimited on Verizon network</td></tr>
+                    <tr><td><strong>Cricket</strong></td><td>$30/mo</td><td>$55/mo</td><td>AT&T network, no contract</td></tr>
+                    <tr><td><strong>Metro by T-Mobile</strong></td><td>$30/mo</td><td>$50/mo</td><td>T-Mobile network, no contract</td></tr>
+                    <tr><td><strong>Google Fi</strong></td><td>$20/mo</td><td>$50/mo</td><td>Flexible data pricing</td></tr>
+                </tbody>
+            </table>
+            
+            <div class="tip-box">
+                <strong>💡 Reality Check:</strong> Most people use way less data than they think! Check your actual usage in Settings before deciding you need unlimited.
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📋 Your Action Plan</h2>
+            
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 1: Check Your Current Bill & Usage</h3>
+                    <p>Log into your account and note: your monthly cost, data usage, and when your contract ends (if any).</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 2: Research Competitor Prices</h3>
+                    <p>Spend 5 minutes getting quotes from Mint Mobile, Visible, or Cricket. Screenshot their prices!</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 3: Call Your Carrier</h3>
+                    <p>Call and ask to speak with the "retention" or "loyalty" department.</p>
+                    
+                    <div class="company-grid">
+                        <div class="company-card">
+                            <h4>Verizon</h4>
+                            <div class="phone">1-800-922-0204</div>
+                        </div>
+                        <div class="company-card">
+                            <h4>AT&T</h4>
+                            <div class="phone">1-800-331-0500</div>
+                        </div>
+                        <div class="company-card">
+                            <h4>T-Mobile</h4>
+                            <div class="phone">1-800-937-8997</div>
+                        </div>
+                        <div class="company-card">
+                            <h4>Sprint</h4>
+                            <div class="phone">1-888-211-4727</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 4: Use THE Script</h3>
+                    
+                    <div class="script-box">
+                        <h4>📞 Say This:</h4>
+                        <p>"Hi, I've been a customer for [X years] and I'm looking at my budget. I've been comparing plans and I see [Mint Mobile/Visible] is offering unlimited for $25-30 a month. I'd prefer to stay with you, but I need a better rate. What can you do to keep me as a customer?"</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 5: Ask About Hidden Discounts</h3>
+                    
+                    <div class="script-box">
+                        <h4>📞 Also Ask:</h4>
+                        <p>"Do you have any discounts for [employer name], veterans, seniors, nurses, teachers, or first responders? Also, is there a loyalty discount for long-term customers?"</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 6: Consider Switching (If Needed)</h3>
+                    <p>If they won't budge, actually switch! Mint Mobile, Visible, and Cricket use the same towers as the big carriers for half the price.</p>
+                    
+                    <div class="tip-box">
+                        <strong>💡 Pro Tip:</strong> You can keep your phone number when switching. It's called "porting" and every carrier does it for free!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🚫 If They Say "No"</h2>
+            
+            <div class="script-box">
+                <h4>📞 Try This:</h4>
+                <p>"I understand. Then I'd like to cancel my service effective [date]. Can you transfer me to someone who can process that?"</p>
+            </div>
+            
+            <p style="margin-top: 15px; color: #666;"><strong>Watch what happens:</strong> 9 times out of 10, they'll suddenly "find" a discount or transfer you to someone who can help!</p>
+        </div>
+
+        <div class="card">
+            <h2>📈 Your Progress</h2>
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <p class="progress-text"><span id="progressText">0</span> of 6 steps completed</p>
+        </div>
+
+        <div class="card">
+            <div class="notes-section">
+                <h3>📝 Your Phone Bill Notes</h3>
+                <textarea id="notes" placeholder="Track your savings here:
+
+Current carrier: _________
+Current monthly bill: $_____
+Data usage (GB): _____
+
+Best competitor offer: $_____ from _________
+
+New negotiated rate: $_____
+Monthly savings: $_____
+Annual savings: $_____"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-box">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach!</p>
+            <a href="https://asapcreditrepairusa.com">Get Support →</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleStep(el) {
+            el.classList.toggle('checked');
+            el.textContent = el.classList.contains('checked') ? '✓' : '';
+            updateProgress();
+            saveProgress();
+        }
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const completed = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('progressText').textContent = completed;
+            document.getElementById('progressBar').style.width = (completed / total * 100) + '%';
+        }
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-phone-negotiation', JSON.stringify({ steps, notes }));
+        }
+        function loadProgress() {
+            const saved = localStorage.getItem('playbook-phone-negotiation');
+            if (saved) {
+                const data = JSON.parse(saved);
+                document.querySelectorAll('.step-checkbox').forEach((el, i) => {
+                    if (data.steps[i]) { el.classList.add('checked'); el.textContent = '✓'; }
+                });
+                if (data.notes) document.getElementById('notes').value = data.notes;
+                updateProgress();
+            }
+        }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+        loadProgress();
+    </script>
+</body>
+</html>

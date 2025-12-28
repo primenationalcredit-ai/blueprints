@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏷️ Return Unused Items - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { font-size: 2.2em; color: #1a1a2e; margin-bottom: 10px; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 10px 25px; border-radius: 20px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; font-size: 1.4em; }
+        .savings-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 25px; text-align: center; margin: 20px 0; }
+        .savings-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; }
+        .step:hover { background: #e3f2fd; }
+        .step-checkbox { width: 30px; height: 30px; min-width: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-content h3 { color: #1a1a2e; margin-bottom: 8px; }
+        .step-content p { color: #666; font-size: 0.95em; }
+        .tip-box { background: #fff3e0; border-left: 4px solid #ff9800; padding: 15px 20px; border-radius: 0 10px 10px 0; margin: 15px 0; }
+        .store-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 20px 0; }
+        .store-card { background: #f8f9fa; border-radius: 12px; padding: 15px; text-align: center; }
+        .store-card h4 { color: #1a1a2e; font-size: 0.95em; margin-bottom: 5px; }
+        .store-card .policy { color: #4caf50; font-weight: 600; font-size: 0.9em; }
+        .progress-container { background: #f0f0f0; border-radius: 10px; height: 20px; margin: 20px 0; overflow: hidden; }
+        .progress-bar { background: linear-gradient(90deg, #667eea, #764ba2); height: 100%; width: 0%; }
+        .notes-section textarea { width: 100%; min-height: 120px; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-family: inherit; resize: vertical; }
+        .cta-box { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; text-align: center; margin-top: 30px; }
+        .cta-box a { display: inline-block; background: white; color: #667eea; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="income-playbooks.html" class="back-link">← Back to Income Playbooks</a>
+        <div class="header">
+            <h1>🏷️ Return Unused Items</h1>
+            <p class="subtitle">Get money back for stuff you never used!</p>
+            <div class="time-badge">⏱️ 30 minutes • 💰 Get back $50-300</div>
+        </div>
+        <div class="card">
+            <h2>🎯 Money Hiding in Your Home</h2>
+            <p><strong>Look for items with tags still on, unopened packages, or things you bought but never used.</strong> Many stores have generous return policies—even without a receipt!</p>
+            <div class="savings-highlight">
+                <h3>$50 - $300</h3>
+                <p>Average returned from unused items</p>
+            </div>
+        </div>
+        <div class="card">
+            <h2>🏪 Stores with Great Return Policies</h2>
+            <div class="store-grid">
+                <div class="store-card"><h4>🎯 Target</h4><div class="policy">90 days, 1 year for RedCard</div></div>
+                <div class="store-card"><h4>🛒 Walmart</h4><div class="policy">90 days most items</div></div>
+                <div class="store-card"><h4>💰 Costco</h4><div class="policy">Anytime (most items)</div></div>
+                <div class="store-card"><h4>📦 Amazon</h4><div class="policy">30 days, often longer</div></div>
+                <div class="store-card"><h4>🏠 Home Depot</h4><div class="policy">90 days</div></div>
+                <div class="store-card"><h4>🔵 Lowe's</h4><div class="policy">90 days</div></div>
+                <div class="store-card"><h4>🧴 Ulta</h4><div class="policy">60 days</div></div>
+                <div class="store-card"><h4>👟 Nike</h4><div class="policy">60 days</div></div>
+                <div class="store-card"><h4>🛋️ IKEA</h4><div class="policy">365 days unopened</div></div>
+                <div class="store-card"><h4>🐕 Chewy</h4><div class="policy">365 days</div></div>
+                <div class="store-card"><h4>🌿 REI</h4><div class="policy">1 year</div></div>
+                <div class="store-card"><h4>🧥 Nordstrom</h4><div class="policy">Case by case (generous)</div></div>
+            </div>
+        </div>
+        <div class="card">
+            <h2>📋 Your Action Plan</h2>
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 1: Hunt for Returnable Items</h3>
+                    <p>Look for: tags still on, unopened boxes, unused gifts, impulse buys you regret, wrong size/color.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 2: Find Your Receipts</h3>
+                    <p>Check email for e-receipts, look in the item's bag, check your wallet/purse, search bank statements for date of purchase.</p>
+                    <div class="tip-box"><strong>💡 No Receipt?</strong> Many stores can look up purchases by credit card or phone number!</div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 3: Check Return Policies</h3>
+                    <p>Google "[Store name] return policy" to see the window and requirements before you go.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 4: Return Online Purchases Online</h3>
+                    <p>Amazon, Target, Walmart—most let you start returns from the app. Sometimes they'll just refund without needing the item back!</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 5: Return In-Store Purchases In-Store</h3>
+                    <p>Bring the item, receipt (if you have it), and ID. Be polite but firm if the policy supports your return.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <h2>💡 Pro Tips</h2>
+            <div class="tip-box"><strong>📱 Amazon Trick:</strong> If Amazon sold item is past return window, click "Get help with this order" and ask nicely. They often make exceptions!</div>
+            <div class="tip-box"><strong>🎁 Gift Returns:</strong> Even without a receipt, most stores will give store credit for the current selling price.</div>
+        </div>
+        <div class="card">
+            <h2>📈 Your Progress</h2>
+            <div class="progress-container"><div class="progress-bar" id="progressBar"></div></div>
+            <p class="progress-text"><span id="progressText">0</span> of 5 steps completed</p>
+        </div>
+        <div class="card">
+            <div class="notes-section">
+                <h3>📝 Your Returns Tracker</h3>
+                <textarea id="notes" placeholder="ITEMS TO RETURN:
+□ Item: _____ | Store: _____ | Est. refund: $_____
+□ Item: _____ | Store: _____ | Est. refund: $_____
+
+RETURNED:
+□ _____ - Got back: $_____
+
+TOTAL RECOVERED: $_____"></textarea>
+            </div>
+        </div>
+        <div class="cta-box">
+            <h3>Need Help With Your Finances?</h3>
+            <a href="https://asapcreditrepairusa.com">Get Support →</a>
+        </div>
+    </div>
+    <script>
+        function toggleStep(el) { el.classList.toggle('checked'); el.textContent = el.classList.contains('checked') ? '✓' : ''; updateProgress(); saveProgress(); }
+        function updateProgress() { const t = document.querySelectorAll('.step-checkbox').length; const c = document.querySelectorAll('.step-checkbox.checked').length; document.getElementById('progressText').textContent = c; document.getElementById('progressBar').style.width = (c/t*100)+'%'; }
+        function saveProgress() { const s = Array.from(document.querySelectorAll('.step-checkbox')).map(e => e.classList.contains('checked')); const n = document.getElementById('notes').value; localStorage.setItem('playbook-return-items', JSON.stringify({steps:s,notes:n})); }
+        function loadProgress() { const d = localStorage.getItem('playbook-return-items'); if(d){ const p=JSON.parse(d); document.querySelectorAll('.step-checkbox').forEach((e,i)=>{ if(p.steps[i]){e.classList.add('checked');e.textContent='✓';} }); if(p.notes)document.getElementById('notes').value=p.notes; updateProgress(); } }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+        loadProgress();
+    </script>
+</body>
+</html>

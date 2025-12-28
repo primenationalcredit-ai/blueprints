@@ -3,343 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donate Plasma for Cash - ASAP Financial Playbook</title>
+    <title>🩸 Donate Plasma for Cash - ASAP Financial Playbook</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
-        .container { max-width: 900px; margin: 0 auto; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; }
         .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
-        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
-        .header .subtitle { color: #666; font-size: 1.2em; }
-        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .header h1 { font-size: 2.2em; color: #1a1a2e; margin-bottom: 10px; }
+        .header .subtitle { font-size: 1.1em; color: #666; margin-bottom: 20px; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 10px 25px; border-radius: 20px; }
         .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
-        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
-        .card h2 .icon { font-size: 1.5em; }
-        .achieve-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
-        .achieve-box p { color: #1565c0; font-size: 1.1em; line-height: 1.6; }
-        .income-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
-        .income-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
-        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
-        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; align-items: flex-start; }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; font-size: 1.4em; }
+        .savings-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 25px; text-align: center; margin: 20px 0; }
+        .savings-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; }
         .step:hover { background: #e3f2fd; }
-        .step-checkbox { width: 30px; height: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: transparent; transition: all 0.3s; }
+        .step-checkbox { width: 30px; height: 30px; min-width: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; }
         .step-checkbox.checked { background: #667eea; color: white; }
-        .step-content { flex: 1; }
-        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; margin-bottom: 5px; }
-        .step-desc { color: #666; line-height: 1.5; }
-        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 15px; overflow: hidden; font-size: 14px; }
-        .pricing-table th, .pricing-table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #e0e0e0; }
-        .pricing-table th { background: #667eea; color: white; font-weight: 600; }
-        .pricing-table tr:hover { background: #f5f5f5; }
-        .pricing-table .rate { color: #4caf50; font-weight: 600; }
-        .center-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
-        .center-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #667eea; }
+        .step-content h3 { color: #1a1a2e; margin-bottom: 8px; }
+        .step-content p { color: #666; font-size: 0.95em; }
+        .tip-box { background: #fff3e0; border-left: 4px solid #ff9800; padding: 15px 20px; border-radius: 0 10px 10px 0; margin: 15px 0; }
+        .warning-box { background: #ffebee; border-left: 4px solid #f44336; padding: 15px 20px; border-radius: 0 10px 10px 0; margin: 15px 0; }
+        .center-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .center-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; }
         .center-card h4 { color: #1a1a2e; margin-bottom: 5px; }
-        .center-card .detail { color: #667eea; font-size: 12px; margin-bottom: 8px; }
-        .center-card p { color: #666; font-size: 13px; line-height: 1.5; }
-        .center-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; font-size: 13px; }
-        .center-link:hover { text-decoration: underline; }
-        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
-        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
-        .pro-tip p { color: #666; margin: 8px 0; }
-        .tip-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
-        .tip-card { background: #f8f9fa; border-radius: 15px; padding: 15px; border-left: 5px solid #4caf50; }
-        .tip-card h4 { color: #1a1a2e; font-size: 14px; margin-bottom: 8px; }
-        .tip-card p { color: #666; font-size: 13px; line-height: 1.4; }
-        .req-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-left: 4px solid #4caf50; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
-        .req-box-title { font-weight: 700; color: #2e7d32; margin-bottom: 10px; }
-        .req-box p { color: #666; margin: 8px 0; }
-        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
-        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
-        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
-        .progress-text { font-size: 1.2em; font-weight: 600; }
-        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
-        .notes-section textarea:focus { outline: none; border-color: #667eea; }
-        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
-        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
-        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+        .center-card .pay { color: #4caf50; font-weight: 700; font-size: 1.1em; }
+        .center-card .note { color: #666; font-size: 0.85em; margin-top: 5px; }
+        .req-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 15px 0; }
+        .req-yes { background: #e8f5e9; padding: 15px; border-radius: 10px; }
+        .req-yes h4 { color: #2e7d32; margin-bottom: 10px; }
+        .req-no { background: #ffebee; padding: 15px; border-radius: 10px; }
+        .req-no h4 { color: #c62828; margin-bottom: 10px; }
+        .req-yes li, .req-no li { margin: 5px 0; font-size: 0.9em; }
+        .progress-container { background: #f0f0f0; border-radius: 10px; height: 20px; margin: 20px 0; overflow: hidden; }
+        .progress-bar { background: linear-gradient(90deg, #667eea, #764ba2); height: 100%; width: 0%; }
+        .progress-text { text-align: center; color: #666; margin-top: 10px; }
+        .notes-section textarea { width: 100%; min-height: 120px; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-family: inherit; resize: vertical; }
+        .cta-box { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; text-align: center; margin-top: 30px; }
+        .cta-box a { display: inline-block; background: white; color: #667eea; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        @media (max-width: 600px) { .req-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
     <div class="container">
         <a href="income-playbooks.html" class="back-link">← Back to Income Playbooks</a>
-        
         <div class="header">
-            <h1>💉 Donate Plasma for Cash</h1>
-            <p class="subtitle">Earn $50-100 per visit - safe, FDA-regulated, and you're saving lives!</p>
-            <div class="time-badge">⏱️ ~1 hour per visit • $400-800+/month possible</div>
+            <h1>🩸 Donate Plasma for Cash</h1>
+            <p class="subtitle">Earn $300-400/month helping save lives!</p>
+            <div class="time-badge">⏱️ 1-2 hours per visit • 💰 $50-100 per donation</div>
         </div>
-
         <div class="card">
-            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
-            <div class="achieve-box">
-                <p>Earn consistent extra income by donating plasma at certified donation centers! It's safe, FDA-regulated, takes about an hour per visit, and you're helping create life-saving medications. Most people can donate twice per week. New donor bonuses can be $700-1,000 in the first month alone! This is one of the easiest ways to make extra money - literally get paid to sit and relax.</p>
-            </div>
-            <div class="income-highlight">
-                <h3>$400-800+/Month</h3>
-                <p>Per visit: $50-100 • 2x weekly = $100-200/week • New donor bonus: $700-1,000!</p>
+            <h2>🎯 What Is Plasma Donation?</h2>
+            <p><strong>Plasma is the liquid part of your blood!</strong> It's used to make life-saving medicines for people with immune disorders, burns, and bleeding disorders. Your body replaces it within 24-48 hours!</p>
+            <p>Unlike whole blood donation, you can donate plasma <strong>twice per week</strong> and get paid each time.</p>
+            <div class="savings-highlight">
+                <h3>$300 - $400/month</h3>
+                <p>Typical earnings donating twice per week</p>
             </div>
         </div>
-
         <div class="card">
-            <h2><span class="icon">💵</span> What Centers Pay</h2>
-            <table class="pricing-table">
-                <thead>
-                    <tr>
-                        <th>Donation Center</th>
-                        <th>Regular Pay</th>
-                        <th>New Donor Bonus</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td><strong>BioLife</strong></td><td class="rate">$50-70/visit</td><td>Up to $900 first month</td></tr>
-                    <tr><td><strong>CSL Plasma</strong></td><td class="rate">$50-75/visit</td><td>Up to $700 first month</td></tr>
-                    <tr><td><strong>Grifols/BioMat</strong></td><td class="rate">$50-60/visit</td><td>Up to $500 first month</td></tr>
-                    <tr><td><strong>Octapharma</strong></td><td class="rate">$50-75/visit</td><td>Up to $800 first month</td></tr>
-                    <tr><td><strong>KEDPLASMA</strong></td><td class="rate">$50-70/visit</td><td>Varies by location</td></tr>
-                    <tr><td><strong>ADMA BioCenters</strong></td><td class="rate">$50-75/visit</td><td>Varies by location</td></tr>
-                </tbody>
-            </table>
-            
-            <div class="pro-tip">
-                <div class="pro-tip-title">💡 Maximize Your Earnings</div>
-                <p><strong>New donor bonuses are HUGE!</strong> Many centers offer $700-1,000 for your first 6-8 donations. Compare bonuses before choosing. Also: download center apps for extra promotions, refer friends for $50-100 bonuses, and check for special "bonus days"!</p>
+            <h2>✅ Requirements to Donate</h2>
+            <div class="req-grid">
+                <div class="req-yes">
+                    <h4>✅ You CAN Donate If:</h4>
+                    <ul>
+                        <li>Age 18-65 (some centers 18-69)</li>
+                        <li>Weight at least 110 lbs</li>
+                        <li>Generally healthy</li>
+                        <li>Have valid ID</li>
+                        <li>Have proof of address</li>
+                        <li>Have Social Security number</li>
+                    </ul>
+                </div>
+                <div class="req-no">
+                    <h4>❌ You CANNOT Donate If:</h4>
+                    <ul>
+                        <li>HIV positive</li>
+                        <li>Hepatitis B or C</li>
+                        <li>Certain medications</li>
+                        <li>Recent tattoo (varies by state)</li>
+                        <li>Pregnant or recently pregnant</li>
+                        <li>IV drug use history</li>
+                    </ul>
+                </div>
             </div>
         </div>
-
         <div class="card">
-            <h2><span class="icon">🏥</span> Find a Donation Center</h2>
+            <h2>💰 How Much You'll Earn</h2>
             <div class="center-grid">
                 <div class="center-card">
-                    <h4>🩸 BioLife Plasma</h4>
-                    <div class="detail">Large network • Great bonuses</div>
-                    <p>One of the largest. Great app with bonus promotions. High new donor bonuses!</p>
-                    <a href="https://www.biolifeplasma.com" class="center-link" target="_blank">Find Location →</a>
+                    <h4>BioLife</h4>
+                    <div class="pay">$50-70/visit</div>
+                    <div class="note">New donor bonuses up to $900!</div>
                 </div>
                 <div class="center-card">
-                    <h4>💉 CSL Plasma</h4>
-                    <div class="detail">Nationwide • Reliable pay</div>
-                    <p>Huge network, consistent pay. Good referral bonuses and promotions.</p>
-                    <a href="https://www.cslplasma.com" class="center-link" target="_blank">Find Location →</a>
+                    <h4>CSL Plasma</h4>
+                    <div class="pay">$50-100/visit</div>
+                    <div class="note">Bonus programs available</div>
                 </div>
                 <div class="center-card">
-                    <h4>🏥 Grifols/BioMat</h4>
-                    <div class="detail">Many locations</div>
-                    <p>Large company with locations nationwide. Consistent experience.</p>
-                    <a href="https://www.grifolsplasma.com" class="center-link" target="_blank">Find Location →</a>
+                    <h4>Grifols/Biomat</h4>
+                    <div class="pay">$50-75/visit</div>
+                    <div class="note">Consistent weekly pay</div>
                 </div>
                 <div class="center-card">
-                    <h4">🩺 Octapharma Plasma</h4>
-                    <div class="detail">Growing network</div>
-                    <p>Good bonuses and promotions. Check their app for extra earnings!</p>
-                    <a href="https://www.octapharmaplasma.com" class="center-link" target="_blank">Find Location →</a>
+                    <h4>Octapharma</h4>
+                    <div class="pay">$50-85/visit</div>
+                    <div class="note">New donor specials</div>
                 </div>
-                <div class="center-card">
-                    <h4">💊 KEDPLASMA</h4>
-                    <div class="detail">Regional centers</div>
-                    <p>Smaller network but competitive pay. Check if one is near you!</p>
-                    <a href="https://www.kedplasma.com" class="center-link" target="_blank">Find Location →</a>
+            </div>
+            <div class="tip-box"><strong>💡 Pro Tip:</strong> First-time donors often get BONUS pay for their first 6-8 visits. Some centers offer $700-900 in your first month!</div>
+        </div>
+        <div class="card">
+            <h2>📋 Your Action Plan</h2>
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 1: Find Centers Near You</h3>
+                    <p>Google "plasma donation near me" or check the websites above. Most are in shopping centers.</p>
                 </div>
-                <div class="center-card">
-                    <h4">📍 DonatingPlasma.org</h4>
-                    <div class="detail">Center finder tool</div>
-                    <p>Find all plasma centers near you. Compare options in your area!</p>
-                    <a href="https://www.donatingplasma.org/donation/find-a-donor-center" class="center-link" target="_blank">Find Centers →</a>
+            </div>
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 2: Make an Appointment</h3>
+                    <p>Most centers let you book online. First visit takes 2-3 hours (includes health screening).</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 3: Prepare the Night Before</h3>
+                    <p><strong>This is important for passing the screening!</strong></p>
+                    <ul style="margin: 10px 0; padding-left: 20px; color: #666;">
+                        <li>Drink LOTS of water (at least 8 glasses)</li>
+                        <li>Eat protein-rich meal (eggs, chicken, beans)</li>
+                        <li>Get good sleep (7-8 hours)</li>
+                        <li>Avoid fatty foods and alcohol</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 4: Bring Required Documents</h3>
+                    <ul style="margin: 10px 0; padding-left: 20px; color: #666;">
+                        <li>Photo ID (driver's license or state ID)</li>
+                        <li>Proof of address (utility bill, bank statement)</li>
+                        <li>Social Security card or W-2</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 5: Complete Your First Donation</h3>
+                    <p>The actual donation takes 45-90 minutes. Bring a book, phone, or headphones!</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 6: Schedule Your Regular Visits</h3>
+                    <p>You can donate up to 2x per week with at least 1 day between. Most people go every 3-4 days.</p>
+                    <div class="tip-box"><strong>💡 Strategy:</strong> Pick the same days each week (like Tue/Sat) to build a routine!</div>
                 </div>
             </div>
         </div>
-
         <div class="card">
-            <h2><span class="icon">✅</span> Requirements & Preparation</h2>
-            
-            <div class="req-box">
-                <div class="req-box-title">📋 Basic Requirements</div>
-                <p>• Age 18-69 (some centers 18-65)</p>
-                <p>• Weight at least 110 lbs</p>
-                <p>• Good general health</p>
-                <p>• Valid photo ID (driver's license, state ID, passport)</p>
-                <p>• Proof of address (utility bill, bank statement)</p>
-                <p>• Social Security card or proof of SSN</p>
-            </div>
-            
-            <div class="tip-grid">
-                <div class="tip-card">
-                    <h4>💧 Hydrate Well</h4>
-                    <p>Drink 64+ oz water the day before AND day of. Hydration = faster donation = better experience!</p>
-                </div>
-                <div class="tip-card">
-                    <h4">🍗 Eat Protein</h4>
-                    <p>Eggs, chicken, beans, nuts, lean meat. High protein helps your plasma be high quality.</p>
-                </div>
-                <div class="tip-card">
-                    <h4">🚫 Avoid Before</h4>
-                    <p>No fatty foods, alcohol, or excess caffeine 24 hours before. Can affect plasma quality.</p>
-                </div>
-                <div class="tip-card">
-                    <h4">😴 Get Sleep</h4>
-                    <p>7-8 hours the night before. Being well-rested helps you feel good during and after.</p>
-                </div>
-                <div class="tip-card">
-                    <h4">🍌 Eat Before</h4>
-                    <p>Eat a good meal 2-3 hours before. Don't donate on empty stomach!</p>
-                </div>
-                <div class="tip-card">
-                    <h4">📱 Bring Entertainment</h4>
-                    <p>Phone, book, headphones. Donation takes 45-60 min - you'll be sitting there!</p>
-                </div>
-            </div>
+            <h2>🎁 Maximize Your Earnings</h2>
+            <div class="tip-box"><strong>💰 New Donor Bonuses:</strong> Shop around! Different centers offer different new donor bonuses. Some offer $700-900 for your first month.</div>
+            <div class="tip-box"><strong>📱 Referral Programs:</strong> Most centers pay $25-50 when you refer friends who donate. Get your friends involved!</div>
+            <div class="tip-box"><strong>🎉 Promotional Days:</strong> Centers often run bonus promotions around holidays. Check their apps for extra pay opportunities!</div>
         </div>
-
         <div class="card">
-            <h2><span class="icon">📋</span> Your Plasma Donation Action Plan</h2>
-            
-            <div class="step" data-step="1">
-                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
-                <div class="step-content">
-                    <div class="step-title">Step 1: Check eligibility requirements</div>
-                    <div class="step-desc">Most healthy adults 18-69 who weigh 110+ lbs can donate. Gather your documents: valid photo ID, proof of address, and Social Security card.</div>
-                </div>
-            </div>
-            <div class="step" data-step="2">
-                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
-                <div class="step-content">
-                    <div class="step-title">Step 2: Find centers and compare bonuses</div>
-                    <div class="step-desc">Search for plasma centers near you. Compare new donor bonuses - they can be worth $700-1,000! Pick the one with the best offer in your area.</div>
-                </div>
-            </div>
-            <div class="step" data-step="3">
-                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
-                <div class="step-content">
-                    <div class="step-title">Step 3: Schedule your first appointment</div>
-                    <div class="step-desc">Book online or by phone. First visit takes longer (2-3 hours) due to physical exam and screening. Later visits are 1-1.5 hours.</div>
-                </div>
-            </div>
-            <div class="step" data-step="4">
-                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
-                <div class="step-content">
-                    <div class="step-title">Step 4: Prepare properly</div>
-                    <div class="step-desc">Hydration is KEY! Drink 64+ oz water day before and day of. Eat protein-rich foods. Get good sleep. Avoid fatty foods and alcohol.</div>
-                </div>
-            </div>
-            <div class="step" data-step="5">
-                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
-                <div class="step-content">
-                    <div class="step-title">Step 5: Complete your first donation</div>
-                    <div class="step-desc">First visit: mini physical, health questionnaire, then donation (45-60 min). Relax, watch videos, listen to music. Payment loaded to prepaid card same day!</div>
-                </div>
-            </div>
-            <div class="step" data-step="6">
-                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
-                <div class="step-content">
-                    <div class="step-title">Step 6: Set a regular schedule</div>
-                    <div class="step-desc">You can donate twice per week (must have at least 1 day between). Set consistent days that work for you. Consistency = maximum earnings!</div>
-                </div>
-            </div>
-            <div class="step" data-step="7">
-                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
-                <div class="step-content">
-                    <div class="step-title">Step 7: Download center app for bonuses</div>
-                    <div class="step-desc">Most centers have apps with extra promotions, bonus days, and referral rewards. Check app weekly for special offers!</div>
-                </div>
-            </div>
-            <div class="step" data-step="8">
-                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
-                <div class="step-content">
-                    <div class="step-title">Step 8: Refer friends for extra cash</div>
-                    <div class="step-desc">Most centers pay $50-100 per friend referral. Tell friends about the opportunity - you both benefit!</div>
-                </div>
-            </div>
+            <h2>⚠️ Things to Know</h2>
+            <div class="warning-box"><strong>Side Effects:</strong> Some people feel lightheaded or tired after. Drink water, eat a snack, and don't do heavy exercise for 24 hours.</div>
+            <div class="warning-box"><strong>Bruising:</strong> You might get a small bruise at the needle site. It goes away in a few days.</div>
         </div>
-
         <div class="card">
-            <h2><span class="icon">📈</span> Your Progress</h2>
-            <div class="progress-tracker">
-                <div class="progress-text"><span id="completed">0</span> of 8 steps completed</div>
-                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
-            </div>
+            <h2>📈 Your Progress</h2>
+            <div class="progress-container"><div class="progress-bar" id="progressBar"></div></div>
+            <p class="progress-text"><span id="progressText">0</span> of 6 steps completed</p>
         </div>
-
         <div class="card">
-            <h2><span class="icon">📝</span> Your Plasma Donation Tracker</h2>
             <div class="notes-section">
-                <textarea id="notes" placeholder="Track your plasma donations!
+                <h3>📝 Your Plasma Donation Tracker</h3>
+                <textarea id="notes" placeholder="Track your donations:
 
-MY CENTER:
-Name: ____
-Address: ____
-Phone: ____
-App downloaded: ☐
+CENTER: _____________
+NEW DONOR BONUS: $_____
 
-ELIGIBILITY:
-☐ Age: ____
-☐ Weight: ____
-☐ Photo ID ready
-☐ Proof of address
-☐ SSN/Social Security card
+DONATIONS:
+Date: _____ | Earned: $_____
+Date: _____ | Earned: $_____
+Date: _____ | Earned: $_____
 
-NEW DONOR BONUS:
-Bonus amount: $____
-Donations required: ____
-Deadline: ____
-Bonus earned so far: $____
-
-MY SCHEDULE:
-Day 1: ____
-Day 2: ____
-
-DONATION LOG:
-1. Date: ____ | Amount: $____ | Notes: ____
-2. Date: ____ | Amount: $____ | Notes: ____
-3. Date: ____ | Amount: $____ | Notes: ____
-4. Date: ____ | Amount: $____ | Notes: ____
-5. Date: ____ | Amount: $____ | Notes: ____
-6. Date: ____ | Amount: $____ | Notes: ____
-7. Date: ____ | Amount: $____ | Notes: ____
-8. Date: ____ | Amount: $____ | Notes: ____
-
-REFERRALS:
-Friend: ____ | Bonus: $____
-Friend: ____ | Bonus: $____
-
-THIS MONTH:
-Donations: ____
-Total earned: $____
-"></textarea>
+MONTHLY TOTAL: $_____"></textarea>
             </div>
         </div>
-
-        <div class="cta-section">
+        <div class="cta-box">
             <h3>Need Help With Your Finances?</h3>
-            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
-            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+            <a href="https://asapcreditrepairusa.com">Get Support →</a>
         </div>
     </div>
-
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const saved = localStorage.getItem('playbook-donate-plasma');
-            if (saved) {
-                const data = JSON.parse(saved);
-                data.steps.forEach((checked, index) => {
-                    if (checked) document.querySelectorAll('.step-checkbox')[index].classList.add('checked');
-                });
-                document.getElementById('notes').value = data.notes || '';
-                updateProgress();
-            }
-        });
-        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
-        function updateProgress() {
-            const total = document.querySelectorAll('.step-checkbox').length;
-            const completed = document.querySelectorAll('.step-checkbox.checked').length;
-            document.getElementById('completed').textContent = completed;
-            document.getElementById('progressFill').style.width = (completed / total * 100) + '%';
-        }
-        function saveProgress() {
-            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
-            const notes = document.getElementById('notes').value;
-            localStorage.setItem('playbook-donate-plasma', JSON.stringify({ steps, notes }));
-        }
+        function toggleStep(el) { el.classList.toggle('checked'); el.textContent = el.classList.contains('checked') ? '✓' : ''; updateProgress(); saveProgress(); }
+        function updateProgress() { const t = document.querySelectorAll('.step-checkbox').length; const c = document.querySelectorAll('.step-checkbox.checked').length; document.getElementById('progressText').textContent = c; document.getElementById('progressBar').style.width = (c/t*100)+'%'; }
+        function saveProgress() { const s = Array.from(document.querySelectorAll('.step-checkbox')).map(e => e.classList.contains('checked')); const n = document.getElementById('notes').value; localStorage.setItem('playbook-donate-plasma', JSON.stringify({steps:s,notes:n})); }
+        function loadProgress() { const d = localStorage.getItem('playbook-donate-plasma'); if(d){ const p=JSON.parse(d); document.querySelectorAll('.step-checkbox').forEach((e,i)=>{ if(p.steps[i]){e.classList.add('checked');e.textContent='✓';} }); if(p.notes)document.getElementById('notes').value=p.notes; updateProgress(); } }
         document.getElementById('notes').addEventListener('input', saveProgress);
+        loadProgress();
     </script>
 </body>
 </html>

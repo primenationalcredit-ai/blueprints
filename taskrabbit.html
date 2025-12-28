@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔧 TaskRabbit Guide - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { font-size: 2.2em; color: #1a1a2e; margin-bottom: 10px; }
+        .header .subtitle { font-size: 1.1em; color: #666; margin-bottom: 20px; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 10px 25px; border-radius: 20px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; font-size: 1.4em; }
+        .savings-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 25px; text-align: center; margin: 20px 0; }
+        .savings-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; }
+        .step:hover { background: #e3f2fd; }
+        .step-checkbox { width: 30px; height: 30px; min-width: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-content h3 { color: #1a1a2e; margin-bottom: 8px; }
+        .step-content p { color: #666; font-size: 0.95em; }
+        .tip-box { background: #fff3e0; border-left: 4px solid #ff9800; padding: 15px 20px; border-radius: 0 10px 10px 0; margin: 15px 0; }
+        .task-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 20px 0; }
+        .task-card { background: #f8f9fa; border-radius: 12px; padding: 15px; text-align: center; }
+        .task-card .icon { font-size: 1.5em; margin-bottom: 5px; }
+        .task-card h4 { color: #1a1a2e; font-size: 0.95em; margin-bottom: 3px; }
+        .task-card .rate { color: #4caf50; font-weight: 600; font-size: 0.9em; }
+        .progress-container { background: #f0f0f0; border-radius: 10px; height: 20px; margin: 20px 0; overflow: hidden; }
+        .progress-bar { background: linear-gradient(90deg, #667eea, #764ba2); height: 100%; width: 0%; }
+        .progress-text { text-align: center; color: #666; margin-top: 10px; }
+        .notes-section textarea { width: 100%; min-height: 120px; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-family: inherit; resize: vertical; }
+        .cta-box { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; text-align: center; margin-top: 30px; }
+        .cta-box a { display: inline-block; background: white; color: #667eea; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="income-playbooks.html" class="back-link">← Back to Income Playbooks</a>
+        <div class="header">
+            <h1>🔧 TaskRabbit Guide</h1>
+            <p class="subtitle">Get paid for everyday tasks people need help with!</p>
+            <div class="time-badge">⏱️ Set your schedule • 💰 Earn $25-75/hour</div>
+        </div>
+        <div class="card">
+            <h2>🎯 What is TaskRabbit?</h2>
+            <p><strong>TaskRabbit connects you with people who need help with tasks.</strong> Furniture assembly, moving help, cleaning, yard work, handyman stuff—people pay WELL for help with things they can't or don't want to do.</p>
+            <p>You set your own rates, choose your tasks, and work when you want!</p>
+            <div class="savings-highlight">
+                <h3>$300 - $1,000+/month</h3>
+                <p>Working part-time on your schedule</p>
+            </div>
+        </div>
+        <div class="card">
+            <h2>💰 Popular Tasks & Rates</h2>
+            <div class="task-grid">
+                <div class="task-card"><div class="icon">🪑</div><h4>Furniture Assembly</h4><div class="rate">$35-60/hour</div></div>
+                <div class="task-card"><div class="icon">📦</div><h4>Moving Help</h4><div class="rate">$30-50/hour</div></div>
+                <div class="task-card"><div class="icon">🧹</div><h4>Cleaning</h4><div class="rate">$25-45/hour</div></div>
+                <div class="task-card"><div class="icon">🌿</div><h4>Yard Work</h4><div class="rate">$25-40/hour</div></div>
+                <div class="task-card"><div class="icon">🔨</div><h4>Handyman</h4><div class="rate">$40-75/hour</div></div>
+                <div class="task-card"><div class="icon">📺</div><h4>TV Mounting</h4><div class="rate">$50-80/hour</div></div>
+                <div class="task-card"><div class="icon">🛒</div><h4>Shopping/Errands</h4><div class="rate">$20-35/hour</div></div>
+                <div class="task-card"><div class="icon">💻</div><h4>Tech Help</h4><div class="rate">$30-50/hour</div></div>
+            </div>
+            <div class="tip-box"><strong>💡 IKEA Assembly:</strong> This is the #1 requested task! If you can follow instructions and use basic tools, you can make great money assembling furniture.</div>
+        </div>
+        <div class="card">
+            <h2>📋 Your Action Plan</h2>
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 1: Sign Up at TaskRabbit.com</h3>
+                    <p>Go to taskrabbit.com/become-a-tasker. You'll need to pay a $25 registration fee (one-time).</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 2: Complete Background Check</h3>
+                    <p>TaskRabbit runs a background check. Takes 3-5 business days. You can start setting up your profile while waiting.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 3: Choose Your Task Categories</h3>
+                    <p>Pick 3-5 tasks you're comfortable doing. Start with easy ones like furniture assembly, moving help, or cleaning.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 4: Set Your Rates</h3>
+                    <p>Start slightly below average to get your first reviews, then raise rates after you have 5-10 good reviews.</p>
+                    <div class="tip-box"><strong>💡 Starter Strategy:</strong> Set rates $5-10 below competitors to get hired quickly. After 5+ five-star reviews, raise your rates!</div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 5: Write a Great Profile</h3>
+                    <p>Add a friendly photo. Write a short bio about your experience. Mention if you have tools, a vehicle, or specific skills!</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 6: Get Your First Task!</h3>
+                    <p>Turn on availability and wait for task requests. Respond quickly—fast response = more bookings!</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <h2>⭐ Tips for 5-Star Reviews</h2>
+            <div class="tip-box"><strong>📱 Communicate:</strong> Message clients before arriving. "On my way!" or "Running 5 min late" goes a long way.</div>
+            <div class="tip-box"><strong>🧹 Clean Up:</strong> Always leave the area cleaner than you found it. Take trash, vacuum sawdust, etc.</div>
+            <div class="tip-box"><strong>⏰ Be Early:</strong> Arrive 5 minutes early. Never be late without communicating!</div>
+            <div class="tip-box"><strong>🛠️ Bring Tools:</strong> Having your own tools shows professionalism and speeds up the job.</div>
+        </div>
+        <div class="card">
+            <h2>📈 Your Progress</h2>
+            <div class="progress-container"><div class="progress-bar" id="progressBar"></div></div>
+            <p class="progress-text"><span id="progressText">0</span> of 6 steps completed</p>
+        </div>
+        <div class="card">
+            <div class="notes-section">
+                <h3>📝 Your TaskRabbit Tracker</h3>
+                <textarea id="notes" placeholder="MY TASK CATEGORIES:
+1. 
+2. 
+3. 
+
+MY HOURLY RATE: $_____
+
+TASKS COMPLETED:
+Date: _____ | Task: _____ | Earned: $_____
+Date: _____ | Task: _____ | Earned: $_____
+
+REVIEWS: _____ ⭐ average
+TOTAL EARNED: $_____"></textarea>
+            </div>
+        </div>
+        <div class="cta-box">
+            <h3>Need Help With Your Finances?</h3>
+            <a href="https://asapcreditrepairusa.com">Get Support →</a>
+        </div>
+    </div>
+    <script>
+        function toggleStep(el) { el.classList.toggle('checked'); el.textContent = el.classList.contains('checked') ? '✓' : ''; updateProgress(); saveProgress(); }
+        function updateProgress() { const t = document.querySelectorAll('.step-checkbox').length; const c = document.querySelectorAll('.step-checkbox.checked').length; document.getElementById('progressText').textContent = c; document.getElementById('progressBar').style.width = (c/t*100)+'%'; }
+        function saveProgress() { const s = Array.from(document.querySelectorAll('.step-checkbox')).map(e => e.classList.contains('checked')); const n = document.getElementById('notes').value; localStorage.setItem('playbook-taskrabbit', JSON.stringify({steps:s,notes:n})); }
+        function loadProgress() { const d = localStorage.getItem('playbook-taskrabbit'); if(d){ const p=JSON.parse(d); document.querySelectorAll('.step-checkbox').forEach((e,i)=>{ if(p.steps[i]){e.classList.add('checked');e.textContent='✓';} }); if(p.notes)document.getElementById('notes').value=p.notes; updateProgress(); } }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+        loadProgress();
+    </script>
+</body>
+</html>

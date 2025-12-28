@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>☕ Coffee Savings - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; }
+        .header h1 { font-size: 2.2em; color: #1a1a2e; margin-bottom: 10px; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 10px 25px; border-radius: 20px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; }
+        .savings-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 25px; text-align: center; margin: 20px 0; }
+        .savings-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
+        .compare-bad { background: #ffebee; padding: 20px; border-radius: 15px; text-align: center; }
+        .compare-bad h4 { color: #c62828; }
+        .compare-good { background: #e8f5e9; padding: 20px; border-radius: 15px; text-align: center; }
+        .compare-good h4 { color: #2e7d32; }
+        .compare-bad .cost, .compare-good .cost { font-size: 1.8em; font-weight: 700; margin: 10px 0; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; }
+        .step-checkbox { width: 30px; height: 30px; min-width: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-content h3 { color: #1a1a2e; margin-bottom: 8px; }
+        .step-content p { color: #666; }
+        .tip-box { background: #fff3e0; border-left: 4px solid #ff9800; padding: 15px 20px; border-radius: 0 10px 10px 0; margin: 15px 0; }
+        .progress-container { background: #f0f0f0; border-radius: 10px; height: 20px; margin: 20px 0; }
+        .progress-bar { background: linear-gradient(90deg, #667eea, #764ba2); height: 100%; width: 0%; border-radius: 10px; }
+        .cta-box { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; text-align: center; }
+        .cta-box a { display: inline-block; background: white; color: #667eea; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="expense-playbooks.html" class="back-link">← Back to Expense Playbooks</a>
+        <div class="header">
+            <h1>☕ Coffee Savings</h1>
+            <p>Make coffee at home and save $80-150/month!</p>
+            <div class="time-badge">⏱️ 5 min/day • 💰 Save $80-150/month</div>
+        </div>
+        <div class="card">
+            <h2>🎯 The Latte Factor</h2>
+            <div class="compare-grid">
+                <div class="compare-bad"><h4>☕ Starbucks Daily</h4><div class="cost">$150/mo</div><p>$5/day × 30 days</p></div>
+                <div class="compare-good"><h4>☕ Home Brew</h4><div class="cost">$15/mo</div><p>$0.50/day × 30 days</p></div>
+            </div>
+            <div class="savings-highlight"><h3>$135/month saved!</h3><p>That's $1,620/year from just coffee!</p></div>
+        </div>
+        <div class="card">
+            <h2>📋 Your Action Plan</h2>
+            <div class="step"><div class="step-checkbox" onclick="toggleStep(this)"></div><div class="step-content"><h3>Step 1: Get a Coffee Maker</h3><p>Basic drip maker: $20-30. Pays for itself in 1 week!</p></div></div>
+            <div class="step"><div class="step-checkbox" onclick="toggleStep(this)"></div><div class="step-content"><h3>Step 2: Buy Good Coffee</h3><p>A $10 bag makes 30+ cups. That's $0.33/cup vs $5 at Starbucks!</p></div></div>
+            <div class="step"><div class="step-checkbox" onclick="toggleStep(this)"></div><div class="step-content"><h3>Step 3: Get a Travel Mug</h3><p>Take your coffee to go. $15 insulated mug keeps it hot for hours.</p></div></div>
+            <div class="step"><div class="step-checkbox" onclick="toggleStep(this)"></div><div class="step-content"><h3>Step 4: Delete the Starbucks App</h3><p>Remove temptation. No app = no mobile ordering = no impulse lattes!</p></div></div>
+        </div>
+        <div class="card">
+            <h2>💡 Pro Tips</h2>
+            <div class="tip-box"><strong>⏰ Prep at Night:</strong> Set up coffee maker before bed. Wake up to fresh coffee!</div>
+            <div class="tip-box"><strong>🥛 Make Lattes at Home:</strong> A $15 milk frother lets you make café-style drinks!</div>
+            <div class="tip-box"><strong>🎁 Treat Yourself:</strong> Allow 1 coffee shop trip per week as a treat. Budget $20/month for it.</div>
+        </div>
+        <div class="card"><h2>📈 Your Progress</h2><div class="progress-container"><div class="progress-bar" id="progressBar"></div></div><p style="text-align:center"><span id="progressText">0</span> of 4 steps completed</p></div>
+        <div class="cta-box"><h3>Need Help With Your Finances?</h3><a href="https://asapcreditrepairusa.com">Get Support →</a></div>
+    </div>
+    <script>
+        function toggleStep(el){el.classList.toggle('checked');el.textContent=el.classList.contains('checked')?'✓':'';updateProgress();saveProgress();}
+        function updateProgress(){const t=document.querySelectorAll('.step-checkbox').length;const c=document.querySelectorAll('.step-checkbox.checked').length;document.getElementById('progressText').textContent=c;document.getElementById('progressBar').style.width=(c/t*100)+'%';}
+        function saveProgress(){const s=Array.from(document.querySelectorAll('.step-checkbox')).map(e=>e.classList.contains('checked'));localStorage.setItem('playbook-coffee',JSON.stringify({steps:s}));}
+        function loadProgress(){const d=localStorage.getItem('playbook-coffee');if(d){const p=JSON.parse(d);document.querySelectorAll('.step-checkbox').forEach((e,i)=>{if(p.steps[i]){e.classList.add('checked');e.textContent='✓';}});updateProgress();}}
+        loadProgress();
+    </script>
+</body>
+</html>

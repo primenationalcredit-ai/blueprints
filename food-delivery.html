@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚗 Food Delivery Guide - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { font-size: 2.2em; color: #1a1a2e; margin-bottom: 10px; }
+        .header .subtitle { font-size: 1.1em; color: #666; margin-bottom: 20px; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 10px 25px; border-radius: 20px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; font-size: 1.4em; }
+        .savings-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 25px; text-align: center; margin: 20px 0; }
+        .savings-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; }
+        .step:hover { background: #e3f2fd; }
+        .step-checkbox { width: 30px; height: 30px; min-width: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-content h3 { color: #1a1a2e; margin-bottom: 8px; }
+        .step-content p { color: #666; font-size: 0.95em; }
+        .tip-box { background: #fff3e0; border-left: 4px solid #ff9800; padding: 15px 20px; border-radius: 0 10px 10px 0; margin: 15px 0; }
+        .app-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .app-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; }
+        .app-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .app-card .pay { color: #4caf50; font-weight: 700; font-size: 1.1em; }
+        .app-card .note { color: #666; font-size: 0.85em; margin-top: 5px; }
+        .time-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
+        .time-good { background: #e8f5e9; padding: 15px; border-radius: 10px; }
+        .time-good h4 { color: #2e7d32; margin-bottom: 10px; }
+        .time-bad { background: #ffebee; padding: 15px; border-radius: 10px; }
+        .time-bad h4 { color: #c62828; margin-bottom: 10px; }
+        .progress-container { background: #f0f0f0; border-radius: 10px; height: 20px; margin: 20px 0; overflow: hidden; }
+        .progress-bar { background: linear-gradient(90deg, #667eea, #764ba2); height: 100%; width: 0%; }
+        .progress-text { text-align: center; color: #666; margin-top: 10px; }
+        .notes-section textarea { width: 100%; min-height: 120px; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-family: inherit; resize: vertical; }
+        .cta-box { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; text-align: center; margin-top: 30px; }
+        .cta-box a { display: inline-block; background: white; color: #667eea; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        @media (max-width: 600px) { .time-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="income-playbooks.html" class="back-link">← Back to Income Playbooks</a>
+        <div class="header">
+            <h1>🚗 Food Delivery Guide</h1>
+            <p class="subtitle">Start delivering today, cash out same day!</p>
+            <div class="time-badge">⏱️ Start in 1-3 days • 💰 Earn $15-25/hour</div>
+        </div>
+        <div class="card">
+            <h2>🎯 Why Food Delivery?</h2>
+            <p><strong>It's the fastest way to start earning!</strong> No interview, no schedule, work when you want. Most apps let you cash out your earnings the SAME DAY.</p>
+            <p>Perfect as a side gig—work a few hours after your main job or on weekends.</p>
+            <div class="savings-highlight">
+                <h3>$500 - $1,500/month</h3>
+                <p>Working 10-20 hours per week</p>
+            </div>
+        </div>
+        <div class="card">
+            <h2>📱 Best Delivery Apps</h2>
+            <div class="app-grid">
+                <div class="app-card">
+                    <h4>🔴 DoorDash</h4>
+                    <div class="pay">$15-25/hour</div>
+                    <div class="note">Largest market share, most orders</div>
+                </div>
+                <div class="app-card">
+                    <h4>🟢 Uber Eats</h4>
+                    <div class="pay">$15-22/hour</div>
+                    <div class="note">Good tips, flexible scheduling</div>
+                </div>
+                <div class="app-card">
+                    <h4>🟠 Grubhub</h4>
+                    <div class="pay">$12-20/hour</div>
+                    <div class="note">Scheduled blocks = guaranteed orders</div>
+                </div>
+                <div class="app-card">
+                    <h4>🛒 Instacart</h4>
+                    <div class="pay">$15-25/hour</div>
+                    <div class="note">Grocery shopping + delivery</div>
+                </div>
+            </div>
+            <div class="tip-box"><strong>💡 Pro Tip:</strong> Sign up for ALL of them! Run multiple apps and take the best-paying orders.</div>
+        </div>
+        <div class="card">
+            <h2>⏰ Best Times to Deliver</h2>
+            <div class="time-grid">
+                <div class="time-good">
+                    <h4>✅ HIGH Demand ($$$$)</h4>
+                    <ul style="padding-left: 20px; font-size: 0.9em;">
+                        <li>Lunch: 11am - 2pm</li>
+                        <li>Dinner: 5pm - 9pm</li>
+                        <li>Friday & Saturday nights</li>
+                        <li>Rainy/snowy days</li>
+                        <li>Big sports events</li>
+                    </ul>
+                </div>
+                <div class="time-bad">
+                    <h4>❌ LOW Demand ($)</h4>
+                    <ul style="padding-left: 20px; font-size: 0.9em;">
+                        <li>2pm - 5pm (dead zone)</li>
+                        <li>Late night after 10pm</li>
+                        <li>Early mornings</li>
+                        <li>Tuesday/Wednesday</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <h2>📋 Your Action Plan</h2>
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 1: Check Requirements</h3>
+                    <p>You need: Valid driver's license, car insurance, smartphone, and be at least 18 (some require 21).</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 2: Sign Up for DoorDash First</h3>
+                    <p>Go to doordash.com/dasher or download the Dasher app. Background check takes 1-3 days.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 3: Sign Up for Uber Eats Too</h3>
+                    <p>Go to uber.com/deliver. Having both apps = more orders to choose from!</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 4: Get Your Delivery Bag</h3>
+                    <p>Some apps send free bags. If not, get an insulated bag from Amazon ($15-20). Keeps food hot = better tips!</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 5: Do Your First Delivery!</h3>
+                    <p>Start during a busy time (dinner rush). Accept orders and follow the app instructions. It's easier than you think!</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 6: Cash Out Same Day</h3>
+                    <p>DoorDash: "Fast Pay" for instant cashout ($1.99 fee)<br>Uber Eats: "Instant Pay" to debit card (up to 5x/day)</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <h2>💰 Maximize Your Earnings</h2>
+            <div class="tip-box"><strong>📍 Know Your Area:</strong> Learn which restaurants are fast and which are slow. Decline orders from slow restaurants!</div>
+            <div class="tip-box"><strong>🧮 The $1/Mile Rule:</strong> Only accept orders that pay at least $1 per mile. $8 for 10 miles = decline. $8 for 4 miles = accept!</div>
+            <div class="tip-box"><strong>⛽ Track Your Miles:</strong> Use the Stride app to track mileage. You can deduct 67¢/mile on taxes!</div>
+            <div class="tip-box"><strong>🚀 Peak Pay:</strong> Watch for "Peak Pay" bonuses during busy times—extra $1-3 per delivery!</div>
+        </div>
+        <div class="card">
+            <h2>📈 Your Progress</h2>
+            <div class="progress-container"><div class="progress-bar" id="progressBar"></div></div>
+            <p class="progress-text"><span id="progressText">0</span> of 6 steps completed</p>
+        </div>
+        <div class="card">
+            <div class="notes-section">
+                <h3>📝 Your Delivery Tracker</h3>
+                <textarea id="notes" placeholder="APPS SIGNED UP:
+□ DoorDash - Status: _____
+□ Uber Eats - Status: _____
+□ Grubhub - Status: _____
+
+WEEKLY EARNINGS:
+Week 1: $_____ (_____ hours)
+Week 2: $_____ (_____ hours)
+
+$/HOUR AVERAGE: $_____"></textarea>
+            </div>
+        </div>
+        <div class="cta-box">
+            <h3>Need Help With Your Finances?</h3>
+            <a href="https://asapcreditrepairusa.com">Get Support →</a>
+        </div>
+    </div>
+    <script>
+        function toggleStep(el) { el.classList.toggle('checked'); el.textContent = el.classList.contains('checked') ? '✓' : ''; updateProgress(); saveProgress(); }
+        function updateProgress() { const t = document.querySelectorAll('.step-checkbox').length; const c = document.querySelectorAll('.step-checkbox.checked').length; document.getElementById('progressText').textContent = c; document.getElementById('progressBar').style.width = (c/t*100)+'%'; }
+        function saveProgress() { const s = Array.from(document.querySelectorAll('.step-checkbox')).map(e => e.classList.contains('checked')); const n = document.getElementById('notes').value; localStorage.setItem('playbook-food-delivery', JSON.stringify({steps:s,notes:n})); }
+        function loadProgress() { const d = localStorage.getItem('playbook-food-delivery'); if(d){ const p=JSON.parse(d); document.querySelectorAll('.step-checkbox').forEach((e,i)=>{ if(p.steps[i]){e.classList.add('checked');e.textContent='✓';} }); if(p.notes)document.getElementById('notes').value=p.notes; updateProgress(); } }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+        loadProgress();
+    </script>
+</body>
+</html>

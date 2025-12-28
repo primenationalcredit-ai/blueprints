@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏷️ Garage Sale Guide - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { font-size: 2.2em; color: #1a1a2e; margin-bottom: 10px; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 10px 25px; border-radius: 20px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; font-size: 1.4em; }
+        .savings-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 25px; text-align: center; margin: 20px 0; }
+        .savings-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .step { display: flex; gap: 15px; margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 15px; }
+        .step:hover { background: #e3f2fd; }
+        .step-checkbox { width: 30px; height: 30px; min-width: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+        .step-checkbox.checked { background: #667eea; color: white; }
+        .step-content h3 { color: #1a1a2e; margin-bottom: 8px; }
+        .step-content p { color: #666; font-size: 0.95em; }
+        .tip-box { background: #fff3e0; border-left: 4px solid #ff9800; padding: 15px 20px; border-radius: 0 10px 10px 0; margin: 15px 0; }
+        .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 20px 0; }
+        .price-card { background: #f8f9fa; border-radius: 12px; padding: 12px; text-align: center; }
+        .price-card h4 { color: #1a1a2e; font-size: 0.9em; margin-bottom: 3px; }
+        .price-card .range { color: #4caf50; font-weight: 600; }
+        .timeline { background: #f8f9fa; border-radius: 15px; padding: 20px; margin: 20px 0; }
+        .timeline h4 { color: #1a1a2e; margin-bottom: 15px; }
+        .timeline-item { display: flex; gap: 15px; margin: 10px 0; }
+        .timeline-item .time { background: #667eea; color: white; padding: 5px 10px; border-radius: 5px; font-size: 0.85em; min-width: 100px; text-align: center; }
+        .timeline-item .task { color: #666; }
+        .progress-container { background: #f0f0f0; border-radius: 10px; height: 20px; margin: 20px 0; overflow: hidden; }
+        .progress-bar { background: linear-gradient(90deg, #667eea, #764ba2); height: 100%; width: 0%; }
+        .notes-section textarea { width: 100%; min-height: 120px; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-family: inherit; resize: vertical; }
+        .cta-box { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; text-align: center; margin-top: 30px; }
+        .cta-box a { display: inline-block; background: white; color: #667eea; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="income-playbooks.html" class="back-link">← Back to Income Playbooks</a>
+        <div class="header">
+            <h1>🏷️ Garage Sale Guide</h1>
+            <p class="subtitle">Make $300-1,500 in ONE weekend!</p>
+            <div class="time-badge">⏱️ 1 day prep + sale day • 💰 Make $300-1,500</div>
+        </div>
+        <div class="card">
+            <h2>🎯 The Garage Sale Money Nuke</h2>
+            <p><strong>A well-run garage sale can make $300-1,500 in a single day!</strong> Everything must go. Price to sell, not to store. The goal is CASH, not keeping stuff.</p>
+            <div class="savings-highlight">
+                <h3>$300 - $1,500</h3>
+                <p>Average earnings from a weekend garage sale</p>
+            </div>
+        </div>
+        <div class="card">
+            <h2>💰 Pricing Guide</h2>
+            <div class="price-grid">
+                <div class="price-card"><h4>👕 Clothes</h4><div class="range">$1-5 each</div></div>
+                <div class="price-card"><h4>📚 Books</h4><div class="range">$0.50-2</div></div>
+                <div class="price-card"><h4>🎮 Toys/Games</h4><div class="range">$1-10</div></div>
+                <div class="price-card"><h4>🍳 Kitchen</h4><div class="range">$1-10</div></div>
+                <div class="price-card"><h4>🪑 Furniture</h4><div class="range">$10-100</div></div>
+                <div class="price-card"><h4>📺 Electronics</h4><div class="range">$5-50</div></div>
+                <div class="price-card"><h4>🏋️ Sports Gear</h4><div class="range">$5-50</div></div>
+                <div class="price-card"><h4>🧸 Baby Stuff</h4><div class="range">$2-25</div></div>
+            </div>
+            <div class="tip-box"><strong>💡 Golden Rule:</strong> Price at 10-20% of retail. People want DEALS. Something is always better than nothing!</div>
+        </div>
+        <div class="card">
+            <h2>📋 Week Before: Preparation</h2>
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 1: Go Room by Room</h3>
+                    <p>Pull out everything you don't use. Closets, garage, attic, basement, kids' rooms—EVERYTHING.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 2: Clean Items</h3>
+                    <p>Wipe down dusty items, wash clothes, make things look presentable. Clean items sell!</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 3: Price Everything</h3>
+                    <p>Use colored stickers or masking tape. Price in round numbers ($1, $5, $10). Make it easy!</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 4: Advertise</h3>
+                    <p>Post on Facebook Marketplace, Craigslist, Nextdoor. Include date, time, address, and photos of good items!</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-checkbox" onclick="toggleStep(this)"></div>
+                <div class="step-content">
+                    <h3>Step 5: Get Supplies</h3>
+                    <p>Get: $100 in small bills for change, price stickers, tables, signs, bags for buyers.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <h2>📅 Sale Day Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item"><div class="time">6:00 AM</div><div class="task">Set up tables, put out big items</div></div>
+                <div class="timeline-item"><div class="time">7:00 AM</div><div class="task">Start selling! Early birds arrive</div></div>
+                <div class="timeline-item"><div class="time">10:00 AM</div><div class="task">Peak traffic hours</div></div>
+                <div class="timeline-item"><div class="time">12:00 PM</div><div class="task">Start dropping prices 25%</div></div>
+                <div class="timeline-item"><div class="time">2:00 PM</div><div class="task">"Everything 50% off!"</div></div>
+                <div class="timeline-item"><div class="time">3:00 PM</div><div class="task">"Fill a bag for $5!"</div></div>
+                <div class="timeline-item"><div class="time">4:00 PM</div><div class="task">Pack up, donate leftovers</div></div>
+            </div>
+        </div>
+        <div class="card">
+            <h2>💡 Pro Tips</h2>
+            <div class="tip-box"><strong>☕ Sell Drinks:</strong> Sell water bottles and lemonade for $1. Easy extra $20-50!</div>
+            <div class="tip-box"><strong>🅿️ Signs Matter:</strong> Put signs on major intersections. Balloons help people find you!</div>
+            <div class="tip-box"><strong>📦 Donate Leftovers:</strong> Schedule Goodwill/Salvation Army pickup for afternoon. Don't bring stuff back inside!</div>
+        </div>
+        <div class="card">
+            <h2>📈 Your Progress</h2>
+            <div class="progress-container"><div class="progress-bar" id="progressBar"></div></div>
+            <p class="progress-text"><span id="progressText">0</span> of 5 steps completed</p>
+        </div>
+        <div class="card">
+            <div class="notes-section">
+                <h3>📝 Your Garage Sale Planner</h3>
+                <textarea id="notes" placeholder="SALE DATE: _____
+
+ITEMS TO SELL:
+□ _____ - Price: $_____
+□ _____ - Price: $_____
+
+SUPPLIES NEEDED:
+□ Change ($100 in small bills)
+□ Price stickers
+□ Tables
+□ Signs
+
+TOTAL EARNED: $_____"></textarea>
+            </div>
+        </div>
+        <div class="cta-box">
+            <h3>Need Help With Your Finances?</h3>
+            <a href="https://asapcreditrepairusa.com">Get Support →</a>
+        </div>
+    </div>
+    <script>
+        function toggleStep(el) { el.classList.toggle('checked'); el.textContent = el.classList.contains('checked') ? '✓' : ''; updateProgress(); saveProgress(); }
+        function updateProgress() { const t = document.querySelectorAll('.step-checkbox').length; const c = document.querySelectorAll('.step-checkbox.checked').length; document.getElementById('progressText').textContent = c; document.getElementById('progressBar').style.width = (c/t*100)+'%'; }
+        function saveProgress() { const s = Array.from(document.querySelectorAll('.step-checkbox')).map(e => e.classList.contains('checked')); const n = document.getElementById('notes').value; localStorage.setItem('playbook-garage-sale', JSON.stringify({steps:s,notes:n})); }
+        function loadProgress() { const d = localStorage.getItem('playbook-garage-sale'); if(d){ const p=JSON.parse(d); document.querySelectorAll('.step-checkbox').forEach((e,i)=>{ if(p.steps[i]){e.classList.add('checked');e.textContent='✓';} }); if(p.notes)document.getElementById('notes').value=p.notes; updateProgress(); } }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+        loadProgress();
+    </script>
+</body>
+</html>
