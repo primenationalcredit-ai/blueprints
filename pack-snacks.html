@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🥪 Pack Snacks & Drinks - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 15px; opacity: 0.9; font-size: 14px; }
+        .back-link:hover { opacity: 1; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { font-size: 2.5em; color: #1a1a2e; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.1em; margin-bottom: 15px; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 10px 25px; border-radius: 20px; font-size: 0.9em; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .icon { font-size: 1.3em; }
+        .achieve-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 20px; margin-bottom: 20px; }
+        .achieve-box p { color: #2e7d32; line-height: 1.6; }
+        .savings-highlight { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; text-align: center; }
+        .savings-highlight h3 { font-size: 2.2em; margin-bottom: 5px; }
+        .savings-highlight p { opacity: 0.9; }
+        
+        .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; }
+        .compare-bad { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-radius: 15px; padding: 25px; text-align: center; }
+        .compare-bad h4 { color: #c62828; font-size: 1.1em; margin-bottom: 10px; }
+        .compare-bad .cost { font-size: 2.5em; font-weight: 700; color: #c62828; }
+        .compare-bad p { color: #666; margin-top: 10px; font-size: 0.9em; }
+        .compare-good { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 25px; text-align: center; }
+        .compare-good h4 { color: #2e7d32; font-size: 1.1em; margin-bottom: 10px; }
+        .compare-good .cost { font-size: 2.5em; font-weight: 700; color: #2e7d32; }
+        .compare-good p { color: #666; margin-top: 10px; font-size: 0.9em; }
+        
+        .snack-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 20px 0; }
+        .snack-item { background: #f8f9fa; border-radius: 12px; padding: 15px; text-align: center; }
+        .snack-item .emoji { font-size: 2em; margin-bottom: 8px; }
+        .snack-item .name { font-weight: 600; color: #1a1a2e; font-size: 0.9em; }
+        .snack-item .price { color: #4caf50; font-size: 0.8em; margin-top: 5px; }
+        
+        .step { display: flex; gap: 15px; padding: 20px; background: #f8f9fa; border-radius: 15px; margin-bottom: 15px; transition: all 0.3s; }
+        .step:hover { background: #f0f0f0; transform: translateX(5px); }
+        .step-checkbox { width: 30px; height: 30px; min-width: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; transition: all 0.3s; }
+        .step-checkbox.checked { background: #667eea; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; margin-bottom: 5px; }
+        .step-desc { color: #666; font-size: 0.95em; line-height: 1.5; }
+        
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; line-height: 1.5; }
+        
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .comparison-table th { background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px; text-align: left; }
+        .comparison-table td { padding: 12px 15px; border-bottom: 1px solid #eee; }
+        .comparison-table tr:hover { background: #f8f9fa; }
+        .price-bad { color: #c62828; font-weight: 600; }
+        .price-good { color: #2e7d32; font-weight: 600; }
+        
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #667eea; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; }
+        .influencer-link:hover { text-decoration: underline; }
+        
+        .tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin: 20px 0; }
+        .tool-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .tool-card:hover { transform: translateY(-3px); box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .tool-card .tool-icon { font-size: 2em; margin-bottom: 10px; }
+        .tool-card h4 { color: #1a1a2e; font-size: 14px; margin-bottom: 5px; }
+        .tool-card .cost { color: #4caf50; font-weight: 600; font-size: 13px; margin-bottom: 5px; }
+        .tool-card p { color: #666; font-size: 12px; }
+        .tool-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; font-size: 13px; }
+        
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; text-align: center; }
+        .progress-text { margin-bottom: 15px; font-size: 1.1em; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        
+        .notes-section { margin-top: 20px; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-family: inherit; font-size: 1em; min-height: 150px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #667eea; }
+        
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-section h3 { margin-bottom: 10px; }
+        .cta-section p { opacity: 0.9; margin-bottom: 15px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; transition: transform 0.3s; }
+        .cta-button:hover { transform: scale(1.05); }
+        
+        @media (max-width: 768px) {
+            .compare-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 1.8em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="expense-playbooks.html" class="back-link">← Back to Expense Playbooks</a>
+        
+        <div class="header">
+            <h1>🥪 Pack Snacks & Drinks</h1>
+            <p class="subtitle">Stop the vending machine and convenience store drain!</p>
+            <div class="time-badge">⏱️ 5 min/day prep • Save $40-100/month • $480-1,200/year</div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p><strong>The average American spends $20-50/week on vending machines, convenience stores, and gas station snacks!</strong> That's $80-200/month on overpriced chips, candy, and drinks. By spending 5 minutes each night packing snacks, you'll save 75-80% on the same food. This playbook shows you exactly what to pack, how to prep, and how to break the convenience store habit for good!</p>
+            </div>
+            <div class="savings-highlight">
+                <h3>Save $40-100/Month</h3>
+                <p>That's $480-1,200 per year - just from packing snacks!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💸</span> The Vending Machine Tax</h2>
+            <div class="compare-grid">
+                <div class="compare-bad">
+                    <h4>🏪 Buying at Work/On-the-Go</h4>
+                    <div class="cost">$100/mo</div>
+                    <p>Snacks $2-4 × 2/day<br>Drinks $2-3 × 2/day<br>= $8-14/day wasted!</p>
+                </div>
+                <div class="compare-good">
+                    <h4>🥪 Packing from Home</h4>
+                    <div class="cost">$20/mo</div>
+                    <p>Bulk snacks $0.25-0.50 each<br>Water bottle: FREE<br>= $1-2/day total!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💰</span> Price Comparison: Convenience vs. Bulk</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Convenience Store</th>
+                        <th>Bulk/Packed</th>
+                        <th>You Save</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Bottled Water</td>
+                        <td class="price-bad">$2.50</td>
+                        <td class="price-good">$0.00 (refill)</td>
+                        <td>100%</td>
+                    </tr>
+                    <tr>
+                        <td>Bag of Chips</td>
+                        <td class="price-bad">$2.00</td>
+                        <td class="price-good">$0.35</td>
+                        <td>82%</td>
+                    </tr>
+                    <tr>
+                        <td>Granola Bar</td>
+                        <td class="price-bad">$2.50</td>
+                        <td class="price-good">$0.40</td>
+                        <td>84%</td>
+                    </tr>
+                    <tr>
+                        <td>Nuts (small bag)</td>
+                        <td class="price-bad">$3.00</td>
+                        <td class="price-good">$0.50</td>
+                        <td>83%</td>
+                    </tr>
+                    <tr>
+                        <td>Soda/Energy Drink</td>
+                        <td class="price-bad">$3.00</td>
+                        <td class="price-good">$0.50</td>
+                        <td>83%</td>
+                    </tr>
+                    <tr>
+                        <td>Candy Bar</td>
+                        <td class="price-bad">$2.00</td>
+                        <td class="price-good">$0.50</td>
+                        <td>75%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🥜</span> Easy Pack-Ahead Snacks</h2>
+            <div class="snack-grid">
+                <div class="snack-item">
+                    <div class="emoji">🍎</div>
+                    <div class="name">Fresh Fruit</div>
+                    <div class="price">$0.30-0.50 each</div>
+                </div>
+                <div class="snack-item">
+                    <div class="emoji">🥜</div>
+                    <div class="name">Nuts (bulk)</div>
+                    <div class="price">$0.40-0.60/serving</div>
+                </div>
+                <div class="snack-item">
+                    <div class="emoji">🧀</div>
+                    <div class="name">Cheese Sticks</div>
+                    <div class="price">$0.25-0.40 each</div>
+                </div>
+                <div class="snack-item">
+                    <div class="emoji">🥕</div>
+                    <div class="name">Carrot Sticks</div>
+                    <div class="price">$0.20/serving</div>
+                </div>
+                <div class="snack-item">
+                    <div class="emoji">🍿</div>
+                    <div class="name">Popcorn</div>
+                    <div class="price">$0.15-0.25/bag</div>
+                </div>
+                <div class="snack-item">
+                    <div class="emoji">🥨</div>
+                    <div class="name">Pretzels</div>
+                    <div class="price">$0.20-0.30/serving</div>
+                </div>
+                <div class="snack-item">
+                    <div class="emoji">🍫</div>
+                    <div class="name">Granola Bars</div>
+                    <div class="price">$0.30-0.50 each</div>
+                </div>
+                <div class="snack-item">
+                    <div class="emoji">🥛</div>
+                    <div class="name">Yogurt Cups</div>
+                    <div class="price">$0.50-0.75 each</div>
+                </div>
+                <div class="snack-item">
+                    <div class="emoji">🥒</div>
+                    <div class="name">Veggie Cups</div>
+                    <div class="price">$0.50/serving</div>
+                </div>
+                <div class="snack-item">
+                    <div class="emoji">🍇</div>
+                    <div class="name">Trail Mix</div>
+                    <div class="price">$0.40-0.60/serving</div>
+                </div>
+                <div class="snack-item">
+                    <div class="emoji">🥚</div>
+                    <div class="name">Hard Boiled Eggs</div>
+                    <div class="price">$0.20-0.30 each</div>
+                </div>
+                <div class="snack-item">
+                    <div class="emoji">🥜</div>
+                    <div class="name">Peanut Butter Packs</div>
+                    <div class="price">$0.25-0.35 each</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Snack Savings Action Plan</h2>
+            
+            <div class="step" data-step="1">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 1: Buy a reusable water bottle</div>
+                    <div class="step-desc">This single purchase saves $2-3 per day! Get an insulated bottle that keeps drinks cold. Fill it at home every morning. Cost: $15-25 one-time. Savings: $50+/month!</div>
+                </div>
+            </div>
+
+            <div class="step" data-step="2">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 2: Buy snacks in bulk</div>
+                    <div class="step-desc">Hit Costco, Sam's Club, or the grocery store bulk section. Buy: granola bars (box of 48), nuts (big bag), pretzels, cheese sticks, fruit. Cost per week: ~$10. That's $2/day for ALL your snacks!</div>
+                </div>
+            </div>
+
+            <div class="step" data-step="3">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 3: Get a small cooler bag</div>
+                    <div class="step-desc">A $10-15 insulated lunch bag keeps snacks fresh all day. Pack it the night before - takes 2 minutes! Include an ice pack for cheese, yogurt, and fresh fruit.</div>
+                </div>
+            </div>
+
+            <div class="step" data-step="4">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 4: Prep Sunday night for the week</div>
+                    <div class="step-desc">Spend 15 minutes portioning snacks into small bags or containers for the week. Pre-cut veggies, portion nuts into bags, stack granola bars. Grab-and-go each morning!</div>
+                </div>
+            </div>
+
+            <div class="step" data-step="5">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 5: Keep a desk drawer stash</div>
+                    <div class="step-desc">Store non-perishable backups at work: granola bars, nuts, dried fruit, crackers. Never be desperate enough to hit the vending machine! Restock weekly.</div>
+                </div>
+            </div>
+
+            <div class="step" data-step="6">
+                <div class="step-checkbox" onclick="toggleStep(this)">✓</div>
+                <div class="step-content">
+                    <div class="step-title">Step 6: Track your savings</div>
+                    <div class="step-desc">For one week, write down every snack you WOULD have bought. Add up the cost. That's your monthly savings × 4! Transfer that amount to savings each month.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💡</span> Pro Tips for Snack Success</h2>
+            
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 The "Never Hungry" Rule</div>
+                <p>Vending machine purchases happen when you're HUNGRY and DESPERATE. By always having snacks on you, you remove the temptation entirely. Pack more than you think you need!</p>
+            </div>
+
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Make It Easy</div>
+                <p>Put your cooler bag next to your keys. Pre-pack snacks in grab-and-go portions. The easier it is, the more likely you'll do it. If it takes more than 2 minutes, you won't stick with it.</p>
+            </div>
+
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Bring Coffee Too!</div>
+                <p>A thermos of home coffee saves another $3-5/day. That's $60-100/month on top of snack savings! See our Coffee Savings playbook for more tips.</p>
+            </div>
+
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Healthy = Cheaper</div>
+                <p>Fruit, veggies, and nuts are often CHEAPER than junk food snacks AND better for you. You'll save money AND feel better. Double win!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎓</span> Learn From the Experts</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🍱</div>
+                    <h4>Budget Bytes</h4>
+                    <div class="platform">📱 Blog</div>
+                    <p>Amazing cheap snack recipes and meal prep ideas. Focuses on cost per serving!</p>
+                    <a href="https://budgetbytes.com" class="influencer-link" target="_blank">Get Recipes →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📺</div>
+                    <h4>Joshua Weissman</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>"But Cheaper" series shows how to make snacks at home for 80% less!</p>
+                    <a href="https://youtube.com/@JoshuaWeissman" class="influencer-link" target="_blank">Watch Videos →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💰</div>
+                    <h4>r/MealPrepSunday</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Community sharing weekly meal and snack prep ideas. Great inspiration!</p>
+                    <a href="https://reddit.com/r/MealPrepSunday" class="influencer-link" target="_blank">Join Community →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🥗</div>
+                    <h4>Downshiftology</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Healthy snack prep tutorials. Simple, quick, and budget-friendly!</p>
+                    <a href="https://youtube.com/@Downshiftology" class="influencer-link" target="_blank">Watch Tutorials →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📋</div>
+                    <h4>r/Frugal</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Frugal snack ideas and money-saving food tips from real people!</p>
+                    <a href="https://reddit.com/r/frugal" class="influencer-link" target="_blank">Get Tips →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🛒</div>
+                    <h4>The Domestic Geek</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Easy snack prep videos perfect for beginners. No fancy equipment needed!</p>
+                    <a href="https://youtube.com/@TheDomesticGeek" class="influencer-link" target="_blank">Learn More →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🛠️</span> Helpful Tools</h2>
+            <div class="tool-grid">
+                <div class="tool-card">
+                    <div class="tool-icon">🧊</div>
+                    <h4>Insulated Lunch Bag</h4>
+                    <div class="cost">$10-20</div>
+                    <p>Keeps snacks fresh all day</p>
+                    <a href="https://amazon.com" class="tool-link" target="_blank">Shop →</a>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">💧</div>
+                    <h4>Insulated Water Bottle</h4>
+                    <div class="cost">$15-30</div>
+                    <p>Saves $50+/month on drinks</p>
+                    <a href="https://amazon.com" class="tool-link" target="_blank">Shop →</a>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">📦</div>
+                    <h4>Snack Containers</h4>
+                    <div class="cost">$10-15 set</div>
+                    <p>Portion and store snacks</p>
+                    <a href="https://amazon.com" class="tool-link" target="_blank">Shop →</a>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">🏪</div>
+                    <h4>Costco Membership</h4>
+                    <div class="cost">$60/year</div>
+                    <p>Best bulk snack prices</p>
+                    <a href="https://costco.com" class="tool-link" target="_blank">Join →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 6 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Snack Savings Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your snack savings!
+
+SUPPLIES PURCHASED:
+☐ Water bottle | Cost: $____
+☐ Lunch bag/cooler | Cost: $____
+☐ Containers | Cost: $____
+Total one-time investment: $____
+
+MY WEEKLY SNACK PREP:
+☐ Fruit: ____
+☐ Nuts/trail mix: ____
+☐ Granola bars: ____
+☐ Cheese sticks: ____
+☐ Veggies: ____
+☐ Other: ____
+
+WEEKLY COST: $____
+
+BEFORE (convenience store spending):
+$____ per week = $____ per month
+
+AFTER (packing snacks):
+$____ per week = $____ per month
+
+MONTHLY SAVINGS: $____
+YEARLY SAVINGS: $____
+
+DESK STASH INVENTORY:
+☐ ____
+☐ ____
+☐ ____
+
+SAVINGS TRANSFERRED TO: ____"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleStep(el) {
+            el.classList.toggle('checked');
+            updateProgress();
+            saveProgress();
+        }
+
+        function updateProgress() {
+            const total = document.querySelectorAll('.step-checkbox').length;
+            const checked = document.querySelectorAll('.step-checkbox.checked').length;
+            document.getElementById('completed').textContent = checked;
+            document.getElementById('progressFill').style.width = (checked / total * 100) + '%';
+        }
+
+        function saveProgress() {
+            const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked'));
+            const notes = document.getElementById('notes').value;
+            localStorage.setItem('playbook-pack-snacks', JSON.stringify({ steps, notes }));
+        }
+
+        function loadProgress() {
+            const saved = localStorage.getItem('playbook-pack-snacks');
+            if (saved) {
+                const data = JSON.parse(saved);
+                document.querySelectorAll('.step-checkbox').forEach((el, i) => {
+                    if (data.steps[i]) {
+                        el.classList.add('checked');
+                    }
+                });
+                if (data.notes) {
+                    document.getElementById('notes').value = data.notes;
+                }
+                updateProgress();
+            }
+        }
+
+        document.getElementById('notes').addEventListener('input', saveProgress);
+        loadProgress();
+    </script>
+</body>
+</html>

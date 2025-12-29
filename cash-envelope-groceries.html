@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💵 Cash Envelope for Groceries - ASAP Financial Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 15px; opacity: 0.9; font-size: 14px; }
+        .back-link:hover { opacity: 1; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { font-size: 2.5em; color: #1a1a2e; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.1em; margin-bottom: 15px; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 10px 25px; border-radius: 20px; font-size: 0.9em; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .icon { font-size: 1.3em; }
+        .achieve-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 20px; margin-bottom: 20px; }
+        .achieve-box p { color: #2e7d32; line-height: 1.6; }
+        .savings-highlight { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; text-align: center; }
+        .savings-highlight h3 { font-size: 2.2em; margin-bottom: 5px; }
+        .savings-highlight p { opacity: 0.9; }
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin: 20px 0; }
+        .stat-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; }
+        .stat-card .number { font-size: 1.8em; font-weight: 700; color: #667eea; }
+        .stat-card .label { color: #666; font-size: 0.85em; margin-top: 5px; }
+        .budget-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .budget-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; border-left: 5px solid #667eea; }
+        .budget-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .budget-card .amount { font-size: 1.8em; font-weight: 700; color: #4caf50; }
+        .budget-card p { color: #666; font-size: 0.85em; margin-top: 5px; }
+        .step { display: flex; gap: 15px; padding: 20px; background: #f8f9fa; border-radius: 15px; margin-bottom: 15px; transition: all 0.3s; }
+        .step:hover { background: #f0f0f0; transform: translateX(5px); }
+        .step-checkbox { width: 30px; height: 30px; min-width: 30px; border: 3px solid #667eea; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; transition: all 0.3s; }
+        .step-checkbox.checked { background: #667eea; }
+        .step-content { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; margin-bottom: 5px; }
+        .step-desc { color: #666; font-size: 0.95em; line-height: 1.5; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #f57f17; margin-bottom: 10px; }
+        .pro-tip p { color: #666; margin: 8px 0; line-height: 1.5; }
+        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #e53935; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .warning-box h4 { color: #c62828; margin-bottom: 10px; }
+        .warning-box p { color: #666; line-height: 1.5; }
+        .science-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-left: 4px solid #2196f3; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .science-box h4 { color: #1565c0; margin-bottom: 10px; }
+        .science-box p { color: #666; line-height: 1.5; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #667eea; font-size: 14px; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .influencer-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; }
+        .influencer-link:hover { text-decoration: underline; }
+        .tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin: 20px 0; }
+        .tool-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .tool-card:hover { transform: translateY(-3px); box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .tool-card .tool-icon { font-size: 2em; margin-bottom: 10px; }
+        .tool-card h4 { color: #1a1a2e; font-size: 14px; margin-bottom: 5px; }
+        .tool-card .cost { color: #4caf50; font-weight: 600; font-size: 13px; margin-bottom: 5px; }
+        .tool-card p { color: #666; font-size: 12px; }
+        .tool-link { display: inline-block; margin-top: 10px; color: #667eea; text-decoration: none; font-weight: 600; font-size: 13px; }
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; text-align: center; }
+        .progress-text { margin-bottom: 15px; font-size: 1.1em; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .notes-section { margin-top: 20px; }
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-family: inherit; font-size: 1em; min-height: 150px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #667eea; }
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-section h3 { margin-bottom: 10px; }
+        .cta-section p { opacity: 0.9; margin-bottom: 15px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; transition: transform 0.3s; }
+        .cta-button:hover { transform: scale(1.05); }
+        @media (max-width: 768px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } .header h1 { font-size: 1.8em; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="expense-playbooks.html" class="back-link">← Back to Expense Playbooks</a>
+        <div class="header">
+            <h1>💵 Cash Envelope for Groceries</h1>
+            <p class="subtitle">The spending limit you literally can't cheat!</p>
+            <div class="time-badge">⏱️ 5 min weekly setup • Save $100-250/month • $1,200-3,000/year</div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p><strong>The cash envelope system is the most powerful budgeting technique ever created.</strong> When you pay with cash, you physically feel the money leaving. When the envelope is empty, spending STOPS. No willpower needed! Studies show people spend 12-18% less when paying cash vs. card. This playbook shows you exactly how to set up your grocery cash envelope and watch your spending drop immediately!</p>
+            </div>
+            <div class="savings-highlight">
+                <h3>Save $100-250/Month</h3>
+                <p>That's $1,200-3,000 per year - just by switching to cash!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🧠</span> The Science of Cash</h2>
+            <div class="stats-grid">
+                <div class="stat-card"><div class="number">12-18%</div><div class="label">Less Spending with Cash</div></div>
+                <div class="stat-card"><div class="number">$5,400</div><div class="label">Avg Card Overspend/Year</div></div>
+                <div class="stat-card"><div class="number">100%</div><div class="label">Impulse Buys Eliminated</div></div>
+                <div class="stat-card"><div class="number">$0</div><div class="label">Overspending Possible</div></div>
+            </div>
+            <div class="science-box">
+                <h4>🧪 Why Cash Works (The Psychology)</h4>
+                <p><strong>The "Pain of Paying":</strong> When you hand over cash, your brain registers it as a loss. When you swipe a card, that pain is numbed. MIT studies show people are willing to pay 100% MORE when using cards! Cash makes spending feel REAL.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💰</span> Recommended Weekly Budgets</h2>
+            <div class="budget-grid">
+                <div class="budget-card"><h4>👤 Single Person</h4><div class="amount">$50-75</div><p>$200-300/month</p></div>
+                <div class="budget-card"><h4>👫 Couple</h4><div class="amount">$75-100</div><p>$300-400/month</p></div>
+                <div class="budget-card"><h4>👨‍👩‍👧 Family of 3</h4><div class="amount">$100-125</div><p>$400-500/month</p></div>
+                <div class="budget-card"><h4>👨‍👩‍👧‍👦 Family of 4+</h4><div class="amount">$125-175</div><p>$500-700/month</p></div>
+            </div>
+            <p style="color: #666; text-align: center; margin-top: 15px;">💡 Look at your current grocery spending. Set your budget 15-20% lower. This is your target!</p>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📋</span> Your Cash Envelope Action Plan</h2>
+            <div class="step" data-step="1"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 1: Analyze your current spending</div><div class="step-desc">Look at the last 3 months of grocery spending on your bank statement. Add it up and divide by 3. That's your current monthly average. Your goal is to spend 15-20% less!</div></div></div>
+            <div class="step" data-step="2"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 2: Set your weekly budget</div><div class="step-desc">Divide your monthly target by 4. This is your weekly cash amount. Start slightly higher than you think you need - you can always tighten next month.</div></div></div>
+            <div class="step" data-step="3"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 3: Withdraw cash weekly</div><div class="step-desc">Every Sunday, withdraw your exact budget in cash from the ATM. Put it in an envelope labeled "GROCERIES." This is ALL you have for the week!</div></div></div>
+            <div class="step" data-step="4"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 4: Leave cards at home!</div><div class="step-desc">This is CRITICAL. When you grocery shop, ONLY bring your cash envelope. No debit card, no credit card. No backup = no cheating.</div></div></div>
+            <div class="step" data-step="5"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 5: Track as you shop</div><div class="step-desc">Use your phone calculator to keep a running total as you add items to your cart. If you go over budget, put something back!</div></div></div>
+            <div class="step" data-step="6"><div class="step-checkbox" onclick="toggleStep(this)">✓</div><div class="step-content"><div class="step-title">Step 6: Roll over or save leftovers</div><div class="step-desc">If you have cash left at the end of the week, you can: (A) Roll it into next week's envelope, or (B) Put it straight into savings!</div></div></div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💡</span> Pro Tips for Cash Success</h2>
+            <div class="pro-tip"><div class="pro-tip-title">💡 Make a List & Stick to It</div><p>Plan your meals for the week BEFORE you shop. Write a list of exactly what you need. If it's not on the list, don't buy it!</p></div>
+            <div class="pro-tip"><div class="pro-tip-title">💡 Never Shop Hungry</div><p>Eat before shopping! Studies show hungry shoppers spend 17% more and buy more junk food. A full stomach = a fatter wallet.</p></div>
+            <div class="pro-tip"><div class="pro-tip-title">💡 Shop the Perimeter</div><p>Fresh foods (produce, meat, dairy) are on the edges of the store. Expensive processed stuff is in the middle aisles. Stick to the perimeter!</p></div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">⚠️</span> Common Mistakes to Avoid</h2>
+            <div class="warning-box"><h4>Don't Bring a "Backup" Card</h4><p>"Just in case" defeats the entire purpose! The power of cash envelopes is that when the cash is gone, spending STOPS. Leave it at home!</p></div>
+            <div class="warning-box"><h4>Don't Set an Unrealistic Budget</h4><p>If you currently spend $800/month on groceries, don't try to go to $300 overnight. Start 15-20% lower and adjust each month. Sustainable wins!</p></div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🎓</span> Learn From the Experts</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card"><div class="influencer-avatar">💵</div><h4>Dave Ramsey</h4><div class="platform">📻 Radio & Podcast</div><p>The original cash envelope guru! His Baby Steps program is built on this method.</p><a href="https://ramseysolutions.com" class="influencer-link" target="_blank">Learn More →</a></div>
+                <div class="influencer-card"><div class="influencer-avatar">📱</div><h4>The Budget Mom</h4><div class="platform">📸 Instagram</div><p>Beautiful cash envelope tutorials and printables. Makes budgeting pretty!</p><a href="https://instagram.com/thebudgetmom" class="influencer-link" target="_blank">Follow →</a></div>
+                <div class="influencer-card"><div class="influencer-avatar">📺</div><h4>Rachel Cruze</h4><div class="platform">📺 YouTube</div><p>Modern cash envelope tips. Great for millennials!</p><a href="https://youtube.com/@RachelCruze" class="influencer-link" target="_blank">Watch →</a></div>
+                <div class="influencer-card"><div class="influencer-avatar">💰</div><h4>r/DaveRamsey</h4><div class="platform">🌐 Reddit</div><p>Community sharing cash envelope wins and tips!</p><a href="https://reddit.com/r/DaveRamsey" class="influencer-link" target="_blank">Join →</a></div>
+                <div class="influencer-card"><div class="influencer-avatar">🛒</div><h4>Flipp</h4><div class="platform">📱 App</div><p>Digital weekly ads to plan your shopping list around sales!</p><a href="https://flipp.com" class="influencer-link" target="_blank">Download →</a></div>
+                <div class="influencer-card"><div class="influencer-avatar">📋</div><h4>r/EatCheapAndHealthy</h4><div class="platform">🌐 Reddit</div><p>Meal ideas that work with tight grocery budgets!</p><a href="https://reddit.com/r/EatCheapAndHealthy" class="influencer-link" target="_blank">Get Ideas →</a></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🛠️</span> Helpful Tools</h2>
+            <div class="tool-grid">
+                <div class="tool-card"><div class="tool-icon">💵</div><h4>Cash Envelopes</h4><div class="cost">$10-15</div><p>Reusable wallet-style envelopes</p><a href="https://amazon.com" class="tool-link" target="_blank">Shop →</a></div>
+                <div class="tool-card"><div class="tool-icon">📱</div><h4>EveryDollar App</h4><div class="cost">FREE</div><p>Track envelope spending digitally</p><a href="https://everydollar.com" class="tool-link" target="_blank">Download →</a></div>
+                <div class="tool-card"><div class="tool-icon">📋</div><h4>Flipp</h4><div class="cost">FREE</div><p>Digital weekly store ads</p><a href="https://flipp.com" class="tool-link" target="_blank">Download →</a></div>
+                <div class="tool-card"><div class="tool-icon">🛒</div><h4>AnyList</h4><div class="cost">FREE</div><p>Shared grocery list app</p><a href="https://anylist.com" class="tool-link" target="_blank">Download →</a></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <div class="progress-text"><span id="completed">0</span> of 6 steps completed</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Cash Envelope Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your cash envelope progress!
+
+CURRENT GROCERY SPENDING:
+Month 1: $____ | Month 2: $____ | Month 3: $____
+Average: $____/month
+
+MY CASH ENVELOPE BUDGET:
+Weekly budget: $____ | Monthly budget: $____
+
+WEEKLY TRACKING:
+Week 1: Budget $____ | Spent $____ | Left over $____
+Week 2: Budget $____ | Spent $____ | Left over $____
+Week 3: Budget $____ | Spent $____ | Left over $____
+Week 4: Budget $____ | Spent $____ | Left over $____
+
+MONTHLY RESULTS:
+Total budgeted: $____ | Total spent: $____ | SAVED: $____"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Chat with an ASAP Financial coach for personalized guidance!</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleStep(el) { el.classList.toggle('checked'); updateProgress(); saveProgress(); }
+        function updateProgress() { const total = document.querySelectorAll('.step-checkbox').length; const checked = document.querySelectorAll('.step-checkbox.checked').length; document.getElementById('completed').textContent = checked; document.getElementById('progressFill').style.width = (checked / total * 100) + '%'; }
+        function saveProgress() { const steps = Array.from(document.querySelectorAll('.step-checkbox')).map(el => el.classList.contains('checked')); const notes = document.getElementById('notes').value; localStorage.setItem('playbook-cash-envelope-groceries', JSON.stringify({ steps, notes })); }
+        function loadProgress() { const saved = localStorage.getItem('playbook-cash-envelope-groceries'); if (saved) { const data = JSON.parse(saved); document.querySelectorAll('.step-checkbox').forEach((el, i) => { if (data.steps[i]) el.classList.add('checked'); }); if (data.notes) document.getElementById('notes').value = data.notes; updateProgress(); } }
+        document.getElementById('notes').addEventListener('input', saveProgress);
+        loadProgress();
+    </script>
+</body>
+</html>
