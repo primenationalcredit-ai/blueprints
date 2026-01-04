@@ -3,761 +3,573 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🏷️ Host a Garage Sale - Complete Guide</title>
+    <title>🏷️ Host a Garage Sale - Complete Guide | ASAP Financial Playbook</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; }
-        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
-        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; font-size: 14px; opacity: 0.9; }
-        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
-        h1 { font-size: 2.2em; margin-bottom: 10px; color: #1a1a2e; }
-        .subtitle { font-size: 1.2em; color: #666; margin-bottom: 15px; }
-        .meta { display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 20px; font-size: 0.9em; color: #888; }
-        .meta span { background: #f0f0f0; padding: 5px 12px; border-radius: 20px; }
-        h2 { color: #1a1a2e; margin: 25px 0 15px 0; font-size: 1.5em; border-bottom: 3px solid #667eea; padding-bottom: 10px; }
-        h3 { color: #333; margin: 20px 0 10px 0; font-size: 1.2em; }
-        h4 { color: #667eea; margin: 15px 0 8px 0; }
-        p { margin-bottom: 15px; }
-        ul, ol { margin: 15px 0 15px 25px; }
-        li { margin-bottom: 8px; }
-        .highlight-box { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 15px; margin: 20px 0; }
-        .highlight-box h3, .highlight-box h4 { color: white; margin-top: 0; }
-        .warning-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 0 10px 10px 0; }
-        .success-box { background: #d4edda; border-left: 4px solid #28a745; padding: 15px; margin: 20px 0; border-radius: 0 10px 10px 0; }
-        .info-box { background: #e7f3ff; border-left: 4px solid #0066cc; padding: 15px; margin: 20px 0; border-radius: 0 10px 10px 0; }
-        .step-card { background: #f8f9fa; border-radius: 15px; padding: 20px; margin: 15px 0; border-left: 4px solid #667eea; }
-        .step-number { background: #667eea; color: white; width: 35px; height: 35px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 10px; font-size: 1.1em; }
-        .phase-header { background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%); color: white; padding: 15px 20px; border-radius: 10px; margin: 25px 0 15px 0; font-size: 1.3em; }
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; margin: 20px 0; }
-        .stat-box { background: #f8f9fa; padding: 20px; border-radius: 15px; text-align: center; }
-        .stat-number { font-size: 2em; font-weight: bold; color: #667eea; }
-        .stat-label { font-size: 0.9em; color: #666; }
-        .checklist { list-style: none; margin-left: 0; }
-        .checklist li { padding: 12px 0; border-bottom: 1px solid #eee; display: flex; align-items: flex-start; gap: 10px; }
-        .checklist li:last-child { border-bottom: none; }
-        .checkbox { width: 24px; height: 24px; min-width: 24px; border: 2px solid #667eea; border-radius: 5px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
-        .checkbox.checked { background: #667eea; color: white; }
-        .pricing-table { width: 100%; border-collapse: collapse; margin: 15px 0; }
-        .pricing-table th, .pricing-table td { padding: 12px; text-align: left; border-bottom: 1px solid #eee; }
-        .pricing-table th { background: #f8f9fa; font-weight: 600; color: #667eea; }
-        .pricing-table tr:hover { background: #f8f9fa; }
-        .timeline { position: relative; padding-left: 30px; margin: 20px 0; }
-        .timeline::before { content: ''; position: absolute; left: 10px; top: 0; bottom: 0; width: 3px; background: #667eea; }
-        .timeline-item { position: relative; margin-bottom: 20px; padding: 15px; background: #f8f9fa; border-radius: 10px; }
-        .timeline-item::before { content: ''; position: absolute; left: -25px; top: 20px; width: 12px; height: 12px; background: #667eea; border-radius: 50%; border: 3px solid white; }
-        .timeline-date { font-weight: bold; color: #667eea; margin-bottom: 5px; }
-        .supply-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 15px 0; }
-        .supply-card { background: #f8f9fa; padding: 15px; border-radius: 10px; }
-        .supply-card h4 { color: #667eea; margin-bottom: 10px; font-size: 1em; }
-        .supply-card ul { margin: 0; padding-left: 20px; }
-        .pro-tip { background: #f0f7ff; border-radius: 10px; padding: 15px; margin: 15px 0; }
-        .pro-tip::before { content: '💡 PRO TIP: '; font-weight: bold; color: #667eea; }
-        .money-tip { background: #f0fff4; border-radius: 10px; padding: 15px; margin: 15px 0; }
-        .money-tip::before { content: '💰 MONEY TIP: '; font-weight: bold; color: #059669; }
-        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; margin: 10px 0; }
-        .progress-bar { background: #e9ecef; border-radius: 10px; height: 20px; margin: 20px 0; overflow: hidden; }
-        .progress-fill { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 100%; border-radius: 10px; transition: width 0.5s; }
-        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        @media (max-width: 600px) { 
-            .container { padding: 10px; } 
-            .card { padding: 20px; } 
-            h1 { font-size: 1.8em; }
-            .two-col { grid-template-columns: 1fr; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 15px; opacity: 0.9; font-size: 14px; }
+        .back-link:hover { opacity: 1; text-decoration: underline; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #2e7d32; font-size: 1.1em; line-height: 1.6; }
+        .savings-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .savings-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .savings-highlight p { opacity: 0.9; font-size: 1.1em; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .stat-box { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; }
+        .stat-box .number { font-size: 2em; font-weight: 700; color: #667eea; }
+        .stat-box .label { color: #666; font-size: 0.9em; margin-top: 5px; }
+        .step { background: #f8f9fa; border-radius: 15px; padding: 20px; margin-bottom: 15px; border-left: 5px solid #667eea; }
+        .step-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+        .step-number { background: linear-gradient(135deg, #667eea, #764ba2); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; }
+        .step h3 { color: #1a1a2e; font-size: 1.2em; }
+        .step p { color: #666; line-height: 1.6; }
+        .step ul { margin-left: 20px; margin-top: 10px; color: #666; }
+        .step ul li { margin-bottom: 8px; line-height: 1.5; }
+        .checkbox-item { display: flex; align-items: flex-start; gap: 12px; padding: 15px; background: white; border-radius: 10px; margin-bottom: 10px; cursor: pointer; border: 2px solid #e0e0e0; transition: all 0.3s; }
+        .checkbox-item:hover { border-color: #667eea; }
+        .checkbox-item input[type="checkbox"] { width: 22px; height: 22px; margin-top: 2px; cursor: pointer; accent-color: #667eea; }
+        .checkbox-item label { cursor: pointer; flex: 1; }
+        .checkbox-item .task-title { font-weight: 600; color: #1a1a2e; margin-bottom: 4px; }
+        .checkbox-item .task-desc { color: #666; font-size: 0.9em; }
+        .checkbox-item.completed { background: #e8f5e9; border-color: #4caf50; }
+        .checkbox-item.completed .task-title { text-decoration: line-through; color: #888; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 20px 0; }
+        .pro-tip h4 { color: #f57c00; margin-bottom: 10px; }
+        .pro-tip p, .pro-tip ul { color: #666; line-height: 1.6; }
+        .pro-tip ul { margin-left: 20px; margin-top: 10px; }
+        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 20px 0; }
+        .warning-box h4 { color: #c62828; margin-bottom: 10px; }
+        .warning-box ul { color: #666; line-height: 1.8; margin-left: 20px; }
+        .tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 15px; }
+        .tool-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #667eea; }
+        .tool-card h4 { color: #1a1a2e; margin-bottom: 8px; }
+        .tool-card p { color: #666; font-size: 0.9em; line-height: 1.5; }
+        .tool-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .tool-card a:hover { text-decoration: underline; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #667eea; font-size: 0.9em; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 0.9em; line-height: 1.5; margin-bottom: 15px; }
+        .influencer-link { color: #667eea; text-decoration: none; font-weight: 600; }
+        .influencer-link:hover { text-decoration: underline; }
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; text-align: center; }
+        .progress-tracker h3 { color: white; margin-bottom: 20px; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; overflow: hidden; margin-bottom: 15px; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.1em; }
+        .notes-section textarea { width: 100%; min-height: 200px; padding: 20px; border: 2px solid #e0e0e0; border-radius: 15px; font-family: inherit; font-size: 1em; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #667eea; }
+        .cta-section { background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 20px; padding: 40px; text-align: center; color: white; }
+        .cta-section h3 { font-size: 1.8em; margin-bottom: 15px; }
+        .cta-section p { opacity: 0.9; margin-bottom: 25px; font-size: 1.1em; }
+        .cta-button { display: inline-block; background: white; color: #667eea; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: 1.1em; transition: all 0.3s; }
+        .cta-button:hover { transform: scale(1.05); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .pricing-item { background: #f8f9fa; border-radius: 10px; padding: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .pricing-item .item-name { color: #1a1a2e; font-weight: 500; }
+        .pricing-item .price-range { color: #4caf50; font-weight: 700; }
+        @media (max-width: 600px) {
+            .header h1 { font-size: 1.8em; }
+            .savings-highlight h3 { font-size: 2em; }
+            .card { padding: 20px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="income-playbooks.html" class="back-link">← Back to Playbooks</a>
+        <a href="../income-playbooks.html" class="back-link">← Back to Income Playbooks</a>
         
-        <div class="card">
+        <div class="header">
             <h1>🏷️ Host a Garage Sale</h1>
-            <p class="subtitle">The complete step-by-step guide to hosting a profitable garage sale from start to finish</p>
-            <div class="meta">
-                <span>📅 Plan 2 weeks ahead</span>
-                <span>💰 Make $200-$1,000+</span>
-                <span>⏱️ 1-2 day event</span>
-            </div>
+            <p class="subtitle">Complete guide: pricing, advertising, setup, negotiation - turn clutter into cash!</p>
+            <div class="time-badge">⏱️ 1-2 Weekend Days | One-Time Setup</div>
         </div>
 
         <div class="card">
-            <h2>🎯 Why Host a Garage Sale?</h2>
-            <p>A well-planned garage sale can put <strong>$200 to $1,000+ in your pocket in just one weekend</strong> while decluttering your home. Unlike selling online (where you wait for buyers), a garage sale brings dozens of buyers TO YOU in a single day!</p>
-            
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Transform unused items into immediate cash! A well-organized garage sale can generate $200-$2,000+ in a single weekend. This playbook covers everything from finding items to sell, pricing strategies, advertising that brings buyers, setup tips, and negotiation tactics to maximize your earnings.</p>
+            </div>
+            <div class="savings-highlight">
+                <h3>$200 - $2,000+</h3>
+                <p>Average garage sale earnings in one weekend</p>
+            </div>
             <div class="stats-grid">
                 <div class="stat-box">
-                    <div class="stat-number">$400</div>
-                    <div class="stat-label">Average garage sale earnings</div>
+                    <div class="number">$500</div>
+                    <div class="label">Average Sale</div>
                 </div>
                 <div class="stat-box">
-                    <div class="stat-number">50+</div>
-                    <div class="stat-label">Potential customers per day</div>
+                    <div class="number">50+</div>
+                    <div class="label">Items to Sell</div>
                 </div>
                 <div class="stat-box">
-                    <div class="stat-number">2 days</div>
-                    <div class="stat-label">Typical sale duration</div>
+                    <div class="number">2-3</div>
+                    <div class="label">Days Prep</div>
                 </div>
                 <div class="stat-box">
-                    <div class="stat-number">$0</div>
-                    <div class="stat-label">Shipping costs</div>
-                </div>
-            </div>
-
-            <div class="highlight-box">
-                <h3>🏆 Best Items to Sell at Garage Sales</h3>
-                <p>These items sell FAST and for good money:</p>
-                <ul style="margin: 10px 0 0 20px;">
-                    <li><strong>Furniture:</strong> Tables, chairs, dressers, bookshelves ($20-$200)</li>
-                    <li><strong>Electronics:</strong> TVs, speakers, gaming consoles ($10-$100)</li>
-                    <li><strong>Tools:</strong> Power tools, hand tools, yard equipment ($5-$75)</li>
-                    <li><strong>Kids stuff:</strong> Toys, clothes, strollers, bikes ($1-$50)</li>
-                    <li><strong>Kitchen items:</strong> Small appliances, dishes, cookware ($2-$30)</li>
-                    <li><strong>Sports equipment:</strong> Bikes, golf clubs, weights ($10-$100)</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- PHASE 1: PLANNING (2 WEEKS BEFORE) -->
-        <div class="card">
-            <div class="phase-header">📋 PHASE 1: Planning (2 Weeks Before)</div>
-            
-            <div class="step-card">
-                <h3><span class="step-number">1</span> Pick Your Sale Date</h3>
-                <p>Choosing the right date can make or break your sale!</p>
-                
-                <div class="two-col">
-                    <div class="success-box">
-                        <strong>✅ BEST Days:</strong>
-                        <ul style="margin: 10px 0 0 15px;">
-                            <li>Saturday morning (7am-2pm)</li>
-                            <li>Friday + Saturday combo</li>
-                            <li>First weekend of month (people just got paid!)</li>
-                            <li>Spring (March-May) or Fall (Sept-Oct)</li>
-                        </ul>
-                    </div>
-                    <div class="warning-box">
-                        <strong>❌ AVOID:</strong>
-                        <ul style="margin: 10px 0 0 15px;">
-                            <li>Holiday weekends (people travel)</li>
-                            <li>Rainy forecast</li>
-                            <li>Super Bowl Sunday</li>
-                            <li>Same day as big local events</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="pro-tip">
-                    Check if your neighborhood has a community garage sale day - you'll get WAY more traffic when multiple homes participate!
-                </div>
-
-                <ul class="checklist">
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Picked sale date: ____________</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Checked weather forecast</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Checked for conflicting events</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Confirmed rain date (optional): ____________</li>
-                </ul>
-            </div>
-
-            <div class="step-card">
-                <h3><span class="step-number">2</span> Check Local Rules & Permits</h3>
-                <p>Some cities require permits for garage sales. Don't skip this!</p>
-                
-                <ul class="checklist">
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Googled "[your city] garage sale permit"</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Called city hall if unsure (usually non-emergency line)</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Got permit if required (usually $5-$20)</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Checked HOA rules (if applicable)</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Know sign placement rules (can't put on utility poles in most places)</li>
-                </ul>
-
-                <div class="info-box">
-                    <strong>📞 What to ask:</strong> "Do I need a permit for a residential garage sale? How many days can I have one? Are there sign restrictions?"
-                </div>
-            </div>
-
-            <div class="step-card">
-                <h3><span class="step-number">3</span> Start Collecting Items to Sell</h3>
-                <p>Go room-by-room and gather EVERYTHING you want to sell. Be ruthless!</p>
-                
-                <h4>🏠 Room-by-Room Checklist:</h4>
-                <ul class="checklist">
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> <strong>Bedroom:</strong> Clothes, shoes, accessories, old bedding, lamps, decor</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> <strong>Closets:</strong> Coats, bags, luggage, items you forgot existed</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> <strong>Kitchen:</strong> Duplicate items, unused appliances, dishes, cookware</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> <strong>Living Room:</strong> DVDs, books, games, decor, old electronics</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> <strong>Kids' Rooms:</strong> Outgrown toys, clothes, baby gear, books</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> <strong>Garage/Basement:</strong> Tools, sports equipment, holiday decor, boxes you never unpacked</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> <strong>Bathroom:</strong> Unused products, extra towels, old hair tools</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> <strong>Office:</strong> Old electronics, books, desk accessories</li>
-                </ul>
-
-                <div class="money-tip">
-                    Ask family members if they want to contribute items! More stuff = more money. You can split profits or let them keep earnings from their items.
-                </div>
-            </div>
-
-            <div class="step-card">
-                <h3><span class="step-number">4</span> Clean & Prep Items</h3>
-                <p>Clean items sell for 30-50% MORE than dirty ones!</p>
-                
-                <ul class="checklist">
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Wipe down all hard surfaces</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Wash all clothing items</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Test all electronics (and note if they work!)</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Replace batteries in items that need them</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Gather all parts/accessories for items</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Inflate sports balls, bike tires</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Remove personal info from electronics</li>
-                </ul>
-
-                <div class="pro-tip">
-                    Put instruction manuals with items if you have them - people pay more when they see the manual!
+                    <div class="number">8am</div>
+                    <div class="label">Best Start Time</div>
                 </div>
             </div>
         </div>
 
-        <!-- PHASE 2: PRICING (1 WEEK BEFORE) -->
         <div class="card">
-            <div class="phase-header">💰 PHASE 2: Pricing (1 Week Before)</div>
-            
-            <div class="step-card">
-                <h3><span class="step-number">5</span> Price Everything</h3>
-                <p>The #1 rule of garage sale pricing: <strong>Price to SELL, not to make retail!</strong></p>
-                
-                <div class="highlight-box">
-                    <h4>🎯 The Golden Pricing Rule</h4>
-                    <p>Price items at <strong>10-30% of original retail price</strong>. Your goal is to turn items into CASH, not to get top dollar. An item that doesn't sell is worth $0!</p>
-                </div>
-
-                <h4>📊 Pricing Guide by Category:</h4>
-                <table class="pricing-table">
-                    <tr>
-                        <th>Item Category</th>
-                        <th>Price Range</th>
-                        <th>Tips</th>
-                    </tr>
-                    <tr>
-                        <td><strong>Clothing (Adult)</strong></td>
-                        <td>$1-$5</td>
-                        <td>Name brands can go higher. Bundle: "3 for $5"</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Clothing (Kids)</strong></td>
-                        <td>$0.50-$3</td>
-                        <td>Bundle by size: "All 2T clothes $10"</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Shoes</strong></td>
-                        <td>$2-$10</td>
-                        <td>Nice brands $5-10, others $2-3</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Books</strong></td>
-                        <td>$0.50-$2</td>
-                        <td>Hardcover $2, paperback $0.50-1</td>
-                    </tr>
-                    <tr>
-                        <td><strong>DVDs/Games</strong></td>
-                        <td>$1-$5</td>
-                        <td>Bundle: "5 DVDs for $5"</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Toys</strong></td>
-                        <td>$1-$10</td>
-                        <td>Complete sets worth more</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Kitchen Items</strong></td>
-                        <td>$1-$15</td>
-                        <td>Small appliances $5-15</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Electronics</strong></td>
-                        <td>$5-$50</td>
-                        <td>Prove they work! "Tested ✓"</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Furniture</strong></td>
-                        <td>$10-$100</td>
-                        <td>20-30% of what you paid</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Tools</strong></td>
-                        <td>$5-$50</td>
-                        <td>Power tools hold value well</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Sports Equipment</strong></td>
-                        <td>$5-$50</td>
-                        <td>Bikes $20-75 depending on condition</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Baby Gear</strong></td>
-                        <td>$5-$50</td>
-                        <td>Strollers, high chairs sell fast</td>
-                    </tr>
-                </table>
-
-                <ul class="checklist">
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Priced all items using stickers or tags</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Created bundle deals for small items</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Priced to sell (not retail!)</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Used round numbers ($1, $5, $10) for easy math</li>
-                </ul>
-
-                <div class="pro-tip">
-                    Use colored sticker dots for pricing - each color = a price. Make a sign: "🔴 Red = $1 | 🟡 Yellow = $5 | 🟢 Green = $10"
-                </div>
+            <h2><span class="icon">💰</span> Pricing Strategy Guide</h2>
+            <p style="color:#666; margin-bottom:20px;">Price items at 10-30% of original retail price. Round to easy numbers for quick sales.</p>
+            <div class="pricing-grid">
+                <div class="pricing-item"><span class="item-name">Clothing (adult)</span><span class="price-range">$1-$10</span></div>
+                <div class="pricing-item"><span class="item-name">Clothing (kids)</span><span class="price-range">$0.50-$5</span></div>
+                <div class="pricing-item"><span class="item-name">Books</span><span class="price-range">$0.50-$2</span></div>
+                <div class="pricing-item"><span class="item-name">DVDs/CDs</span><span class="price-range">$1-$3</span></div>
+                <div class="pricing-item"><span class="item-name">Small appliances</span><span class="price-range">$5-$25</span></div>
+                <div class="pricing-item"><span class="item-name">Furniture</span><span class="price-range">$20-$150</span></div>
+                <div class="pricing-item"><span class="item-name">Electronics</span><span class="price-range">$10-$100</span></div>
+                <div class="pricing-item"><span class="item-name">Toys/Games</span><span class="price-range">$1-$10</span></div>
+                <div class="pricing-item"><span class="item-name">Kitchen items</span><span class="price-range">$1-$15</span></div>
+                <div class="pricing-item"><span class="item-name">Tools</span><span class="price-range">$5-$50</span></div>
+                <div class="pricing-item"><span class="item-name">Sports equipment</span><span class="price-range">$5-$75</span></div>
+                <div class="pricing-item"><span class="item-name">Home decor</span><span class="price-range">$2-$20</span></div>
             </div>
-
-            <div class="step-card">
-                <h3><span class="step-number">6</span> Get Your Supplies Ready</h3>
-                
-                <div class="supply-grid">
-                    <div class="supply-card">
-                        <h4>🏷️ Pricing Supplies</h4>
-                        <ul>
-                            <li>Price stickers (colored dots)</li>
-                            <li>Masking tape + marker</li>
-                            <li>Index cards for big items</li>
-                        </ul>
-                    </div>
-                    <div class="supply-card">
-                        <h4>💵 Money Handling</h4>
-                        <ul>
-                            <li>Cash box or fanny pack</li>
-                            <li>$100 in small bills for change</li>
-                            <li>Calculator (or phone)</li>
-                            <li>Venmo/CashApp sign (optional)</li>
-                        </ul>
-                    </div>
-                    <div class="supply-card">
-                        <h4>📍 Display Supplies</h4>
-                        <ul>
-                            <li>Folding tables (2-4)</li>
-                            <li>Clothing rack or rope line</li>
-                            <li>Hangers</li>
-                            <li>Blankets/tarps for ground display</li>
-                            <li>Boxes for sorting</li>
-                        </ul>
-                    </div>
-                    <div class="supply-card">
-                        <h4>🪧 Signage</h4>
-                        <ul>
-                            <li>Poster board (bright colors!)</li>
-                            <li>Thick markers</li>
-                            <li>Stakes or stands for signs</li>
-                            <li>Balloons (catches attention!)</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h4>💰 How to Make Change:</h4>
-                <p>Get $100 in change from the bank:</p>
+            <div class="pro-tip">
+                <h4>💡 Pro Pricing Tips</h4>
                 <ul>
-                    <li>20 × $1 bills = $20</li>
-                    <li>8 × $5 bills = $40</li>
-                    <li>4 × $10 bills = $40</li>
-                </ul>
-
-                <ul class="checklist">
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Got change from bank ($100 in small bills)</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Have cash box or fanny pack</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Have tables for display</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Have signs/poster board</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Have bags for customers (grocery bags work!)</li>
+                    <li><strong>Bundle items</strong> - "All books $5" or "Fill a bag for $10"</li>
+                    <li><strong>Price to sell</strong> - Lower prices = more sales = less to donate/trash</li>
+                    <li><strong>Mark prices clearly</strong> - Use bright stickers so buyers don't have to ask</li>
+                    <li><strong>Be ready to negotiate</strong> - Price slightly higher knowing people will haggle</li>
                 </ul>
             </div>
         </div>
 
-        <!-- PHASE 3: ADVERTISING (3-5 DAYS BEFORE) -->
         <div class="card">
-            <div class="phase-header">📣 PHASE 3: Advertising (3-5 Days Before)</div>
-            
-            <div class="step-card">
-                <h3><span class="step-number">7</span> Advertise Online (FREE!)</h3>
-                <p>Good advertising = 3X more customers. Don't skip this!</p>
-                
-                <h4>📱 Where to Post (All Free!):</h4>
-                <ul class="checklist">
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> <strong>Facebook Marketplace</strong> - List as "Garage Sale" event</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> <strong>Craigslist</strong> - Post in "Garage Sales" section</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> <strong>Nextdoor</strong> - Your neighborhood will see it!</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> <strong>Facebook Local Groups</strong> - Search "[Your City] Garage Sales"</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> <strong>GarageSaleFinder.com</strong> - Free listing</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> <strong>YardSaleSearch.com</strong> - Free listing</li>
-                </ul>
-
-                <div class="highlight-box">
-                    <h4>📝 What to Include in Your Ad:</h4>
-                    <ul style="margin: 10px 0 0 20px;">
-                        <li>📅 Date(s) and times</li>
-                        <li>📍 Full address</li>
-                        <li>🏷️ What you're selling (be specific!)</li>
-                        <li>📸 Photos of best items</li>
-                        <li>"Rain or shine" or rain date</li>
-                        <li>"Cash preferred" or "Venmo accepted"</li>
-                    </ul>
+            <h2><span class="icon">📣</span> Advertising That Works</h2>
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">1</div>
+                    <h3>Facebook Marketplace (FREE - Most Effective)</h3>
                 </div>
-
-                <div class="info-box">
-                    <strong>📝 Sample Ad:</strong><br>
-                    "HUGE GARAGE SALE! 🏷️<br>
-                    Saturday 4/15, 7am-2pm<br>
-                    123 Main Street, Anytown<br><br>
-                    Furniture, tools, kids toys, kitchen items, clothes (all sizes), electronics, sports equipment & MORE!<br><br>
-                    Everything priced to sell! Cash or Venmo accepted."
-                </div>
-            </div>
-
-            <div class="step-card">
-                <h3><span class="step-number">8</span> Make Eye-Catching Signs</h3>
-                <p>Signs bring in 50%+ of your customers! Make them BIG and BOLD.</p>
-                
-                <div class="two-col">
-                    <div class="success-box">
-                        <strong>✅ Good Signs:</strong>
-                        <ul style="margin: 10px 0 0 15px;">
-                            <li>HUGE letters (readable from car)</li>
-                            <li>Bright colors (neon yellow/pink)</li>
-                            <li>Arrow pointing direction</li>
-                            <li>Simple: "GARAGE SALE →"</li>
-                            <li>Include date</li>
-                        </ul>
-                    </div>
-                    <div class="warning-box">
-                        <strong>❌ Bad Signs:</strong>
-                        <ul style="margin: 10px 0 0 15px;">
-                            <li>Small text</li>
-                            <li>Too much info</li>
-                            <li>Hard to read colors</li>
-                            <li>No arrows/direction</li>
-                            <li>Placed too low</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h4>🪧 Sign Placement Strategy:</h4>
-                <ul class="checklist">
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Sign at the END of your street (with arrow)</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Sign at nearest busy intersection</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Signs at turns leading to your house</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> BIG sign in your yard/driveway</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Balloons on mailbox (easy to spot!)</li>
-                </ul>
-
-                <div class="pro-tip">
-                    Put signs up the NIGHT BEFORE. Early birds will drive by looking for sales before they start!
-                </div>
-            </div>
-        </div>
-
-        <!-- PHASE 4: SETUP (NIGHT BEFORE) -->
-        <div class="card">
-            <div class="phase-header">🎪 PHASE 4: Setup (Night Before)</div>
-            
-            <div class="step-card">
-                <h3><span class="step-number">9</span> Set Up Your Display</h3>
-                <p>A well-organized sale makes more money! Make it easy to browse.</p>
-                
-                <h4>🗺️ Layout Tips:</h4>
                 <ul>
-                    <li><strong>Put BIG items at the street</strong> - Furniture, bikes catch attention from cars</li>
-                    <li><strong>Create "departments"</strong> - All toys together, all kitchen together, etc.</li>
-                    <li><strong>Eye-level sells</strong> - Best items on tables, not ground</li>
-                    <li><strong>Leave walking room</strong> - People need to move around</li>
-                    <li><strong>Checkout area</strong> - Have a designated spot for payment</li>
-                </ul>
-
-                <h4>📦 Department Ideas:</h4>
-                <div class="supply-grid">
-                    <div class="supply-card">
-                        <h4>👕 Clothing Area</h4>
-                        <ul>
-                            <li>Hang nice items on rack</li>
-                            <li>Sort by size or type</li>
-                            <li>Shoes displayed neatly</li>
-                        </ul>
-                    </div>
-                    <div class="supply-card">
-                        <h4>🧸 Kids Corner</h4>
-                        <ul>
-                            <li>Toys at kid height</li>
-                            <li>Let kids play = parents buy!</li>
-                            <li>Books in a bin</li>
-                        </ul>
-                    </div>
-                    <div class="supply-card">
-                        <h4>🔧 Tools/Sports</h4>
-                        <ul>
-                            <li>Spread out so people can see</li>
-                            <li>Group by type</li>
-                            <li>Price tags visible</li>
-                        </ul>
-                    </div>
-                    <div class="supply-card">
-                        <h4>🍳 Kitchen/Home</h4>
-                        <ul>
-                            <li>Group matching items</li>
-                            <li>Working appliances plugged in</li>
-                            <li>Create "sets" for deals</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <ul class="checklist">
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Tables set up</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Items grouped by category</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Big items visible from street</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Everything has a price</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Checkout area set up</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Extension cord ready (to demo electronics)</li>
-                </ul>
-
-                <div class="warning-box">
-                    <strong>⚠️ Night Before Checklist:</strong>
-                    <ul style="margin: 10px 0 0 15px;">
-                        <li>Check weather one more time</li>
-                        <li>Set alarm for 5:30am (early birds come at 6!)</li>
-                        <li>Have tarps ready in case of rain</li>
-                        <li>Charge your phone</li>
-                        <li>Put out signs</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- PHASE 5: SALE DAY -->
-        <div class="card">
-            <div class="phase-header">🎉 PHASE 5: Sale Day!</div>
-            
-            <div class="step-card">
-                <h3><span class="step-number">10</span> Morning of Sale</h3>
-                
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-date">5:30 AM - Wake Up</div>
-                        <p>Get ready, eat breakfast, prepare for the day!</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">6:00 AM - Final Setup</div>
-                        <p>Move items outside, set out your cash box, put up final signs</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">6:30 AM - Early Birds Arrive!</div>
-                        <p>Yes, really! Serious garage salers come early. Be ready!</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">7:00 AM - Official Start</div>
-                        <p>Prime time! Most traffic between 7am-11am</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">11:00 AM - Lunch Lull</div>
-                        <p>Slower time - great for restocking, eating</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">12:00-2:00 PM - Final Push</div>
-                        <p>Start offering deals to move remaining items!</p>
-                    </div>
-                </div>
-
-                <ul class="checklist">
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Woke up on time</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Everything set up by 6:30am</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Cash box ready with change</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Phone charged (for Venmo/photos)</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Water/snacks for yourself</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Helper arranged (if possible)</li>
+                    <li>Post 3-5 days before your sale</li>
+                    <li>Include 10+ photos of best items</li>
+                    <li>List specific items: "Furniture, baby gear, tools, vintage items"</li>
+                    <li>Include exact address and date/time</li>
+                    <li>Repost the day before</li>
                 </ul>
             </div>
-
-            <div class="step-card">
-                <h3><span class="step-number">11</span> How to Handle Customers</h3>
-                
-                <h4>👋 Greeting Customers:</h4>
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">2</div>
+                    <h3>Craigslist (FREE)</h3>
+                </div>
                 <ul>
-                    <li>Smile and say "Hi! Let me know if you have questions!"</li>
-                    <li>Don't hover - let them browse</li>
-                    <li>Be available but not pushy</li>
-                </ul>
-
-                <h4>💬 Handling Negotiations:</h4>
-                <p><strong>People WILL try to haggle. This is normal and expected!</strong></p>
-                
-                <div class="info-box">
-                    <strong>Sample negotiation:</strong><br>
-                    Customer: "Will you take $5 for this $10 item?"<br>
-                    You: "How about $7?" (Meet in middle)<br>
-                    OR: "I can do $5 if you buy two items"<br>
-                    OR: "It's priced to sell - $10 is my best price" (for good items)
-                </div>
-
-                <div class="money-tip">
-                    After noon, be more willing to negotiate! Getting SOMETHING is better than putting items back in storage.
-                </div>
-
-                <h4>🛡️ Safety Tips:</h4>
-                <ul class="checklist">
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Keep cash box with you at all times (fanny pack!)</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Don't let strangers inside your house</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Have a helper watch while you make change</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Move large bills to a safe spot inside</li>
+                    <li>Post in "Garage Sales" section</li>
+                    <li>Include neighborhood name in title</li>
+                    <li>List specific high-value items to attract buyers</li>
                 </ul>
             </div>
-
-            <div class="step-card">
-                <h3><span class="step-number">12</span> End of Day Strategy</h3>
-                
-                <h4>🏷️ Last Hour Tactics (Make More Sales!):</h4>
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">3</div>
+                    <h3>Nextdoor App (FREE)</h3>
+                </div>
                 <ul>
-                    <li><strong>"Everything half off!"</strong> - Announce at 1pm</li>
-                    <li><strong>"Fill a bag for $5"</strong> - Great for clothes/small items</li>
-                    <li><strong>"Make an offer!"</strong> - Accept any reasonable offer</li>
-                    <li><strong>"Buy 2 get 1 free"</strong> - Move more inventory</li>
+                    <li>Neighbors are most likely to come</li>
+                    <li>Post in "For Sale & Free" section</li>
+                    <li>Great for furniture (no long-distance pickup)</li>
                 </ul>
-
-                <h4>📦 What to Do With Leftovers:</h4>
-                <ul class="checklist">
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> <strong>Donate</strong> - Goodwill, Salvation Army (get receipt for tax deduction!)</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> <strong>List online</strong> - Put best remaining items on Facebook Marketplace</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> <strong>"Free" pile</strong> - Leave on curb with FREE sign (people take it!)</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> <strong>Save for next sale</strong> - Only if items are worth keeping</li>
+            </div>
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">4</div>
+                    <h3>Street Signs (Most Important!)</h3>
+                </div>
+                <ul>
+                    <li>Make signs BIG with thick black marker</li>
+                    <li>Just write "GARAGE SALE →" with arrow</li>
+                    <li>Place at ALL major intersections leading to your home</li>
+                    <li>Put signs out morning of sale, remove after</li>
                 </ul>
+            </div>
+        </div>
 
-                <div class="warning-box">
-                    <strong>⚠️ Don't bring unsold items back inside!</strong> The whole point was to declutter. Donate what doesn't sell!
+        <div class="card">
+            <h2><span class="icon">✅</span> Complete Action Checklist</h2>
+            
+            <h3 style="margin: 20px 0 15px; color: #667eea;">📦 1-2 Weeks Before</h3>
+            <div class="checkbox-item" onclick="toggleCheckbox(this)">
+                <input type="checkbox" id="task1">
+                <label for="task1">
+                    <div class="task-title">Go room-by-room collecting items to sell</div>
+                    <div class="task-desc">Check closets, garage, attic, under beds, storage areas</div>
+                </label>
+            </div>
+            <div class="checkbox-item" onclick="toggleCheckbox(this)">
+                <input type="checkbox" id="task2">
+                <label for="task2">
+                    <div class="task-title">Clean and test all items</div>
+                    <div class="task-desc">Wipe down, check batteries, verify everything works</div>
+                </label>
+            </div>
+            <div class="checkbox-item" onclick="toggleCheckbox(this)">
+                <input type="checkbox" id="task3">
+                <label for="task3">
+                    <div class="task-title">Research prices for high-value items</div>
+                    <div class="task-desc">Check eBay sold listings for fair market value</div>
+                </label>
+            </div>
+            <div class="checkbox-item" onclick="toggleCheckbox(this)">
+                <input type="checkbox" id="task4">
+                <label for="task4">
+                    <div class="task-title">Get supplies: price stickers, tables, cash box</div>
+                    <div class="task-desc">Dollar store has cheap stickers and supplies</div>
+                </label>
+            </div>
+            <div class="checkbox-item" onclick="toggleCheckbox(this)">
+                <input type="checkbox" id="task5">
+                <label for="task5">
+                    <div class="task-title">Check local permit requirements</div>
+                    <div class="task-desc">Some cities require free permits for garage sales</div>
+                </label>
+            </div>
+
+            <h3 style="margin: 20px 0 15px; color: #667eea;">📱 3-5 Days Before</h3>
+            <div class="checkbox-item" onclick="toggleCheckbox(this)">
+                <input type="checkbox" id="task6">
+                <label for="task6">
+                    <div class="task-title">Take photos of best items</div>
+                    <div class="task-desc">Good lighting, clean background, multiple angles for furniture</div>
+                </label>
+            </div>
+            <div class="checkbox-item" onclick="toggleCheckbox(this)">
+                <input type="checkbox" id="task7">
+                <label for="task7">
+                    <div class="task-title">Post on Facebook Marketplace</div>
+                    <div class="task-desc">Include photos, address, date, specific items for sale</div>
+                </label>
+            </div>
+            <div class="checkbox-item" onclick="toggleCheckbox(this)">
+                <input type="checkbox" id="task8">
+                <label for="task8">
+                    <div class="task-title">Post on Craigslist and Nextdoor</div>
+                    <div class="task-desc">Same info, cross-post to maximize reach</div>
+                </label>
+            </div>
+            <div class="checkbox-item" onclick="toggleCheckbox(this)">
+                <input type="checkbox" id="task9">
+                <label for="task9">
+                    <div class="task-title">Price all items with stickers</div>
+                    <div class="task-desc">Use bright colored stickers that are easy to see</div>
+                </label>
+            </div>
+            <div class="checkbox-item" onclick="toggleCheckbox(this)">
+                <input type="checkbox" id="task10">
+                <label for="task10">
+                    <div class="task-title">Make large, readable street signs</div>
+                    <div class="task-desc">Poster board + thick black marker, BIG arrows</div>
+                </label>
+            </div>
+
+            <h3 style="margin: 20px 0 15px; color: #667eea;">🌅 Day Before</h3>
+            <div class="checkbox-item" onclick="toggleCheckbox(this)">
+                <input type="checkbox" id="task11">
+                <label for="task11">
+                    <div class="task-title">Get $100 in small bills and coins</div>
+                    <div class="task-desc">$1s, $5s, quarters - people pay with $20s</div>
+                </label>
+            </div>
+            <div class="checkbox-item" onclick="toggleCheckbox(this)">
+                <input type="checkbox" id="task12">
+                <label for="task12">
+                    <div class="task-title">Set up tables and organize by category</div>
+                    <div class="task-desc">Group similar items together for easy browsing</div>
+                </label>
+            </div>
+            <div class="checkbox-item" onclick="toggleCheckbox(this)">
+                <input type="checkbox" id="task13">
+                <label for="task13">
+                    <div class="task-title">Repost ads and bump listings</div>
+                    <div class="task-desc">Remind people your sale is tomorrow!</div>
+                </label>
+            </div>
+
+            <h3 style="margin: 20px 0 15px; color: #667eea;">☀️ Sale Day</h3>
+            <div class="checkbox-item" onclick="toggleCheckbox(this)">
+                <input type="checkbox" id="task14">
+                <label for="task14">
+                    <div class="task-title">Put out signs at 7am (before early birds arrive)</div>
+                    <div class="task-desc">Place at every major intersection within 1/2 mile</div>
+                </label>
+            </div>
+            <div class="checkbox-item" onclick="toggleCheckbox(this)">
+                <input type="checkbox" id="task15">
+                <label for="task15">
+                    <div class="task-title">Open at 8am sharp</div>
+                    <div class="task-desc">Serious buyers come early - be ready!</div>
+                </label>
+            </div>
+            <div class="checkbox-item" onclick="toggleCheckbox(this)">
+                <input type="checkbox" id="task16">
+                <label for="task16">
+                    <div class="task-title">Discount items in final 2 hours</div>
+                    <div class="task-desc">"Everything 50% off!" - move inventory!</div>
+                </label>
+            </div>
+            <div class="checkbox-item" onclick="toggleCheckbox(this)">
+                <input type="checkbox" id="task17">
+                <label for="task17">
+                    <div class="task-title">Collect all signs when done</div>
+                    <div class="task-desc">Don't leave litter - and you can reuse them</div>
+                </label>
+            </div>
+            <div class="checkbox-item" onclick="toggleCheckbox(this)">
+                <input type="checkbox" id="task18">
+                <label for="task18">
+                    <div class="task-title">Donate unsold items immediately</div>
+                    <div class="task-desc">Schedule Salvation Army pickup or drop at Goodwill</div>
+                </label>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🤝</span> Negotiation Scripts</h2>
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">💬</div>
+                    <h3>When Someone Offers Less</h3>
+                </div>
+                <p style="background:#e8f5e9; padding:15px; border-radius:10px; color:#2e7d32; margin:10px 0;">
+                    <strong>Buyer:</strong> "Will you take $5 for this?"<br><br>
+                    <strong>You:</strong> "I've got it marked at $10, but I could do $8. It's in great condition and works perfectly."
+                </p>
+            </div>
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">💬</div>
+                    <h3>Bundle Deal</h3>
+                </div>
+                <p style="background:#e8f5e9; padding:15px; border-radius:10px; color:#2e7d32; margin:10px 0;">
+                    <strong>You:</strong> "I can do $8 for that, or if you want both items, I'll give you both for $12 total!"
+                </p>
+            </div>
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">💬</div>
+                    <h3>End of Day Deals</h3>
+                </div>
+                <p style="background:#e8f5e9; padding:15px; border-radius:10px; color:#2e7d32; margin:10px 0;">
+                    <strong>You:</strong> "Since we're closing in an hour, I'll take $20 for everything on this table!"
+                </p>
+            </div>
+            <div class="warning-box">
+                <h4>⚠️ Common Mistakes to Avoid</h4>
+                <ul>
+                    <li><strong>Don't start too late</strong> - Early birds come at 7-8am, serious buyers shop early</li>
+                    <li><strong>Don't overprice</strong> - Items priced too high won't sell, and you'll end up donating anyway</li>
+                    <li><strong>Don't forget change</strong> - Everyone pays with $20 bills</li>
+                    <li><strong>Don't skip signs</strong> - Signs bring 50%+ of buyers who aren't looking online</li>
+                    <li><strong>Don't put items in boxes</strong> - Display everything where it can be seen</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🛠️</span> Tools & Resources</h2>
+            <div class="tool-grid">
+                <div class="tool-card">
+                    <h4>📱 Facebook Marketplace</h4>
+                    <p>Best free advertising for garage sales. Post photos and details 3-5 days before.</p>
+                    <a href="https://facebook.com/marketplace" target="_blank">Open Marketplace →</a>
+                </div>
+                <div class="tool-card">
+                    <h4>📋 Craigslist</h4>
+                    <p>Post in the "Garage Sales" section. Attracts dedicated sale hunters.</p>
+                    <a href="https://craigslist.org" target="_blank">Post on Craigslist →</a>
+                </div>
+                <div class="tool-card">
+                    <h4>🏘️ Nextdoor</h4>
+                    <p>Reach your actual neighbors who can easily stop by. Great for furniture.</p>
+                    <a href="https://nextdoor.com" target="_blank">Post on Nextdoor →</a>
+                </div>
+                <div class="tool-card">
+                    <h4>📊 eBay (Price Research)</h4>
+                    <p>Check "Sold Items" to see what things actually sell for online.</p>
+                    <a href="https://ebay.com" target="_blank">Research Prices →</a>
+                </div>
+                <div class="tool-card">
+                    <h4>💵 Venmo/Cash App</h4>
+                    <p>Accept digital payments for bigger items when buyers don't have cash.</p>
+                </div>
+                <div class="tool-card">
+                    <h4>🏷️ Yard Sale Treasure Map</h4>
+                    <p>Free site where garage sale hunters look for sales in their area.</p>
+                    <a href="https://yardsaletreasuremap.com" target="_blank">List Your Sale →</a>
                 </div>
             </div>
         </div>
 
-        <!-- PHASE 6: AFTER THE SALE -->
         <div class="card">
-            <div class="phase-header">✅ PHASE 6: After the Sale</div>
-            
-            <div class="step-card">
-                <h3><span class="step-number">13</span> Wrap Up Checklist</h3>
-                
-                <ul class="checklist">
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Count your money! Total: $____________</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Take down all signs (required in most cities!)</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Donate remaining items</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Get donation receipt for taxes</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Return borrowed tables/supplies</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Delete online ads</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Deposit cash into bank</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Celebrate your success! 🎉</li>
-                </ul>
-
-                <div class="success-box">
-                    <strong>🎉 Congratulations!</strong> You turned clutter into CASH! Now put that money toward your financial goals - emergency fund, debt payoff, or savings!
+            <h2><span class="icon">🎓</span> Learn From These Experts</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🏷️</div>
+                    <h4>Flea Market Flipper</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Rob & Melissa share tips on finding items to sell and maximizing garage sale profits.</p>
+                    <a href="https://youtube.com/c/FleaMarketFlipper" class="influencer-link" target="_blank">Watch Videos →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💰</div>
+                    <h4>r/yardsale</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Community sharing garage sale tips, pricing advice, and success stories.</p>
+                    <a href="https://reddit.com/r/yardsale" class="influencer-link" target="_blank">Join Community →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📦</div>
+                    <h4>Garage Sale Academy</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Detailed tutorials on hosting profitable garage sales and pricing strategies.</p>
+                    <a href="https://youtube.com/results?search_query=garage+sale+tips" class="influencer-link" target="_blank">Search Videos →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🏠</div>
+                    <h4>r/Flipping</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>500K+ members sharing flipping tips. Great for learning what sells and what doesn't.</p>
+                    <a href="https://reddit.com/r/Flipping" class="influencer-link" target="_blank">Join Community →</a>
                 </div>
             </div>
         </div>
 
-        <!-- SUCCESS CHECKLIST -->
         <div class="card">
-            <h2>🏆 Master Checklist</h2>
-            <p>Complete all phases for a successful garage sale!</p>
-            
-            <h4>Phase 1: Planning (2 weeks before)</h4>
-            <ul class="checklist">
-                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Picked sale date</li>
-                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Checked permits/rules</li>
-                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Collected items from every room</li>
-                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Cleaned all items</li>
-            </ul>
-
-            <h4>Phase 2: Pricing (1 week before)</h4>
-            <ul class="checklist">
-                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Priced all items</li>
-                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Got supplies (tables, signs, cash box)</li>
-                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Got change from bank</li>
-            </ul>
-
-            <h4>Phase 3: Advertising (3-5 days before)</h4>
-            <ul class="checklist">
-                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Posted on Facebook Marketplace</li>
-                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Posted on Craigslist</li>
-                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Posted on Nextdoor</li>
-                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Made signs</li>
-            </ul>
-
-            <h4>Phase 4: Setup (night before)</h4>
-            <ul class="checklist">
-                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Tables set up</li>
-                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Items organized by category</li>
-                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Signs posted</li>
-            </ul>
-
-            <h4>Phase 5: Sale Day</h4>
-            <ul class="checklist">
-                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Opened on time</li>
-                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Made sales!</li>
-                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Offered end-of-day deals</li>
-            </ul>
-
-            <h4>Phase 6: After Sale</h4>
-            <ul class="checklist">
-                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Counted money</li>
-                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Took down signs</li>
-                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Donated leftovers</li>
-                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Deposited cash</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h2>📈 Your Progress</h2>
-            <p><span id="completed">0</span> of <span id="total">0</span> steps completed</p>
-            <div class="progress-bar">
-                <div class="progress-fill" id="progress" style="width: 0%"></div>
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <h3>Garage Sale Checklist</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-text"><span id="completed">0</span> of 18 tasks completed</div>
             </div>
         </div>
 
         <div class="card">
-            <h2>💬 Need Help?</h2>
-            <p>Have questions about your garage sale or other ways to make extra money? We're here to help!</p>
+            <h2><span class="icon">📝</span> Your Garage Sale Planner</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your garage sale planning!
+
+📅 SALE DATE: ________________
+
+📦 ITEMS COLLECTED (check rooms):
+☐ Bedroom closets
+☐ Kids' rooms
+☐ Garage/basement
+☐ Kitchen cabinets
+☐ Attic/storage
+☐ Under beds
+
+💵 PRICING DONE:
+☐ Clothing priced
+☐ Electronics priced
+☐ Furniture priced
+☐ Kitchen items priced
+☐ Books/media priced
+☐ Tools priced
+
+📣 ADVERTISING:
+☐ Facebook Marketplace posted
+☐ Craigslist posted
+☐ Nextdoor posted
+☐ Signs made
+
+💰 SALE RESULTS:
+Day 1 earnings: $________
+Day 2 earnings: $________
+TOTAL: $________
+
+✅ AFTER SALE:
+☐ Signs collected
+☐ Unsold items donated to: ________
+☐ Donation receipt saved (for taxes!)
+
+NOTES:
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Our team can help you create a complete financial plan to reach your goals faster.</p>
             <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
         </div>
     </div>
 
     <script>
-        function toggleCheck(el) {
-            el.classList.toggle('checked');
-            el.innerHTML = el.classList.contains('checked') ? '✓' : '';
+        // Load saved state
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+            loadNotes();
+        });
+
+        function toggleCheckbox(item) {
+            const checkbox = item.querySelector('input[type="checkbox"]');
+            checkbox.checked = !checkbox.checked;
+            item.classList.toggle('completed', checkbox.checked);
             updateProgress();
             saveProgress();
         }
 
         function updateProgress() {
-            const total = document.querySelectorAll('.checkbox').length;
-            const completed = document.querySelectorAll('.checkbox.checked').length;
+            const total = document.querySelectorAll('.checkbox-item').length;
+            const completed = document.querySelectorAll('.checkbox-item.completed').length;
+            const percentage = (completed / total) * 100;
+            
+            document.getElementById('progressFill').style.width = percentage + '%';
             document.getElementById('completed').textContent = completed;
-            document.getElementById('total').textContent = total;
-            document.getElementById('progress').style.width = (completed / total * 100) + '%';
         }
 
         function saveProgress() {
-            const checkboxes = document.querySelectorAll('.checkbox');
-            const states = Array.from(checkboxes).map(cb => cb.classList.contains('checked'));
-            localStorage.setItem('host-garage-sale-progress', JSON.stringify(states));
+            const checkboxes = document.querySelectorAll('.checkbox-item');
+            const state = Array.from(checkboxes).map(item => item.classList.contains('completed'));
+            localStorage.setItem('garagesale_progress', JSON.stringify(state));
         }
 
         function loadProgress() {
-            const saved = localStorage.getItem('host-garage-sale-progress');
+            const saved = localStorage.getItem('garagesale_progress');
             if (saved) {
-                const states = JSON.parse(saved);
-                const checkboxes = document.querySelectorAll('.checkbox');
-                checkboxes.forEach((cb, i) => {
-                    if (states[i]) {
-                        cb.classList.add('checked');
-                        cb.innerHTML = '✓';
+                const state = JSON.parse(saved);
+                const checkboxes = document.querySelectorAll('.checkbox-item');
+                checkboxes.forEach((item, index) => {
+                    if (state[index]) {
+                        item.classList.add('completed');
+                        item.querySelector('input[type="checkbox"]').checked = true;
                     }
                 });
+                updateProgress();
             }
-            updateProgress();
         }
 
-        document.addEventListener('DOMContentLoaded', loadProgress);
+        function loadNotes() {
+            const saved = localStorage.getItem('garagesale_notes');
+            if (saved) {
+                document.getElementById('notes').value = saved;
+            }
+        }
+
+        document.getElementById('notes').addEventListener('input', function() {
+            localStorage.setItem('garagesale_notes', this.value);
+        });
     </script>
 </body>
 </html>

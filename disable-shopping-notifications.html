@@ -3,218 +3,427 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔕 Disable Shopping Notifications</title>
+    <title>🔕 Disable Shopping Notifications | ASAP Financial Playbook</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; }
-        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
-        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; font-size: 14px; opacity: 0.9; }
-        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
-        h1 { font-size: 2.2em; margin-bottom: 10px; color: #1a1a2e; }
-        .subtitle { font-size: 1.2em; color: #666; margin-bottom: 15px; }
-        .meta { display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 20px; font-size: 0.9em; color: #888; }
-        .meta span { background: #f0f0f0; padding: 5px 12px; border-radius: 20px; }
-        h2 { color: #1a1a2e; margin: 25px 0 15px 0; font-size: 1.5em; border-bottom: 3px solid #667eea; padding-bottom: 10px; }
-        h3 { color: #333; margin: 20px 0 10px 0; }
-        p { margin-bottom: 15px; }
-        ul { margin: 15px 0 15px 25px; }
-        li { margin-bottom: 8px; }
-        .highlight-box { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 15px; margin: 20px 0; }
-        .warning-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 0 10px 10px 0; }
-        .step-card { background: #f8f9fa; border-radius: 15px; padding: 20px; margin: 15px 0; border-left: 4px solid #667eea; }
-        .step-number { background: #667eea; color: white; width: 30px; height: 30px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 10px; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 15px; opacity: 0.9; font-size: 14px; }
+        .back-link:hover { opacity: 1; text-decoration: underline; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #1565c0; font-size: 1.1em; line-height: 1.6; }
+        .savings-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .savings-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .savings-highlight p { opacity: 0.9; font-size: 1.1em; }
         .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
-        .stat-box { background: #f8f9fa; padding: 20px; border-radius: 15px; text-align: center; }
-        .stat-number { font-size: 2em; font-weight: bold; color: #667eea; }
-        .stat-label { font-size: 0.9em; color: #666; }
-        .checklist { list-style: none; margin-left: 0; }
-        .checklist li { padding: 10px 0; border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 10px; }
-        .checkbox { width: 24px; height: 24px; border: 2px solid #667eea; border-radius: 5px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .checkbox.checked { background: #667eea; color: white; }
-        .app-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin: 15px 0; }
-        .app-item { background: #f8f9fa; padding: 15px; border-radius: 10px; text-align: center; font-size: 0.9em; }
-        .app-item span { font-size: 1.5em; display: block; margin-bottom: 5px; }
-        .device-instructions { background: #1a1a2e; color: white; padding: 20px; border-radius: 15px; margin: 15px 0; }
-        .device-instructions h4 { color: #667eea; margin-bottom: 10px; }
-        .device-instructions ol { color: #ccc; margin-left: 20px; }
-        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; }
-        .progress-bar { background: #e9ecef; border-radius: 10px; height: 20px; margin: 20px 0; overflow: hidden; }
-        .progress-fill { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 100%; border-radius: 10px; transition: width 0.5s; }
+        .stat-box { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; }
+        .stat-box .number { font-size: 2em; font-weight: 700; color: #667eea; }
+        .stat-box .label { color: #666; font-size: 0.9em; margin-top: 5px; }
+        .step-card { background: #f8f9fa; border-radius: 15px; padding: 25px; margin-bottom: 15px; border-left: 5px solid #667eea; }
+        .step-card h3 { color: #1a1a2e; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .step-card p { color: #666; line-height: 1.6; margin-bottom: 10px; }
+        .step-card ul { margin-left: 20px; color: #666; }
+        .step-card ul li { margin-bottom: 8px; }
+        .checkbox-item { display: flex; align-items: flex-start; gap: 12px; padding: 15px; background: white; border-radius: 10px; margin-bottom: 10px; cursor: pointer; border: 2px solid #e0e0e0; transition: all 0.3s; }
+        .checkbox-item:hover { border-color: #667eea; }
+        .checkbox-item input[type="checkbox"] { width: 22px; height: 22px; margin-top: 2px; cursor: pointer; accent-color: #667eea; }
+        .checkbox-item label { cursor: pointer; flex: 1; }
+        .checkbox-item .task-title { font-weight: 600; color: #1a1a2e; margin-bottom: 4px; }
+        .checkbox-item .task-desc { color: #666; font-size: 0.9em; }
+        .checkbox-item.completed { background: #e8f5e9; border-color: #4caf50; }
+        .checkbox-item.completed .task-title { text-decoration: line-through; color: #888; }
+        .pro-tip { background: linear-gradient(135deg, #fff3e0, #ffe0b2); border-left: 4px solid #ff9800; padding: 20px; border-radius: 0 15px 15px 0; margin: 20px 0; }
+        .pro-tip h4 { color: #e65100; margin-bottom: 10px; }
+        .pro-tip ul { color: #666; line-height: 1.8; margin-left: 20px; }
+        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 20px 0; }
+        .warning-box h4 { color: #c62828; margin-bottom: 10px; }
+        .warning-box ul { color: #666; line-height: 1.8; margin-left: 20px; }
+        .tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 15px; }
+        .tool-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #667eea; }
+        .tool-card h4 { color: #1a1a2e; margin-bottom: 8px; }
+        .tool-card p { color: #666; font-size: 0.9em; line-height: 1.5; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #667eea; font-size: 0.9em; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 0.9em; line-height: 1.5; margin-bottom: 15px; }
+        .influencer-link { color: #667eea; text-decoration: none; font-weight: 600; }
+        .influencer-link:hover { text-decoration: underline; }
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; text-align: center; }
+        .progress-tracker h3 { color: white; margin-bottom: 20px; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; overflow: hidden; margin-bottom: 15px; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.1em; }
+        .notes-section textarea { width: 100%; min-height: 200px; padding: 20px; border: 2px solid #e0e0e0; border-radius: 15px; font-family: inherit; font-size: 1em; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #667eea; }
+        .cta-section { background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 20px; padding: 40px; text-align: center; color: white; }
+        .cta-section h3 { font-size: 1.8em; margin-bottom: 15px; }
+        .cta-section p { opacity: 0.9; margin-bottom: 25px; font-size: 1.1em; }
+        .cta-button { display: inline-block; background: white; color: #667eea; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: 1.1em; transition: all 0.3s; }
+        .cta-button:hover { transform: scale(1.05); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        @media (max-width: 600px) {
+            .header h1 { font-size: 1.8em; }
+            .savings-highlight h3 { font-size: 2em; }
+            .card { padding: 20px; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="expense-playbooks.html" class="back-link">← Back to Playbooks</a>
+        <a href="../expense-playbooks.html" class="back-link">← Back to Expense Playbooks</a>
         
-        <div class="card">
+        <div class="header">
             <h1>🔕 Disable Shopping Notifications</h1>
-            <p class="subtitle">Stop apps from tempting you with sales, deals, and "limited time offers"</p>
-            <div class="meta">
-                <span>⏱️ 10 minutes</span>
-                <span>💰 Save $100-300/month</span>
-                <span>🧠 Out of sight, out of mind</span>
-            </div>
+            <p class="subtitle">Turn off sale alerts that trigger impulse spending and drain your wallet</p>
+            <div class="time-badge">⏱️ 10 Minutes | Save $50-200/month</div>
         </div>
 
         <div class="card">
-            <h2>🎯 Why Notifications Are Dangerous</h2>
-            <p>Every notification is a mini-advertisement designed to get you to open the app and spend money. "Flash sale!" "Your cart is waiting!" "Price drop alert!" - these are psychological triggers.</p>
-            
-            <div class="highlight-box">
-                <h3>📊 The Numbers</h3>
-                <p>The average person gets <strong>46 push notifications per day</strong>. If even 10% are shopping-related, that's 4-5 temptations DAILY to spend money you don't have.</p>
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Every "FLASH SALE!" and "Limited Time Offer!" notification is designed to trigger impulse purchases. By turning off these notifications, you remove the constant temptation and take back control of when YOU decide to shop - not when retailers decide for you.</p>
             </div>
-
+            <div class="savings-highlight">
+                <h3>$50-200/mo</h3>
+                <p>Average savings from eliminating notification-driven impulse buys</p>
+            </div>
             <div class="stats-grid">
                 <div class="stat-box">
-                    <div class="stat-number">46</div>
-                    <div class="stat-label">notifications/day avg</div>
+                    <div class="number">46</div>
+                    <div class="label">Average daily notifications</div>
                 </div>
                 <div class="stat-box">
-                    <div class="stat-number">90sec</div>
-                    <div class="stat-label">avg time to check notification</div>
+                    <div class="number">80%</div>
+                    <div class="label">Shopping is impulse-driven</div>
                 </div>
                 <div class="stat-box">
-                    <div class="stat-number">$$$</div>
-                    <div class="stat-label">spent from "deals"</div>
+                    <div class="number">$5,400</div>
+                    <div class="label">Avg impulse spending/year</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">10 min</div>
+                    <div class="label">To turn them all off</div>
                 </div>
             </div>
         </div>
 
         <div class="card">
-            <h2>📱 Apps to Disable Notifications For</h2>
-            
-            <h3>🛒 Shopping Apps</h3>
-            <div class="app-grid">
-                <div class="app-item"><span>📦</span>Amazon</div>
-                <div class="app-item"><span>🎯</span>Target</div>
-                <div class="app-item"><span>🛒</span>Walmart</div>
-                <div class="app-item"><span>👗</span>Shein</div>
-                <div class="app-item"><span>🏠</span>Wayfair</div>
-                <div class="app-item"><span>👟</span>Nike</div>
-                <div class="app-item"><span>🛍️</span>Nordstrom</div>
-                <div class="app-item"><span>🧶</span>Etsy</div>
-            </div>
-            
-            <h3>🍔 Food Delivery Apps</h3>
-            <div class="app-grid">
-                <div class="app-item"><span>🍔</span>DoorDash</div>
-                <div class="app-item"><span>🥡</span>UberEats</div>
-                <div class="app-item"><span>🍕</span>Grubhub</div>
-                <div class="app-item"><span>📦</span>Postmates</div>
-                <div class="app-item"><span>🥕</span>Instacart</div>
-                <div class="app-item"><span>🏪</span>Gopuff</div>
-            </div>
-            
-            <h3>💳 Deal/Coupon Apps</h3>
-            <div class="app-grid">
-                <div class="app-item"><span>💰</span>Honey</div>
-                <div class="app-item"><span>🏷️</span>RetailMeNot</div>
-                <div class="app-item"><span>📱</span>Slickdeals</div>
-                <div class="app-item"><span>🎫</span>Groupon</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2>📋 How to Disable Notifications</h2>
+            <h2><span class="icon">📱</span> Step-by-Step Guide</h2>
             
             <div class="step-card">
-                <h3><span class="step-number">1</span> iPhone Instructions</h3>
-                <div class="device-instructions">
-                    <h4>🍎 For iPhone/iPad:</h4>
-                    <ol>
-                        <li>Open <strong>Settings</strong></li>
-                        <li>Scroll down and tap <strong>Notifications</strong></li>
-                        <li>Find the app (e.g., Amazon)</li>
-                        <li>Tap on the app name</li>
-                        <li>Toggle OFF <strong>"Allow Notifications"</strong></li>
-                        <li>Repeat for each shopping/food app</li>
-                    </ol>
-                </div>
-                <ul class="checklist">
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Disabled notifications for Amazon</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Disabled notifications for Target</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Disabled notifications for Walmart</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Disabled notifications for DoorDash</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Disabled notifications for UberEats</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Disabled all other shopping app notifications</li>
+                <h3>1️⃣ Disable App Notifications</h3>
+                <p>Go to your phone settings and turn off notifications for all shopping apps:</p>
+                <ul>
+                    <li><strong>iPhone:</strong> Settings → Notifications → Select each app → Turn off "Allow Notifications"</li>
+                    <li><strong>Android:</strong> Settings → Apps → Select app → Notifications → Turn off</li>
+                    <li>Target these first: Amazon, Target, Walmart, Shein, Temu, eBay, Wish, AliExpress</li>
                 </ul>
             </div>
 
             <div class="step-card">
-                <h3><span class="step-number">2</span> Android Instructions</h3>
-                <div class="device-instructions">
-                    <h4>🤖 For Android:</h4>
-                    <ol>
-                        <li>Open <strong>Settings</strong></li>
-                        <li>Tap <strong>Apps & notifications</strong> (or just "Apps")</li>
-                        <li>Tap <strong>See all apps</strong></li>
-                        <li>Find and tap the app (e.g., Amazon)</li>
-                        <li>Tap <strong>Notifications</strong></li>
-                        <li>Toggle OFF <strong>"All notifications"</strong></li>
-                        <li>Repeat for each shopping/food app</li>
-                    </ol>
-                </div>
-                <ul class="checklist">
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Completed Android notification settings</li>
+                <h3>2️⃣ Turn Off Email Notifications</h3>
+                <p>Stop promotional emails from reaching your inbox:</p>
+                <ul>
+                    <li>Open the latest promo email from each store</li>
+                    <li>Scroll to bottom and click "Unsubscribe" or "Manage Preferences"</li>
+                    <li>Use <strong>Unroll.me</strong> or <strong>Clean Email</strong> for bulk unsubscribing</li>
+                    <li>Set up email filter: "sale OR discount OR offer" → Archive/Delete</li>
                 </ul>
             </div>
 
             <div class="step-card">
-                <h3><span class="step-number">3</span> Disable Email Notifications Too</h3>
-                <p>Many apps also send emails. Go into each app's settings and turn off promotional emails:</p>
-                <ul class="checklist">
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Disabled promotional emails in Amazon app settings</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Disabled promotional emails in other shopping apps</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Unsubscribed from store email lists</li>
+                <h3>3️⃣ Disable Browser Notifications</h3>
+                <p>Stop websites from sending push notifications:</p>
+                <ul>
+                    <li><strong>Chrome:</strong> Settings → Privacy → Site Settings → Notifications → Block</li>
+                    <li><strong>Safari:</strong> Preferences → Websites → Notifications → Remove all</li>
+                    <li><strong>Firefox:</strong> Settings → Privacy → Permissions → Notifications → Remove All</li>
+                </ul>
+            </div>
+
+            <div class="step-card">
+                <h3>4️⃣ Disable SMS/Text Alerts</h3>
+                <p>Stop text messages from retailers:</p>
+                <ul>
+                    <li>Reply "STOP" to any promotional texts</li>
+                    <li>Block numbers that keep texting</li>
+                    <li>Check your account settings on each store's website to opt out</li>
                 </ul>
             </div>
         </div>
 
         <div class="card">
-            <h2>💡 Pro Tips</h2>
-            <ul>
-                <li><strong>Better yet - delete the apps entirely!</strong> You can always reinstall if you truly need them</li>
-                <li><strong>Use browser instead of apps</strong> - websites can't send push notifications as easily</li>
-                <li><strong>Check notification settings weekly</strong> - apps sometimes reset after updates</li>
-            </ul>
+            <h2><span class="icon">✅</span> Your Action Checklist</h2>
             
+            <div class="checkbox-item" onclick="toggleCheckbox(this)">
+                <input type="checkbox" id="task1">
+                <label for="task1">
+                    <div class="task-title">Turn off Amazon app notifications</div>
+                    <div class="task-desc">The biggest culprit for "deal" notifications</div>
+                </label>
+            </div>
+            
+            <div class="checkbox-item" onclick="toggleCheckbox(this)">
+                <input type="checkbox" id="task2">
+                <label for="task2">
+                    <div class="task-title">Turn off Target, Walmart, etc. notifications</div>
+                    <div class="task-desc">All major retailer apps should be silenced</div>
+                </label>
+            </div>
+            
+            <div class="checkbox-item" onclick="toggleCheckbox(this)">
+                <input type="checkbox" id="task3">
+                <label for="task3">
+                    <div class="task-title">Unsubscribe from 5+ promotional emails</div>
+                    <div class="task-desc">Use Unroll.me or do manually</div>
+                </label>
+            </div>
+            
+            <div class="checkbox-item" onclick="toggleCheckbox(this)">
+                <input type="checkbox" id="task4">
+                <label for="task4">
+                    <div class="task-title">Block browser notifications from shopping sites</div>
+                    <div class="task-desc">Check Chrome, Safari, or Firefox settings</div>
+                </label>
+            </div>
+            
+            <div class="checkbox-item" onclick="toggleCheckbox(this)">
+                <input type="checkbox" id="task5">
+                <label for="task5">
+                    <div class="task-title">Reply STOP to promotional texts</div>
+                    <div class="task-desc">Check your text history for retailer messages</div>
+                </label>
+            </div>
+            
+            <div class="checkbox-item" onclick="toggleCheckbox(this)">
+                <input type="checkbox" id="task6">
+                <label for="task6">
+                    <div class="task-title">Turn off social media shopping notifications</div>
+                    <div class="task-desc">Facebook Marketplace, Instagram Shopping alerts</div>
+                </label>
+            </div>
+            
+            <div class="checkbox-item" onclick="toggleCheckbox(this)">
+                <input type="checkbox" id="task7">
+                <label for="task7">
+                    <div class="task-title">Set up email filter for promo keywords</div>
+                    <div class="task-desc">Auto-archive emails with "sale", "discount", "offer"</div>
+                </label>
+            </div>
+            
+            <div class="checkbox-item" onclick="toggleCheckbox(this)">
+                <input type="checkbox" id="task8">
+                <label for="task8">
+                    <div class="task-title">Delete shopping apps you rarely use</div>
+                    <div class="task-desc">No app = no notifications = no temptation</div>
+                </label>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💡</span> Pro Tips</h2>
+            <div class="pro-tip">
+                <h4>🎯 Make It Stick</h4>
+                <ul>
+                    <li><strong>Use a separate email</strong> for shopping accounts so promos never hit your main inbox</li>
+                    <li><strong>Install browser extension</strong> like "Unsubscriber" to block future sign-ups</li>
+                    <li><strong>Use Focus Mode</strong> on iPhone/Android to block app notifications during certain hours</li>
+                    <li><strong>Set a shopping schedule</strong> - only check deals on specific days (like Sunday)</li>
+                    <li><strong>Leave retailer loyalty programs</strong> - they're notification factories</li>
+                </ul>
+            </div>
+
             <div class="warning-box">
-                <strong>⚠️ Watch Out:</strong> Some apps ask to "re-enable notifications" when you open them. Always tap "Don't Allow" or "Not Now"!
+                <h4>⚠️ Watch Out For</h4>
+                <ul>
+                    <li><strong>Re-enrollment tricks</strong> - Apps may ask to re-enable after updates</li>
+                    <li><strong>Essential vs. promo</strong> - Keep order/shipping notifications, disable marketing</li>
+                    <li><strong>FOMO guilt</strong> - You won't actually miss anything important</li>
+                    <li><strong>Partner's notifications</strong> - Ask them to silence theirs too so you don't hear them</li>
+                </ul>
             </div>
         </div>
 
         <div class="card">
-            <h2>🏆 Success Checklist</h2>
-            <ul class="checklist">
-                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Disabled notifications for ALL shopping apps</li>
-                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Disabled notifications for ALL food delivery apps</li>
-                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Disabled notifications for deal/coupon apps</li>
-                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Turned off promotional emails in app settings</li>
-                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Set reminder to check settings after app updates</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h2>📈 Your Progress</h2>
-            <p><span id="completed">0</span> of <span id="total">0</span> steps completed</p>
-            <div class="progress-bar">
-                <div class="progress-fill" id="progress" style="width: 0%"></div>
+            <h2><span class="icon">🛠️</span> Helpful Tools</h2>
+            <div class="tool-grid">
+                <div class="tool-card">
+                    <h4>📧 Unroll.me</h4>
+                    <p>Free service that finds all your email subscriptions and lets you unsubscribe in bulk with one click.</p>
+                </div>
+                <div class="tool-card">
+                    <h4>📱 Screen Time (iOS)</h4>
+                    <p>Built-in iOS feature to limit app usage and notifications. Set daily limits on shopping apps.</p>
+                </div>
+                <div class="tool-card">
+                    <h4>🤖 Digital Wellbeing (Android)</h4>
+                    <p>Android's built-in tool to manage app notifications and set app timers.</p>
+                </div>
+                <div class="tool-card">
+                    <h4>📨 Clean Email</h4>
+                    <p>Advanced email management tool that auto-unsubscribes and filters promotional emails.</p>
+                </div>
             </div>
         </div>
 
         <div class="card">
-            <h2>💬 Need Help?</h2>
+            <h2><span class="icon">🎓</span> Learn From These Experts</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🧠</div>
+                    <h4>Dr. Cal Newport</h4>
+                    <div class="platform">📚 Author</div>
+                    <p>"Digital Minimalism" author. Expert on reducing digital distractions and reclaiming attention.</p>
+                    <a href="https://calnewport.com" class="influencer-link" target="_blank">Visit Website →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">📱</div>
+                    <h4>r/digitalminimalism</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Community focused on reducing digital clutter and notification overload.</p>
+                    <a href="https://reddit.com/r/digitalminimalism" class="influencer-link" target="_blank">Join Community →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">💸</div>
+                    <h4>r/Frugal</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Tips on avoiding marketing traps and shopping triggers from experienced savers.</p>
+                    <a href="https://reddit.com/r/Frugal" class="influencer-link" target="_blank">Join Community →</a>
+                </div>
+                <div class="influencer-card">
+                    <div class="influencer-avatar">🛒</div>
+                    <h4>r/shoppingaddiction</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Support community for those working to break shopping habits and triggers.</p>
+                    <a href="https://reddit.com/r/shoppingaddiction" class="influencer-link" target="_blank">Join Community →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <h3>Notification Elimination Checklist</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-text"><span id="completed">0</span> of 8 tasks completed</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Notification Detox Tracker</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your notification purge!
+
+📱 APPS SILENCED:
+☐ Amazon
+☐ Target
+☐ Walmart
+☐ Shein/Temu
+☐ eBay
+☐ _____________
+☐ _____________
+
+📧 EMAILS UNSUBSCRIBED:
+1. _____________
+2. _____________
+3. _____________
+4. _____________
+5. _____________
+
+📲 TEXTS STOPPED:
+1. _____________
+2. _____________
+3. _____________
+
+🌐 BROWSER NOTIFICATIONS BLOCKED:
+☐ Chrome
+☐ Safari
+☐ Firefox
+
+💭 HOW I FEEL AFTER 1 WEEK:
+_________________________________
+
+📊 IMPULSE PURCHASES AVOIDED:
+Date: ____ Would have bought: ____________ ($____)
+Date: ____ Would have bought: ____________ ($____)
+Date: ____ Would have bought: ____________ ($____)
+
+TOTAL SAVED: $________
+
+NOTES:
+"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Our team can help you create a complete spending control plan.</p>
             <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
         </div>
     </div>
 
     <script>
-        function toggleCheck(el) { el.classList.toggle('checked'); el.innerHTML = el.classList.contains('checked') ? '✓' : ''; updateProgress(); saveProgress(); }
-        function updateProgress() { const total = document.querySelectorAll('.checkbox').length; const completed = document.querySelectorAll('.checkbox.checked').length; document.getElementById('completed').textContent = completed; document.getElementById('total').textContent = total; document.getElementById('progress').style.width = (completed / total * 100) + '%'; }
-        function saveProgress() { const states = Array.from(document.querySelectorAll('.checkbox')).map(cb => cb.classList.contains('checked')); localStorage.setItem('disable-shopping-notifications-progress', JSON.stringify(states)); }
-        function loadProgress() { const saved = localStorage.getItem('disable-shopping-notifications-progress'); if (saved) { JSON.parse(saved).forEach((state, i) => { const cb = document.querySelectorAll('.checkbox')[i]; if (state && cb) { cb.classList.add('checked'); cb.innerHTML = '✓'; }}); } updateProgress(); }
-        document.addEventListener('DOMContentLoaded', loadProgress);
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+            loadNotes();
+        });
+
+        function toggleCheckbox(item) {
+            const checkbox = item.querySelector('input[type="checkbox"]');
+            checkbox.checked = !checkbox.checked;
+            item.classList.toggle('completed', checkbox.checked);
+            updateProgress();
+            saveProgress();
+        }
+
+        function updateProgress() {
+            const total = document.querySelectorAll('.checkbox-item').length;
+            const completed = document.querySelectorAll('.checkbox-item.completed').length;
+            const percentage = (completed / total) * 100;
+            document.getElementById('progressFill').style.width = percentage + '%';
+            document.getElementById('completed').textContent = completed;
+        }
+
+        function saveProgress() {
+            const checkboxes = document.querySelectorAll('.checkbox-item');
+            const state = Array.from(checkboxes).map(item => item.classList.contains('completed'));
+            localStorage.setItem('disablenotifications_progress', JSON.stringify(state));
+        }
+
+        function loadProgress() {
+            const saved = localStorage.getItem('disablenotifications_progress');
+            if (saved) {
+                const state = JSON.parse(saved);
+                const checkboxes = document.querySelectorAll('.checkbox-item');
+                checkboxes.forEach((item, index) => {
+                    if (state[index]) {
+                        item.classList.add('completed');
+                        item.querySelector('input[type="checkbox"]').checked = true;
+                    }
+                });
+                updateProgress();
+            }
+        }
+
+        function loadNotes() {
+            const saved = localStorage.getItem('disablenotifications_notes');
+            if (saved) document.getElementById('notes').value = saved;
+        }
+
+        document.getElementById('notes').addEventListener('input', function() {
+            localStorage.setItem('disablenotifications_notes', this.value);
+        });
     </script>
 </body>
 </html>

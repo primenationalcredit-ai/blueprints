@@ -3,119 +3,443 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>👕 Closet Declutter</title>
+    <title>👗 Closet Declutter & Sell | ASAP Financial Playbook</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; }
-        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
-        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; font-size: 14px; opacity: 0.9; }
-        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
-        h1 { font-size: 2.2em; margin-bottom: 10px; color: #1a1a2e; }
-        .subtitle { font-size: 1.2em; color: #666; margin-bottom: 15px; }
-        .meta { display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 20px; font-size: 0.9em; color: #888; }
-        .meta span { background: #f0f0f0; padding: 5px 12px; border-radius: 20px; }
-        h2 { color: #1a1a2e; margin: 25px 0 15px 0; font-size: 1.5em; border-bottom: 3px solid #667eea; padding-bottom: 10px; }
-        h3 { color: #333; margin: 20px 0 10px 0; }
-        p { margin-bottom: 15px; }
-        .highlight-box { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 15px; margin: 20px 0; }
-        .step-card { background: #f8f9fa; border-radius: 15px; padding: 20px; margin: 15px 0; border-left: 4px solid #667eea; }
-        .step-number { background: #667eea; color: white; width: 30px; height: 30px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 10px; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 15px; opacity: 0.9; font-size: 14px; }
+        .back-link:hover { opacity: 1; text-decoration: underline; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #2e7d32; font-size: 1.1em; line-height: 1.6; }
+        .savings-highlight { background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .savings-highlight h3 { font-size: 2.5em; margin-bottom: 10px; }
+        .savings-highlight p { opacity: 0.9; font-size: 1.1em; }
         .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
-        .stat-box { background: #f8f9fa; padding: 20px; border-radius: 15px; text-align: center; }
-        .stat-number { font-size: 2em; font-weight: bold; color: #667eea; }
-        .stat-label { font-size: 0.9em; color: #666; }
-        .checklist { list-style: none; margin-left: 0; }
-        .checklist li { padding: 10px 0; border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 10px; }
-        .checkbox { width: 24px; height: 24px; border: 2px solid #667eea; border-radius: 5px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .checkbox.checked { background: #667eea; color: white; }
-        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; }
-        .progress-bar { background: #e9ecef; border-radius: 10px; height: 20px; margin: 20px 0; overflow: hidden; }
-        .progress-fill { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 100%; border-radius: 10px; transition: width 0.5s; }
+        .stat-box { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; }
+        .stat-box .number { font-size: 2em; font-weight: 700; color: #667eea; }
+        .stat-box .label { color: #666; font-size: 0.9em; margin-top: 5px; }
+        .step { background: #f8f9fa; border-radius: 15px; padding: 20px; margin-bottom: 15px; border-left: 5px solid #667eea; }
+        .step-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+        .step-number { background: linear-gradient(135deg, #667eea, #764ba2); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; }
+        .step h3 { color: #1a1a2e; font-size: 1.2em; }
+        .step p { color: #666; line-height: 1.6; }
+        .step ul { margin-left: 20px; margin-top: 10px; color: #666; }
+        .step ul li { margin-bottom: 8px; line-height: 1.5; }
+        .checkbox-item { display: flex; align-items: flex-start; gap: 12px; padding: 15px; background: white; border-radius: 10px; margin-bottom: 10px; cursor: pointer; border: 2px solid #e0e0e0; transition: all 0.3s; }
+        .checkbox-item:hover { border-color: #667eea; }
+        .checkbox-item input[type="checkbox"] { width: 22px; height: 22px; margin-top: 2px; cursor: pointer; accent-color: #667eea; }
+        .checkbox-item label { cursor: pointer; flex: 1; }
+        .checkbox-item .task-title { font-weight: 600; color: #1a1a2e; margin-bottom: 4px; }
+        .checkbox-item .task-desc { color: #666; font-size: 0.9em; }
+        .checkbox-item.completed { background: #e8f5e9; border-color: #4caf50; }
+        .checkbox-item.completed .task-title { text-decoration: line-through; color: #888; }
+        .pro-tip { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #ffc107; padding: 20px; border-radius: 0 15px 15px 0; margin: 20px 0; }
+        .pro-tip h4 { color: #f57c00; margin-bottom: 10px; }
+        .pro-tip p, .pro-tip ul { color: #666; line-height: 1.6; }
+        .pro-tip ul { margin-left: 20px; margin-top: 10px; }
+        .warning-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-left: 4px solid #f44336; padding: 20px; border-radius: 0 15px 15px 0; margin: 20px 0; }
+        .warning-box h4 { color: #c62828; margin-bottom: 10px; }
+        .warning-box ul { color: #666; line-height: 1.8; margin-left: 20px; }
+        .tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 15px; }
+        .tool-card { background: #f8f9fa; border-radius: 15px; padding: 20px; border-left: 5px solid #667eea; }
+        .tool-card h4 { color: #1a1a2e; margin-bottom: 8px; }
+        .tool-card p { color: #666; font-size: 0.9em; line-height: 1.5; }
+        .tool-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .tool-card a:hover { text-decoration: underline; }
+        .influencer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
+        .influencer-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s; }
+        .influencer-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .influencer-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white; }
+        .influencer-card h4 { color: #1a1a2e; margin-bottom: 5px; }
+        .influencer-card .platform { color: #667eea; font-size: 0.9em; margin-bottom: 10px; }
+        .influencer-card p { color: #666; font-size: 0.9em; line-height: 1.5; margin-bottom: 15px; }
+        .influencer-link { color: #667eea; text-decoration: none; font-weight: 600; }
+        .influencer-link:hover { text-decoration: underline; }
+        .progress-tracker { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; text-align: center; }
+        .progress-tracker h3 { color: white; margin-bottom: 20px; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; overflow: hidden; margin-bottom: 15px; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.1em; }
+        .notes-section textarea { width: 100%; min-height: 200px; padding: 20px; border: 2px solid #e0e0e0; border-radius: 15px; font-family: inherit; font-size: 1em; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #667eea; }
+        .cta-section { background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 20px; padding: 40px; text-align: center; color: white; }
+        .cta-section h3 { font-size: 1.8em; margin-bottom: 15px; }
+        .cta-section p { opacity: 0.9; margin-bottom: 25px; font-size: 1.1em; }
+        .cta-button { display: inline-block; background: white; color: #667eea; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: 1.1em; transition: all 0.3s; }
+        .cta-button:hover { transform: scale(1.05); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        @media (max-width: 600px) {
+            .header h1 { font-size: 1.8em; }
+            .savings-highlight h3 { font-size: 2em; }
+            .card { padding: 20px; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="income-playbooks.html" class="back-link">← Back to Playbooks</a>
-        <div class="card">
-            <h1>👕 Closet Declutter for Cash</h1>
-            <p class="subtitle">Find 5 items you haven't worn in 6+ months and turn them into money</p>
-            <div class="meta">
-                <span>⏱️ 30 minutes</span>
-                <span>💰 Earn $50-200+</span>
-                <span>📦 Clear the clutter</span>
-            </div>
+        <a href="../income-playbooks.html" class="back-link">← Back to Income Playbooks</a>
+        
+        <div class="header">
+            <h1>👗 Closet Declutter & Sell</h1>
+            <p class="subtitle">Turn unused clothes into cash - room by room guide</p>
+            <div class="time-badge">⏱️ 2-4 Hours | $100-$500+ Potential</div>
         </div>
+
         <div class="card">
-            <h2>🎯 The 6-Month Rule</h2>
-            <p>If you haven't worn something in 6 months, you probably won't. The average person has <strong>$200-500 worth of sellable clothes</strong> sitting unworn in their closet right now!</p>
-            <div class="highlight-box">
-                <h3>💡 Quick Math</h3>
-                <p>5 items × $20 average = <strong>$100 in your pocket</strong> from stuff just collecting dust!</p>
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Your closet is hiding cash! Studies show the average person has $1,000+ worth of unworn clothes. This playbook walks you through systematically decluttering your closet and selling items on Poshmark, Mercari, ThredUp, and Facebook Marketplace.</p>
+            </div>
+            <div class="savings-highlight">
+                <h3>$100 - $500+</h3>
+                <p>Average earnings from closet cleanout</p>
             </div>
             <div class="stats-grid">
-                <div class="stat-box"><div class="stat-number">5</div><div class="stat-label">items to find</div></div>
-                <div class="stat-box"><div class="stat-number">$100+</div><div class="stat-label">potential earnings</div></div>
-                <div class="stat-box"><div class="stat-number">30min</div><div class="stat-label">of your time</div></div>
+                <div class="stat-box">
+                    <div class="number">$1,000+</div>
+                    <div class="label">Hidden in Closets</div>
+                </div>
+<div class="stat-box">
+                    <div class="number">70%</div>
+                    <div class="label">Clothes Unworn</div>
+                </div>
+<div class="stat-box">
+                    <div class="number">4-6</div>
+                    <div class="label">Selling Platforms</div>
+                </div>
+<div class="stat-box">
+                    <div class="number">24hrs</div>
+                    <div class="label">First Sale Time</div>
+                </div>
+
             </div>
         </div>
+
         <div class="card">
-            <h2>📋 Your Closet Walkthrough</h2>
-            <div class="step-card">
-                <h3><span class="step-number">1</span> Set a Timer for 30 Minutes</h3>
-                <p>This keeps you focused and prevents overwhelm.</p>
-                <ul class="checklist"><li><span class="checkbox" onclick="toggleCheck(this)"></span> Timer set for 30 minutes</li></ul>
-            </div>
-            <div class="step-card">
-                <h3><span class="step-number">2</span> Go Through Each Section</h3>
-                <p>Touch every item and ask: "When did I last wear this?"</p>
-                <ul class="checklist">
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Checked hanging clothes</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Checked folded clothes</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Checked shoe collection</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Checked jackets/coats</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Checked accessories (bags, belts, etc.)</li>
+            <h2><span class="icon">📋</span> Step-by-Step Guide</h2>
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">1</div>
+                    <h3>Empty Everything</h3>
+                </div>
+                <p>Take EVERYTHING out of your closet. Yes, everything. Pile it on your bed.</p>
+<ul>
+<li>Clothes</li>
+<li>Shoes</li>
+<li>Accessories</li>
+<li>Bags</li>
+<li>Scarves</li>
+</ul>
+</div>
+<div class="step">
+                <div class="step-header">
+                    <div class="step-number">2</div>
+                    <h3>Sort Into Piles</h3>
+                </div>
+                <p>Create 4 piles: Keep, Sell, Donate, Trash</p>
+<ul>
+<li>Sell: Items in good condition you don't wear</li>
+<li>Donate: Worn but usable items</li>
+<li>Trash: Stained, torn, or unwearable</li>
+</ul>
+</div>
+<div class="step">
+                <div class="step-header">
+                    <div class="step-number">3</div>
+                    <h3>Research What Sells</h3>
+                </div>
+                <p>Check sold listings on Poshmark/Mercari for similar items</p>
+</div>
+<div class="step">
+                <div class="step-header">
+                    <div class="step-number">4</div>
+                    <h3>Take Great Photos</h3>
+                </div>
+                <p>Use natural light, clean background, show any flaws</p>
+<ul>
+<li>Front view</li>
+<li>Back view</li>
+<li>Tag/brand</li>
+<li>Any defects</li>
+</ul>
+</div>
+<div class="step">
+                <div class="step-header">
+                    <div class="step-number">5</div>
+                    <h3>List on Multiple Platforms</h3>
+                </div>
+                <p>Cross-list to maximize exposure</p>
+<ul>
+<li>Poshmark (best for brands)</li>
+<li>Mercari (general)</li>
+<li>Facebook Marketplace (local)</li>
+<li>ThredUp (bulk/lazy option)</li>
+</ul>
+</div>
+
+            
+            <div class="pro-tip">
+                <h4>💡 Pro Tips</h4>
+                <ul>
+                    <li>Check pockets before selling!</li><li>Wash and iron items for better photos</li><li>Price 20% higher to leave room for offers</li><li>Bundle similar items for faster sales</li><li>Seasonal items sell best at the right time (coats in fall, etc.)</li>
                 </ul>
             </div>
-            <div class="step-card">
-                <h3><span class="step-number">3</span> Find Your 5 Items</h3>
-                <p>Write down 5 items you haven't worn in 6+ months:</p>
-                <ul class="checklist">
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Item 1: _______________ Est. value: $____</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Item 2: _______________ Est. value: $____</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Item 3: _______________ Est. value: $____</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Item 4: _______________ Est. value: $____</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Item 5: _______________ Est. value: $____</li>
-                </ul>
-            </div>
-            <div class="step-card">
-                <h3><span class="step-number">4</span> Prepare Items for Sale</h3>
-                <ul class="checklist">
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Wash/clean all items</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Iron or steam if wrinkled</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Check for stains, tears, missing buttons</li>
-                    <li><span class="checkbox" onclick="toggleCheck(this)"></span> Set aside items in a "to sell" pile</li>
+            
+            <div class="warning-box">
+                <h4>⚠️ Watch Out For</h4>
+                <ul>
+                    <li>Check for stains, tears, missing buttons before listing</li><li>Don't overprice - items sitting don't make money</li><li>Keep shipping costs in mind when pricing</li>
                 </ul>
             </div>
         </div>
+
         <div class="card">
-            <h2>🏆 Success Checklist</h2>
-            <ul class="checklist">
-                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Found 5+ items to sell</li>
-                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Items are clean and ready</li>
-                <li><span class="checkbox" onclick="toggleCheck(this)"></span> Ready to take photos and list for sale</li>
-            </ul>
+            <h2><span class="icon">✅</span> Action Checklist</h2>
+            <div class="checkbox-item" onclick="toggleCheckbox(this)">
+                <input type="checkbox" id="task1">
+                <label for="task1">
+                    <div class="task-title">Set a declutter date</div>
+                    <div class="task-desc">Block 2-4 hours on your calendar</div>
+                </label>
+            </div>
+<div class="checkbox-item" onclick="toggleCheckbox(this)">
+                <input type="checkbox" id="task2">
+                <label for="task2">
+                    <div class="task-title">Get supplies ready</div>
+                    <div class="task-desc">Trash bags, hangers, boxes for selling items</div>
+                </label>
+            </div>
+<div class="checkbox-item" onclick="toggleCheckbox(this)">
+                <input type="checkbox" id="task3">
+                <label for="task3">
+                    <div class="task-title">Empty your closet completely</div>
+                    <div class="task-desc">Every single item - pile on bed</div>
+                </label>
+            </div>
+<div class="checkbox-item" onclick="toggleCheckbox(this)">
+                <input type="checkbox" id="task4">
+                <label for="task4">
+                    <div class="task-title">Create your 4 piles</div>
+                    <div class="task-desc">Keep, Sell, Donate, Trash</div>
+                </label>
+            </div>
+<div class="checkbox-item" onclick="toggleCheckbox(this)">
+                <input type="checkbox" id="task5">
+                <label for="task5">
+                    <div class="task-title">Sign up for selling platforms</div>
+                    <div class="task-desc">Poshmark, Mercari, Facebook Marketplace</div>
+                </label>
+            </div>
+<div class="checkbox-item" onclick="toggleCheckbox(this)">
+                <input type="checkbox" id="task6">
+                <label for="task6">
+                    <div class="task-title">Research prices for top items</div>
+                    <div class="task-desc">Check sold listings for comparable prices</div>
+                </label>
+            </div>
+<div class="checkbox-item" onclick="toggleCheckbox(this)">
+                <input type="checkbox" id="task7">
+                <label for="task7">
+                    <div class="task-title">Take photos of items to sell</div>
+                    <div class="task-desc">Good lighting, multiple angles</div>
+                </label>
+            </div>
+<div class="checkbox-item" onclick="toggleCheckbox(this)">
+                <input type="checkbox" id="task8">
+                <label for="task8">
+                    <div class="task-title">Create listings</div>
+                    <div class="task-desc">Include measurements, brand, condition</div>
+                </label>
+            </div>
+<div class="checkbox-item" onclick="toggleCheckbox(this)">
+                <input type="checkbox" id="task9">
+                <label for="task9">
+                    <div class="task-title">Cross-list on multiple platforms</div>
+                    <div class="task-desc">Same items on Poshmark + Mercari + FB</div>
+                </label>
+            </div>
+<div class="checkbox-item" onclick="toggleCheckbox(this)">
+                <input type="checkbox" id="task10">
+                <label for="task10">
+                    <div class="task-title">Schedule donation pickup</div>
+                    <div class="task-desc">Salvation Army, Goodwill, or local charity</div>
+                </label>
+            </div>
+
         </div>
+
         <div class="card">
-            <h2>📈 Your Progress</h2>
-            <p><span id="completed">0</span> of <span id="total">0</span> steps completed</p>
-            <div class="progress-bar"><div class="progress-fill" id="progress" style="width: 0%"></div></div>
+            <h2><span class="icon">🛠️</span> Tools & Resources</h2>
+            <div class="tool-grid">
+                <div class="tool-card">
+                    <h4>📱 Poshmark</h4>
+                    <p>Best for name brands and designer items. Flat $7.11 shipping.</p>
+                    <a href="https://poshmark.com" target="_blank">Learn More →</a>
+                </div>
+<div class="tool-card">
+                    <h4>📦 Mercari</h4>
+                    <p>Great for all items. Variable shipping options.</p>
+                    <a href="https://mercari.com" target="_blank">Learn More →</a>
+                </div>
+<div class="tool-card">
+                    <h4>🏠 Facebook Marketplace</h4>
+                    <p>Local sales, no shipping hassle.</p>
+                    <a href="https://facebook.com/marketplace" target="_blank">Learn More →</a>
+                </div>
+<div class="tool-card">
+                    <h4>📤 ThredUp</h4>
+                    <p>Send a bag, they do the work. Lower payouts but easy.</p>
+                    <a href="https://thredup.com" target="_blank">Learn More →</a>
+                </div>
+
+            </div>
         </div>
-        <div class="card"><a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a></div>
+
+        <div class="card">
+            <h2><span class="icon">🎓</span> Learn From These Experts</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-avatar">👗</div>
+                    <h4>Poshmark Selling Tips</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Learn to become a top Poshmark seller with proven strategies.</p>
+                    <a href="https://youtube.com/results?search_query=poshmark+selling+tips" class="influencer-link" target="_blank">Search Videos →</a>
+                </div>
+<div class="influencer-card">
+                    <div class="influencer-avatar">💰</div>
+                    <h4>r/Flipping</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>500K+ members sharing what sells and pricing strategies.</p>
+                    <a href="https://reddit.com/r/Flipping" class="influencer-link" target="_blank">Join Community →</a>
+                </div>
+<div class="influencer-card">
+                    <div class="influencer-avatar">🏷️</div>
+                    <h4>r/poshmark</h4>
+                    <div class="platform">🌐 Reddit</div>
+                    <p>Dedicated community for Poshmark sellers.</p>
+                    <a href="https://reddit.com/r/poshmark" class="influencer-link" target="_blank">Join Community →</a>
+                </div>
+<div class="influencer-card">
+                    <div class="influencer-avatar">📦</div>
+                    <h4>Hustle at Home Mom</h4>
+                    <div class="platform">📺 YouTube</div>
+                    <p>Tips for selling clothes online from home.</p>
+                    <a href="https://youtube.com/results?search_query=selling+clothes+online" class="influencer-link" target="_blank">Search Videos →</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📈</span> Your Progress</h2>
+            <div class="progress-tracker">
+                <h3>Checklist Progress</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-text"><span id="completed">0</span> of 10 tasks completed</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Notes</h2>
+            <div class="notes-section">
+                <textarea id="notes" placeholder="Track your closet cleanout!
+
+📅 DECLUTTER DATE: ________________
+
+📦 ITEMS FOUND TO SELL:
+Item 1: _____________ Est. Price: $_____
+Item 2: _____________ Est. Price: $_____
+Item 3: _____________ Est. Price: $_____
+Item 4: _____________ Est. Price: $_____
+Item 5: _____________ Est. Price: $_____
+
+📱 PLATFORMS USED:
+☐ Poshmark - Listed ____ items
+☐ Mercari - Listed ____ items
+☐ Facebook Marketplace - Listed ____ items
+☐ ThredUp - Sent ____ items
+
+💵 SALES TRACKER:
+Sold Item: _________ Platform: _______ Price: $_____
+Sold Item: _________ Platform: _______ Price: $_____
+Sold Item: _________ Platform: _______ Price: $_____
+
+TOTAL EARNED: $_______
+
+🎁 DONATED TO: ________________
+☐ Got donation receipt for taxes
+
+NOTES:"></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help With Your Finances?</h3>
+            <p>Our team can help you create a complete financial plan.</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Get Support →</a>
+        </div>
     </div>
+
     <script>
-        function toggleCheck(el) { el.classList.toggle('checked'); el.innerHTML = el.classList.contains('checked') ? '✓' : ''; updateProgress(); }
-        function updateProgress() { const total = document.querySelectorAll('.checkbox').length; const completed = document.querySelectorAll('.checkbox.checked').length; document.getElementById('completed').textContent = completed; document.getElementById('total').textContent = total; document.getElementById('progress').style.width = (completed / total * 100) + '%'; }
-        document.addEventListener('DOMContentLoaded', updateProgress);
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+            loadNotes();
+        });
+
+        function toggleCheckbox(item) {
+            const checkbox = item.querySelector('input[type="checkbox"]');
+            checkbox.checked = !checkbox.checked;
+            item.classList.toggle('completed', checkbox.checked);
+            updateProgress();
+            saveProgress();
+        }
+
+        function updateProgress() {
+            const total = document.querySelectorAll('.checkbox-item').length;
+            const completed = document.querySelectorAll('.checkbox-item.completed').length;
+            const percentage = (completed / total) * 100;
+            document.getElementById('progressFill').style.width = percentage + '%';
+            document.getElementById('completed').textContent = completed;
+        }
+
+        function saveProgress() {
+            const checkboxes = document.querySelectorAll('.checkbox-item');
+            const state = Array.from(checkboxes).map(item => item.classList.contains('completed'));
+            localStorage.setItem('closetdeclutter_progress', JSON.stringify(state));
+        }
+
+        function loadProgress() {
+            const saved = localStorage.getItem('closetdeclutter_progress');
+            if (saved) {
+                const state = JSON.parse(saved);
+                const checkboxes = document.querySelectorAll('.checkbox-item');
+                checkboxes.forEach((item, index) => {
+                    if (state[index]) {
+                        item.classList.add('completed');
+                        item.querySelector('input[type="checkbox"]').checked = true;
+                    }
+                });
+                updateProgress();
+            }
+        }
+
+        function loadNotes() {
+            const saved = localStorage.getItem('closetdeclutter_notes');
+            if (saved) document.getElementById('notes').value = saved;
+        }
+
+        document.getElementById('notes').addEventListener('input', function() {
+            localStorage.setItem('closetdeclutter_notes', this.value);
+        });
     </script>
 </body>
 </html>
