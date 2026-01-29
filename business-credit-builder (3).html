@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Credit Builder - ASAP Credit Repair</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #1a5fb4 0%, #0d3a7a 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header img { max-width: 200px; margin-bottom: 20px; }
+        .header h1 { color: #1a5fb4; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #1a5fb4, #0d3a7a); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a5fb4; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; font-size: 1.5em; }
+        .card h3 { color: #1a5fb4; margin: 25px 0 15px 0; font-size: 1.2em; border-bottom: 2px solid #e8f0fe; padding-bottom: 10px; }
+        .card p { color: #444; line-height: 1.7; margin-bottom: 15px; }
+        
+        .path-selection { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 30px 0; }
+        .path-card { background: linear-gradient(135deg, #f8fafc, #e8f0fe); border-radius: 15px; padding: 25px; cursor: pointer; border: 3px solid transparent; transition: all 0.3s; }
+        .path-card:hover { border-color: #1a5fb4; transform: translateY(-5px); }
+        .path-card.selected { border-color: #1a5fb4; background: linear-gradient(135deg, #e8f0fe, #d2e3fc); }
+        .path-card h3 { color: #1a5fb4; margin-bottom: 10px; font-size: 1.3em; border: none; padding: 0; }
+        .path-card .badge { display: inline-block; background: #1a5fb4; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.8em; margin-bottom: 10px; }
+        .path-card .badge.green { background: #22c55e; }
+        .path-card p { color: #555; font-size: 0.95em; margin-bottom: 10px; }
+        .path-card ul { color: #555; font-size: 0.9em; margin-left: 20px; }
+        .path-card li { margin: 5px 0; }
+        
+        .path-content { display: none; }
+        .path-content.active { display: block; }
+        
+        .achieve-box { background: linear-gradient(135deg, #e8f0fe, #d2e3fc); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #0d3a7a; font-size: 1.05em; line-height: 1.7; margin: 0; }
+        
+        .income-highlight { background: linear-gradient(135deg, #1a5fb4, #2d7dd2); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 1.8em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        
+        .step-section { margin-bottom: 15px; border: 1px solid #e5e7eb; border-radius: 15px; overflow: hidden; }
+        .step-header { background: linear-gradient(135deg, #f8fafc, #f1f5f9); padding: 20px; cursor: pointer; display: flex; align-items: center; gap: 15px; }
+        .step-header:hover { background: linear-gradient(135deg, #e8f0fe, #d2e3fc); }
+        .step-number { width: 45px; height: 45px; background: linear-gradient(135deg, #1a5fb4, #0d3a7a); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2em; flex-shrink: 0; }
+        .step-number.complete { background: linear-gradient(135deg, #22c55e, #16a34a); }
+        .step-info { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.15em; }
+        .step-desc { color: #666; font-size: 0.9em; margin-top: 3px; }
+        .step-meta { display: flex; gap: 10px; align-items: center; }
+        .step-progress { font-size: 0.85em; color: #666; background: #e8f0fe; padding: 4px 12px; border-radius: 10px; }
+        .step-toggle { font-size: 1.5em; color: #999; transition: transform 0.3s; }
+        .step-toggle.open { transform: rotate(180deg); }
+        .step-content { display: none; padding: 25px; border-top: 1px solid #e5e7eb; background: #fafafa; }
+        .step-content.open { display: block; }
+        
+        .task { display: flex; gap: 15px; margin-bottom: 15px; padding: 18px; background: white; border-radius: 12px; border: 1px solid #e5e7eb; align-items: flex-start; }
+        .task:hover { border-color: #1a5fb4; box-shadow: 0 4px 15px rgba(26, 95, 180, 0.1); }
+        .task-checkbox { width: 26px; height: 26px; border: 2px solid #1a5fb4; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 14px; color: transparent; transition: all 0.3s; margin-top: 2px; }
+        .task-checkbox.checked { background: #1a5fb4; color: white; }
+        .task-content { flex: 1; }
+        .task-title { font-weight: 600; color: #1a1a2e; margin-bottom: 8px; font-size: 1.05em; }
+        .task-desc { color: #555; font-size: 0.95em; line-height: 1.6; }
+        .task-link { display: inline-block; margin-top: 12px; background: #1a5fb4; color: white; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 0.9em; font-weight: 500; transition: background 0.3s; }
+        .task-link:hover { background: #0d3a7a; }
+        .task-badge { display: inline-block; background: #e8f0fe; color: #1a5fb4; padding: 3px 10px; border-radius: 4px; font-size: 0.75em; font-weight: 600; margin-left: 8px; vertical-align: middle; }
+        .task-badge.optional { background: #f1f5f9; color: #64748b; }
+        .task-badge.important { background: #fef3c7; color: #92400e; }
+        
+        .pro-tip { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border-left: 4px solid #22c55e; padding: 20px; border-radius: 0 15px 15px 0; margin: 20px 0; }
+        .pro-tip-title { font-weight: 700; color: #166534; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; font-size: 1.05em; }
+        .pro-tip p, .pro-tip li { color: #166534; margin: 8px 0; font-size: 0.95em; line-height: 1.6; }
+        .pro-tip ul { margin-left: 20px; }
+        
+        .warning-box { background: linear-gradient(135deg, #fef2f2, #fecaca); border-left: 4px solid #ef4444; padding: 20px; border-radius: 0 15px 15px 0; margin: 20px 0; }
+        .warning-box h4 { color: #dc2626; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; font-size: 1.05em; }
+        .warning-box p, .warning-box li { color: #991b1b; font-size: 0.95em; line-height: 1.6; }
+        .warning-box ul { margin-left: 20px; margin-top: 10px; }
+        
+        .info-box { background: linear-gradient(135deg, #e8f0fe, #dbeafe); border-left: 4px solid #1a5fb4; padding: 20px; border-radius: 0 15px 15px 0; margin: 20px 0; }
+        .info-box h4 { color: #1e40af; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; font-size: 1.05em; }
+        .info-box p, .info-box li { color: #1e40af; font-size: 0.95em; line-height: 1.6; }
+        .info-box ul { margin-left: 20px; margin-top: 10px; }
+        
+        .vendor-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 20px 0; }
+        .vendor-card { background: #f8fafc; border-radius: 15px; padding: 20px; border-left: 5px solid #1a5fb4; }
+        .vendor-card h4 { color: #1a1a2e; margin-bottom: 10px; font-size: 1.1em; }
+        .vendor-card .reports { color: #1a5fb4; font-weight: 600; font-size: 0.9em; margin-bottom: 8px; }
+        .vendor-card .terms { color: #666; font-size: 0.85em; margin-bottom: 5px; }
+        .vendor-card .highlight { color: #22c55e; font-size: 0.85em; font-weight: 500; margin-top: 8px; }
+        .vendor-card .requirements { color: #666; font-size: 0.85em; margin-top: 5px; font-style: italic; }
+        .vendor-card a { display: inline-block; margin-top: 12px; color: #1a5fb4; text-decoration: none; font-weight: 600; font-size: 0.9em; }
+        .vendor-card a:hover { text-decoration: underline; }
+        
+        .tier-badge { display: inline-block; padding: 5px 14px; border-radius: 20px; font-size: 0.85em; font-weight: 600; margin-bottom: 15px; }
+        .tier-badge.tier1 { background: #dcfce7; color: #166534; }
+        .tier-badge.tier2 { background: #dbeafe; color: #1e40af; }
+        .tier-badge.tier3 { background: #f3e8ff; color: #7c3aed; }
+        .tier-badge.fast { background: #fef3c7; color: #92400e; }
+        
+        .progress-tracker { background: linear-gradient(135deg, #1a5fb4, #0d3a7a); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        
+        .lead-form { background: white; border-radius: 20px; padding: 35px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .lead-form .logo-container { text-align: center; margin-bottom: 20px; }
+        .lead-form .logo-container img { max-width: 180px; }
+        .lead-form h2 { color: #1a5fb4; text-align: center; margin-bottom: 10px; font-size: 1.8em; }
+        .lead-form .tagline { color: #666; text-align: center; margin-bottom: 25px; font-size: 1.1em; }
+        .form-group { margin-bottom: 18px; }
+        .form-group label { display: block; color: #333; margin-bottom: 6px; font-size: 0.95em; font-weight: 500; }
+        .form-group input { width: 100%; padding: 14px 16px; border: 2px solid #e5e7eb; background: white; color: #333; border-radius: 10px; font-size: 1em; transition: border-color 0.3s; }
+        .form-group input:focus { outline: none; border-color: #1a5fb4; }
+        .submit-btn { width: 100%; padding: 16px; background: linear-gradient(135deg, #1a5fb4, #0d3a7a); color: white; border: none; border-radius: 10px; font-size: 1.15em; font-weight: 600; cursor: pointer; margin-top: 10px; transition: all 0.3s; }
+        .submit-btn:hover { background: linear-gradient(135deg, #0d3a7a, #082a5c); transform: translateY(-2px); }
+        
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; font-family: inherit; }
+        .notes-section textarea:focus { outline: none; border-color: #1a5fb4; }
+        
+        .cta-section { background: linear-gradient(135deg, #1a5fb4, #0d3a7a); color: white; border-radius: 15px; padding: 35px; text-align: center; margin-top: 20px; }
+        .cta-section img { max-width: 150px; margin-bottom: 15px; }
+        .cta-section h3 { font-size: 1.5em; margin-bottom: 10px; }
+        .cta-section p { opacity: 0.95; margin-bottom: 15px; }
+        .cta-button { display: inline-block; background: white; color: #1a5fb4; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; transition: all 0.3s; }
+        .cta-button:hover { background: #f0f0f0; transform: translateY(-2px); }
+        
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+        
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 15px; margin: 20px 0; }
+        .stat-card { background: #f8fafc; border-radius: 15px; padding: 20px; text-align: center; }
+        .stat-card .number { font-size: 2em; font-weight: bold; color: #1a5fb4; }
+        .stat-card .label { color: #666; font-size: 0.85em; margin-top: 5px; }
+        
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .comparison-table th, .comparison-table td { padding: 12px; text-align: left; border-bottom: 1px solid #e5e7eb; font-size: 0.9em; }
+        .comparison-table th { background: #f8fafc; color: #1a5fb4; font-weight: 600; }
+        
+        .content-locked { display: none; }
+        .content-unlocked { display: block; }
+        
+        @media (max-width: 768px) {
+            .path-selection { grid-template-columns: 1fr; }
+            .vendor-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 1.8em; }
+            .card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Blueprints</a>
+
+        <div class="lead-form" id="leadForm">
+            <div class="logo-container">
+                <img src="https://asapcreditrepairusa.com/images/logo.png" alt="ASAP Credit Repair" onerror="this.style.display='none'">
+            </div>
+            <h2>🏢 Business Credit Builder</h2>
+            <p class="tagline">Your complete step-by-step guide to building business credit</p>
+            <form id="captureForm" action="https://formsubmit.co/management@asapcreditrepairusa.com" method="POST">
+                <!-- FormSubmit.co Configuration -->
+                <input type="hidden" name="_subject" value="New Business Credit Builder Lead">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" value="#">
+                
+                <div class="form-group">
+                    <label>Full Name *</label>
+                    <input type="text" name="name" id="userName" placeholder="John Smith" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address *</label>
+                    <input type="email" name="email" id="userEmail" placeholder="you@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" name="phone" id="userPhone" placeholder="(555) 123-4567">
+                </div>
+                <div class="form-group">
+                    <label>Business Name</label>
+                    <input type="text" name="business" id="userBusiness" placeholder="Your Company LLC">
+                </div>
+                <button type="submit" class="submit-btn">Access My Blueprint →</button>
+            </form>
+            <p style="text-align: center; color: #999; font-size: 0.8em; margin-top: 15px;">Your information is secure and will only be used to help you build business credit.</p>
+        </div>
+
+        <div id="mainContent" class="content-locked">
+        
+        <div class="header">
+            <img src="https://asapcreditrepairusa.com/images/logo.png" alt="ASAP Credit Repair" onerror="this.style.display='none'">
+            <h1>🏢 Business Credit Builder</h1>
+            <p class="subtitle">Build business credit separate from your personal credit</p>
+            <div class="time-badge">⏱️ Unlock $50K-$250K+ in funding</div>
+        </div>
+        
+        <div class="card">
+            <h2><span class="icon">🎯</span> What Is Business Credit?</h2>
+            <p>Business credit is a credit profile built in your company's name, completely separate from your personal credit. It allows your business to qualify for financing based on your <strong>business's merit</strong> — not your personal credit score.</p>
+            
+            <h3>The Three Major Business Credit Bureaus</h3>
+            <table class="comparison-table">
+                <tr><th>Bureau</th><th>Main Score</th><th>Range</th><th>What It Measures</th></tr>
+                <tr><td><strong>Dun & Bradstreet</strong></td><td>PAYDEX</td><td>1-100</td><td>Payment history (80+ = on-time)</td></tr>
+                <tr><td><strong>Experian Business</strong></td><td>Intelliscore Plus</td><td>1-100</td><td>Overall credit risk</td></tr>
+                <tr><td><strong>Equifax Business</strong></td><td>Payment Index</td><td>1-100</td><td>Payment behavior trends</td></tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🛤️</span> Choose Your Path</h2>
+            <p>Your path depends on your current personal credit situation:</p>
+            
+            <div class="path-selection">
+                <div class="path-card" id="pathA-select" onclick="selectPath('A')">
+                    <span class="badge green">FASTER PATH</span>
+                    <h3>Path A: Leverage Good Credit</h3>
+                    <p><strong>For you if:</strong> Personal credit score is 660+</p>
+                    <ul>
+                        <li>💳 Credit card stacking ($50K-$250K+)</li>
+                        <li>🏦 Business loans & lines of credit</li>
+                        <li>🎯 Graduate to no-PG cards</li>
+                        <li>⚡ Build business credit in 3-6 months</li>
+                    </ul>
+                </div>
+                
+                <div class="path-card" id="pathB-select" onclick="selectPath('B')">
+                    <span class="badge">NO CREDIT CHECK</span>
+                    <h3>Path B: Build From Scratch</h3>
+                    <p><strong>For you if:</strong> Bad/no credit OR want no personal guarantee</p>
+                    <ul>
+                        <li>Start with Net 30 vendor accounts</li>
+                        <li>No personal credit check required</li>
+                        <li>Build business credit in 6-12 months</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Best Strategy</div>
+                <p>Many business owners use <strong>BOTH paths</strong> simultaneously — applying for business credit cards (Path A) while also opening Net 30 vendor accounts (Path B) to maximize tradelines.</p>
+            </div>
+        </div>
+
+        <!-- FOUNDATION -->
+        <div class="card">
+            <h2><span class="icon">🏗️</span> Step 1: Business Foundation (Required for Both Paths)</h2>
+            <div class="step-section">
+                <div class="step-header" onclick="toggleStep('foundation')">
+                    <div class="step-number" id="foundation-number">1</div>
+                    <div class="step-info">
+                        <div class="step-title">Business Foundation Checklist</div>
+                        <div class="step-desc">Establish your business credibility and legal structure</div>
+                    </div>
+                    <div class="step-meta">
+                        <span class="step-progress" id="foundation-progress">0/8 complete</span>
+                        <span class="step-toggle" id="foundation-toggle">▼</span>
+                    </div>
+                </div>
+                <div class="step-content" id="foundation-content">
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('f1')" id="f1">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">1. Register Your Business Entity <span class="task-badge">Required</span></div>
+                            <div class="task-desc">File an LLC or Corporation with your Secretary of State. This creates legal separation between you and your business.</div>
+                            <a href="https://www.sba.gov/business-guide/launch-your-business/choose-business-structure" target="_blank" class="task-link">SBA Business Structure Guide →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('f2')" id="f2">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">2. Get Your EIN (Tax ID) <span class="task-badge">Required</span></div>
+                            <div class="task-desc">Apply for a FREE EIN from the IRS. Takes 5 minutes online and you receive it instantly. <strong>Never pay for this service!</strong></div>
+                            <a href="https://www.irs.gov/businesses/small-businesses-self-employed/apply-for-an-employer-identification-number-ein-online" target="_blank" class="task-link">IRS EIN Application (Free) →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('f3')" id="f3">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">3. Establish Business Address <span class="task-badge">Required</span></div>
+                            <div class="task-desc"><strong>NO PO BOXES</strong> — most vendors reject them. Use a real street address or virtual office service ($30-150/mo).</div>
+                            <a href="https://www.alliancevirtualoffices.com/" target="_blank" class="task-link">Alliance Virtual Offices →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('f4')" id="f4">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">4. Get Business Phone + 411 Listing <span class="task-badge important">Critical</span></div>
+                            <div class="task-desc">Get a dedicated business phone and ensure it's <strong>listed in 411 directory</strong>. Vendors verify your business by calling 411!</div>
+                            <a href="https://www.grasshopper.com/" target="_blank" class="task-link">Grasshopper (includes 411) →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('f5')" id="f5">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">5. Open Business Bank Account <span class="task-badge">Required</span></div>
+                            <div class="task-desc">Open a dedicated checking account in your business's legal name. Required for most vendor applications.</div>
+                            <a href="https://www.chase.com/business/banking" target="_blank" class="task-link">Chase Business Banking →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('f6')" id="f6">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">6. Create Professional Website <span class="task-badge optional">Recommended</span></div>
+                            <div class="task-desc">A simple website adds credibility. Carrd is $19/year for a professional one-page site.</div>
+                            <a href="https://carrd.co/" target="_blank" class="task-link">Carrd (Simple Sites) →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('f7')" id="f7">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">7. Set Up Professional Email <span class="task-badge">Required</span></div>
+                            <div class="task-desc">Use yourname@yourcompany.com instead of Gmail. Google Workspace is $6/month.</div>
+                            <a href="https://workspace.google.com/" target="_blank" class="task-link">Google Workspace →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('f8')" id="f8">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">8. Claim Google Business Profile <span class="task-badge">Required</span></div>
+                            <div class="task-desc">Set up your free Google Business Profile. Appears in Google searches and adds credibility.</div>
+                            <a href="https://business.google.com/" target="_blank" class="task-link">Google Business Profile →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="warning-box">
+                        <h4>⚠️ CRITICAL: Consistency Is Everything</h4>
+                        <p>Your business name, address, and phone must be <strong>IDENTICAL everywhere</strong>. Even "St." vs "Street" can cause denials!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DUNS NUMBER -->
+        <div class="card">
+            <h2><span class="icon">📊</span> Step 2: Get Your D-U-N-S Number</h2>
+            <div class="step-section">
+                <div class="step-header" onclick="toggleStep('duns')">
+                    <div class="step-number" id="duns-number">2</div>
+                    <div class="step-info">
+                        <div class="step-title">D-U-N-S Number & Credit Monitoring</div>
+                        <div class="step-desc">Register with business credit bureaus</div>
+                    </div>
+                    <div class="step-meta">
+                        <span class="step-progress" id="duns-progress">0/3 complete</span>
+                        <span class="step-toggle" id="duns-toggle">▼</span>
+                    </div>
+                </div>
+                <div class="step-content" id="duns-content">
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('d1')" id="d1">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">1. Apply for FREE D-U-N-S Number <span class="task-badge">Required</span></div>
+                            <div class="task-desc">Request your D-U-N-S Number from Dun & Bradstreet. It's <strong>FREE</strong> but takes 30 business days. D&B will try to upsell you — ignore it!</div>
+                            <a href="https://www.dnb.com/en-us/smb/duns/get-a-duns.html" target="_blank" class="task-link">Apply for FREE D-U-N-S Number →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('d2')" id="d2">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">2. Set Up Nav.com Credit Monitoring <span class="task-badge important">Recommended</span></div>
+                            <div class="task-desc">Nav.com monitors D&B and Experian in one dashboard. Free account available, Premium ($49/mo) includes tradeline submissions.</div>
+                            <a href="https://www.nav.com/" target="_blank" class="task-link">Sign Up for Nav.com →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('d3')" id="d3">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">3. Wait for D-U-N-S Number (30 days)</div>
+                            <div class="task-desc">Do NOT apply to vendors until you have your D-U-N-S Number. Use this time to complete foundation steps.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="pro-tip">
+                        <div class="pro-tip-title">💡 Understanding PAYDEX Score</div>
+                        <ul>
+                            <li><strong>PAYDEX 80</strong> = Paying on time (minimum goal)</li>
+                            <li><strong>PAYDEX 100</strong> = Paying 30 days early</li>
+                            <li>Need 3+ accounts reporting to generate a PAYDEX score</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PATH A: GOOD CREDIT -->
+        <div id="pathA-content" class="path-content">
+            <div class="card">
+                <span class="tier-badge fast">🚀 PATH A: LEVERAGE GOOD CREDIT</span>
+                <h2><span class="icon">💳</span> Step 3A: Credit Card Stacking Strategy (660+ Score)</h2>
+                
+                <div class="income-highlight">
+                    <h3>💰 Potential Funding: $50K - $250K+</h3>
+                    <p>With good personal credit (660+), you can stack multiple business credit cards and access business loans to build significant capital quickly</p>
+                </div>
+                
+                <div class="info-box">
+                    <h4>ℹ️ What Is Credit Card Stacking?</h4>
+                    <p><strong>Credit card stacking</strong> is the strategy of applying for multiple business credit cards in a short window (same day or same week) before the inquiries show on your credit report. This allows you to get approved for multiple cards at higher limits before any single issuer sees the other applications.</p>
+                    <ul style="margin-top: 10px;">
+                        <li><strong>Why it works:</strong> Hard inquiries take 24-48 hours to appear on credit reports</li>
+                        <li><strong>Typical results:</strong> $50K-$150K+ in combined credit limits</li>
+                        <li><strong>Best timing:</strong> Apply to all cards on the SAME DAY for maximum success</li>
+                    </ul>
+                </div>
+                
+                <!-- RECOMMENDED APPROACH - AFFILIATE -->
+                <div style="background: linear-gradient(135deg, #22c55e, #16a34a); border-radius: 20px; padding: 30px; margin: 25px 0; color: white;">
+                    <h3 style="font-size: 1.5em; margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">⭐ RECOMMENDED: Work With Credit Stacking Experts</h3>
+                    <p style="font-size: 1.05em; line-height: 1.7; margin-bottom: 20px;">While you CAN do credit card stacking yourself (see DIY guide below), working with professionals dramatically increases your success rate and total funding amount. Here's why:</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 20px;">
+                        <div style="background: rgba(255,255,255,0.15); border-radius: 12px; padding: 15px;">
+                            <div style="font-size: 1.8em; font-weight: bold;">📊</div>
+                            <div style="font-weight: 600; margin: 8px 0;">Strategic Sequencing</div>
+                            <div style="font-size: 0.9em; opacity: 0.95;">Experts know exactly which banks to apply to first, second, third — based on YOUR specific credit profile</div>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.15); border-radius: 12px; padding: 15px;">
+                            <div style="font-size: 1.8em; font-weight: bold;">🎯</div>
+                            <div style="font-weight: 600; margin: 8px 0;">Maximize Approvals</div>
+                            <div style="font-size: 0.9em; opacity: 0.95;">They know which cards approve together, which to avoid, and how to handle reconsideration calls</div>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.15); border-radius: 12px; padding: 15px;">
+                            <div style="font-size: 1.8em; font-weight: bold;">💰</div>
+                            <div style="font-weight: 600; margin: 8px 0;">Higher Limits</div>
+                            <div style="font-size: 0.9em; opacity: 0.95;">Professionals consistently get clients $50K-$250K+ vs DIY average of $20K-$50K</div>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.15); border-radius: 12px; padding: 15px;">
+                            <div style="font-size: 1.8em; font-weight: bold;">🛡️</div>
+                            <div style="font-weight: 600; margin: 8px 0;">Protect Your Credit</div>
+                            <div style="font-size: 0.9em; opacity: 0.95;">Avoid costly mistakes — wrong timing or wrong cards can hurt your score and waste inquiries</div>
+                        </div>
+                    </div>
+                    <p style="font-size: 1.05em; line-height: 1.7; margin-bottom: 20px;"><strong>The Bottom Line:</strong> Credit card stacking is the FASTEST and EASIEST way to access $50K-$250K+ in business capital with 0% intro APR periods (12-21 months interest-free!). But the difference between getting $30K on your own vs $150K+ with experts is significant. One wrong move — applying in the wrong order, triggering fraud alerts, missing reconsideration windows — can cost you tens of thousands in potential funding.</p>
+                    <div style="text-align: center;">
+                        <a href="https://www.7figurescredit.com/?a_aid=Asapcreditrepair" target="_blank" style="display: inline-block; background: white; color: #16a34a; padding: 18px 40px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: 1.15em; transition: all 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">Get Expert Help With Credit Stacking →</a>
+                        <p style="font-size: 0.9em; margin-top: 15px; opacity: 0.9;">✓ Free consultation &nbsp;|&nbsp; ✓ See what you qualify for &nbsp;|&nbsp; ✓ 0% interest funding</p>
+                    </div>
+                </div>
+                
+                <div class="step-section">
+                    <div class="step-header" onclick="toggleStep('pathA-stack')">
+                        <div class="step-number" id="pathA-stack-number">3</div>
+                        <div class="step-info">
+                            <div class="step-title">DIY Credit Card Stacking Guide</div>
+                            <div class="step-desc">If you prefer to do it yourself, here's the complete strategy</div>
+                        </div>
+                        <div class="step-meta">
+                            <span class="step-progress" id="pathA-stack-progress">0/6 complete</span>
+                            <span class="step-toggle" id="pathA-stack-toggle">▼</span>
+                        </div>
+                    </div>
+                    <div class="step-content" id="pathA-stack-content">
+                        
+                        <div class="pro-tip">
+                            <div class="pro-tip-title">💡 Consider Professional Help First</div>
+                            <p>DIY credit stacking has a steep learning curve. Common mistakes include applying in the wrong order, triggering fraud alerts by applying too fast, not knowing which cards work well together, and missing reconsideration windows. <a href="https://www.7figurescredit.com/?a_aid=Asapcreditrepair" target="_blank" style="color: #166534; font-weight: 600;">Get a free consultation to see what you qualify for →</a></p>
+                        </div>
+                        
+                        <div class="warning-box">
+                            <h4>⚠️ Before You Start Credit Card Stacking (DIY)</h4>
+                            <ul>
+                                <li><strong>Credit score:</strong> You need 660+ (680+ for best results)</li>
+                                <li><strong>Credit utilization:</strong> Should be under 30% on existing cards</li>
+                                <li><strong>Recent inquiries:</strong> Fewer than 3 hard inquiries in past 6 months</li>
+                                <li><strong>Business foundation:</strong> Complete ALL foundation steps FIRST</li>
+                                <li><strong>Clear schedule:</strong> Block 2-3 hours to apply to all cards in one session</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>🎯 The Stacking Order (Apply in This Sequence)</h3>
+                        <p style="color: #555; margin-bottom: 20px;">Apply to these issuers in order, all on the SAME DAY. Start early morning and complete all applications within 2-3 hours.</p>
+                        
+                        <div class="vendor-grid">
+                            <div class="vendor-card" style="border-left-color: #22c55e;">
+                                <span class="tier-badge" style="background: #dcfce7; color: #166534;">Apply 1st</span>
+                                <h4>Chase Ink Business Cards</h4>
+                                <div class="reports">Reports to: D&B, Experian, Equifax, SBFE</div>
+                                <div class="terms">Apply for: Ink Preferred ($95/yr) + Ink Cash ($0/yr) + Ink Unlimited ($0/yr)</div>
+                                <div class="highlight">✓ Can get 2-3 Chase cards same day = $30K-$60K</div>
+                                <div class="requirements">Chase 5/24 rule: Must have <5 new cards in 24 months</div>
+                                <a href="https://creditcards.chase.com/business-credit-cards" target="_blank">Chase Business Cards →</a>
+                            </div>
+                            
+                            <div class="vendor-card" style="border-left-color: #3b82f6;">
+                                <span class="tier-badge" style="background: #dbeafe; color: #1e40af;">Apply 2nd</span>
+                                <h4>American Express Business Cards</h4>
+                                <div class="reports">Reports to: D&B, Experian, Equifax</div>
+                                <div class="terms">Apply for: Blue Business Plus ($0/yr) + Business Gold ($375/yr)</div>
+                                <div class="highlight">✓ Often approves multiple cards = $25K-$50K</div>
+                                <div class="requirements">Amex is inquiry-sensitive; apply AFTER Chase</div>
+                                <a href="https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/" target="_blank">Amex Business Cards →</a>
+                            </div>
+                            
+                            <div class="vendor-card" style="border-left-color: #8b5cf6;">
+                                <span class="tier-badge" style="background: #f3e8ff; color: #7c3aed;">Apply 3rd</span>
+                                <h4>Capital One Spark Cards</h4>
+                                <div class="reports">Reports to: D&B, Experian, Equifax</div>
+                                <div class="terms">Apply for: Spark Cash Plus ($150/yr) or Spark 2% ($0/yr)</div>
+                                <div class="highlight">✓ No preset spending limit = $15K-$40K</div>
+                                <div class="requirements">Capital One limits you to 1-2 business cards</div>
+                                <a href="https://www.capitalone.com/small-business/credit-cards/" target="_blank">Capital One Business →</a>
+                            </div>
+                            
+                            <div class="vendor-card" style="border-left-color: #f59e0b;">
+                                <span class="tier-badge" style="background: #fef3c7; color: #92400e;">Apply 4th</span>
+                                <h4>Bank of America Business Cards</h4>
+                                <div class="reports">Reports to: D&B, Experian, Equifax</div>
+                                <div class="terms">Apply for: Business Advantage Customized Cash ($0/yr)</div>
+                                <div class="highlight">✓ Existing BofA customers get higher limits = $10K-$25K</div>
+                                <div class="requirements">Easier approval if you have BofA checking account</div>
+                                <a href="https://www.bankofamerica.com/smallbusiness/credit-cards/" target="_blank">Bank of America Business →</a>
+                            </div>
+                            
+                            <div class="vendor-card" style="border-left-color: #ec4899;">
+                                <span class="tier-badge" style="background: #fce7f3; color: #be185d;">Apply 5th</span>
+                                <h4>U.S. Bank Business Cards</h4>
+                                <div class="reports">Reports to: D&B, Experian</div>
+                                <div class="terms">Apply for: Business Triple Cash ($0/yr)</div>
+                                <div class="highlight">✓ Good for additional tradeline = $10K-$20K</div>
+                                <div class="requirements">Often requires existing U.S. Bank relationship</div>
+                                <a href="https://www.usbank.com/business-banking/business-credit-cards.html" target="_blank">U.S. Bank Business →</a>
+                            </div>
+                            
+                            <div class="vendor-card" style="border-left-color: #06b6d4;">
+                                <span class="tier-badge" style="background: #cffafe; color: #0891b2;">Apply 6th</span>
+                                <h4>Wells Fargo Business Cards</h4>
+                                <div class="reports">Reports to: D&B, Experian</div>
+                                <div class="terms">Apply for: Business Platinum ($0/yr) or Signify ($0/yr)</div>
+                                <div class="highlight">✓ More lenient on inquiries = $10K-$25K</div>
+                                <div class="requirements">Good option if denied elsewhere</div>
+                                <a href="https://www.wellsfargo.com/biz/business-credit/credit-cards/" target="_blank">Wells Fargo Business →</a>
+                            </div>
+                        </div>
+                        
+                        <div class="task">
+                            <div class="task-checkbox" onclick="toggleTask('pa1')" id="pa1">✓</div>
+                            <div class="task-content">
+                                <div class="task-title">1. Prepare Your Business Information</div>
+                                <div class="task-desc">Have ready: Legal business name, EIN, business address, phone, annual revenue (estimate is OK), years in business. All info must match your foundation documents exactly.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="task">
+                            <div class="task-checkbox" onclick="toggleTask('pa2')" id="pa2">✓</div>
+                            <div class="task-content">
+                                <div class="task-title">2. Apply to Chase Business Cards (Start Here)</div>
+                                <div class="task-desc">Apply for Ink Preferred, then immediately apply for Ink Cash and/or Ink Unlimited. Chase often approves multiple cards same day. Target: $30K-$60K combined.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="task">
+                            <div class="task-checkbox" onclick="toggleTask('pa3')" id="pa3">✓</div>
+                            <div class="task-content">
+                                <div class="task-title">3. Apply to American Express Business Cards</div>
+                                <div class="task-desc">Within 1-2 hours of Chase, apply for Blue Business Plus and Business Gold. Amex is generous with limits for good credit. Target: $25K-$50K combined.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="task">
+                            <div class="task-checkbox" onclick="toggleTask('pa4')" id="pa4">✓</div>
+                            <div class="task-content">
+                                <div class="task-title">4. Apply to Capital One, Bank of America, Others</div>
+                                <div class="task-desc">Continue down the list. Even if you get some denials, you'll likely get approved for several. Target: Additional $35K-$90K combined.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="task">
+                            <div class="task-checkbox" onclick="toggleTask('pa5')" id="pa5">✓</div>
+                            <div class="task-content">
+                                <div class="task-title">5. Call Reconsideration Lines for Denials</div>
+                                <div class="task-desc">If denied, call the reconsideration line same day. Explain your business and request manual review. Many denials get overturned on reconsideration.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="task">
+                            <div class="task-checkbox" onclick="toggleTask('pa6')" id="pa6">✓</div>
+                            <div class="task-content">
+                                <div class="task-title">6. Track All Approvals and Limits</div>
+                                <div class="task-desc">Record each card approved and credit limit. Calculate your total available credit. Set up autopay on ALL cards to protect your payment history.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="pro-tip">
+                            <div class="pro-tip-title">💡 Credit Card Stacking Success Tips</div>
+                            <ul>
+                                <li><strong>Timing matters:</strong> Apply Tuesday-Thursday morning for fastest decisions</li>
+                                <li><strong>Business revenue:</strong> State revenue confidently (projections are acceptable)</li>
+                                <li><strong>Phone calls:</strong> Answer calls from banks immediately during application day</li>
+                                <li><strong>Wait 6+ months</strong> before stacking again to let inquiries age</li>
+                                <li><strong>0% APR cards:</strong> Many offer 12-18 months 0% intro APR — use for business funding</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background: linear-gradient(135deg, #1a5fb4, #0d3a7a); border-radius: 15px; padding: 25px; text-align: center; margin-top: 20px; color: white;">
+                            <h4 style="font-size: 1.2em; margin-bottom: 10px;">🎯 Want to Maximize Your Funding?</h4>
+                            <p style="margin-bottom: 15px; opacity: 0.95;">Professional credit stacking services consistently get 2-3x more funding than DIY approaches. See what you qualify for with a free consultation.</p>
+                            <a href="https://www.7figurescredit.com/?a_aid=Asapcreditrepair" target="_blank" style="display: inline-block; background: white; color: #1a5fb4; padding: 14px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 1em;">Get Your Free Consultation →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- BUSINESS LOANS & LINES OF CREDIT -->
+            <div class="card">
+                <span class="tier-badge fast">💰 PATH A: BUSINESS FINANCING</span>
+                <h2><span class="icon">🏦</span> Step 4A: Business Loans & Lines of Credit</h2>
+                
+                <div class="info-box">
+                    <h4>ℹ️ Why Apply for Business Loans?</h4>
+                    <p>With 660+ personal credit, you qualify for <strong>business loans and lines of credit</strong> that provide larger capital amounts than credit cards. These also report to business credit bureaus, strengthening your business credit profile.</p>
+                    <ul style="margin-top: 10px;">
+                        <li><strong>Business Line of Credit:</strong> Revolving credit you draw from as needed ($10K-$250K)</li>
+                        <li><strong>Term Loans:</strong> Lump sum with fixed payments ($5K-$500K+)</li>
+                        <li><strong>SBA Loans:</strong> Government-backed loans with best rates ($5K-$5M)</li>
+                    </ul>
+                </div>
+                
+                <div class="step-section">
+                    <div class="step-header" onclick="toggleStep('pathA-loans')">
+                        <div class="step-number" id="pathA-loans-number">4</div>
+                        <div class="step-info">
+                            <div class="step-title">Business Lines of Credit & Loans</div>
+                            <div class="step-desc">Access larger capital amounts to fund business growth</div>
+                        </div>
+                        <div class="step-meta">
+                            <span class="step-progress" id="pathA-loans-progress">0/5 complete</span>
+                            <span class="step-toggle" id="pathA-loans-toggle">▼</span>
+                        </div>
+                    </div>
+                    <div class="step-content" id="pathA-loans-content">
+                        
+                        <h3>🏦 Business Lines of Credit (Easiest to Get)</h3>
+                        <p style="color: #555; margin-bottom: 20px;">Lines of credit work like credit cards but with higher limits and lower rates. Draw funds when needed, pay interest only on what you use.</p>
+                        
+                        <div class="vendor-grid">
+                            <div class="vendor-card">
+                                <h4>Bluevine Business Line of Credit</h4>
+                                <div class="reports">Reports to: D&B, Experian Business</div>
+                                <div class="terms">$6K-$250K | 7.8%-15% APR</div>
+                                <div class="highlight">✓ Fast approval (minutes), no fees</div>
+                                <div class="requirements">625+ credit, $10K+/mo revenue, 24+ months in business</div>
+                                <a href="https://www.bluevine.com/line-of-credit/" target="_blank">Apply at Bluevine →</a>
+                            </div>
+                            
+                            <div class="vendor-card">
+                                <h4>Fundbox Line of Credit</h4>
+                                <div class="reports">Reports to: D&B, Experian Business</div>
+                                <div class="terms">$1K-$150K | Draw fees 4.66%-8.99%</div>
+                                <div class="highlight">✓ Connects to bank/accounting software for fast approval</div>
+                                <div class="requirements">600+ credit, $100K+/yr revenue, 6+ months in business</div>
+                                <a href="https://fundbox.com/line-of-credit/" target="_blank">Apply at Fundbox →</a>
+                            </div>
+                            
+                            <div class="vendor-card">
+                                <h4>Kabbage (via American Express)</h4>
+                                <div class="reports">Reports to: Business credit bureaus</div>
+                                <div class="terms">$2K-$250K | Variable rates</div>
+                                <div class="highlight">✓ Now part of American Express, trusted platform</div>
+                                <div class="requirements">640+ credit, $3K+/mo revenue, 12+ months in business</div>
+                                <a href="https://www.kabbage.com/" target="_blank">Apply at Kabbage →</a>
+                            </div>
+                            
+                            <div class="vendor-card">
+                                <h4>OnDeck Line of Credit</h4>
+                                <div class="reports">Reports to: D&B, Experian Business</div>
+                                <div class="terms">$6K-$100K | Starting at 29.9% APR</div>
+                                <div class="highlight">✓ Weekly or monthly payment options</div>
+                                <div class="requirements">625+ credit, $100K+/yr revenue, 12+ months in business</div>
+                                <a href="https://www.ondeck.com/line-of-credit" target="_blank">Apply at OnDeck →</a>
+                            </div>
+                        </div>
+                        
+                        <h3>📋 SBA Loans (Best Rates, Longer Process)</h3>
+                        <p style="color: #555; margin-bottom: 20px;">SBA loans are government-backed, offering the lowest rates and longest terms. Require more documentation but worth it for larger amounts.</p>
+                        
+                        <div class="vendor-grid">
+                            <div class="vendor-card" style="border-left-color: #22c55e;">
+                                <h4>SBA 7(a) Loan</h4>
+                                <div class="reports">Reports to: All business bureaus</div>
+                                <div class="terms">Up to $5 Million | Prime + 2.25%-4.75%</div>
+                                <div class="highlight">✓ Best rates for established businesses</div>
+                                <div class="requirements">680+ credit, 2+ years in business, profitable</div>
+                                <a href="https://www.sba.gov/funding-programs/loans/7a-loans" target="_blank">Learn About SBA 7(a) →</a>
+                            </div>
+                            
+                            <div class="vendor-card" style="border-left-color: #22c55e;">
+                                <h4>SBA Microloan</h4>
+                                <div class="reports">Reports to: Business credit bureaus</div>
+                                <div class="terms">Up to $50K | 8%-13% APR</div>
+                                <div class="highlight">✓ Great for newer businesses, easier approval</div>
+                                <div class="requirements">640+ credit, business plan, collateral may be required</div>
+                                <a href="https://www.sba.gov/funding-programs/loans/microloans" target="_blank">Learn About SBA Microloans →</a>
+                            </div>
+                            
+                            <div class="vendor-card" style="border-left-color: #22c55e;">
+                                <h4>SBA Express Loan</h4>
+                                <div class="reports">Reports to: Business credit bureaus</div>
+                                <div class="terms">Up to $500K | Faster approval than 7(a)</div>
+                                <div class="highlight">✓ 36-hour SBA turnaround (vs weeks for 7(a))</div>
+                                <div class="requirements">680+ credit, strong revenue, collateral for >$50K</div>
+                                <a href="https://www.sba.gov/funding-programs/loans" target="_blank">Find SBA Lenders →</a>
+                            </div>
+                        </div>
+                        
+                        <h3>⚡ Alternative Business Term Loans</h3>
+                        <p style="color: #555; margin-bottom: 20px;">Faster approval than SBA, higher rates but easier to qualify. Good for quick capital needs.</p>
+                        
+                        <div class="vendor-grid">
+                            <div class="vendor-card">
+                                <h4>Credibly</h4>
+                                <div class="reports">Reports to: D&B, Experian</div>
+                                <div class="terms">$5K-$400K | Factor rates from 1.11</div>
+                                <div class="highlight">✓ Same-day funding available</div>
+                                <div class="requirements">500+ credit, $15K+/mo revenue, 6+ months in business</div>
+                                <a href="https://www.credibly.com/" target="_blank">Apply at Credibly →</a>
+                            </div>
+                            
+                            <div class="vendor-card">
+                                <h4>Lendio (Loan Marketplace)</h4>
+                                <div class="reports">Varies by lender</div>
+                                <div class="terms">$500-$5M+ | Multiple lender options</div>
+                                <div class="highlight">✓ Compare 75+ lenders in one application</div>
+                                <div class="requirements">560+ credit, $8K+/mo revenue, 6+ months in business</div>
+                                <a href="https://www.lendio.com/" target="_blank">Compare Loans at Lendio →</a>
+                            </div>
+                            
+                            <div class="vendor-card">
+                                <h4>Biz2Credit</h4>
+                                <div class="reports">Reports to: Business bureaus</div>
+                                <div class="terms">$25K-$500K | Various loan types</div>
+                                <div class="highlight">✓ Strong for revenue-based lending</div>
+                                <div class="requirements">660+ credit, $250K+/yr revenue, 18+ months in business</div>
+                                <a href="https://www.biz2credit.com/" target="_blank">Apply at Biz2Credit →</a>
+                            </div>
+                        </div>
+                        
+                        <div class="task">
+                            <div class="task-checkbox" onclick="toggleTask('pl1')" id="pl1">✓</div>
+                            <div class="task-content">
+                                <div class="task-title">1. Gather Required Documents</div>
+                                <div class="task-desc">Most lenders need: Business bank statements (3-6 months), tax returns (1-2 years), P&L statement, business license, and EIN verification.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="task">
+                            <div class="task-checkbox" onclick="toggleTask('pl2')" id="pl2">✓</div>
+                            <div class="task-content">
+                                <div class="task-title">2. Apply for Business Line of Credit (Start Here)</div>
+                                <div class="task-desc">Lines of credit are easiest to get and most flexible. Start with Bluevine or Fundbox — both have fast online applications and quick approvals.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="task">
+                            <div class="task-checkbox" onclick="toggleTask('pl3')" id="pl3">✓</div>
+                            <div class="task-content">
+                                <div class="task-title">3. Explore SBA Loans for Larger Amounts</div>
+                                <div class="task-desc">If you need $50K+, SBA loans offer the best rates. Find an SBA-approved lender through sba.gov or work with a local bank. Allow 2-4 weeks for approval.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="task">
+                            <div class="task-checkbox" onclick="toggleTask('pl4')" id="pl4">✓</div>
+                            <div class="task-content">
+                                <div class="task-title">4. Compare Multiple Offers</div>
+                                <div class="task-desc">Use Lendio to compare offers from 75+ lenders with one application. Compare APR, fees, terms, and monthly payments before accepting.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="task">
+                            <div class="task-checkbox" onclick="toggleTask('pl5')" id="pl5">✓</div>
+                            <div class="task-content">
+                                <div class="task-title">5. Use Funding Strategically</div>
+                                <div class="task-desc">Use business loans/LOC for revenue-generating activities: inventory, equipment, marketing, hiring. Make on-time payments to build business credit history.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="pro-tip">
+                            <div class="pro-tip-title">💡 Business Loan Success Tips</div>
+                            <ul>
+                                <li><strong>Apply when you don't need it:</strong> Best terms come when business is strong</li>
+                                <li><strong>Keep bank balance healthy:</strong> Lenders check average daily balance</li>
+                                <li><strong>Separate personal & business:</strong> Clean business financials get better rates</li>
+                                <li><strong>Consider timing:</strong> Apply AFTER credit card stacking, inquiries will have settled</li>
+                                <li><strong>All payments report:</strong> Every on-time payment strengthens business credit</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="warning-box">
+                            <h4>⚠️ Watch Out For</h4>
+                            <ul>
+                                <li><strong>Merchant Cash Advances (MCAs):</strong> Extremely expensive, can trap businesses in debt</li>
+                                <li><strong>Daily/weekly payments:</strong> Can strain cash flow — prefer monthly payments</li>
+                                <li><strong>Prepayment penalties:</strong> Some loans charge fees for paying early</li>
+                                <li><strong>Personal guarantees:</strong> Understand what you're signing — most require PG</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PATH A: NO-PG CARDS FOR ESTABLISHED BUSINESSES -->
+            <div class="card">
+                <span class="tier-badge" style="background: #f3e8ff; color: #7c3aed;">🎯 ADVANCED: NO PERSONAL GUARANTEE</span>
+                <h2><span class="icon">🏆</span> Step 5A: Graduate to No-PG Business Cards</h2>
+                
+                <div class="info-box">
+                    <h4>ℹ️ The Ultimate Goal: No Personal Guarantee Cards</h4>
+                    <p>After building business credit and revenue, you can qualify for cards that <strong>don't check personal credit</strong> and <strong>don't require a personal guarantee</strong>. This completely separates your business and personal finances.</p>
+                </div>
+                
+                <div class="step-section">
+                    <div class="step-header" onclick="toggleStep('pathA-nopg')">
+                        <div class="step-number" id="pathA-nopg-number">5</div>
+                        <div class="step-info">
+                            <div class="step-title">No-PG Business Cards (Revenue-Based)</div>
+                            <div class="step-desc">Cards based on business financials, not personal credit</div>
+                        </div>
+                        <div class="step-meta">
+                            <span class="step-progress" id="pathA-nopg-progress">0/3 complete</span>
+                            <span class="step-toggle" id="pathA-nopg-toggle">▼</span>
+                        </div>
+                    </div>
+                    <div class="step-content" id="pathA-nopg-content">
+                        
+                        <div class="vendor-grid">
+                            <div class="vendor-card" style="border-left-color: #7c3aed;">
+                                <h4>Ramp</h4>
+                                <div class="reports">Reports to: D&B, Experian, Equifax</div>
+                                <div class="terms">$0/year | 1.5% cash back | No fees</div>
+                                <div class="highlight">✓ NO personal credit check, NO personal guarantee</div>
+                                <div class="requirements">$25K+ business bank balance OR $75K+/mo card spend</div>
+                                <a href="https://ramp.com/" target="_blank">Apply for Ramp →</a>
+                            </div>
+                            
+                            <div class="vendor-card" style="border-left-color: #7c3aed;">
+                                <h4>Brex</h4>
+                                <div class="reports">Reports to: D&B, Experian</div>
+                                <div class="terms">$0/year | Points rewards | Premium features</div>
+                                <div class="highlight">✓ NO personal credit check, NO personal guarantee</div>
+                                <div class="requirements">$50K+ bank balance OR VC funding OR strong revenue</div>
+                                <a href="https://www.brex.com/" target="_blank">Apply for Brex →</a>
+                            </div>
+                            
+                            <div class="vendor-card" style="border-left-color: #7c3aed;">
+                                <h4>BILL Divvy</h4>
+                                <div class="reports">Reports to: D&B, Experian</div>
+                                <div class="terms">$0/year | 1%-7% cash back | Expense management</div>
+                                <div class="highlight">✓ No personal guarantee for qualified businesses</div>
+                                <div class="requirements">$15K+/mo revenue, 12+ months in business</div>
+                                <a href="https://www.bill.com/product/divvy" target="_blank">Apply for BILL Divvy →</a>
+                            </div>
+                        </div>
+                        
+                        <div class="task">
+                            <div class="task-checkbox" onclick="toggleTask('pn1')" id="pn1">✓</div>
+                            <div class="task-content">
+                                <div class="task-title">1. Build Up Business Bank Balance</div>
+                                <div class="task-desc">Keep $25K-$50K+ in your business bank account for 2-3 months before applying. These companies verify bank balances.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="task">
+                            <div class="task-checkbox" onclick="toggleTask('pn2')" id="pn2">✓</div>
+                            <div class="task-content">
+                                <div class="task-title">2. Apply for Ramp or Brex</div>
+                                <div class="task-desc">Connect your business bank account for instant verification. Approval is based on cash flow and bank balance, not personal credit score.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="task">
+                            <div class="task-checkbox" onclick="toggleTask('pn3')" id="pn3">✓</div>
+                            <div class="task-content">
+                                <div class="task-title">3. Use and Pay Regularly to Build Business Credit</div>
+                                <div class="task-desc">These cards report to business bureaus. Use consistently and pay in full (they're charge cards). This builds your pure business credit profile.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="pro-tip">
+                            <div class="pro-tip-title">💡 Path A Complete Strategy Summary</div>
+                            <ul>
+                                <li><strong>Week 1:</strong> Complete business foundation + apply for D-U-N-S</li>
+                                <li><strong>Week 2:</strong> Credit card stacking day — apply for 4-6 business cards</li>
+                                <li><strong>Month 2-3:</strong> Apply for business line of credit (Bluevine/Fundbox)</li>
+                                <li><strong>Month 6+:</strong> Consider SBA loans for larger capital needs</li>
+                                <li><strong>Year 1+:</strong> Graduate to no-PG cards (Ramp/Brex) based on business performance</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PATH B: BUILD FROM SCRATCH -->
+        <div id="pathB-content" class="path-content">
+            <div class="card">
+                <span class="tier-badge tier1">🌱 PATH B: BUILD FROM SCRATCH</span>
+                <h2><span class="icon">📦</span> Step 3B: Tier 1 Net 30 Vendor Accounts</h2>
+                
+                <div class="info-box">
+                    <h4>ℹ️ How Net 30 Accounts Work</h4>
+                    <p><strong>Net 30</strong> = 30 days to pay after invoice. You buy products, get an invoice, pay within 30 days. When you pay on time, the vendor reports positive payment history to business bureaus.</p>
+                </div>
+                
+                <div class="step-section">
+                    <div class="step-header" onclick="toggleStep('tier1')">
+                        <div class="step-number" id="tier1-number">3</div>
+                        <div class="step-info">
+                            <div class="step-title">Tier 1: Starter Net 30 Accounts (No Credit Check)</div>
+                            <div class="step-desc">Easy approval, no personal credit check required</div>
+                        </div>
+                        <div class="step-meta">
+                            <span class="step-progress" id="tier1-progress">0/4 complete</span>
+                            <span class="step-toggle" id="tier1-toggle">▼</span>
+                        </div>
+                    </div>
+                    <div class="step-content" id="tier1-content">
+                        
+                        <div class="vendor-grid">
+                            <div class="vendor-card">
+                                <h4>Uline</h4>
+                                <div class="reports">Reports to: D&B, Experian</div>
+                                <div class="terms">Net 30 | No minimum | Free to apply</div>
+                                <div class="highlight">✓ Huge selection of shipping supplies</div>
+                                <div class="requirements">EIN required, may need prepaid orders first</div>
+                                <a href="https://www.uline.com/CustomerService/ULINE_FAQ_Ans?FAQ_ID=104" target="_blank">Apply for Uline Net 30 →</a>
+                            </div>
+                            
+                            <div class="vendor-card">
+                                <h4>Grainger</h4>
+                                <div class="reports">Reports to: D&B</div>
+                                <div class="terms">Net 30 | Industrial supplies</div>
+                                <div class="highlight">✓ 1.5+ million products</div>
+                                <div class="requirements">60+ days in business</div>
+                                <a href="https://www.grainger.com/" target="_blank">Apply for Grainger →</a>
+                            </div>
+                            
+                            <div class="vendor-card">
+                                <h4>Creative Analytics</h4>
+                                <div class="reports">Reports to: Equifax, CreditSafe</div>
+                                <div class="terms">Net 30 | $79/year | $1,000 limit</div>
+                                <div class="highlight">✓ Reports to Equifax (rare!)</div>
+                                <div class="requirements">30+ days in business, EIN required</div>
+                                <a href="https://creativeanalyticsdc.com/net30/" target="_blank">Apply for Creative Analytics →</a>
+                            </div>
+                            
+                            <div class="vendor-card">
+                                <h4>Quill Office Supplies</h4>
+                                <div class="reports">Reports to: D&B</div>
+                                <div class="terms">Net 30 | Free to apply</div>
+                                <div class="highlight">✓ Easy approval for new businesses</div>
+                                <div class="requirements">EIN required</div>
+                                <a href="https://www.quill.com/" target="_blank">Apply for Quill →</a>
+                            </div>
+                        </div>
+                        
+                        <div class="task">
+                            <div class="task-checkbox" onclick="toggleTask('t1-1')" id="t1-1">✓</div>
+                            <div class="task-content">
+                                <div class="task-title">1. Apply to 3-5 Tier 1 Vendors</div>
+                                <div class="task-desc">Space applications 1-2 weeks apart. Choose vendors you can actually use.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="task">
+                            <div class="task-checkbox" onclick="toggleTask('t1-2')" id="t1-2">✓</div>
+                            <div class="task-content">
+                                <div class="task-title">2. Make Initial Purchases & Pay EARLY</div>
+                                <div class="task-desc">Pay within 20 days (not 30) to boost your PAYDEX score. Early payment = higher scores!</div>
+                            </div>
+                        </div>
+                        
+                        <div class="task">
+                            <div class="task-checkbox" onclick="toggleTask('t1-3')" id="t1-3">✓</div>
+                            <div class="task-content">
+                                <div class="task-title">3. Wait 30-60 Days for Reporting</div>
+                                <div class="task-desc">Check Nav.com to verify accounts are appearing on your business credit reports.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="task">
+                            <div class="task-checkbox" onclick="toggleTask('t1-4')" id="t1-4">✓</div>
+                            <div class="task-content">
+                                <div class="task-title">4. Verify PAYDEX Score of 80+</div>
+                                <div class="task-desc">With 3+ accounts reporting on-time payments, you should see PAYDEX 80+.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="step-section">
+                    <div class="step-header" onclick="toggleStep('tier2')">
+                        <div class="step-number" id="tier2-number">4</div>
+                        <div class="step-info">
+                            <div class="step-title">Tier 2: Fleet Cards (After 3+ Tradelines)</div>
+                            <div class="step-desc">Requires PAYDEX 80+ and 6+ months in business</div>
+                        </div>
+                        <div class="step-meta">
+                            <span class="step-progress" id="tier2-progress">0/3 complete</span>
+                            <span class="step-toggle" id="tier2-toggle">▼</span>
+                        </div>
+                    </div>
+                    <div class="step-content" id="tier2-content">
+                        <span class="tier-badge tier2">🚀 Tier 2 - Requires Established Credit</span>
+                        
+                        <div class="vendor-grid">
+                            <div class="vendor-card">
+                                <h4>WEX Fleet Card</h4>
+                                <div class="reports">Reports to: D&B, Experian</div>
+                                <div class="terms">Net 15 | 95%+ station acceptance</div>
+                                <div class="highlight">✓ Universal fleet card</div>
+                                <a href="https://www.wexinc.com/" target="_blank">Apply for WEX →</a>
+                            </div>
+                            
+                            <div class="vendor-card">
+                                <h4>Shell Fleet Card</h4>
+                                <div class="reports">Reports to: D&B, Experian</div>
+                                <div class="terms">Net 15 | Shell/Jiffy Lube locations</div>
+                                <div class="highlight">✓ Widely recognized</div>
+                                <a href="https://www.shell.us/business-customers/shell-fleet-solutions.html" target="_blank">Apply for Shell →</a>
+                            </div>
+                        </div>
+                        
+                        <div class="task">
+                            <div class="task-checkbox" onclick="toggleTask('t2-1')" id="t2-1">✓</div>
+                            <div class="task-content">
+                                <div class="task-title">1. Verify 3+ Tier 1 Accounts Reporting</div>
+                                <div class="task-desc">Check Nav.com before applying for Tier 2.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="task">
+                            <div class="task-checkbox" onclick="toggleTask('t2-2')" id="t2-2">✓</div>
+                            <div class="task-content">
+                                <div class="task-title">2. Apply to Tier 2 Fleet Cards</div>
+                                <div class="task-desc">Space applications 30+ days apart.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="task">
+                            <div class="task-checkbox" onclick="toggleTask('t2-3')" id="t2-3">✓</div>
+                            <div class="task-content">
+                                <div class="task-title">3. Pay Fleet Cards QUICKLY (Net 7-15)</div>
+                                <div class="task-desc">Fleet cards have shorter terms! Set calendar reminders immediately.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="step-section">
+                    <div class="step-header" onclick="toggleStep('tier3')">
+                        <div class="step-number" id="tier3-number">5</div>
+                        <div class="step-info">
+                            <div class="step-title">Tier 3: Business Credit Cards (No Personal Credit Check)</div>
+                            <div class="step-desc">Graduate to EIN-only credit cards</div>
+                        </div>
+                        <div class="step-meta">
+                            <span class="step-progress" id="tier3-progress">0/2 complete</span>
+                            <span class="step-toggle" id="tier3-toggle">▼</span>
+                        </div>
+                    </div>
+                    <div class="step-content" id="tier3-content">
+                        <span class="tier-badge tier3">💳 Tier 3 - EIN-Only Cards</span>
+                        
+                        <div class="vendor-grid">
+                            <div class="vendor-card">
+                                <h4>Brex</h4>
+                                <div class="reports">Reports to: D&B, Experian</div>
+                                <div class="terms">Charge card | No PG | High limits</div>
+                                <div class="highlight">✓ No personal guarantee!</div>
+                                <div class="requirements">$50K+ bank balance OR VC funding</div>
+                                <a href="https://www.brex.com/" target="_blank">Apply for Brex →</a>
+                            </div>
+                            
+                            <div class="vendor-card">
+                                <h4>Ramp</h4>
+                                <div class="reports">Reports to: D&B, Experian, Equifax</div>
+                                <div class="terms">Charge card | No PG | 1.5% cash back</div>
+                                <div class="highlight">✓ No personal guarantee!</div>
+                                <div class="requirements">$25K+ business bank balance</div>
+                                <a href="https://ramp.com/" target="_blank">Apply for Ramp →</a>
+                            </div>
+                        </div>
+                        
+                        <div class="task">
+                            <div class="task-checkbox" onclick="toggleTask('t3-1')" id="t3-1">✓</div>
+                            <div class="task-content">
+                                <div class="task-title">1. Verify Strong Business Credit (PAYDEX 80+, 6+ tradelines)</div>
+                                <div class="task-desc">These cards evaluate your business credit, not personal.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="task">
+                            <div class="task-checkbox" onclick="toggleTask('t3-2')" id="t3-2">✓</div>
+                            <div class="task-content">
+                                <div class="task-title">2. Apply for Ramp or Brex</div>
+                                <div class="task-desc">No personal credit check, no personal guarantee!</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAINTAIN -->
+        <div class="card">
+            <h2><span class="icon">📈</span> Final Step: Maintain & Grow</h2>
+            <div class="step-section">
+                <div class="step-header" onclick="toggleStep('maintain')">
+                    <div class="step-number" id="maintain-number">✓</div>
+                    <div class="step-info">
+                        <div class="step-title">Ongoing Maintenance</div>
+                        <div class="step-desc">Keep your business credit strong</div>
+                    </div>
+                    <div class="step-meta">
+                        <span class="step-progress" id="maintain-progress">0/4 complete</span>
+                        <span class="step-toggle" id="maintain-toggle">▼</span>
+                    </div>
+                </div>
+                <div class="step-content" id="maintain-content">
+                    
+                    <div class="income-highlight">
+                        <h3>🎉 What You Can Achieve</h3>
+                        <p>$50K-$250K+ in credit lines, business loans without personal guarantees, better vendor terms</p>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('m1')" id="m1">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">1. Set Up Autopay or Payment Reminders</div>
+                            <div class="task-desc">Never miss a payment! One late payment can damage your scores significantly.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('m2')" id="m2">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">2. Monitor Business Credit Monthly (Nav.com)</div>
+                            <div class="task-desc">Watch for errors and verify all accounts are reporting correctly.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('m3')" id="m3">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">3. Request Credit Limit Increases Every 6-12 Months</div>
+                            <div class="task-desc">Higher limits improve your credit profile and purchasing power.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('m4')" id="m4">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">4. Keep All Accounts Active</div>
+                            <div class="task-desc">Make at least one purchase per quarter on each account to prevent closure.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-tracker">
+            <h3>📊 Your Progress</h3>
+            <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            <p class="progress-text"><span id="completedCount">0</span> of <span id="totalCount">0</span> tasks completed</p>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Notes</h2>
+            <div class="notes-section">
+                <textarea id="userNotes" placeholder="Track your D-U-N-S number, account numbers, application dates, approval amounts..."></textarea>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <img src="https://asapcreditrepairusa.com/images/logo.png" alt="ASAP Credit Repair" onerror="this.style.display='none'">
+            <h3>Need Help Building Business Credit?</h3>
+            <p>ASAP Credit Repair can guide you through the entire process</p>
+            <a href="https://asapcreditrepairusa.com" target="_blank" class="cta-button">Talk to a Specialist →</a>
+        </div>
+        
+        </div>
+    </div>
+
+    <script>
+        const userData = localStorage.getItem('bcb_user_v3');
+        if (userData) {
+            document.getElementById('leadForm').style.display = 'none';
+            document.getElementById('mainContent').classList.remove('content-locked');
+            document.getElementById('mainContent').classList.add('content-unlocked');
+        }
+        
+        document.getElementById('captureForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Submitting...';
+            submitBtn.disabled = true;
+            
+            const user = {
+                name: document.getElementById('userName').value,
+                email: document.getElementById('userEmail').value,
+                phone: document.getElementById('userPhone').value,
+                business: document.getElementById('userBusiness').value,
+                timestamp: new Date().toISOString()
+            };
+            
+            // Save to localStorage for returning users
+            localStorage.setItem('bcb_user_v3', JSON.stringify(user));
+            
+            // Send to FormSubmit.co via AJAX
+            const formData = new FormData(this);
+            formData.append('_timestamp', user.timestamp);
+            
+            fetch('https://formsubmit.co/ajax/management@asapcreditrepairusa.com', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Success - show content
+                document.getElementById('leadForm').style.display = 'none';
+                document.getElementById('mainContent').classList.remove('content-locked');
+                document.getElementById('mainContent').classList.add('content-unlocked');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            })
+            .catch(error => {
+                // Even if email fails, still show content (data saved locally)
+                console.log('Form submission note:', error);
+                document.getElementById('leadForm').style.display = 'none';
+                document.getElementById('mainContent').classList.remove('content-locked');
+                document.getElementById('mainContent').classList.add('content-unlocked');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+        
+        const savedProgress = JSON.parse(localStorage.getItem('bcb_progress_v3') || '{}');
+        const savedNotes = localStorage.getItem('bcb_notes_v3') || '';
+        const savedPath = localStorage.getItem('bcb_path_v3') || '';
+        
+        Object.keys(savedProgress).forEach(id => {
+            if (savedProgress[id]) {
+                const el = document.getElementById(id);
+                if (el) el.classList.add('checked');
+            }
+        });
+        document.getElementById('userNotes').value = savedNotes;
+        
+        function selectPath(path) {
+            document.getElementById('pathA-select').classList.remove('selected');
+            document.getElementById('pathB-select').classList.remove('selected');
+            document.getElementById('path' + path + '-select').classList.add('selected');
+            
+            document.getElementById('pathA-content').classList.remove('active');
+            document.getElementById('pathB-content').classList.remove('active');
+            document.getElementById('path' + path + '-content').classList.add('active');
+            
+            if (path === 'A') {
+                document.getElementById('pathB-content').classList.add('active');
+            }
+            
+            localStorage.setItem('bcb_path_v3', path);
+            updateProgress();
+        }
+        
+        if (savedPath) selectPath(savedPath);
+        
+        function toggleStep(stepId) {
+            const content = document.getElementById(stepId + '-content');
+            const toggle = document.getElementById(stepId + '-toggle');
+            if (content && toggle) {
+                content.classList.toggle('open');
+                toggle.classList.toggle('open');
+            }
+        }
+        
+        function toggleTask(taskId) {
+            const el = document.getElementById(taskId);
+            if (el) {
+                el.classList.toggle('checked');
+                savedProgress[taskId] = el.classList.contains('checked');
+                localStorage.setItem('bcb_progress_v3', JSON.stringify(savedProgress));
+                updateProgress();
+            }
+        }
+        
+        function updateProgress() {
+            const allTasks = document.querySelectorAll('.task-checkbox');
+            let completed = 0, total = 0;
+            
+            allTasks.forEach(task => {
+                const inActivePath = !task.closest('.path-content') || task.closest('.path-content.active');
+                if (inActivePath) {
+                    total++;
+                    if (task.classList.contains('checked')) completed++;
+                }
+            });
+            
+            const percent = total > 0 ? Math.round((completed / total) * 100) : 0;
+            document.getElementById('progressFill').style.width = percent + '%';
+            document.getElementById('completedCount').textContent = completed;
+            document.getElementById('totalCount').textContent = total;
+            
+            updateStepProgress('foundation', ['f1','f2','f3','f4','f5','f6','f7','f8']);
+            updateStepProgress('duns', ['d1','d2','d3']);
+            updateStepProgress('pathA-stack', ['pa1','pa2','pa3','pa4','pa5','pa6']);
+            updateStepProgress('pathA-loans', ['pl1','pl2','pl3','pl4','pl5']);
+            updateStepProgress('pathA-nopg', ['pn1','pn2','pn3']);
+            updateStepProgress('tier1', ['t1-1','t1-2','t1-3','t1-4']);
+            updateStepProgress('tier2', ['t2-1','t2-2','t2-3']);
+            updateStepProgress('tier3', ['t3-1','t3-2']);
+            updateStepProgress('maintain', ['m1','m2','m3','m4']);
+        }
+        
+        function updateStepProgress(stepId, taskIds) {
+            const completed = taskIds.filter(id => savedProgress[id]).length;
+            const total = taskIds.length;
+            const progressEl = document.getElementById(stepId + '-progress');
+            const numberEl = document.getElementById(stepId + '-number');
+            
+            if (progressEl) progressEl.textContent = completed + '/' + total + ' complete';
+            if (numberEl && completed === total && total > 0) {
+                numberEl.classList.add('complete');
+                numberEl.innerHTML = '✓';
+            } else if (numberEl) {
+                numberEl.classList.remove('complete');
+            }
+        }
+        
+        document.getElementById('userNotes').addEventListener('input', function() {
+            localStorage.setItem('bcb_notes_v3', this.value);
+        });
+        
+        updateProgress();
+    </script>
+</body>
+</html>
