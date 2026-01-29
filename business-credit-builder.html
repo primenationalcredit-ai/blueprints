@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Credit Builder - ASAP Financial Blueprint</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .header h1 { color: #1a1a2e; font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { color: #666; font-size: 1.2em; }
+        .time-badge { display: inline-block; background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; margin-top: 15px; }
+        .card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .achieve-box { background: linear-gradient(135deg, #fef3c7, #fde68a); border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .achieve-box p { color: #92400e; font-size: 1.1em; line-height: 1.6; }
+        .income-highlight { background: linear-gradient(135deg, #f59e0b, #fbbf24); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 20px 0; }
+        .income-highlight h3 { font-size: 2em; margin-bottom: 10px; }
+        .income-highlight p { font-size: 1.1em; opacity: 0.95; }
+        
+        /* Steps */
+        .step-section { margin-bottom: 15px; border: 1px solid #e5e7eb; border-radius: 15px; overflow: hidden; }
+        .step-header { background: linear-gradient(135deg, #f8fafc, #f1f5f9); padding: 20px; cursor: pointer; display: flex; align-items: center; gap: 15px; }
+        .step-header:hover { background: linear-gradient(135deg, #fef3c7, #fde68a); }
+        .step-number { width: 40px; height: 40px; background: linear-gradient(135deg, #f59e0b, #d97706); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2em; flex-shrink: 0; }
+        .step-number.complete { background: linear-gradient(135deg, #22c55e, #16a34a); }
+        .step-info { flex: 1; }
+        .step-title { font-weight: 600; color: #1a1a2e; font-size: 1.1em; }
+        .step-desc { color: #666; font-size: 0.9em; margin-top: 3px; }
+        .step-meta { display: flex; gap: 10px; align-items: center; }
+        .step-progress { font-size: 0.85em; color: #666; }
+        .step-toggle { font-size: 1.5em; color: #999; transition: transform 0.3s; }
+        .step-toggle.open { transform: rotate(180deg); }
+        .step-content { display: none; padding: 20px; border-top: 1px solid #e5e7eb; background: #fafafa; }
+        .step-content.open { display: block; }
+        
+        /* Tasks */
+        .task { display: flex; gap: 15px; margin-bottom: 15px; padding: 15px; background: white; border-radius: 12px; border: 1px solid #e5e7eb; align-items: flex-start; }
+        .task:hover { border-color: #f59e0b; }
+        .task-checkbox { width: 24px; height: 24px; border: 2px solid #f59e0b; border-radius: 50%; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 14px; color: transparent; transition: all 0.3s; margin-top: 2px; }
+        .task-checkbox.checked { background: #f59e0b; color: white; }
+        .task-content { flex: 1; }
+        .task-title { font-weight: 600; color: #1a1a2e; margin-bottom: 5px; }
+        .task-desc { color: #666; font-size: 0.9em; line-height: 1.5; }
+        .task-link { display: inline-block; margin-top: 8px; background: #f59e0b; color: white; padding: 6px 14px; border-radius: 8px; text-decoration: none; font-size: 0.85em; font-weight: 500; }
+        .task-link:hover { background: #d97706; }
+        .task-badge { display: inline-block; background: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: 600; margin-left: 8px; }
+        .task-badge.optional { background: #e5e7eb; color: #666; }
+        
+        /* Pro Tips & Warnings */
+        .pro-tip { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border-left: 4px solid #22c55e; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .pro-tip-title { font-weight: 700; color: #166534; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+        .pro-tip p, .pro-tip li { color: #166534; margin: 8px 0; font-size: 0.95em; }
+        .pro-tip ul { margin-left: 20px; }
+        .warning-box { background: linear-gradient(135deg, #fef2f2, #fecaca); border-left: 4px solid #ef4444; padding: 20px; border-radius: 0 15px 15px 0; margin: 15px 0; }
+        .warning-box h4 { color: #dc2626; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+        .warning-box p, .warning-box li { color: #991b1b; font-size: 0.95em; }
+        .warning-box ul { margin-left: 20px; margin-top: 10px; }
+        
+        /* Vendor Cards */
+        .vendor-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 20px 0; }
+        .vendor-card { background: #f8fafc; border-radius: 15px; padding: 20px; border-left: 5px solid #f59e0b; }
+        .vendor-card h4 { color: #1a1a2e; margin-bottom: 8px; font-size: 1.1em; }
+        .vendor-card .reports { color: #f59e0b; font-weight: 600; font-size: 0.9em; margin-bottom: 8px; }
+        .vendor-card .terms { color: #666; font-size: 0.85em; margin-bottom: 5px; }
+        .vendor-card .highlight { color: #22c55e; font-size: 0.85em; font-weight: 500; }
+        .vendor-card a { display: inline-block; margin-top: 10px; color: #f59e0b; text-decoration: none; font-weight: 600; font-size: 0.9em; }
+        
+        /* Tier Badges */
+        .tier-badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.8em; font-weight: 600; margin-bottom: 15px; }
+        .tier-badge.tier1 { background: #dcfce7; color: #166534; }
+        .tier-badge.tier2 { background: #dbeafe; color: #1e40af; }
+        .tier-badge.tier3 { background: #f3e8ff; color: #7c3aed; }
+        
+        /* Progress Tracker */
+        .progress-tracker { background: linear-gradient(135deg, #f59e0b, #d97706); color: white; border-radius: 15px; padding: 25px; margin-top: 20px; text-align: center; }
+        .progress-bar { background: rgba(255,255,255,0.3); border-radius: 10px; height: 20px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: white; height: 100%; border-radius: 10px; transition: width 0.5s; width: 0%; }
+        .progress-text { font-size: 1.2em; font-weight: 600; }
+        
+        /* Lead Form */
+        .lead-form { background: linear-gradient(135deg, #1e293b, #334155); border-radius: 20px; padding: 30px; margin-bottom: 20px; }
+        .lead-form h2 { color: white; text-align: center; margin-bottom: 20px; }
+        .lead-form p { color: #94a3b8; text-align: center; margin-bottom: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; color: #e2e8f0; margin-bottom: 5px; font-size: 0.9em; }
+        .form-group input { width: 100%; padding: 12px 15px; border: 2px solid #475569; background: #1e293b; color: white; border-radius: 10px; font-size: 1em; }
+        .form-group input:focus { outline: none; border-color: #f59e0b; }
+        .form-group input::placeholder { color: #64748b; }
+        .submit-btn { width: 100%; padding: 15px; background: linear-gradient(135deg, #f59e0b, #d97706); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: 600; cursor: pointer; margin-top: 10px; }
+        .submit-btn:hover { background: linear-gradient(135deg, #d97706, #b45309); }
+        
+        /* Notes */
+        .notes-section textarea { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; min-height: 120px; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #f59e0b; }
+        
+        /* CTA */
+        .cta-section { background: linear-gradient(135deg, #1a1a2e, #2d2d44); color: white; border-radius: 15px; padding: 30px; text-align: center; margin-top: 20px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        
+        .back-link { display: inline-block; color: white; text-decoration: none; margin-bottom: 20px; opacity: 0.9; }
+        
+        /* Stats Grid */
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 15px; margin: 20px 0; }
+        .stat-card { background: #f8fafc; border-radius: 15px; padding: 20px; text-align: center; }
+        .stat-card .number { font-size: 2em; font-weight: bold; color: #f59e0b; }
+        .stat-card .label { color: #666; font-size: 0.85em; margin-top: 5px; }
+        
+        /* Hidden content before lead capture */
+        .content-locked { display: none; }
+        .content-unlocked { display: block; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Blueprints</a>
+        
+        <div class="header">
+            <h1>🏢 Business Credit Builder</h1>
+            <p class="subtitle">Build business credit separate from your personal credit</p>
+            <div class="time-badge">⏱️ 6-12 months timeline • Unlock $50K-250K+ in funding</div>
+        </div>
+
+        <!-- Lead Capture Form -->
+        <form name="business-credit-leads" method="POST" data-netlify="true" class="lead-form" id="leadForm">
+            <input type="hidden" name="form-name" value="business-credit-leads">
+            <h2>🔓 Get Your Free Business Credit Blueprint</h2>
+            <p>Enter your info to access the complete step-by-step guide</p>
+            <div class="form-group">
+                <label>Full Name *</label>
+                <input type="text" name="name" placeholder="John Smith" required>
+            </div>
+            <div class="form-group">
+                <label>Email Address *</label>
+                <input type="email" name="email" placeholder="you@example.com" required>
+            </div>
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" name="phone" placeholder="(555) 123-4567">
+            </div>
+            <div class="form-group">
+                <label>Business Name</label>
+                <input type="text" name="business" placeholder="Your Company LLC">
+            </div>
+            <button type="submit" class="submit-btn">Access My Blueprint →</button>
+        </form>
+
+        <!-- Main Content (shown after lead capture) -->
+        <div id="mainContent" class="content-locked">
+        
+        <div class="card">
+            <h2><span class="icon">🎯</span> What You'll Achieve</h2>
+            <div class="achieve-box">
+                <p>Build a strong business credit profile completely separate from your personal credit. With established business credit, you can access funding, vendor accounts, and credit cards based on your business's merit - not your personal score. This opens doors to $50K-250K+ in funding opportunities.</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="number">7</div>
+                    <div class="label">Steps</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">35+</div>
+                    <div class="label">Tasks</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">30+</div>
+                    <div class="label">Vendors</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">6-12</div>
+                    <div class="label">Months</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STEP 1: Business Foundation -->
+        <div class="card">
+            <div class="step-section">
+                <div class="step-header" onclick="toggleStep('step1')">
+                    <div class="step-number" id="step1-number">1</div>
+                    <div class="step-info">
+                        <div class="step-title">Step 1: Business Foundation</div>
+                        <div class="step-desc">Establish your business credibility and legal structure</div>
+                    </div>
+                    <div class="step-meta">
+                        <span class="step-progress" id="step1-progress">0/6 complete</span>
+                        <span class="step-toggle" id="step1-toggle">▼</span>
+                    </div>
+                </div>
+                <div class="step-content" id="step1-content">
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('s1t1')" id="s1t1">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">File Your Business Entity <span class="task-badge">Required</span></div>
+                            <div class="task-desc">Register your LLC or Corporation with your Secretary of State. This creates legal separation between you and your business - the foundation for business credit.</div>
+                            <a href="https://www.usa.gov/state-business" target="_blank" class="task-link">Find Your State's Filing Website →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('s1t2')" id="s1t2">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">Apply for Your EIN (Tax ID) <span class="task-badge">Required</span></div>
+                            <div class="task-desc">Get your Employer Identification Number from the IRS - it's FREE and instant online. This is like a Social Security Number for your business.</div>
+                            <a href="https://www.irs.gov/businesses/small-businesses-self-employed/apply-for-an-employer-identification-number-ein-online" target="_blank" class="task-link">IRS EIN Application (Free) →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('s1t3')" id="s1t3">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">Establish Business Address <span class="task-badge">Required</span></div>
+                            <div class="task-desc">Set up a professional business address. NO PO BOXES - most vendors reject them. Virtual office services work great ($50-150/mo).</div>
+                            <a href="https://www.alliancevirtualoffices.com/" target="_blank" class="task-link">Alliance Virtual Offices →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('s1t4')" id="s1t4">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">Get Business Phone + 411 Listing <span class="task-badge">Required</span></div>
+                            <div class="task-desc">Get a dedicated business phone that can be listed in 411 directory. Vendors CHECK 411 to verify your business! Use Grasshopper or RingCentral.</div>
+                            <a href="https://grasshopper.com/" target="_blank" class="task-link">Grasshopper Business Phone →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('s1t5')" id="s1t5">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">Open Business Bank Account <span class="task-badge">Required</span></div>
+                            <div class="task-desc">Open a dedicated checking account for your business. Required for vendor accounts and keeps finances separate. Chase, Bank of America, or Novo work great.</div>
+                            <a href="https://www.chase.com/business/banking" target="_blank" class="task-link">Chase Business Banking →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('s1t6')" id="s1t6">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">Obtain Business Licenses <span class="task-badge">Required</span></div>
+                            <div class="task-desc">Get required city/county/state licenses for your business type. Check your local business licensing department.</div>
+                            <a href="https://www.sba.gov/business-guide/launch-your-business/apply-licenses-permits" target="_blank" class="task-link">SBA License Guide →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="warning-box">
+                        <h4>⚠️ Critical: Consistency is EVERYTHING</h4>
+                        <p>Your business name, address, and phone must be IDENTICAL everywhere:</p>
+                        <ul>
+                            <li>Secretary of State filing</li>
+                            <li>IRS records (EIN)</li>
+                            <li>Bank accounts</li>
+                            <li>All vendor applications</li>
+                        </ul>
+                        <p style="margin-top: 10px;">Even small differences (St. vs Street) can cause denials!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STEP 2: Digital Presence -->
+        <div class="card">
+            <div class="step-section">
+                <div class="step-header" onclick="toggleStep('step2')">
+                    <div class="step-number" id="step2-number">2</div>
+                    <div class="step-info">
+                        <div class="step-title">Step 2: Digital Presence</div>
+                        <div class="step-desc">Build your online credibility</div>
+                    </div>
+                    <div class="step-meta">
+                        <span class="step-progress" id="step2-progress">0/4 complete</span>
+                        <span class="step-toggle" id="step2-toggle">▼</span>
+                    </div>
+                </div>
+                <div class="step-content" id="step2-content">
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('s2t1')" id="s2t1">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">Register Your Domain <span class="task-badge">Required</span></div>
+                            <div class="task-desc">Secure yourcompany.com. Having a professional domain is essential for credibility. Domains cost $10-15/year.</div>
+                            <a href="https://www.namecheap.com/" target="_blank" class="task-link">Namecheap →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('s2t2')" id="s2t2">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">Set Up Professional Email <span class="task-badge">Required</span></div>
+                            <div class="task-desc">Create yourname@yourcompany.com instead of yourcompany@gmail.com. Google Workspace is $6/month.</div>
+                            <a href="https://workspace.google.com/" target="_blank" class="task-link">Google Workspace →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('s2t3')" id="s2t3">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">Create Basic Website <span class="task-badge optional">Recommended</span></div>
+                            <div class="task-desc">Build a simple website with your business info. Carrd is $19/year for a professional one-page site.</div>
+                            <a href="https://carrd.co/" target="_blank" class="task-link">Carrd (Simple Sites) →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('s2t4')" id="s2t4">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">Claim Google Business Profile <span class="task-badge">Required</span></div>
+                            <div class="task-desc">Set up your free Google Business listing. Appears in Google Search and Maps - essential for local credibility.</div>
+                            <a href="https://business.google.com/" target="_blank" class="task-link">Google Business Profile →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STEP 3: Credit Reports -->
+        <div class="card">
+            <div class="step-section">
+                <div class="step-header" onclick="toggleStep('step3')">
+                    <div class="step-number" id="step3-number">3</div>
+                    <div class="step-info">
+                        <div class="step-title">Step 3: Business Credit Reports</div>
+                        <div class="step-desc">Establish files with major bureaus</div>
+                    </div>
+                    <div class="step-meta">
+                        <span class="step-progress" id="step3-progress">0/4 complete</span>
+                        <span class="step-toggle" id="step3-toggle">▼</span>
+                    </div>
+                </div>
+                <div class="step-content" id="step3-content">
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('s3t1')" id="s3t1">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">Apply for D&B DUNS Number <span class="task-badge">Required</span></div>
+                            <div class="task-desc">Get your FREE D-U-N-S® Number from Dun & Bradstreet. Required by many vendors. Takes 2-4 weeks. D&B will try to sell you services - you DON'T need them!</div>
+                            <a href="https://www.dnb.com/duns-number/get-a-duns.html" target="_blank" class="task-link">D&B Free DUNS Number →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('s3t2')" id="s3t2">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">Set Up Nav.com Monitoring <span class="task-badge">Required</span></div>
+                            <div class="task-desc">Monitor D&B and Experian in one dashboard. Shows your Paydex score. Premium is $24/month - the best way to track your business credit.</div>
+                            <a href="https://www.nav.com/" target="_blank" class="task-link">Nav.com →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('s3t3')" id="s3t3">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">Check Experian Business Profile <span class="task-badge optional">Recommended</span></div>
+                            <div class="task-desc">See if you already have an Experian Business file. Profile is created when vendors report payments.</div>
+                            <a href="https://www.smartbusinessreports.com/ExperianBIN/" target="_blank" class="task-link">Search Experian Business →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('s3t4')" id="s3t4">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">Request LexisNexis Report <span class="task-badge optional">Recommended</span></div>
+                            <div class="task-desc">Check what lenders see when verifying your business. Important if you've been denied credit.</div>
+                            <a href="https://consumer.risk.lexisnexis.com/request" target="_blank" class="task-link">Request LexisNexis Report →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="pro-tip">
+                        <div class="pro-tip-title">💡 Understanding Paydex Score</div>
+                        <ul>
+                            <li><strong>Paydex 80</strong> = Paying on time (your minimum goal)</li>
+                            <li><strong>Paydex 100</strong> = Paying 30 days early</li>
+                            <li>Need 3+ accounts reporting to generate a Paydex score</li>
+                            <li>Pay early to boost your score faster!</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STEP 4: Tier 1 -->
+        <div class="card">
+            <div class="step-section">
+                <div class="step-header" onclick="toggleStep('step4')">
+                    <div class="step-number" id="step4-number">4</div>
+                    <div class="step-info">
+                        <div class="step-title">Step 4: Tier 1 - Starter Accounts</div>
+                        <div class="step-desc">Open your first 3+ trade accounts that report to bureaus</div>
+                    </div>
+                    <div class="step-meta">
+                        <span class="step-progress" id="step4-progress">0/5 complete</span>
+                        <span class="step-toggle" id="step4-toggle">▼</span>
+                    </div>
+                </div>
+                <div class="step-content" id="step4-content">
+                    <span class="tier-badge tier1">🌱 Tier 1 - Easiest Approval</span>
+                    
+                    <div class="achieve-box" style="background: linear-gradient(135deg, #dcfce7, #bbf7d0);">
+                        <p style="color: #166534;"><strong>Tier 1 accounts:</strong> Approve with minimal business history, many don't check personal credit, and they report to business bureaus. Apply ONLY after your foundation is complete (DUNS received, 411 listed).</p>
+                    </div>
+                    
+                    <div class="vendor-grid">
+                        <div class="vendor-card">
+                            <h4>Uline</h4>
+                            <div class="reports">Reports to: D&B, Experian</div>
+                            <div class="terms">Terms: Net 30 | Min Order: $50</div>
+                            <div class="highlight">✓ Easy approval, huge selection</div>
+                            <a href="https://www.uline.com/CustomerService/ULINE_FAQ_Ans?FAQ_ID=104" target="_blank">Apply for Uline Net 30 →</a>
+                        </div>
+                        <div class="vendor-card">
+                            <h4>Grainger</h4>
+                            <div class="reports">Reports to: D&B</div>
+                            <div class="terms">Terms: Net 30 | Min Order: $50</div>
+                            <div class="highlight">✓ 60 days in business required</div>
+                            <a href="https://www.grainger.com/" target="_blank">Apply for Grainger →</a>
+                        </div>
+                        <div class="vendor-card">
+                            <h4>BREX Card</h4>
+                            <div class="reports">Reports to: D&B, Experian, Equifax</div>
+                            <div class="terms">Terms: Pay Daily/Monthly | No PG</div>
+                            <div class="highlight">✓ Reports to ALL 3 bureaus!</div>
+                            <a href="https://www.brex.com/signup/" target="_blank">Apply for BREX →</a>
+                        </div>
+                        <div class="vendor-card">
+                            <h4>Creative Analytics</h4>
+                            <div class="reports">Reports to: Equifax, CreditSafe</div>
+                            <div class="terms">Terms: Net 30 | Min Order: $100</div>
+                            <div class="highlight">✓ $79 annual fee, Equifax reporting</div>
+                            <a href="https://creativeanalyticsdc.com/net30/" target="_blank">Apply for Creative Analytics →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('s4t1')" id="s4t1">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">Apply to 3+ Tier 1 Vendors</div>
+                            <div class="task-desc">Apply to vendors above that you can actually use. Space applications 1-2 weeks apart.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('s4t2')" id="s4t2">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">Make First Purchases ($50+ each)</div>
+                            <div class="task-desc">Vendors typically require $50 minimum purchase to report. Make your first order!</div>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('s4t3')" id="s4t3">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">Pay EARLY (Before Due Date)</div>
+                            <div class="task-desc">Pay within 20 days for best Paydex impact. Early payment = higher score!</div>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('s4t4')" id="s4t4">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">Wait 30-60 Days for Reporting</div>
+                            <div class="task-desc">Check Nav.com weekly. Accounts take 30-90 days to appear on reports.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('s4t5')" id="s4t5">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">Verify Paydex Score of 80+</div>
+                            <div class="task-desc">Once you have 3+ accounts reporting with on-time payments, you should see Paydex 80+.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="warning-box">
+                        <h4>⚠️ Don't Skip Steps!</h4>
+                        <p>Applying for Tier 1 before your foundation is complete = instant denials. Make sure you have:</p>
+                        <ul>
+                            <li>DUNS number received</li>
+                            <li>411 listing verified</li>
+                            <li>Business bank account open</li>
+                            <li>Consistent info everywhere</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STEP 5: Tier 2 -->
+        <div class="card">
+            <div class="step-section">
+                <div class="step-header" onclick="toggleStep('step5')">
+                    <div class="step-number" id="step5-number">5</div>
+                    <div class="step-info">
+                        <div class="step-title">Step 5: Tier 2 - Growth Accounts</div>
+                        <div class="step-desc">Expand with fleet cards and larger vendors</div>
+                    </div>
+                    <div class="step-meta">
+                        <span class="step-progress" id="step5-progress">0/3 complete</span>
+                        <span class="step-toggle" id="step5-toggle">▼</span>
+                    </div>
+                </div>
+                <div class="step-content" id="step5-content">
+                    <span class="tier-badge tier2">🚀 Tier 2 - Requires Established Credit</span>
+                    
+                    <div class="achieve-box" style="background: linear-gradient(135deg, #dbeafe, #bfdbfe);">
+                        <p style="color: #1e40af;"><strong>Before Tier 2:</strong> You need 3+ Tier 1 accounts reporting and Paydex of 80+. Fleet cards are excellent for building credit even if you rarely need gas.</p>
+                    </div>
+                    
+                    <div class="vendor-grid">
+                        <div class="vendor-card">
+                            <h4>WEX Fleet Card</h4>
+                            <div class="reports">Reports to: D&B, Experian</div>
+                            <div class="terms">Terms: Net 15 | 95%+ station acceptance</div>
+                            <div class="highlight">✓ Universal fleet card</div>
+                            <a href="https://www.wexinc.com/solutions/fleet-management/" target="_blank">Apply for WEX →</a>
+                        </div>
+                        <div class="vendor-card">
+                            <h4>A to B Fleet</h4>
+                            <div class="reports">Reports to: Experian</div>
+                            <div class="terms">Terms: Net 7 | No PG</div>
+                            <div class="highlight">✓ No personal guarantee!</div>
+                            <a href="https://www.atob.us/" target="_blank">Apply for A to B →</a>
+                        </div>
+                        <div class="vendor-card">
+                            <h4>Shell Fleet Card</h4>
+                            <div class="reports">Reports to: D&B, Experian</div>
+                            <div class="terms">Terms: Net 15 | Paydex 80+ needed</div>
+                            <div class="highlight">✓ Widely accepted</div>
+                            <a href="https://www.shell.us/business-customers" target="_blank">Apply for Shell →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('s5t1')" id="s5t1">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">Verify 3+ Tier 1 Accounts Reporting</div>
+                            <div class="task-desc">Check Nav.com to confirm your Tier 1 accounts are showing before applying for Tier 2.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('s5t2')" id="s5t2">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">Apply to Tier 2 Vendors</div>
+                            <div class="task-desc">Space fleet card applications 30+ days apart to avoid fraud alerts.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('s5t3')" id="s5t3">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">Maintain 6+ Total Accounts</div>
+                            <div class="task-desc">Goal: 6+ accounts reporting with Paydex maintained at 80+.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="pro-tip">
+                        <div class="pro-tip-title">💡 Net 15 and Net 7 = Pay Quickly!</div>
+                        <p>Fleet cards have shorter payment windows. Set calendar reminders immediately when you get approved!</p>
+                        <ul>
+                            <li>Net 7 = Pay within 7 days</li>
+                            <li>Net 15 = Pay within 15 days</li>
+                            <li>Missing these deadlines TANKS your Paydex</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STEP 6: Tier 3 -->
+        <div class="card">
+            <div class="step-section">
+                <div class="step-header" onclick="toggleStep('step6')">
+                    <div class="step-number" id="step6-number">6</div>
+                    <div class="step-info">
+                        <div class="step-title">Step 6: Tier 3 - Business Credit Cards</div>
+                        <div class="step-desc">Graduate to major bank business cards</div>
+                    </div>
+                    <div class="step-meta">
+                        <span class="step-progress" id="step6-progress">0/3 complete</span>
+                        <span class="step-toggle" id="step6-toggle">▼</span>
+                    </div>
+                </div>
+                <div class="step-content" id="step6-content">
+                    <span class="tier-badge tier3">💳 Tier 3 - Business Credit Cards</span>
+                    
+                    <div class="achieve-box" style="background: linear-gradient(135deg, #f3e8ff, #e9d5ff);">
+                        <p style="color: #7c3aed;"><strong>Tier 3 Requirements:</strong> 6+ trade accounts reporting, Paydex 80+, at least 1 year in business (often), and good personal credit (if PG required). Most business cards require a personal guarantee - this is normal.</p>
+                    </div>
+                    
+                    <div class="vendor-grid">
+                        <div class="vendor-card">
+                            <h4>AA CitiBusiness Card</h4>
+                            <div class="reports">Reports to: D&B, Experian, Equifax</div>
+                            <div class="terms">Terms: Revolving</div>
+                            <div class="highlight">✓ Reports to ALL 3 bureaus!</div>
+                            <a href="https://creditcards.aa.com/citi-business-card-american-airlines-cardmember/" target="_blank">Apply for AA Card →</a>
+                        </div>
+                        <div class="vendor-card">
+                            <h4>US Bank Business</h4>
+                            <div class="reports">Reports to: D&B</div>
+                            <div class="terms">Terms: Revolving</div>
+                            <div class="highlight">✓ Multiple card options</div>
+                            <a href="https://www.usbank.com/business-banking/business-credit-cards.html" target="_blank">Apply for US Bank →</a>
+                        </div>
+                        <div class="vendor-card">
+                            <h4>Capital One Spark</h4>
+                            <div class="reports">Reports to: D&B, Experian</div>
+                            <div class="terms">Terms: Revolving</div>
+                            <div class="highlight">✓ Good rewards program</div>
+                            <a href="https://www.capitalone.com/small-business/credit-cards" target="_blank">Apply for Capital One →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('s6t1')" id="s6t1">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">Verify 6+ Accounts & 80+ Paydex</div>
+                            <div class="task-desc">Confirm your profile is strong before applying for business credit cards.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('s6t2')" id="s6t2">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">Apply for 1-2 Business Cards</div>
+                            <div class="task-desc">Apply for cards that report to business bureaus. Limit to 1-2 to minimize inquiries.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('s6t3')" id="s6t3">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">Use Cards & Always Pay On Time</div>
+                            <div class="task-desc">Keep utilization below 30% and never miss a payment!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STEP 7: Maintain -->
+        <div class="card">
+            <div class="step-section">
+                <div class="step-header" onclick="toggleStep('step7')">
+                    <div class="step-number" id="step7-number">7</div>
+                    <div class="step-info">
+                        <div class="step-title">Step 7: Maintain & Grow</div>
+                        <div class="step-desc">Keep your business credit strong</div>
+                    </div>
+                    <div class="step-meta">
+                        <span class="step-progress" id="step7-progress">0/4 complete</span>
+                        <span class="step-toggle" id="step7-toggle">▼</span>
+                    </div>
+                </div>
+                <div class="step-content" id="step7-content">
+                    
+                    <div class="income-highlight">
+                        <h3>🎉 Congratulations!</h3>
+                        <p>You should now have 9+ trade accounts, strong Paydex, and business credit cards!</p>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('s7t1')" id="s7t1">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">Set Up Autopay or Payment Reminders</div>
+                            <div class="task-desc">Never miss a payment - set up autopay or calendar reminders for all accounts.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('s7t2')" id="s7t2">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">Monitor Nav.com Monthly</div>
+                            <div class="task-desc">Check your scores monthly and watch for any issues or fraudulent accounts.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('s7t3')" id="s7t3">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">Request Credit Limit Increases</div>
+                            <div class="task-desc">Every 6-12 months, request limit increases on your accounts.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <div class="task-checkbox" onclick="toggleTask('s7t4')" id="s7t4">✓</div>
+                        <div class="task-content">
+                            <div class="task-title">Keep Accounts Active</div>
+                            <div class="task-desc">Make at least one purchase per quarter on each account to prevent closure.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="pro-tip">
+                        <div class="pro-tip-title">💡 Next Steps: Business Funding</div>
+                        <p>With established business credit, you can now pursue:</p>
+                        <ul>
+                            <li>Business lines of credit ($10K-100K+)</li>
+                            <li>SBA loans</li>
+                            <li>Equipment financing</li>
+                            <li>Business term loans</li>
+                            <li>Revenue-based financing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Tracker -->
+        <div class="progress-tracker">
+            <h3>📊 Your Progress</h3>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <p class="progress-text"><span id="completedCount">0</span> of <span id="totalCount">29</span> tasks completed</p>
+        </div>
+
+        <!-- Notes Section -->
+        <div class="card">
+            <h2><span class="icon">📝</span> Your Notes</h2>
+            <div class="notes-section">
+                <textarea id="userNotes" placeholder="Track your progress, account numbers, application dates, or anything else here..."></textarea>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h3>Need Help Building Business Credit?</h3>
+            <p>ASAP Credit Repair can guide you through the process</p>
+            <a href="https://asapcreditrepairusa.com" class="cta-button">Talk to a Specialist →</a>
+        </div>
+        
+        </div><!-- End mainContent -->
+    </div>
+
+    <script>
+        // Check if user already submitted
+        const userData = localStorage.getItem('bcb_user');
+        if (userData) {
+            document.getElementById('leadForm').style.display = 'none';
+            document.getElementById('mainContent').classList.remove('content-locked');
+            document.getElementById('mainContent').classList.add('content-unlocked');
+        }
+        
+        // Lead form submission
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            const formData = new FormData(this);
+            const user = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                business: formData.get('business')
+            };
+            localStorage.setItem('bcb_user', JSON.stringify(user));
+            
+            // Let Netlify handle form, then show content
+            setTimeout(() => {
+                document.getElementById('leadForm').style.display = 'none';
+                document.getElementById('mainContent').classList.remove('content-locked');
+                document.getElementById('mainContent').classList.add('content-unlocked');
+            }, 500);
+        });
+        
+        // Load saved progress
+        const savedProgress = JSON.parse(localStorage.getItem('bcb_progress') || '{}');
+        const savedNotes = localStorage.getItem('bcb_notes') || '';
+        
+        // Apply saved state
+        Object.keys(savedProgress).forEach(id => {
+            if (savedProgress[id]) {
+                const el = document.getElementById(id);
+                if (el) el.classList.add('checked');
+            }
+        });
+        document.getElementById('userNotes').value = savedNotes;
+        
+        // Toggle step visibility
+        function toggleStep(stepId) {
+            const content = document.getElementById(stepId + '-content');
+            const toggle = document.getElementById(stepId + '-toggle');
+            content.classList.toggle('open');
+            toggle.classList.toggle('open');
+        }
+        
+        // Toggle task completion
+        function toggleTask(taskId) {
+            const el = document.getElementById(taskId);
+            el.classList.toggle('checked');
+            savedProgress[taskId] = el.classList.contains('checked');
+            localStorage.setItem('bcb_progress', JSON.stringify(savedProgress));
+            updateProgress();
+        }
+        
+        // Update progress display
+        function updateProgress() {
+            const allTasks = document.querySelectorAll('.task-checkbox');
+            const completed = document.querySelectorAll('.task-checkbox.checked').length;
+            const total = allTasks.length;
+            const percent = Math.round((completed / total) * 100);
+            
+            document.getElementById('progressFill').style.width = percent + '%';
+            document.getElementById('completedCount').textContent = completed;
+            document.getElementById('totalCount').textContent = total;
+            
+            // Update step progress
+            updateStepProgress('step1', ['s1t1','s1t2','s1t3','s1t4','s1t5','s1t6']);
+            updateStepProgress('step2', ['s2t1','s2t2','s2t3','s2t4']);
+            updateStepProgress('step3', ['s3t1','s3t2','s3t3','s3t4']);
+            updateStepProgress('step4', ['s4t1','s4t2','s4t3','s4t4','s4t5']);
+            updateStepProgress('step5', ['s5t1','s5t2','s5t3']);
+            updateStepProgress('step6', ['s6t1','s6t2','s6t3']);
+            updateStepProgress('step7', ['s7t1','s7t2','s7t3','s7t4']);
+        }
+        
+        function updateStepProgress(stepId, taskIds) {
+            const completed = taskIds.filter(id => savedProgress[id]).length;
+            const total = taskIds.length;
+            document.getElementById(stepId + '-progress').textContent = completed + '/' + total + ' complete';
+            
+            const numberEl = document.getElementById(stepId + '-number');
+            if (completed === total) {
+                numberEl.classList.add('complete');
+                numberEl.innerHTML = '✓';
+            } else {
+                numberEl.classList.remove('complete');
+            }
+        }
+        
+        // Save notes
+        document.getElementById('userNotes').addEventListener('input', function() {
+            localStorage.setItem('bcb_notes', this.value);
+        });
+        
+        // Initial progress update
+        updateProgress();
+    </script>
+</body>
+</html>
